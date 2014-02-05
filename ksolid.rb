@@ -1,6 +1,6 @@
 require "formula"
 
-class Solid < Formula
+class Ksolid < Formula
   homepage "http://www.kde.org/"
   url "http://download.kde.org/unstable/frameworks/4.95.0/solid-4.95.0.tar.xz"
   sha1 ""
