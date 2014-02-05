@@ -8,14 +8,14 @@ class Ktexteditor < Formula
   head 'git://anongit.kde.org/ktexteditor.git'
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "qt5"
-  depends_on "karchive"
-  depends_on "kjs"
-  depends_on "ki18n"
-  depends_on "kconfig"
-  depends_on "kguiaddons"
-  depends_on "kjobwidgets"
+  depends_on "haraldf/kf5/karchive"
+  depends_on "haraldf/kf5/kjs"
+  depends_on "haraldf/kf5/ki18n"
+  depends_on "haraldf/kf5/kconfig"
+  depends_on "haraldf/kf5/kguiaddons"
+  depends_on "haraldf/kf5/kjobwidgets"
 
   def install
     args = std_cmake_args

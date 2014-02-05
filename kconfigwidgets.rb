@@ -8,10 +8,10 @@ class Kconfigwidgets < Formula
   head 'git://anongit.kde.org/kconfigwidgets.git'
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "qt5"
-  depends_on "kauth"
-  depends_on "kcodecs"
+  depends_on "haraldf/kf5/kauth"
+  depends_on "haraldf/kf5/kcodecs"
 
 ### hack - disable doctools als they are too fat
   def patches

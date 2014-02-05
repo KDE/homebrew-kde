@@ -1,6 +1,6 @@
 require "formula"
 
-class Ksolid < Formula
+class Kf5Solid < Formula
   homepage "http://www.kde.org/"
   url "http://download.kde.org/unstable/frameworks/4.95.0/solid-4.95.0.tar.xz"
   sha1 ""
@@ -8,7 +8,7 @@ class Ksolid < Formula
   head 'git://anongit.kde.org/solid.git'
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "qt5"
 
   def install

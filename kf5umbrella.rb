@@ -10,7 +10,7 @@ class Kf5umbrella < Formula
   head 'git://anongit.kde.org/kf5umbrella.git'
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "qt5" => :build
 
   def install

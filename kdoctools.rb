@@ -8,7 +8,7 @@ class Kdoctools < Formula
   head 'git://anongit.kde.org/kdoctools.git'
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "qt5"
   depends_on "docbook"
   depends_on "docbook-xsl"
