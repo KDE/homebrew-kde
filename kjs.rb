@@ -2,8 +2,8 @@ require "formula"
 
 class Kjs < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kjs-4.95.0.tar.xz"
-  sha1 "6e34a43606295cfcf90a5c87748db97161940c6e"
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/kjs-4.95.0.tar.xz"
+#  sha1 "6e34a43606295cfcf90a5c87748db97161940c6e"
 
   head 'git://anongit.kde.org/kjs.git'
 
@@ -64,23 +64,6 @@ index d821a72..9b04380 100644
 +#cmakedefine01 HAVE_FUNC_SIGNBIT
  #cmakedefine01 HAVE_FUNC___SIGNBIT
  #cmakedefine01 HAVE_FUNC_STD_SIGNBIT
- 
-diff --git a/src/kjs/interpreter.cpp b/src/kjs/interpreter.cpp
-index e699651..e4f97f6 100644
---- a/src/kjs/interpreter.cpp
-+++ b/src/kjs/interpreter.cpp
-@@ -113,8 +113,10 @@ void TimeoutChecker::startTimeoutCheck(Interpreter *interpreter)
-     s_executingInterpreter = interpreter;
- 
-     itimerval tv = {
--        { interpreter->m_timeoutTime / 1000, (interpreter->m_timeoutTime % 1000) * 1000 },
--        { interpreter->m_timeoutTime / 1000, (interpreter->m_timeoutTime % 1000) * 1000 }
-+        { time_t(interpreter->m_timeoutTime / 1000),
-+          suseconds_t((interpreter->m_timeoutTime % 1000) * 1000) },
-+        { time_t(interpreter->m_timeoutTime / 1000),
-+          suseconds_t((interpreter->m_timeoutTime % 1000) * 1000) }
-     };
-     setitimer(ITIMER_REAL, &tv, &m_oldtv);
  
 diff --git a/src/kjs/operations.h b/src/kjs/operations.h
 index a54f366..8ce19d6 100644

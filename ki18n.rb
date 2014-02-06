@@ -2,8 +2,8 @@ require "formula"
 
 class Ki18n < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/ki18n-4.95.0.tar.xz"
-  sha1 "5b6423af0bf96c07cc298ec560616fee4c625f8e"
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/ki18n-4.95.0.tar.xz"
+#  sha1 "5b6423af0bf96c07cc298ec560616fee4c625f8e"
 
   head 'git://anongit.kde.org/ki18n.git'
 

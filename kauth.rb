@@ -2,7 +2,7 @@ require "formula"
 
 class Kauth < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kauth-4.95.0.tar.xz"
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/kauth-4.95.0.tar.xz"
 
   head 'git://anongit.kde.org/kauth.git'
 

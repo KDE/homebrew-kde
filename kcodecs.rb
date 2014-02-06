@@ -2,8 +2,8 @@ require "formula"
 
 class Kcodecs < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kcodecs-4.95.0.tar.xz"
-  sha1 ""
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/kcodecs-4.95.0.tar.xz"
+#  sha1 ""
 
   head 'git://anongit.kde.org/kcodecs.git'
 

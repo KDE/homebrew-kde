@@ -2,8 +2,8 @@ require "formula"
 
 class Kcrash < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kcrash-4.95.0.tar.xz"
-  sha1 ""
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/kcrash-4.95.0.tar.xz"
+#  sha1 ""
 
   head 'git://anongit.kde.org/kcrash.git'
 
@@ -28,10 +28,23 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 4f56afc..3046c38 100644
+index ddf5fb3..bef6788 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -26,7 +26,7 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KCrash
+@@ -11,8 +11,10 @@ include(KDEInstallDirs)
+ include(KDEFrameworkCompilerSettings)
+ include(KDECMakeSettings)
+ 
+-find_package(X11)
+-set(HAVE_X11 ${X11_FOUND})
++if (NOT APPLE)
++  find_package(X11)
++  set(HAVE_X11 ${X11_FOUND})
++endif()
+ 
+ include(FeatureSummary)
+ include(GenerateExportHeader)
+@@ -26,7 +28,7 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KCrash
  
  if(NOT kdelibs_SOURCE_DIR)
    find_package(KF5CoreAddons ${KF5_VERSION} REQUIRED)

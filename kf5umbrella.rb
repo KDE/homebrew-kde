@@ -2,8 +2,8 @@ require "formula"
 
 class Kf5umbrella < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kf5umbrella-4.95.0.tar.xz"
-  sha1 "5b7ed9d1e0007926d9d1a4752105e4602bc5addd"
+#  url "http://download.kde.org/unstable/frameworks/4.95.0/kf5umbrella-4.95.0.tar.xz"
+#  sha1 "5b7ed9d1e0007926d9d1a4752105e4602bc5addd"
 
   keg_only "Only required for building KDE frameworks"
 
