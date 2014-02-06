@@ -12,6 +12,10 @@ class Kconfigwidgets < Formula
   depends_on "qt5"
   depends_on "haraldf/kf5/kauth"
   depends_on "haraldf/kf5/kcodecs"
+  depends_on "haraldf/kf5/kconfig"
+  depends_on "haraldf/kf5/kguiaddons"
+  depends_on "haraldf/kf5/kwidgetsaddons"
+  depends_on "haraldf/kf5/ki18n"
 
 ### hack - disable doctools als they are too fat
   def patches

@@ -17,6 +17,7 @@ class Kio < Formula
   depends_on "haraldf/kf5/kf5-solid"
   depends_on "haraldf/kf5/kiconthemes"
   depends_on "haraldf/kf5/kcompletion"
+  depends_on "haraldf/kf5/kjobwidgets"
 
   def patches
     DATA
@@ -50,6 +51,6 @@ index 0e67517..f0dafe6 100644
 +# find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
 +#  find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
 +#  find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
-   find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
-   find_package(KF5Notifications ${KF5_VERSION} REQUIRED) #needed for kpac
++#   find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
++#   find_package(KF5Notifications ${KF5_VERSION} REQUIRED) #needed for kpac
  else()

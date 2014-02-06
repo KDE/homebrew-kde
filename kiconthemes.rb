@@ -11,6 +11,7 @@ class Kiconthemes < Formula
   depends_on "haraldf/kf5/extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kauth"
   depends_on "haraldf/kf5/kconfigwidgets"
+  depends_on "haraldf/kf5/kitemviews"
   depends_on "qt5"
 
   def install
