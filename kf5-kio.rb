@@ -26,6 +26,7 @@ class Kf5Kio < Formula
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+    args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
     system "make", "install"
@@ -34,23 +35,24 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 0e67517..f0dafe6 100644
+index 0e67517..8eaae80 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -40,12 +40,12 @@ if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-   find_package(KF5Solid ${KF5_VERSION} REQUIRED)
-   find_package(KF5JobWidgets ${KF5_VERSION} REQUIRED)
-   find_package(KF5IconThemes ${KF5_VERSION} REQUIRED)
--  find_package(KF5WindowSystem ${KF5_VERSION} REQUIRED)
-+# find_package(KF5WindowSystem ${KF5_VERSION} REQUIRED)
+@@ -43,7 +43,7 @@ if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
+   find_package(KF5WindowSystem ${KF5_VERSION} REQUIRED)
    find_package(KF5Crash ${KF5_VERSION} REQUIRED)
    find_package(KF5Completion ${KF5_VERSION} REQUIRED)
 -  find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
--  find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
--  find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
-+# find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
-+#  find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
-+#  find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
-+#   find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
-+#   find_package(KF5Notifications ${KF5_VERSION} REQUIRED) #needed for kpac
- else()
++#  find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
+   find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
+   find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
+   find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
+@@ -73,7 +73,7 @@ set_package_properties(GSSAPI PROPERTIES DESCRIPTION "Allows KIO to make use of
+ find_package(X11)
+ set(HAVE_X11 ${X11_FOUND})
+ 
+-add_subdirectory(docs)
++#add_subdirectory(docs)
+ include(CheckLibraryExists)
+ add_subdirectory(src)
+ add_subdirectory(autotests)
