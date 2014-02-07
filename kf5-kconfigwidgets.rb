@@ -1,6 +1,6 @@
 require "formula"
 
-class Kconfigwidgets < Formula
+class Kf5Kconfigwidgets < Formula
   homepage "http://www.kde.org/"
 #  url "http://download.kde.org/unstable/frameworks/4.95.0/kconfigwidgets-4.95.0.tar.xz"
 #  sha1 ""
@@ -8,14 +8,14 @@ class Kconfigwidgets < Formula
   head 'git://anongit.kde.org/kconfigwidgets.git'
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5"
-  depends_on "haraldf/kf5/kauth"
-  depends_on "haraldf/kf5/kcodecs"
-  depends_on "haraldf/kf5/kconfig"
-  depends_on "haraldf/kf5/kguiaddons"
-  depends_on "haraldf/kf5/kwidgetsaddons"
-  depends_on "haraldf/kf5/ki18n"
+  depends_on "haraldf/kf5/kf5-kauth"
+  depends_on "haraldf/kf5/kf5-kcodecs"
+  depends_on "haraldf/kf5/kf5-kconfig"
+  depends_on "haraldf/kf5/kf5-kguiaddons"
+  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
+  depends_on "haraldf/kf5/kf5-ki18n"
 
 ### hack - disable doctools als they are too fat
   def patches
@@ -24,7 +24,7 @@ class Kconfigwidgets < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('extra-cmake-modules').opt_prefix}\""
+    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
 
     system "cmake", ".", *args
     system "make", "install"

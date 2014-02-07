@@ -1,6 +1,6 @@
 require "formula"
 
-class Kf5umbrella < Formula
+class Kf5Umbrella < Formula
   homepage "http://www.kde.org/"
 #  url "http://download.kde.org/unstable/frameworks/4.95.0/kf5umbrella-4.95.0.tar.xz"
 #  sha1 "5b7ed9d1e0007926d9d1a4752105e4602bc5addd"
@@ -10,7 +10,7 @@ class Kf5umbrella < Formula
   head 'git://anongit.kde.org/kf5umbrella.git'
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => :build
 
   def install

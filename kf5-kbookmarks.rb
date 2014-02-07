@@ -1,14 +1,13 @@
 require "formula"
 
-class Kf5Solid < Formula
-  homepage "http://www.kde.org/"
-#  url "http://download.kde.org/unstable/frameworks/4.95.0/solid-4.95.0.tar.xz"
-#  sha1 ""
+class Kf5Kbookmarks < Formula
 
-  head 'git://anongit.kde.org/solid.git'
+  head 'git://anongit.kde.org/kbookmarks.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-kconfigwidgets"
+  depends_on "haraldf/kf5/kf5-kiconthemes"
   depends_on "qt5"
 
   def install
