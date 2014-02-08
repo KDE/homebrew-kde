@@ -19,6 +19,10 @@ class Kf5Ktexteditor < Formula
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kparts"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
@@ -28,3 +32,26 @@ class Kf5Ktexteditor < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d94185b..20bd704 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,6 +11,7 @@ include(ECMSetupVersion)
+ include(ECMGenerateHeaders)
+ include(CMakePackageConfigHelpers)
+ include(CheckFunctionExists)
++include(CheckSymbolExists)
+ include(KDEInstallDirs)
+ include(KDEFrameworkCompilerSettings)
+ include(KDECMakeSettings)
+@@ -86,7 +87,7 @@ install(FILES
+ )
+ 
+ # config.h
+-check_function_exists (fdatasync HAVE_FDATASYNC)
++check_symbol_exists (fdatasync unistd.h HAVE_FDATASYNC)
+ configure_file (config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ 
+ # let our config.h be found first in any case
