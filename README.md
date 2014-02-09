@@ -82,5 +82,5 @@ echo $DBUS_LAUNCHD_SESSION_BUS_SOCKET
 `brew --prefix`/Cellar/qt5/5.2.1/bin/qdbus
 ```
 
-The first command should echo a valid patch, e.g. */tmp/launch-NHyucl/unix_domain_listener*.
+The first command should echo a valid path, e.g. */tmp/launch-NHyucl/unix_domain_listener*.
 The second command should show the available services, at least *org.freedesktop.DBus*.
