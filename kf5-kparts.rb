@@ -32,7 +32,7 @@ class Kf5Kparts < Formula
   depends_on "haraldf/kf5/kf5-ktextwidgets"
   depends_on "haraldf/kf5/kf5-knotifications"
 
-  depends_on "qt5"
+  depends_on "qt5" => "with-d-bus"
 
   def install
     args = std_cmake_args
