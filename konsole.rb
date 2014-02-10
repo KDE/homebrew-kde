@@ -8,6 +8,11 @@ class Konsole < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kconfig"
+  depends_on "haraldf/kf5/kf5-kitemmodels"
+  depends_on "haraldf/kf5/kf5-kpty"
+  depends_on "haraldf/kf5/kf5-kwallet"
+  depends_on "haraldf/kf5/kf5-kunitconversion"
+  depends_on "haraldf/kf5/kf5-knotifyconfig"
   depends_on "qt5" => "with-d-bus"
 
   def install
