@@ -27,39 +27,8 @@ including the dependencies. A sample command that installs a whole bunch
 of kf5 libraries:
 
 ```sh
-brew install --verbose \
- --HEAD kf5-attica.rb \
- --HEAD kf5-extra-cmake-modules.rb \
- --HEAD kf5-karchive.rb \
- --HEAD kf5-kauth.rb \
- --HEAD kf5-kbookmarks.rb \
- --HEAD kf5-kcodecs.rb \
- --HEAD kf5-kcompletion.rb \
- --HEAD kf5-kconfig.rb \
- --HEAD kf5-kconfigwidgets.rb \
- --HEAD kf5-kcoreaddons.rb \
- --HEAD kf5-kcrash.rb \
- --HEAD kf5-kdbusaddons.rb \
- --HEAD kf5-kglobalaccel.rb \
- --HEAD kf5-kguiaddons.rb \
- --HEAD kf5-ki18n.rb \
- --HEAD kf5-kiconthemes.rb \
- --HEAD kf5-kio.rb \
- --HEAD kf5-kitemviews.rb \
- --HEAD kf5-kjobwidgets.rb \
- --HEAD kf5-kjs.rb \
- --HEAD kf5-knotifications.rb \
- --HEAD kf5-kparts.rb \
- --HEAD kf5-kprintutils.rb \
- --HEAD kf5-kservice.rb \
- --HEAD kf5-ktexteditor.rb \
- --HEAD kf5-ktextwidgets.rb \
- --HEAD kf5-kwidgetsaddons.rb \
- --HEAD kf5-kwindowsystem.rb \
- --HEAD kf5-kxmlgui.rb \
- --HEAD kf5-solid.rb \
- --HEAD kf5-sonnet.rb \
- --HEAD kf5-umbrella.rb
+cd `brew --prefix`/Library/Taps/haraldf-kf5
+`echo -n "brew install --verbose " && find . -name "kf5-*.rb" -not -name "kf5-kdoctools.rb" -exec echo -n "--HEAD {} " \; && echo`
 ```
 
 After that, your favorite KDE application should hopefully build :)
