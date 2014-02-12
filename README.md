@@ -33,6 +33,13 @@ cd `brew --prefix`/Library/Taps/haraldf-kf5
 
 After that, your favorite KDE application should hopefully build :)
 
+**Uninstalltion**
+
+To remove all KDE Frameworks 5 packages, run:
+
+```sh
+brew uninstall `brew list -1 | grep '^kf5-'`
+```
 
 **Known Issues**
 
