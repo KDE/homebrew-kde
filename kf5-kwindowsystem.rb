@@ -27,7 +27,7 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 6cebf0c..127d3cd 100644
+index 55f4b81..4450a2e 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -11,6 +11,7 @@ include(GenerateExportHeader)
@@ -38,14 +38,8 @@ index 6cebf0c..127d3cd 100644
  
  set(KF5_VERSION "4.96.0")
  
-@@ -26,19 +27,23 @@ include(KDEInstallDirs)
- include(KDEFrameworkCompilerSettings)
+@@ -27,14 +28,18 @@ include(KDEFrameworkCompilerSettings)
  include(KDECMakeSettings)
- 
--if(NOT WIN32)
-+if(NOT WIN32 AND NOT APPLE)
-     find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED X11Extras)
- endif()
  
  if (APPLE)
 -   find_package(Carbon REQUIRED)
@@ -85,7 +79,7 @@ index 144986f..073b6dd 100644
  macro(KWINDOWSYSTEM_UNIT_TESTS)
     foreach(_testname ${ARGN})
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 9c1d452..5dba0d6 100644
+index 2dbfeb1..71087cd 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
 @@ -39,6 +39,7 @@ if (APPLE)
