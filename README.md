@@ -43,8 +43,7 @@ brew uninstall `brew list -1 | grep '^kf5-'`
 
 **Known Issues**
 
-Headers for some frameworks are pointing to wrong directory, see discussion at
-https://git.reviewboard.kde.org/r/115541/
+KDocTools don't build.
 
 **D-Bus first time users**
 
