@@ -41,10 +41,6 @@ To remove all KDE Frameworks 5 packages, run:
 brew uninstall `brew list -1 | grep '^kf5-'`
 ```
 
-**Known Issues**
-
-KDocTools don't build.
-
 **D-Bus first time users**
 
 Follow the description in the D-Bus formula to set up the LaunchAgent. You might
