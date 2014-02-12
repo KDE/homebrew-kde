@@ -22,6 +22,19 @@ class Kf5ExtraCmakeModules < Formula
 end
 
 __END__
+diff --git a/modules/ECMGenerateHeaders.cmake b/modules/ECMGenerateHeaders.cmake
+index e98a22e91151d23d7c798ff22a33097ec2a59d10..f296339137e82e8f719db0ac0d249af02143eca9 100644
+--- a/modules/ECMGenerateHeaders.cmake
++++ b/modules/ECMGenerateHeaders.cmake
+@@ -76,7 +76,7 @@ function(ECM_GENERATE_HEADERS)
+         if (EGH_PREFIX)
+             #local forwarding header, for namespaced headers, e.g. kparts/part.h
+             #this should not get installed, so we don't put it under EGH_MODULE_NAME
+-            set(REGULAR_HEADER_NAME ${EGH_OUTPUT_DIR}/${lowercaseprefix}${lowercaseclassname}.h)
++            set(REGULAR_HEADER_NAME ${EGH_OUTPUT_DIR}/local/${lowercaseprefix}${lowercaseclassname}.h)
+             if (NOT EXISTS ${REGULAR_HEADER_NAME})
+                 file(WRITE ${REGULAR_HEADER_NAME} "#include \"${_actualheader}\"\n")
+             endif()
 diff --git a/kde-modules/KDECompilerSettings.cmake b/kde-modules/KDECompilerSettings.cmake
 index 335e127..3b546c5 100644
 --- a/kde-modules/KDECompilerSettings.cmake

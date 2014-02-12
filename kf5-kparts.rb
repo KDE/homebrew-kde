@@ -34,6 +34,10 @@ class Kf5Kparts < Formula
 
   depends_on "qt5" => "with-d-bus"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
@@ -43,3 +47,18 @@ class Kf5Kparts < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 3c1f8a4..171109f 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -75,7 +75,7 @@ add_library(KF5Parts ${KParts_LIB_SRCS})
+ generate_export_header(KF5Parts EXPORT_FILE_NAME ${KParts_BINARY_DIR}/kparts/kparts_export.h BASE_NAME KParts)
+ add_library(KF5::Parts ALIAS KF5Parts)
+ 
+-target_include_directories(KF5Parts PUBLIC "$<BUILD_INTERFACE:${KParts_BINARY_DIR}>")
++target_include_directories(KF5Parts PUBLIC "$<BUILD_INTERFACE:${KParts_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}/local>")
+ target_include_directories(KF5Parts INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KParts>" )
+ 
+ target_link_libraries(KF5Parts PUBLIC  KF5::KIOWidgets #browserrun.h uses krun.h
