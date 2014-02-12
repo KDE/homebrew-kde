@@ -99,15 +99,3 @@ index 6436b12..b848c66 100644
  add_subdirectory( http )
  add_subdirectory( ftp )
  add_subdirectory( mailto )
-diff --git a/src/ioslaves/file/file.cpp b/src/ioslaves/file/file.cpp
-index b7b9296..525e1ff 100644
---- a/src/ioslaves/file/file.cpp
-+++ b/src/ioslaves/file/file.cpp
-@@ -42,6 +42,7 @@
- #include <utime.h>
- #endif
- 
-+#include <errno.h>
- 
- #include <QtCore/QByteRef>
- #include <QtCore/QDate>
