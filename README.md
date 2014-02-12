@@ -14,7 +14,7 @@ D-Bus support:
 
 ```sh
 brew install d-bus
-brew install haraldf/kf5/qt5 --with-d-bus
+brew install qt5 --with-d-bus
 ```
 
 Note: Read the D-Bus notes below if this is your first D-Bus installation.
