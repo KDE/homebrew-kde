@@ -100,7 +100,7 @@ index 1664a86..9ab44f5 100644
 -add_subdirectory(kf5-config)
 +#add_subdirectory(kf5-config)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 3f4a131..53a499e 100644
+index 3f4a131..938021d 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
 @@ -275,6 +275,11 @@ target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4suppor
@@ -109,7 +109,7 @@ index 3f4a131..53a499e 100644
  
 +set(platformLinkLibraries)
 +if (APPLE)
-+    set(platformLinkLibraries "-framework CoreFoundation -framework Carbon")
++    set(platformLinkLibraries "-framework CoreFoundation -framework Carbon -lresolv")
 +endif()
 +
  target_link_libraries(KF5KDE4Support
@@ -126,68 +126,3 @@ index 3f4a131..53a499e 100644
  # This flag is needed in order to be able to support files > 2GB even on
  # 32bit platforms. The default is to use the non-64bit aware syscalls on
  # 32bit platforms, which makes every application to SIGXFSZ (which is
-diff --git a/src/kdeui/kapplication.cpp b/src/kdeui/kapplication.cpp
-index 47e4983..f7a7c8e 100644
---- a/src/kdeui/kapplication.cpp
-+++ b/src/kdeui/kapplication.cpp
-@@ -58,8 +58,8 @@
- 
- #if HAVE_X11
- #include <qx11info_x11.h>
--#include <kstartupinfo.h>
- #endif
-+#include <kstartupinfo.h>
- 
- #include <sys/types.h>
- #if HAVE_SYS_STAT_H
-diff --git a/src/kdeui/kmenubar.cpp b/src/kdeui/kmenubar.cpp
-index f2dc2b1..545ac14 100644
---- a/src/kdeui/kmenubar.cpp
-+++ b/src/kdeui/kmenubar.cpp
-@@ -37,11 +37,11 @@
- #include <kglobalsettings.h>
- #include <qapplication.h>
- #include <kdebug.h>
--#include <kmanagerselection.h>
- #include <kconfiggroup.h>
- #include <kwindowsystem.h>
- 
- #if HAVE_X11
-+#include <kmanagerselection.h>
- #include <qx11info_x11.h>
- 
- #include <X11/Xlib.h>
-@@ -99,7 +99,9 @@ public:
- #endif
-     QTimer selection_timer;
-     QSize min_size;
-+#if HAVE_X11
-     static Atom makeSelectionAtom();
-+#endif
- };
- 
- #if HAVE_X11
-@@ -118,11 +120,9 @@ void initAtoms()
-     selection_atom = atoms[ 0 ];
-     msg_type_atom = atoms[ 1 ];
- }
--#endif
- 
- Atom KMenuBar::KMenuBarPrivate::makeSelectionAtom()
- {
--#if HAVE_X11
-     if (!QX11Info::isPlatformX11()) {
-         return 0;
-     }
-@@ -130,10 +130,8 @@ Atom KMenuBar::KMenuBarPrivate::makeSelectionAtom()
-         initAtoms();
-     }
-     return selection_atom;
--#else
--    return 0;
--#endif
- }
-+#endif
- 
- KMenuBar::KMenuBar(QWidget *parent)
-     : QMenuBar(parent), d(new KMenuBarPrivate)
