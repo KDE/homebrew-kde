@@ -47,10 +47,16 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a32b6f4..7e7797d 100644
+index a32b6f4..3eb3086 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -16,7 +16,7 @@ set(KF5_VERSION "4.96.0")
+@@ -11,12 +11,13 @@ include(KDEFrameworkCompilerSettings)
+ include(KDECMakeSettings)
+ include(FeatureSummary)
+ include(GenerateExportHeader)
++include(CMakeFindFrameworks)
+ 
+ set(KF5_VERSION "4.96.0")
  set(QT_REQUIRED_VERSION 5.2.0)
  find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg Concurrent PrintSupport Designer)
  
@@ -59,7 +65,7 @@ index a32b6f4..7e7797d 100644
      find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED X11Extras)
  endif()
  
-@@ -38,7 +38,7 @@ if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
+@@ -38,7 +39,7 @@ if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
      find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
      find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
      find_package(KF5KIO ${KF5_VERSION} REQUIRED)
@@ -68,7 +74,7 @@ index a32b6f4..7e7797d 100644
      find_package(KF5Crash ${KF5_VERSION} REQUIRED)
      find_package(KF5Notifications ${KF5_VERSION} REQUIRED)
      find_package(KF5Parts ${KF5_VERSION} REQUIRED)
-@@ -52,13 +52,15 @@ else()
+@@ -52,13 +53,15 @@ else()
      include(${CMAKE_SOURCE_DIR}/tier3/kdesignerplugin/KF5DesignerPluginMacros.cmake)
  endif()
  
@@ -94,16 +100,28 @@ index 1664a86..9ab44f5 100644
 -add_subdirectory(kf5-config)
 +#add_subdirectory(kf5-config)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 3f4a131..ba4506f 100644
+index 3f4a131..53a499e 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -306,6 +306,10 @@ PRIVATE
+@@ -275,6 +275,11 @@ target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4suppor
+ 
+ target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support/KDE>")
+ 
++set(platformLinkLibraries)
++if (APPLE)
++    set(platformLinkLibraries "-framework CoreFoundation -framework Carbon")
++endif()
++
+ target_link_libraries(KF5KDE4Support
+ PUBLIC
+    Qt5::Widgets
+@@ -304,8 +309,10 @@ PRIVATE
+    Qt5::Test # for qtest_kde.cpp
+    ${KIO_EXTRA_LIBS}
     ${libkde4support_OPTIONAL_LIBS}
++   ${platformLinkLibraries}
  )
  
-+if (APPLE)
-+    set(platformLinkLibraries "-framework CoreFoundation")
-+endif()
 +
  # This flag is needed in order to be able to support files > 2GB even on
  # 32bit platforms. The default is to use the non-64bit aware syscalls on
@@ -123,7 +141,7 @@ index 47e4983..f7a7c8e 100644
  #include <sys/types.h>
  #if HAVE_SYS_STAT_H
 diff --git a/src/kdeui/kmenubar.cpp b/src/kdeui/kmenubar.cpp
-index f2dc2b1..2a99c88 100644
+index f2dc2b1..545ac14 100644
 --- a/src/kdeui/kmenubar.cpp
 +++ b/src/kdeui/kmenubar.cpp
 @@ -37,11 +37,11 @@
@@ -149,7 +167,7 @@ index f2dc2b1..2a99c88 100644
  };
  
  #if HAVE_X11
-@@ -118,22 +120,15 @@ void initAtoms()
+@@ -118,11 +120,9 @@ void initAtoms()
      selection_atom = atoms[ 0 ];
      msg_type_atom = atoms[ 1 ];
  }
@@ -158,10 +176,10 @@ index f2dc2b1..2a99c88 100644
  Atom KMenuBar::KMenuBarPrivate::makeSelectionAtom()
  {
 -#if HAVE_X11
--    if (!QX11Info::isPlatformX11()) {
--        return 0;
--    }
-     if (selection_atom == None) {
+     if (!QX11Info::isPlatformX11()) {
+         return 0;
+     }
+@@ -130,10 +130,8 @@ Atom KMenuBar::KMenuBarPrivate::makeSelectionAtom()
          initAtoms();
      }
      return selection_atom;
