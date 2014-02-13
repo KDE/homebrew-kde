@@ -44,6 +44,10 @@ class Konsole < Formula
   depends_on "haraldf/kf5/kf5-kparts"
   depends_on "haraldf/kf5/kf5-kkross"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
@@ -53,3 +57,17 @@ class Konsole < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8339b7d..5d06480 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,6 +46,6 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+ add_subdirectory( src )
+ add_subdirectory( data )
+ add_subdirectory( desktop )
+-add_subdirectory( doc/manual )
++#add_subdirectory( doc/manual )
+ 
+ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
