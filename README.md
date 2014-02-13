@@ -28,7 +28,7 @@ of kf5 libraries:
 
 ```sh
 cd `brew --prefix`/Library/Taps/haraldf-kf5
-`echo -n "brew install --verbose " && find . -name "kf5-*.rb" -not -name "kf5-kdoctools.rb" -exec echo -n "--HEAD {} " \; && echo`
+`echo -n "brew install --verbose " && find . -name "kf5-*.rb" -exec echo -n "--HEAD {} " \; && echo`
 ```
 
 After that, your favorite KDE application should hopefully build :)
