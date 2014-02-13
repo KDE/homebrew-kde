@@ -42,7 +42,7 @@ class Konsole < Formula
   depends_on "haraldf/kf5/kf5-kunitconversion"
   depends_on "haraldf/kf5/kf5-knotifyconfig"
   depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "haraldf/kf5/kf5-kkross"
+  depends_on "haraldf/kf5/kf5-kross"
 
   def patches
     DATA
