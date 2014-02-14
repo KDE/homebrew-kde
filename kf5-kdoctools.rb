@@ -13,6 +13,10 @@ class Kf5Kdoctools < Formula
   depends_on "docbook"
   depends_on "docbook-xsl"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix};\""
@@ -23,3 +27,21 @@ class Kf5Kdoctools < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/KF5DocToolsConfig.cmake.in b/KF5DocToolsConfig.cmake.in
+index 7ae030e..59e53c2 100644
+--- a/KF5DocToolsConfig.cmake.in
++++ b/KF5DocToolsConfig.cmake.in
+@@ -1,6 +1,10 @@
+ @PACKAGE_INIT@
+ 
+-set(KDOCTOOLS_DATA_INSTALL_DIR "${PACKAGE_PREFIX_DIR}/@DATA_INSTALL_DIR@")
++if (APPLE)
++    set(KDOCTOOLS_DATA_INSTALL_DIR "@DATA_INSTALL_DIR@")
++else()
++    set(KDOCTOOLS_DATA_INSTALL_DIR "${PACKAGE_PREFIX_DIR}/@DATA_INSTALL_DIR@")
++endif()
+ set(KDOCTOOLS_CUSTOMIZATION_DIR "${KDOCTOOLS_DATA_INSTALL_DIR}/kdoctools5/customization")
+ 
+ include("${CMAKE_CURRENT_LIST_DIR}/KF5DocToolsTargets.cmake")

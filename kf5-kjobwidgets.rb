@@ -13,10 +13,6 @@ class Kf5Kjobwidgets < Formula
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "qt5" => "with-d-bus"
 
-  def patches
-      DATA
-  end
-
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
@@ -25,22 +21,3 @@ class Kf5Kjobwidgets < Formula
     system "make", "install"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a387fcd..3d642e6 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -15,8 +15,10 @@ set(KF5_VERSION "5.0.0")
- set(QT_REQUIRED_VERSION 5.2.0)
- find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets DBus)
- 
--find_package(X11)
--set(HAVE_X11 ${X11_FOUND})
-+if (NOT APPLE)
-+    find_package(X11)
-+    set(HAVE_X11 ${X11_FOUND})
-+endif()
- 
- if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-     find_package(KF5CoreAddons ${KF5_VERSION} REQUIRED)

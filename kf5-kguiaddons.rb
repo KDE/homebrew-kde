@@ -11,10 +11,6 @@ class Kf5Kguiaddons < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
-  def patches
-    DATA
-  end
-
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
@@ -23,18 +19,3 @@ class Kf5Kguiaddons < Formula
     system "make", "install"
   end
 end
-
-__END__
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index b0520d8..15cff66 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -14,7 +14,7 @@ set(kguiaddons_LIB_SRCS
-  util/urlhandler.cpp
- )
- 
--if (X11_FOUND AND X11_Xkb_FOUND AND XCB_XCB_FOUND)
-+if (NOT APPLE AND X11_FOUND AND X11_Xkb_FOUND AND XCB_XCB_FOUND)
-     include_directories (
-         ${X11_Xkb_INCLUDE_PATH}
-         ${X11_Xlib_INCLUDE_PATH}

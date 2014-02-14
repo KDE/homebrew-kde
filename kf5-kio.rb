@@ -11,6 +11,7 @@ class Kf5Kio < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
+  depends_on "haraldf/kf5/kf5-kdoctools"
   depends_on "haraldf/kf5/kf5-kitemviews"
   depends_on "haraldf/kf5/kf5-kservice"
   depends_on "haraldf/kf5/kf5-kconfigwidgets"
@@ -35,28 +36,6 @@ class Kf5Kio < Formula
 end
 
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 0e67517..8eaae80 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -43,7 +43,7 @@ if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-   find_package(KF5WindowSystem ${KF5_VERSION} REQUIRED)
-   find_package(KF5Crash ${KF5_VERSION} REQUIRED)
-   find_package(KF5Completion ${KF5_VERSION} REQUIRED)
--  find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
-+#  find_package(KF5DocTools ${KF5_VERSION} REQUIRED)
-   find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
-   find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
-   find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
-@@ -73,7 +73,7 @@ set_package_properties(GSSAPI PROPERTIES DESCRIPTION "Allows KIO to make use of
- find_package(X11)
- set(HAVE_X11 ${X11_FOUND})
- 
--add_subdirectory(docs)
-+#add_subdirectory(docs)
- include(CheckLibraryExists)
- add_subdirectory(src)
- add_subdirectory(autotests)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
 index 2106e1f..1b5fa82 100644
 --- a/src/CMakeLists.txt
@@ -87,15 +66,3 @@ index cc69957..3d568f8 100644
  // This is the *BSD branch
  #if HAVE_SYS_MOUNT_H
  #if HAVE_SYS_TYPES_H
-diff --git a/src/ioslaves/CMakeLists.txt b/src/ioslaves/CMakeLists.txt
-index 6436b12..b848c66 100644
---- a/src/ioslaves/CMakeLists.txt
-+++ b/src/ioslaves/CMakeLists.txt
-@@ -1,6 +1,6 @@
- 
- add_subdirectory( file )
--add_subdirectory( help )
-+#add_subdirectory( help )
- add_subdirectory( http )
- add_subdirectory( ftp )
- add_subdirectory( mailto )
