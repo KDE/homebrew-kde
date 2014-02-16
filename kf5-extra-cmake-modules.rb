@@ -40,14 +40,3 @@ index 9ff2354..054e697 100644
  _set_fancy(KCFG_INSTALL_DIR          "${SHARE_INSTALL_PREFIX}/config.kcfg"         "The install dir for kconfig files")
 diff --git a/modules/ECMGenerateHeaders.cmake b/modules/ECMGenerateHeaders.cmake
 index e98a22e..f296339 100644
---- a/modules/ECMGenerateHeaders.cmake
-+++ b/modules/ECMGenerateHeaders.cmake
-@@ -76,7 +76,7 @@ function(ECM_GENERATE_HEADERS)
-         if (EGH_PREFIX)
-             #local forwarding header, for namespaced headers, e.g. kparts/part.h
-             #this should not get installed, so we don't put it under EGH_MODULE_NAME
--            set(REGULAR_HEADER_NAME ${EGH_OUTPUT_DIR}/${lowercaseprefix}${lowercaseclassname}.h)
-+            set(REGULAR_HEADER_NAME ${EGH_OUTPUT_DIR}/local/${lowercaseprefix}${lowercaseclassname}.h)
-             if (NOT EXISTS ${REGULAR_HEADER_NAME})
-                 file(WRITE ${REGULAR_HEADER_NAME} "#include \"${_actualheader}\"\n")
-             endif()
