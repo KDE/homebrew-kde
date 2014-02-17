@@ -38,5 +38,3 @@ index 9ff2354..054e697 100644
  _set_fancy(HTML_INSTALL_DIR          "${SHARE_INSTALL_PREFIX}/doc/HTML"            "The HTML install dir for documentation")
  _set_fancy(ICON_INSTALL_DIR          "${SHARE_INSTALL_PREFIX}/icons"               "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
  _set_fancy(KCFG_INSTALL_DIR          "${SHARE_INSTALL_PREFIX}/config.kcfg"         "The install dir for kconfig files")
-diff --git a/modules/ECMGenerateHeaders.cmake b/modules/ECMGenerateHeaders.cmake
-index e98a22e..f296339 100644
