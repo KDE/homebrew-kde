@@ -9,6 +9,7 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
+  depends_on "haraldf/kf5/kf5-umbrella"
   depends_on "haraldf/kf5/kf5-kconfig"
   depends_on "haraldf/kf5/kf5-kdoctools"
   depends_on "haraldf/kf5/kf5-kguiaddons"

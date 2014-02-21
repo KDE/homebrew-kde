@@ -9,6 +9,7 @@ class Kf5Konsole < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
+  depends_on "haraldf/kf5/kf5-umbrella"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kconfig"
