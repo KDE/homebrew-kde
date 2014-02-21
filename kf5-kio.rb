@@ -20,6 +20,7 @@ class Kf5Kio < Formula
   depends_on "haraldf/kf5/kf5-kcompletion"
   depends_on "haraldf/kf5/kf5-kjobwidgets"
   depends_on "haraldf/kf5/kf5-knotifications"
+  depends_on "haraldf/kf5/kf5-kbookmarks"
 
   def patches
     DATA

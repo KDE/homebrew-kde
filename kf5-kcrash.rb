@@ -12,6 +12,7 @@ class Kf5Kcrash < Formula
   depends_on "qt5" => "with-d-bus"
 
   depends_on "haraldf/kf5/kf5-kwindowsystem"
+  depends_on "haraldf/kf5/kf5-kcoreaddons"
 
   def install
     args = std_cmake_args
