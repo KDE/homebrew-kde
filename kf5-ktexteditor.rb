@@ -18,6 +18,7 @@ class Kf5Ktexteditor < Formula
   depends_on "haraldf/kf5/kf5-kjobwidgets"
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kparts"
+  depends_on "haraldf/kf5/kf5-kprintutils"
 
   def install
     args = std_cmake_args
