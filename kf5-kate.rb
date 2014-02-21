@@ -1,6 +1,6 @@
 require "formula"
 
-class Kate < Formula
+class Kf5Kate < Formula
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kate.git', :branch => 'frameworks'

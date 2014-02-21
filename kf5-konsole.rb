@@ -1,6 +1,6 @@
 require "formula"
 
-class Konsole < Formula
+class Kf5Konsole < Formula
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/konsole.git', :branch => 'frameworks'
