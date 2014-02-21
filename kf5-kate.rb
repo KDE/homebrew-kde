@@ -21,6 +21,9 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-ktexteditor"
   depends_on "haraldf/kf5/kf5-kwindowsystem"
   depends_on "haraldf/kf5/kf5-kxmlgui"
+  depends_on "haraldf/kf5/kf5-kitemmodels"
+  depends_on "haraldf/kf5/kf5-knewstuff"
+  depends_on "haraldf/kf5/kf5-kwallet"
 
   def install
     args = std_cmake_args
