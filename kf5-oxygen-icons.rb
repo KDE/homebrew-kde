@@ -1,6 +1,6 @@
 require "formula"
 
-class OxygenIcons < Formula
+class Kf5OxygenIcons < Formula
   homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/4.12.0/src/oxygen-icons-4.12.0.tar.xz"
   sha1 "4bb0de73e52d237c906903c383c2e36cb2d5c143"
