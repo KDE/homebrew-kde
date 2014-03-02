@@ -19,6 +19,6 @@ class Kf5Kauth < Formula
     system "make", "install"
 
     mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-    ln_s "#{lib}/kde5/libexec/kauth-policy-gen.app", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    ln_sf "#{lib}/kde5/libexec/kauth-policy-gen.app", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
   end
 end
