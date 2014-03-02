@@ -8,6 +8,8 @@ class Kf5Knotifications < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
+  depends_on "haraldf/kf5/kf5-kwindowsystem"
+
   def install
     args = std_cmake_args
     args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
