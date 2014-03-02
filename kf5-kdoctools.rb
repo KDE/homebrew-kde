@@ -19,7 +19,7 @@ class Kf5Kdoctools < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix};\""
+    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix};#{Formula.factory('docbook').prefix}/docbook/\""
     args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formula.factory('docbook').prefix}/docbook/xml/4.2"
     args << "-DDocBookXSL_DIR:PATH=#{Formula.factory('docbook-xsl').prefix}/docbook-xsl"
 
@@ -45,3 +45,15 @@ index 7ae030e..59e53c2 100644
  set(KDOCTOOLS_CUSTOMIZATION_DIR "${KDOCTOOLS_DATA_INSTALL_DIR}/kdoctools5/customization")
  
  include("${CMAKE_CURRENT_LIST_DIR}/KF5DocToolsTargets.cmake")
+diff --git a/cmake/FindDocBookXML4.cmake b/cmake/FindDocBookXML4.cmake
+index eb4bfd8..bac1fbb 100644
+--- a/cmake/FindDocBookXML4.cmake
++++ b/cmake/FindDocBookXML4.cmake
+@@ -34,6 +34,7 @@ function (locate_version version found_dir)
+         share/xml/docbook/xml-dtd-${version}
+         share/sgml/docbook/xml-dtd-${version}
+         share/xml/docbook/${version}
++        opt/docbook/docbook/xml/${version}
+     )
+ 
+     find_path (searched_dir docbookx.dtd
