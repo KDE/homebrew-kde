@@ -5,6 +5,8 @@ class Kf5OxygenIcons < Formula
   url "http://download.kde.org/stable/4.12.0/src/oxygen-icons-4.12.0.tar.xz"
   sha1 "4bb0de73e52d237c906903c383c2e36cb2d5c143"
 
+  head 'svn://anonsvn.kde.org/home/kde/trunk/kdesupport/oxygen-icons'
+
   depends_on "cmake" => :build
 
   def install
