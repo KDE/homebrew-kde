@@ -19,19 +19,14 @@ brew install qt5 --with-d-bus
 
 Note: Read the D-Bus notes below if this is your first D-Bus installation.
 
-Now, the fun begins. Please note that all the kf5 formulas are HEAD only.
-This means that they come directly from git and might break at any moment.
-
-To use them, you need to specify --HEAD with every kf5 formula you install,
-including the dependencies. A sample command that installs a whole bunch
-of kf5 libraries:
+Now, the fun begins. You can either install individual frameworks via
 
 ```sh
-cd `brew --prefix`/Library/Taps/haraldf-kf5
-`echo -n "brew install --verbose " && find . -name "kf5-*.rb" -exec echo -n "--HEAD {} " \; && echo`
+brew install haraldf/kf5/kf5-karchive
 ```
 
-After that, your favorite KDE application should hopefully build :)
+or you can install them all with the install.sh provided in the 'tools'
+directory.
 
 **Uninstalltion**
 
@@ -39,6 +34,7 @@ To remove all KDE Frameworks 5 packages, run:
 
 ```sh
 brew uninstall `brew list -1 | grep '^kf5-'`
+rm -rf /Applications/KDE5
 ```
 
 **D-Bus first time users**
@@ -50,7 +46,7 @@ To verify D-Bus working with Qt:
 
 ```sh
 echo $DBUS_LAUNCHD_SESSION_BUS_SOCKET
-`brew --prefix`/Cellar/qt5/5.2.1/bin/qdbus
+`brew --prefix`/opt/qt5/bin/qdbus
 ```
 
 The first command should echo a valid path, e.g. */tmp/launch-NHyucl/unix_domain_listener*.
