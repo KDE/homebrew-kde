@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Karchive < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/karchive-4.97.0.tar.xz"
+  sha1 "6f5f95e3beb4f05600d8b892adf602f7651d6064"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/karchive-4.95.0.tar.xz"
-  sha1 ""
 
   head 'git://anongit.kde.org/karchive.git'
 
@@ -13,7 +13,7 @@ class Kf5Karchive < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args

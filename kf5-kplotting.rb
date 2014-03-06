@@ -1,18 +1,15 @@
 require "formula"
 
-class Kf5Kcrash < Formula
-  url "http://download.kde.org/unstable/frameworks/4.97.0/kcrash-4.97.0.tar.xz"
-  sha1 "dac7bcbfa6e4ffeaf633ffa43cc932418b90b154"
+class Kf5Kplotting < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kplotting-4.97.0.tar.xz"
+  sha1 "3f715abce02ce1d651d0e4a7d80a602232146eb9"
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kcrash.git'
+  head 'git://anongit.kde.org/kplotting.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
-
-  depends_on "haraldf/kf5/kf5-kwindowsystem"
-  depends_on "haraldf/kf5/kf5-kcoreaddons"
 
   def install
     args = std_cmake_args

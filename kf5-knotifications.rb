@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Knotifications < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/knotifications-4.97.0.tar.xz"
+  sha1 "7e735e4f75cf72e57e452d912d7ed03c44fccda3"
 
   head 'git://anongit.kde.org/knotifications.git'
 
@@ -9,10 +11,12 @@ class Kf5Knotifications < Formula
   depends_on "qt5" => "with-d-bus"
 
   depends_on "haraldf/kf5/kf5-kwindowsystem"
+  depends_on "haraldf/kf5/kf5-kiconthemes"
+  depends_on "haraldf/kf5/kf5-phonon"
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

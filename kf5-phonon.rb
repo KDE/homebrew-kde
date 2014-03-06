@@ -1,11 +1,9 @@
 require "formula"
 
-class Kf5Kitemmodels < Formula
-  url "http://download.kde.org/unstable/frameworks/4.97.0/kitemmodels-4.97.0.tar.xz"
-  sha1 "774f6d35c0358d6e0c94ae512e241dd1842d4076"
-  homepage "http://www.kde.org/"
-
-  head 'git://anongit.kde.org/kitemmodels.git'
+class Kf5Phonon < Formula
+  url "http://download.kde.org/stable/phonon/4.7.1/phonon-4.7.1.tar.xz"
+  sha1 "f1d3214a752d97028dc4ed910a832c1272951522"
+  head 'git://anongit.kde.org/phonon.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
@@ -13,7 +11,7 @@ class Kf5Kitemmodels < Formula
 
   def install
     args = std_cmake_args
-
+    args << "-DPHONON_BUILD_PHONON4QT5=ON"
 
     system "cmake", ".", *args
     system "make", "install"

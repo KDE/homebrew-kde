@@ -1,8 +1,9 @@
 require "formula"
 
 class Kf5Kauth < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kauth-4.97.0.tar.xz"
+  sha1 "81ca333bb18d39effae08b46871c2ca3139d2afa"
   homepage "http://www.kde.org/"
-#  url "http://download.kde.org/unstable/frameworks/4.95.0/kauth-4.95.0.tar.xz"
 
   head 'git://anongit.kde.org/kauth.git'
 
@@ -13,7 +14,7 @@ class Kf5Kauth < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

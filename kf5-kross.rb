@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kross < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kross-4.97.0.tar.xz"
+  sha1 "22149807a8fc3bfaf0c159f73ec158cf1a17d7f5"
 
   head 'git://anongit.kde.org/kross.git'
 
@@ -36,7 +38,7 @@ class Kf5Kross < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

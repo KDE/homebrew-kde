@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kxmlgui < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kxmlgui-4.97.0.tar.xz"
+  sha1 "75eee79ecfcfe91fe0dac5bf2e60ff924da982cc"
 
   head 'git://anongit.kde.org/kxmlgui.git'
 
@@ -20,7 +22,7 @@ class Kf5Kxmlgui < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

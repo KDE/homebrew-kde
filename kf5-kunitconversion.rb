@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kunitconversion < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kunitconversion-4.97.0.tar.xz"
+  sha1 "ea3b598812e735e0bcd5b91dd25e4e36b3659744"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kunitconversion.git'
@@ -14,7 +16,7 @@ class Kf5Kunitconversion < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

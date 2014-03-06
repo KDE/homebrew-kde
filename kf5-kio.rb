@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kio < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kio-4.97.0.tar.xz"
+  sha1 "84c40160cfbd855d0808911a6afd40e4efd2dc2f"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kio-4.95.0.tar.xz"
-  sha1 ""
 
   head 'git://anongit.kde.org/kio.git'
 
@@ -28,7 +28,6 @@ class Kf5Kio < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
@@ -38,10 +37,10 @@ end
 
 __END__
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 2106e1f..1b5fa82 100644
+index e39742e..bbb38cf 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -55,7 +55,7 @@ add_subdirectory(ioslaves)
+@@ -6,7 +6,7 @@ add_subdirectory(ioslaves)
  add_subdirectory(kssld)
  add_subdirectory(kioslave)
  
@@ -67,3 +66,26 @@ index cc69957..3d568f8 100644
  // This is the *BSD branch
  #if HAVE_SYS_MOUNT_H
  #if HAVE_SYS_TYPES_H
+diff --git a/tests/udsentrybenchmark.cpp b/tests/udsentrybenchmark.cpp
+index 75fc758..99caf25 100644
+--- a/tests/udsentrybenchmark.cpp
++++ b/tests/udsentrybenchmark.cpp
+@@ -243,7 +243,9 @@ void UDSEntryBenchmark::saveLargeEntries()
+     }
+ }
+ 
+-bool operator==(const KIO::UDSEntry &a, const KIO::UDSEntry &b)
++namespace KIO
++{
++bool operator==(const UDSEntry &a, const UDSEntry &b)
+ {
+     if (a.count() != b.count()) {
+         return false;
+@@ -268,6 +270,7 @@ bool operator==(const KIO::UDSEntry &a, const KIO::UDSEntry &b)
+ 
+     return true;
+ }
++}
+ 
+ void UDSEntryBenchmark::loadSmallEntries()
+ {

@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kjs < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kjs-4.97.0.tar.xz"
+  sha1 "be8dc60d722f3ff0be944733647921063112130f"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kjs-4.95.0.tar.xz"
-  sha1 ""
 
   head 'git://anongit.kde.org/kjs.git'
 
@@ -18,7 +18,7 @@ class Kf5Kjs < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args

@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Knewstuff < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/knewstuff-4.97.0.tar.xz"
+  sha1 "0f29ae1a5d8a6fb483b1e454c39c80f5666fb2de"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knewstuff.git'
@@ -37,7 +39,7 @@ class Kf5Knewstuff < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

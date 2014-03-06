@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kemoticons < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kemoticons-4.97.0.tar.xz"
+  sha1 "7b50c1e0834ab9bca7d8dc487d6b5991b8049582"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kemoticons.git'
@@ -19,7 +21,7 @@ class Kf5Kemoticons < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

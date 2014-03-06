@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kiconthemes < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kiconthemes-4.97.0.tar.xz"
+  sha1 "7802f191a909a5ae6789b34be71d1932c6ede601"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kiconthemes-4.95.0.tar.xz"
-  sha1 ""
 
   head 'git://anongit.kde.org/kiconthemes.git'
 
@@ -16,7 +16,7 @@ class Kf5Kiconthemes < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args

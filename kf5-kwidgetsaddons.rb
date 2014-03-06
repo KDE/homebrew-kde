@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kwidgetsaddons < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kwidgetsaddons-4.97.0.tar.xz"
+  sha1 "23eeba7df209747c1a8c19ed5c0d7257ac4853c1"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kwidgetsaddons-4.95.0.tar.xz"
-  sha1 "6c8448d82216941a4fc458d99f350fa1056a1c71"
 
   head 'git://anongit.kde.org/kwidgetsaddons.git'
 
@@ -13,7 +13,7 @@ class Kf5Kwidgetsaddons < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
 
     system "cmake", ".", *args
     system "make", "install"

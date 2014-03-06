@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kde4support < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kde4support-4.97.0.tar.xz"
+  sha1 "59b172b2856626aad927ca536541e951d58758fe"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kde4support.git'
@@ -33,7 +35,7 @@ class Kf5Kde4support < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args

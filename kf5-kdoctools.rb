@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kdoctools-4.97.0.tar.xz"
+  sha1 "f13163daf56d13bf1d66bbde8259002e3d42bf38"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/unstable/frameworks/4.95.0/kdoctools-4.95.0.tar.xz"
-  sha1 ""
 
   head 'git://anongit.kde.org/kdoctools.git'
 
@@ -19,7 +19,7 @@ class Kf5Kdoctools < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix};#{Formula.factory('docbook').prefix}/docbook/\""
+
     args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formula.factory('docbook').prefix}/docbook/xml/4.2"
     args << "-DDocBookXSL_DIR:PATH=#{Formula.factory('docbook-xsl').prefix}/docbook-xsl"
 

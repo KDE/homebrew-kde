@@ -1,6 +1,8 @@
 require "formula"
 
 class Kf5Kparts < Formula
+  url "http://download.kde.org/unstable/frameworks/4.97.0/kparts-4.97.0.tar.xz"
+  sha1 "053c3132552358a6355eb189ca106d371b14c4e0"
 
   head 'git://anongit.kde.org/kparts.git'
 
@@ -36,7 +38,7 @@ class Kf5Kparts < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_PREFIX_PATH=\"#{Formula.factory('qt5').opt_prefix};#{Formula.factory('kf5-extra-cmake-modules').opt_prefix}\""
+
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
