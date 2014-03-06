@@ -28,7 +28,7 @@ brew install haraldf/kf5/kf5-karchive
 or you can install them all with the install.sh shell script provided in the
 *tools* directory.
 
-**Uninstalltion**
+**Uninstallation**
 
 To remove all KDE Frameworks 5 packages, run:
 
