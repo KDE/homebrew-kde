@@ -1,64 +1,62 @@
 #!/bin/sh -e
 
 # Phonon is not really part of KF5, install first
-pre="kf5-extra-cmake-modules.rb
-     kf5-phonon.rb "
+pre="haraldf/kf5/kf5-extra-cmake-modules
+     haraldf/kf5/kf5-phonon "
 
 # kf5-threadweaver
 
 tier1="
-    kf5-kjs.rb
-    kf5-karchive.rb
-    kf5-solid.rb
-    kf5-kwidgetsaddons.rb
-    kf5-kcoreaddons.rb
-    kf5-kcodecs.rb
-    kf5-kconfig.rb
-    kf5-kitemviews.rb
-    kf5-umbrella.rb
-    kf5-kguiaddons.rb
-    kf5-kwindowsystem.rb
-    kf5-sonnet.rb
-    kf5-kitemmodels.rb
-    kf5-kdbusaddons.rb
-    kf5-kimageformats.rb
-    kf5-kplotting.rb
-    kf5-kidletime.rb"
+    haraldf/kf5/kf5-kjs
+    haraldf/kf5/kf5-karchive
+    haraldf/kf5/kf5-solid
+    haraldf/kf5/kf5-kwidgetsaddons
+    haraldf/kf5/kf5-kcoreaddons
+    haraldf/kf5/kf5-kcodecs
+    haraldf/kf5/kf5-kconfig
+    haraldf/kf5/kf5-kitemviews
+    haraldf/kf5/kf5-umbrella
+    haraldf/kf5/kf5-kguiaddons
+    haraldf/kf5/kf5-kwindowsystem
+    haraldf/kf5/kf5-sonnet
+    haraldf/kf5/kf5-kitemmodels
+    haraldf/kf5/kf5-kdbusaddons
+    haraldf/kf5/kf5-kimageformats
+    haraldf/kf5/kf5-kplotting
+    haraldf/kf5/kf5-kidletime"
 
 tier2="
-    kf5-kcompletion.rb
-    kf5-kjobwidgets.rb
-    kf5-kauth.rb
-    kf5-kcrash.rb
-    kf5-kdoctools.rb
-    kf5-ki18n.rb
-    kf5-kservice.rb
-    kf5-kwallet.rb
-    kf5-knotifications.rb
-    kf5-kiconthemes.rb"
+    haraldf/kf5/kf5-kcompletion
+    haraldf/kf5/kf5-kjobwidgets
+    haraldf/kf5/kf5-kauth
+    haraldf/kf5/kf5-kcrash
+    haraldf/kf5/kf5-kdoctools
+    haraldf/kf5/kf5-ki18n
+    haraldf/kf5/kf5-kservice
+    haraldf/kf5/kf5-kwallet
+    haraldf/kf5/kf5-knotifications
+    haraldf/kf5/kf5-kiconthemes"
 
-
-#    kf5-kprintutils.rb ### deleted
-#    kf5-ktexteditor.rb ### KF 5.1
+#    haraldf/kf5/kf5-ktexteditor ### KF 5.1
 
 others="
-    kf5-attica.rb
-    kf5-kbookmarks.rb
-    kf5-kconfigwidgets.rb
-    kf5-kde4support.rb
-    kf5-kdesignerplugin.rb
-    kf5-kemoticons.rb
-    kf5-kglobalaccel.rb
-    kf5-kinit.rb
-    kf5-kio.rb
-    kf5-knewstuff.rb
-    kf5-knotifyconfig.rb
-    kf5-kparts.rb
-    kf5-kpty.rb
-    kf5-kross.rb
-    kf5-ktextwidgets.rb
-    kf5-kunitconversion.rb
-    kf5-kxmlgui.rb"
+    haraldf/kf5/kf5-attica
+    haraldf/kf5/kf5-kbookmarks
+    haraldf/kf5/kf5-kconfigwidgets
+    haraldf/kf5/kf5-kde4support
+    haraldf/kf5/kf5-kdesignerplugin
+    haraldf/kf5/kf5-kemoticons
+    haraldf/kf5/kf5-kglobalaccel
+    haraldf/kf5/kf5-kinit
+    haraldf/kf5/kf5-kio
+    haraldf/kf5/kf5-knewstuff
+    haraldf/kf5/kf5-knotifyconfig
+    haraldf/kf5/kf5-kparts
+    haraldf/kf5/kf5-kpty
+    haraldf/kf5/kf5-kross
+    haraldf/kf5/kf5-ktextwidgets
+    haraldf/kf5/kf5-kunitconversion
+    haraldf/kf5/kf5-kxmlgui"
 
 brew install --verbose $pre
 
