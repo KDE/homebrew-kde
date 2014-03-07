@@ -45,6 +45,10 @@ class Kf5Konsole < Formula
   depends_on "haraldf/kf5/kf5-kparts"
   depends_on "haraldf/kf5/kf5-kross"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
 
@@ -54,3 +58,17 @@ class Kf5Konsole < Formula
     system "make", "install"
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a3d9a1c..793e586 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -41,6 +41,6 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+ add_subdirectory( src )
+ add_subdirectory( data )
+ add_subdirectory( desktop )
+-add_subdirectory( doc/manual )
++#add_subdirectory( doc/manual )
+ 
+ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
