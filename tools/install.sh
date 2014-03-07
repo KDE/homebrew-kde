@@ -33,30 +33,30 @@ tier2="
     haraldf/kf5/kf5-kdoctools
     haraldf/kf5/kf5-ki18n
     haraldf/kf5/kf5-kservice
-    haraldf/kf5/kf5-kwallet
+    haraldf/kf5/kf5-kconfigwidgets
+    haraldf/kf5/kf5-kiconthemes
     haraldf/kf5/kf5-knotifications
-    haraldf/kf5/kf5-kiconthemes"
+    haraldf/kf5/kf5-kwallet"
 
 #    haraldf/kf5/kf5-ktexteditor ### KF 5.1
 
 others="
     haraldf/kf5/kf5-attica
+    haraldf/kf5/kf5-kglobalaccel
+    haraldf/kf5/kf5-ktextwidgets
+    haraldf/kf5/kf5-kxmlgui
     haraldf/kf5/kf5-kbookmarks
-    haraldf/kf5/kf5-kconfigwidgets
-    haraldf/kf5/kf5-kde4support
     haraldf/kf5/kf5-kdesignerplugin
     haraldf/kf5/kf5-kemoticons
-    haraldf/kf5/kf5-kglobalaccel
-    haraldf/kf5/kf5-kinit
     haraldf/kf5/kf5-kio
+    haraldf/kf5/kf5-kinit
     haraldf/kf5/kf5-knewstuff
     haraldf/kf5/kf5-knotifyconfig
     haraldf/kf5/kf5-kparts
     haraldf/kf5/kf5-kpty
     haraldf/kf5/kf5-kross
-    haraldf/kf5/kf5-ktextwidgets
     haraldf/kf5/kf5-kunitconversion
-    haraldf/kf5/kf5-kxmlgui"
+    haraldf/kf5/kf5-kde4support"
 
 brew install --verbose $pre
 
