@@ -65,11 +65,12 @@ my %frameworks = (
 my $upstream_url = "http://download.kde.org/unstable/frameworks/4.97.0/";
 my $upstream_suffix = "-4.97.0.tar.xz";
 my $brew_prefix = `brew --cache`;
-chomp($brew_prefix);
 
 if ($? != 0) {
     die "Unable to call brew -cache: $!";
 }
+
+chomp($brew_prefix);
 
 for my $package (keys %frameworks) {
     my $upstream = $frameworks{$package};
