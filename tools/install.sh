@@ -58,10 +58,10 @@ others="
     haraldf/kf5/kf5-kunitconversion
     haraldf/kf5/kf5-kde4support"
 
-brew install --verbose $pre
+brew install "$@" $pre
 
-brew install --verbose $tier1
+brew install "$@" $tier1
 
-brew install --verbose $tier2
+brew install "$@" $tier2
 
-brew install --verbose $others
+brew install "$@" $others
