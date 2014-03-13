@@ -12,7 +12,9 @@ class Kf5Kidletime < Formula
   depends_on "qt5" => "with-d-bus"
 
   def patches
-    DATA
+    if not build.head?
+      DATA
+    end
   end
 
   def install
