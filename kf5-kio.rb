@@ -23,12 +23,16 @@ class Kf5Kio < Formula
   depends_on "haraldf/kf5/kf5-kbookmarks"
 
   def patches
-    DATA
+    if not build.head?
+      DATA
+    end
   end
 
   def install
     args = std_cmake_args
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
+    args << "-DCMAKE_C_FLAGS='-D_DARWIN_C_SOURCE'"
+    args << "-DCMAKE_REQUIRED_DEFINITIONS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
     system "make", "install"
