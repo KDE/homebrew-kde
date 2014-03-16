@@ -59,7 +59,8 @@ my %frameworks = (
     'ktexteditor' => '',
     'ktextwidgets' => '',
     'kunitconversion' => '',
-    'kxmlgui' => ''
+    'kxmlgui' => '',
+    'kcmutils' => ''
 );
 
 my $upstream_url = "http://download.kde.org/unstable/frameworks/4.97.0/";
