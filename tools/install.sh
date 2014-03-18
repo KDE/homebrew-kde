@@ -56,8 +56,7 @@ others="
     haraldf/kf5/kf5-kpty
     haraldf/kf5/kf5-kross
     haraldf/kf5/kf5-kunitconversion
-    haraldf/kf5/kf5-kde4support
-    haraldf/kf5/kf5-frameworkintegration"
+    haraldf/kf5/kf5-kde4support"
 
 for formula in "$pre $tier1 $tier2 $others" ; do
     brew install "$@" $formula
