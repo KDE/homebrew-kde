@@ -18,5 +18,8 @@ class Kf5Kconfig < Formula
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
+
+    mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+    ln_sf "#{lib}/kde5/libexec/kconf_update.app", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
   end
 end
