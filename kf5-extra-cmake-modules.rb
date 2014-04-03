@@ -18,6 +18,7 @@ class Kf5ExtraCmakeModules < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
+    prefix.install "install_manifest.txt"
   end
 end
 

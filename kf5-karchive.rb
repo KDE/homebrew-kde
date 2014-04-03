@@ -18,5 +18,6 @@ class Kf5Karchive < Formula
 
     system "cmake", ".", *args
     system "make", "install"
+    prefix.install "install_manifest.txt"
   end
 end

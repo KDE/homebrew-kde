@@ -40,5 +40,6 @@ class Kf5Kde4support < Formula
 
     system "cmake", ".", *args
     system "make", "install"
+    prefix.install "install_manifest.txt"
   end
 end
