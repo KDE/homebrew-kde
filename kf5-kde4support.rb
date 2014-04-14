@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kde4support < Formula
-  url "http://download.kde.org/unstable/frameworks/4.97.0/kde4support-4.97.0.tar.xz"
-  sha1 "59b172b2856626aad927ca536541e951d58758fe"
+  url "http://download.kde.org/unstable/frameworks/4.98.0/kde4support-4.98.0.tar.xz"
+  sha1 "20923eb89c8d64ce455f8b0132be34eb42fbc38a"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kde4support.git'
@@ -33,6 +33,12 @@ class Kf5Kde4support < Formula
   depends_on "haraldf/kf5/kf5-kdesignerplugin"
   depends_on "haraldf/kf5/kf5-kglobalaccel"
 
+  def patches
+    if not build.head?
+      DATA
+    end
+  end
+
   def install
     args = std_cmake_args
 
@@ -43,3 +49,26 @@ class Kf5Kde4support < Formula
     prefix.install "install_manifest.txt"
   end
 end
+
+__END__
+diff --git a/src/kdecore/kgenericfactory.h b/src/kdecore/kgenericfactory.h
+index 0994f54..13f7fba 100644
+--- a/src/kdecore/kgenericfactory.h
++++ b/src/kdecore/kgenericfactory.h
+@@ -36,14 +36,14 @@ class KGenericFactoryBase : public KPluginFactory
+ {
+ public:
+     explicit KGenericFactoryBase(const char *componentName)
+-        : KPluginFactory(componentName)
++        : KPluginFactory()
+     {
+         s_self = this;
+         s_createComponentDataCalled = false;
+     }
+ 
+     explicit KGenericFactoryBase(const KAboutData *data)
+-        : KPluginFactory(data->componentName().toUtf8().constData())
++        : KPluginFactory()
+     {
+         KAboutData::registerPluginData(*data);
+         s_self = this;

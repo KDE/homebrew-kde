@@ -53,7 +53,6 @@ my %frameworks = (
     'knewstuff' => '',
     'knotifyconfig' => '',
     'kparts' => '',
-    'kprintutils' => '',
     'kpty' => '',
     'kross' => '',
     'ktexteditor' => '',
@@ -64,8 +63,8 @@ my %frameworks = (
     'kdeclarative' => ''
 );
 
-my $upstream_url = "http://download.kde.org/unstable/frameworks/4.97.0/";
-my $upstream_suffix = "-4.97.0.tar.xz";
+my $upstream_url = "http://download.kde.org/unstable/frameworks/4.98.0/";
+my $upstream_suffix = "-4.98.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

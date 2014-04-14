@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Umbrella < Formula
-  url "http://download.kde.org/unstable/frameworks/4.97.0/kf5umbrella-4.97.0.tar.xz"
-  sha1 "3f530200d1808a86540fffd8695152cdedf93a63"
+  url "http://download.kde.org/unstable/frameworks/4.98.0/kf5umbrella-4.98.0.tar.xz"
+  sha1 "9cb4ecac62b7539b80ee95f89d70b4e50a565cef"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kf5umbrella.git'
