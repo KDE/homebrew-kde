@@ -61,6 +61,7 @@ my %frameworks = (
     'kxmlgui' => '',
     'kcmutils' => '',
     'kdeclarative' => ''
+    'kdesu' => ''
 );
 
 my $upstream_url = "http://download.kde.org/unstable/frameworks/4.98.0/";

@@ -36,9 +36,9 @@ tier2="
     haraldf/kf5/kf5-kconfigwidgets
     haraldf/kf5/kf5-kiconthemes
     haraldf/kf5/kf5-knotifications
-    haraldf/kf5/kf5-kwallet"
+    haraldf/kf5/kf5-kwallet
+    haraldf/kf5/kf5-ktexteditor"
 
-#    haraldf/kf5/kf5-ktexteditor ### KF 5.1
 
 others="
     haraldf/kf5/kf5-attica
@@ -58,7 +58,8 @@ others="
     haraldf/kf5/kf5-kunitconversion
     haraldf/kf5/kf5-kde4support
     haraldf/kf5/kf5-kdeclarative
-    haraldf/kf5/kf5-kcmutils"
+    haraldf/kf5/kf5-kcmutils
+    haraldf/kf5/kf5-kdesu"
 
 for formula in "$pre $tier1 $tier2 $others" ; do
     brew install "$@" $formula
