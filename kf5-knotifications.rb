@@ -3,6 +3,7 @@ require "formula"
 class Kf5Knotifications < Formula
   url "http://download.kde.org/unstable/frameworks/4.98.0/knotifications-4.98.0.tar.xz"
   sha1 "d145f2f5307b8e0231b8efbbf72906bd8c882f5f"
+  homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knotifications.git'
 

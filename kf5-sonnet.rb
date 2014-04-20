@@ -3,6 +3,7 @@ require "formula"
 class Kf5Sonnet < Formula
   url "http://download.kde.org/unstable/frameworks/4.98.0/sonnet-4.98.0.tar.xz"
   sha1 "373f6ec2edbf66fc987fdfda44f011d2d4069404"
+  homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/sonnet.git'
 

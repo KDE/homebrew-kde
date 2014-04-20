@@ -3,6 +3,7 @@ require "formula"
 class Kf5Kross < Formula
   url "http://download.kde.org/unstable/frameworks/4.98.0/kross-4.98.0.tar.xz"
   sha1 "18ae5ecd91373b00c5145b5018656d05ab23c793"
+  homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kross.git'
 

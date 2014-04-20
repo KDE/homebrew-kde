@@ -3,6 +3,7 @@ require "formula"
 class Kf5Kcompletion < Formula
   url "http://download.kde.org/unstable/frameworks/4.98.0/kcompletion-4.98.0.tar.xz"
   sha1 "11500a132a78d21aa075f3eb72e32840c71358d6"
+  homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcompletion.git'
 

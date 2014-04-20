@@ -3,6 +3,7 @@ require "formula"
 class Kf5Attica < Formula
   url "http://download.kde.org/unstable/frameworks/4.98.0/attica-4.98.0.tar.xz"
   sha1 "3dca0588c76a6ff129cc2dd15e8aebdd278c51ea"
+  homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/attica.git'
 
