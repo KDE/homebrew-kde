@@ -20,6 +20,10 @@ class Kf5Kinit < Formula
 
     system "cmake", ".", *args
     system "make", "install"
+
+    mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+    ln_sf "#{lib}/kde5/libexec/klauncher", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+
     prefix.install "install_manifest.txt"
   end
 end
