@@ -30,7 +30,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-`brew --prefix`/Library/Taps/haraldf-kf5/tools/install.sh
+`brew --prefix`/Library/Taps/haraldf/homebrew-kf5/tools/install.sh
 ```
 
 Note that *install.sh* passes all parameters on to brew, so you can specify
@@ -59,7 +59,7 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Library/Taps/haraldf-kf5/tools/install.sh --HEAD
+`brew --prefix`/Library/Taps/haraldf/homebrew-kf5/tools/install.sh --HEAD
 ```
 
 **D-Bus first time users**
