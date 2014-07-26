@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kded < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kded-4.98.0.tar.xz"
-  sha1 "549cb3125844cfa0d1361c67629d2baf2ce20595"
+  url "http://download.kde.org/stable/frameworks/5.0.0/kded-5.0.0.tar.xz"
+  sha1 "abbe7d065fd76160937d4b406d81d2f4fd3ef2b4"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kded.git'
@@ -10,6 +10,7 @@ class Kf5Kded < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
+  depends_on "gettext" => :build
 
   patch :DATA
 

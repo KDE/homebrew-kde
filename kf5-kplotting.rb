@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kplotting < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kplotting-4.98.0.tar.xz"
-  sha1 "cc25d0eb249ad1a2cf6377211fca7385a31b988c"
+  url "http://download.kde.org/stable/frameworks/5.0.0/kplotting-5.0.0.tar.xz"
+  sha1 "f2764d0e488b89315352ad1de18540da01ca9fc2"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kplotting.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kwallet < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kwallet-4.98.0.tar.xz"
-  sha1 "29d83a0caf3896ab71c58019753f877a1043cf04"
+  url "http://download.kde.org/stable/frameworks/5.0.0/kwallet-5.0.0.tar.xz"
+  sha1 "d4797aa077b09fa48a148fd0006e3a5642218b20"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kwallet.git'
@@ -28,10 +28,6 @@ class Kf5Kwallet < Formula
   depends_on "haraldf/kf5/kf5-kiconthemes"
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
 
-  def patches
-    DATA
-  end
-
   def install
     args = std_cmake_args
 
@@ -41,28 +37,3 @@ class Kf5Kwallet < Formula
     prefix.install "install_manifest.txt"
   end
 end
-
-__END__
-diff --git a/src/api/KWallet/CMakeLists.txt b/src/api/KWallet/CMakeLists.txt
-index a55a8b8..2458848 100644
---- a/src/api/KWallet/CMakeLists.txt
-+++ b/src/api/KWallet/CMakeLists.txt
-@@ -18,7 +18,7 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KWALLET
-                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5WalletConfigVersion.cmake")
- 
- if (APPLE)
--   find_package(Carbon REQUIRED)
-+#   find_package(Carbon REQUIRED)
- endif ()
- 
- remove_definitions(-DQT_NO_CAST_TO_ASCII)
-@@ -86,7 +86,8 @@ add_library(KF5::Wallet ALIAS KF5Wallet)
- target_include_directories(KF5Wallet INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KWallet>")
- 
- target_link_libraries(KF5Wallet PUBLIC  Qt5::Widgets
--                                PRIVATE KF5::WindowSystem # KWindowSystem::allowExternalProcessWindowActivation
-+                                PRIVATE Qt5::DBus
-+					KF5::WindowSystem # KWindowSystem::allowExternalProcessWindowActivation
-                                         KF5::ConfigCore   # used to store the wallet to be used
- )
- 

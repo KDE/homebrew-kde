@@ -19,10 +19,10 @@ my %frameworks = (
     'kimageformats' => '',
     'kidletime' => '',
     'kcoreaddons' => '',
-    'umbrella' => 'kf5umbrella',
+#    'umbrella' => 'kf5umbrella',
     'solid' => '',
     'karchive' => '',
-    'kjs' => '',
+    'kjs' => 'portingAids/kjs',
     'kwindowsystem' => '',
     'kplotting' => '',
     'threadweaver' => '',
@@ -43,7 +43,7 @@ my %frameworks = (
     'attica' => '',
     'kbookmarks' => '',
     'kconfigwidgets' => '',
-    'kde4support' => '',
+    'kdelibs4support' => 'portingAids/kdelibs4support',
     'kdesignerplugin' => '',
     'kemoticons' => '',
     'kglobalaccel' => '',
@@ -54,7 +54,7 @@ my %frameworks = (
     'knotifyconfig' => '',
     'kparts' => '',
     'kpty' => '',
-    'kross' => '',
+    'kross' => 'portingAids/kross',
     'ktexteditor' => '',
     'ktextwidgets' => '',
     'kunitconversion' => '',
@@ -65,8 +65,10 @@ my %frameworks = (
     'kded' => ''
 );
 
-my $upstream_url = "http://download.kde.org/unstable/frameworks/4.98.0/";
-my $upstream_suffix = "-4.98.0.tar.xz";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.0.0/";
+
+my $extra_cmake_modules_suffix = "-1.0.0.tar.xz";
+my $upstream_suffix = "-5.0.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {
@@ -75,7 +77,10 @@ if ($? != 0) {
 
 chomp($brew_prefix);
 
-for my $package (keys %frameworks) {
+sub updatePackage($) {
+
+    my $package = $_[0];
+
     my $upstream = $frameworks{$package};
     if ($upstream eq '') {
         $upstream = $package;
@@ -86,7 +91,7 @@ for my $package (keys %frameworks) {
 
     if (! -e $formula) {
         print("Formula $formula does not exist!\n");
-        next;
+        return;
     }
 
     my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
@@ -138,4 +143,8 @@ for my $package (keys %frameworks) {
     move("$formula.new", "$formula") or die $!;
 
     print "Updated $formula\n";
+}
+
+for my $package (keys %frameworks) {
+    updatePackage($package);
 }

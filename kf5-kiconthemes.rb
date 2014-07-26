@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kiconthemes < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kiconthemes-4.98.0.tar.xz"
-  sha1 "3930625974723b7f72f61e24f92c3b5e89ef947c"
+  url "http://download.kde.org/stable/frameworks/5.0.0/kiconthemes-5.0.0.tar.xz"
+  sha1 "dbbc687727043f232275fa5d66d6ab742133dad9"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kiconthemes.git'

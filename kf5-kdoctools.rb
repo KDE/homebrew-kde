@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kdoctools-4.98.0.tar.xz"
-  sha1 "cb969b9b074922609d39bdded99dcab963e45c1a"
+  url "http://download.kde.org/stable/frameworks/5.0.0/kdoctools-5.0.0.tar.xz"
+  sha1 "580a7da6a730eb46229c120bb753b8e6112c71e3"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
@@ -30,24 +30,8 @@ class Kf5Kdoctools < Formula
 end
 
 __END__
-diff --git a/KF5DocToolsConfig.cmake.in b/KF5DocToolsConfig.cmake.in
-index 7ae030e..59e53c2 100644
---- a/KF5DocToolsConfig.cmake.in
-+++ b/KF5DocToolsConfig.cmake.in
-@@ -1,6 +1,10 @@
- @PACKAGE_INIT@
- 
--set(KDOCTOOLS_DATA_INSTALL_DIR "${PACKAGE_PREFIX_DIR}/@DATA_INSTALL_DIR@")
-+if (APPLE)
-+    set(KDOCTOOLS_DATA_INSTALL_DIR "@DATA_INSTALL_DIR@")
-+else()
-+    set(KDOCTOOLS_DATA_INSTALL_DIR "${PACKAGE_PREFIX_DIR}/@DATA_INSTALL_DIR@")
-+endif()
- set(KDOCTOOLS_CUSTOMIZATION_DIR "${KDOCTOOLS_DATA_INSTALL_DIR}/kdoctools5/customization")
- 
- include("${CMAKE_CURRENT_LIST_DIR}/KF5DocToolsTargets.cmake")
 diff --git a/cmake/FindDocBookXML4.cmake b/cmake/FindDocBookXML4.cmake
-index eb4bfd8..bac1fbb 100644
+index 415745f..4d7f089 100644
 --- a/cmake/FindDocBookXML4.cmake
 +++ b/cmake/FindDocBookXML4.cmake
 @@ -34,6 +34,7 @@ function (locate_version version found_dir)
@@ -58,3 +42,29 @@ index eb4bfd8..bac1fbb 100644
      )
  
      find_path (searched_dir docbookx.dtd
+diff --git a/src/docbookl10nhelper.cpp b/src/docbookl10nhelper.cpp
+index 6eecb37..fc98f74 100644
+--- a/src/docbookl10nhelper.cpp
++++ b/src/docbookl10nhelper.cpp
+@@ -206,7 +206,7 @@ int main(int argc, char **argv)
+     QStringList dirFileFilters;
+     dirFileFilters << QStringLiteral("*.xml");
+     QStringList customLangFiles = outDir.entryList(dirFileFilters,
+-                                  QDir::Files | QDir::NoSymLinks, QDir::Name);
++                                  QDir::Files, QDir::Name);
+     /* the following two calls to removeOne should not be needed, as
+      * the customization directory from the sources should not contain
+      * those files
+diff --git a/src/xslt.cpp b/src/xslt.cpp
+index 3c81a17..303ca32 100644
+--- a/src/xslt.cpp
++++ b/src/xslt.cpp
+@@ -423,7 +423,7 @@ QStringList getKDocToolsCatalogs()
+         QDir customizationDir = QDir(customizationDirName);
+         const QStringList catalogFileFilters(QStringLiteral("catalog*.xml"));
+         const QFileInfoList catalogInfoFiles = customizationDir.entryInfoList(catalogFileFilters,
+-                                               QDir::Files | QDir::NoSymLinks, QDir::Name);
++                                               QDir::Files, QDir::Name);
+         foreach (const QFileInfo &fileInfo, catalogInfoFiles) {
+             const QString fullFileName = QUrl::fromLocalFile(fileInfo.absoluteFilePath()).toEncoded();
+             if (fileInfo.fileName() == QStringLiteral("catalog.xml")) {

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Knotifyconfig < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/knotifyconfig-4.98.0.tar.xz"
-  sha1 "f24ad7bfe22606675b39786461fb0bd43093528c"
+  url "http://download.kde.org/stable/frameworks/5.0.0/knotifyconfig-5.0.0.tar.xz"
+  sha1 "5a3d72470313f0cea61f55faaa9905d78c02d3ba"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knotifyconfig.git'

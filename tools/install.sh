@@ -15,7 +15,6 @@ tier1="
     haraldf/kf5/kf5-kcodecs
     haraldf/kf5/kf5-kconfig
     haraldf/kf5/kf5-kitemviews
-    haraldf/kf5/kf5-umbrella
     haraldf/kf5/kf5-kguiaddons
     haraldf/kf5/kf5-kwindowsystem
     haraldf/kf5/kf5-sonnet
@@ -56,7 +55,7 @@ others="
     haraldf/kf5/kf5-kpty
     haraldf/kf5/kf5-kross
     haraldf/kf5/kf5-kunitconversion
-    haraldf/kf5/kf5-kde4support
+    haraldf/kf5/kf5-kdelibs4support
     haraldf/kf5/kf5-kdeclarative
     haraldf/kf5/kf5-kcmutils
     haraldf/kf5/kf5-kdesu

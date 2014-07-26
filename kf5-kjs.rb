@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kjs < Formula
-  url "http://download.kde.org/unstable/frameworks/4.98.0/kjs-4.98.0.tar.xz"
-  sha1 "caaefe88e968ee2793a34487aeaa296be0574f08"
+  url "http://download.kde.org/stable/frameworks/5.0.0/portingAids/kjs-5.0.0.tar.xz"
+  sha1 "586273fa3b81045cabd5dddaa1d2c5061511e231"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kjs.git'
@@ -12,9 +12,9 @@ class Kf5Kjs < Formula
   depends_on "qt5" => "with-d-bus"
   depends_on "pcre"
 
-  def patches
-    DATA
-  end
+#  def patches
+#    DATA
+#  end
 
   def install
     args = std_cmake_args
