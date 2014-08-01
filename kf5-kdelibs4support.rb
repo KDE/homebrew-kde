@@ -5,7 +5,7 @@ class Kf5Kdelibs4support < Formula
   sha1 "57ec67d221318eaabae4840652b50eed1d6c0cb0"
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kde4support.git'
+  head 'git://anongit.kde.org/kdelibs4support.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

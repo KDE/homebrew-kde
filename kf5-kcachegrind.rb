@@ -12,7 +12,7 @@ class Kf5Kcachegrind < Formula
   depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "haraldf/kf5/kf5-kxmlgui"
-  depends_on "haraldf/kf5/kf5-kde4support"
+  depends_on "haraldf/kf5/kf5-kdelibs4support.rb"
 
   def install
     args = std_cmake_args
