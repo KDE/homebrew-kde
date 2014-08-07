@@ -65,10 +65,10 @@ my %frameworks = (
     'kded' => ''
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.0.0/";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.1.0/";
 
-my $extra_cmake_modules_suffix = "-1.0.0.tar.xz";
-my $upstream_suffix = "-5.0.0.tar.xz";
+my $extra_cmake_modules_suffix = "-1.1.0.tar.xz";
+my $upstream_suffix = "-5.1.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

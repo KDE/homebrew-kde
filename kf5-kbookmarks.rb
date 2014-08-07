@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kbookmarks < Formula
-  url "http://download.kde.org/stable/frameworks/5.0.0/kbookmarks-5.0.0.tar.xz"
-  sha1 "2a2ff19618f846b77c62c7292a17e0d152dc0f41"
+  url "http://download.kde.org/stable/frameworks/5.1.0/kbookmarks-5.1.0.tar.xz"
+  sha1 "14c541913e1647ad3934aa10006924d6f1ef873d"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kbookmarks.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kemoticons < Formula
-  url "http://download.kde.org/stable/frameworks/5.0.0/kemoticons-5.0.0.tar.xz"
-  sha1 "c3dda38c164b9e123123412482229500884387d2"
+  url "http://download.kde.org/stable/frameworks/5.1.0/kemoticons-5.1.0.tar.xz"
+  sha1 "50c1b1b2127db108a83f046ef63204c67a1e1936"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kemoticons.git'

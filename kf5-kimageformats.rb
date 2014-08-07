@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kimageformats < Formula
-  url "http://download.kde.org/stable/frameworks/5.0.0/kimageformats-5.0.0.tar.xz"
-  sha1 "3d21d6fd1d100fb2a6b25e7fa7c6092ae40cc536"
+  url "http://download.kde.org/stable/frameworks/5.1.0/kimageformats-5.1.0.tar.xz"
+  sha1 "2e7a531fc08fc63ee652f5f52addf384105587a9"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kimageformats.git'
