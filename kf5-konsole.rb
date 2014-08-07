@@ -52,6 +52,7 @@ class Kf5Konsole < Formula
     args = std_cmake_args
 
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=/Applications/KDE"
 
     system "cmake", ".", *args
     system "make", "install"
