@@ -19,5 +19,6 @@ class Kf5ExtraCmakeModules < Formula
     ### Hack - QStandardDirs only looks in $HOME/Library/Application Support/, but kf5 installs
     ### to share. Make a symlink
     ln_sf Dir["#{HOMEBREW_PREFIX}/share/kf5"], "#{ENV['HOME']}/Library/Application Support/"
+    ln_sf Dir["#{HOMEBREW_PREFIX}/share/kxmlgui5"], "#{ENV['HOME']}/Library/Application Support/"
   end
 end
