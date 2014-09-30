@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdbusaddons < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/kdbusaddons-5.1.0.tar.xz"
-  sha1 "28397369ce32386f47aa526e9b6fa073d6f8f2be"
+  url "http://download.kde.org/stable/frameworks/5.2.0/kdbusaddons-5.2.0.tar.xz"
+  sha1 "eb2757e94767c3ff01f1cb4dacf2f83e77bc0607"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdbusaddons.git'

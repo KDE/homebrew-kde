@@ -1,14 +1,15 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/kdoctools-5.1.0.tar.xz"
-  sha1 "49fbc6ff3361ee99e3fccba68f9740c2c4fe7b50"
+  url "http://download.kde.org/stable/frameworks/5.2.0/kdoctools-5.2.0.tar.xz"
+  sha1 "38d3f10584a72ee28bb8cd956003ff35624c24e6"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-karchive"
   depends_on "qt5" => "with-d-bus"
   depends_on "docbook"
   depends_on "docbook-xsl"
@@ -25,7 +26,15 @@ class Kf5Kdoctools < Formula
 
     system "cmake", ".", *args
     system "make", "install"
+    ln_s Dir["#{share}/kf5"], "#{ENV['HOME']}/Library/Application Support/", :force => true
     prefix.install "install_manifest.txt"
+  end
+  def caveats; <<-EOS.undent
+    A symlink "#{ENV['HOME']}/Library/Application Support/kf5" was created
+    So that "kf5/kdoctools/customization" can be found when building other kf5 stuff.
+    
+    This symlink can be removed when this formula is uninstalled.
+    EOS
   end
 end
 

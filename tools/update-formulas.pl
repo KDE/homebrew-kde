@@ -9,66 +9,76 @@ use warnings;
 my %frameworks = (
 
     ### Tier 1
-    'kguiaddons' => '',
-    'kcodecs' => '',
-    'kdbusaddons' => '',
-    'kitemviews' => '',
-    'sonnet' => '',
-    'kwidgetsaddons' => '',
-    'kconfig' => '',
-    'kimageformats' => '',
-    'kidletime' => '',
-    'kcoreaddons' => '',
-#    'umbrella' => 'kf5umbrella',
-    'solid' => '',
+    'attica' => '',
+    'kapidox' => '',
     'karchive' => '',
-    'kjs' => 'portingAids/kjs',
-    'kwindowsystem' => '',
-    'kplotting' => '',
-    'threadweaver' => '',
+    'kcodecs' => '',
+    'kconfig' => '',
+    'kcoreaddons' => '',
+    'kdbusaddons' => '',
+    'kdnssd' => '',
+    'kglobalaccel' => '',
+    'kguiaddons' => '',
+    'ki18n' => '',
+    'kidletime' => '',
+    'kimageformats' => '',
     'kitemmodels' => '',
+    'kitemviews' => '',
+    'kplotting' => '',
+    'kwidgetsaddons' => '',
+    'kwindowsystem' => '',
+    'solid' => '',
+    'sonnet' => '',
+    'threadweaver' => '',
 
      ### Tier 2
-    'kcompletion' => '',
-    'kjobwidgets' => '',
     'kauth' => '',
+    'kcompletion' => '',
     'kcrash' => '',
     'kdoctools' => '',
-    'ki18n' => '',
-    'kwallet' => '',
-    'knotifications' => '',
-    'kservice' => '',
+    'kjobwidgets' => '',
+    'kpty' => '',
+    'kunitconversion' => '',
 
-    ### And all others
-    'attica' => '',
+    ### Tier 3
     'kbookmarks' => '',
+    'kcmutils' => '',
     'kconfigwidgets' => '',
-    'kdelibs4support' => 'portingAids/kdelibs4support',
+    'kdeclarative' => '',
+    'kded' => '',
     'kdesignerplugin' => '',
+    #'kdesu' => '',
+    'kdewebkit' => '',
     'kemoticons' => '',
-    'kglobalaccel' => '',
     'kiconthemes' => '',
     'kinit' => '',
     'kio' => '',
     'knewstuff' => '',
+    'knotifications' => '',
     'knotifyconfig' => '',
     'kparts' => '',
-    'kpty' => '',
-    'kross' => 'portingAids/kross',
+    'kservice' => '',
     'ktexteditor' => '',
     'ktextwidgets' => '',
-    'kunitconversion' => '',
+    'kwallet' => '',
     'kxmlgui' => '',
-    'kcmutils' => '',
-    'kdeclarative' => '',
-    'kdesu' => '',
-    'kded' => ''
+
+    ### Tier 4
+    'frameworkintegration' => '',
+
+    ### Porting Aids
+    'kdelibs4support' => 'portingAids/kdelibs4support',
+    'khtml' => 'portingAids/khtml',
+    'kjs' => 'portingAids/kjs',
+    'kjsembed' => 'portingAids/kjsembed',
+    'kmediaplayer' => 'portingAids/kmediaplayer',
+    'kross' => 'portingAids/kross'
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.1.0/";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.2.0/";
 
-my $extra_cmake_modules_suffix = "-1.1.0.tar.xz";
-my $upstream_suffix = "-5.1.0.tar.xz";
+my $extra_cmake_modules_suffix = "-1.2.1.tar.xz";
+my $upstream_suffix = "-5.2.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

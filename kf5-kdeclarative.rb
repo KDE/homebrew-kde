@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/kdeclarative-5.1.0.tar.xz"
-  sha1 "b987522b81740012bd949f115acac3ee995b83cf"
+  url "http://download.kde.org/stable/frameworks/5.2.0/kdeclarative-5.2.0.tar.xz"
+  sha1 "e2af8ed98daf78730ced76eacd248498222ef6b5"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdeclarative.git'
@@ -11,9 +11,6 @@ class Kf5Kdeclarative < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
-  depends_on "haraldf/kf5/kf5-kconfig"
-  depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "haraldf/kf5/kf5-kiconthemes"
   depends_on "haraldf/kf5/kf5-kio"
 
   def install

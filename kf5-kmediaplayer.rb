@@ -1,23 +1,20 @@
 require "formula"
 
-class Kf5Kcachegrind < Formula
+class Kf5Kmediaplayer < Formula
+  url "http://download.kde.org/stable/frameworks/5.2.0/portingAids/kmediaplayer-5.2.0.tar.xz"
+  sha1 "e572f6685efd1010f146352033d7f91e7959852e"
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kcachegrind.git', :branch => 'frameworks'
+  head 'git://anongit.kde.org/attica.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-kparts"
   depends_on "qt5" => "with-d-bus"
-
-  depends_on "haraldf/kf5/kf5-kcoreaddons"
-  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
-  depends_on "haraldf/kf5/kf5-kxmlgui"
-  depends_on "haraldf/kf5/kf5-kdelibs4support"
 
   def install
     args = std_cmake_args
 
-    args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
     system "make", "install"

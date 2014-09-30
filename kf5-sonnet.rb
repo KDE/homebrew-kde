@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Sonnet < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/sonnet-5.1.0.tar.xz"
-  sha1 "083277c6360d73ffc6a9de9872f527c65b2073dc"
+  url "http://download.kde.org/stable/frameworks/5.2.0/sonnet-5.2.0.tar.xz"
+  sha1 "041493366236079b52fdf41e6dbed3aacb59893e"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/sonnet.git'

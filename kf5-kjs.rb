@@ -1,13 +1,14 @@
 require "formula"
 
 class Kf5Kjs < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/portingAids/kjs-5.1.0.tar.xz"
-  sha1 "81d4909db17ae1be65e050156cde0988d023cd9c"
+  url "http://download.kde.org/stable/frameworks/5.2.0/portingAids/kjs-5.2.0.tar.xz"
+  sha1 "1102a105f5affdecbe5fbc5f2f8d51e35fa968eb"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kjs.git'
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
   depends_on "pcre"

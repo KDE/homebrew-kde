@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Knotifications < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/knotifications-5.1.0.tar.xz"
-  sha1 "500d85e9261edbb08cd3bcbe0d3ec91b54670945"
+  url "http://download.kde.org/stable/frameworks/5.2.0/knotifications-5.2.0.tar.xz"
+  sha1 "568e82af4491d513a968d9e286493f7f84ee179c"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knotifications.git'
@@ -11,8 +11,8 @@ class Kf5Knotifications < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
-  depends_on "haraldf/kf5/kf5-kwindowsystem"
   depends_on "haraldf/kf5/kf5-kiconthemes"
+  depends_on "haraldf/kf5/kf5-kservice"
   depends_on "haraldf/kf5/kf5-phonon"
 
   def install

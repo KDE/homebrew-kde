@@ -3,7 +3,7 @@ require "formula"
 class Kf5Okteta < Formula
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/okteta.git', :branch => 'frameworks'
+  head 'git://anongit.kde.org/okteta.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

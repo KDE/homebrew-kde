@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kio < Formula
-  url "http://download.kde.org/stable/frameworks/5.1.0/kio-5.1.0.tar.xz"
-  sha1 "b94ad502e91b9123268566c8d7fc859acc2b3ca0"
+  url "http://download.kde.org/stable/frameworks/5.2.0/kio-5.2.0.tar.xz"
+  sha1 "46d0be12a733f7a9c9291bd3a5bf96a74439d6d8"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kio.git'
@@ -10,18 +10,11 @@ class Kf5Kio < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
-  depends_on "haraldf/kf5/kf5-kdbusaddons"
-  depends_on "haraldf/kf5/kf5-kdoctools"
-  depends_on "haraldf/kf5/kf5-kitemviews"
-  depends_on "haraldf/kf5/kf5-kservice"
-  depends_on "haraldf/kf5/kf5-kconfigwidgets"
-  depends_on "haraldf/kf5/kf5-solid"
-  depends_on "haraldf/kf5/kf5-kiconthemes"
-  depends_on "haraldf/kf5/kf5-kcompletion"
-  depends_on "haraldf/kf5/kf5-kjobwidgets"
-  depends_on "haraldf/kf5/kf5-knotifications"
+  depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kbookmarks"
+  depends_on "haraldf/kf5/kf5-kjobwidgets"
   depends_on "haraldf/kf5/kf5-kwallet"
+  depends_on "haraldf/kf5/kf5-solid"
 
   def install
     args = std_cmake_args

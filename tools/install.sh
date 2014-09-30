@@ -1,66 +1,18 @@
-#!/bin/sh -e
+#!/bin/bash
 
-# Phonon is not really part of KF5, install first
-pre="haraldf/kf5/kf5-extra-cmake-modules
-     haraldf/kf5/kf5-phonon "
+[[ -f "/tmp/kf5_dep_map" ]] && rm /tmp/kf5_dep_map
 
-# kf5-threadweaver
+for formula in `ls kf5-*.rb`; do
+  for dep in `grep "depends_on" $formula | awk -F "\"" '{print $2}'`; do
+  echo -n "${dep/haraldf\/kf5\//} " >> /tmp/kf5_dep_map
+  echo "${formula/.rb/}" >> /tmp/kf5_dep_map
+  done
+done
 
-tier1="
-    haraldf/kf5/kf5-kjs
-    haraldf/kf5/kf5-karchive
-    haraldf/kf5/kf5-solid
-    haraldf/kf5/kf5-kwidgetsaddons
-    haraldf/kf5/kf5-kcoreaddons
-    haraldf/kf5/kf5-kcodecs
-    haraldf/kf5/kf5-kconfig
-    haraldf/kf5/kf5-kitemviews
-    haraldf/kf5/kf5-kguiaddons
-    haraldf/kf5/kf5-kwindowsystem
-    haraldf/kf5/kf5-sonnet
-    haraldf/kf5/kf5-kitemmodels
-    haraldf/kf5/kf5-kdbusaddons
-    haraldf/kf5/kf5-kimageformats
-    haraldf/kf5/kf5-kplotting
-    haraldf/kf5/kf5-kidletime"
-
-tier2="
-    haraldf/kf5/kf5-kcompletion
-    haraldf/kf5/kf5-kjobwidgets
-    haraldf/kf5/kf5-kauth
-    haraldf/kf5/kf5-kcrash
-    haraldf/kf5/kf5-kdoctools
-    haraldf/kf5/kf5-ki18n
-    haraldf/kf5/kf5-kservice
-    haraldf/kf5/kf5-kconfigwidgets
-    haraldf/kf5/kf5-kiconthemes
-    haraldf/kf5/kf5-knotifications
-    haraldf/kf5/kf5-kwallet
-    haraldf/kf5/kf5-ktexteditor"
+tsort /tmp/kf5_dep_map > /tmp/kf5_install_order
 
 
-others="
-    haraldf/kf5/kf5-attica
-    haraldf/kf5/kf5-kglobalaccel
-    haraldf/kf5/kf5-ktextwidgets
-    haraldf/kf5/kf5-kxmlgui
-    haraldf/kf5/kf5-kbookmarks
-    haraldf/kf5/kf5-kdesignerplugin
-    haraldf/kf5/kf5-kemoticons
-    haraldf/kf5/kf5-kio
-    haraldf/kf5/kf5-kinit
-    haraldf/kf5/kf5-knewstuff
-    haraldf/kf5/kf5-knotifyconfig
-    haraldf/kf5/kf5-kparts
-    haraldf/kf5/kf5-kpty
-    haraldf/kf5/kf5-kross
-    haraldf/kf5/kf5-kunitconversion
-    haraldf/kf5/kf5-kdelibs4support
-    haraldf/kf5/kf5-kdeclarative
-    haraldf/kf5/kf5-kcmutils
-    haraldf/kf5/kf5-kdesu
-    haraldf/kf5/kf5-kded"
 
-for formula in "$pre $tier1 $tier2 $others" ; do
-    brew install "$@" $formula
+for formula in `cat /tmp/kf5_install_order`; do
+  brew install "$@" "${formula}"
 done
