@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kitemmodels < Formula
-  url "http://download.kde.org/stable/frameworks/5.2.0/kitemmodels-5.2.0.tar.xz"
-  sha1 "50320bd5016a108741b8375d270c243f116abfad"
+  url "http://download.kde.org/stable/frameworks/5.3.0/kitemmodels-5.3.0.tar.xz"
+  sha1 "396693b7ec5d738aa870b363fb33b0e0cdeb6365"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kitemmodels.git'
