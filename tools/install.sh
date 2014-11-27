@@ -5,7 +5,7 @@
 for formula in `ls kf5-*.rb`; do
   for dep in `grep "depends_on" $formula | awk -F "\"" '{print $2}'`; do
   echo -n "${dep/haraldf\/kf5\//} " >> /tmp/kf5_dep_map
-  echo "${formula/.rb/}" >> /tmp/kf5_dep_map
+  echo "${formula}" >> /tmp/kf5_dep_map
   done
 done
 

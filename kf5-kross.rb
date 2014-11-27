@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kross < Formula
-  url "http://download.kde.org/stable/frameworks/5.3.0/portingAids/kross-5.3.0.tar.xz"
-  sha1 "6fc5f4f1784f779f0ee59d327b718b3c6683e77f"
+  url "http://download.kde.org/stable/frameworks/5.4/portingAids/kross-5.4.0.tar.xz"
+  sha1 "dfcd3862512487673189489686cbc7109d9c994c"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kross.git'

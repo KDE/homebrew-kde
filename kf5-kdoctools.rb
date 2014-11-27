@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/stable/frameworks/5.3.0/kdoctools-5.3.0.tar.xz"
-  sha1 "80e3b92846ace44f5f5c8c6783020a38b6f212ad"
+  url "http://download.kde.org/stable/frameworks/5.4/kdoctools-5.4.0.tar.xz"
+  sha1 "0fdbb29791fbe6c2a4c1deb0ff7cf18ec505a769"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
@@ -13,6 +13,7 @@ class Kf5Kdoctools < Formula
   depends_on "qt5" => "with-d-bus"
   depends_on "docbook"
   depends_on "docbook-xsl"
+  depends_on "gettext"
 
   def patches
     DATA
