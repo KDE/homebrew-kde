@@ -3,12 +3,14 @@ require "formula"
 class Kf5Konversation < Formula
   homepage "http://www.kde.org/"
 
-  head "git://anongit.kde.org/konversation.git", :branch => "frameworks"
+  url "http://download.kde.org/unstable/konversation/1.6-beta1/src/konversation-1.6-beta1.tar.xz"
+  sha1 "564bdc092cbdce1c0a9cf1e5362d4956c059c6f3"
+  head "git://anongit.kde.org/konversation.git", :branch => "master"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
- #depends_on "kf5-qca"
+  depends_on "qca" => :optional # must built with qt5
 
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kbookmarks"
