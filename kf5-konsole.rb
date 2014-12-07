@@ -2,8 +2,9 @@ require "formula"
 
 class Kf5Konsole < Formula
   homepage "http://www.kde.org/"
-
-  head 'git://anongit.kde.org/konsole.git'
+  url "http://download.kde.org/unstable/applications/14.11.97/src/konsole-14.11.97.tar.xz"
+  sha1 "c07f4dae00b295e2c4fb81f782c2f0bc80add4d4"
+  head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
