@@ -8,6 +8,8 @@ use warnings;
 
 my %frameworks = (
 
+    ### ECM
+    'extra-cmake-modules' => '',
     ### Tier 1
     'attica' => '',
     'kapidox' => '',
@@ -75,10 +77,10 @@ my %frameworks = (
     'kross' => 'portingAids/kross'
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.4/";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.5/";
 
-my $extra_cmake_modules_suffix = "-1.4.0.tar.xz";
-my $upstream_suffix = "-5.4.0.tar.xz";
+my $extra_cmake_modules_upstream_suffix = "-1.5.0.tar.xz";
+my $frameworks_upstream_suffix = "-5.5.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {
@@ -90,6 +92,11 @@ chomp($brew_prefix);
 sub updatePackage($) {
 
     my $package = $_[0];
+
+    my $upstream_suffix = $frameworks_upstream_suffix;
+    if ($package eq 'extra-cmake-modules') {
+        $upstream_suffix = $extra_cmake_modules_upstream_suffix;
+    }
 
     my $upstream = $frameworks{$package};
     if ($upstream eq '') {
