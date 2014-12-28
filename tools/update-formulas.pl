@@ -43,6 +43,7 @@ my %frameworks = (
     'kunitconversion' => '',
 
     ### Tier 3
+    'kactivities' => '',
     'kbookmarks' => '',
     'kcmutils' => '',
     'kconfigwidgets' => '',

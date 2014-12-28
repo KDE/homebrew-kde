@@ -10,13 +10,13 @@ class Kf5Kdeclarative < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
-
   depends_on "haraldf/kf5/kf5-kio"
 
   def install
     args = std_cmake_args
-
     args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
+    args << "-DCMAKE_C_FLAGS='-D_DARWIN_C_SOURCE'"
+    args << "-DCMAKE_REQUIRED_DEFINITIONS='-D_DARWIN_C_SOURCE'"
 
     system "cmake", ".", *args
     system "make", "install"
