@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Attica < Formula
-  url "http://download.kde.org/stable/frameworks/5.5/attica-5.5.0.tar.xz"
-  sha1 "c45a91bc35eaa7065cb970f50ea73c8f544fc752"
+  url "http://download.kde.org/stable/frameworks/5.6/attica-5.6.0.tar.xz"
+  sha1 "5a285c199b84647b4974258224f9cadc7f545d86"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/attica.git'

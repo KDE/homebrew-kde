@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Threadweaver < Formula
-  url "http://download.kde.org/stable/frameworks/5.5/threadweaver-5.5.0.tar.xz"
-  sha1 "868e024fa227305113c8d4f9daed8207193d90a1"
+  url "http://download.kde.org/stable/frameworks/5.6/threadweaver-5.6.0.tar.xz"
+  sha1 "805ea2fc5a2c957297417a7f9ee5b26f3ea129b8"
   homepage "http://www.kde.org/"
 
   depends_on "cmake" => :build
