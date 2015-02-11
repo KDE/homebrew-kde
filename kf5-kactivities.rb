@@ -13,6 +13,8 @@ class Kf5Kactivities < Formula
   depends_on "haraldf/kf5/kf5-kdeclarative"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-ki18n"
+  depends_on "haraldf/kf5/kf5-kcmutils"
+  depends_on "boost"
 
   def install
     args = std_cmake_args
