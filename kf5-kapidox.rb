@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kapidox < Formula
-  url "http://download.kde.org/stable/frameworks/5.6/kapidox-5.6.0.tar.xz"
-  sha1 "bdc216e36f00cd6508fb4671b25a821de1b0ce41"
+  url "http://download.kde.org/stable/frameworks/5.7/kapidox-5.7.0.tar.xz"
+  sha1 "165fb954ad7dcb4a44db9a9847a4643ebf497d67"
   homepage "http://www.kde.org/"
 
   depends_on "cmake" => :build

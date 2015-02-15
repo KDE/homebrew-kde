@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kguiaddons < Formula
-  url "http://download.kde.org/stable/frameworks/5.6/kguiaddons-5.6.0.tar.xz"
-  sha1 "5df5639fb5a476e404b43d92ec0cc9eb90545ac0"
+  url "http://download.kde.org/stable/frameworks/5.7/kguiaddons-5.7.0.tar.xz"
+  sha1 "a8c85b3201597bd5cb963261c5acbf9b146f76e1"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kguiaddons.git'

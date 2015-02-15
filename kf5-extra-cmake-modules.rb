@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5ExtraCmakeModules < Formula
-  url "http://download.kde.org/stable/frameworks/5.6/extra-cmake-modules-1.6.1.tar.xz"
-  sha1 "1165cd6c9c58b042a08aa8897c55b4f5defac54a"
+  url "http://download.kde.org/stable/frameworks/5.7/extra-cmake-modules-1.7.0.tar.xz"
+  sha1 "1a7e6085719e80202fe8077539457152d1f85d0e"
   homepage "http://www.kde.org/"
 
   keg_only "Only required for building KDE frameworks"

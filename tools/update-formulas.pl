@@ -78,10 +78,10 @@ my %frameworks = (
     'kross' => 'portingAids/kross'
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.6/";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.7/";
 
-my $extra_cmake_modules_upstream_suffix = "-1.6.1.tar.xz";
-my $frameworks_upstream_suffix = "-5.6.0.tar.xz";
+my $extra_cmake_modules_upstream_suffix = "-1.7.0.tar.xz";
+my $frameworks_upstream_suffix = "-5.7.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kded < Formula
-  url "http://download.kde.org/stable/frameworks/5.6/kded-5.6.0.tar.xz"
-  sha1 "df10bba02c67c9d5a25f095ea8486f3278146e2a"
+  url "http://download.kde.org/stable/frameworks/5.7/kded-5.7.0.tar.xz"
+  sha1 "e964111dce23af27f2ec364458441e661b3a80ea"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kded.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdesu < Formula
-  url "http://download.kde.org/stable/frameworks/5.6/kdesu-5.6.0.tar.xz"
-  sha1 "1abf55a748e95f9d111cc8542ab81d53850efadf"
+  url "http://download.kde.org/stable/frameworks/5.7/kdesu-5.7.0.tar.xz"
+  sha1 "1e322cbfb17df443bd82a0fbb867faa3a3b257bc"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdesu.git'
