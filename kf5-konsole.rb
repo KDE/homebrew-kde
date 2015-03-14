@@ -44,6 +44,8 @@ class Kf5Konsole < Formula
   depends_on "haraldf/kf5/kf5-knotifyconfig"
   depends_on "haraldf/kf5/kf5-kparts"
   depends_on "haraldf/kf5/kf5-kross"
+  depends_on "haraldf/kf5/kf5-kinit"
+  depends_on "haraldf/kf5/kf5-kdelibs4support"
 
   def patches
     DATA
