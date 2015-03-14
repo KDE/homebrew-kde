@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kcrash < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kcrash-5.7.0.tar.xz"
-  sha1 "56cbe4b857136df2feb4824ca0761683dbc9f933"
+  url "http://download.kde.org/stable/frameworks/5.8/kcrash-5.8.0.tar.xz"
+  sha1 "6a2da848ea154d10c5a46960797d54d97762054a"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcrash.git'

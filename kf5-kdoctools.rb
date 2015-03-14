@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kdoctools-5.7.0.tar.xz"
-  sha1 "ec8b4da9c68821ad29f1b82b5dcb1b77c9e352e8"
+  url "http://download.kde.org/stable/frameworks/5.8/kdoctools-5.8.0.tar.xz"
+  sha1 "8ea833b450df2cf25dcdf36effc8e15b5b3fab11"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
@@ -52,29 +52,3 @@ index 415745f..4d7f089 100644
      )
  
      find_path (searched_dir docbookx.dtd
-diff --git a/src/docbookl10nhelper.cpp b/src/docbookl10nhelper.cpp
-index 6eecb37..fc98f74 100644
---- a/src/docbookl10nhelper.cpp
-+++ b/src/docbookl10nhelper.cpp
-@@ -206,7 +206,7 @@ int main(int argc, char **argv)
-     QStringList dirFileFilters;
-     dirFileFilters << QStringLiteral("*.xml");
-     QStringList customLangFiles = outDir.entryList(dirFileFilters,
--                                  QDir::Files | QDir::NoSymLinks, QDir::Name);
-+                                  QDir::Files, QDir::Name);
-     /* the following two calls to removeOne should not be needed, as
-      * the customization directory from the sources should not contain
-      * those files
-diff --git a/src/xslt.cpp b/src/xslt.cpp
-index 3c81a17..303ca32 100644
---- a/src/xslt.cpp
-+++ b/src/xslt.cpp
-@@ -423,7 +423,7 @@ QStringList getKDocToolsCatalogs()
-         QDir customizationDir = QDir(customizationDirName);
-         const QStringList catalogFileFilters(QStringLiteral("catalog*.xml"));
-         const QFileInfoList catalogInfoFiles = customizationDir.entryInfoList(catalogFileFilters,
--                                               QDir::Files | QDir::NoSymLinks, QDir::Name);
-+                                               QDir::Files, QDir::Name);
-         foreach (const QFileInfo &fileInfo, catalogInfoFiles) {
-             const QString fullFileName = QUrl::fromLocalFile(fileInfo.absoluteFilePath()).toEncoded();
-             if (fileInfo.fileName() == QStringLiteral("catalog.xml")) {

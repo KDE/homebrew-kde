@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kitemviews < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kitemviews-5.7.0.tar.xz"
-  sha1 "0aae8a77ae7e406f053c755f64a137af208d0de6"
+  url "http://download.kde.org/stable/frameworks/5.8/kitemviews-5.8.0.tar.xz"
+  sha1 "483af2ff63a8de102522520e791240c6e77f9056"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kitemviews.git'

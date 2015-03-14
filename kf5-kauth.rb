@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kauth < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kauth-5.7.0.tar.xz"
-  sha1 "ed14fc03db7242037d5904cbe5efc5fec79b4738"
+  url "http://download.kde.org/stable/frameworks/5.8/kauth-5.8.0.tar.xz"
+  sha1 "2723d951c1be06f8483c03933599b02d6be48f4e"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kauth.git'

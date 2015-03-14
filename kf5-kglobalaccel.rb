@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kglobalaccel < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kglobalaccel-5.7.0.tar.xz"
-  sha1 "5b13d4dd3dd2232fffe5d2dde0b7a19c42d48d66"
+  url "http://download.kde.org/stable/frameworks/5.8/kglobalaccel-5.8.0.tar.xz"
+  sha1 "95d285e1d7f36f006c082af0a0a8239019876670"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kglobalaccel.git'

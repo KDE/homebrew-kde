@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kunitconversion < Formula
-  url "http://download.kde.org/stable/frameworks/5.7/kunitconversion-5.7.0.tar.xz"
-  sha1 "e99483dab116df56f9131893e33dabca52d176ea"
+  url "http://download.kde.org/stable/frameworks/5.8/kunitconversion-5.8.0.tar.xz"
+  sha1 "9eb97efe7f66a4b3555a83bbff4a625a58e47619"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kunitconversion.git'
