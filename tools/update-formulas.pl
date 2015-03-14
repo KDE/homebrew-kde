@@ -41,6 +41,7 @@ my %frameworks = (
     'kjobwidgets' => '',
     'kpty' => '',
     'kunitconversion' => '',
+    'kpackage' => '',
 
     ### Tier 3
     'kactivities' => '',
