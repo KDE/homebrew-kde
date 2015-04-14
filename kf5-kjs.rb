@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kjs < Formula
-  url "http://download.kde.org/stable/frameworks/5.8/portingAids/kjs-5.8.0.tar.xz"
-  sha1 "b452c7e18d7969df6e61935b9c5c95a51d4ecc4e"
+  url "http://download.kde.org/stable/frameworks/5.9/portingAids/kjs-5.9.0.tar.xz"
+  sha1 "594f5fb9825fe06f4fc80737c29eefd35f1d8040"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kjs.git'
