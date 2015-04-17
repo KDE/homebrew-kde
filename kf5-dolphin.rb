@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Dolphin < Formula
   homepage "http://www.kde.org/"
-  head "git://anongit.kde.org/kde-baseapps.git", :branch => "frameworks"
+  head "git://anongit.kde.org/dolphin.git", :branch => "frameworks"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
