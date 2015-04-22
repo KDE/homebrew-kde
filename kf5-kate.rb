@@ -15,6 +15,7 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-kdoctools"
   depends_on "haraldf/kf5/kf5-kguiaddons"
   depends_on "haraldf/kf5/kf5-ki18n"
+  depends_on "haraldf/kf5/kf5-kiconthemes"
   depends_on "haraldf/kf5/kf5-kinit"
   depends_on "haraldf/kf5/kf5-kjobwidgets"
   depends_on "haraldf/kf5/kf5-kio"
@@ -26,6 +27,10 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-knewstuff"
   depends_on "haraldf/kf5/kf5-kwallet"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
 
@@ -36,3 +41,17 @@ class Kf5Kate < Formula
     prefix.install "install_manifest.txt"
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e8f47ed..8de15f1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -38,6 +38,7 @@ find_package(KF5 REQUIRED COMPONENTS
+   DocTools
+   GuiAddons
+   I18n
++  IconThemes
+   Init
+   JobWidgets
+   KIO
