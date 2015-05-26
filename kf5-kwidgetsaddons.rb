@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kwidgetsaddons < Formula
-  url "http://download.kde.org/stable/frameworks/5.9/kwidgetsaddons-5.9.0.tar.xz"
-  sha1 "72e77572a645b137f47f845c3b87f131056fab3b"
+  url "http://download.kde.org/stable/frameworks/5.10/kwidgetsaddons-5.10.0.tar.xz"
+  sha1 "3f5a3f7061ab4f5dd52e4822e8af72b946a94189"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kwidgetsaddons.git'
