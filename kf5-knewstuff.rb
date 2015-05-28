@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Knewstuff < Formula
-  url "http://download.kde.org/stable/frameworks/5.9/knewstuff-5.9.0.tar.xz"
-  sha1 "98df76e39914330b4a1dfee8cf934a4447133695"
+  url "http://download.kde.org/stable/frameworks/5.10/knewstuff-5.10.0.tar.xz"
+  sha1 "a5e80a8b73867a52739e821071ffe8a39327ff83"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knewstuff.git'
