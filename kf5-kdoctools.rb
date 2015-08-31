@@ -27,7 +27,7 @@ class Kf5Kdoctools < Formula
 
     system "cmake", ".", *args
     system "make", "install"
-    ln_s Dir["#{share}/kf5"], "#{ENV['HOME']}/Library/Application Support/", :force => true
+    ln_s Dir["#{share}/kf5"], "#{Etc.getpwuid.dir}/Library/Application Support/", :force => true
     prefix.install "install_manifest.txt"
   end
   def caveats; <<-EOS.undent
