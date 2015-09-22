@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kxmlgui < Formula
-  url "http://download.kde.org/stable/frameworks/5.10/kxmlgui-5.10.0.tar.xz"
-  sha1 "85079d3cc29b6843ed39ac491acc3ce25d01e100"
+  url "http://download.kde.org/stable/frameworks/5.14/kxmlgui-5.14.0.tar.xz"
+  sha1 "0eca5ff26a4b46f39d9c07a41df9320758a1ce39"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kxmlgui.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Ktextwidgets < Formula
-  url "http://download.kde.org/stable/frameworks/5.10/ktextwidgets-5.10.0.tar.xz"
-  sha1 "013ba713261964e7d3f27060ea5401685be5fcac"
+  url "http://download.kde.org/stable/frameworks/5.14/ktextwidgets-5.14.0.tar.xz"
+  sha1 "c6cf51b1b69c2c3973d85fdf745be479588dc96c"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/ktextwidgets.git'

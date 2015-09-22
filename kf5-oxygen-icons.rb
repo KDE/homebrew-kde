@@ -2,8 +2,8 @@ require "formula"
 
 class Kf5OxygenIcons < Formula
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/applications/14.12.2/src/oxygen-icons-14.12.2.tar.xz"
-  sha1 "048417ffa951f9dd881662152d4f14f66e2b9ed6"
+  url "http://download.kde.org/stable/applications/15.04.3/src/oxygen-icons-15.04.3.tar.xz"
+  sha256 "133b66d70b51641f841799674afd993a6af0d9d9b646021a0ed609beb2ffd71e"
 
   head 'svn://anonsvn.kde.org/home/kde/trunk/kdesupport/oxygen-icons'
 

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
-  url "http://download.kde.org/stable/frameworks/5.10/kdeclarative-5.10.0.tar.xz"
-  sha1 "bb854ce20b3bab64e07928c65234f32f995e5b9e"
+  url "http://download.kde.org/stable/frameworks/5.14/kdeclarative-5.14.0.tar.xz"
+  sha1 "37ed60ced1b6ceb9a508035f1cac5442ad8cc323"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdeclarative.git'

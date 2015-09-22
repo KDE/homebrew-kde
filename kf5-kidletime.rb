@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kidletime < Formula
-  url "http://download.kde.org/stable/frameworks/5.10/kidletime-5.10.0.tar.xz"
-  sha1 "b7aa78d9f7ccde8517b18af8c576a883c69b9de9"
+  url "http://download.kde.org/stable/frameworks/5.14/kidletime-5.14.0.tar.xz"
+  sha1 "52ab2c92bca4dfbc80cd3bb2a33777aaf3a1c612"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kidletime.git'

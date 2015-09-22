@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kate < Formula
-  url "http://download.kde.org/stable/applications/14.12.3/src/kate-14.12.3.tar.xz"
-  sha1 "57a34ad4dfb8e1a8c8f76244cf571cb1ce8f5c28"
+  url "http://download.kde.org/stable/applications/15.08.1/src/kate-15.08.1.tar.xz"
+  sha256 "3f96756f7f4c6d178d2310a9fd1b63e816348d49cb4d53907e10fc6a29c92b43"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kate.git"
@@ -11,6 +11,7 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
 
+  depends_on "haraldf/kf5/kf5-kactivities"
   depends_on "haraldf/kf5/kf5-kconfig"
   depends_on "haraldf/kf5/kf5-kdoctools"
   depends_on "haraldf/kf5/kf5-kguiaddons"

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Ki18n < Formula
-  url "http://download.kde.org/stable/frameworks/5.10/ki18n-5.10.0.tar.xz"
-  sha1 "a8b1021be261d10de39f2a37bed278f159098705"
+  url "http://download.kde.org/stable/frameworks/5.14/ki18n-5.14.0.tar.xz"
+  sha1 "4d8a9b3b83b6340cb7b6f6dcffe03485ca16d2db"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/ki18n.git'
