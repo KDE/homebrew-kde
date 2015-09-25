@@ -76,3 +76,18 @@ index a3d9a1c..793e586 100644
 +#add_subdirectory( doc/manual )
  
  feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 2ff6f37..86f86e7 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -138,6 +138,10 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+     #kinfo_getfile() is in libutil
+     list(APPEND konsole_LIBS util)
+ endif()
++if(APPLE)
++    # OSX still requires kde_file.h
++    list(APPEND konsole_LIBS KF5::KDELibs4Support)
++endif()
+ 
+ ### Konsole Application
+ 
