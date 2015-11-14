@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kcmutils < Formula
-  url "http://download.kde.org/stable/frameworks/5.14/kcmutils-5.14.0.tar.xz"
-  sha1 "774adc704eadc75ca5943eda2a674488493930d8"
+  url "http://download.kde.org/stable/frameworks/5.16/kcmutils-5.16.0.tar.xz"
+  sha1 "8bab1bff0304cbc29f841461929dacedce9dc0fa"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcmutils.git'

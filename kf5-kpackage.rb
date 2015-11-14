@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kpackage < Formula
-  url "http://download.kde.org/stable/frameworks/5.14/kpackage-5.14.0.tar.xz"
-  sha1 "e93d2a29b68d66138816e234fbb8fcbd45e5f982"
+  url "http://download.kde.org/stable/frameworks/5.16/kpackage-5.16.0.tar.xz"
+  sha1 "946575a1fb83bef5580e8accf37c0d7967159b9f"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kpackage.git'
