@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kcoreaddons < Formula
-  url "http://download.kde.org/stable/frameworks/5.14/kcoreaddons-5.14.0.tar.xz"
-  sha1 "848e513d39f185eaf8c4bfb65a5b13d6fd1391fc"
+  url "http://download.kde.org/stable/frameworks/5.16/kcoreaddons-5.16.0.tar.xz"
+  sha1 "41abe456bfffe752e5fd3add67ea57a8a69d8176"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcoreaddons.git'
