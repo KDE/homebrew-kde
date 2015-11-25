@@ -17,6 +17,10 @@ class Kf5Kdelibs4support < Formula
   depends_on "haraldf/kf5/kf5-kitemmodels"
   depends_on "haraldf/kf5/kf5-kunitconversion"
 
+  def patches
+    DATA
+  end
+
   def install
     args = std_cmake_args
 
@@ -27,3 +31,18 @@ class Kf5Kdelibs4support < Formula
     prefix.install "install_manifest.txt"
   end
 end
+
+__END__
+diff --git a/src/kssl/ksslcertificate.cpp b/src/kssl/ksslcertificate.cpp
+index 89c5e28..03ffdcd 100644
+--- a/src/kssl/ksslcertificate.cpp
++++ b/src/kssl/ksslcertificate.cpp
+@@ -1017,7 +1017,7 @@ QDateTime KSSLCertificate::getQDTNotAfter() const
+ 
+ int operator==(KSSLCertificate &x, KSSLCertificate &y)
+ {
+-#ifndef KSSL_HAVE_SSL
++#if !KSSL_HAVE_SSL
+     return 1;
+ #else
+     if (!KOSSL::self()->X509_cmp(x.getCert(), y.getCert())) {
