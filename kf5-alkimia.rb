@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Alkimia < Formula
   homepage "http://kmymoney.org/"
-  head "git://anongit.kde.org/alkimia.git", :branch => "frameworks"
+  head "git://anongit.kde.org/alkimia.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
