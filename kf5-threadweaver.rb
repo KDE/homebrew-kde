@@ -5,6 +5,8 @@ class Kf5Threadweaver < Formula
   sha1 "e804841a7cc1c7a8e25597d28bc8ed8fa6c15983"
   homepage "http://www.kde.org/"
 
+  head 'git://anongit.kde.org/threadweaver.git'
+
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-d-bus"
