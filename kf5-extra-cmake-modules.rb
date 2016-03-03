@@ -5,8 +5,6 @@ class Kf5ExtraCmakeModules < Formula
   sha1 "77f1fe2a0faac3bf620dca785a4b50de8870e3a0"
   homepage "http://www.kde.org/"
 
-  keg_only "Only required for building KDE frameworks"
-
   head 'git://anongit.kde.org/extra-cmake-modules'
 
   depends_on "cmake" => :build
