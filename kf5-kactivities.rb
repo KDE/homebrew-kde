@@ -19,9 +19,6 @@ class Kf5Kactivities < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE'"
-    args << "-DCMAKE_C_FLAGS='-D_DARWIN_C_SOURCE'"
-    args << "-DCMAKE_REQUIRED_DEFINITIONS='-D_DARWIN_C_SOURCE'"
 
     mkdir "build" do
       system "cmake", "..", *args

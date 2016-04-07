@@ -14,8 +14,6 @@ class Kf5Kwindowsystem < Formula
   def install
     args = std_cmake_args
 
-    args << "-DCMAKE_CXX_FLAGS='-D_DARWIN_C_SOURCE -DQT_MAC_USE_COCOA'"
-
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
