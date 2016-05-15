@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Threadweaver < Formula
-  url "http://download.kde.org/stable/frameworks/5.16/threadweaver-5.16.0.tar.xz"
-  sha1 "e804841a7cc1c7a8e25597d28bc8ed8fa6c15983"
+  url "http://download.kde.org/stable/frameworks/5.22/threadweaver-5.22.0.tar.xz"
+  sha1 "9a7100670fe21a0d27449ff559d2d27b7adb8b18"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/threadweaver.git'

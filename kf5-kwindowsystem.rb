@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kwindowsystem < Formula
-  url "http://download.kde.org/stable/frameworks/5.16/kwindowsystem-5.16.0.tar.xz"
-  sha1 "211ba6a5cecd2c49cebf75bf46256e0e3065e662"
+  url "http://download.kde.org/stable/frameworks/5.22/kwindowsystem-5.22.0.tar.xz"
+  sha1 "c00799c308496012dc0b5ac3045d10af996179cc"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kwindowsystem.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Karchive < Formula
-  url "http://download.kde.org/stable/frameworks/5.16/karchive-5.16.0.tar.xz"
-  sha1 "1198a2db75f0b776586fb798da4fd04a71b80229"
+  url "http://download.kde.org/stable/frameworks/5.22/karchive-5.22.0.tar.xz"
+  sha1 "d13782c0902691ff4068fe7612768bcabc501757"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/karchive.git'
