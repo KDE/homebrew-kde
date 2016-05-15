@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use File::Copy;
-use Digest::SHA1  qw(sha1_hex);
+use Digest::SHA  qw(sha256_hex);
 
 use strict;
 use warnings;
@@ -123,9 +123,9 @@ sub updatePackage($) {
     }
 
     open(CACHED_FILE, "<", $cached_file);
-    my $ctx = Digest::SHA1->new;
+    my $ctx = Digest::SHA->new(256);
     $ctx->addfile(*CACHED_FILE);
-    my $sha1 = $ctx->hexdigest;
+    my $sha = $ctx->hexdigest;
     close(CACHED_FILE);
 
     # print("$cached_file: $sha1\n");
@@ -140,7 +140,7 @@ sub updatePackage($) {
         if ($line =~ /^\s*url\s+\"(.*)\"\s*$/) {
             next;
         }
-        if ($line =~ /^\s*sha1\s+\"(.*)\"\s*$/) {
+        if ($line =~ /^\s*sha256\s+\"(.*)\"\s*$/) {
             next;
         }
 
@@ -148,7 +148,7 @@ sub updatePackage($) {
 
         if ($line =~ /^\s*class\s+(.*?)\s*<\s*Formula/) {
             print NEW_FORMULA "  url \"$package_upstream_url\"\n";
-            print NEW_FORMULA "  sha1 \"$sha1\"\n";
+            print NEW_FORMULA "  sha256 \"$sha\"\n";
         }
     }
 
