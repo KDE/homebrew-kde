@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Khtml < Formula
   url "http://download.kde.org/stable/frameworks/5.16/portingAids/khtml-5.16.0.tar.xz"
-  sha1 "7e84b4dbe914e5869754577229282d9c6f7783b0"
+  sha256 ""
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/khtml.git'

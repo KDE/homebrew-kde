@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Ki18n < Formula
   url "http://download.kde.org/stable/frameworks/5.22/ki18n-5.22.0.tar.xz"
-  sha1 "721848da38d7215dd31114454f05395202c7bf1f"
+  sha256 "edfb8858fc4aa10bf57ea362520bd3b3d10019f5dadde3a89911cd0205f10121"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/ki18n.git'

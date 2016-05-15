@@ -3,7 +3,7 @@ require "formula"
 class Kf5Konsole < Formula
   homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/applications/15.08.1/src/konsole-15.08.1.tar.xz"
-  sha1 ""
+  sha256 ""
   head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build

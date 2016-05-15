@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Phonon < Formula
   url "http://download.kde.org/stable/phonon/4.7.1/phonon-4.7.1.tar.xz"
-  sha1 "f1d3214a752d97028dc4ed910a832c1272951522"
+  sha256 ""
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/phonon.git'

@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kross < Formula
   url "http://download.kde.org/stable/frameworks/5.22/portingAids/kross-5.22.0.tar.xz"
-  sha1 "e5625b2fc27b2cc83cedf16dd00b0b8cc7ca4021"
+  sha256 "94c8c628171672ccba9455b342a43eb21f5be22ebb1a0f9195576f03144c6ac6"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kross.git'

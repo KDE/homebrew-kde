@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kcodecs < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kcodecs-5.22.0.tar.xz"
-  sha1 "f9825ce0970fa908be216f577bed93429030bb44"
+  sha256 "0735c54814292dd318e5ef72bf986b4dff8ef127c7be748c9c53ac282ad29866"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcodecs.git'

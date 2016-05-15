@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kbookmarks < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kbookmarks-5.22.0.tar.xz"
-  sha1 "3826c34f6a04304b390cb4ea6ed195c5dc81fde0"
+  sha256 "774058c2bdbf77ec48b4462b39933e39962e64fa023651d43a4fe67bd1a37924"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kbookmarks.git'

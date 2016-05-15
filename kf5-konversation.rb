@@ -4,7 +4,7 @@ class Kf5Konversation < Formula
   homepage "http://www.kde.org/"
 
   url "http://download.kde.org/unstable/konversation/1.6-beta1/src/konversation-1.6-beta1.tar.xz"
-  sha1 "564bdc092cbdce1c0a9cf1e5362d4956c059c6f3"
+  sha256 ""
   head "git://anongit.kde.org/konversation.git", :branch => "master"
 
   depends_on "cmake" => :build

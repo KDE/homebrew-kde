@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kdesu < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kdesu-5.22.0.tar.xz"
-  sha1 "8b0126c8f5f7f5af3737be97f51692ab08f52c5f"
+  sha256 "6d2542cead6a59854082b004f745f69e6c04a31c7090e3f5d6fbfb26464d59cb"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdesu.git'

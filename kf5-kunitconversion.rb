@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kunitconversion < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kunitconversion-5.22.0.tar.xz"
-  sha1 "ef294b804246bad8c0da7d764e707a992f391a30"
+  sha256 "17912db5f384b506d67d49184abb37ed74ce17b1022592ad197aa2db5ac70bde"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kunitconversion.git'

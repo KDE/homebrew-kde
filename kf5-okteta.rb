@@ -15,7 +15,7 @@ class Kf5Okteta < Formula
   depends_on "haraldf/kf5/kf5-kcompletion"
   depends_on "haraldf/kf5/kf5-kconfigwidgets"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
-  depends_on "haraldf/kf5/kf5-kdoctools"
+  depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-ki18n"
   depends_on "haraldf/kf5/kf5-kcmutils"
   depends_on "haraldf/kf5/kf5-kio"

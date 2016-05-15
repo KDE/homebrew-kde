@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kdoctools < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kdoctools-5.22.0.tar.xz"
-  sha1 "9d85a0b2eb9cd401493a077b6639992631ca8df7"
+  sha256 "b370f6d43b8701f6abc690cfbe1cbd859445510a0a64eacab6447a0874f58a78"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'

@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Knewstuff < Formula
   url "http://download.kde.org/stable/frameworks/5.22/knewstuff-5.22.0.tar.xz"
-  sha1 "e76dba61b17382bbfdaecd71d782b0f757fd74f8"
+  sha256 "471d45cdad4806aee7b9ad3329c2cd65765ab39a3399622f44e5ad92a63125bf"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knewstuff.git'

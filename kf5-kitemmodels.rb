@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kitemmodels < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kitemmodels-5.22.0.tar.xz"
-  sha1 "1fc6a8fa732a943df89b723c40a4b98636d46f35"
+  sha256 "0345c394083a6aced385ea5acc0a8bd32ad83af1ac7510d7312cff0b1d7df60d"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kitemmodels.git'

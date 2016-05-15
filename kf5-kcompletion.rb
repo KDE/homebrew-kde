@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kcompletion < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kcompletion-5.22.0.tar.xz"
-  sha1 "d09d149e41fa6c11c1b9a716dc9302aff8f4d2ed"
+  sha256 "feef5c55d9ccee727431a7a547e354da08f34eccea37257cd3b8bdd85a96581e"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcompletion.git'

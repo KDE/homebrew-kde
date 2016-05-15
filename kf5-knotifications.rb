@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Knotifications < Formula
   url "http://download.kde.org/stable/frameworks/5.22/knotifications-5.22.0.tar.xz"
-  sha1 "d06ae6c3f109a43957c1b2098d7fe9e54faef9ea"
+  sha256 "faae014de4b037fb60728537538195a159a70e0444d510073148dd941d54063a"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/knotifications.git'

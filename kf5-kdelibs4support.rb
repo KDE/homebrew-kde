@@ -2,13 +2,14 @@ require "formula"
 
 class Kf5Kdelibs4support < Formula
   url "http://download.kde.org/stable/frameworks/5.22/portingAids/kdelibs4support-5.22.0.tar.xz"
-  sha1 "8e7b3efeba4c19afabec6fc6c01d92e70d0913f7"
+  sha256 "a3da6fa86fb54b3e8fa242ad922b0a15a0560181d9ea292ff996c53949c9b9d6"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdelibs4support.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-kded"
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "qt5" => "with-dbus"
   depends_on "haraldf/kf5/kf5-kdesignerplugin"
@@ -16,10 +17,6 @@ class Kf5Kdelibs4support < Formula
   depends_on "haraldf/kf5/kf5-kinit"
   depends_on "haraldf/kf5/kf5-kitemmodels"
   depends_on "haraldf/kf5/kf5-kunitconversion"
-
-  def patches
-    DATA
-  end
 
   def install
     args = std_cmake_args
@@ -29,18 +26,3 @@ class Kf5Kdelibs4support < Formula
     prefix.install "install_manifest.txt"
   end
 end
-
-__END__
-diff --git a/src/kssl/ksslcertificate.cpp b/src/kssl/ksslcertificate.cpp
-index 89c5e28..03ffdcd 100644
---- a/src/kssl/ksslcertificate.cpp
-+++ b/src/kssl/ksslcertificate.cpp
-@@ -1017,7 +1017,7 @@ QDateTime KSSLCertificate::getQDTNotAfter() const
- 
- int operator==(KSSLCertificate &x, KSSLCertificate &y)
- {
--#ifndef KSSL_HAVE_SSL
-+#if !KSSL_HAVE_SSL
-     return 1;
- #else
-     if (!KOSSL::self()->X509_cmp(x.getCert(), y.getCert())) {

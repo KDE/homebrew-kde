@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Ktextwidgets < Formula
   url "http://download.kde.org/stable/frameworks/5.22/ktextwidgets-5.22.0.tar.xz"
-  sha1 "7eb605d7174c309f58b57417767be76e487377ea"
+  sha256 "b4709d6e5eb07bac328d3315d45c851730962548cabc72d58ad4007cdbdc4205"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/ktextwidgets.git'

@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kded < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kded-5.22.0.tar.xz"
-  sha1 "00f527dbdf0125ef5a7b50c6e54c32bb1c727bd4"
+  sha256 "d8b8dc42c32713061db46570782a4ca8e8fa9410191a6857e1d7c77a4d7ecffd"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kded.git'
@@ -13,8 +13,6 @@ class Kf5Kded < Formula
   depends_on "qt5" => "with-dbus"
   depends_on "gettext" => :build
 
-  patch :DATA
-
   def install
     args = std_cmake_args
 
@@ -23,54 +21,3 @@ class Kf5Kded < Formula
     prefix.install "install_manifest.txt"
   end
 end
-
-__END__
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 9b1888e..3a5d98d 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -5,13 +5,13 @@ set(kded_KDEINIT_SRCS kded.cpp kdedadaptor.cpp
- kf5_add_kdeinit_executable(kded5 ${kded_KDEINIT_SRCS})
- 
- if (APPLE)
--    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
--    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER "org.kded.kded5")
--    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "KDE Daemon")
-+    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE FALSE)
-+#    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
-+#    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER "org.kded.kded5")
-+#    set_target_properties(kded5 PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "KDE Daemon")
- endif ()
- 
- target_link_libraries(kdeinit_kded5
--    Qt5::Widgets # QApplication
-     KF5::Service # Needed for ksycoca.h
-     KF5::CoreAddons # Needed for KDirWatch
-     KF5::DBusAddons # Needed for kdedmodule.h
-diff --git a/src/kded.cpp b/src/kded.cpp
-index 6a3c493..1eb2674 100644
---- a/src/kded.cpp
-+++ b/src/kded.cpp
-@@ -29,7 +29,7 @@
- #include <QtCore/QDir>
- #include <QtCore/QFile>
- #include <QtCore/QTimer>
--#include <QApplication>
-+#include <QtCore/QCoreApplication>
- 
- #include <QDBusConnection>
- #include <QDBusInterface>
-@@ -759,10 +759,10 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char *argv[])
-         return 0;
-     }
- 
--    QApplication app(argc, argv);
-+    QCoreApplication app(argc, argv);
-     setupAppInfo(&app);
--    app.setApplicationDisplayName("KDE Daemon");
--    app.setQuitOnLastWindowClosed(false);
-+    //app.setApplicationDisplayName("KDE Daemon");
-+    //app.setQuitOnLastWindowClosed(false);
- 
-     KDBusService service(KDBusService::Unique);
- 

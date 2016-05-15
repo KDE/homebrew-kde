@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kpackage < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kpackage-5.22.0.tar.xz"
-  sha1 "561ae7817d270f4cc73003d0643b154f04769f18"
+  sha256 "73054d30219c54578984751b1505c03a68eaf1a0b4d4c99a8e51386409937cd9"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kpackage.git'

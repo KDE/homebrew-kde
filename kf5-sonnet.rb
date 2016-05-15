@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Sonnet < Formula
   url "http://download.kde.org/stable/frameworks/5.22/sonnet-5.22.0.tar.xz"
-  sha1 "33c98287623e1c95551e37791a859d76184e7292"
+  sha256 "8873decf23d78cf8d395e2b26823ea3dae810f528f0822e54e4515a35c1d1479"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/sonnet.git'

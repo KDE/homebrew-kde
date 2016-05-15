@@ -2,7 +2,7 @@ require "formula"
 
 class Kf5Kwidgetsaddons < Formula
   url "http://download.kde.org/stable/frameworks/5.22/kwidgetsaddons-5.22.0.tar.xz"
-  sha1 "e5e9b9f825549004eb7887b0c6abe634659ac50e"
+  sha256 "2430f22e193904c1ebe1d8b9039ab73ec3fed0993e8365981d430f1a94b395af"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kwidgetsaddons.git'
