@@ -14,7 +14,7 @@ class Kf5Kglobalaccel < Formula
   depends_on "haraldf/kf5/kf5-kcrash"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "qt5" => "with-d-bus"
+  depends_on "qt5" => "with-dbus"
 
   def install
     args = std_cmake_args

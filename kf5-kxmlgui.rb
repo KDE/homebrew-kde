@@ -12,7 +12,7 @@ class Kf5Kxmlgui < Formula
   depends_on "haraldf/kf5/kf5-kglobalaccel"
   depends_on "haraldf/kf5/kf5-ktextwidgets"
   depends_on "haraldf/kf5/kf5-attica"
-  depends_on "qt5" => "with-d-bus"
+  depends_on "qt5" => "with-dbus"
 
   def install
     args = std_cmake_args

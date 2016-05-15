@@ -13,8 +13,8 @@ In order to build them, you first need an up to date Qt 5 with
 D-Bus support:
 
 ```sh
-brew install d-bus
-brew install qt5 --with-d-bus
+brew install dbus
+brew install qt5 --with-dbus
 ```
 
 Note: It seems that building Qt currently requires the whole Xcode to be installed

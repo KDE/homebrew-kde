@@ -13,7 +13,7 @@ class Kf5Ktextwidgets < Formula
   depends_on "haraldf/kf5/kf5-kiconthemes"
   depends_on "haraldf/kf5/kf5-kservice"
   depends_on "haraldf/kf5/kf5-sonnet"
-  depends_on "qt5" => "with-d-bus"
+  depends_on "qt5" => "with-dbus"
 
   def install
     args = std_cmake_args

@@ -11,7 +11,7 @@ class Kf5Kjs < Formula
   depends_on "pkg-config" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "qt5" => "with-d-bus"
+  depends_on "qt5" => "with-dbus"
   depends_on "pcre"
 
 #  def patches

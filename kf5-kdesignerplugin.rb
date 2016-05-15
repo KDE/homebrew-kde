@@ -12,7 +12,7 @@ class Kf5Kdesignerplugin < Formula
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-kdewebkit"
   depends_on "haraldf/kf5/kf5-kplotting"
-  depends_on "qt5" => "with-d-bus"
+  depends_on "qt5" => "with-dbus"
 
   def install
     args = std_cmake_args
