@@ -7,17 +7,21 @@ class Kf5Kio < Formula
 
   head 'git://anongit.kde.org/kio.git'
 
+  option "without-kiowidgets", "Builds only KIO core"
+
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5" => "with-dbus"
   depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kbookmarks"
-  depends_on "haraldf/kf5/kf5-kjobwidgets"
-  depends_on "haraldf/kf5/kf5-kwallet"
+  depends_on "haraldf/kf5/kf5-kbookmarks" if not build.without? "kiowidgets"
+  depends_on "haraldf/kf5/kf5-kjobwidgets" if not build.without? "kiowidgets"
+  depends_on "haraldf/kf5/kf5-kwallet" if not build.without? "kiowidgets"
   depends_on "haraldf/kf5/kf5-solid"
+  depends_on "haraldf/kf5/kf5-kservice"
 
   def install
     args = std_cmake_args
+    args << "-DKIOCORE_ONLY=ON" if build.without? "kiowidgets"
 
     system "cmake", ".", *args
     system "make", "install"
