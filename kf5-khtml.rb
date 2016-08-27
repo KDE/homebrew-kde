@@ -13,6 +13,7 @@ class Kf5Khtml < Formula
   depends_on "qt5" => "with-dbus"
   depends_on "jpeg"
   depends_on "giflib"
+  depends_on "libpng"
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kcodecs"
   depends_on "haraldf/kf5/kf5-kglobalaccel"
