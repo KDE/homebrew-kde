@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kparts < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/kparts-5.22.0.tar.xz"
-  sha256 "8f0d7188a990a59648328481e6d9917a3bd716a716b5e69cc6f761489da83c24"
+  url "http://download.kde.org/stable/frameworks/5.25/kparts-5.25.0.tar.xz"
+  sha256 "ea187dc45376b53818bf76ed794c988b7793ae21f2683ce010cba995a31b92e3"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kparts.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kglobalaccel < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/kglobalaccel-5.22.0.tar.xz"
-  sha256 "130c86c50039dc7d31a67fe47a5a3ddafe4cfe64327d2051997c83577edc2ad4"
+  url "http://download.kde.org/stable/frameworks/5.25/kglobalaccel-5.25.0.tar.xz"
+  sha256 "687a063cd8c390c0d0a99bacb1ef9c589a0720fbfb499668a3845026ab0f9c70"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kglobalaccel.git'
@@ -14,6 +14,7 @@ class Kf5Kglobalaccel < Formula
   depends_on "haraldf/kf5/kf5-kcrash"
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-ki18n"
+  depends_on "haraldf/kf5/kf5-kservice"
   depends_on "qt5" => "with-dbus"
 
   def install

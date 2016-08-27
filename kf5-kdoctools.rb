@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/kdoctools-5.22.0.tar.xz"
-  sha256 "b370f6d43b8701f6abc690cfbe1cbd859445510a0a64eacab6447a0874f58a78"
+  url "http://download.kde.org/stable/frameworks/5.25/kdoctools-5.25.0.tar.xz"
+  sha256 "a00c43cf50d60374d62f1fa796033dbd5719eb0598328071092286052271947c"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
@@ -32,8 +32,8 @@ class Kf5Kdoctools < Formula
   end
   def caveats; <<-EOS.undent
     A symlink "#{ENV['HOME']}/Library/Application Support/kf5" was created
-    So that "kf5/kdoctools/customization" can be found when building other kf5 stuff.
-    
+    So that "kf5/kdoctools/customization" can be found when building other kf5 modules.
+
     This symlink can be removed when this formula is uninstalled.
     EOS
   end
@@ -41,13 +41,13 @@ end
 
 __END__
 diff --git a/cmake/FindDocBookXML4.cmake b/cmake/FindDocBookXML4.cmake
-index 415745f..4d7f089 100644
+index f56483b..8b1eb01 100644
 --- a/cmake/FindDocBookXML4.cmake
 +++ b/cmake/FindDocBookXML4.cmake
-@@ -34,6 +34,7 @@ function (locate_version version found_dir)
-         share/xml/docbook/xml-dtd-${version}
-         share/sgml/docbook/xml-dtd-${version}
-         share/xml/docbook/${version}
+@@ -55,6 +55,7 @@ function (locate_version version found_dir)
+         ${CMAKE_INSTALL_DATAROOTDIR}/xml/docbook/xml-dtd-${version}
+         ${CMAKE_INSTALL_DATAROOTDIR}/sgml/docbook/xml-dtd-${version}
+         ${CMAKE_INSTALL_DATAROOTDIR}/xml/docbook/${version}
 +        opt/docbook/docbook/xml/${version}
      )
  

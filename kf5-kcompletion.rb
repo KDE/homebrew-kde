@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kcompletion < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/kcompletion-5.22.0.tar.xz"
-  sha256 "feef5c55d9ccee727431a7a547e354da08f34eccea37257cd3b8bdd85a96581e"
+  url "http://download.kde.org/stable/frameworks/5.25/kcompletion-5.25.0.tar.xz"
+  sha256 "6a8af0a084ce697f57382f16157b0c21e4287c809819611fb7e6171e7e149d4a"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcompletion.git'

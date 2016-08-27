@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdewebkit < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/kdewebkit-5.22.0.tar.xz"
-  sha256 "0bcc780827d28d4719e0f9e74e4637c13979207cae10c76442e674392451bd66"
+  url "http://download.kde.org/stable/frameworks/5.25/kdewebkit-5.25.0.tar.xz"
+  sha256 "e9ac02938ff50967503c2c60f55b01ed74223b9de95f96b4fde12dcd10553cfc"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/attica.git'

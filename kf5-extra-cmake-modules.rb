@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5ExtraCmakeModules < Formula
-  url "http://download.kde.org/stable/frameworks/5.22/extra-cmake-modules-5.22.0.tar.xz"
-  sha256 "43fee1acc77914810cf73257ef804b929734e9030683bf9f31574671e7694a10"
+  url "http://download.kde.org/stable/frameworks/5.25/extra-cmake-modules-5.25.0.tar.xz"
+  sha256 "73c90e67c328076c2bee35884836087e7e9f753e48fc0063c8348b6f66b0345f"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/extra-cmake-modules'
