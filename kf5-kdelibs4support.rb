@@ -17,6 +17,7 @@ class Kf5Kdelibs4support < Formula
   depends_on "haraldf/kf5/kf5-kinit"
   depends_on "haraldf/kf5/kf5-kitemmodels"
   depends_on "haraldf/kf5/kf5-kunitconversion"
+  depends_on "haraldf/kf5/kf5-kparts"
 
   def install
     args = std_cmake_args
