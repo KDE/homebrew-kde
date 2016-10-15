@@ -1,8 +1,8 @@
 class Kdevplatform < Formula
   desc "KDevelop Platform"
   homepage "http://kdevelop.org"
-  #url ""
-  #sha256 ""
+  # url ""
+  # sha256 ""
 
   head "git://anongit.kde.org/kdevplatform.git"
 
@@ -31,6 +31,10 @@ class Kdevplatform < Formula
   depends_on "haraldf/kf5/kf5-kwindowsystem"
   depends_on "haraldf/kf5/kf5-kxmlgui"
   depends_on "haraldf/kf5/kf5-sonnet"
+  depends_on "haraldf/kf5/kf5-kcmutils"
+  depends_on "haraldf/kf5/kf5-knotifyconfig"
+  depends_on "haraldf/kf5/kf5-threadweaver"
+  depends_on "haraldf/kf5/kf5-kdeclarative"
 
   def install
     args = std_cmake_args
