@@ -12,7 +12,7 @@ class Kf5BreezeIcons < Formula
 
   def install
     args = std_cmake_args
-
+    args << "-DBINARY_ICONS_RESOURCE=TRUE"
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
