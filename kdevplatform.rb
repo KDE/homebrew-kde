@@ -35,7 +35,8 @@ class Kdevplatform < Formula
   depends_on "haraldf/kf5/kf5-knotifyconfig"
   depends_on "haraldf/kf5/kf5-threadweaver"
   depends_on "haraldf/kf5/kf5-kdeclarative"
-
+  depends_on "haraldf/kf5/libkomparediff2"
+  
   def install
     args = std_cmake_args
 
