@@ -26,6 +26,7 @@ class Kf5Kate < Formula
   depends_on "haraldf/kf5/kf5-kitemmodels"
   depends_on "haraldf/kf5/kf5-knewstuff"
   depends_on "haraldf/kf5/kf5-kwallet"
+  depends_on "haraldf/kf5/kf5-breeze-icons"
 
   def install
     args = std_cmake_args
@@ -33,6 +34,10 @@ class Kf5Kate < Formula
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
+
+    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kate"
+
+    system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/kate/icontheme.rcc"
   end
 
   test do
