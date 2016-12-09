@@ -13,6 +13,7 @@ class Kf5Ktexteditor < Formula
   depends_on "haraldf/kf5/kf5-kparts"
 
   def install
+    ln_sf Dir["#{HOMEBREW_PREFIX}/share/kservicetypes5"], "#{Etc.getpwuid.dir}/Library/Application Support/"
     args = std_cmake_args
 
     system "cmake", ".", *args
