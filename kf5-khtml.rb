@@ -1,7 +1,7 @@
 require "formula"
 
 class Kf5Khtml < Formula
-  url "http://download.kde.org/stable/frameworks/5.16/portingAids/khtml-5.16.0.tar.xz"
+  url "http://download.kde.org/stable/frameworks/5.25/portingAids/khtml-5.25.0.tar.xz"
   sha256 ""
   homepage "http://www.kde.org/"
 
