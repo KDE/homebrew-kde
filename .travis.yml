@@ -1,0 +1,11 @@
+language: ruby
+os: osx
+rvm: system
+
+before_install:
+  - brew update || brew update
+  - export HOMEBREW_DEVELOPER="1"
+install:
+  - brew tap file:/$PWD
+script:
+  - brew install haraldf/kf5/kf5-karchive
