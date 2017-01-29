@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Ki18n < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/ki18n-5.25.0.tar.xz"
-  sha256 "5d9ae669b2c6a7637489ffb04d603762512fe8c78501ea5318acc387741e7167"
+  url "http://download.kde.org/stable/frameworks/5.30/ki18n-5.30.0.tar.xz"
+  sha256 "2dd2d0835570c5e9fcdabd124613131cb4042a4deb3a38e68ed05daf6fcd72f3"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/ki18n.git'
@@ -10,7 +10,7 @@ class Kf5Ki18n < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "gettext" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def install
     args = std_cmake_args

@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Kauth < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kauth-5.25.0.tar.xz"
-  sha256 "1d62b32d88ba6c1e71e7b3ef67366710b9ce4488bcf82280fbe70d79b52f963a"
+  url "http://download.kde.org/stable/frameworks/5.30/kauth-5.30.0.tar.xz"
+  sha256 "6c68db4ee049631c08cadde8f4991764ec03cfab4e6780d3a16c7a15e7e4c061"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kauth.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "haraldf/kf5/kf5-kcoreaddons"
 
   def install

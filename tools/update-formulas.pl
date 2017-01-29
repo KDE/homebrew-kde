@@ -72,16 +72,16 @@ my %frameworks = (
 
     ### Porting Aids
     'kdelibs4support' => 'portingAids/kdelibs4support',
-    #'khtml' => 'portingAids/khtml',
+    'khtml' => 'portingAids/khtml',
     'kjs' => 'portingAids/kjs',
     'kjsembed' => 'portingAids/kjsembed',
     'kmediaplayer' => 'portingAids/kmediaplayer',
     'kross' => 'portingAids/kross'
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.25/";
+my $upstream_url = "http://download.kde.org/stable/frameworks/5.30/";
 
-my $frameworks_upstream_suffix = "-5.25.0.tar.xz";
+my $frameworks_upstream_suffix = "-5.30.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

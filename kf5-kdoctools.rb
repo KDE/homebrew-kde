@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kdoctools-5.25.0.tar.xz"
-  sha256 "a00c43cf50d60374d62f1fa796033dbd5719eb0598328071092286052271947c"
+  url "http://download.kde.org/stable/frameworks/5.30/kdoctools-5.30.0.tar.xz"
+  sha256 "7e4f16bd55b9de0afbc338dc923bb7c5f4f3b6541ccd72dfc10b624eab732792"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdoctools.git'
@@ -10,7 +10,7 @@ class Kf5Kdoctools < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "docbook"
   depends_on "docbook-xsl"
   depends_on "gettext"

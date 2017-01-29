@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kconfigwidgets < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kconfigwidgets-5.25.0.tar.xz"
-  sha256 "f394366fb3d3e65b2c4ea49428113c5081f8a05d2e6cc945cb2b910b55d691fe"
+  url "http://download.kde.org/stable/frameworks/5.30/kconfigwidgets-5.30.0.tar.xz"
+  sha256 "021d85537faf01b9a88a9614edf9011a7e2dac752330f4928a287f4832263996"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kconfigwidgets.git'
@@ -10,7 +10,7 @@ class Kf5Kconfigwidgets < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "haraldf/kf5/kf5-kauth"
   depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kcodecs"

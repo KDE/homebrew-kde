@@ -8,7 +8,7 @@ class Kf5BreezeIcons < Formula
   head 'git://anongit.kde.org/breeze-icons.git'
 
   depends_on "cmake" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def install
     args = std_cmake_args

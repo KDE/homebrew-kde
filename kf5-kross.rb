@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kross < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/portingAids/kross-5.25.0.tar.xz"
-  sha256 "84681930bbaa248e524651f95c3abce20a3b320c48a2df086675688974bb893f"
+  url "http://download.kde.org/stable/frameworks/5.30/portingAids/kross-5.30.0.tar.xz"
+  sha256 "bfab8313f0f1b121e3fd61d0537efe6fa3cd7004121eed1c42eca09c9dfd0eaf"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kross.git'
@@ -11,7 +11,7 @@ class Kf5Kross < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def install
     args = std_cmake_args

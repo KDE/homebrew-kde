@@ -14,7 +14,7 @@ D-Bus support:
 
 ```sh
 brew install dbus
-brew install qt5 --with-dbus
+brew install qt5
 ```
 
 Note: It seems that building Qt currently requires the whole Xcode to be installed

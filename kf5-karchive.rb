@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Karchive < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/karchive-5.25.0.tar.xz"
-  sha256 "0c338f1e1adc5522de6555fa3fa8c6ebcde29ce48e1f5959beca12d46aea88d8"
+  url "http://download.kde.org/stable/frameworks/5.30/karchive-5.30.0.tar.xz"
+  sha256 "18b35d437e7cbf6f00983d0f66372cbd6a0daedaa58e6c092838c20845571f38"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/karchive.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def install
     args = std_cmake_args

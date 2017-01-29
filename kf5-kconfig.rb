@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Kconfig < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kconfig-5.25.0.tar.xz"
-  sha256 "498332f1c3fbb5e0d681cf6807502c1fe0aef74e79b29cd1e60e4096924949c2"
+  url "http://download.kde.org/stable/frameworks/5.30/kconfig-5.30.0.tar.xz"
+  sha256 "a29a3ccb6c9e8124eca488417d602e689dc7240f9b10510f4152e739fdc143dc"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kconfig.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def patches
     DATA

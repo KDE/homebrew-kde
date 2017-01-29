@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kjobwidgets < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kjobwidgets-5.25.0.tar.xz"
-  sha256 "4ecd09af1df430110da6607fabb0aa5231f89b3cff0b1477438c899d5d4204d8"
+  url "http://download.kde.org/stable/frameworks/5.30/kjobwidgets-5.30.0.tar.xz"
+  sha256 "0e26aa3d496c6b651f57b11bb2ced5da49538c17be403b4067a7bb5475a09f46"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kjobwidgets.git'
@@ -11,7 +11,7 @@ class Kf5Kjobwidgets < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   def install
     args = std_cmake_args

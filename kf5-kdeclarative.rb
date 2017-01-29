@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kdeclarative-5.25.0.tar.xz"
-  sha256 "c470e239b5dc7c42ed94a39d0d88fdb05e6c65eb49727985379f39504d269623"
+  url "http://download.kde.org/stable/frameworks/5.30/kdeclarative-5.30.0.tar.xz"
+  sha256 "865c0cd147ed79b748c3c9e46a2ad1950b2a73d70f6d1f494bb6ff7860af2821"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdeclarative.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "libepoxy"
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kpackage"

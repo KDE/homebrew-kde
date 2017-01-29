@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdesu < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kdesu-5.25.0.tar.xz"
-  sha256 "13c94cb501fc3abdeec23bd133ef1f7c875f6c56951e8755593a791b6a24e305"
+  url "http://download.kde.org/stable/frameworks/5.30/kdesu-5.30.0.tar.xz"
+  sha256 "b3a265811f09048f45232af3a75b734c57b38a1b22be97e8d1290d72d535d4b2"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdesu.git'
@@ -10,7 +10,7 @@ class Kf5Kdesu < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kpty"
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "gettext" => :build
 
   def install

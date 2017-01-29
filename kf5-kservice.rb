@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kservice < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kservice-5.25.0.tar.xz"
-  sha256 "a75a5c8780dbb4e5ef7e5f1d3cc91808f44a640f1ac6b788418df261379ee32c"
+  url "http://download.kde.org/stable/frameworks/5.30/kservice-5.30.0.tar.xz"
+  sha256 "1470ce617a4c68b93e709abeec6b3319f40ca9fc417c5e7fae94ce51d1488bc9"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kservice.git'
@@ -11,7 +11,7 @@ class Kf5Kservice < Formula
   # The bison 2.3 in Mac OS X is too old to build. Use homebrew's instead
   depends_on "bison" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "haraldf/kf5/kf5-kcrash"
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-kdbusaddons"

@@ -1,14 +1,14 @@
 class Kf5Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "http://kate-editor.org"
-  url "http://download.kde.org/stable/applications/15.12.2/src/kate-15.12.2.tar.xz"
-  sha256 "071b4fc36e052204379ae9b4670e458dbbccffde9564db8383347ab6e643e4b2"
+  url "http://download.kde.org/stable/applications/16.12.1/src/kate-16.12.1.tar.xz"
+  sha256 "984a82005897b553eab0525715b626f7467bc1d664b29ac7944860cd1d7012dc"
 
   head "git://anongit.kde.org/kate.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   depends_on "haraldf/kf5/kf5-kactivities"
   depends_on "haraldf/kf5/kf5-kconfig"

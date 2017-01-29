@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdelibs4support < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/portingAids/kdelibs4support-5.25.0.tar.xz"
-  sha256 "6ca7bc090f32d6d43c4147815b3d13fae1de904088ff948a0fe8588d56093bb2"
+  url "http://download.kde.org/stable/frameworks/5.30/portingAids/kdelibs4support-5.30.0.tar.xz"
+  sha256 "b5734b63e1a4a89d0fd3260bf190a5e1608b1b17001ea36cc031a41be62a6f3a"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdelibs4support.git'
@@ -11,7 +11,7 @@ class Kf5Kdelibs4support < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kded"
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "haraldf/kf5/kf5-kdesignerplugin"
   depends_on "haraldf/kf5/kf5-kemoticons"
   depends_on "haraldf/kf5/kf5-kinit"

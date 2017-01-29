@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Kinit < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kinit-5.25.0.tar.xz"
-  sha256 "dda2b28923d06521d4f501f76e3b20e44ef9ace59b9285635d7d173ef975bcfd"
+  url "http://download.kde.org/stable/frameworks/5.30/kinit-5.30.0.tar.xz"
+  sha256 "426603c200d78e5143b8de900e4dc39209c9009800207cf506875e4fb0edfb10"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kinit.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "haraldf/kf5/kf5-kio"
 
   def install

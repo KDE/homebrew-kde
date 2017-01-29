@@ -1,22 +1,18 @@
 require "formula"
 
-class Kf5Kemoticons < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/kemoticons-5.30.0.tar.xz"
-  sha256 "d4125c19db3d4c18ed7a97a9e63607ec5a379c9aaea1ebb968818210744f6a40"
+class Kf5SyntaxHighlighting < Formula
+  url "http://download.kde.org/stable/frameworks/5.30/syntax-highlighting-5.30.0.tar.xz"
+  sha256 "a3d4d68c45f95133b4f242be24ecf88620478bbcd84ced1f1bea080667783746"
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kemoticons.git'
+  head 'git://anongit.kde.org/syntax-highlighting.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5"
 
-  depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kservice"
-
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", *args
     system "make", "install"

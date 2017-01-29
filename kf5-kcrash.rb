@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Kcrash < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/kcrash-5.25.0.tar.xz"
-  sha256 "a84a9a5b73c51678d84cfe9d87a945f992e6035a9dbd29040bbe5dbcfd38ba6e"
+  url "http://download.kde.org/stable/frameworks/5.30/kcrash-5.30.0.tar.xz"
+  sha256 "04a22615e03dc9db29daccfc437fd6d952e35b3dd39f52d95ea24115037aac42"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kcrash.git'
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
 
   depends_on "haraldf/kf5/kf5-kwindowsystem"
   depends_on "haraldf/kf5/kf5-kcoreaddons"

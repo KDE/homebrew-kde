@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Khtml < Formula
-  url "http://download.kde.org/stable/frameworks/5.25/portingAids/khtml-5.25.0.tar.xz"
-  sha256 ""
+  url "http://download.kde.org/stable/frameworks/5.30/portingAids/khtml-5.30.0.tar.xz"
+  sha256 "702dc24913aa361e021a8e0353174cb9a9f0343de887b800a2eb2f94d99097fc"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/khtml.git'
@@ -10,7 +10,7 @@ class Kf5Khtml < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "qt5" => "with-dbus"
+  depends_on "qt5"
   depends_on "jpeg"
   depends_on "giflib"
   depends_on "libpng"
