@@ -20,6 +20,13 @@ brew install qt5
 Note: It seems that building Qt currently requires the whole Xcode to be installed
 Note: Read the D-Bus notes below if this is your first D-Bus installation.
 
+In order to build applications(eg. kdevplatform) with QtWebkit module, you need an up-to-date
+Qt 5 with QtWebkit support:
+
+``` sh
+brew install qt5 --with-dbus --with-qtwebkit
+```
+
 Now, the fun begins. You can either install individual frameworks via
 
 ```sh
