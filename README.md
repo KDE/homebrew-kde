@@ -14,7 +14,7 @@ optional QtWebkit support(`kdewebkit`、`kdevplatform` depends on QtWebkit):
 
 ```sh
 brew install dbus
-brew install qt5 // or brew install qt5 --with-qtwebkit
+brew install qt5 # or brew install qt5 --with-qtwebkit
 ```
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
