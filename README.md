@@ -21,8 +21,7 @@ brew install qt5 # or brew install qt5 --with-qtwebkit
 
 **Note**: Read the D-Bus notes below if this is your first D-Bus installation.
 
-**Note**: If you won't install kdevelop and kdewebkit, you may not install Qt 5 with
-QtWebkit and it would save a lot of time.
+**Note**: You only need to install Qt5 with QtWebkit if you want to install kdevelop or kdewebkit.
 
 Now, the fun begins. You can either install individual frameworks via
 
