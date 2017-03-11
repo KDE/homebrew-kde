@@ -10,7 +10,7 @@ brew tap haraldf/kf5
 ```
 
 In order to build them, you first need an up to date Qt 5 with
-QtWebkit support(`kdewebkit`、`kdevplatform` depends on QtWebkit):
+optional QtWebkit support(`kdewebkit`、`kdevplatform` depends on QtWebkit):
 
 ```sh
 brew install dbus
