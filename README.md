@@ -10,22 +10,19 @@ brew tap haraldf/kf5
 ```
 
 In order to build them, you first need an up to date Qt 5 with
-D-Bus support:
+QtWebkit support(`kdewebkit`、`kdevplatform` depends on QtWebkit):
 
 ```sh
 brew install dbus
-brew install qt5
+brew install qt5 // or brew install qt5 --with-qtwebkit
 ```
 
-Note: It seems that building Qt currently requires the whole Xcode to be installed
-Note: Read the D-Bus notes below if this is your first D-Bus installation.
+**Note**: It seems that building Qt currently requires the whole Xcode to be installed
 
-In order to build applications(eg. kdevplatform) with QtWebkit module, you need an up-to-date
-Qt 5 with QtWebkit support:
+**Note**: Read the D-Bus notes below if this is your first D-Bus installation.
 
-``` sh
-brew install qt5 --with-dbus --with-qtwebkit
-```
+**Note**: If you won't install kdevelop and kdewebkit, you may not install Qt 5 with
+QtWebkit and it would save a lot of time.
 
 Now, the fun begins. You can either install individual frameworks via
 
