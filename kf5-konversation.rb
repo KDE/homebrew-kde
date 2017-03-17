@@ -21,7 +21,6 @@ class Kf5Konversation < Formula
   depends_on "haraldf/kf5/kf5-ki18n"
   depends_on "haraldf/kf5/kf5-kidletime"
   depends_on "haraldf/kf5/kf5-knotifyconfig"
-  depends_on "haraldf/kf5/kf5-kdelibs4support"
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kparts"
   depends_on "haraldf/kf5/kf5-solid"
