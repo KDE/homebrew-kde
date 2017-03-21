@@ -10,8 +10,6 @@ done
 
 tsort /tmp/kf5_dep_map > /tmp/kf5_install_order
 
-
-
 for formula in `cat /tmp/kf5_install_order`; do
   brew install "$@" "${formula}"
 done
