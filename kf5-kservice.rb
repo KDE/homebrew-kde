@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kservice < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/kservice-5.30.0.tar.xz"
-  sha256 "1470ce617a4c68b93e709abeec6b3319f40ca9fc417c5e7fae94ce51d1488bc9"
+  url "http://download.kde.org/stable/frameworks/5.32/kservice-5.32.0.tar.xz"
+  sha256 "189c9da0bb48961d16db17540093b68fd4ae061590c34f4cea35dfaba51ab30b"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kservice.git'

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Frameworkintegration < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/frameworkintegration-5.30.0.tar.xz"
-  sha256 "d3b5a0e22fc37396b40018fdf6b5cfe1da401d655c828fa34537596952c33fa9"
+  url "http://download.kde.org/stable/frameworks/5.32/frameworkintegration-5.32.0.tar.xz"
+  sha256 "8a5ff514aaa73c4fbf616be45be9be9a2699d80c3409ccc749c8d07709635a08"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/frameworkintegration.git'

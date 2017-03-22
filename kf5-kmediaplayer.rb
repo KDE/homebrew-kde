@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kmediaplayer < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/portingAids/kmediaplayer-5.30.0.tar.xz"
-  sha256 "a8715820b2313d050216165d535dcdeeb8c1289327c3a985ce4d42b7ce23392e"
+  url "http://download.kde.org/stable/frameworks/5.32/portingAids/kmediaplayer-5.32.0.tar.xz"
+  sha256 "c461a6a07ad3c376cc375e9f66b44ded807283f7de13dc2b5e35779cbf6b06e9"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/attica.git'
