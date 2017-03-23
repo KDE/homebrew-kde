@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdesignerplugin < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/kdesignerplugin-5.30.0.tar.xz"
-  sha256 "bf6db9ebf47c73aa9a2f3175603dfdf0ae15d4f62929352ad9288df61310c741"
+  url "http://download.kde.org/stable/frameworks/5.32/kdesignerplugin-5.32.0.tar.xz"
+  sha256 "cec24dc289636e12eff8d24e2d3d9600b87c79af5645d1a9a9c34f8b3a9257c1"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kdesignerplugin.git'

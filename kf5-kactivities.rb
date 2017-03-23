@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kactivities < Formula
-  url "http://download.kde.org/stable/frameworks/5.30/kactivities-5.30.0.tar.xz"
-  sha256 "1b2392dcdb5358c0016dd472ed8c69f969425654394a9f0d1c4fe19d9844585a"
+  url "http://download.kde.org/stable/frameworks/5.32/kactivities-5.32.0.tar.xz"
+  sha256 "e7a5a74fc15648d16f32834109c6f158354a6c99bc12c4b976fa03a9a0263676"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kactivities.git'
