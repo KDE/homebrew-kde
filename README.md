@@ -33,7 +33,8 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-`brew --prefix`/Library/Taps/haraldf/homebrew-kf5/tools/install.sh
+cd `brew --prefix`/Homebrew/Library/Taps/haraldf/homebrew-kf5
+./tools/install.sh
 ```
 
 Note that *install.sh* passes all parameters on to brew, so you can specify
