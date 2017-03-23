@@ -22,8 +22,8 @@ class Kf5Kdoctools < Formula
   def install
     args = std_cmake_args
 
-    args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formula.factory('docbook').prefix}/docbook/xml/4.2"
-    args << "-DDocBookXSL_DIR:PATH=#{Formula.factory('docbook-xsl').prefix}/docbook-xsl"
+    args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formulary.factory('docbook').prefix}/docbook/xml/4.2"
+    args << "-DDocBookXSL_DIR:PATH=#{Formulary.factory('docbook-xsl').prefix}/docbook-xsl"
 
     system "cmake", ".", *args
     system "make", "install"
