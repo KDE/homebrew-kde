@@ -3,6 +3,8 @@ class Kf5Okular < Formula
   url "https://download.kde.org/stable/applications/16.12.3/src/okular-16.12.3.tar.xz"
   sha256 "3b5a315030ffaedd6ddcb2bd1742737edb49063adc355c2dbba1ecb86dca34be"
 
+  head "git://anongit.kde.org/okular.git"
+
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5"
@@ -24,6 +26,7 @@ class Kf5Okular < Formula
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kjs"
   depends_on "haraldf/kf5/kf5-kparts"
+  depends_on "haraldf/kf5/kf5-kpty"
   depends_on "haraldf/kf5/kf5-threadweaver"
   depends_on "haraldf/kf5/kf5-kwallet"
   depends_on "haraldf/kf5/kf5-kwindowsystem"
