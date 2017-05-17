@@ -79,9 +79,10 @@ my %frameworks = (
     'kross' => 'portingAids/kross'
 );
 
-my $upstream_url = "http://download.kde.org/stable/frameworks/5.32/";
+my $version = "5.34";
+my $upstream_url = "http://download.kde.org/stable/frameworks/${version}/";
 
-my $frameworks_upstream_suffix = "-5.32.0.tar.xz";
+my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {

@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kpty < Formula
-  url "http://download.kde.org/stable/frameworks/5.32/kpty-5.32.0.tar.xz"
-  sha256 "5a94e0a10c0243ef4268a934498827481f48d1ba8a2523f16602a4c4320a8340"
+  url "http://download.kde.org/stable/frameworks/5.34/kpty-5.34.0.tar.xz"
+  sha256 "a0a4ec1005e97ee295b94a2a977d8d0344c842b40380d50f7176387b3e846502"
   homepage "http://www.kde.org/"
 
   head 'git://anongit.kde.org/kpty.git'
