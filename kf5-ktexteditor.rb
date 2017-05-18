@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Ktexteditor < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/ktexteditor-5.34.0.tar.xz"
   sha256 "bcf714ea30c249e9d52eda5f089a5321b6ed283453cf81950319b7e7b8064aa0"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/ktexteditor.git'
+  head "git://anongit.kde.org/ktexteditor.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

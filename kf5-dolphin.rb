@@ -33,4 +33,3 @@ class Kf5Dolphin < Formula
     system "make", "install"
   end
 end
-

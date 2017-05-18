@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kitemviews < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kitemviews-5.34.0.tar.xz"
   sha256 "13e76534a2952887f2e02612b0ee86220b035262abbbf582fce1101d17638a14"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kitemviews.git'
+  head "git://anongit.kde.org/kitemviews.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
@@ -13,7 +13,6 @@ class Kf5Kitemviews < Formula
 
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", *args
     system "make", "install"

@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kservice < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kservice-5.34.0.tar.xz"
   sha256 "6730f99cd9e187256703ee32942adf6d4370452d05a350a40d380a9d88e5336a"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kservice.git'
+  head "git://anongit.kde.org/kservice.git"
 
   depends_on "cmake" => :build
   # The bison 2.3 in Mac OS X is too old to build. Use homebrew's instead
@@ -20,7 +20,6 @@ class Kf5Kservice < Formula
 
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", "-DBUILD_TESTING=OFF", *args
     system "make", "install"

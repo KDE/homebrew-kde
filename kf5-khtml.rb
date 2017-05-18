@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Khtml < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/portingAids/khtml-5.34.0.tar.xz"
   sha256 "bb5ba5a1a3896277f14d713b91bbbd53036e49289287100375eba26f9d048948"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/khtml.git'
+  head "git://anongit.kde.org/khtml.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

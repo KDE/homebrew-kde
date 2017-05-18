@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kcompletion < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kcompletion-5.34.0.tar.xz"
   sha256 "9cddd50362b2f20273e4514b0c963182e65362964a82bec73270dab0ca6c1ba2"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kcompletion.git'
+  head "git://anongit.kde.org/kcompletion.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
@@ -15,7 +15,6 @@ class Kf5Kcompletion < Formula
 
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", *args
     system "make", "install"

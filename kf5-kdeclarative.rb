@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kdeclarative-5.34.0.tar.xz"
   sha256 "e29faa82dd82434add4aa6c3d57f11c892e5a21905cd46d3e7fb8761ae18d2d5"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kdeclarative.git'
+  head "git://anongit.kde.org/kdeclarative.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

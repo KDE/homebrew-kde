@@ -1,8 +1,8 @@
 class KdevelopPgQt < Formula
   desc "LL(1) parser generator based on Qt"
   homepage "http://kdevelop.org"
-  #url ""
-  #sha256 ""
+  # url ""
+  # sha256 ""
 
   head "git://anongit.kde.org/kdevelop-pg-qt.git"
 

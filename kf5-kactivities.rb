@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kactivities < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kactivities-5.34.0.tar.xz"
   sha256 "b5b8273fae5ea0a243c447f0ea34b890197b6d29b17e4d64645113d7db5ce635"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kactivities.git'
+  head "git://anongit.kde.org/kactivities.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

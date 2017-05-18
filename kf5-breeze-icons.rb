@@ -5,7 +5,7 @@ class Kf5BreezeIcons < Formula
   url "http://download.kde.org/stable/frameworks/5.25/breeze-icons-5.25.0.tar.xz"
   sha256 "e274c7f5c71c177e2e9d8ced9c49cd052ec2f726cb693c7df73e96af12277e8f"
 
-  head 'git://anongit.kde.org/breeze-icons.git'
+  head "git://anongit.kde.org/breeze-icons.git"
 
   depends_on "cmake" => :build
   depends_on "qt5"
@@ -20,7 +20,7 @@ class Kf5BreezeIcons < Formula
   end
 
   def caveats; <<-EOS.undent
-      A symlink "#{ENV['HOME']}/Library/Application Support/icons" was created
+      A symlink "#{ENV["HOME"]}/Library/Application Support/icons" was created
       So that KF5 can find the breeze themes.
 
       This symlink can be removed when this formula is uninstalled.

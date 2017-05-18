@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kjsembed < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/portingAids/kjsembed-5.34.0.tar.xz"
   sha256 "73d57549e1f97672053fad9ee80db3909100e4f9f1b33ba40b7ae20bce88889f"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/attica.git'
+  head "git://anongit.kde.org/attica.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

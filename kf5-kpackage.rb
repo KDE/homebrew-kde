@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kpackage < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kpackage-5.34.0.tar.xz"
   sha256 "b8f09869323f5d077da750f982d7de800897a66366fc66d559fd3d9919acbe71"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kpackage.git'
+  head "git://anongit.kde.org/kpackage.git"
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build

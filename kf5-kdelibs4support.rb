@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kdelibs4support < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/portingAids/kdelibs4support-5.34.0.tar.xz"
   sha256 "2056de238cf237cbf0ddea3f882d2d696d4062175eb9ed89da83b0cda4963261"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kdelibs4support.git'
+  head "git://anongit.kde.org/kdelibs4support.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

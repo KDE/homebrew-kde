@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5ExtraCmakeModules < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/extra-cmake-modules-5.34.0.tar.xz"
   sha256 "05da02a2db64d20a7a92be6dc642df39da39f957dea8fba9bcb99fb3f3f66de4"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/extra-cmake-modules'
+  head "git://anongit.kde.org/extra-cmake-modules"
 
   depends_on "cmake" => :build
 

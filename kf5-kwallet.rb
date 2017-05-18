@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kwallet < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kwallet-5.34.0.tar.xz"
   sha256 "e537d561b536802bd0d881638a6068d8383d1f2497e9ad85c5c596aa746be323"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kwallet.git'
+  head "git://anongit.kde.org/kwallet.git"
 
   depends_on "libgcrypt"
 
@@ -16,7 +16,6 @@ class Kf5Kwallet < Formula
 
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", *args
     system "make", "install"

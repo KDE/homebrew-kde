@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kimageformats < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kimageformats-5.34.0.tar.xz"
   sha256 "5c466ba11a7fcb393c79b5918c07832a07d302ae374c3b08c74d4c4c19793661"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kimageformats.git'
+  head "git://anongit.kde.org/kimageformats.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

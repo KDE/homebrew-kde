@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kconfig < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kconfig-5.34.0.tar.xz"
   sha256 "1da114407c2f2953c8e6bc3cb0560824f064b71293fb283643d74c3796e98b2e"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kconfig.git'
+  head "git://anongit.kde.org/kconfig.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
@@ -17,7 +17,6 @@ class Kf5Kconfig < Formula
 
   def install
     args = std_cmake_args
-
 
     system "cmake", ".", *args
     system "make", "install"

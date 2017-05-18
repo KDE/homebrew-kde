@@ -3,7 +3,7 @@ require "formula"
 class Kf5Kdiagram < Formula
   homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kdiagram.git'
+  head "git://anongit.kde.org/kdiagram.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

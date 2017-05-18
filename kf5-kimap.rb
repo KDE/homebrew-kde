@@ -22,4 +22,3 @@ class Kf5Kimap < Formula
     system "make", "install"
   end
 end
-

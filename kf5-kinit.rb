@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kinit < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kinit-5.34.0.tar.xz"
   sha256 "a10e2c454b7242792178a7f739eae3b46914a3ce237fcdc7b9515d18e54c8220"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kinit.git'
+  head "git://anongit.kde.org/kinit.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build

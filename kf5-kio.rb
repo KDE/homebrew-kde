@@ -1,11 +1,11 @@
 require "formula"
 
 class Kf5Kio < Formula
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.34/kio-5.34.0.tar.xz"
   sha256 "6acb28de757a0d5eccb1e3e533a1ef22b5f5de92e96c3aba804ebdb44aa343c4"
-  homepage "http://www.kde.org/"
 
-  head 'git://anongit.kde.org/kio.git'
+  head "git://anongit.kde.org/kio.git"
 
   option "without-kiowidgets", "Builds only KIO core"
 
@@ -13,9 +13,9 @@ class Kf5Kio < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt5"
   depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kbookmarks" if not build.without? "kiowidgets"
-  depends_on "haraldf/kf5/kf5-kjobwidgets" if not build.without? "kiowidgets"
-  depends_on "haraldf/kf5/kf5-kwallet" if not build.without? "kiowidgets"
+  depends_on "haraldf/kf5/kf5-kbookmarks" unless build.without? "kiowidgets"
+  depends_on "haraldf/kf5/kf5-kjobwidgets" unless build.without? "kiowidgets"
+  depends_on "haraldf/kf5/kf5-kwallet" unless build.without? "kiowidgets"
   depends_on "haraldf/kf5/kf5-solid"
   depends_on "haraldf/kf5/kf5-kservice"
 
