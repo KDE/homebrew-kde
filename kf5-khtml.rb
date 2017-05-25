@@ -28,6 +28,7 @@ class Kf5Khtml < Formula
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "haraldf/kf5/kf5-sonnet"
   depends_on "haraldf/kf5/kf5-kxmlgui"
+  depends_on "openssl"
 
   def patches
     DATA
