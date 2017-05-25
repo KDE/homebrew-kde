@@ -63,6 +63,7 @@ my %frameworks = (
     'kparts' => '',
     'kservice' => '',
     'ktexteditor' => '',
+    'syntax-highlighting' => '',
     'ktextwidgets' => '',
     'kwallet' => '',
     'kxmlgui' => '',
