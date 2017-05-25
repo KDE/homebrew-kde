@@ -12,6 +12,7 @@ my %frameworks = (
     'extra-cmake-modules' => '',
     ### Tier 1
     'attica' => '',
+    'breeze-icons' => '',
     'kapidox' => '',
     'karchive' => '',
     'kcodecs' => '',
