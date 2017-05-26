@@ -10,6 +10,7 @@ class Kf5Kdesignerplugin < Formula
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   #  depends_on "haraldf/kf5/kf5-kdewebkit"
   depends_on "haraldf/kf5/kf5-kplotting"
