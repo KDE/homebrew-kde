@@ -75,7 +75,7 @@ To verify D-Bus working with Qt:
 
 ```sh
 echo $DBUS_LAUNCHD_SESSION_BUS_SOCKET
-`brew --prefix`/opt/qt5/bin/qdbus
+`brew --prefix qt`/bin/qdbus
 ```
 
 The first command should echo a valid path, e.g. */tmp/launch-NHyucl/unix_domain_listener*.
