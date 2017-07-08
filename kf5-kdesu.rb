@@ -1,9 +1,9 @@
 require "formula"
 
 class Kf5Kdesu < Formula
+  url "http://download.kde.org/stable/frameworks/5.36/kdesu-5.36.0.tar.xz"
+  sha256 "8af37b0ca1563c58e5f8446f66286b2d418946960575cf6f444ae314aa198f06"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.34/kdesu-5.34.0.tar.xz"
-  sha256 "2d0632e80011fc19ff611d73c6e996211146b66743d9f5e67c5423374d03bd12"
 
   head "git://anongit.kde.org/kdesu.git"
 

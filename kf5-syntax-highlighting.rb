@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5SyntaxHighlighting < Formula
-  url "http://download.kde.org/stable/frameworks/5.34/syntax-highlighting-5.34.0.tar.xz"
-  sha256 "884b266cfcec466d7f86053c7bcefccf27b256651ad123656939c9bfe9e2ce67"
+  url "http://download.kde.org/stable/frameworks/5.36/syntax-highlighting-5.36.0.tar.xz"
+  sha256 "925a8845cd3a1d1720753aaba80f364d59612d45a71de089531d5e8dfa94fdc5"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/syntax-highlighting.git"
