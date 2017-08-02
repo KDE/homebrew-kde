@@ -1,14 +1,14 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "http://kdevelop.org"
-  # url ""
-  # sha256 ""
+  url "https://download.kde.org/stable/kdevelop/5.1.1/src/kdevelop-5.1.1.tar.xz"
+  sha256 "0a01a4ffb2f01802cf4945521a3149a8f82c21fa8a97935991f1854b7db5d754"
 
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "llvm"
 
   depends_on "haraldf/kf5/kdevplatform"
@@ -42,7 +42,7 @@ class Kdevelop < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
-    system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc"
+    #mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
+    #n_s Dir["#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc"], "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc", :force => true
   end
 end
