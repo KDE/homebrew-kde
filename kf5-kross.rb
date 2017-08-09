@@ -11,7 +11,7 @@ class Kf5Kross < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "qt5"
+  depends_on "qt"
 
   def install
     args = std_cmake_args

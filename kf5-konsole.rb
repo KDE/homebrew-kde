@@ -8,7 +8,7 @@ class Kf5Konsole < Formula
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5"
+  depends_on "qt"
 
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-kcoreaddons"

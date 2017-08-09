@@ -10,7 +10,7 @@ class Kf5Ki18n < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "gettext" => :build
-  depends_on "qt5"
+  depends_on "qt"
 
   def patches
     DATA

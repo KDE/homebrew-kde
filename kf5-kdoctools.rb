@@ -12,7 +12,7 @@ class Kf5Kdoctools < Formula
   depends_on "cpanminus" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "docbook"
   depends_on "docbook-xsl"
   depends_on "gettext"

@@ -12,7 +12,7 @@ class Kf5Kjsembed < Formula
   depends_on "haraldf/kf5/kf5-kdoctools" => :build
   depends_on "haraldf/kf5/kf5-ki18n"
   depends_on "haraldf/kf5/kf5-kjs"
-  depends_on "qt5"
+  depends_on "qt"
 
   def install
     args = std_cmake_args

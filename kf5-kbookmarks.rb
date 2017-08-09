@@ -10,7 +10,7 @@ class Kf5Kbookmarks < Formula
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "haraldf/kf5/kf5-kxmlgui"
-  depends_on "qt5"
+  depends_on "qt"
 
   def install
     args = std_cmake_args

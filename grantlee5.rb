@@ -8,7 +8,7 @@ class Grantlee5 < Formula
   head "https://github.com/steveire/grantlee.git"
 
   depends_on "cmake" => :build
-  depends_on "qt5"
+  depends_on "qt"
 
   def install
     args = std_cmake_args

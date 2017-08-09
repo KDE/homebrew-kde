@@ -6,7 +6,7 @@ class Kf5Alkimia < Formula
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "gmp"
 
   depends_on "haraldf/kf5/kf5-kcoreaddons"
