@@ -35,9 +35,16 @@ class Kf5Kate < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kate"
+    # mkdir_p "#{Etc.getpwuid.dir}/Library/Application Support/kate"
 
-    system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/kate/icontheme.rcc"
+    # system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/kate/icontheme.rcc"
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Library/Application Support/kate"
+      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kate/icontheme.rcc"
+    EOS
   end
 
   test do

@@ -20,10 +20,17 @@ class Kf5Kinit < Formula
     system "cmake", ".", *args
     system "make", "install"
 
-    mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-    ln_sf "#{lib}/kde5/libexec/klauncher", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    # mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+    # ln_sf "#{lib}/kde5/libexec/klauncher", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
 
     prefix.install "install_manifest.txt"
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+      ln -sf "#{lib}/kde5/libexec/klauncher" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    EOS
   end
 end
 

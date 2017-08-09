@@ -22,9 +22,17 @@ class Kf5Kconfig < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-    ln_sf "#{lib}/kde5/libexec/kconf_update", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-    ln_sf "#{lib}/kde5/libexec/kconfig_compiler_kf5", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    # mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+    # ln_sf "#{lib}/kde5/libexec/kconf_update", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    # ln_sf "#{lib}/kde5/libexec/kconfig_compiler_kf5", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
+      ln -sf "#{lib}/kde5/libexec/kconf_update" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+      ln -sf "#{lib}/kde5/libexec/kconfig_compiler_kf5" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
+    EOS
   end
 end
 

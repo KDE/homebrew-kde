@@ -31,15 +31,13 @@ class Kf5Kdoctools < Formula
 
     system "cmake", ".", *args
     system "make", "install"
-    ln_s Dir["#{share}/kf5"], "#{Etc.getpwuid.dir}/Library/Application Support/", :force => true
+    # ln_s Dir["#{share}/kf5"], "#{Etc.getpwuid.dir}/Library/Application Support/", :force => true
     prefix.install "install_manifest.txt"
   end
 
   def caveats; <<-EOS.undent
-    A symlink "#{ENV["HOME"]}/Library/Application Support/kf5" was created
-    So that "kf5/kdoctools/customization" can be found when building other kf5 modules.
-
-    This symlink can be removed when this formula is uninstalled.
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "#{share}/kf5" "~/Library/Application Support/"
     EOS
   end
 end

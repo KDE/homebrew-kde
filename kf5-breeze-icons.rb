@@ -17,14 +17,12 @@ class Kf5BreezeIcons < Formula
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
-    ln_sf Dir["#{HOMEBREW_PREFIX}/share/icons"], "#{Etc.getpwuid.dir}/Library/Application Support/"
+    # ln_sf Dir["#{HOMEBREW_PREFIX}/share/icons"], "#{Etc.getpwuid.dir}/Library/Application Support/"
   end
 
   def caveats; <<-EOS.undent
-      A symlink "#{ENV["HOME"]}/Library/Application Support/icons" was created
-      So that KF5 can find the breeze themes.
-
-      This symlink can be removed when this formula is uninstalled.
-  EOS
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "#{HOMEBREW_PREFIX}/share/icons" "~/Library/Application Support/"
+    EOS
   end
 end

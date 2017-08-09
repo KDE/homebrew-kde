@@ -42,9 +42,15 @@ class Kf5Okular < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/okular"
+    # mkdir_p "#{Etc.getpwuid.dir}/Library/Application Support/okular"
+    # system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/okular/icontheme.rcc"
+  end
 
-    system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/okular/icontheme.rcc"
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Library/Application Support/okular"
+      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/okular/icontheme.rcc"
+    EOS
   end
 end
 

@@ -42,7 +42,14 @@ class Kdevelop < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
-    ln_s Dir["#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc"], "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc", :force => true
+    # mkdir_p "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
+    # system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc"
+  end
+
+  def caveats; <<-EOS.undent
+      You need to make sime manual steps in order to make this formula work:
+        mkdir -p "~/Library/Application Support/kdevelop"
+        ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kdevelop/icontheme.rcc"
+      EOS
   end
 end

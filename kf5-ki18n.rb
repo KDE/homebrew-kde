@@ -11,7 +11,7 @@ class Kf5Ki18n < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "gettext" => :build
   depends_on "qt"
-  
+
   def install
     args = std_cmake_args
 

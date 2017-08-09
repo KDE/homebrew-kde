@@ -14,11 +14,17 @@ class Kf5Ktexteditor < Formula
   depends_on "haraldf/kf5/kf5-syntax-highlighting"
 
   def install
-    ln_sf Dir["#{HOMEBREW_PREFIX}/share/kservicetypes5"], "#{Etc.getpwuid.dir}/Library/Application Support/"
+    # ln_sf Dir["#{HOMEBREW_PREFIX}/share/kservicetypes5"], "#{Etc.getpwuid.dir}/Library/Application Support/"
     args = std_cmake_args
 
     system "cmake", ".", *args
     system "make", "install"
     prefix.install "install_manifest.txt"
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "#{HOMEBREW_PREFIX}/share/kservicetypes5" "~/Library/Application Support/"
+    EOS
   end
 end
