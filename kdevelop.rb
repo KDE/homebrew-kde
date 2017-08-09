@@ -42,7 +42,7 @@ class Kdevelop < Formula
     system "make", "install"
     prefix.install "install_manifest.txt"
 
-    #mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
-    #n_s Dir["#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc"], "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc", :force => true
+    mkdir "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop"
+    ln_s Dir["#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc"], "#{Etc.getpwuid.dir}/Library/Application Support/kdevelop/icontheme.rcc", :force => true
   end
 end
