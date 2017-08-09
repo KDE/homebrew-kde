@@ -13,7 +13,7 @@ class Kf5Ki18n < Formula
   depends_on "qt5"
 
   def patches
-      DATA
+    DATA
   end
 
   def install

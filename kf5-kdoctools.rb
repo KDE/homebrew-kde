@@ -22,7 +22,6 @@ class Kf5Kdoctools < Formula
   end
 
   def install
-
     system "cpanm", "URI"
 
     args = std_cmake_args
