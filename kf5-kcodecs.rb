@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kcodecs < Formula
-  url "http://download.kde.org/stable/frameworks/5.36/kcodecs-5.36.0.tar.xz"
-  sha256 "6cff3e88f9cd623509caad8cc4e20993189fdc5071f9b5c05fbcf58850dabe6c"
+  url "http://download.kde.org/stable/frameworks/5.37/kcodecs-5.37.0.tar.xz"
+  sha256 "6a2fe7e8e5d82490373f973c50dcac484d75081daff22efb58deae5dd649b34e"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kcodecs.git"

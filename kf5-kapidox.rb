@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kapidox < Formula
-  url "http://download.kde.org/stable/frameworks/5.36/kapidox-5.36.0.tar.xz"
-  sha256 "79a505ed2ef7a755115b1da7e37c45fe6a2eda799ea9f4da15766fa5977f3fa0"
+  url "http://download.kde.org/stable/frameworks/5.37/kapidox-5.37.0.tar.xz"
+  sha256 "bb3cac795319f1376b0dd7f6986a06e7a7e69aa59a6754c2864f7617ab5293f7"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kapidox.git"

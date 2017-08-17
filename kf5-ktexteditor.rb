@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Ktexteditor < Formula
-  url "http://download.kde.org/stable/frameworks/5.36/ktexteditor-5.36.0.tar.xz"
-  sha256 "f9a0109aff18175ef528186e099d0881b977dde7435c433c5541df44b5a18609"
+  url "http://download.kde.org/stable/frameworks/5.37/ktexteditor-5.37.0.tar.xz"
+  sha256 "7ae65ca215a53dc4e35877069004c748d8a8b504aecbeaa3b916b8c96dd00478"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/ktexteditor.git"

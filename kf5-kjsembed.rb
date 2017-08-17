@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kjsembed < Formula
-  url "http://download.kde.org/stable/frameworks/5.36/portingAids/kjsembed-5.36.0.tar.xz"
-  sha256 "49bf01a91f227d7daa1b41f1e792054a814de4f1783c4a44a316123fbb938580"
+  url "http://download.kde.org/stable/frameworks/5.37/portingAids/kjsembed-5.37.0.tar.xz"
+  sha256 "202f8377abbdf4ad564ca0b11e74eaa6001a5863406254562b6405f755995c70"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/attica.git"

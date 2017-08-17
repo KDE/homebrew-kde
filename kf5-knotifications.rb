@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Knotifications < Formula
-  url "http://download.kde.org/stable/frameworks/5.36/knotifications-5.36.0.tar.xz"
-  sha256 "e4004df99c6b470c0454e6c7a0e94ed540549ce6e6cc848f7c97b4e620a59ec2"
+  url "http://download.kde.org/stable/frameworks/5.37/knotifications-5.37.0.tar.xz"
+  sha256 "66cdfddaa31f773a538d429026d0117e60f8a0a7f2a90c861f95d84395347b3f"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/knotifications.git"
