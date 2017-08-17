@@ -2,8 +2,8 @@ require "formula"
 
 class Kf5Konsole < Formula
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.04.1/src/konsole-17.04.1.tar.xz"
-  sha256 "b3b24779b931b4f50ad358737170fe57e0a44185cc1d8ccfff97fb2f2be0a84e"
+  url "https://download.kde.org/stable/applications/17.08.0/src/konsole-17.08.0.tar.xz"
+  sha256 "04f2cef35aced8aaa5f95fc0348c016435d9820f4ae0d5e4c1f40a839d838046"
   head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build

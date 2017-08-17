@@ -1,7 +1,7 @@
 class Kf5Okular < Formula
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/17.04.1/src/okular-17.04.1.tar.xz"
-  sha256 "ef406886e83ecb2b7ca37f847e54d6086f42e5e8da822c571a92e7678704bc9e"
+  url "https://download.kde.org/stable/applications/17.08.0/src/okular-17.08.0.tar.xz"
+  sha256 "cf2b5e372edd27ab847309a5f1a1e7f99fab5f759ffe1361b826ca448294f039"
 
   head "git://anongit.kde.org/okular.git"
 

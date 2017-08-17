@@ -2,8 +2,8 @@ require "formula"
 
 class Libkomparediff2 < Formula
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.04.1/src/libkomparediff2-17.04.1.tar.xz"
-  sha256 "7733c98159d18de3d33c0d4dc0cf03255b4a6c303d39439b5290db2afb9e80e5"
+  url "https://download.kde.org/stable/applications/17.08.0/src/libkomparediff2-17.08.0.tar.xz"
+  sha256 "394c0119631b865ab25f5b7165b0b13451f5890ea1ef553ac3f5eda78a322d5b"
 
   head "git://anongit.kde.org/libkomparediff2.git"
 
