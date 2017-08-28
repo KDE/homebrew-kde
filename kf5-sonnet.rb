@@ -11,6 +11,9 @@ class Kf5Sonnet < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt"
 
+  # TODO: figure out how to properly fix https://github.com/haraldF/homebrew-kf5/issues/72
+  conflicts_with "hunspell"
+
   patch :DATA
 
   def install
