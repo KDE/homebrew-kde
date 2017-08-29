@@ -1,8 +1,8 @@
 class Kdevplatform < Formula
   desc "KDevelop Platform"
   homepage "http://kdevelop.org"
-  # url ""
-  # sha256 ""
+  url "https://download.kde.org/stable/kdevelop/5.1.1/src/kdevplatform-5.1.1.tar.xz"
+  sha256 "3159440512b1373c1a4b35f401ba1f81217de9578372b45137af141eeda6e726"
 
   head "git://anongit.kde.org/kdevplatform.git"
 
