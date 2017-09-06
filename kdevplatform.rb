@@ -1,18 +1,22 @@
 class Kdevplatform < Formula
   desc "KDevelop Platform"
   homepage "http://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.1.1/src/kdevplatform-5.1.1.tar.xz"
-  sha256 "3159440512b1373c1a4b35f401ba1f81217de9578372b45137af141eeda6e726"
 
-  head "git://anongit.kde.org/kdevplatform.git"
+  stable do
+    url "https://download.kde.org/stable/kdevelop/5.1.1/src/kdevplatform-5.1.1.tar.xz"
+    sha256 "3159440512b1373c1a4b35f401ba1f81217de9578372b45137af141eeda6e726"
+    depends_on "qt" => ["with-qtwebkit"]
+  end
+
+  head do
+    url "git://anongit.kde.org/kdevplatform.git"
+    depends_on "qt" => ["with-qtwebkit"]
+  end
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
   depends_on "boost"
-
   depends_on "haraldf/kf5/grantlee5"
-
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kconfig"
   depends_on "haraldf/kf5/kf5-kguiaddons"
