@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kwallet < Formula
-  url "http://download.kde.org/stable/frameworks/5.37/kwallet-5.37.0.tar.xz"
-  sha256 "5fc368410da498dcd9eb9d5b7119f37c87f3a6b9859bbb2ce4a2ff0cfca0f2d0"
+  url "http://download.kde.org/stable/frameworks/5.38/kwallet-5.38.0.tar.xz"
+  sha256 "dc06fe8917cf5ea61251e42e9c7e9e5662eb223aace1bf8ee4becf6a896cdae3"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kwallet.git"

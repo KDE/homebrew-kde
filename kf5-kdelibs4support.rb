@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdelibs4support < Formula
-  url "http://download.kde.org/stable/frameworks/5.37/portingAids/kdelibs4support-5.37.0.tar.xz"
-  sha256 "09d2a7817dbfd0aec82886fb2c5a83321d8b535a438013ed78d5611d2a00e1ff"
+  url "http://download.kde.org/stable/frameworks/5.38/portingAids/kdelibs4support-5.38.0.tar.xz"
+  sha256 "f72aac163070bd116a112b7918a71d9dc79f945b19e5f449e55704e1e37f741b"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kdelibs4support.git"
