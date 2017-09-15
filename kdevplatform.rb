@@ -10,7 +10,7 @@ class Kdevplatform < Formula
 
   head do
     url "git://anongit.kde.org/kdevplatform.git"
-    depends_on "qt" => ["with-qtwebkit"]
+    depends_on "qt"
   end
 
   depends_on "cmake" => :build
