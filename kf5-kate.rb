@@ -2,7 +2,7 @@ class Kf5Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "http://kate-editor.org"
   url "https://download.kde.org/stable/applications/17.08.0/src/kate-17.08.0.tar.xz"
-  sha256 "34eee6c384e2c2776c7d0ab65e7217e730cdbdecb82578c9dc90380cb82affd2"
+  sha256 "f25a39c7e272713940e82d53c1e8b266cf1d7acad3eeb7dd229f166fc8e0667d"
 
   head "git://anongit.kde.org/kate.git"
 
