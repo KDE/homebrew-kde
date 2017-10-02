@@ -2,9 +2,9 @@ require "formula"
 
 class Grantlee5 < Formula
   homepage "http://grantlee.org/"
-  url "https://github.com/steveire/grantlee/archive/v5.0.0.tar.gz"
-  version "5.0.0"
-  sha256 "0fbb796b1fe1bf8de1793f58748f83d0902991e9bad6f19fb3cc2f3cc808d7c5"
+  url "https://github.com/steveire/grantlee/archive/v5.1.0.tar.gz"
+  version "5.1.0"
+  sha256 "3836572fe5e49d28a1d99186c6d96f88ff839644b4bc77b73b6d8208f6ccc9d1"
   head "https://github.com/steveire/grantlee.git"
 
   depends_on "cmake" => :build
