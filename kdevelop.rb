@@ -1,9 +1,12 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "http://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevelop-5.1.2.tar.xz"
-  version "5.1.2"
-  sha256 "af54e807847d145fe5f3eb55962ed0d22e6363c2bc6c32167e51ca4823c00ac7"
+  stable do
+    url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevelop-5.1.2.tar.xz"
+    version "5.1.2"
+    sha256 "af54e807847d145fe5f3eb55962ed0d22e6363c2bc6c32167e51ca4823c00ac7"
+    depends_on "haraldf/kf5/kdevplatform"
+  end
 
   head "git://anongit.kde.org/kdevelop.git"
 
@@ -12,7 +15,6 @@ class Kdevelop < Formula
   depends_on "qt"
   depends_on "llvm"
 
-  depends_on "haraldf/kf5/kdevplatform"
   depends_on "haraldf/kf5/kdevelop-pg-qt"
 
   depends_on "haraldf/kf5/kf5-karchive"
