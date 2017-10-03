@@ -3,8 +3,9 @@ class Kdevplatform < Formula
   homepage "http://kdevelop.org"
 
   stable do
-    url "https://download.kde.org/stable/kdevelop/5.1.1/src/kdevplatform-5.1.1.tar.xz"
-    sha256 "3159440512b1373c1a4b35f401ba1f81217de9578372b45137af141eeda6e726"
+    url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevplatform-5.1.2.tar.xz"
+    version "5.1.2"
+    sha256 "e622ddad552a678baaf1166d5cbdc5fd1192d2324300c52ef2d25f1c6778664a"
     depends_on "qt" => ["with-qtwebkit"]
   end
 
