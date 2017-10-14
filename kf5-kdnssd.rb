@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kdnssd < Formula
-  url "http://download.kde.org/stable/frameworks/5.38/kdnssd-5.38.0.tar.xz"
-  sha256 "1d70cc194e45fe12e09005948fb794a3deb1e2d58d0269bef3a30a9cfbf32f80"
+  url "http://download.kde.org/stable/frameworks/5.39/kdnssd-5.39.0.tar.xz"
+  sha256 "e550cf9af93f9b22b49a812610cd31f286caf17cf44c82ed9b6d4290390f0db1"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/attica.git"

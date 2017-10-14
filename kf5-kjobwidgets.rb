@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kjobwidgets < Formula
-  url "http://download.kde.org/stable/frameworks/5.38/kjobwidgets-5.38.0.tar.xz"
-  sha256 "a5340df37ba44f6b5b82f8c6732aaaa42ffc6d9a829c15b345e824360eb3e66e"
+  url "http://download.kde.org/stable/frameworks/5.39/kjobwidgets-5.39.0.tar.xz"
+  sha256 "ccfd26c54e15a854d4d86028e7339dcbe33b0c52412686b89b2dc7794b2946fc"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kjobwidgets.git"

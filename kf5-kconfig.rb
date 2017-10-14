@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Kconfig < Formula
-  url "http://download.kde.org/stable/frameworks/5.38/kconfig-5.38.0.tar.xz"
-  sha256 "79744af26c90b78f01e065049daea0a6470f0d8b8e71334652179bac1b12243a"
+  url "http://download.kde.org/stable/frameworks/5.39/kconfig-5.39.0.tar.xz"
+  sha256 "3c504d69a38d7fa2e89dbe15b8c02d0803be20f3907c86f18be090031c223104"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kconfig.git"

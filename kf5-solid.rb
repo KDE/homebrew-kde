@@ -1,8 +1,8 @@
 require "formula"
 
 class Kf5Solid < Formula
-  url "http://download.kde.org/stable/frameworks/5.38/solid-5.38.0.tar.xz"
-  sha256 "1052830aaed16391563dc35fe0e01bba2813acf2e0c70fa2223d54d2732b6cac"
+  url "http://download.kde.org/stable/frameworks/5.39/solid-5.39.0.tar.xz"
+  sha256 "d98c1bc67a8483d42d76d0369bab3255b30420a5bd41bc4730cabbf03e3c74a5"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/solid.git"
