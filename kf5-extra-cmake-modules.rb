@@ -11,6 +11,8 @@ class Kf5ExtraCmakeModules < Formula
   depends_on "cmake" => :build
 
   def install
+    args = std_cmake_args
+
     mkdir "build" do
       system "cmake", "..", *args
       system "make", "install"
