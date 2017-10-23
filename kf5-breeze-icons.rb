@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5BreezeIcons < Formula
+  desc "Breeze icon themes"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/breeze-icons-5.39.0.tar.xz"
   sha256 "bd4077f88d106f7dcdefd8f260edbee597e72572e17f443ccd10d3a0eabb4b8c"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/breeze-icons.git"
 
@@ -14,10 +15,12 @@ class Kf5BreezeIcons < Formula
   def install
     args = std_cmake_args
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
-    # ln_sf Dir["#{HOMEBREW_PREFIX}/share/icons"], "#{Etc.getpwuid.dir}/Library/Application Support/"
+
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 
   def caveats; <<-EOS.undent

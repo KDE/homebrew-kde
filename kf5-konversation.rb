@@ -1,17 +1,15 @@
 require "formula"
 
 class Kf5Konversation < Formula
+  desc "A user-friendly and fully-featured IRC client"
   homepage "http://www.kde.org/"
-
   url "http://download.kde.org/unstable/konversation/1.6-beta1/src/konversation-1.6-beta1.tar.xz"
-  sha256 ""
+  sha256 "7c818eb5d74e84847e66849785eb3f52d50ba8dc0a80d00cb5ab1b852135b431"
+
   head "git://anongit.kde.org/konversation.git", :branch => "master"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
-  depends_on "qca" => :optional # must built with qt5
-
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kbookmarks"
   depends_on "haraldf/kf5/kf5-kconfig"
@@ -28,17 +26,27 @@ class Kf5Konversation < Formula
   depends_on "haraldf/kf5/kf5-kwallet"
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "haraldf/kf5/kf5-kglobalaccel"
+  depends_on "qt"
+  depends_on "qca" => :optional # must built with qt5
 
-  # def patches
-  #   DATA
-  # end
+  # patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Applications/KDE"
+      ln -sf "#{prefix}/bin/konversation.app" "~/Applications/KDE/"
+    EOS
   end
 end
 

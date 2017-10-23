@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5Kapidox < Formula
+  desc "Frameworks API Documentation Tools"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kapidox-5.39.0.tar.xz"
   sha256 "d6701d35aa45b65dbf442d3325416c3100aa317a94fbeeb8f25595c782d2d58a"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kapidox.git"
 
@@ -14,8 +15,10 @@ class Kf5Kapidox < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

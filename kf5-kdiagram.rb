@@ -1,6 +1,7 @@
 require "formula"
 
 class Kf5Kdiagram < Formula
+  desc "Powerful libraries for creating business diagrams"
   homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kdiagram.git"
@@ -12,8 +13,10 @@ class Kf5Kdiagram < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

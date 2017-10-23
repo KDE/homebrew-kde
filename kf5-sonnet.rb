@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5Sonnet < Formula
+  desc "Spelling framework for Qt5"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/sonnet-5.39.0.tar.xz"
   sha256 "819f2bf8c95758106deaf800f3c4ec18d3f42d845a90996462839a759774abac"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/sonnet.git"
 
@@ -19,9 +20,11 @@ class Kf5Sonnet < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end
 

@@ -1,4 +1,7 @@
+require "formula"
+
 class Kf5Okular < Formula
+  desc "Document Viewer"
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/applications/17.08.0/src/okular-17.08.0.tar.xz"
   sha256 "cf2b5e372edd27ab847309a5f1a1e7f99fab5f759ffe1361b826ca448294f039"
@@ -7,11 +10,6 @@ class Kf5Okular < Formula
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
-
-  depends_on "zlib"
-  depends_on "freetype"
-
   depends_on "haraldf/kf5/kf5-kactivities"
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kbookmarks"
@@ -30,26 +28,29 @@ class Kf5Okular < Formula
   depends_on "haraldf/kf5/kf5-threadweaver"
   depends_on "haraldf/kf5/kf5-kwallet"
   depends_on "haraldf/kf5/kf5-kwindowsystem"
+  depends_on "qt"
+  depends_on "zlib"
+  depends_on "freetype"
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
-
-    # mkdir_p "#{Etc.getpwuid.dir}/Library/Application Support/okular"
-    # system "ln", "-sf", "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{Etc.getpwuid.dir}/Library/Application Support/okular/icontheme.rcc"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
       mkdir -p "~/Library/Application Support/okular"
       ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/okular/icontheme.rcc"
+      mkdir -p "~/Applications/KDE"
+      ln -sf "#{prefix}/bin/okular.app" "~/Applications/KDE/"
     EOS
   end
 end

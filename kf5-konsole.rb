@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Konsole < Formula
+  desc "KDE's terminal emulator"
   homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/applications/17.08.0/src/konsole-17.08.0.tar.xz"
   sha256 "04f2cef35aced8aaa5f95fc0348c016435d9820f4ae0d5e4c1f40a839d838046"
+
   head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
-
   depends_on "haraldf/kf5/kf5-kdbusaddons"
   depends_on "haraldf/kf5/kf5-kcoreaddons"
   depends_on "haraldf/kf5/kf5-kconfig"
@@ -46,19 +46,26 @@ class Kf5Konsole < Formula
   depends_on "haraldf/kf5/kf5-kross"
   depends_on "haraldf/kf5/kf5-kinit"
   depends_on "haraldf/kf5/kf5-kdelibs4support"
+  depends_on "qt"
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=/Applications/KDE"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
+  end
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Applications/KDE"
+      ln -sf "#{prefix}/bin/konsole.app" "~/Applications/KDE/"
+    EOS
   end
 end
 

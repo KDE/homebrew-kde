@@ -1,10 +1,11 @@
+require "formula"
+
 class Kdevplatform < Formula
   desc "KDevelop Platform"
   homepage "http://kdevelop.org"
 
   stable do
     url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevplatform-5.1.2.tar.xz"
-    version "5.1.2"
     sha256 "e622ddad552a678baaf1166d5cbdc5fd1192d2324300c52ef2d25f1c6778664a"
     depends_on "qt" => ["with-qtwebkit"]
   end
@@ -16,7 +17,6 @@ class Kdevplatform < Formula
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "boost"
   depends_on "haraldf/kf5/grantlee5"
   depends_on "haraldf/kf5/kf5-karchive"
   depends_on "haraldf/kf5/kf5-kconfig"
@@ -42,12 +42,15 @@ class Kdevplatform < Formula
   depends_on "haraldf/kf5/kf5-threadweaver"
   depends_on "haraldf/kf5/kf5-kdeclarative"
   depends_on "haraldf/kf5/libkomparediff2"
+  depends_on "boost"
 
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

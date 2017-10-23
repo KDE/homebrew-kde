@@ -1,3 +1,5 @@
+require "formula"
+
 class KdevelopPgQt < Formula
   desc "LL(1) parser generator based on Qt"
   homepage "http://kdevelop.org"
@@ -13,8 +15,10 @@ class KdevelopPgQt < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

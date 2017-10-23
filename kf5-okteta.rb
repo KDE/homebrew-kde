@@ -1,15 +1,15 @@
 require "formula"
 
 class Kf5Okteta < Formula
+  desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/applications/17.08.0/src/okteta-17.08.0.tar.xz"
   sha256 "31c2f00e187eeb13c8a9096e69c22dba649d564d7feb23e75644dc64772060b8"
+
   head "git://anongit.kde.org/okteta.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
-
   depends_on "haraldf/kf5/kf5-kbookmarks"
   depends_on "haraldf/kf5/kf5-kcodecs"
   depends_on "haraldf/kf5/kf5-kcompletion"
@@ -25,17 +25,26 @@ class Kf5Okteta < Formula
   depends_on "haraldf/kf5/kf5-solid"
   depends_on "haraldf/kf5/kf5-kwidgetsaddons"
   depends_on "haraldf/kf5/kf5-kxmlgui"
+  depends_on "qt"
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Applications/KDE"
+      ln -sf "#{prefix}/bin/okteta.app" "~/Applications/KDE/"
+    EOS
   end
 end
 

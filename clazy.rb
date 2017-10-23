@@ -1,3 +1,5 @@
+require "formula"
+
 class Clazy < Formula
   desc "Qt oriented code checker based on clang framework."
   homepage "https://github.com/KDE/clazy"
@@ -13,8 +15,11 @@ class Clazy < Formula
   def install
     args = std_cmake_args
     args << "-DCMAKE_INSTALL_MANDIR=#{man}"
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

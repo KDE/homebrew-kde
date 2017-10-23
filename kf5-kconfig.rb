@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5Kconfig < Formula
+  desc "Configuration system"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kconfig-5.39.0.tar.xz"
   sha256 "3c504d69a38d7fa2e89dbe15b8c02d0803be20f3907c86f18be090031c223104"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kconfig.git"
 
@@ -11,28 +12,16 @@ class Kf5Kconfig < Formula
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
   depends_on "qt"
 
-  def patches
-    DATA
-  end
+  patch :DATA
 
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
-
-    # mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-    # ln_sf "#{lib}/kde5/libexec/kconf_update", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-    # ln_sf "#{lib}/kde5/libexec/kconfig_compiler_kf5", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-  end
-
-  def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work:
-      mkdir -p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-      ln -sf "#{lib}/kde5/libexec/kconf_update" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-      ln -sf "#{lib}/kde5/libexec/kconfig_compiler_kf5" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-    EOS
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end
 

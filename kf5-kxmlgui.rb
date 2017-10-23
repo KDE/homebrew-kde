@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5Kxmlgui < Formula
+  desc "User configurable main windows"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kxmlgui-5.39.0.tar.xz"
   sha256 "2584cf5b39414b4bf76817d5f09dcdf5cd2e1554ac424386a0f0fa0173089e7f"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kxmlgui.git"
 
@@ -17,8 +18,10 @@ class Kf5Kxmlgui < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end

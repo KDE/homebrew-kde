@@ -1,27 +1,38 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
+  desc "Provides integration of QML and KDE Frameworks"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
   sha256 "f734913d40d94eafabf7d5a090c50a5e8d1caa597aabdf2eab5862f39db71cd1"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kdeclarative.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
-  depends_on "libepoxy"
   depends_on "haraldf/kf5/kf5-kio"
   depends_on "haraldf/kf5/kf5-kpackage"
+  depends_on "qt"
+  depends_on "libepoxy"
 
   patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin" 
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      mkdir -p "~/Applications/KDE"
+      ln -sf "#{prefix}/bin/kpackagelauncherqml.app" "~/Applications/KDE/"
+    EOS
   end
 end
 

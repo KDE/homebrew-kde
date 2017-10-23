@@ -1,36 +1,28 @@
 require "formula"
 
 class Kf5Kinit < Formula
+  desc "Process launcher to speed up launching KDE applications"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kinit-5.39.0.tar.xz"
   sha256 "c26a88e6c3e0607bdfa1b51ae6fa0d7fa6bb863c9f8f2659e8622d0d77a05c28"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kinit.git"
 
   depends_on "cmake" => :build
   depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "qt"
   depends_on "haraldf/kf5/kf5-kio"
+  depends_on "qt"
 
   patch :DATA
 
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-
-    # mkdir_p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-    # ln_sf "#{lib}/kde5/libexec/klauncher", "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-
-    prefix.install "install_manifest.txt"
-  end
-
-  def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work:
-      mkdir -p "#{HOMEBREW_PREFIX}/lib/kde5/libexec"
-      ln -sf "#{lib}/kde5/libexec/klauncher" "#{HOMEBREW_PREFIX}/lib/kde5/libexec/"
-    EOS
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end
 

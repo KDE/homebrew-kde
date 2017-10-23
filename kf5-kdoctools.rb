@@ -1,9 +1,10 @@
 require "formula"
 
 class Kf5Kdoctools < Formula
+  desc "Documentation generation from docbook"
+  homepage "http://www.kde.org/"
   url "http://download.kde.org/stable/frameworks/5.39/kdoctools-5.39.0.tar.xz"
   sha256 "57a12705b87754d8bbc76e3400691d02072d61bd0e2e4b62845dca558f9be49d"
-  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kdoctools.git"
 
@@ -17,22 +18,16 @@ class Kf5Kdoctools < Formula
   depends_on "docbook-xsl"
   depends_on "gettext"
 
-  def patches
-    DATA
-  end
-
   def install
-    # system "cpanm", "URI"
-
     args = std_cmake_args
-
     args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formulary.factory("docbook").prefix}/docbook/xml/4.2"
     args << "-DDocBookXSL_DIR:PATH=#{Formulary.factory("docbook-xsl").prefix}/docbook-xsl"
 
-    system "cmake", ".", *args
-    system "make", "install"
-    # ln_s Dir["#{share}/kf5"], "#{Etc.getpwuid.dir}/Library/Application Support/", :force => true
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 
   def caveats; <<-EOS.undent

@@ -1,10 +1,11 @@
 require "formula"
 
 class Grantlee5 < Formula
+  desc "A string template engine based on the Django template system and written in Qt5"
   homepage "http://grantlee.org/"
   url "https://github.com/steveire/grantlee/archive/v5.1.0.tar.gz"
-  version "5.1.0"
   sha256 "3836572fe5e49d28a1d99186c6d96f88ff839644b4bc77b73b6d8208f6ccc9d1"
+
   head "https://github.com/steveire/grantlee.git"
 
   depends_on "cmake" => :build
@@ -13,8 +14,10 @@ class Grantlee5 < Formula
   def install
     args = std_cmake_args
 
-    system "cmake", ".", *args
-    system "make", "install"
-    prefix.install "install_manifest.txt"
+    mkdir "build" do
+      system "cmake", "..", *args
+      system "make", "install"
+      prefix.install "install_manifest.txt"
+    end
   end
 end
