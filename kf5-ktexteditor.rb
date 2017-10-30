@@ -9,9 +9,9 @@ class Kf5Ktexteditor < Formula
   head "git://anongit.kde.org/ktexteditor.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "haraldf/kf5/kf5-syntax-highlighting"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-syntax-highlighting"
   depends_on "qt"
 
   def install

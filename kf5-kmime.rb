@@ -7,9 +7,9 @@ class Kf5Kmime < Formula
   head "git://anongit.kde.org/kmime.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "haraldf/kf5/kf5-kcodecs"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-ki18n"
+  depends_on "KDE-mac/kde/kf5-kcodecs"
   depends_on "qt"
 
   def install

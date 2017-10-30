@@ -9,10 +9,10 @@ class Kf5Sonnet < Formula
   head "git://anongit.kde.org/sonnet.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "qt"
 
-  # TODO: figure out how to properly fix https://github.com/haraldF/homebrew-kf5/issues/72
+  # TODO: figure out how to properly fix https://github.com/KDE-mac/homebrew-kde/issues/72
   conflicts_with "hunspell"
 
   patch :DATA

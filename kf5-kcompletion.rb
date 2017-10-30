@@ -9,9 +9,9 @@ class Kf5Kcompletion < Formula
   head "git://anongit.kde.org/kcompletion.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kconfig"
-  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kconfig"
+  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
   depends_on "qt"
 
   def install

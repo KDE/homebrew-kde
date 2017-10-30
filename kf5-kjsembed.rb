@@ -9,10 +9,10 @@ class Kf5Kjsembed < Formula
   head "git://anongit.kde.org/attica.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "haraldf/kf5/kf5-kjs"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-ki18n"
+  depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "qt"
 
   def install

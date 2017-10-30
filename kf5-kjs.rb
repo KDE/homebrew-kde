@@ -10,8 +10,8 @@ class Kf5Kjs < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "qt"
   depends_on "pcre"
 

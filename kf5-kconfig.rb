@@ -9,7 +9,7 @@ class Kf5Kconfig < Formula
   head "git://anongit.kde.org/kconfig.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "qt"
 
   patch :DATA

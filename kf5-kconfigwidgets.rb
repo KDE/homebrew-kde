@@ -9,15 +9,15 @@ class Kf5Kconfigwidgets < Formula
   head "git://anongit.kde.org/kconfigwidgets.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "haraldf/kf5/kf5-kauth"
-  depends_on "haraldf/kf5/kf5-kcoreaddons"
-  depends_on "haraldf/kf5/kf5-kcodecs"
-  depends_on "haraldf/kf5/kf5-kconfig"
-  depends_on "haraldf/kf5/kf5-kguiaddons"
-  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
-  depends_on "haraldf/kf5/kf5-ki18n"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-kauth"
+  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "KDE-mac/kde/kf5-kcodecs"
+  depends_on "KDE-mac/kde/kf5-kconfig"
+  depends_on "KDE-mac/kde/kf5-kguiaddons"
+  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "qt"
 
   def install

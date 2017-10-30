@@ -9,9 +9,9 @@ class Kf5Kemoticons < Formula
   head "git://anongit.kde.org/kemoticons.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kservice"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "qt"
 
   def install

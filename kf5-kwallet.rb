@@ -9,8 +9,8 @@ class Kf5Kwallet < Formula
   head "git://anongit.kde.org/kwallet.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-knotifications"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "qt"
   depends_on "libgcrypt"
 
