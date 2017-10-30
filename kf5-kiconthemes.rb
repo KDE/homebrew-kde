@@ -9,9 +9,9 @@ class Kf5Kiconthemes < Formula
   head "git://anongit.kde.org/kiconthemes.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kconfigwidgets"
-  depends_on "haraldf/kf5/kf5-kitemviews"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
+  depends_on "KDE-mac/kde/kf5-kitemviews"
   depends_on "qt"
 
   def install

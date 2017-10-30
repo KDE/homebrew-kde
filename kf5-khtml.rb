@@ -9,22 +9,22 @@ class Kf5Khtml < Formula
   head "git://anongit.kde.org/khtml.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kcodecs"
-  depends_on "haraldf/kf5/kf5-kglobalaccel"
-  depends_on "haraldf/kf5/kf5-kiconthemes"
-  depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "haraldf/kf5/kf5-kio"
-  depends_on "haraldf/kf5/kf5-kjs"
-  depends_on "haraldf/kf5/kf5-knotifications"
-  depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "haraldf/kf5/kf5-ktextwidgets"
-  depends_on "haraldf/kf5/kf5-kwallet"
-  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
-  depends_on "haraldf/kf5/kf5-sonnet"
-  depends_on "haraldf/kf5/kf5-kxmlgui"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "KDE-mac/kde/kf5-kcodecs"
+  depends_on "KDE-mac/kde/kf5-kglobalaccel"
+  depends_on "KDE-mac/kde/kf5-kiconthemes"
+  depends_on "KDE-mac/kde/kf5-ki18n"
+  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kjs"
+  depends_on "KDE-mac/kde/kf5-knotifications"
+  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-ktextwidgets"
+  depends_on "KDE-mac/kde/kf5-kwallet"
+  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "KDE-mac/kde/kf5-sonnet"
+  depends_on "KDE-mac/kde/kf5-kxmlgui"
   depends_on "openssl"
   depends_on "qt"
   depends_on "jpeg"

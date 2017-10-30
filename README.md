@@ -6,7 +6,7 @@ Experimental Homebrew (http://brew.sh) tap for KDE Frameworks on Mac OS X.
 To add the KDE Frameworks Tap to your homebrew installation:
 
 ```sh
-brew tap haraldf/kf5
+brew tap KDE-mac/kde
 ```
 
 In order to build them, you first need an up to date Qt 5 with
@@ -26,14 +26,14 @@ brew install qt5 # or brew install qt5 --with-qtwebkit
 Now, the fun begins. You can either install individual frameworks via
 
 ```sh
-brew install haraldf/kf5/kf5-karchive
+brew install KDE-mac/kde/kf5-karchive
 ```
 
 or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-cd `brew --prefix`/Homebrew/Library/Taps/haraldf/homebrew-kf5
+cd `brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde
 ./tools/install.sh
 ```
 
@@ -63,7 +63,7 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Library/Taps/haraldf/homebrew-kf5/tools/install.sh --HEAD
+`brew --prefix`/Library/Taps/kde-mac/homebrew-kde/tools/install.sh --HEAD
 ```
 
 **D-Bus first time users**

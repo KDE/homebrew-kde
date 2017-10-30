@@ -9,15 +9,15 @@ class Kf5Kdelibs4support < Formula
   head "git://anongit.kde.org/kdelibs4support.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kded"
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "haraldf/kf5/kf5-kdesignerplugin"
-  depends_on "haraldf/kf5/kf5-kemoticons"
-  depends_on "haraldf/kf5/kf5-kinit"
-  depends_on "haraldf/kf5/kf5-kitemmodels"
-  depends_on "haraldf/kf5/kf5-kunitconversion"
-  depends_on "haraldf/kf5/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kded"
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-kdesignerplugin"
+  depends_on "KDE-mac/kde/kf5-kemoticons"
+  depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "KDE-mac/kde/kf5-kitemmodels"
+  depends_on "KDE-mac/kde/kf5-kunitconversion"
+  depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "qt"
   depends_on "openssl@1.1"
 

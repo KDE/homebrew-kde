@@ -11,13 +11,13 @@ class Kf5Kio < Formula
   option "without-kiowidgets", "Builds only KIO core"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-karchive"
-  depends_on "haraldf/kf5/kf5-kbookmarks" unless build.without? "kiowidgets"
-  depends_on "haraldf/kf5/kf5-kjobwidgets" unless build.without? "kiowidgets"
-  depends_on "haraldf/kf5/kf5-kwallet" unless build.without? "kiowidgets"
-  depends_on "haraldf/kf5/kf5-solid"
-  depends_on "haraldf/kf5/kf5-kservice"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "KDE-mac/kde/kf5-kbookmarks" unless build.without? "kiowidgets"
+  depends_on "KDE-mac/kde/kf5-kjobwidgets" unless build.without? "kiowidgets"
+  depends_on "KDE-mac/kde/kf5-kwallet" unless build.without? "kiowidgets"
+  depends_on "KDE-mac/kde/kf5-solid"
+  depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "qt"
 
   def install

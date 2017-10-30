@@ -9,10 +9,10 @@ class Kf5Kxmlgui < Formula
   head "git://anongit.kde.org/kxmlgui.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kglobalaccel"
-  depends_on "haraldf/kf5/kf5-ktextwidgets"
-  depends_on "haraldf/kf5/kf5-attica"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kglobalaccel"
+  depends_on "KDE-mac/kde/kf5-ktextwidgets"
+  depends_on "KDE-mac/kde/kf5-attica"
   depends_on "qt"
 
   def install

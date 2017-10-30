@@ -9,10 +9,10 @@ class Kf5Knotifications < Formula
   head "git://anongit.kde.org/knotifications.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kiconthemes"
-  depends_on "haraldf/kf5/kf5-kservice"
-  depends_on "haraldf/kf5/kf5-phonon"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kiconthemes"
+  depends_on "KDE-mac/kde/kf5-kservice"
+  depends_on "KDE-mac/kde/kf5-phonon"
   depends_on "qt"
 
   def install

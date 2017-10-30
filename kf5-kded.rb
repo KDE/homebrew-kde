@@ -9,8 +9,8 @@ class Kf5Kded < Formula
   head "git://anongit.kde.org/kded.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kinit"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "qt"
   depends_on "gettext" => :build
 

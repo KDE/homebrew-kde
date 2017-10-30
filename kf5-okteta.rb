@@ -9,22 +9,22 @@ class Kf5Okteta < Formula
   head "git://anongit.kde.org/okteta.git"
 
   depends_on "cmake" => :build
-  depends_on "haraldf/kf5/kf5-extra-cmake-modules" => :build
-  depends_on "haraldf/kf5/kf5-kbookmarks"
-  depends_on "haraldf/kf5/kf5-kcodecs"
-  depends_on "haraldf/kf5/kf5-kcompletion"
-  depends_on "haraldf/kf5/kf5-kconfigwidgets"
-  depends_on "haraldf/kf5/kf5-kdbusaddons"
-  depends_on "haraldf/kf5/kf5-kdoctools" => :build
-  depends_on "haraldf/kf5/kf5-ki18n"
-  depends_on "haraldf/kf5/kf5-kcmutils"
-  depends_on "haraldf/kf5/kf5-kio"
-  depends_on "haraldf/kf5/kf5-knewstuff"
-  depends_on "haraldf/kf5/kf5-kparts"
-  depends_on "haraldf/kf5/kf5-kservice"
-  depends_on "haraldf/kf5/kf5-solid"
-  depends_on "haraldf/kf5/kf5-kwidgetsaddons"
-  depends_on "haraldf/kf5/kf5-kxmlgui"
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kbookmarks"
+  depends_on "KDE-mac/kde/kf5-kcodecs"
+  depends_on "KDE-mac/kde/kf5-kcompletion"
+  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
+  depends_on "KDE-mac/kde/kf5-kdbusaddons"
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-ki18n"
+  depends_on "KDE-mac/kde/kf5-kcmutils"
+  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-kservice"
+  depends_on "KDE-mac/kde/kf5-solid"
+  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "KDE-mac/kde/kf5-kxmlgui"
   depends_on "qt"
 
   patch :DATA

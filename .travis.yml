@@ -6,6 +6,8 @@ before_install:
   - brew update || brew update
   - export HOMEBREW_DEVELOPER="1"
 install:
-  - brew tap haraldf/kf5 file://$PWD
+  - brew tap KDE-mac/kde file://$PWD
 script:
-  - brew install haraldf/kf5/kf5-karchive
+  - CHANGED_FILES=`git diff --name-only $TRAVIS_COMMIT_RANGE`
+  - echo $CHANGED_FILES
+  - tools/travis-ci.sh $CHANGED_FILES
