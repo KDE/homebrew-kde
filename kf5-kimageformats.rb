@@ -14,7 +14,7 @@ class Kf5Kimageformats < Formula
   depends_on "qt"
   depends_on "openexr"
   depends_on "jasper"
-  depends_on "KDE-mac/kde/karchive"
+  depends_on "KDE-mac/kde/kf5-karchive"
 
   def install
     args = std_cmake_args
