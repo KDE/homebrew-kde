@@ -9,7 +9,7 @@ class Kf5ExtraCmakeModules < Formula
   head "git://anongit.kde.org/extra-cmake-modules"
 
   depends_on "cmake" => :build
-  depends_on "qt" = :build
+  depends_on "qt" => :build
 
   def install
     args = std_cmake_args
