@@ -3,23 +3,26 @@ require "formula"
 class Kf5Kdeclarative < Formula
   desc "Provides integration of QML and KDE Frameworks"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
   sha256 "f734913d40d94eafabf7d5a090c50a5e8d1caa597aabdf2eab5862f39db71cd1"
 
   head "git://anongit.kde.org/kdeclarative.git"
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kpackage"
+
   depends_on "qt"
   depends_on "libepoxy"
+  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kpackage"
 
   patch :DATA
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin" 
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -27,26 +30,28 @@ class Kf5Kdeclarative < Formula
       prefix.install "install_manifest.txt"
     end
   end
-
-  def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/kpackagelauncherqml.app" "~/Applications/KDE/"
-    EOS
-  end
 end
 
 __END__
-diff --git a/src/qmlcontrols/kquickcontrolsaddons/plotter.cpp b/src/qmlcontrols/kquickcontrolsaddons
-index 67ce63a..22934ad 100644
---- a/src/qmlcontrols/kquickcontrolsaddons/plotter.cpp
-+++ b/src/qmlcontrols/kquickcontrolsaddons/plotter.cpp
-@@ -47,6 +47,8 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 51c04dd..f0ef51e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,6 +48,7 @@ include(ECMSetupVersion)
+ include(ECMGenerateHeaders)
+ include(CMakePackageConfigHelpers)
+ include(ECMAddQch)
++include(ECMMarkNonGuiExecutable)
  
- #include <QuickAddons/ManagedTextureNode>
+ option(BUILD_EXAMPLES "Build and install examples." OFF)
+ option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+diff --git a/src/kpackagelauncherqml/CMakeLists.txt b/src/kpackagelauncherqml/CMakeLists.txt
+index 7744b77..b87a5dc 100644
+--- a/src/kpackagelauncherqml/CMakeLists.txt
++++ b/src/kpackagelauncherqml/CMakeLists.txt
+@@ -18,4 +18,5 @@ target_link_libraries(kpackagelauncherqml
+  KF5::QuickAddons
+ )
  
-+#include <cmath>
-+
- //completely arbitrary
- static int s_defaultSampleSize = 40;
-
++ecm_mark_nongui_executable(kpackagelauncherqml)
+ install(TARGETS kpackagelauncherqml ${INSTALL_TARGETS_DEFAULT_ARGS})

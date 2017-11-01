@@ -9,11 +9,13 @@ class Clazy < Formula
   head "git://anongit.kde.org/clazy"
 
   depends_on "cmake" => :build
+
   depends_on "llvm"
   depends_on "qt"
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
     args << "-DCMAKE_INSTALL_MANDIR=#{man}"
 
     mkdir "build" do

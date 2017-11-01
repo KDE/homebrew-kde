@@ -14,7 +14,12 @@ class Kdevelop < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kdevelop-pg-qt"
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
+  depends_on "KDE-mac/kde/okteta" => :optional
+
+  depends_on "qt"
+  depends_on "llvm"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kguiaddons"
@@ -35,11 +40,11 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/kf5-kxmlgui"
   depends_on "KDE-mac/kde/kf5-sonnet"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "qt"
-  depends_on "llvm"
+
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
     mkdir "build" do
@@ -51,12 +56,12 @@ class Kdevelop < Formula
 
   def caveats; <<-EOS.undent
       You need to make sime manual steps in order to make this formula work:
-        mkdir -p "~/Library/Application Support/kdevelop"
-        ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kdevelop/icontheme.rcc"
-        mkdir -p "~/Applications/KDE"
-        ln -sf "#{prefix}/bin/kdevelop.app" "~/Applications/KDE/"
-        ln -sf "#{prefix}/bin/kdev_includepathsconverter.app" "~/Applications/KDE/"
-        ln -sf "#{prefix}/bin/kdevelop\!" "~/Applications/KDE/"
+        mkdir -p ~/Library/"Application Support"/kdevelop
+        ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/kdevelop/icontheme.rcc
+        mkdir -p ~/Applications/KDE
+        ln -sf "#{prefix}/bin/kdevelop.app" ~/Applications/KDE/
+        ln -sf "#{prefix}/bin/kdev_includepathsconverter.app" ~/Applications/KDE/
+        ln -sf "#{prefix}/bin/kdevelop\!" ~/Applications/KDE/
       EOS
   end
 end

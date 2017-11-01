@@ -1,20 +1,21 @@
 require "formula"
 
-class Kf5Phonon < Formula
-  desc "The multimedia framework for KF5"
+class Kdiagram < Formula
+  desc "Powerful libraries for creating business diagrams"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/phonon/4.9.1/phonon-4.9.1.tar.xz"
-  sha256 "67bee986f85ca8b575186c8ba58a85886cb3b1c3567c86a118d56129f221e69c"
+  url "https://download.kde.org/stable/kdiagram/2.6.0/src/kdiagram-2.6.0.tar.xz"
+  sha256 "02788dad7e15c64b74a2d1073c5910469ab4cf46ba905030c1713dce45981882"
 
-  head "git://anongit.kde.org/phonon.git"
+  head "git://anongit.kde.org/kdiagram.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+
   depends_on "qt"
 
   def install
     args = std_cmake_args
-    args << "-DPHONON_BUILD_PHONON4QT5=ON"
+    args << "-DBUILD_TESTING=OFF"
 
     mkdir "build" do
       system "cmake", "..", *args

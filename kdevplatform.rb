@@ -16,8 +16,9 @@ class Kdevplatform < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "boost" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/grantlee5"
+
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kguiaddons"
@@ -41,11 +42,13 @@ class Kdevplatform < Formula
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/kf5-kdeclarative"
+
+  depends_on "KDE-mac/kde/grantlee5"
   depends_on "KDE-mac/kde/libkomparediff2"
-  depends_on "boost"
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
 
     mkdir "build" do
       system "cmake", "..", *args

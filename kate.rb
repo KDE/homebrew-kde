@@ -1,15 +1,17 @@
 require "formula"
 
-class Kf5Kate < Formula
+class Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "http://kate-editor.org"
-  url "https://download.kde.org/stable/applications/17.08.0/src/kate-17.08.0.tar.xz"
-  sha256 "f25a39c7e272713940e82d53c1e8b266cf1d7acad3eeb7dd229f166fc8e0667d0"
+  url "https://download.kde.org/stable/applications/17.08.2/src/kate-17.08.2.tar.xz"
+  sha256 "62456ab4ad1d12c810b75c3361a2b412d3f019161b8fc6511a43211f76828dd4"
 
   head "git://anongit.kde.org/kate.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+
+  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kdoctools"
@@ -27,10 +29,11 @@ class Kf5Kate < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kwallet"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "qt"
+
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
     mkdir "build" do
@@ -42,11 +45,14 @@ class Kf5Kate < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Library/Application Support/kate"
-      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kate/icontheme.rcc"
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/kate.app" "~/Applications/KDE/"
-      ln -sf "#{prefix}/bin/kwrite.app" "~/Applications/KDE/"
+      ln -sf "$(brew --prefix)/share/katepart5 ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kateporoject ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/katexmltools ~/Library/"Application Support"
+      mkdir -p ~/Library/"Application Support"/kate
+      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/kate/icontheme.rcc
+      mkdir -p ~/Applications/KDE
+      ln -sf "#{prefix}/bin/kate.app" ~/Applications/KDE/
+      ln -sf "#{prefix}/bin/kwrite.app" ~/Applications/KDE/
     EOS
   end
 

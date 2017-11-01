@@ -33,7 +33,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-cd `brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde
+cd `brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde
 ./tools/install.sh
 ```
 
@@ -63,7 +63,7 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Library/Taps/kde-mac/homebrew-kde/tools/install.sh --HEAD
+`brew --prefix`/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
 ```
 
 **D-Bus first time users**

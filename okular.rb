@@ -1,15 +1,22 @@
 require "formula"
 
-class Kf5Okular < Formula
+class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/17.08.0/src/okular-17.08.0.tar.xz"
-  sha256 "cf2b5e372edd27ab847309a5f1a1e7f99fab5f759ffe1361b826ca448294f039"
+  url "https://download.kde.org/stable/applications/17.08.2/src/okular-17.08.2.tar.xz"
+  sha256 "c56f57dc47b8c00208e374f3249d2cf69d6293cb9ebfeeb3601f1c64cbc37e56"
 
   head "git://anongit.kde.org/okular.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-khtml" => :build
+
+  depends_on "qt"
+  depends_on "qca"
+  depends_on "zlib"
+  depends_on "freetype"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-kbookmarks"
@@ -18,8 +25,6 @@ class Kf5Okular < Formula
   depends_on "KDE-mac/kde/kf5-kconfigwidgets"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
-  depends_on "KDE-mac/kde/kf5-khtml"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kjs"
@@ -28,14 +33,12 @@ class Kf5Okular < Formula
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/kf5-kwallet"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
-  depends_on "qt"
-  depends_on "zlib"
-  depends_on "freetype"
 
   patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
     mkdir "build" do
@@ -46,11 +49,11 @@ class Kf5Okular < Formula
   end
 
   def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Library/Application Support/okular"
-      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/okular/icontheme.rcc"
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/okular.app" "~/Applications/KDE/"
+    You need to take some manual steps in order to make this formula work (NOTE: the order is important!):
+      ln -sf "$(brew --prefix)/share/okular ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/okular/icontheme.rcc
+      mkdir -p ~/Applications/KDE
+      ln -sf "#{prefix}/bin/okular.app" ~/Applications/KDE/
     EOS
   end
 end
