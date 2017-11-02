@@ -10,6 +10,7 @@ class Kf5Kconfigwidgets < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "graphviz" => :build
   depends_on "gettext" => :build
 
   depends_on "qt"
