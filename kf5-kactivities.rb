@@ -16,10 +16,8 @@ class Kf5Kactivities < Formula
 
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kdeclarative"
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-ki18n"
-  depends_on "KDE-mac/kde/kf5-kcmutils"
+  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "KDE-mac/kde/kf5-kwindowsystem"
 
   patch :DATA
 
