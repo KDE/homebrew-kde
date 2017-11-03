@@ -26,6 +26,7 @@ class Kf5Kactivities < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
     args << "-DQML_INSTALL_DIR=lib/qt5/qml"
 
     mkdir "build" do
