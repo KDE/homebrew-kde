@@ -9,6 +9,8 @@ class Kf5Kpackage < Formula
   head "git://anongit.kde.org/kpackage.git"
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
+  depends_on "graphviz" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -21,6 +23,7 @@ class Kf5Kpackage < Formula
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_QCH=ON"
 
     mkdir "build" do
       system "cmake", "..", *args
