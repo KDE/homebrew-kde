@@ -9,7 +9,7 @@ class Kf5Tier2Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kcrash"
   depends_on "KDE-mac/kde/kf5-kdoctools"
-  #depends_on "KDE-mac/kde/kf5-kfilemetadata"
+  depends_on "KDE-mac/kde/kf5-kfilemetadata"
   depends_on "KDE-mac/kde/kf5-kimageformats"
   depends_on "KDE-mac/kde/kf5-kjobwidgets"
   depends_on "KDE-mac/kde/kf5-knotifications"
