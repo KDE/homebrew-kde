@@ -30,6 +30,8 @@ class Kf5Kio < Formula
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
     args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKIOCORE_ONLY=ON" if build.without? "kiowidgets"
 
     mkdir "build" do

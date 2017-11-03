@@ -24,7 +24,9 @@ class Kf5Kdoctools < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
-    args << "-DDocBookXML_CURRENTDTD_DIR:PATH=#{Formulary.factory("docbook").prefix}/docbook/xml/4.2"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DDocBookXSL_DIR:PATH=#{Formulary.factory("docbook-xsl").prefix}/docbook-xsl"
 
     mkdir "build" do

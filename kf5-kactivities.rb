@@ -25,7 +25,8 @@ class Kf5Kactivities < Formula
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
     args << "-DBUILD_QCH=ON"
-    args << "-DQML_INSTALL_DIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "..", *args

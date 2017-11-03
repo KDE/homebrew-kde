@@ -30,6 +30,9 @@ class Kf5Kdelibs4support < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
     args << "-DOPENSSL_CRYPTO_LIBRARY=#{HOMEBREW_PREFIX}/opt/openssl@1.1/lib/libcrypto.dylib"
     args << "-DOPENSSL_SSL_LIBRARY=#{HOMEBREW_PREFIX}/opt/openssl@1.1/lib/libssl.1.1.dylib"

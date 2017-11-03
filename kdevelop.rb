@@ -41,10 +41,12 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/kf5-sonnet"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
 
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
     mkdir "build" do

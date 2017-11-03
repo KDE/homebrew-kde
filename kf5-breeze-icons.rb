@@ -16,6 +16,9 @@ class Kf5BreezeIcons < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
+    #args << "-DBUILD_QCH=ON  #Dont't like this option (ON or OFF)
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
 
     mkdir "build" do
