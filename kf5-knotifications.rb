@@ -14,8 +14,6 @@ class Kf5Knotifications < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kcodecs"
