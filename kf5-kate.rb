@@ -42,8 +42,8 @@ class Kf5Kate < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Library/Application Support/kate"
-      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kate/icontheme.rcc"
+      mkdir -p "$HOME/Library/Application Support/kate"
+      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/kate/icontheme.rcc"
       mkdir -p "~/Applications/KDE"
       ln -sf "#{prefix}/bin/kate.app" "~/Applications/KDE/"
       ln -sf "#{prefix}/bin/kwrite.app" "~/Applications/KDE/"

@@ -51,8 +51,8 @@ class Kdevelop < Formula
 
   def caveats; <<-EOS.undent
       You need to make sime manual steps in order to make this formula work:
-        mkdir -p "~/Library/Application Support/kdevelop"
-        ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "~/Library/Application Support/kdevelop/icontheme.rcc"
+        mkdir -p "$HOME/Library/Application Support/kdevelop"
+        ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/kdevelop/icontheme.rcc"
         mkdir -p "~/Applications/KDE"
         ln -sf "#{prefix}/bin/kdevelop.app" "~/Applications/KDE/"
         ln -sf "#{prefix}/bin/kdev_includepathsconverter.app" "~/Applications/KDE/"
