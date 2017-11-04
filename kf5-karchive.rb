@@ -1,5 +1,7 @@
 require "formula"
 
+# dummy comment to trigger rebuild
+
 class Kf5Karchive < Formula
   desc "Qt 5 addon providing access to numerous types of archives"
   homepage "http://www.kde.org/"

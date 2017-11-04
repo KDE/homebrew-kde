@@ -8,4 +8,6 @@ before_install:
 install:
   - brew tap KDE-mac/kde file://$PWD
 script:
-  - brew install KDE-mac/kde/kf5-karchive
+  - CHANGED_FILES=`git diff --name-only $TRAVIS_COMMIT_RANGE`
+  - echo $CHANGED_FILES
+  - tools/travis-ci.sh $CHANGED_FILES
