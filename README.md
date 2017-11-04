@@ -1,6 +1,6 @@
-homebrew-kf5
+homebrew-kde
 ============
-
+[![Build Status](https://travis-ci.org/KDE-mac/homebrew-kde.svg?branch=master)](https://travis-ci.org/KDE-mac/homebrew-kde)
 Experimental Homebrew (http://brew.sh) tap for KDE Frameworks on Mac OS X.
 
 To add the KDE Frameworks Tap to your homebrew installation:
