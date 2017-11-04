@@ -38,8 +38,8 @@ class Kf5Dolphin < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/dolphin.app" "~/Applications/KDE/"
+      mkdir -p "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/dolphin.app" "$HOME/Applications/KDE"
     EOS
   end
 

@@ -53,10 +53,10 @@ class Kdevelop < Formula
       You need to make sime manual steps in order to make this formula work:
         mkdir -p "$HOME/Library/Application Support/kdevelop"
         ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/kdevelop/icontheme.rcc"
-        mkdir -p "~/Applications/KDE"
-        ln -sf "#{prefix}/bin/kdevelop.app" "~/Applications/KDE/"
-        ln -sf "#{prefix}/bin/kdev_includepathsconverter.app" "~/Applications/KDE/"
-        ln -sf "#{prefix}/bin/kdevelop\!" "~/Applications/KDE/"
+        mkdir -p "$HOME/Applications/KDE"
+        ln -sf "#{prefix}/bin/kdevelop.app" "$HOME/Applications/KDE"
+        ln -sf "#{prefix}/bin/kdev_includepathsconverter.app" "$HOME/Applications/KDE"
+        ln -sf "#{prefix}/bin/kdevelop\!" "$HOME/Applications/KDE"
       EOS
   end
 end

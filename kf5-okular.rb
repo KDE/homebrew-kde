@@ -49,8 +49,8 @@ class Kf5Okular < Formula
     You need to take some manual steps in order to make this formula work:
       mkdir -p "$HOME/Library/Application Support/okular"
       ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/okular/icontheme.rcc"
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/okular.app" "~/Applications/KDE/"
+      mkdir -p "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/okular.app" "$HOME/Applications/KDE"
     EOS
   end
 end

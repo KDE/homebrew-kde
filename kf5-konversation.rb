@@ -44,8 +44,8 @@ class Kf5Konversation < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/konversation.app" "~/Applications/KDE/"
+      mkdir -p "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/konversation.app" "$HOME/Applications/KDE"
     EOS
   end
 end

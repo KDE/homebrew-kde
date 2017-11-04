@@ -44,9 +44,9 @@ class Kf5Kate < Formula
     You need to take some manual steps in order to make this formula work:
       mkdir -p "$HOME/Library/Application Support/kate"
       ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/kate/icontheme.rcc"
-      mkdir -p "~/Applications/KDE"
-      ln -sf "#{prefix}/bin/kate.app" "~/Applications/KDE/"
-      ln -sf "#{prefix}/bin/kwrite.app" "~/Applications/KDE/"
+      mkdir -p "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/kate.app" "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/kwrite.app" "$HOME/Applications/KDE"
     EOS
   end
 
