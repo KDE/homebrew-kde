@@ -76,7 +76,7 @@ my %frameworks = (
     'kwallet' => '',
     'kxmlgui' => '',
 #     'kxmlrpcclient' => '',
-#     'plasma' => '',
+    'plasma-framework' => '',
 
     ### Tier 4
     'frameworkintegration' => '',
