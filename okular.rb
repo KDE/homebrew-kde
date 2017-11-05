@@ -59,6 +59,7 @@ class Okular < Formula
     You need to take some manual steps in order to make this formula work (NOTE: the order is important!):
       ln -sf "$(brew --prefix)/share/okular ~/Library/"Application Support"
       ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/okular/icontheme.rcc
+      ln -sf "$(brew --prefix)/share/kconf_update ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/okular.app" ~/Applications/KDE/
     EOS
