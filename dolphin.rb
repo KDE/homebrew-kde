@@ -12,21 +12,11 @@ class Dolphin < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-karchive"
-  depends_on "KDE-mac/kde/kf5-kbookmarks"
-  depends_on "KDE-mac/kde/kf5-kcmutils"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-kdelibs4support"
+  depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-kdesu"
+  depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "KDE-mac/kde/kf5-kcoreaddons"
 
   def install
     args = std_cmake_args
@@ -40,13 +30,20 @@ class Dolphin < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+        "#{bin}/dolphin.app/Contents/Info.plist"
     end
+  end
+
+  def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/dolphin"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/dolphin/icontheme.rcc"
   end
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p ~/Library/"Application Support"/dolphin
-      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/dolphin/icontheme.rcc
+      ln -sf "$(brew --prefix)/share/dolphin" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/dolphin.app" ~/Applications/KDE/
     EOS
