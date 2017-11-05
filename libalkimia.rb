@@ -3,8 +3,8 @@ require "formula"
 class Libalkimia < Formula
   desc "Library used by KDE Finance applications"
   homepage "http://kmymoney.org/"
-  url "http://download.kde.org/stable/alkimia/5.0.0/src/libalkimia-5.0.0.tar.xz"
-  sha256 "eea8a2a0f6788a1b9fd464b370598ed6e55353fb40da53375e6f022e71526cb5"
+  #url "http://download.kde.org/stable/alkimia/5.0.0/src/libalkimia-5.0.0.tar.xz"
+  #sha256 "eea8a2a0f6788a1b9fd464b370598ed6e55353fb40da53375e6f022e71526cb5"
 
   head "git://anongit.kde.org/alkimia.git"
 
