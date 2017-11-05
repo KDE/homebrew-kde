@@ -42,16 +42,29 @@ class Kate < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+        "#{bin}/kate.app/Contents/Info.plist"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+        "#{bin}/kwrite.app/Contents/Info.plist"
     end
+  end
+
+  def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/kate"
+    mkdir_p HOMEBREW_PREFIX/"share/kwrite"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kate/icontheme.rcc"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kwrite/icontheme.rcc"
   end
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/katepart5 ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kateporoject ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/katexmltools ~/Library/"Application Support"
-      mkdir -p ~/Library/"Application Support"/kate
-      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/kate/icontheme.rcc
+      ln -sf "$(brew --prefix)/share/katepart5" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kateporoject" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/katexmltools" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kate" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kawrite" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/kate.app" ~/Applications/KDE/
       ln -sf "#{prefix}/bin/kwrite.app" ~/Applications/KDE/
