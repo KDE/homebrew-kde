@@ -35,7 +35,7 @@ class Kf5Kdoctools < Formula
       cpanm URI
 
     You need to take some manual steps in order to make this formula work:
-      ln -sf "#{share}/kf5" "$HOME/Library/Application Support/"
+      ln -sf "#{HOMEBREW_PREFIX}/share/kf5" "$HOME/Library/Application Support/"
     EOS
   end
 end
