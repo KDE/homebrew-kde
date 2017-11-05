@@ -42,13 +42,19 @@ class Konversation < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+       "#{bin}/konversation.app/Contents/Info.plist"
     end
   end
 
+  def post_install
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/konversation/icontheme.rcc"
+  end
+
   def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work (NOTE: the order is important!):
+    You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konversation ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/konversation/icontheme.rcc
       ln -sf "$(brew --prefix)/share/kconf_update" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/konversation.app" ~/Applications/KDE/
