@@ -61,13 +61,19 @@ class Konsole < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+        "#{bin}/konsole.app/Contents/Info.plist"
     end
   end
 
+  def post_install
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/konsole/icontheme.rcc"
+  end
+
   def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work (NOTE: the order is important!):
+    You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konsole" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/konsole/icontheme.rcc
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/konsole.app" ~/Applications/KDE/
     EOS
