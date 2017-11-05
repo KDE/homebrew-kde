@@ -14,7 +14,7 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-khtml" => :build
 
   depends_on "qt"
-  #depends_on "qca"
+  depends_on "qca"
   depends_on "zlib"
   depends_on "freetype"
   depends_on "libspectre"
