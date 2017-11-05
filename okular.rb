@@ -36,6 +36,7 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/kf5-kwallet"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
+  depends_on "KDE-mac/kde/libkexiv2"
 
   patch :DATA
 
