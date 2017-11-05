@@ -35,6 +35,11 @@ class Kf5PlasmaFramework < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+    ln -sf "$(brew --prefix)/share/plasma" ~/Library/"Application Support"
+  end
 end
 
 __END__
