@@ -75,7 +75,7 @@ my %frameworks = (
     'ktextwidgets' => '',
     'kwallet' => '',
     'kxmlgui' => '',
-#     'kxmlrpcclient' => '',
+    'kxmlrpcclient' => '',
     'plasma-framework' => '',
 
     ### Tier 4

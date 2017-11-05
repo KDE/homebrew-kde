@@ -27,7 +27,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-ktextwidgets"
   depends_on "KDE-mac/kde/kf5-kwallet"
   depends_on "KDE-mac/kde/kf5-kxmlgui"
-  #depends_on "KDE-mac/kde/kf5-kxmlrpcclient"
+  depends_on "KDE-mac/kde/kf5-kxmlrpcclient"
   depends_on "KDE-mac/kde/kf5-plasma-framework"
 
   def install
