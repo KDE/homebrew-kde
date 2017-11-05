@@ -10,25 +10,15 @@ class Kate < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
 
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
-  depends_on "KDE-mac/kde/kf5-kguiaddons"
-  depends_on "KDE-mac/kde/kf5-ki18n"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-kjobwidgets"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
-  depends_on "KDE-mac/kde/kf5-kxmlgui"
-  depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-kwallet"
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
+  depends_on "KDE-mac/kde/kf5-kitemmodels"
+  depends_on "KDE-mac/kde/kf5-threadweaver"
 
   def install
     args = std_cmake_args
