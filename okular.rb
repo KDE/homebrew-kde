@@ -52,13 +52,19 @@ class Okular < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
+      system "/usr/libexec/PlistBuddy",
+        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+       "#{bin}/okular.app/Contents/Info.plist"
     end
   end
 
+  def post_install
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/okular/icontheme.rcc"
+  end
+
   def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work (NOTE: the order is important!):
+    You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/okular ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/icons/breeze/breeze-icons.rcc" ~/Library/"Application Support"/okular/icontheme.rcc
       ln -sf "$(brew --prefix)/share/kconf_update ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/okular.app" ~/Applications/KDE/
