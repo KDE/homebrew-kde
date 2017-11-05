@@ -44,7 +44,7 @@ class Konversation < Formula
       prefix.install "install_manifest.txt"
       system "/usr/libexec/PlistBuddy",
         "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-       "#{bin}/konversation.app/Contents/Info.plist"
+        "#{bin}/konversation.app/Contents/Info.plist"
     end
   end
 

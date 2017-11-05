@@ -46,7 +46,7 @@ class Okteta < Formula
 
       system "/usr/libexec/PlistBuddy",
         "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-       "#{bin}/okteta.app/Contents/Info.plist"
+        "#{bin}/okteta.app/Contents/Info.plist"
     end
   end
 
