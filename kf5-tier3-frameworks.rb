@@ -20,7 +20,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-kparts"
-  #depends_on "KDE-mac/kde/kf5-kpeople"
+  depends_on "KDE-mac/kde/kf5-kpeople"
   #depends_on "KDE-mac/kde/kf5-krunner"
   depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
