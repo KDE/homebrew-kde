@@ -3,8 +3,8 @@ require "formula"
 class Kmymoney < Formula
   desc "Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
   homepage "http://kmymoney.org/"
-  url "https://download.kde.org/stable/kmymoney/4.8.1/src/kmymoney-4.8.1.7z"
-  sha256 "4435acabb3c9771dd39471651767c857087b5fe4f5cd43132c19cdc92aa6cbab"
+  #url "https://download.kde.org/stable/kmymoney/4.8.1/src/kmymoney-4.8.1.7z"
+  #sha256 "4435acabb3c9771dd39471651767c857087b5fe4f5cd43132c19cdc92aa6cbab"
 
   head "git://anongit.kde.org/kmymoney.git"
 
