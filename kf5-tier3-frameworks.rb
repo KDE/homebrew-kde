@@ -11,7 +11,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kded" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdesu" => :build
-#  depends_on "KDE-mac/kde/kf5-kdewebkit" => :build # Fail build due missing qt-webkit package
+  depends_on "KDE-mac/kde/kf5-kdewebkit" => :build
   depends_on "KDE-mac/kde/kf5-kemoticons" => :build
   depends_on "KDE-mac/kde/kf5-kglobalaccel" => :build
   depends_on "KDE-mac/kde/kf5-kiconthemes" => :build
