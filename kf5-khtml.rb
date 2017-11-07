@@ -18,6 +18,7 @@ class Kf5Khtml < Formula
   depends_on "jpeg"
   depends_on "giflib"
   depends_on "libpng"
+  depends_on "zlib"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-kcodecs"
   depends_on "KDE-mac/kde/kf5-kglobalaccel"
