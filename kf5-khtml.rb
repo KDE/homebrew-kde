@@ -39,9 +39,6 @@ class Kf5Khtml < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DOPENSSL_CRYPTO_LIBRARY=#{HOMEBREW_PREFIX}/opt/openssl@1.1/lib/libcrypto.dylib"
-    args << "-DOPENSSL_SSL_LIBRARY=#{HOMEBREW_PREFIX}/opt/openssl@1.1/lib/libssl.1.1.dylib"
-    args << "-DOPENSSL_INCLUDE_DIR=#{HOMEBREW_PREFIX}opt/openssl@1.1"
 
     mkdir "build" do
       system "cmake", "..", *args
