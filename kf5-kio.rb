@@ -16,8 +16,8 @@ class Kf5Kio < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
-#   depends_on "libxslt"
-#   depends_on "libxml2"
+  depends_on "libxslt"
+  depends_on "libxml2"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-solid"
   depends_on "KDE-mac/kde/kf5-kservice"
