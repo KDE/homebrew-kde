@@ -12,13 +12,13 @@ class Kf5Kdoctools < Formula
   depends_on "perl" => :build
   depends_on "cpanminus" => :build
   depends_on "gettext" => :build
-
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-ki18n" => :build
 
   depends_on "qt"
-  depends_on "docbook"
   depends_on "docbook-xsl"
+  depends_on "libxml2"
+  depends_on "libxslt"
   depends_on "KDE-mac/kde/kf5-karchive"
 
   def install
@@ -27,7 +27,6 @@ class Kf5Kdoctools < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DDocBookXSL_DIR:PATH=#{Formulary.factory("docbook-xsl").prefix}/docbook-xsl"
 
     mkdir "build" do
       system "cmake", "..", *args
