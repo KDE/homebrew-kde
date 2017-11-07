@@ -14,6 +14,7 @@ class Kf5Kauth < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
+  depends_on "gpgme"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
 
   def install
