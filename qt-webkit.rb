@@ -8,6 +8,12 @@ class QtWebkit < Formula
 
   head "https://github.com/annulen/webkit.git"
 
+  patch do
+    # Fix null point dereference (Fedora) https://github.com/annulen/webkit/issues/573
+    url "https://git.archlinux.org/svntogit/packages.git/plain/trunk/qt5-webkit-null-pointer-dereference.patch?h=packages/qt5-webkit"
+    sha256 "510e1f78c2bcd76909703a097dbc1d5c9c6ce4cd94883c26138f09cc10121f43"
+  end
+
   depends_on "cmake" => :build
   depends_on "gperf" => :build
   depends_on "fontconfig" => :build
@@ -15,6 +21,7 @@ class QtWebkit < Formula
   depends_on "sqlite3" => :build
 
   depends_on "qt"
+  depends_on "zlib"
   depends_on "webp"
   depends_on "libxslt"
   #depends_on "hyphen"
