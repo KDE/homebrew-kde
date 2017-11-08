@@ -18,6 +18,7 @@ class Kf5Kwallet < Formula
 
   depends_on "qt"
   depends_on "libgcrypt"
+  depends_on "gpgme"
   depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
   depends_on "KDE-mac/kde/kf5-kservice"
