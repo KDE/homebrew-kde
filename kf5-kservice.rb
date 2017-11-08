@@ -9,8 +9,8 @@ class Kf5Kservice < Formula
   head "git://anongit.kde.org/kservice.git"
 
   depends_on "cmake" => :build
-  # The bison 2.3 in Mac OS X is too old to build. Use homebrew's instead
   depends_on "bison" => :build
+  depends_on "flex" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "gettext" => :build
