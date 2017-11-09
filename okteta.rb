@@ -3,8 +3,8 @@ require "formula"
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.2/src/okteta-17.08.2.tar.xz"
-  sha256 "780101c477e5af799d59300a1b2d65635ad715a60e4a48468c8df5d0bcbf2fb8"
+  url "https://download.kde.org/stable/applications/17.08.3/src/okteta-17.08.3.tar.xz"
+  sha256 "9b846724ddd595c97a9ced9b7d86224217bab695eaf51b39684e486a6b7940ff"
 
   head "git://anongit.kde.org/okteta.git"
 
@@ -32,11 +32,10 @@ class Okteta < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/okteta.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/okteta.app/Contents/Info.plist"
   end
 
   def post_install

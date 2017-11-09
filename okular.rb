@@ -3,8 +3,8 @@ require "formula"
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/17.08.2/src/okular-17.08.2.tar.xz"
-  sha256 "c56f57dc47b8c00208e374f3249d2cf69d6293cb9ebfeeb3601f1c64cbc37e56"
+  url "https://download.kde.org/stable/applications/17.08.3/src/okular-17.08.3.tar.xz"
+  sha256 "d32e69b6be2a10d0eadc6f616be53dc8dd372c9123a6311628ac3f97b69054fd"
 
   head "git://anongit.kde.org/okular.git"
 
@@ -52,10 +52,10 @@ class Okular < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/okular.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/okular.app/Contents/Info.plist"
   end
 
   def post_install

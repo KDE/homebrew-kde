@@ -3,8 +3,8 @@ require "formula"
 class Dolphin < Formula
   desc "KDE File Manager"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.2/src/dolphin-17.08.2.tar.xz"
-  sha256 "3abf212d7e500ec0b41eb60efb83d7e6034e75a3da124ee877231f32c13f7bd4"
+  url "https://download.kde.org/stable/applications/17.08.3/src/dolphin-17.08.3.tar.xz"
+  sha256 "651565291d06faa60fc4baf3b11aa4ba766da8b654b1c8891ec0cb1088316b09"
 
   head "git://anongit.kde.org/dolphin.git"
 
@@ -30,10 +30,10 @@ class Dolphin < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/dolphin.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/dolphin.app/Contents/Info.plist"
   end
 
   def post_install

@@ -3,8 +3,8 @@ require "formula"
 class Kimap < Formula
   desc "Job-based API for interacting with IMAP servers"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/applications/17.08.2/src/kimap-17.08.2.tar.xz"
-  sha256 "ab3a7748d913a4162703a044f9d383cb4f2b395da35b52ebced8419180c7974e"
+  url "https://download.kde.org/stable/applications/17.08.3/src/kimap-17.08.3.tar.xz"
+  sha256 "9a7276c9ba39ae9c3b99422103aa41c9c060360772c31db0e885715a1bb5b130"
 
   head "git://anongit.kde.org/kimap.git"
 

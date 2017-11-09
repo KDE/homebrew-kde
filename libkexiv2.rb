@@ -3,8 +3,8 @@ require "formula"
 class Libkexiv2 < Formula
   desc "A library to manipulate pictures metadata"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.2/src/libkexiv2-17.08.2.tar.xz"
-  sha256 "d1f86afd77d722818c7656d793e7026180ecc95fcc8b522d4ff334333ce2a108"
+  url "https://download.kde.org/stable/applications/17.08.3/src/libkexiv2-17.08.3.tar.xz"
+  sha256 "220b0c86132b84a32a674bf404174a51419a3ea40f4f7096541a0c39cc342049"
 
   head "git://anongit.kde.org/libkexiv2.git"
 

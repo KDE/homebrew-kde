@@ -3,8 +3,8 @@ require "formula"
 class Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "http://kate-editor.org"
-  url "https://download.kde.org/stable/applications/17.08.2/src/kate-17.08.2.tar.xz"
-  sha256 "62456ab4ad1d12c810b75c3361a2b412d3f019161b8fc6511a43211f76828dd4"
+  url "https://download.kde.org/stable/applications/17.08.3/src/kate-17.08.3.tar.xz"
+  sha256 "7d0c76d58294436a1646736427dd42966b2e6ef883a91ba3f97deaa080835ffa"
 
   head "git://anongit.kde.org/kate.git"
 
@@ -32,13 +32,13 @@ class Kate < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/kate.app/Contents/Info.plist"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/kwrite.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kate.app/Contents/Info.plist"
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kwrite.app/Contents/Info.plist"
   end
 
   def post_install

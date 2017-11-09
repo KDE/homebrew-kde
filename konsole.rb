@@ -3,8 +3,8 @@ require "formula"
 class Konsole < Formula
   desc "KDE's terminal emulator"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.2/src/konsole-17.08.2.tar.xz"
-  sha256 "02777e8bc545d2534ee97b25e745109fc084937050e6e4af9a5c9a6395d0f328"
+  url "https://download.kde.org/stable/applications/17.08.3/src/konsole-17.08.3.tar.xz"
+  sha256 "82ece65d298f82955c19e77cab0465001abb26d5075cfadebb56dd3fe3b2691f"
 
   head "git://anongit.kde.org/konsole.git"
 
@@ -30,10 +30,10 @@ class Konsole < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/konsole.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/konsole.app/Contents/Info.plist"
   end
 
   def post_install
