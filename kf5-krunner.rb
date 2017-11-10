@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Krunner < Formula
-  desc "Process launcher to speed up launching KDE applications"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/krunner-5.39.0.tar.xz"
   sha256 "d43d3821b64a49fec7f06a3ad410f15412cebbe7f365c64a307a2c5ad14fba3f"
+  desc "Process launcher to speed up launching KDE applications"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/krunner.git"
 

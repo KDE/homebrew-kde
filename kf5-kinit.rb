@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kinit < Formula
-  desc "Process launcher to speed up launching KDE applications"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kinit-5.39.0.tar.xz"
   sha256 "c26a88e6c3e0607bdfa1b51ae6fa0d7fa6bb863c9f8f2659e8622d0d77a05c28"
+  desc "Process launcher to speed up launching KDE applications"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kinit.git"
 

@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Solid < Formula
-  desc "Hardware integration and detection"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/solid-5.39.0.tar.xz"
   sha256 "d98c1bc67a8483d42d76d0369bab3255b30420a5bd41bc4730cabbf03e3c74a5"
+  desc "Hardware integration and detection"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/solid.git"
 

@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kservice < Formula
-  desc "Advanced plugin and service introspection"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kservice-5.39.0.tar.xz"
   sha256 "149e0320e05abe67140f88a50cbf95d48a075a2996e9b2e3c9d123e6d1417f29"
+  desc "Advanced plugin and service introspection"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kservice.git"
 

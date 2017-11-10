@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kcompletion < Formula
-  desc "Text completion helpers and widgets"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kcompletion-5.39.0.tar.xz"
   sha256 "ba1e6a72e827d2657d518111271cf12eeddb70ec68b0f8943d4bfa632f614d26"
+  desc "Text completion helpers and widgets"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kcompletion.git"
 

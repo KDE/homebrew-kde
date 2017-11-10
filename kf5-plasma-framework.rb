@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5PlasmaFramework < Formula
-  desc "Plasma library and runtime components based upon KF5 and Qt5"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/plasma-framework-5.39.0.tar.xz"
   sha256 "a38f92df010d063a934a04d181c30bcac40df5f0494cfc1268d453fe6b9a5dbd"
+  desc "Plasma library and runtime components based upon KF5 and Qt5"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/plasma-framework.git"
 

@@ -1,10 +1,10 @@
 require "formula"
 
 class Kmime < Formula
-  desc "Library for handling mail messages and newsgroup articles"
-  homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/applications/17.08.3/src/kmime-17.08.3.tar.xz"
   sha256 "6d8807b9669a0547ff39cf01544f307c12c98fc75b612f7c24da371e1ee2f19f"
+  desc "Library for handling mail messages and newsgroup articles"
+  homepage "https://community.kde.org/KDE_PIM"
 
   head "git://anongit.kde.org/kmime.git"
 

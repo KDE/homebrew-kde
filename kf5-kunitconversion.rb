@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kunitconversion < Formula
-  desc "Support for unit conversion"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kunitconversion-5.39.0.tar.xz"
   sha256 "fb53e8d3c8997fbda4cf2b2a2e6ce71eecd44683903e039d35256ec3ac582113"
+  desc "Support for unit conversion"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kunitconversion.git"
 

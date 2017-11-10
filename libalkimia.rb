@@ -1,6 +1,8 @@
 require "formula"
 
 class Libalkimia < Formula
+  url "https://download.kde.org/stable/applications/17.08.3/src/libalkimia-17.08.3.tar.xz"
+  sha256 "df9ce60effb007096c57aa45fc22ec7d2af39c8c92bd4109d27c9d27b0a5489d"
   desc "Library used by KDE Finance applications"
   homepage "http://kmymoney.org/"
   #url "http://download.kde.org/stable/alkimia/5.0.0/src/libalkimia-5.0.0.tar.xz"

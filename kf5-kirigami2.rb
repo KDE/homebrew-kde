@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kirigami2 < Formula
-  desc "A QtQuick based components set"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kirigami2-5.39.0.tar.xz"
   sha256 "2714ee82dbcc2cd1b799d5f12193cae5637136466295567426c74b4f26f5ef6a"
+  desc "A QtQuick based components set"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kirigami2.git"
 

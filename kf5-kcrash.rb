@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kcrash < Formula
-  desc "Support for application crash analysis and bug report from apps"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kcrash-5.39.0.tar.xz"
   sha256 "9a0727734745b3050f864f2de1dbdb91e9ac99a49ede9874613427080a1563bb"
+  desc "Support for application crash analysis and bug report from apps"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kcrash.git"
 

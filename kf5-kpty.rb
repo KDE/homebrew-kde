@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kpty < Formula
-  desc "Pty abstraction"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kpty-5.39.0.tar.xz"
   sha256 "16d26608a7bb5feb085aba7162e6d0ed151f1aace6fbdf7c68a8ccc1c76b060a"
+  desc "Pty abstraction"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kpty.git"
 

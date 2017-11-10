@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kfilemetadata < Formula
-  desc "A library for extracting file metadata"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kfilemetadata-5.39.0.tar.xz"
   sha256 "0feadb5850557be4d372dcf792c83176276616fc839965c23ed87b7525bc9dd5"
+  desc "A library for extracting file metadata"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kfilemetadata.git"
 

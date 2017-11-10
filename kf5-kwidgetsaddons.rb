@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kwidgetsaddons < Formula
-  desc "Addons to QtWidgets"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/kwidgetsaddons-5.39.0.tar.xz"
   sha256 "abb9556d3716beff74460bfea9a33e6470386cb1a68601263b7997a09f1a0db4"
+  desc "Addons to QtWidgets"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/kwidgetsaddons.git"
 

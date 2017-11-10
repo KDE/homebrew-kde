@@ -1,10 +1,10 @@
 require "formula"
 
 class Konsole < Formula
-  desc "KDE's terminal emulator"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/applications/17.08.3/src/konsole-17.08.3.tar.xz"
   sha256 "82ece65d298f82955c19e77cab0465001abb26d5075cfadebb56dd3fe3b2691f"
+  desc "KDE's terminal emulator"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/konsole.git"
 

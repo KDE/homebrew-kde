@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Knotifyconfig < Formula
-  desc "Configuration system for KNotify"
-  homepage "http://www.kde.org/"
   url "https://download.kde.org/stable/frameworks/5.39/knotifyconfig-5.39.0.tar.xz"
   sha256 "2bf7d5c455a49e56d23a2295811060aa689223602a752269412a5d6db236d326"
+  desc "Configuration system for KNotify"
+  homepage "http://www.kde.org/"
 
   head "git://anongit.kde.org/knotifyconfig.git"
 
