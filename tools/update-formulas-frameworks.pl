@@ -43,7 +43,7 @@ my %frameworks = (
     'kcompletion' => '',
     'kcrash' => '',
     'kdoctools' => '',
-    'kfilemetadata' = '',
+    'kfilemetadata' => '',
     'kimageformats' => '',
     'knotifications' => '',
     'kjobwidgets' => '',
@@ -91,7 +91,7 @@ my %frameworks = (
 );
 
 my $version = "5.39";
-my $upstream_url = "http://download.kde.org/stable/frameworks/${version}/";
+my $upstream_url = "https://download.kde.org/stable/frameworks/${version}/";
 
 my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
 my $brew_prefix = `brew --cache`;
