@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kdbusaddons < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kdbusaddons-5.40.0.tar.xz"
+  sha256 "24a6268127bdfb5095d156f5251052e69a09523ec62499daa606c34f916feb27"
   desc "Addons to QtDBus"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdbusaddons-5.39.0.tar.xz"
-  sha256 "23477be1a3271d599be896477253fbcd9895ca8688ecb6771b290c5b522ae842"
 
   head "git://anongit.kde.org/kdbusaddons.git"
 

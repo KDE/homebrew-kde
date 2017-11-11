@@ -3,10 +3,10 @@ require "formula"
 # dummy comment to trigger rebuild
 
 class Kf5Karchive < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/karchive-5.40.0.tar.xz"
+  sha256 "1e181495390ba730f2b1aa9354da2122e2aa592aaffdbce4164fd9dcb2d97bb1"
   desc "Qt 5 addon providing access to numerous types of archives"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/karchive-5.39.0.tar.xz"
-  sha256 "3cc31b2449bf690a3703d339875510f211dfb3d774737d80237da3474dde6865"
 
   head "git://anongit.kde.org/karchive.git"
 

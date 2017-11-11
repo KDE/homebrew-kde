@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Knewstuff < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/knewstuff-5.40.0.tar.xz"
+  sha256 "71e00af7cfd4ead3dbd726c877c8f5c472af78881acd82e8155a1613fa5f9e44"
   desc "Support for downloading application assets from the network"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/knewstuff-5.39.0.tar.xz"
-  sha256 "3925f2417e35f5dfa9d2dc1d8059233467569af915b2c0266ea62d6fd2a6aeaa"
 
   head "git://anongit.kde.org/knewstuff.git"
 

@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kapidox < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kapidox-5.40.0.tar.xz"
+  sha256 "feb615a09ab5381a0f5fb4b85fdba7d338ad8b5b6ebdd8c20735d72e7b5d76f3"
   desc "Frameworks API Documentation Tools"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kapidox-5.39.0.tar.xz"
-  sha256 "d6701d35aa45b65dbf442d3325416c3100aa317a94fbeeb8f25595c782d2d58a"
 
   head "git://anongit.kde.org/kapidox.git"
 

@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kdelibs4support < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/portingAids/kdelibs4support-5.40.0.tar.xz"
+  sha256 "f9d7508aa6a72a186ba7d922e82ca49a5ac5d76e1fa02af995d17208128995df"
   desc "Porting aid from KDELibs4"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/kdelibs4support-5.39.0.tar.xz"
-  sha256 "d735000260d8565e812b96c81d510acef14f7b66e9fcbbd2d42711bd1bfcb20f"
 
   head "git://anongit.kde.org/kdelibs4support.git"
 
@@ -22,8 +22,6 @@ class Kf5Kdelibs4support < Formula
   depends_on "openssl@1.1"
 
   patch do
-    url "https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdelibs4support-openssl-1.1.patch?h=packages/kdelibs4support"
-    sha256  "e33de96fae2b93c3fa06b4219205ae188b214be8c5e84b8d0426217fd65a5d48"
   end
 
   def install

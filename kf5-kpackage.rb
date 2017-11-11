@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kpackage < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kpackage-5.40.0.tar.xz"
+  sha256 "b8ae58df3297402de06026f0fa38db9dce6a1e64c189d19959978d5c3a92109e"
   desc "Framework that lets applications manage user installable packages of non-binary assets"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kpackage-5.39.0.tar.xz"
-  sha256 "713eff23f61d9766f02b40cc6cfa73acd31d126a0c6a775903f79c9adebc77c5"
 
   head "git://anongit.kde.org/kpackage.git"
 

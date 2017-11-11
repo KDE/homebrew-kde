@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Khtml < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/portingAids/khtml-5.40.0.tar.xz"
+  sha256 "e01faffd13cb1da876e9021609d5db0a8f7b3c23855e3ae069a5dfd7888ae36c"
   desc "KHTML APIs"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/khtml-5.39.0.tar.xz"
-  sha256 "a284c7c60bf0df22c4b92e9c341ca080cd49730c5218f572ed88a885365ff624"
 
   head "git://anongit.kde.org/khtml.git"
 

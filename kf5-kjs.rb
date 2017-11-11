@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kjs < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/portingAids/kjs-5.40.0.tar.xz"
+  sha256 "b5415680ff0844513dcb8ac2da44a90a383323b2228470fcacda4af9536d6d5a"
   desc "Support for JS scripting in applications"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/kjs-5.39.0.tar.xz"
-  sha256 "36b365c9f3f41b8ca60d9816d58e6a67e32b2c83385a92d43d3237431118763a"
 
   head "git://anongit.kde.org/kjs.git"
 

@@ -81,7 +81,7 @@ my %frameworks = (
     'kross' => 'portingAids/kross'
 );
 
-my $version = "5.39";
+my $version = "5.40";
 my $upstream_url = "http://download.kde.org/stable/frameworks/${version}/";
 
 my $frameworks_upstream_suffix = "-${version}.0.tar.xz";

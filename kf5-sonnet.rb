@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Sonnet < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/sonnet-5.40.0.tar.xz"
+  sha256 "68f2aa79b06a6ae61aa36133cf00342c8c513bfd9fb761363db7956edf3c24a9"
   desc "Spelling framework for Qt5"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/sonnet-5.39.0.tar.xz"
-  sha256 "819f2bf8c95758106deaf800f3c4ec18d3f42d845a90996462839a759774abac"
 
   head "git://anongit.kde.org/sonnet.git"
 

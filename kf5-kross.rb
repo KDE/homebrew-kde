@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kross < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/portingAids/kross-5.40.0.tar.xz"
+  sha256 "17a570e2e742e06dc6b28e8610fc1795312be960938ce25acf480005f5d409f9"
   desc "Multi-language application scripting"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/portingAids/kross-5.39.0.tar.xz"
-  sha256 "d06ddc6157e150ea91be0f790df35a2e14239de0179f0cd8f048ad93597c09be"
 
   head "git://anongit.kde.org/kross.git"
 

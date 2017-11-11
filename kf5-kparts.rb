@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kparts < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kparts-5.40.0.tar.xz"
+  sha256 "34cb664ca0235ee0ab996e544ee4e6afa6e945e723106610369ac5c7b17e75ef"
   desc "Document centric plugin system"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kparts-5.39.0.tar.xz"
-  sha256 "26ebb165f82e8caacaadc70c7c996d2c68d3a40296389760940dc385859362e4"
 
   head "git://anongit.kde.org/kparts.git"
 

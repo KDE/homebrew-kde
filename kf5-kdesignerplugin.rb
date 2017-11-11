@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kdesignerplugin < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kdesignerplugin-5.40.0.tar.xz"
+  sha256 "0d57e158e8247a06b148ff9f65c013257b0f374301dd0f05c5a0c70040239403"
   desc "Integration of Frameworks widgets in Qt Designer/Creator"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdesignerplugin-5.39.0.tar.xz"
-  sha256 "ee9c33c583caa1209b112119b2ba6c1f3c14f015b6bafd6e54c97acd8db1f9ac"
 
   head "git://anongit.kde.org/kdesignerplugin.git"
 

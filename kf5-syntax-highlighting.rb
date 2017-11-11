@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5SyntaxHighlighting < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/syntax-highlighting-5.40.0.tar.xz"
+  sha256 "148dd0d3d091ad5ee352cc528f494a375d89d2812ff31b08c735e0929a358075"
   desc "Syntax highlighting engine for structured text and code"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/syntax-highlighting-5.39.0.tar.xz"
-  sha256 "acfd79f8d53269bae1d4876c737605f0e20c31d9453444fa98b8e296e06c1a2d"
 
   head "git://anongit.kde.org/syntax-highlighting.git"
 

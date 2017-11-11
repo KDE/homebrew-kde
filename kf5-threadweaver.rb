@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Threadweaver < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/threadweaver-5.40.0.tar.xz"
+  sha256 "2f35c4b370c379fa10fbde3270e2576012f81cf357648706a3dd1a5bce65c346"
   desc "High-level multithreading framework"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/threadweaver-5.39.0.tar.xz"
-  sha256 "5c116d93f2ca7bdc75db8d59a4b4852d2c7db48073ad3de21e4bfbf6339a2b80"
 
   head "git://anongit.kde.org/threadweaver.git"
 

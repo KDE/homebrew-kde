@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kded < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kded-5.40.0.tar.xz"
+  sha256 "0439d68e2b08a0084b6d15e92679692090271a873ee90dca8ed0a0afa1eac449"
   desc "Extensible deamon for providing system level services"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kded-5.39.0.tar.xz"
-  sha256 "453d349874b71a500afbb4a7c576be77bf38d3e87bd818269ccdfd27287c644b"
 
   head "git://anongit.kde.org/kded.git"
 

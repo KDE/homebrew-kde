@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kauth < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kauth-5.40.0.tar.xz"
+  sha256 "5a27f1ef5af517662e8c0d350c7f0b20a78c6f44b5db190c16d07ba637945c1c"
   desc "Abstraction to system policy and authentication features"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kauth-5.39.0.tar.xz"
-  sha256 "b184b817d155b272cf42fa748c6d3c9f1713be423551d2a74e297821f6ee7221"
 
   head "git://anongit.kde.org/kauth.git"
 

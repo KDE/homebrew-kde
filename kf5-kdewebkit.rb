@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Kdewebkit < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/kdewebkit-5.40.0.tar.xz"
+  sha256 "eeb1451999ee83aa96b8ac8a77cb640c8bec837bf0b4ead3745645f4fcb0ecd8"
   desc "KDE Integration for QtWebKit"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/kdewebkit-5.39.0.tar.xz"
-  sha256 "dd38c6d50681967cecb5debcbd1acc5135d465f15c46ceb7f2db32c4ffa0c015"
 
   head "git://anongit.kde.org/attica.git"
 

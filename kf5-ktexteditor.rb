@@ -1,10 +1,10 @@
 require "formula"
 
 class Kf5Ktexteditor < Formula
+  url "http://download.kde.org/stable/frameworks/5.40/ktexteditor-5.40.0.tar.xz"
+  sha256 "b6d48e3a1fb7dc6c8c6a2bc11743e928dca02d6b1e342261eedbb320f5eb9076"
   desc "Advanced embeddable text editor"
   homepage "http://www.kde.org/"
-  url "http://download.kde.org/stable/frameworks/5.39/ktexteditor-5.39.0.tar.xz"
-  sha256 "c5d9c67532ab6f3abee8ae2623ff21e6ca5280d5ea9ca5d23bdb55f937e565ae"
 
   head "git://anongit.kde.org/ktexteditor.git"
 
