@@ -3,8 +3,8 @@ require "formula"
 class Libkomparediff2 < Formula
   desc "Library to compare files and strings"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.0/src/libkomparediff2-17.08.0.tar.xz"
-  sha256 "394c0119631b865ab25f5b7165b0b13451f5890ea1ef553ac3f5eda78a322d5b"
+  url "https://download.kde.org/stable/applications/17.08.3/src/libkomparediff2-17.08.3.tar.xz"
+  sha256 "ce2d9d7815b4be00e3aa5a4d31dbd44a2d315123d1e5d8a760dacab115016d05"
 
   head "git://anongit.kde.org/libkomparediff2.git"
 

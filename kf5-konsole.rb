@@ -3,8 +3,8 @@ require "formula"
 class Kf5Konsole < Formula
   desc "KDE's terminal emulator"
   homepage "http://www.kde.org/"
-  url "https://download.kde.org/stable/applications/17.08.0/src/konsole-17.08.0.tar.xz"
-  sha256 "04f2cef35aced8aaa5f95fc0348c016435d9820f4ae0d5e4c1f40a839d838046"
+  url "https://download.kde.org/stable/applications/17.08.3/src/konsole-17.08.3.tar.xz"
+  sha256 "82ece65d298f82955c19e77cab0465001abb26d5075cfadebb56dd3fe3b2691f"
 
   head "git://anongit.kde.org/konsole.git"
 

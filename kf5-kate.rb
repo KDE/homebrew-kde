@@ -3,8 +3,8 @@ require "formula"
 class Kf5Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "http://kate-editor.org"
-  url "https://download.kde.org/stable/applications/17.08.0/src/kate-17.08.0.tar.xz"
-  sha256 "f25a39c7e272713940e82d53c1e8b266cf1d7acad3eeb7dd229f166fc8e0667d0"
+  url "https://download.kde.org/stable/applications/17.08.3/src/kate-17.08.3.tar.xz"
+  sha256 "7d0c76d58294436a1646736427dd42966b2e6ef883a91ba3f97deaa080835ffa"
 
   head "git://anongit.kde.org/kate.git"
 

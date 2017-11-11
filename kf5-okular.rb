@@ -3,8 +3,8 @@ require "formula"
 class Kf5Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/17.08.0/src/okular-17.08.0.tar.xz"
-  sha256 "cf2b5e372edd27ab847309a5f1a1e7f99fab5f759ffe1361b826ca448294f039"
+  url "https://download.kde.org/stable/applications/17.08.3/src/okular-17.08.3.tar.xz"
+  sha256 "d32e69b6be2a10d0eadc6f616be53dc8dd372c9123a6311628ac3f97b69054fd"
 
   head "git://anongit.kde.org/okular.git"
 
