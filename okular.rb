@@ -67,6 +67,7 @@ class Okular < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/okular ~/Library/"Application Support"
       ln -sf "$(brew --prefix)/share/kconf_update ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/config.kcfg" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/okular.app" ~/Applications/KDE/
     EOS

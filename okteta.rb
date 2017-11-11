@@ -47,6 +47,7 @@ class Okteta < Formula
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/okteta ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/config.kcfg" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/okteta.app" ~/Applications/KDE/
     EOS
