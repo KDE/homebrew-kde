@@ -10,9 +10,13 @@ class Okular < Formula
   head "git://anongit.kde.org/okular.git"
 
   depends_on "cmake" => :build
+  depends_on "ebook-tools" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
-  depends_on "KDE-mac/kde/kf5-khtml" => :build
+
+  depends_on "chmlib" => :optional
+  depends_on "KDE-mac/kde/kf5-khtml" => :optional
+  depends_on "KDE-mac/kde/kf-kirigami2" => :optional
 
   depends_on "qt"
   depends_on "qca"
@@ -20,23 +24,10 @@ class Okular < Formula
   depends_on "freetype"
   depends_on "libspectre"
   depends_on "djvulibre"
-  depends_on "chmlib"
   depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-karchive"
-  depends_on "KDE-mac/kde/kf5-kbookmarks"
-  depends_on "KDE-mac/kde/kf5-kcompletion"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
-  depends_on "KDE-mac/kde/kf5-kwallet"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
+  depends_on "KDE-mac/kde/kf5-threadvweaver"
   depends_on "KDE-mac/kde/libkexiv2"
 
   patch :DATA
