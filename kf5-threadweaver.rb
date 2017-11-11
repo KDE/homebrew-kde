@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Threadweaver < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/threadweaver-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/threadweaver-#{version}.tar.xz"
   sha256 "5c116d93f2ca7bdc75db8d59a4b4852d2c7db48073ad3de21e4bfbf6339a2b80"
   desc "High-level multithreading framework"
   homepage "http://www.kde.org/"

@@ -1,7 +1,8 @@
 require "formula"
 
 class Kmime < Formula
-  url "https://download.kde.org/stable/applications/17.08.3/src/kmime-17.08.3.tar.xz"
+  version "17.08.3"
+  url "https://download.kde.org/stable/applications/#{version}/src/kmime-#{version}.tar.xz"
   sha256 "6d8807b9669a0547ff39cf01544f307c12c98fc75b612f7c24da371e1ee2f19f"
   desc "Library for handling mail messages and newsgroup articles"
   homepage "https://community.kde.org/KDE_PIM"

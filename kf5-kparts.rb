@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kparts < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kparts-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kparts-#{version}.tar.xz"
   sha256 "26ebb165f82e8caacaadc70c7c996d2c68d3a40296389760940dc385859362e4"
   desc "Document centric plugin system"
   homepage "http://www.kde.org/"

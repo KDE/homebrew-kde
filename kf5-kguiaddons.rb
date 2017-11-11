@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kguiaddons < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kguiaddons-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kguiaddons-#{version}.tar.xz"
   sha256 "6ee0f5a2b1d66d5266cd2045ff06329efeb394441261a9ce9ea7f5f35689e9ab"
   desc "Addons to QtGui"
   homepage "http://www.kde.org/"

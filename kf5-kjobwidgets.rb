@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kjobwidgets < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kjobwidgets-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kjobwidgets-#{version}.tar.xz"
   sha256 "ccfd26c54e15a854d4d86028e7339dcbe33b0c52412686b89b2dc7794b2946fc"
   desc "Widgets for tracking KJob instances"
   homepage "http://www.kde.org/"

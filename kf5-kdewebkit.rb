@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kdewebkit < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kdewebkit-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kdewebkit-#{version}.tar.xz"
   sha256 "dd38c6d50681967cecb5debcbd1acc5135d465f15c46ceb7f2db32c4ffa0c015"
   desc "KDE Integration for QtWebKit"
   homepage "http://www.kde.org/"

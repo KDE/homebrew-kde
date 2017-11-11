@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kjsembed < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/portingAids/kjsembed-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kjsembed-#{version}.tar.xz"
   sha256 "ebcd97eaa6a5e36f6af7201e10f716aaab3a8cda984ce6b115a8274072f778c4"
   desc "Embedded JS"
   homepage "http://www.kde.org/"

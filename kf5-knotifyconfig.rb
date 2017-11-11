@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Knotifyconfig < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/knotifyconfig-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/knotifyconfig-#{version}.tar.xz"
   sha256 "2bf7d5c455a49e56d23a2295811060aa689223602a752269412a5d6db236d326"
   desc "Configuration system for KNotify"
   homepage "http://www.kde.org/"

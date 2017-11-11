@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5BreezeIcons < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/breeze-icons-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/breeze-icons-#{version}.tar.xz"
   sha256 "bd4077f88d106f7dcdefd8f260edbee597e72572e17f443ccd10d3a0eabb4b8c"
   desc "Breeze icon themes"
   homepage "http://www.kde.org/"

@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kmediaplayer < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/portingAids/kmediaplayer-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kmediaplayer-#{version}.tar.xz"
   sha256 "e11e51541d4f70c4ba237fca37ae19a398f284e6ecef6cf0326292bc42e0da27"
   desc "Plugin interface for media player features"
   homepage "http://www.kde.org/"

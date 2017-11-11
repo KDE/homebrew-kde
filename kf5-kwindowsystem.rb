@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kwindowsystem < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kwindowsystem-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kwindowsystem-#{version}.tar.xz"
   sha256 "17771aa0acf93b32329633aac9b07e72448edee2a2ecfe7a8f0040a23638dab7"
   desc "Access to the windowing system"
   homepage "http://www.kde.org/"

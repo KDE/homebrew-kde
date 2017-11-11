@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kdeclarative < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kdeclarative-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kdeclarative-#{version}.tar.xz"
   sha256 "f734913d40d94eafabf7d5a090c50a5e8d1caa597aabdf2eab5862f39db71cd1"
   desc "Provides integration of QML and KDE Frameworks"
   homepage "http://www.kde.org/"

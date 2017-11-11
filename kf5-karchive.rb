@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Karchive < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/karchive-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/karchive-#{version}.tar.xz"
   sha256 "3cc31b2449bf690a3703d339875510f211dfb3d774737d80237da3474dde6865"
   desc "Qt 5 addon providing access to numerous types of archives"
   homepage "http://www.kde.org/"

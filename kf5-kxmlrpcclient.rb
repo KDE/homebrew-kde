@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kxmlrpcclient < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kxmlrpcclient-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kxmlrpcclient-#{version}.tar.xz"
   sha256 "faa3e3af7b85c3bf679fc991d5ff2ef3c4f068a7e516885215c6d2e6870d8ac8"
   desc "XML-RPC client library for KDE"
   homepage "http://www.kde.org/"

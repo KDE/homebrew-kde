@@ -1,7 +1,8 @@
 require "formula"
 
 class Libkomparediff2 < Formula
-  url "https://download.kde.org/stable/applications/17.08.3/src/libkomparediff2-17.08.3.tar.xz"
+  version "17.08.3"
+  url "https://download.kde.org/stable/applications/#{version}/src/libkomparediff2-#{version}.tar.xz"
   sha256 "ce2d9d7815b4be00e3aa5a4d31dbd44a2d315123d1e5d8a760dacab115016d05"
   desc "Library to compare files and strings"
   homepage "http://www.kde.org/"

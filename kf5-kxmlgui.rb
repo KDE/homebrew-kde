@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kxmlgui < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kxmlgui-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kxmlgui-#{version}.tar.xz"
   sha256 "2584cf5b39414b4bf76817d5f09dcdf5cd2e1554ac424386a0f0fa0173089e7f"
   desc "User configurable main windows"
   homepage "http://www.kde.org/"

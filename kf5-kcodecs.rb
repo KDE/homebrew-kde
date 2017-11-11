@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kcodecs < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kcodecs-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kcodecs-#{version}.tar.xz"
   sha256 "eef017d861392296dcc54ff78361f732d9448e66ab977a69f1edf5e52c4214e0"
   desc "Provide a collection of methods to manipulate strings using various encodings"
   homepage "http://www.kde.org/"

@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kimageformats < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kimageformats-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kimageformats-#{version}.tar.xz"
   sha256 "a59082e8abbd141849e49762aac952f5f6d6820bf61cad0687bf618bbb6eced6"
   desc "Image format plugins for Qt5"
   homepage "http://www.kde.org/"

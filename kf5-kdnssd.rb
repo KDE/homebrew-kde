@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kdnssd < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kdnssd-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kdnssd-#{version}.tar.xz"
   sha256 "e550cf9af93f9b22b49a812610cd31f286caf17cf44c82ed9b6d4290390f0db1"
   desc "Abstraction to system DNSSD features"
   homepage "http://www.kde.org/"

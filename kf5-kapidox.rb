@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kapidox < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kapidox-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kapidox-#{version}.tar.xz"
   sha256 "d6701d35aa45b65dbf442d3325416c3100aa317a94fbeeb8f25595c782d2d58a"
   desc "Frameworks API Documentation Tools"
   homepage "http://www.kde.org/"

@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kdesu < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kdesu-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kdesu-#{version}.tar.xz"
   sha256 "9d9b1d202ad09993dd6c0bfe3bf4738e1867dc563bcd49b664e3026534fc5b0d"
   desc "Integration with su for elevated privileges"
   homepage "http://www.kde.org/"

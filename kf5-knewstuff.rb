@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Knewstuff < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/knewstuff-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/knewstuff-#{version}.tar.xz"
   sha256 "3925f2417e35f5dfa9d2dc1d8059233467569af915b2c0266ea62d6fd2a6aeaa"
   desc "Support for downloading application assets from the network"
   homepage "http://www.kde.org/"

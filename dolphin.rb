@@ -1,7 +1,8 @@
 require "formula"
 
 class Dolphin < Formula
-  url "https://download.kde.org/stable/applications/17.08.3/src/dolphin-17.08.3.tar.xz"
+  version "17.08.3"
+  url "https://download.kde.org/stable/applications/#{version}/src/dolphin-#{version}.tar.xz"
   sha256 "651565291d06faa60fc4baf3b11aa4ba766da8b654b1c8891ec0cb1088316b09"
   desc "KDE File Manager"
   homepage "http://www.kde.org/"

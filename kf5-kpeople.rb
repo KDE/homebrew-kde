@@ -1,7 +1,8 @@
 require "formula"
 
 class Kf5Kpeople < Formula
-  url "https://download.kde.org/stable/frameworks/5.39/kpeople-5.39.0.tar.xz"
+  version "5.39.0"
+  url "https://download.kde.org/stable/frameworks/#{version}/kpeople-#{version}.tar.xz"
   sha256 "59399598cc4f8324963a71fd1de12b3344fec9d8086863e6858dd23f1a6de8e8"
   desc "A Library that provides access to all contacts and the people who hold them"
   homepage "http://www.kde.org/"
