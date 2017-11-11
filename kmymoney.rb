@@ -30,11 +30,20 @@ class Kmymoney < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-    end
+    end  
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kmymoney.app/Contents/Info.plist"
+  end
+
+  def post_install
+    system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kmymoney/icontheme.rcc"
   end
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kmymoney ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/kmymoney.app" ~/Applications/KDE/
     EOS
