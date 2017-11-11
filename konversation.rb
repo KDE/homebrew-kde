@@ -54,7 +54,7 @@ class Konversation < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/konversation ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/konversation" ~/Library/"Application Support"
       ln -sf "$(brew --prefix)/share/kconf_update" ~/Library/"Application Support"
       mkdir -p ~/Applications/KDE
       ln -sf "#{prefix}/bin/konversation.app" ~/Applications/KDE/
