@@ -10,25 +10,15 @@ class Konversation < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
   depends_on "qt"
   depends_on "qca"
-  depends_on "KDE-mac/kde/kf5-karchive"
-  depends_on "KDE-mac/kde/kf5-kbookmarks"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
   depends_on "KDE-mac/kde/kf5-kemoticons"
-  depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "KDE-mac/kde/kf5-kidletime"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-solid"
-  depends_on "KDE-mac/kde/kf5-sonnet"
-  depends_on "KDE-mac/kde/kf5-kwallet"
-  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
-  depends_on "KDE-mac/kde/kf5-kglobalaccel"
 
   def install
     args = std_cmake_args
