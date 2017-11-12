@@ -14,14 +14,9 @@ class Kf5Ktexteditor < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
+  depends_on "libgit2"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
-
-  patch do
-    # Fix broken indentation in some languages
-    url "https://cgit.kde.org/ktexteditor.git/patch/?id=aeebeadb"
-    sha256 "a87ef171d67e2dca50a1ec979d316c58e540a46cb135ffd9480ea9237b419b69"
-  end
 
   def install
     args = std_cmake_args
