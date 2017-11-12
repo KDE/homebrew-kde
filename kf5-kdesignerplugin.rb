@@ -13,9 +13,10 @@ class Kf5Kdesignerplugin < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
+  depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
+
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kdewebkit"
   depends_on "KDE-mac/kde/kf5-kplotting"
   depends_on "KDE-mac/kde/kf5-kio"
 
