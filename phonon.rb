@@ -17,7 +17,6 @@ class Phonon < Formula
     args = std_cmake_args
     args << "-DCMAKE_SKIP_RPATH=ON"
     args << "-DPHONON_BUILD_PHONON4QT5=ON"
-    args << "-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=ON"
 
     mkdir "build" do
       system "cmake", "..", *args
