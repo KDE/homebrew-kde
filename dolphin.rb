@@ -3,6 +3,7 @@ require "formula"
 class Dolphin < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/dolphin-17.08.3.tar.xz"
   sha256 "651565291d06faa60fc4baf3b11aa4ba766da8b654b1c8891ec0cb1088316b09"
+  revision 2
   desc "KDE File Manager"
   homepage "http://www.kde.org/"
 
@@ -10,6 +11,7 @@ class Dolphin < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
   depends_on "ruby" => :optional
   depends_on "KDE-mac/kde/konsole" => :optional
@@ -20,6 +22,7 @@ class Dolphin < Formula
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "KDE-mac/kde/kio-extras"
 
   def install
     args = std_cmake_args
