@@ -1,13 +1,10 @@
 require "formula"
 
 class Libalkimia < Formula
-  version "17.08.3"
-  url "https://download.kde.org/stable/applications/#{version}/src/libalkimia-#{version}.tar.xz"
-  sha256 "df9ce60effb007096c57aa45fc22ec7d2af39c8c92bd4109d27c9d27b0a5489d"
-  desc "Library used by KDE Finance applications"
-  homepage "http://kmymoney.org/"
   #url "http://download.kde.org/stable/alkimia/5.0.0/src/libalkimia-5.0.0.tar.xz"
   #sha256 "eea8a2a0f6788a1b9fd464b370598ed6e55353fb40da53375e6f022e71526cb5"
+  desc "Library used by KDE Finance applications"
+  homepage "http://kmymoney.org/"
 
   head "git://anongit.kde.org/alkimia.git"
 

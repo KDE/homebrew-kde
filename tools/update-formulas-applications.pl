@@ -16,7 +16,6 @@ my %applications = (
 
     'kimap' => '',
     'kmime' => '',
-    'libalkimia' => '',
     'libkexiv2' => '',
     'libkomparediff2' => '',
 
