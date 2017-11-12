@@ -9,13 +9,13 @@ class Okular < Formula
   head "git://anongit.kde.org/okular.git"
 
   depends_on "cmake" => :build
-  depends_on "ebook-tools" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "chmlib" => :optional
-  depends_on "KDE-mac/kde/kf5-khtml" => :optional
-  depends_on "KDE-mac/kde/kf-kirigami2" => :optional
+  depends_on "chmlib" => [:build, :optional]
+  depends_on "ebook-tools" => [:build, :optional]
+  depends_on "KDE-mac/kde/kf5-khtml" => [:build, :optional]
+  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
 
   depends_on "qt"
   depends_on "qca"
@@ -23,10 +23,12 @@ class Okular < Formula
   depends_on "freetype"
   depends_on "libspectre"
   depends_on "djvulibre"
+  depends_on "poppler" => "with-qt"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-threadvweaver"
+  depends_on "KDE-mac/kde/kf5-kpty"
+  depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
 
   patch :DATA
@@ -37,7 +39,7 @@ class Okular < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args
