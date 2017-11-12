@@ -18,7 +18,6 @@ my %applications = (
     'kmime' => '',
     'libkexiv2' => '',
     'libkomparediff2' => '',
-    'kio-extras' => '',
 
 );
 
