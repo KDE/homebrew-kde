@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kemoticons < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kemoticons-#{version}.tar.xz"
-  sha256 "f05d4812ae8472fc455be7bb6b8e5f45ffef17b415b7154f08ba0eb293d14f8c"
+  url "https://download.kde.org/stable/frameworks/5.40/kemoticons-5.40.0.tar.xz"
+  sha256 "4c104050697b82418b303b004a635652793d6fc6b2c8745c948110b9f07611cb"
   desc "Support for emoticons and emoticons themes"
   homepage "http://www.kde.org/"
 

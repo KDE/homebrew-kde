@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kauth < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kauth-#{version}.tar.xz"
-  sha256 "b184b817d155b272cf42fa748c6d3c9f1713be423551d2a74e297821f6ee7221"
+  url "https://download.kde.org/stable/frameworks/5.40/kauth-5.40.0.tar.xz"
+  sha256 "5a27f1ef5af517662e8c0d350c7f0b20a78c6f44b5db190c16d07ba637945c1c"
   desc "Abstraction to system policy and authentication features"
   homepage "http://www.kde.org/"
 

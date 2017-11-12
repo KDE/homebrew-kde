@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Ktextwidgets < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/ktextwidgets-#{version}.tar.xz"
-  sha256 "5849d104e99be94d554bff229646df8fde84e3396c82e21a3e390ee08b09d05c"
+  url "https://download.kde.org/stable/frameworks/5.40/ktextwidgets-5.40.0.tar.xz"
+  sha256 "d95412d49025c4c52dafb1056d1d153726126b0cad940841f85ff98dd4b4a236"
   desc "Advanced text editing widgets"
   homepage "http://www.kde.org/"
 

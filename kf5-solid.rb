@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Solid < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/solid-#{version}.tar.xz"
-  sha256 "d98c1bc67a8483d42d76d0369bab3255b30420a5bd41bc4730cabbf03e3c74a5"
+  url "https://download.kde.org/stable/frameworks/5.40/solid-5.40.0.tar.xz"
+  sha256 "1dc96f12c3bbade6ab71794915ed7968b7ed8acc6b7a8cec5ad9c3708ece42ce"
   desc "Hardware integration and detection"
   homepage "http://www.kde.org/"
 

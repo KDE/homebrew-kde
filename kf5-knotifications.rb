@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Knotifications < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/knotifications-#{version}.tar.xz"
-  sha256 "b21daed46b95f7d109c5c0e8d3d43e9f435ac497e33912420b495c9080626838"
+  url "https://download.kde.org/stable/frameworks/5.40/knotifications-5.40.0.tar.xz"
+  sha256 "1b54fdccee857c3f66ffa6c830d738bd968cf4c1f9ef2ac8f52a516e94287904"
   desc "Abstraction for system notifications"
   homepage "http://www.kde.org/"
 

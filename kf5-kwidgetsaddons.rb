@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kwidgetsaddons < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kwidgetsaddons-#{version}.tar.xz"
-  sha256 "abb9556d3716beff74460bfea9a33e6470386cb1a68601263b7997a09f1a0db4"
+  url "https://download.kde.org/stable/frameworks/5.40/kwidgetsaddons-5.40.0.tar.xz"
+  sha256 "68420f8315442058d9159ffcb2f296a331ae72ef5126c76b2e8cd715032e069a"
   desc "Addons to QtWidgets"
   homepage "http://www.kde.org/"
 

@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kunitconversion < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kunitconversion-#{version}.tar.xz"
-  sha256 "fb53e8d3c8997fbda4cf2b2a2e6ce71eecd44683903e039d35256ec3ac582113"
+  url "https://download.kde.org/stable/frameworks/5.40/kunitconversion-5.40.0.tar.xz"
+  sha256 "dc6e28c07835f392be2740787dcb9880af2ecc7fb60810576f0bcea31b93e0e2"
   desc "Support for unit conversion"
   homepage "http://www.kde.org/"
 

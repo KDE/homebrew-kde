@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5PlasmaFramework < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/plasma-framework-#{version}.tar.xz"
-  sha256 "a38f92df010d063a934a04d181c30bcac40df5f0494cfc1268d453fe6b9a5dbd"
+  url "https://download.kde.org/stable/frameworks/5.40/plasma-framework-5.40.0.tar.xz"
+  sha256 "6f53b5ab7f79265366b7de5ae80110dc5b723ece10fb4178ddbf5d13c2f04fd6"
   desc "Plasma library and runtime components based upon KF5 and Qt5"
   homepage "http://www.kde.org/"
 

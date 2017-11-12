@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kirigami2 < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kirigami2-#{version}.tar.xz"
-  sha256 "2714ee82dbcc2cd1b799d5f12193cae5637136466295567426c74b4f26f5ef6a"
+  url "https://download.kde.org/stable/frameworks/5.40/kirigami2-5.40.0.tar.xz"
+  sha256 "2b4b6c6aa5b6fdb57d19345526628f528b6e57fa4a471d4b83e0ceec3a674228"
   desc "A QtQuick based components set"
   homepage "http://www.kde.org/"
 

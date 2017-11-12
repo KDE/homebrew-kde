@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kitemmodels < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kitemmodels-#{version}.tar.xz"
-  sha256 "699a1e7e1c78159efb501afc197f9b9959a800405da1ed9de9115ea13c98c0ae"
+  url "https://download.kde.org/stable/frameworks/5.40/kitemmodels-5.40.0.tar.xz"
+  sha256 "a9bb04bde2b445fb23435619703aa38dd5ccb0f9fa2caaed1fe960061ec04546"
   desc "Models for Qt Model/View system"
   homepage "http://www.kde.org/"
 

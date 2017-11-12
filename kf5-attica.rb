@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Attica < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/attica-#{version}.tar.xz"
-  sha256 "4ec1527e54e029c88135b5ed4851874ebb19a566b3c690c62ce6118b42112795"
+  url "https://download.kde.org/stable/frameworks/5.40/attica-5.40.0.tar.xz"
+  sha256 "3f1a907031a93cf505920482092ba5c362be639ccc9fb539f0365049a137e7d9"
   desc "Qt5 library that implements the Open Collaboration Services API"
   homepage "http://www.kde.org/"
 

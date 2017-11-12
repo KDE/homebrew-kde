@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Qqc2DesktopStyle < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/qqc2-desktop-style-#{version}.tar.xz"
-  sha256 "fb8818b22dbc1f47c38bef488543f025ec5da810e84f5ed732b08969338411e1"
+  url "https://download.kde.org/stable/frameworks/5.40/qqc2-desktop-style-5.40.0.tar.xz"
+  sha256 "89ec1b98a3b9491f37cd3c13ff6ec047d773efb0fb697c14b9a8388fb0b6ed4a"
   desc "A style for Qt Quick Controls 2 to make it follow your desktop theme"
   homepage "http://www.kde.org/"
 

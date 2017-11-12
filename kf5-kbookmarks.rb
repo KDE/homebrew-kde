@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kbookmarks < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kbookmarks-#{version}.tar.xz"
-  sha256 "e51b6e9551b649bbfadd95f40b0ae46e197a8bdaa051ccc10db17678985fcaf5"
+  url "https://download.kde.org/stable/frameworks/5.40/kbookmarks-5.40.0.tar.xz"
+  sha256 "5188516b868c2c4cc1820b127bc7660dda84e324c84222e07b94229358bc48c4"
   desc "Support for bookmarks and the XBEL format"
   homepage "http://www.kde.org/"
 

@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Ki18n < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/ki18n-#{version}.tar.xz"
-  sha256 "5e31cac2735db66de620d28a5d561f15aaafd6181c1ff7ca3a03b20ce3c305a5"
+  url "https://download.kde.org/stable/frameworks/5.40/ki18n-5.40.0.tar.xz"
+  sha256 "a97a0d40a783dcefc7cd89903bb0a8f673b90c753f89c4e858960b07a24f68db"
   desc "Advanced internationalization framework"
   homepage "http://www.kde.org/"
 

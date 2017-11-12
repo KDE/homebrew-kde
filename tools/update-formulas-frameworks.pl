@@ -90,11 +90,10 @@ my %frameworks = (
     'kross' => 'portingAids/kross'
 );
 
-my $version = "5.39.0";
-my $upstream_url = "https://download.kde.org/stable/frameworks/";
+my $version = "5.40";
+my $upstream_url = "https://download.kde.org/stable/frameworks/${version}/";
 
-my $frameworks_upstream_suffix = "-${version}";
-my $frameworks_package_extension = ".tar.xz";
+my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
 my $brew_prefix = `brew --cache`;
 
 if ($? != 0) {
@@ -107,7 +106,7 @@ sub updatePackage($) {
 
     my $package = $_[0];
 
-    my $upstream_suffix = "$frameworks_upstream_suffix$frameworks_package_extension";
+    my $upstream_suffix = $frameworks_upstream_suffix;
 
     my $upstream = $frameworks{$package};
     if ($upstream eq '') {
@@ -115,9 +114,7 @@ sub updatePackage($) {
     }
 
     my $formula = "kf5-$package.rb";
-    my $package_upstream_url = "$upstream_url$version$upstream$upstream_suffix";
-
-    my $url = "$upstream_url\#\{version\}/$package-#\{version\}$frameworks_package_extension";
+    my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
 
     if (! -e $formula) {
         print("Formula $formula does not exist!\n");
@@ -152,9 +149,6 @@ sub updatePackage($) {
     while (<FORMULA>) {
         my $line = $_;
 
-        if ($line =~ /^\s*^  version\s+\"(.*)\"\s*$/) {
-            next;
-        }
         if ($line =~ /^\s*^  url\s+\"(.*)\"\s*$/) {
             next;
         }
@@ -165,8 +159,7 @@ sub updatePackage($) {
         print NEW_FORMULA $line;
 
         if ($line =~ /^\s*class\s+(.*?)\s*<\s*Formula/) {
-            print NEW_FORMULA "  version \"$version\"\n";
-            print NEW_FORMULA "  url \"$url\"\n";
+            print NEW_FORMULA "  url \"$package_upstream_url\"\n";
             print NEW_FORMULA "  sha256 \"$sha\"\n";
         }
     }

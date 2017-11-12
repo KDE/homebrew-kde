@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kcompletion < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kcompletion-#{version}.tar.xz"
-  sha256 "ba1e6a72e827d2657d518111271cf12eeddb70ec68b0f8943d4bfa632f614d26"
+  url "https://download.kde.org/stable/frameworks/5.40/kcompletion-5.40.0.tar.xz"
+  sha256 "842a26485d381581bdbe7fe3b6d91d404928a47fb589e9a26ebdf5520c55bf9d"
   desc "Text completion helpers and widgets"
   homepage "http://www.kde.org/"
 

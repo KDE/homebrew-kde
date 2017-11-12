@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kio < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kio-#{version}.tar.xz"
-  sha256 "96cbea5aba34b4e1b0df5ecfb4aaf65ff324341fb00f99796146536557232f24"
+  url "https://download.kde.org/stable/frameworks/5.40/kio-5.40.0.tar.xz"
+  sha256 "30ea0b231b995faaf4283b9c9ecfaffb589268f5d7b5b805f69ed95601ac389b"
   desc "Resource and network access abstraction"
   homepage "http://www.kde.org/"
 

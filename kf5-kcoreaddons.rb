@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kcoreaddons < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kcoreaddons-#{version}.tar.xz"
-  sha256 "9f6e76c2a15252d2974271e4e3734a64aec157a434251c23b27efaa809d95363"
+  url "https://download.kde.org/stable/frameworks/5.40/kcoreaddons-5.40.0.tar.xz"
+  sha256 "25109dd486891c113f8b01d55f4c02e35b65b456c3879eb7da5045e595db8f58"
   desc "Addons to QtCore"
   homepage "http://www.kde.org/"
 

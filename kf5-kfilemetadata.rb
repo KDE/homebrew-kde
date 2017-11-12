@@ -1,9 +1,8 @@
 require "formula"
 
 class Kf5Kfilemetadata < Formula
-  version "5.39.0"
-  url "https://download.kde.org/stable/frameworks/#{version}/kfilemetadata-#{version}.tar.xz"
-  sha256 "0feadb5850557be4d372dcf792c83176276616fc839965c23ed87b7525bc9dd5"
+  url "https://download.kde.org/stable/frameworks/5.40/kfilemetadata-5.40.0.tar.xz"
+  sha256 "6b773fcda6977cf9c9c6e721343c90c66806691265fb1ada3498783158f33bfa"
   desc "A library for extracting file metadata"
   homepage "http://www.kde.org/"
 
