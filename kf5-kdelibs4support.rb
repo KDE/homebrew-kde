@@ -23,10 +23,6 @@ class Kf5Kdelibs4support < Formula
   depends_on "KDE-mac/kde/kf5-kunitconversion"
   depends_on "KDE-mac/kde/kf5-kparts"
 
-  patch do
-    url "https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdelibs4support-openssl-1.1.patch?h=packages/kdelibs4support"
-    sha256 "e33de96fae2b93c3fa06b4219205ae188b214be8c5e84b8d0426217fd65a5d48"
-  end
   patch :DATA
 
   def install
