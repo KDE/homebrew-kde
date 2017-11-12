@@ -4,7 +4,7 @@ class Kf5Kfilemetadata < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kfilemetadata-5.40.0.tar.xz"
   sha256 "6b773fcda6977cf9c9c6e721343c90c66806691265fb1ada3498783158f33bfa"
   desc "A library for extracting file metadata"
-  homepage "http://www.kde.org/"
+  homepage "https://www.kde.org/"
 
   head "git://anongit.kde.org/kfilemetadata.git"
 
@@ -17,13 +17,10 @@ class Kf5Kfilemetadata < Formula
   depends_on "ffmpeg"
   depends_on "taglib"
   depends_on "exiv2"
-  depends_on "poppler" => ["with-qt"]
+  depends_on "poppler" => "with-qt"
   depends_on "ebook-tools"
   depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "KDE-mac/kde/kf5-karchive"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
-
-  patch :DATA
 
   def install
     args = std_cmake_args
@@ -39,4 +36,3 @@ class Kf5Kfilemetadata < Formula
     end
   end
 end
-
