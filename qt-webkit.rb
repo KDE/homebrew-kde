@@ -30,9 +30,20 @@ class QtWebkit < Formula
     args = std_cmake_args
     args << "-DPORT=Qt"
     args << "-DENABLE_TOOLS=OFF"
+    args << "-DCMAKE_MACOSX_RPATH=OFF"
+    args << "-DEGPF_SET_RPATH=OFF"
+    args << "-DCMAKE_SKIP_RPATH=ON"
+    args << "-DCMAKE_SKIP_INSTALL_RPATH=ON"
 
     mkdir "build" do
       system "cmake", "..", *args
+      # DAMM YOU!!, RPATH
+      inreplace "Source/WebKit2/cmake_install.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
+      inreplace "Source/CMakeFiles/Export/lib/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsTargets-release.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
+      inreplace "Source/CMakeFiles/Export/lib/cmake/Qt5WebKit/WebKitTargets-release.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
+      inreplace "Source/WebKit/cmake_install.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
+      inreplace "Source/WebKit/qt/declarative/experimental/cmake_install.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
+      inreplace "Source/WebKit/qt/declarative/cmake_install.cmake", "@rpath", HOMEBREW_PREFIX/"opt/qt-webkit/lib"
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
