@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kpty < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kpty-5.40.0.tar.xz"
   sha256 "e708f716724cfc476ba9c2da678d24bf1654d8ac47b3eaf87fe3990c656bb4e4"

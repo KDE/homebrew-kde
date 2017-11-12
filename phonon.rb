@@ -1,5 +1,3 @@
-require "formula"
-
 class Phonon < Formula
   desc "The multimedia framework for KF5"
   homepage "http://www.kde.org/"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Kimap < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/kimap-17.08.3.tar.xz"
   sha256 "9a7276c9ba39ae9c3b99422103aa41c9c060360772c31db0e885715a1bb5b130"

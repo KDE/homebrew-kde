@@ -1,5 +1,3 @@
-require "formula"
-
 class KioExtras < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/kio-extras-17.08.3.tar.xz"
   sha256 "4c268b22a50d7ed08dbb7211a34e562aa10c2cbb2c62fb4311a0f932c841013f"

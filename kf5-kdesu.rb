@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kdesu < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kdesu-5.40.0.tar.xz"
   sha256 "87a94cdb687d0460737e0adb8105cf2323a09ac539ab63d917ca70961829bb8d"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kio < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kio-5.40.0.tar.xz"
   sha256 "30ea0b231b995faaf4283b9c9ecfaffb589268f5d7b5b805f69ed95601ac389b"

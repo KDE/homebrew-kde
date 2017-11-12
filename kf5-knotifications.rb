@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Knotifications < Formula
   url "https://download.kde.org/stable/frameworks/5.40/knotifications-5.40.0.tar.xz"
   sha256 "1b54fdccee857c3f66ffa6c830d738bd968cf4c1f9ef2ac8f52a516e94287904"

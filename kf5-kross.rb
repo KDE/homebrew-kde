@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kross < Formula
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/kross-5.40.0.tar.xz"
   sha256 "17a570e2e742e06dc6b28e8610fc1795312be960938ce25acf480005f5d409f9"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Konversation < Formula
   desc "A user-friendly and fully-featured IRC client"
   homepage "http://www.kde.org/"
@@ -26,7 +24,7 @@ class Konversation < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args

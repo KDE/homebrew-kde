@@ -1,5 +1,3 @@
-require "formula"
-
 class Grantlee5 < Formula
   desc "A string template engine based on the Django template system and written in Qt5"
   homepage "http://grantlee.org/"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kparts < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kparts-5.40.0.tar.xz"
   sha256 "34cb664ca0235ee0ab996e544ee4e6afa6e945e723106610369ac5c7b17e75ef"

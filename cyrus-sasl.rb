@@ -1,5 +1,3 @@
-require "formula"
-
 class CyrusSasl < Formula
   desc "Cyrus saslauthd SASL authentication daemon"
   homepage "https://www.cyrusimap.org/"

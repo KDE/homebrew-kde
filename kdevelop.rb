@@ -1,5 +1,3 @@
-require "formula"
-
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "http://kdevelop.org"
@@ -37,7 +35,7 @@ class Kdevelop < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
     args << "-DQt5WebKitWidgets_DIR=#{HOMEBREW_PREFIX}/lib/cmake/Qt5WebKitWidgets"
 
     mkdir "build" do

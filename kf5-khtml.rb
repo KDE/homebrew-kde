@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Khtml < Formula
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/khtml-5.40.0.tar.xz"
   sha256 "e01faffd13cb1da876e9021609d5db0a8f7b3c23855e3ae069a5dfd7888ae36c"

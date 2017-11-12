@@ -1,5 +1,3 @@
-require "formula"
-
 class QtWebkit < Formula
   desc "Classes for a WebKit2 based implementation and a new QML API"
   homepage "http://qt-project.org/"

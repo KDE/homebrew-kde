@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5PlasmaFramework < Formula
   url "https://download.kde.org/stable/frameworks/5.40/plasma-framework-5.40.0.tar.xz"
   sha256 "6f53b5ab7f79265366b7de5ae80110dc5b723ece10fb4178ddbf5d13c2f04fd6"
@@ -27,7 +25,7 @@ class Kf5PlasmaFramework < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args

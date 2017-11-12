@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kbookmarks < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kbookmarks-5.40.0.tar.xz"
   sha256 "5188516b868c2c4cc1820b127bc7660dda84e324c84222e07b94229358bc48c4"

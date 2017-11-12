@@ -1,5 +1,3 @@
-require "formula"
-
 class Kmime < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/kmime-17.08.3.tar.xz"
   sha256 "6d8807b9669a0547ff39cf01544f307c12c98fc75b612f7c24da371e1ee2f19f"

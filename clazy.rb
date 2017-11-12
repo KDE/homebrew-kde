@@ -1,5 +1,3 @@
-require "formula"
-
 class Clazy < Formula
   desc "Qt oriented code checker based on clang framework."
   homepage "https://github.com/KDE/clazy"

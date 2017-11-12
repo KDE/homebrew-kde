@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kfilemetadata < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kfilemetadata-5.40.0.tar.xz"
   sha256 "6b773fcda6977cf9c9c6e721343c90c66806691265fb1ada3498783158f33bfa"

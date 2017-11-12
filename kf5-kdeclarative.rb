@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kdeclarative < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kdeclarative-5.40.0.tar.xz"
   sha256 "a60142c4c1b14756196ebb90db63fd1214efe8ed921afa8b6b956caed23bd783"

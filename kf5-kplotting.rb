@@ -1,5 +1,3 @@
-require "formula"
-
 class Kf5Kplotting < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kplotting-5.40.0.tar.xz"
   sha256 "f1dcfc16726021597c97de449c5168873ab323683be3b74a8e4793f377dfd6c2"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Okteta < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/okteta-17.08.3.tar.xz"
   sha256 "9b846724ddd595c97a9ced9b7d86224217bab695eaf51b39684e486a6b7940ff"
@@ -26,7 +24,7 @@ class Okteta < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args

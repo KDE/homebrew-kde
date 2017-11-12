@@ -1,5 +1,3 @@
-require "formula"
-
 class Konsole < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/konsole-17.08.3.tar.xz"
   sha256 "82ece65d298f82955c19e77cab0465001abb26d5075cfadebb56dd3fe3b2691f"
@@ -24,7 +22,7 @@ class Konsole < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args

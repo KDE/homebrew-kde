@@ -1,5 +1,3 @@
-require "formula"
-
 class KdevelopPgQt < Formula
   desc "LL(1) parser generator based on Qt"
   homepage "http://kdevelop.org"

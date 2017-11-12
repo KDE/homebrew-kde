@@ -1,5 +1,3 @@
-require "formula"
-
 class Kmymoney < Formula
   desc "Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
   homepage "http://kmymoney.org/"
@@ -24,7 +22,7 @@ class Kmymoney < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args

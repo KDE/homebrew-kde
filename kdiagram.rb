@@ -1,5 +1,3 @@
-require "formula"
-
 class Kdiagram < Formula
   desc "Powerful libraries for creating business diagrams"
   homepage "http://www.kde.org/"
