@@ -18,7 +18,7 @@ my %applications = (
     'kmime' => '',
     'libkexiv2' => '',
     'libkomparediff2' => '',
-
+    'kio-extras' => '',
 );
 
 my $version = "17.08.3";

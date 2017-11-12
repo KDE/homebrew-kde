@@ -4,22 +4,23 @@ class Dolphin < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/dolphin-17.08.3.tar.xz"
   sha256 "651565291d06faa60fc4baf3b11aa4ba766da8b654b1c8891ec0cb1088316b09"
   desc "KDE File Manager"
-  homepage "http://www.kde.org/"
+  homepage "https://www.kde.org/"
 
   head "git://anongit.kde.org/dolphin.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "ruby" => :optional
-  depends_on "KDE-mac/kde/konsole" => :optional
+  depends_on :ruby => ["2.4", :optional]
+  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
 
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "KDE-mac/kde/kio-extras"
 
   def install
     args = std_cmake_args
@@ -27,7 +28,7 @@ class Dolphin < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "..", *args
