@@ -8,7 +8,7 @@ Experimental Homebrew (http://brew.sh) tap for KDE Frameworks on Mac OS X.
 To add the KDE Frameworks Tap to your homebrew installation:
 
 ```sh
-brew tap KDE-mac/kde
+brew tap kde-mac/kde
 ```
 
 In order to build them, you first need an up to date Qt:
@@ -27,14 +27,14 @@ brew install qt
 Now, the fun begins. You can either install individual frameworks via
 
 ```sh
-brew install KDE-mac/kde/kf5-karchive
+brew install kde-mac/kde/kf5-karchive
 ```
 
 or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-cd `brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde
+cd `brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde
 ./tools/install.sh
 ```
 
@@ -47,7 +47,7 @@ To remove all KDE Frameworks 5 packages, run:
 
 ```sh
 brew uninstall `brew list -1 | grep '^kf5-'`
-rm -rf /Applications/KDE5
+rm -rf /Applications/KDE
 ```
 
 **Installing HEAD**
@@ -64,7 +64,7 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
+`brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
 ```
 
 **D-Bus first time users**
