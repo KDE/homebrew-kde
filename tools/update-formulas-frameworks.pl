@@ -8,8 +8,10 @@ use warnings;
 
 my %frameworks = (
 
+    ### Updated list in https://api.kde.org/frameworks/
     ### ECM
     'extra-cmake-modules' => '',
+
     ### Tier 1
     'attica' => '',
     'breeze-icons' => '',
@@ -20,32 +22,36 @@ my %frameworks = (
     'kcoreaddons' => '',
     'kdbusaddons' => '',
     'kdnssd' => '',
-    'kglobalaccel' => '',
     'kguiaddons' => '',
     'ki18n' => '',
     'kidletime' => '',
-    'kimageformats' => '',
+    'kirigami2' => '',
     'kitemmodels' => '',
     'kitemviews' => '',
     'kplotting' => '',
+    'syntax-highlighting' => '',
     'kwidgetsaddons' => '',
     'kwindowsystem' => '',
+    'qqc2-desktop-style' => '',
     'solid' => '',
     'sonnet' => '',
     'threadweaver' => '',
 
      ### Tier 2
+    'kactivities' => '',
     'kauth' => '',
     'kcompletion' => '',
     'kcrash' => '',
     'kdoctools' => '',
+    'kfilemetadata' => '',
+    'kimageformats' => '',
+    'knotifications' => '',
     'kjobwidgets' => '',
+    'kpackage' => '',
     'kpty' => '',
     'kunitconversion' => '',
-    'kpackage' => '',
 
     ### Tier 3
-    'kactivities' => '',
     'kbookmarks' => '',
     'kcmutils' => '',
     'kconfigwidgets' => '',
@@ -55,19 +61,22 @@ my %frameworks = (
     'kdesu' => '',
     'kdewebkit' => '',
     'kemoticons' => '',
+    'kglobalaccel' => '',
     'kiconthemes' => '',
     'kinit' => '',
     'kio' => '',
     'knewstuff' => '',
-    'knotifications' => '',
     'knotifyconfig' => '',
     'kparts' => '',
+    'kpeople' => '',
+    'krunner' => '',
     'kservice' => '',
     'ktexteditor' => '',
-    'syntax-highlighting' => '',
     'ktextwidgets' => '',
     'kwallet' => '',
     'kxmlgui' => '',
+    'kxmlrpcclient' => '',
+    'plasma-framework' => '',
 
     ### Tier 4
     'frameworkintegration' => '',
@@ -82,7 +91,7 @@ my %frameworks = (
 );
 
 my $version = "5.40";
-my $upstream_url = "http://download.kde.org/stable/frameworks/${version}/";
+my $upstream_url = "https://download.kde.org/stable/frameworks/${version}/";
 
 my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
 my $brew_prefix = `brew --cache`;
@@ -140,10 +149,10 @@ sub updatePackage($) {
     while (<FORMULA>) {
         my $line = $_;
 
-        if ($line =~ /^\s*url\s+\"(.*)\"\s*$/) {
+        if ($line =~ /^\s*^  url\s+\"(.*)\"\s*$/) {
             next;
         }
-        if ($line =~ /^\s*sha256\s+\"(.*)\"\s*$/) {
+        if ($line =~ /^\s*^  sha256\s+\"(.*)\"\s*$/) {
             next;
         }
 

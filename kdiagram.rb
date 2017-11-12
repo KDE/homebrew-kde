@@ -1,17 +1,24 @@
 require "formula"
 
-class Kf5Kdiagram < Formula
+class Kdiagram < Formula
   desc "Powerful libraries for creating business diagrams"
   homepage "http://www.kde.org/"
+  url "https://download.kde.org/stable/kdiagram/2.6.0/src/kdiagram-2.6.0.tar.xz"
+  sha256 "02788dad7e15c64b74a2d1073c5910469ab4cf46ba905030c1713dce45981882"
 
   head "git://anongit.kde.org/kdiagram.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+
   depends_on "qt"
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "..", *args

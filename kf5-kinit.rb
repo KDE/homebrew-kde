@@ -1,7 +1,7 @@
 require "formula"
 
 class Kf5Kinit < Formula
-  url "http://download.kde.org/stable/frameworks/5.40/kinit-5.40.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.40/kinit-5.40.0.tar.xz"
   sha256 "ca97eb8480a7387537166831a6a91892068656a161b9726429af581a436e2689"
   desc "Process launcher to speed up launching KDE applications"
   homepage "http://www.kde.org/"
@@ -10,13 +10,19 @@ class Kf5Kinit < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+
   depends_on "qt"
+  depends_on "KDE-mac/kde/kf5-kio"
 
   patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "..", *args

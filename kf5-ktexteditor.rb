@@ -1,7 +1,7 @@
 require "formula"
 
 class Kf5Ktexteditor < Formula
-  url "http://download.kde.org/stable/frameworks/5.40/ktexteditor-5.40.0.tar.xz"
+  url "https://download.kde.org/stable/frameworks/5.40/ktexteditor-5.40.0.tar.xz"
   sha256 "b6d48e3a1fb7dc6c8c6a2bc11743e928dca02d6b1e342261eedbb320f5eb9076"
   desc "Advanced embeddable text editor"
   homepage "http://www.kde.org/"
@@ -9,13 +9,21 @@ class Kf5Ktexteditor < Formula
   head "git://anongit.kde.org/ktexteditor.git"
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
+  depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+
+  depends_on "qt"
+  depends_on "libgit2"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
-  depends_on "qt"
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -26,7 +34,7 @@ class Kf5Ktexteditor < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "#{HOMEBREW_PREFIX}/share/kservicetypes5" "$HOME/Library/Application Support/"
+      ln -sf "$(brew --prefix)/share/katepart5" ~/Library/"Application Support"
     EOS
   end
 end

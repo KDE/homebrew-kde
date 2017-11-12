@@ -1,41 +1,42 @@
 require "formula"
 
-class Kf5Okular < Formula
-  desc "Document Viewer"
-  homepage "https://okular.kde.org"
+class Okular < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/okular-17.08.3.tar.xz"
   sha256 "d32e69b6be2a10d0eadc6f616be53dc8dd372c9123a6311628ac3f97b69054fd"
+  desc "Document Viewer"
+  homepage "https://okular.kde.org"
 
   head "git://anongit.kde.org/okular.git"
 
   depends_on "cmake" => :build
+  depends_on "ebook-tools" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-karchive"
-  depends_on "KDE-mac/kde/kf5-kbookmarks"
-  depends_on "KDE-mac/kde/kf5-kcompletion"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
-  depends_on "KDE-mac/kde/kf5-khtml"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kjs"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
-  depends_on "KDE-mac/kde/kf5-kwallet"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+
+  depends_on "chmlib" => :optional
+  depends_on "KDE-mac/kde/kf5-khtml" => :optional
+  depends_on "KDE-mac/kde/kf-kirigami2" => :optional
+
   depends_on "qt"
+  depends_on "qca"
   depends_on "zlib"
   depends_on "freetype"
+  depends_on "libspectre"
+  depends_on "djvulibre"
+  depends_on "KDE-mac/kde/kf5-kactivities"
+  depends_on "KDE-mac/kde/kf5-kjs"
+  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-threadvweaver"
+  depends_on "KDE-mac/kde/libkexiv2"
 
   patch :DATA
 
   def install
     args = std_cmake_args
+    args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_QCH=ON"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{prefix}/bin"
 
     mkdir "build" do
@@ -43,14 +44,22 @@ class Kf5Okular < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/okular.app/Contents/Info.plist"
+  end
+
+  def post_install
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/okular/icontheme.rcc"
   end
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p "$HOME/Library/Application Support/okular"
-      ln -sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc" "$HOME/Library/Application Support/okular/icontheme.rcc"
-      mkdir -p "$HOME/Applications/KDE"
-      ln -sf "#{prefix}/bin/okular.app" "$HOME/Applications/KDE"
+      ln -sf "$(brew --prefix)/share/okular" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kconf_update" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/config.kcfg" ~/Library/"Application Support"
+      mkdir -p ~/Applications/KDE
+      ln -sf "#{prefix}/bin/okular.app" ~/Applications/KDE/
     EOS
   end
 end

@@ -11,19 +11,18 @@ To add the KDE Frameworks Tap to your homebrew installation:
 brew tap KDE-mac/kde
 ```
 
-In order to build them, you first need an up to date Qt 5 with
-optional QtWebkit support(`kdewebkit`、`kdevplatform` depends on QtWebkit):
+In order to build them, you first need an up to date Qt:
 
 ```sh
 brew install dbus
-brew install qt5 # or brew install qt5 --with-qtwebkit
+brew install qt
 ```
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
 
 **Note**: Read the D-Bus notes below if this is your first D-Bus installation.
 
-**Note**: You only need to install Qt5 with QtWebkit if you want to install kdevelop or kdewebkit.
+**Note**: Webkit for Qt is installed by separate package called `qt-webkit` if you want use kdevelop or kdewebkit
 
 Now, the fun begins. You can either install individual frameworks via
 
@@ -35,7 +34,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-cd `brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde
+cd `brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde
 ./tools/install.sh
 ```
 
@@ -65,7 +64,7 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Library/Taps/kde-mac/homebrew-kde/tools/install.sh --HEAD
+`brew --prefix`/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
 ```
 
 **D-Bus first time users**
