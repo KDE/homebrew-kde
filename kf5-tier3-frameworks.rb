@@ -1,8 +1,9 @@
 class Kf5Tier3Frameworks < Formula
   desc "Metapackage for Tier 3 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
-  url "https://sl1pkn07.wtf/paste/view/raw/f4513d60"
-  sha256 "54d626e08c1c802b305dad30b7e54a82f102390cc92c7d4db112048935236e9c"
+  url "https://raw.githubusercontent.com/KDE-mac/homebrew-kde/master/tools/empty"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  version "0"
 
   depends_on "KDE-mac/kde/kf5-kbookmarks" => :build
   depends_on "KDE-mac/kde/kf5-kcmutils" => :build
