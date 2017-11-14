@@ -158,7 +158,7 @@ sub updatePackage($) {
 
         print NEW_FORMULA $line;
 
-        if ($line =~ /^\s*class\s+(.*?)\s*<\s*Formula/) {
+        if ($line =~ /^\s*^  homepage\s+(.*)\"/) {
             print NEW_FORMULA "  url \"$package_upstream_url\"\n";
             print NEW_FORMULA "  sha256 \"$sha\"\n";
         }

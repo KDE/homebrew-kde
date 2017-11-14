@@ -28,7 +28,7 @@ class Kmymoney < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-    end 
+    end
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kmymoney.app/Contents/Info.plist"

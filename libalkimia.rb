@@ -13,7 +13,6 @@ class Libalkimia < Formula
   depends_on "gmp"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
 
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"

@@ -2,8 +2,8 @@ class Kf5Tier2Frameworks < Formula
   desc "Metapackage for Tier 2 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
   url "https://raw.githubusercontent.com/KDE-mac/homebrew-kde/master/tools/empty"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   version "0"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "KDE-mac/kde/kf5-kactivities" => :build
   depends_on "KDE-mac/kde/kf5-kauth" => :build

@@ -1,8 +1,8 @@
 class Kf5Kpeople < Formula
-  url "https://download.kde.org/stable/frameworks/5.40/kpeople-5.40.0.tar.xz"
-  sha256 "79d550a16d6f68f0ceafbce1c34e39eb95256b95c8940e9cfff3317ec704daf9"
   desc "Library that provides access to all contacts and the people who hold them"
   homepage "https://www.kde.org"
+  url "https://download.kde.org/stable/frameworks/5.40/kpeople-5.40.0.tar.xz"
+  sha256 "79d550a16d6f68f0ceafbce1c34e39eb95256b95c8940e9cfff3317ec704daf9"
 
   head "git://anongit.kde.org/kpeople.git"
 
@@ -16,7 +16,6 @@ class Kf5Kpeople < Formula
   depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
   depends_on "KDE-mac/kde/kf5-kitemviews"
-
 
   def install
     args = std_cmake_args
