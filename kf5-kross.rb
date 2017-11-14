@@ -30,6 +30,8 @@ class Kf5Kross < Formula
   end
 end
 
+# Make nongui kf5kross
+# Fix typo(?) in qts-interpreter cmakelist.txt
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 1bf53a0..45ad3d3 100644
@@ -55,3 +57,23 @@ index 8e15a1a..6808f52 100644
 +ecm_mark_nongui_executable(kf5kross)
  install(TARGETS kf5kross ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
+diff --git a/src/qts-interpreter/CMakeLists.txt b/src/qts-interpreter/CMakeLists.txt
+index 7836610..c34ce42 100644
+--- a/src/qts-interpreter/CMakeLists.txt
++++ b/src/qts-interpreter/CMakeLists.txt
+@@ -12,4 +12,4 @@ target_link_libraries(krossqts
+     Qt5::Core
+ )
+ 
+-install(TARGETS krossqts DESTINATION ${KDE_INSTALL_QTPLUGINDIR})
++install(TARGETS krossqts DESTINATION ${KDE_INSTALL_PLUGINDIR})
+diff --git a/src/qts/CMakeLists.txt b/src/qts/CMakeLists.txt
+index 93d3bd9..d21e6d6 100644
+--- a/src/qts/CMakeLists.txt
++++ b/src/qts/CMakeLists.txt
+@@ -16,4 +16,4 @@ target_link_libraries(krossqtsplugin
+     Qt5::Core
+ )
+ 
+-install(TARGETS krossqtsplugin DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/script)
++install(TARGETS krossqtsplugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/script)
