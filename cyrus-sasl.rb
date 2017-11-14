@@ -1,6 +1,6 @@
 class CyrusSasl < Formula
   desc "Cyrus saslauthd SASL authentication daemon"
-  homepage "https://www.cyrusimap.org/"
+  homepage "https://www.cyrusimap.org"
   url "ftp://ftp.cyrusimap.org/cyrus-sasl/cyrus-sasl-2.1.26.tar.gz"
   sha256 "8fbc5136512b59bb793657f36fadda6359cae3b08f01fd16b3d406f1345b7bc3"
 

@@ -2,7 +2,7 @@ class Kdevplatform < Formula
   url "https://download.kde.org/stable/kdevelop/5.1.2/src/kdevplatform-5.1.2.tar.xz"
   sha256 "e622ddad552a678baaf1166d5cbdc5fd1192d2324300c52ef2d25f1c6778664a"
   desc "KDevelop Platform"
-  homepage "http://kdevelop.org"
+  homepage "https://kdevelop.org"
 
   head "git://anongit.kde.org/kdevplatform.git"
 

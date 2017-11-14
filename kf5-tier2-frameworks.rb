@@ -20,8 +20,7 @@ class Kf5Tier2Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kunitconversion" => :build
  
   def install
-    FileUtils.touch "empty"
+    touch "empty"
     prefix.install "empty"
   end
 end
-

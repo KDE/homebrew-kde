@@ -2,7 +2,7 @@ class Kf5Kdelibs4support < Formula
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/kdelibs4support-5.40.0.tar.xz"
   sha256 "f9d7508aa6a72a186ba7d922e82ca49a5ac5d76e1fa02af995d17208128995df"
   desc "Porting aid from KDELibs4"
-  homepage "http://www.kde.org/"
+  homepage "https://www.kde.org"
 
   head "git://anongit.kde.org/kdelibs4support.git"
 
@@ -49,8 +49,9 @@ class Kf5Kdelibs4support < Formula
   end
 end
 
-# patch made from 
-# https://github.com/KDE/kdoctools/blob/master/cmake/FindDocBookXML4.cmake 
+# Patch based from
+# https://github.com/KDE/kdoctools/blob/master/cmake/FindDocBookXML4.cmake
+
 __END__
 diff --git a/cmake/FindDocBookXML4.cmake b/cmake/FindDocBookXML4.cmake
 index dcc0cf66..6fbf4ebb 100644

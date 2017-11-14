@@ -1,8 +1,8 @@
 class Kmymoney < Formula
   desc "Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
-  homepage "http://kmymoney.org/"
-  #url "https://download.kde.org/stable/kmymoney/4.8.1/src/kmymoney-4.8.1.7z"
-  #sha256 "4435acabb3c9771dd39471651767c857087b5fe4f5cd43132c19cdc92aa6cbab"
+  homepage "https://kmymoney.org"
+  # url "https://download.kde.org/stable/kmymoney/4.8.1/src/kmymoney-4.8.1.7z"
+  # sha256 "4435acabb3c9771dd39471651767c857087b5fe4f5cd43132c19cdc92aa6cbab"
 
   head "git://anongit.kde.org/kmymoney.git"
 
@@ -28,7 +28,7 @@ class Kmymoney < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-    end  
+    end 
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kmymoney.app/Contents/Info.plist"

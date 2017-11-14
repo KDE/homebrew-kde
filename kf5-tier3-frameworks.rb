@@ -32,8 +32,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
 
   def install
-    FileUtils.touch "empty"
+    touch "empty"
     prefix.install "empty"
   end
 end
-

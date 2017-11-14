@@ -2,7 +2,7 @@ class Kf5Kxmlrpcclient < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kxmlrpcclient-5.40.0.tar.xz"
   sha256 "14d8bd7109d013964ba952402fe439e749bcef97d4588b7a7dd269e1b07deb07"
   desc "XML-RPC client library for KDE"
-  homepage "http://www.kde.org/"
+  homepage "https://www.kde.org"
 
   head "git://anongit.kde.org/kxmlrpcclient.git"
 

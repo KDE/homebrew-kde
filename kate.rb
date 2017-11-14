@@ -2,7 +2,7 @@ class Kate < Formula
   url "https://download.kde.org/stable/applications/17.08.3/src/kate-17.08.3.tar.xz"
   sha256 "7d0c76d58294436a1646736427dd42966b2e6ef883a91ba3f97deaa080835ffa"
   desc "Advanced KDE Text Editor"
-  homepage "http://kate-editor.org"
+  homepage "https://kate-editor.org"
 
   head "git://anongit.kde.org/kate.git"
 

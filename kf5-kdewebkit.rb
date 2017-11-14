@@ -2,7 +2,7 @@ class Kf5Kdewebkit < Formula
   url "https://download.kde.org/stable/frameworks/5.40/kdewebkit-5.40.0.tar.xz"
   sha256 "eeb1451999ee83aa96b8ac8a77cb640c8bec837bf0b4ead3745645f4fcb0ecd8"
   desc "KDE Integration for QtWebKit"
-  homepage "http://www.kde.org/"
+  homepage "https://www.kde.org"
 
   head "git://anongit.kde.org/attica.git"
 
@@ -20,7 +20,6 @@ class Kf5Kdewebkit < Formula
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DQt5WebKitWidgets_DIR=#{HOMEBREW_PREFIX}/lib/cmake/Qt5WebKitWidgets"
-
 
     mkdir "build" do
       system "cmake", "..", *args
