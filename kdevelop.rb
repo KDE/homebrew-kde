@@ -54,17 +54,17 @@ class Kdevelop < Formula
 
   def caveats; <<-EOS.undent
       You need to make sime manual steps in order to make this formula work:
-        ln -sf "$(brew --prefix)/share/kdevappwizard" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevclangsupport" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevcodeutils" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevelop" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevfiletemplates" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevgdb" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevmanpage" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevqmakebuilder" ~/Library/"Application Support"
-        ln -sf "$(brew --prefix)/share/kdevqmljssupport" ~/Library/"Application Support"
-        mkdir -p ~/Applications/KDE
-        ln -sf "#{prefix}/bin/kdevelop.app" ~/Applications/KDE/
+        ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
+        ln -sf "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
+        mkdir -p $HOME/Applications/KDE/
+        ln -sf "#{prefix}/bin/kdevelop.app" $HOME/Applications/KDE/
       EOS
   end
 end

@@ -36,8 +36,8 @@ class Kf5PlasmaFramework < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/plasma" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kdevappwizard" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
     EOS
   end
 end

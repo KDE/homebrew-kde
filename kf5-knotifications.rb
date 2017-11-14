@@ -34,7 +34,7 @@ class Kf5Knotifications < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/knotifications5" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
     EOS
   end
 end

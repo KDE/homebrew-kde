@@ -28,7 +28,7 @@ class Kf5BreezeIcons < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/icons" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
     EOS
   end
 end
