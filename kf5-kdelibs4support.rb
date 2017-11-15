@@ -51,6 +51,7 @@ end
 
 # Patch based from
 # https://github.com/KDE/kdoctools/blob/master/cmake/FindDocBookXML4.cmake
+# Also fix typo(?)
 
 __END__
 diff --git a/cmake/FindDocBookXML4.cmake b/cmake/FindDocBookXML4.cmake
@@ -106,3 +107,17 @@ index dcc0cf66..6fbf4ebb 100644
      )
  
      find_path (searched_dir docbookx.dtd
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 469cc58a..3c8cee1a 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -376,7 +376,7 @@ target_link_libraries(kf5deprecatedwidgets KF5::KDELibs4Support
+                                     KF5::Auth
+                                     )
+ 
+-install(TARGETS kf5deprecatedwidgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
++install(TARGETS kf5deprecatedwidgets DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer)
+ 
+ ##########
+ 
+

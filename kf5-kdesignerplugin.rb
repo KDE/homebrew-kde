@@ -18,6 +18,8 @@ class Kf5Kdesignerplugin < Formula
   depends_on "KDE-mac/kde/kf5-kplotting"
   depends_on "KDE-mac/kde/kf5-kio"
 
+  patch :DATA
+
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
@@ -32,3 +34,26 @@ class Kf5Kdesignerplugin < Formula
     end
   end
 end
+
+# Fix typo(?)
+__END__
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index fac92fd..3f86d7b 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -55,7 +55,7 @@ if(BUILD_KF5_DESIGNER_PLUGIN)
+         )
+     endif()
+ 
+-    install(TARGETS kf5widgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
++    install(TARGETS kf5widgets DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer)
+ endif()
+ 
+ 
+@@ -79,5 +79,5 @@ if(BUILD_KDEWEBKIT_DESIGNER_PLUGIN)
+         )
+     endif()
+ 
+-    install(TARGETS kdewebkitwidgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
++    install(TARGETS kdewebkitwidgets DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer)
+ endif()
