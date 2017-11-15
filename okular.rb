@@ -29,6 +29,10 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
 
+  patch do
+    url "https://raw.githubusercontent.com/RJVB/macstrop/master/kf5/kf5-okular/files/patch-plugin-depends.diff"
+    sha256 ""
+  end
   patch :DATA
 
   def install
@@ -44,9 +48,10 @@ class Okular < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    qpp = `qtpaths --plugin-dir`
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/okular.app/Contents/Info.plist"
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kdevelop.app/Contents/Info.plist"
   end
 
   def post_install
