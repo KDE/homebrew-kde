@@ -31,8 +31,9 @@ class Okteta < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    qpp = `qtpaths --plugin-dir`
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/okteta.app/Contents/Info.plist"
   end
 
@@ -43,13 +44,16 @@ class Okteta < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/okteta" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/config.kcfg" ~/Library/"Application Support"
-      mkdir -p ~/Applications/KDE
-      ln -sf "#{prefix}/bin/okteta.app" ~/Applications/KDE/
+      ln -sf "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      mkdir -p "$HOME/Applications/KDE"
+      ln -sf "#{prefix}/bin/okteta.app" "$HOME/Applications/KDE/"
     EOS
   end
 end
+
+# Externalized the generation of the mimetypes
+# Fix typo(?)
 
 __END__
 --- a/mimetypes/CMakeLists.txt	2017-10-29 06:06:00.746991760 +0100
@@ -63,3 +67,16 @@ __END__
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
 
+diff --git a/designer/CMakeLists.txt b/designer/CMakeLists.txt
+index 653f4082..2567f20a 100644
+--- a/designer/CMakeLists.txt
++++ b/designer/CMakeLists.txt
+@@ -26,7 +26,7 @@ set_target_properties( oktetadesignerplugin PROPERTIES
+     OUTPUT_NAME oktetawidgets
+ )
+ 
+-install( TARGETS oktetadesignerplugin  DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer )
++install( TARGETS oktetadesignerplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer )
+ 
+ 
+ if( OKTETA_BUILD_EXAMPLES )
