@@ -30,10 +30,10 @@ class Konversation < Formula
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
-      system "/usr/libexec/PlistBuddy",
-        "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-        "#{bin}/konversation.app/Contents/Info.plist"
     end
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/konversation.app/Contents/Info.plist"
   end
 
   def post_install
