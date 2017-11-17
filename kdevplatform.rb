@@ -37,8 +37,8 @@ class Kdevplatform < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kdevcodeutils" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kkdevcodegen" ~/Library/"Application Support"
+      ln -sf "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kkdevcodegen" "$HOME/Library/Application Support"
     EOS
   end
 end

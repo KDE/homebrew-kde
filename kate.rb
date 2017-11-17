@@ -48,14 +48,14 @@ class Kate < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/katepart5" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kateporoject" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/katexmltools" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kate" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/kawrite" ~/Library/"Application Support"
-      mkdir -p ~/Applications/KDE
-      ln -sf "#{prefix}/bin/kate.app" ~/Applications/KDE/
-      ln -sf "#{prefix}/bin/kwrite.app" ~/Applications/KDE/
+      ln -sf "$(brew --prefix)/share/katepart5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kateporoject" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kawrite" "$HOME/Library/Application Support"
+      mkdir -p $HOME/Applications/KDE/
+      ln -sf "#{prefix}/bin/kate.app" $HOME/Applications/KDE/
+      ln -sf "#{prefix}/bin/kwrite.app" $HOME/Applications/KDE/
     EOS
   end
 

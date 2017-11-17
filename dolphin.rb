@@ -45,10 +45,10 @@ class Dolphin < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/dolphin" ~/Library/"Application Support"
-      ln -sf "$(brew --prefix)/share/config.kcfg" ~/Library/"Application Support"
-      mkdir -p ~/Applications/KDE
-      ln -sf "#{prefix}/bin/dolphin.app" ~/Applications/KDE/
+      ln -sf "$(brew --prefix)/share/dolphin" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      mkdir -p $HOME/Applications/KDE/
+      ln -sf "#{prefix}/bin/dolphin.app" $HOME/Applications/KDE/
     EOS
   end
 end
