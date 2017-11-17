@@ -41,8 +41,8 @@ class Kate < Formula
 
   def post_install
     mkdir_p HOMEBREW_PREFIX/"share/kate"
-    mkdir_p HOMEBREW_PREFIX/"share/kwrite"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kate/icontheme.rcc"
+    mkdir_p HOMEBREW_PREFIX/"share/kwrite"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kwrite/icontheme.rcc"
   end
 
