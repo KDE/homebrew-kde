@@ -49,7 +49,7 @@ class Okular < Formula
     end
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kdevelop.app/Contents/Info.plist"
+      "#{bin}/okular.app/Contents/Info.plist"
   end
 
   def post_install
