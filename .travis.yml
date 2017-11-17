@@ -1,4 +1,5 @@
 language: ruby
+language: perl
 os: osx
 rvm: system
 
