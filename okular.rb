@@ -63,7 +63,7 @@ class Okular < Formula
       ln -sf "$(brew --prefix)/share/okular" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE/
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/okular.app" $HOME/Applications/KDE/
     EOS
   end

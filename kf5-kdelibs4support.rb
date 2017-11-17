@@ -43,7 +43,7 @@ class Kf5Kdelibs4support < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      mkdir -p $HOME/Applications/KDE/
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/kdebugdialog5.app" $HOME/Applications/KDE/
     EOS
   end

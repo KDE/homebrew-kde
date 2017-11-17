@@ -43,7 +43,7 @@ class Kmymoney < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/kmymoney" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE/
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/kmymoney.app" $HOME/Applications/KDE/
     EOS
   end

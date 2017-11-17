@@ -44,7 +44,7 @@ class Konversation < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE/
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/konversation.app" $HOME/Applications/KDE/
     EOS
   end

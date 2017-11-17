@@ -41,7 +41,7 @@ class Konsole < Formula
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE/
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/konsole.app" $HOME/Applications/KDE/
     EOS
   end

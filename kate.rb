@@ -52,8 +52,8 @@ class Kate < Formula
       ln -sf "$(brew --prefix)/share/kateporoject" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kawrite" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE/
+      ln -sf "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
+      mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/kate.app" $HOME/Applications/KDE/
       ln -sf "#{prefix}/bin/kwrite.app" $HOME/Applications/KDE/
     EOS
