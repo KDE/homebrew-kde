@@ -31,7 +31,7 @@ class Okular < Formula
 
   patch do
     url "https://raw.githubusercontent.com/RJVB/macstrop/master/kf5/kf5-okular/files/patch-plugin-depends.diff"
-    sha256 ""
+    sha256 "33e5e0fa2a10fea2f11a1b975bfee3d87d80215aedb8013ea2d318818a250a46"
   end
   patch :DATA
 
