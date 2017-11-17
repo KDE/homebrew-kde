@@ -15,7 +15,6 @@ class Kf5Tier2Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kjobwidgets" => :build
   depends_on "KDE-mac/kde/kf5-knotifications" => :build
   depends_on "KDE-mac/kde/kf5-kpackage" => :build
-  depends_on "KDE-mac/kde/kf5-kdbusaddons" => :build
   depends_on "KDE-mac/kde/kf5-kpty" => :build # the page say is not ready for macos, but build ok (?)
   depends_on "KDE-mac/kde/kf5-kunitconversion" => :build
  
