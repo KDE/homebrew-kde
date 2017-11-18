@@ -4,7 +4,7 @@ class Kf5Kjsembed < Formula
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/kjsembed-5.40.0.tar.xz"
   sha256 "2dda7d9c5c19fa7450adf66ee8bd74365441d9e519ceca21a50557aa48218339"
 
-  head "git://anongit.kde.org/attica.git"
+  head "git://anongit.kde.org/kjsembed.git"
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
