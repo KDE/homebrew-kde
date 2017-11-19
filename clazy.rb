@@ -4,7 +4,7 @@ class Clazy < Formula
   url "https://download.kde.org/stable/clazy/1.2/src/clazy-1.2.tar.xz"
   sha256 "c68fed3d719c23ffefeedd88a02984bf37dba6a55dad6359786909a9e5778f91"
 
-  head "git://anongit.kde.org/clazy"
+  head "git://anongit.kde.org/clazy.git"
 
   depends_on "cmake" => :build
 
