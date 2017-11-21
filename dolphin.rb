@@ -14,6 +14,7 @@ class Dolphin < Formula
   depends_on :ruby => ["2.4", :optional]
   depends_on "KDE-mac/kde/konsole" => [:run, :optional]
 
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kdelibs4support"
   depends_on "KDE-mac/kde/kf5-kfilemetadata"
