@@ -3,15 +3,16 @@ class Kmime < Formula
   homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/applications/17.08.3/src/kmime-17.08.3.tar.xz"
   sha256 "6d8807b9669a0547ff39cf01544f307c12c98fc75b612f7c24da371e1ee2f19f"
+  revision 1
 
   head "git://anongit.kde.org/kmime.git"
 
   depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "KDE-mac/kde/kf5-kcodecs"
+  depends_on "KDE-mac/kde/kf5-ki18n"
 
   def install
     args = std_cmake_args

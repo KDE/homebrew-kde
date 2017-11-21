@@ -3,6 +3,7 @@ class Kf5Kinit < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kinit-5.40.0.tar.xz"
   sha256 "ca97eb8480a7387537166831a6a91892068656a161b9726429af581a436e2689"
+  revision 1
 
   head "git://anongit.kde.org/kinit.git"
 
@@ -10,7 +11,6 @@ class Kf5Kinit < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kio"
 
   patch :DATA

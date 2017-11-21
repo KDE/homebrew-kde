@@ -3,6 +3,7 @@ class Kf5Ktextwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/ktextwidgets-5.40.0.tar.xz"
   sha256 "d95412d49025c4c52dafb1056d1d153726126b0cad940841f85ff98dd4b4a236"
+  revision 1
 
   head "git://anongit.kde.org/ktextwidgets.git"
 
@@ -29,5 +30,11 @@ class Kf5Ktextwidgets < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+    EOS
   end
 end

@@ -3,6 +3,7 @@ class Kf5Karchive < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/karchive-5.40.0.tar.xz"
   sha256 "1e181495390ba730f2b1aa9354da2122e2aa592aaffdbce4164fd9dcb2d97bb1"
+  revision 1
 
   head "git://anongit.kde.org/karchive.git"
 

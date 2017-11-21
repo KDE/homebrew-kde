@@ -3,6 +3,7 @@ class Kf5Kdeclarative < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kdeclarative-5.40.0.tar.xz"
   sha256 "a60142c4c1b14756196ebb90db63fd1214efe8ed921afa8b6b956caed23bd783"
+  revision 1
 
   head "git://anongit.kde.org/kdeclarative.git"
 
@@ -11,7 +12,6 @@ class Kf5Kdeclarative < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "libepoxy"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kpackage"
@@ -33,6 +33,7 @@ class Kf5Kdeclarative < Formula
   end
 end
 
+# Mark executables as nongui type
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 51c04dd..f0ef51e 100644

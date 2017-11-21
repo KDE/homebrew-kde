@@ -3,13 +3,13 @@ class Libalkimia < Formula
   homepage "https://kmymoney.org"
   # url "https://download.kde.org/stable/alkimia/5.0.0/src/libalkimia-5.0.0.tar.xz"
   # sha256 "eea8a2a0f6788a1b9fd464b370598ed6e55353fb40da53375e6f022e71526cb5"
+  revision 1
 
   head "git://anongit.kde.org/alkimia.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "gmp"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
 

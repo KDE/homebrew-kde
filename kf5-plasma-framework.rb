@@ -3,6 +3,7 @@ class Kf5PlasmaFramework < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/plasma-framework-5.40.0.tar.xz"
   sha256 "6f53b5ab7f79265366b7de5ae80110dc5b723ece10fb4178ddbf5d13c2f04fd6"
+  revision 1
 
   head "git://anongit.kde.org/plasma-framework.git"
 
@@ -13,7 +14,6 @@ class Kf5PlasmaFramework < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kdeclarative"
 
@@ -36,12 +36,15 @@ class Kf5PlasmaFramework < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
     EOS
   end
 end
 
+# Mark executables as nongui type
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index b628ff7f1..bb2014d7b 100644

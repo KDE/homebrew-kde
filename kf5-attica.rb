@@ -3,6 +3,7 @@ class Kf5Attica < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/attica-5.40.0.tar.xz"
   sha256 "3f1a907031a93cf505920482092ba5c362be639ccc9fb539f0365049a137e7d9"
+  revision 1
 
   head "git://anongit.kde.org/attica.git"
 

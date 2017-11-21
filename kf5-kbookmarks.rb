@@ -3,6 +3,7 @@ class Kf5Kbookmarks < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kbookmarks-5.40.0.tar.xz"
   sha256 "5188516b868c2c4cc1820b127bc7660dda84e324c84222e07b94229358bc48c4"
+  revision 1
 
   head "git://anongit.kde.org/kbookmarks.git"
 
@@ -11,7 +12,6 @@ class Kf5Kbookmarks < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kxmlgui"
 
   def install

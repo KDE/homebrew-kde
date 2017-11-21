@@ -3,6 +3,7 @@ class Kf5Solid < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/solid-5.40.0.tar.xz"
   sha256 "1dc96f12c3bbade6ab71794915ed7968b7ed8acc6b7a8cec5ad9c3708ece42ce"
+  revision 1
 
   head "git://anongit.kde.org/solid.git"
 

@@ -3,6 +3,7 @@ class Kf5Kcompletion < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kcompletion-5.40.0.tar.xz"
   sha256 "842a26485d381581bdbe7fe3b6d91d404928a47fb589e9a26ebdf5520c55bf9d"
+  revision 1
 
   head "git://anongit.kde.org/kcompletion.git"
 
@@ -11,7 +12,6 @@ class Kf5Kcompletion < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
 

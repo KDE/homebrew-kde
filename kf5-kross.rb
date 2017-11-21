@@ -3,6 +3,7 @@ class Kf5Kross < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/kross-5.40.0.tar.xz"
   sha256 "17a570e2e742e06dc6b28e8610fc1795312be960938ce25acf480005f5d409f9"
+  revision 1
 
   head "git://anongit.kde.org/kross.git"
 
@@ -10,7 +11,6 @@ class Kf5Kross < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kparts"
 
   patch :DATA

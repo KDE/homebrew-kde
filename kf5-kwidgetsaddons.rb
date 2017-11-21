@@ -3,6 +3,7 @@ class Kf5Kwidgetsaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kwidgetsaddons-5.40.0.tar.xz"
   sha256 "68420f8315442058d9159ffcb2f296a331ae72ef5126c76b2e8cd715032e069a"
+  revision 1
 
   head "git://anongit.kde.org/kwidgetsaddons.git"
 
@@ -25,5 +26,11 @@ class Kf5Kwidgetsaddons < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+     EOS
   end
 end

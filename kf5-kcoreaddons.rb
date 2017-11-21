@@ -3,6 +3,7 @@ class Kf5Kcoreaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kcoreaddons-5.40.0.tar.xz"
   sha256 "25109dd486891c113f8b01d55f4c02e35b65b456c3879eb7da5045e595db8f58"
+  revision 1
 
   head "git://anongit.kde.org/kcoreaddons.git"
 
@@ -32,6 +33,12 @@ class Kf5Kcoreaddons < Formula
 
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
+  end
+
+ def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+    EOS
   end
 end
 

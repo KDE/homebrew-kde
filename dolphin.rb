@@ -3,6 +3,7 @@ class Dolphin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/17.08.3/src/dolphin-17.08.3.tar.xz"
   sha256 "651565291d06faa60fc4baf3b11aa4ba766da8b654b1c8891ec0cb1088316b09"
+  revision 1
 
   head "git://anongit.kde.org/dolphin.git"
 
@@ -13,11 +14,12 @@ class Dolphin < Formula
   depends_on :ruby => ["2.4", :optional]
   depends_on "KDE-mac/kde/konsole" => [:run, :optional]
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kcmutils"
-  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-kdelibs4support"
+  depends_on "KDE-mac/kde/kf5-kfilemetadata"
   depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kio-extras"
 
   def install
@@ -32,8 +34,10 @@ class Dolphin < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/dolphin.app/Contents/Info.plist"
   end
 
@@ -46,6 +50,8 @@ class Dolphin < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/dolphin" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/dolphin.app" $HOME/Applications/KDE/
     EOS

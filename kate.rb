@@ -3,6 +3,7 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/applications/17.08.3/src/kate-17.08.3.tar.xz"
   sha256 "7d0c76d58294436a1646736427dd42966b2e6ef883a91ba3f97deaa080835ffa"
+  revision 1
 
   head "git://anongit.kde.org/kate.git"
 
@@ -11,11 +12,12 @@ class Kate < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
 
-  depends_on "qt"
+  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
+
   depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-ktexteditor"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-ktexteditor"
   depends_on "KDE-mac/kde/kf5-threadweaver"
 
   def install
@@ -30,11 +32,13 @@ class Kate < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kwrite.app/Contents/Info.plist"
   end
 
@@ -47,11 +51,13 @@ class Kate < Formula
 
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/katepart5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kateporoject" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/kate.app" $HOME/Applications/KDE/
       ln -sf "#{prefix}/bin/kwrite.app" $HOME/Applications/KDE/

@@ -3,6 +3,7 @@ class Kf5Kcrash < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kcrash-5.40.0.tar.xz"
   sha256 "96d2b2d16317519f95fa9277beca9d4a10f65dac608bfa0783a5823efe0f0406"
+  revision 1
 
   head "git://anongit.kde.org/kcrash.git"
 
@@ -11,9 +12,10 @@ class Kf5Kcrash < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
+  # depends_on "KDE-mac/kde/drkonqi" => [:run, :optional]
+
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "KDE-mac/kde/kf5-kwindowsystem"
 
   def install
     args = std_cmake_args

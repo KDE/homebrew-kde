@@ -3,17 +3,16 @@ class Kf5Kdoctools < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kdoctools-5.40.0.tar.xz"
   sha256 "3556ffad511980ad84276c8856e7023372e87a65ef8c35db617837ed27b6efff"
+  revision 1
 
   head "git://anongit.kde.org/kdoctools.git"
 
   depends_on "cmake" => :build
   depends_on "perl" => :build
-  depends_on "cpanminus" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-ki18n" => :build
 
-  depends_on "qt"
   depends_on "docbook-xsl"
   depends_on "libxml2"
   depends_on "libxslt"
@@ -34,7 +33,11 @@ class Kf5Kdoctools < Formula
 
   def caveats; <<-EOS.undent
     Before install of this formula you need to run:
+      brew install cpanminus
       cpanm URI
+
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
     EOS
   end
 end

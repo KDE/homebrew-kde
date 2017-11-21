@@ -3,6 +3,7 @@ class Kf5Kcmutils < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kcmutils-5.40.0.tar.xz"
   sha256 "74310785ffeca567f018c9b2415cd2361a9fae55bdcecdcb9ba8dbb45b945bde"
+  revision 1
 
   head "git://anongit.kde.org/kcmutils.git"
 
@@ -11,8 +12,6 @@ class Kf5Kcmutils < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kxmlgui"
   depends_on "KDE-mac/kde/kf5-kdeclarative"
 
   def install
@@ -27,5 +26,11 @@ class Kf5Kcmutils < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+    EOS
   end
 end

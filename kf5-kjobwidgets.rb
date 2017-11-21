@@ -3,6 +3,7 @@ class Kf5Kjobwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kjobwidgets-5.40.0.tar.xz"
   sha256 "d362616c10d9da48c2c4050930559ea5fb92f4bc10f1bbfb73f1d79386724b54"
+  revision 1
 
   head "git://anongit.kde.org/kjobwidgets.git"
 
@@ -11,7 +12,6 @@ class Kf5Kjobwidgets < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
 

@@ -3,6 +3,7 @@ class Konversation < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/konversation/1.7.3/src/konversation-1.7.3.tar.xz"
   sha256 "5e6bf0afc682aad870b6258b20001c1f119c0784946dd4265b8554678563dcd8"
+  revision 1
 
   head "git://anongit.kde.org/konversation.git"
 
@@ -10,7 +11,6 @@ class Konversation < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "qca"
   depends_on "KDE-mac/kde/kf5-kemoticons"
   depends_on "KDE-mac/kde/kf5-kidletime"
@@ -30,8 +30,10 @@ class Konversation < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/konversation.app/Contents/Info.plist"
   end
 
@@ -43,6 +45,7 @@ class Konversation < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/konversation.app" $HOME/Applications/KDE/
     EOS

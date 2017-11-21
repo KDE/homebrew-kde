@@ -3,16 +3,15 @@ class Kf5Frameworkintegration < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/frameworkintegration-5.40.0.tar.xz"
   sha256 "b277f644d9b33fcf7026d13106646366661cdcd37df5f5bc623e47143a0488e4"
+  revision 1
 
   head "git://anongit.kde.org/frameworkintegration.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kpackage"
   depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-kpackage"
 
   def install
     args = std_cmake_args
@@ -26,5 +25,11 @@ class Kf5Frameworkintegration < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/knotifycations5" "$HOME/Library/Application Support"
+    EOS
   end
 end

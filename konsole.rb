@@ -3,6 +3,7 @@ class Konsole < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/17.08.3/src/konsole-17.08.3.tar.xz"
   sha256 "82ece65d298f82955c19e77cab0465001abb26d5075cfadebb56dd3fe3b2691f"
+  revision 1
 
   head "git://anongit.kde.org/konsole.git"
 
@@ -10,11 +11,10 @@ class Konsole < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "kde-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-knotifyconfig"
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "KDE-mac/kde/kf5-knotifyconfig"
+  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-kpty"
 
   def install
     args = std_cmake_args
@@ -28,8 +28,10 @@ class Konsole < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/konsole.app/Contents/Info.plist"
   end
 
@@ -40,6 +42,10 @@ class Konsole < Formula
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/konsole.app" $HOME/Applications/KDE/
     EOS

@@ -3,6 +3,7 @@ class Kf5Kwindowsystem < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kwindowsystem-5.40.0.tar.xz"
   sha256 "fff33531367425be18af75f10a8e40ff52f1383ecf97f37cf9c7c39baa308033"
+  revision 1
 
   head "git://anongit.kde.org/kwindowsystem.git"
 

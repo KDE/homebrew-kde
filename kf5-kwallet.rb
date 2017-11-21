@@ -3,6 +3,7 @@ class Kf5Kwallet < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kwallet-5.40.0.tar.xz"
   sha256 "cd2219a1c7fb64e282ad9b9cfe4c885ad834013553f233325fc2268adb1edd53"
+  revision 1
 
   head "git://anongit.kde.org/kwallet.git"
 
@@ -14,11 +15,10 @@ class Kf5Kwallet < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "libgcrypt"
   depends_on "gpgme"
-  depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
+  depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "KDE-mac/kde/kf5-kservice"
 
   patch :DATA
@@ -36,8 +36,16 @@ class Kf5Kwallet < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+    EOS
+  end
 end
 
+# Mark executables as nongui type
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 216f340..1128b80 100644

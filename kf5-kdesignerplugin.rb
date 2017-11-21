@@ -3,6 +3,7 @@ class Kf5Kdesignerplugin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kdesignerplugin-5.40.0.tar.xz"
   sha256 "0d57e158e8247a06b148ff9f65c013257b0f374301dd0f05c5a0c70040239403"
+  revision 1
 
   head "git://anongit.kde.org/kdesignerplugin.git"
 
@@ -13,10 +14,8 @@ class Kf5Kdesignerplugin < Formula
 
   depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kplotting"
   depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kplotting"
 
   patch :DATA
 
@@ -31,6 +30,12 @@ class Kf5Kdesignerplugin < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+    EOS
   end
 end
 

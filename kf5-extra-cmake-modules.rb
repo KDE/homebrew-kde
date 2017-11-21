@@ -3,6 +3,7 @@ class Kf5ExtraCmakeModules < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/extra-cmake-modules-5.40.0.tar.xz"
   sha256 "83e48889c84474e4f560e10e4eea0cc529f8511b3bd0415fcb898ac0496e630a"
+  revision 1
 
   head "git://anongit.kde.org/extra-cmake-modules"
 
@@ -12,18 +13,13 @@ class Kf5ExtraCmakeModules < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
+    args << "-DBUILD_HTML_DOCS=OFF"
+    args << "-DBUILD_QTHELP_DOCS=ON"
 
     mkdir "build" do
       system "cmake", "..", *args
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
-  end
-
-  def caveats; <<-EOS.undent
-    You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-    EOS
   end
 end

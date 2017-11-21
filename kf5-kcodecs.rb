@@ -3,6 +3,7 @@ class Kf5Kcodecs < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kcodecs-5.40.0.tar.xz"
   sha256 "a48709850a388543197eb250021672869e1022c087351fc606177e034069097f"
+  revision 1
 
   head "git://anongit.kde.org/kcodecs.git"
 

@@ -3,6 +3,7 @@ class Kf5Kxmlgui < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kxmlgui-5.40.0.tar.xz"
   sha256 "dbec84a483138efdff17955eeb794d2305812b07c5dd0327a756730c6882471d"
+  revision 1
 
   head "git://anongit.kde.org/kxmlgui.git"
 
@@ -12,9 +13,9 @@ class Kf5Kxmlgui < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
   depends_on "qt"
+  depends_on "KDE-mac/kde/kf5-attica"
   depends_on "KDE-mac/kde/kf5-kglobalaccel"
   depends_on "KDE-mac/kde/kf5-ktextwidgets"
-  depends_on "KDE-mac/kde/kf5-attica"
 
   def install
     args = std_cmake_args

@@ -3,6 +3,7 @@ class KioExtras < Formula
   homepage "https://www.kde.org/applications/internet/"
   url "https://download.kde.org/stable/applications/17.08.3/src/kio-extras-17.08.3.tar.xz"
   sha256 "4c268b22a50d7ed08dbb7211a34e562aa10c2cbb2c62fb4311a0f932c841013f"
+  revision 1
 
   head "git://anongit.kde.org/kio-extras.git"
 
@@ -11,17 +12,15 @@ class KioExtras < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "taglib" => [:build, :optional]
-  depends_on "KDE-mac/kde/khtml" => [:build, :optional]
+  depends_on "taglib" => :optional
+  depends_on "KDE-mac/kde/khtml" => :optional
   depends_on "KDE-mac/kde/kimageformats" => :optional
 
-  depends_on "qt"
   depends_on "exiv2"
-  depends_on "libssh"
+  depends_on "libmtp"
+  # depends_on "libssh" # Read when libssh_0.8+openssl@1.1
   depends_on "openexr"
   depends_on "openslp"
-  depends_on "libmtp"
-  depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kdnssd"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kpty"
@@ -43,6 +42,20 @@ class KioExtras < Formula
 
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
+  end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kio_bookmarks" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kio_info" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/konqsidebartng" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/konqueror" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/remoteview" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/solid" "$HOME/Library/Application Support"
+    EOS
   end
 end
 

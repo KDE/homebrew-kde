@@ -3,6 +3,7 @@ class Kf5Sonnet < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/sonnet-5.40.0.tar.xz"
   sha256 "68f2aa79b06a6ae61aa36133cf00342c8c513bfd9fb761363db7956edf3c24a9"
+  revision 1
 
   head "git://anongit.kde.org/sonnet.git"
 
@@ -11,8 +12,12 @@ class Kf5Sonnet < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
+  depends_on "hunspell" => :optional
+  depends_on "hspell" => :optional
+  depends_on "aspell" => :optional
+  depends_on "libvoikko" => :optional
+
   depends_on "qt"
-  depends_on "hunspell"
 
   patch :DATA
 
@@ -29,6 +34,13 @@ class Kf5Sonnet < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+     EOS
+  end
+
 end
 
 __END__

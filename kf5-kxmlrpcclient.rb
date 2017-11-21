@@ -3,6 +3,7 @@ class Kf5Kxmlrpcclient < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/kxmlrpcclient-5.40.0.tar.xz"
   sha256 "14d8bd7109d013964ba952402fe439e749bcef97d4588b7a7dd269e1b07deb07"
+  revision 1
 
   head "git://anongit.kde.org/kxmlrpcclient.git"
 
@@ -10,7 +11,6 @@ class Kf5Kxmlrpcclient < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kio"

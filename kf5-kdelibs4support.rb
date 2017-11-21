@@ -3,23 +3,22 @@ class Kf5Kdelibs4support < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.40/portingAids/kdelibs4support-5.40.0.tar.xz"
   sha256 "f9d7508aa6a72a186ba7d922e82ca49a5ac5d76e1fa02af995d17208128995df"
+  revision 1
 
   head "git://anongit.kde.org/kdelibs4support.git"
 
   depends_on "cmake" => :build
+  depends_on "perl" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "openssl@1.1"
-  depends_on "docbook"
   depends_on "KDE-mac/kde/kf5-kded"
   depends_on "KDE-mac/kde/kf5-kemoticons"
-  depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
-  depends_on "KDE-mac/kde/kf5-kunitconversion"
   depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "KDE-mac/kde/kf5-kunitconversion"
 
   patch :DATA
 
@@ -36,13 +35,20 @@ class Kf5Kdelibs4support < Formula
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kdebugdialog5.app/Contents/Info.plist"
   end
 
   def caveats; <<-EOS.undent
+    Before install of this formula you need to run:
+      brew install cpanminus
+      cpanm URI::Escape
+
     You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/kdebugdialog5.app" $HOME/Applications/KDE/
     EOS

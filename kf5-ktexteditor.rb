@@ -11,7 +11,6 @@ class Kf5Ktexteditor < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "libgit2"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
@@ -33,6 +32,9 @@ class Kf5Ktexteditor < Formula
   def caveats; <<-EOS.undent
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/katepart5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
     EOS
   end
 end

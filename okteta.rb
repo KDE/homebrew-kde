@@ -3,6 +3,7 @@ class Okteta < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/17.08.3/src/okteta-17.08.3.tar.xz"
   sha256 "9b846724ddd595c97a9ced9b7d86224217bab695eaf51b39684e486a6b7940ff"
+  revision 1
 
   head "git://anongit.kde.org/okteta.git"
 
@@ -10,11 +11,10 @@ class Okteta < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "qca"
   depends_on "KDE-mac/kde/kf5-kcmutils"
-  depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-kparts"
 
   patch :DATA
 
@@ -30,9 +30,10 @@ class Okteta < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
-    qpp = `qtpaths --plugin-dir`
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/okteta.app/Contents/Info.plist"
   end
 
@@ -45,6 +46,7 @@ class Okteta < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/okteta.app" $HOME/Applications/KDE/
     EOS
