@@ -19,9 +19,9 @@ class Kmymoney < Formula
   depends_on "boost"
   depends_on "libical"
   depends_on "libofx"
+  depends_on "KDE-mac/kde/kf5-breeze.icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kio"
-
   depends_on "KDE-mac/kde/libalkimia"
   depends_on "KDE-mac/kde/kdiagram"
 

@@ -12,6 +12,7 @@ class Okteta < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
   depends_on "qca"
+  depends_on "KDE-mac/kde/kf5-breeze.icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kparts"
