@@ -27,4 +27,10 @@ class Kf5Kded < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  def caveats; <<-EOS.undent
+    You need to take some manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+    EOS
+  end
 end
