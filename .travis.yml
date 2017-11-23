@@ -1,6 +1,7 @@
 language: ruby
 language: perl
 os: osx
+osx_image: xcode9.1
 rvm: system
 
 before_install:
