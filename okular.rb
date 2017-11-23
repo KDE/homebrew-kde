@@ -22,7 +22,7 @@ class Okular < Formula
   depends_on "libspectre"
   depends_on "djvulibre"
   depends_on "poppler" => "with-qt"
-  depends_on "KDE-mac/kde/kf5-breeze.icons"
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"

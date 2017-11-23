@@ -14,7 +14,7 @@ class Kate < Formula
 
   depends_on "KDE-mac/kde/konsole" => [:run, :optional]
 
-  depends_on "KDE-mac/kde/kf5-breeze.icons"
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-knewstuff"
