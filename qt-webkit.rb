@@ -11,6 +11,11 @@ class QtWebkit < Formula
     url "https://git.archlinux.org/svntogit/packages.git/plain/trunk/qt5-webkit-null-pointer-dereference.patch?h=packages/qt5-webkit"
     sha256 "510e1f78c2bcd76909703a097dbc1d5c9c6ce4cd94883c26138f09cc10121f43"
   end
+  patch do
+    # Fix build with cmake 3.10
+    url "https://github.com/annulen/webkit/commit/f51554bf104ab0491370f66631fe46143a23d5c2.diff?full_index=1"
+    sha256 "874b56c30cdc43627f94d999083f0617c4bfbcae4594fe1a6fc302bf39ad6c30"
+  end
 
   depends_on "cmake" => :build
   depends_on "gperf" => :build
@@ -24,8 +29,19 @@ class QtWebkit < Formula
   depends_on "libxslt"
   # depends_on "hyphen"
 
+  def cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_PREFIX=#{prefix}
+      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_FIND_FRAMEWORK=LAST
+      -DCMAKE_VERBOSE_MAKEFILE=ON
+      -Wno-dev
+    ]
+    args
+  end
+
   def install
-    args = std_cmake_args
+    args = cmake_args
     args << "-DPORT=Qt"
     args << "-DENABLE_TOOLS=OFF"
     args << "-DCMAKE_MACOSX_RPATH=OFF"
@@ -33,15 +49,10 @@ class QtWebkit < Formula
     args << "-DCMAKE_SKIP_RPATH=ON"
     args << "-DCMAKE_SKIP_INSTALL_RPATH=ON"
 
+    # Fuck up rpath
+    inreplace "Source/cmake/OptionsQt.cmake", "RPATH\ ON", "RPATH\ OFF"
     mkdir "build" do
       system "cmake", "..", *args
-      # DAMM YOU!!, RPATH
-      inreplace "Source/WebKit2/cmake_install.cmake", "@rpath", "#{opt_lib}"
-      inreplace "Source/CMakeFiles/Export/lib/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsTargets-release.cmake", "@rpath", "#{opt_lib}"
-      inreplace "Source/CMakeFiles/Export/lib/cmake/Qt5WebKit/WebKitTargets-release.cmake", "@rpath", "#{opt_lib}"
-      inreplace "Source/WebKit/cmake_install.cmake", "@rpath", "#{opt_lib}"
-      inreplace "Source/WebKit/qt/declarative/experimental/cmake_install.cmake", "@rpath", "#{opt_lib}"
-      inreplace "Source/WebKit/qt/declarative/cmake_install.cmake", "@rpath", "#{opt_lib}"
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
