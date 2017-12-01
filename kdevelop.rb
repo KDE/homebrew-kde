@@ -14,17 +14,23 @@ class Kdevelop < Formula
   depends_on "gdb" => :optional
   depends_on "cppcheck" => :optional
   depends_on "subversion" => :optional
-  depends_on "KDE-mac/kde/okteta" => :optional
+  depends_on "cvs" => :build
+  depends_on "gdb" => :build
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "KDE-mac/kde/plasma-framework" => :optional
   # depends_on "KDE-mac/kde/okteta" => :optional
 
+  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
+
   depends_on "cmake" # For cmake integration need set as depends instead of :build ([:build, :optional] fails)
-  depends_on "qt"
   depends_on "llvm"
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
+  depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
+  depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/grantlee5"
   depends_on "KDE-mac/kde/libkomparediff2"
 
@@ -44,8 +50,9 @@ class Kdevelop < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kdevelop.app/Contents/Info.plist"
   end
 
@@ -83,10 +90,10 @@ index 43574b58e4..8d9cd8b4ab 100644
 -update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-diff --git a/languages/clang/CMakeLists.txt b/languages/clang/CMakeLists.txt
+diff --git a/plugins/clang/CMakeLists.txt b/plugins/clang/CMakeLists.txt
 index cbf6b2c9ce..aaea30c9a5 100644
---- a/languages/clang/CMakeLists.txt
-+++ b/languages/clang/CMakeLists.txt
+--- a/plugins/clang/CMakeLists.txt
++++ b/plugins/clang/CMakeLists.txt
 @@ -135,4 +135,5 @@ target_link_libraries(kdevclangsupport
  )
  
