@@ -38,8 +38,8 @@ class Okular < Formula
 
   stable do
     patch do
-      url "https://phabricator.kde.org/file/data/2wvots3vggm53vjkm72r/PHID-FILE-ttv6g4vnc65feqzauhm4/file"
-      sha256 "702b39e7d2d2c471dea9fa55a46420f26c286df929823cab374fc25264a76d58"
+      url "https://phabricator.kde.org/file/data/grwvte52ekjslqdazu4i/PHID-FILE-7mbnuozecsvft7hndonr/D8612.diff"
+      sha256 "e6a1d1e302302189bc8f97ae2337cd09b34099e70d4688791f4141a4bbf40a72"
     end
   end
 
