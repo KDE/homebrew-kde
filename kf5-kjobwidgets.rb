@@ -1,8 +1,8 @@
 class Kf5Kjobwidgets < Formula
   desc "Widgets for tracking KJob instances"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.40/kjobwidgets-5.40.0.tar.xz"
-  sha256 "d362616c10d9da48c2c4050930559ea5fb92f4bc10f1bbfb73f1d79386724b54"
+  url "https://download.kde.org/stable/frameworks/5.41/kjobwidgets-5.41.0.tar.xz"
+  sha256 "1b97f3f89987d9dd58909ff1e1ef4fa81ffb144bb589cf80c5deae8ca8996db9"
   revision 1
 
   head "git://anongit.kde.org/kjobwidgets.git"

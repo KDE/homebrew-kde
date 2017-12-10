@@ -1,8 +1,8 @@
 class Kf5Kconfig < Formula
   desc "Configuration system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.40/kconfig-5.40.0.tar.xz"
-  sha256 "6b96654c525de124fe127f4d40e0ff8e99a1d31ef7b368de7ce3af876b55295f"
+  url "https://download.kde.org/stable/frameworks/5.41/kconfig-5.41.0.tar.xz"
+  sha256 "f65b24642fab8b45e8ea93620d6c8321535681c286682cd8e62f428def4a90c9"
   revision 1
 
   head "git://anongit.kde.org/kconfig.git"

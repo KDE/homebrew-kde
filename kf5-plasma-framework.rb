@@ -1,8 +1,8 @@
 class Kf5PlasmaFramework < Formula
   desc "Plasma library and runtime components based upon KF5 & Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.40/plasma-framework-5.40.0.tar.xz"
-  sha256 "6f53b5ab7f79265366b7de5ae80110dc5b723ece10fb4178ddbf5d13c2f04fd6"
+  url "https://download.kde.org/stable/frameworks/5.41/plasma-framework-5.41.0.tar.xz"
+  sha256 "84de6496f1f6797cba95ca51607ab59a5f24cbd238f600ec75ccfa0b02b23ae6"
   revision 1
 
   head "git://anongit.kde.org/plasma-framework.git"
