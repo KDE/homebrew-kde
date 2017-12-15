@@ -1,8 +1,8 @@
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/17.08.3/src/okteta-17.08.3.tar.xz"
-  sha256 "9b846724ddd595c97a9ced9b7d86224217bab695eaf51b39684e486a6b7940ff"
+  url "https://download.kde.org/stable/applications/17.12.0/src/okteta-17.12.0.tar.xz"
+  sha256 "f3cc09032294df15ecad8b01cfd29c468e8f1e98a3b8a1598cc480b826aad07f"
   revision 1
 
   head "git://anongit.kde.org/okteta.git"
