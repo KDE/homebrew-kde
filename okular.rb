@@ -36,13 +36,6 @@ class Okular < Formula
   end
   patch :DATA
 
-  stable do
-    patch do
-      url "https://phabricator.kde.org/file/data/grwvte52ekjslqdazu4i/PHID-FILE-7mbnuozecsvft7hndonr/D8612.diff"
-      sha256 "e6a1d1e302302189bc8f97ae2337cd09b34099e70d4688791f4141a4bbf40a72"
-    end
-  end
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
