@@ -1,8 +1,8 @@
 class Kf5Kdesignerplugin < Formula
   desc "Integration of Frameworks widgets in Qt Designer/Creator"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.41/kdesignerplugin-5.41.0.tar.xz"
-  sha256 "2939f1d27669cab056425756db4308111059083b577abdb9f52eda749fb437b0"
+  url "https://download.kde.org/stable/frameworks/5.42/kdesignerplugin-5.42.0.tar.xz"
+  sha256 "66c5119cb2687df988e21999b1600282005e1bfa899e5e4c2325c9e982ea8a00"
   revision 1
 
   head "git://anongit.kde.org/kdesignerplugin.git"

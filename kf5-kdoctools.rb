@@ -1,8 +1,8 @@
 class Kf5Kdoctools < Formula
   desc "Documentation generation from docbook"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.41/kdoctools-5.41.0.tar.xz"
-  sha256 "9ac9b92f549ef00e261033ffa349f239fb22503c0b5aaf9bded0966af21a661b"
+  url "https://download.kde.org/stable/frameworks/5.42/kdoctools-5.42.0.tar.xz"
+  sha256 "bf4e03e90b7b324e8b96979b0854c9d1178c7a64bf5710650d9051dab61a7ead"
   revision 1
 
   head "git://anongit.kde.org/kdoctools.git"

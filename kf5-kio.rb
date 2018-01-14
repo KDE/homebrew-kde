@@ -1,8 +1,8 @@
 class Kf5Kio < Formula
   desc "Resource and network access abstraction"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.41/kio-5.41.0.tar.xz"
-  sha256 "90c4c27959efec70849fd03e6cf9708d09c0101a15f3c14ab731ec0997bb649e"
+  url "https://download.kde.org/stable/frameworks/5.42/kio-5.42.0.tar.xz"
+  sha256 "ec1d0ef9523661614f347e3c99efe98813d0fab92e8fdb4a995685d013524694"
   revision 1
 
   head "git://anongit.kde.org/kio.git"

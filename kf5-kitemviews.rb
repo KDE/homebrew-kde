@@ -1,8 +1,8 @@
 class Kf5Kitemviews < Formula
   desc "Widget addons for Qt Model/View"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.41/kitemviews-5.41.0.tar.xz"
-  sha256 "ce08179e9c4d5e3df095eb3af848c1005901abd6b9e45cc359810f704bbd8704"
+  url "https://download.kde.org/stable/frameworks/5.42/kitemviews-5.42.0.tar.xz"
+  sha256 "1c11e10d03e76d1ba7ee6ea8821570695bb13cbdf928910773b62287c00238c8"
   revision 1
 
   head "git://anongit.kde.org/kitemviews.git"

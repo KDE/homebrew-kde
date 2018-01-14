@@ -1,8 +1,8 @@
 class Kf5Knewstuff < Formula
   desc "Support for downloading application assets from the network"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.41/knewstuff-5.41.0.tar.xz"
-  sha256 "e433b952b979ffe039758c73c27e81f429aadc200323c190f4673315b97e3849"
+  url "https://download.kde.org/stable/frameworks/5.42/knewstuff-5.42.0.tar.xz"
+  sha256 "e625cb21dba7780ee8936153e7ba0f57bf81c929fb6ccb4b15eef763aeaf4f44"
   revision 1
 
   head "git://anongit.kde.org/knewstuff.git"
