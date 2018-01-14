@@ -1,8 +1,8 @@
 class Libkomparediff2 < Formula
   desc "Library to compare files and strings"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/17.12.0/src/libkomparediff2-17.12.0.tar.xz"
-  sha256 "b81eb715ba36f9dbe1d02215c9fb7b7177d5e22f9ae023b273393b2377e1907a"
+  url "https://download.kde.org/stable/applications/17.12.1/src/libkomparediff2-17.12.1.tar.xz"
+  sha256 "1f064f35edc409edacf87c5b61dd2d693d098c34538856acf23b142e2f00a749"
   revision 1
 
   head "git://anongit.kde.org/libkomparediff2.git"
