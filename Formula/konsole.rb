@@ -40,7 +40,7 @@ class Konsole < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/konsole/icontheme.rcc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"

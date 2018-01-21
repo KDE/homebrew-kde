@@ -37,7 +37,7 @@ class Kf5Kwallet < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"

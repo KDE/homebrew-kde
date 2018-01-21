@@ -29,7 +29,7 @@ class Kf5Kparts < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"

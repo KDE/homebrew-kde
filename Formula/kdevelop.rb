@@ -61,19 +61,19 @@ class Kdevelop < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kdevelop/icontheme.rcc"
   end
 
-  def caveats; <<-EOS.undent
-      You need to make sime manual steps in order to make this formula work:
-        ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
-        ln -sf "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
-        mkdir -p $HOME/Applications/KDE
-        ln -sf "#{prefix}/bin/kdevelop.app" $HOME/Applications/KDE/
+  def caveats; <<~EOS
+    You need to make sime manual steps in order to make this formula work:
+      ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
+      ln -sf "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
+      mkdir -p $HOME/Applications/KDE
+      ln -sf "#{prefix}/bin/kdevelop.app" $HOME/Applications/KDE/
       EOS
   end
 end
