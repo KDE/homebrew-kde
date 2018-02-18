@@ -48,13 +48,13 @@ end
 # Mark executables as nongui type
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 216f340..1128b80 100644
+index 6f1d918..0dbc257 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -21,6 +21,7 @@ include(KDECMakeSettings)
- 
+@@ -22,6 +22,7 @@ include(KDECMakeSettings)
  include(ECMAddQch)
  include(ECMSetupVersion)
+ include(ECMQtDeclareLoggingCategory)
 +include(ECMMarkNonGuiExecutable)
  
  option(BUILD_KWALLETD "Build the kwallet daemon" ON)
@@ -70,10 +70,10 @@ index 9aa167b..9a98eb4 100644
 +ecm_mark_nongui_executable(kwallet-query)
  install( TARGETS kwallet-query DESTINATION ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 diff --git a/src/runtime/kwalletd/CMakeLists.txt b/src/runtime/kwalletd/CMakeLists.txt
-index 3f2a1de..691f20e 100644
+index 918ba5d..7ee4462 100644
 --- a/src/runtime/kwalletd/CMakeLists.txt
 +++ b/src/runtime/kwalletd/CMakeLists.txt
-@@ -115,6 +115,7 @@ if (Gpgmepp_FOUND)
+@@ -119,6 +119,7 @@ if (Gpgmepp_FOUND)
      kde_target_enable_exceptions(kwalletd5 PRIVATE)
  endif(Gpgmepp_FOUND)
  
