@@ -5,7 +5,7 @@ class CyrusSasl < Formula
   sha256 "8fbc5136512b59bb793657f36fadda6359cae3b08f01fd16b3d406f1345b7bc3"
   revision 1
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   depends_on "krb5" => :build
   depends_on "openldap" => :build
