@@ -35,7 +35,7 @@ class Kf5Kcoreaddons < Formula
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
   end
 
- def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
     EOS

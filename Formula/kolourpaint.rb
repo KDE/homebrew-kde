@@ -38,7 +38,7 @@ class Kolourpaint < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kolourpaint/icontheme.rcc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sf "$(brew --prefix)/share/kolourpaint" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"

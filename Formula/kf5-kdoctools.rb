@@ -31,7 +31,7 @@ class Kf5Kdoctools < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Before install of this formula you need to run:
       brew install cpanminus
       cpanm URI
