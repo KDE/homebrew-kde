@@ -1,8 +1,8 @@
 class Kf5Kunitconversion < Formula
   desc "Support for unit conversion"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.42/kunitconversion-5.42.0.tar.xz"
-  sha256 "548c4d63fe3778387c54d0f36934b7ed4b44ec414c33559c877b0f4a94bd2908"
+  url "https://download.kde.org/stable/frameworks/5.44/kunitconversion-5.44.0.tar.xz"
+  sha256 "0d2e1aa13bc13538c9e20f27e030de17539c0a131285249c04279c020b5e06b7"
   revision 1
 
   head "git://anongit.kde.org/kunitconversion.git"

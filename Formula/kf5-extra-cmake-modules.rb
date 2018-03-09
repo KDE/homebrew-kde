@@ -1,8 +1,8 @@
 class Kf5ExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.42/extra-cmake-modules-5.42.0.tar.xz"
-  sha256 "430db21202c01e5a49f6fbaa6a0b2d7fb169857de5d16ff7a83f96acf5d086d6"
+  url "https://download.kde.org/stable/frameworks/5.44/extra-cmake-modules-5.44.0.tar.xz"
+  sha256 "ba551be687dda750fd24acae1fdc0e02774211bfc834129984b7986596f75909"
   revision 1
 
   head "git://anongit.kde.org/extra-cmake-modules"
