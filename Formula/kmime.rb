@@ -1,8 +1,8 @@
 class Kmime < Formula
   desc "Library for handling mail messages and newsgroup articles"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/applications/17.12.1/src/kmime-17.12.1.tar.xz"
-  sha256 "1d2031eb0feed93bc8e590144119b43e9121ef9e70616b949bd6d5ee48cca998"
+  url "https://download.kde.org/stable/applications/17.12.3/src/kmime-17.12.3.tar.xz"
+  sha256 "9525d5069191a4696aab417ce480851dc0736b0882893331e4f6b286f4d7a108"
   revision 1
 
   head "git://anongit.kde.org/kmime.git"
