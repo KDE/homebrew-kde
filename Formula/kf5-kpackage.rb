@@ -2,8 +2,7 @@ class Kf5Kpackage < Formula
   desc "Framework that lets applications manage user installable packages of non-binary assets"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.44/kpackage-5.44.0.tar.xz"
-  sha256 "7950b2f2b13233abeefaddf3aa2aba59aa34e0a8fc5fca0dba57f85ecfa3bf3c"
-  revision 1
+  sha256 "bfeab96ead45e9a2a70d615c76468470307981e630a773900812f8756aaa68ab"
 
   head "git://anongit.kde.org/kpackage.git"
 

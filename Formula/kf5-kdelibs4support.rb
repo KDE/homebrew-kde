@@ -2,8 +2,7 @@ class Kf5Kdelibs4support < Formula
   desc "Porting aid from KDELibs4"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.44/portingAids/kdelibs4support-5.44.0.tar.xz"
-  sha256 "40d07f9648f8541083a3f764a09e93417c31acfb190c8f0d0505bcfbe02452b4"
-  revision 1
+  sha256 "564e1ccb196119ab29c44cd606d0633a13875259576205a7608b5a9c80cfddb3"
 
   head "git://anongit.kde.org/kdelibs4support.git"
 
