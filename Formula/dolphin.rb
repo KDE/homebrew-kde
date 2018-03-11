@@ -3,7 +3,8 @@ class Dolphin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/17.12.3/src/dolphin-17.12.3.tar.xz"
   sha256 "40dc96fa05cf6a09c49329cd69c9f1079b4ddb57592c9ff0e957eec6e761a439"
-  revision 1
+
+  revision 2
 
   head "git://anongit.kde.org/dolphin.git"
 
@@ -11,7 +12,7 @@ class Dolphin < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on :ruby => ["2.4", :optional]
+  depends_on "ruby" => :optional
   depends_on "KDE-mac/kde/konsole" => [:run, :optional]
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
