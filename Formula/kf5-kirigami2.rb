@@ -11,7 +11,7 @@ class Kf5Kirigami2 < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "KDE-mac/kde/kf5-plasma-frameworks" => :optional
+  depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
 
   depends_on "qt"
 
