@@ -54,4 +54,4 @@ index 95f7c31..16b102f 100644
  )
  
 +ecm_mark_nongui_executable(kjscmd5)
- install(TARGETS kjscmd5 EXPORT KF5JsEmbedTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+ install(TARGETS kjscmd5 ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
