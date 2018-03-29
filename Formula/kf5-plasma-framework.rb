@@ -15,6 +15,7 @@ class Kf5PlasmaFramework < Formula
 
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kdeclarative"
+  depends_on "KDE-mac/kde/kf5-kirigami2"
 
   patch :DATA
 
