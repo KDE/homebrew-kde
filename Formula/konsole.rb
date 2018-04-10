@@ -3,14 +3,11 @@ class Konsole < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/17.12.3/src/konsole-17.12.3.tar.xz"
   sha256 "fa0997c14a96252177e4808636ec43509eadb1482d54bb8a86b85810283f6cbc"
-  revision 1
-
   head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "kde-mac/kde/kf5-kdoctools" => :build
-
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"

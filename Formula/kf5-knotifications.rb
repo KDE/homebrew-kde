@@ -10,12 +10,10 @@ class Kf5Knotifications < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-
   depends_on "KDE-mac/kde/kf5-kcodecs"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
-  # depends_on "KDE-mac/kde/libqdbusmenu"
   depends_on "KDE-mac/kde/phonon"
 
   def install

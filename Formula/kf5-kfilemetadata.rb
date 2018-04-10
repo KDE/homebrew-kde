@@ -10,12 +10,11 @@ class Kf5Kfilemetadata < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-
   depends_on "ebook-tools"
   depends_on "exiv2"
   depends_on "ffmpeg"
   depends_on "taglib"
-  depends_on "poppler" => "with-qt"
+  depends_on "poppler"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-ki18n"
 

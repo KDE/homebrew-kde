@@ -3,14 +3,12 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.2.0/src/kdevelop-5.2.0.tar.xz"
   sha256 "88e7a8f2f57a4c688da7a6d522b06e2e70ebddf2f9129b8f93e4c74df029e900"
-
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "boost" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
-
   depends_on "gdb" => :optional
   depends_on "cppcheck" => :optional
   depends_on "subversion" => :optional
@@ -18,10 +16,7 @@ class Kdevelop < Formula
   depends_on "gdb" => :build
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "KDE-mac/kde/plasma-framework" => :optional
-  # depends_on "KDE-mac/kde/okteta" => :optional
-
-  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
-
+  depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "cmake" # For cmake integration need set as depends instead of :build ([:build, :optional] fails)
   depends_on "llvm"
   depends_on "KDE-mac/kde/kf5-breeze-icons"

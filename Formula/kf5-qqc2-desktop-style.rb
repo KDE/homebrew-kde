@@ -1,5 +1,5 @@
 class Kf5Qqc2DesktopStyle < Formula
-  desc "Style for Qt Quick Controls 2 to make it follow your desktop theme"
+  desc "Style for Qt QC2 to follow your desktop theme"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.44/qqc2-desktop-style-5.44.0.tar.xz"
   sha256 "a12cbba9aa5ceb5eb4688f50aa01464e55a574912748e9974328f9cb6c17420b"

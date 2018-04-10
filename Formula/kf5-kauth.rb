@@ -34,5 +34,3 @@ class Kf5Kauth < Formula
      EOS
   end
 end
-
-__END__

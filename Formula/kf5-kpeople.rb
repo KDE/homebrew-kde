@@ -1,5 +1,5 @@
 class Kf5Kpeople < Formula
-  desc "Library that provides access to all contacts and the people who hold them"
+  desc "Provides access to all contacts and the people"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.44/kpeople-5.44.0.tar.xz"
   sha256 "f10c056f23feb48907a764c1af9dff17771254089920abf4ba51602e9800e63e"
@@ -11,7 +11,6 @@ class Kf5Kpeople < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-
   depends_on "KDE-mac/kde/kf5-kitemviews"
   depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"

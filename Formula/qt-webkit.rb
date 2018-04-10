@@ -27,7 +27,6 @@ class QtWebkit < Formula
   depends_on "zlib"
   depends_on "webp"
   depends_on "libxslt"
-  # depends_on "hyphen"
 
   def cmake_args
     args = %W[

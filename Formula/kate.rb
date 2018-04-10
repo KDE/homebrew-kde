@@ -3,7 +3,6 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/applications/17.12.3/src/kate-17.12.3.tar.xz"
   sha256 "e5b6a3ccb688ee358dadbcca86c0060a481ff60a81a472865429beba6bea2a10"
-  revision 1
 
   head "git://anongit.kde.org/kate.git"
 
@@ -12,7 +11,7 @@ class Kate < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
 
-  depends_on "KDE-mac/kde/konsole" => [:run, :optional]
+  depends_on "KDE-mac/kde/konsole" => [:optional]
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"

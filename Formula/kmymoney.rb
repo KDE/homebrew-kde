@@ -1,9 +1,8 @@
 class Kmymoney < Formula
-  desc "Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
+  desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  # url "https://download.kde.org/stable/kmymoney/4.8.1/src/kmymoney-4.8.1.7z"
-  # sha256 "4435acabb3c9771dd39471651767c857087b5fe4f5cd43132c19cdc92aa6cbab"
-  revision 1
+  url "http://download.kde.org/stable/kmymoney/5.0.1/src/kmymoney-5.0.1.tar.xz"
+  sha256 "c20118890fcd140799e44c8d923956d914e9c8ab"
 
   head "git://anongit.kde.org/kmymoney.git"
 
@@ -12,9 +11,7 @@ class Kmymoney < Formula
   depends_on "graphviz" => :build
   depends_on "docbook-xsl" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-
   depends_on "KDE-mac/kde/kf5-kross" => :optional
-
   depends_on "gpgme"
   depends_on "boost"
   depends_on "libical"

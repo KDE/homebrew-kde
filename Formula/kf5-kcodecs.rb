@@ -1,5 +1,5 @@
 class Kf5Kcodecs < Formula
-  desc "Provide a collection of methods to manipulate strings using various encodings"
+  desc "Collection of methods to manipulate strings"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.44/kcodecs-5.44.0.tar.xz"
   sha256 "53b227c3cad6e359c85d00b17fccd79cb0ff4bb3221b998bb1e8cba9841bdb95"
