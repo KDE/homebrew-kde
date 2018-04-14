@@ -1,8 +1,8 @@
 class Kf5Ktexteditor < Formula
   desc "Advanced embeddable text editor"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.44/ktexteditor-5.44.0.tar.xz"
-  sha256 "96a50ff4433f1a1060cf81d9538305d546356440df77bf59dbd3ddd1952e1bbc"
+  url "https://download.kde.org/stable/frameworks/5.45/ktexteditor-5.45.0.tar.xz"
+  sha256 "d7dacac8ec76ced570c0e54cdb2c9b3c9882883abb7293241108b8007672e5be"
 
   head "git://anongit.kde.org/ktexteditor.git"
 

@@ -1,8 +1,8 @@
 class Kf5Kdesu < Formula
   desc "Integration with su for elevated privileges"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.44/kdesu-5.44.0.tar.xz"
-  sha256 "e2e38bf4bf7cc0f2ffb16d2f677f36b930a32ced452a53379d983f6bd999cbdc"
+  url "https://download.kde.org/stable/frameworks/5.45/kdesu-5.45.0.tar.xz"
+  sha256 "9e2a304e074fff4fdf2cf60fc99dde64d681d3c0c602e61c669fd54d8e65d67e"
 
   head "git://anongit.kde.org/kdesu.git"
 

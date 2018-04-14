@@ -1,8 +1,8 @@
 class Kf5Khtml < Formula
   desc "KHTML APIs"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.44/portingAids/khtml-5.44.0.tar.xz"
-  sha256 "f7f5b8d64e93815a65a4491b7bb5deb4846357e815c168d4310060ee1848f0ea"
+  url "https://download.kde.org/stable/frameworks/5.45/portingAids/khtml-5.45.0.tar.xz"
+  sha256 "d87ad28abbc90610b31c6ea588710fac9575620f5ca89447c0a3dc0bcbf22fd2"
 
   head "git://anongit.kde.org/khtml.git"
 
