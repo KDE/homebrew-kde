@@ -2,9 +2,12 @@
 
 [[ -f "/tmp/kf5_dep_map" ]] && rm /tmp/kf5_dep_map
 
-for formula in `ls kf5-*.rb`; do
+formuladir=$(brew --prefix)/Homebrew/Library/Taps/kde-mac/homebrew-kde/Formula
+
+for formula in $formuladir/kf5-*.rb; do
+  formulaname=`basename $formula`
   for dep in `grep "depends_on" $formula | awk -F "\"" '{print $2}'`; do
-    echo "${dep/kde-mac\/kde\//} ${formula//\.rb/}" >> /tmp/kf5_dep_map
+    echo "${dep/[k,K][d,D][e,E]-mac\/kde\//} ${formulaname//\.rb/}" >> /tmp/kf5_dep_map
   done
 done
 

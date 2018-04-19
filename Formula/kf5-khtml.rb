@@ -10,7 +10,7 @@ class Kf5Khtml < Formula
   depends_on "gperf" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "openssl@1.1"
+  depends_on "openssl"
   depends_on "jpeg"
   depends_on "giflib"
   depends_on "libpng"
