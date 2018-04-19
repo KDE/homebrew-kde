@@ -21,7 +21,7 @@ my %applications = (
     'kio-extras'      => '',
 );
 
-my $version = "17.12.3";
+my $version = "18.04.0";
 my $upstream_url =
   "https://download.kde.org/stable/applications/${version}/src/";
 
