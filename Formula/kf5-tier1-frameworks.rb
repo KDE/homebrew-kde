@@ -1,7 +1,8 @@
 class Kf5Tier1Frameworks < Formula
   desc "Metapackage for Tier 1 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
-  url "https://raw.githubusercontent.com/KDE-mac/homebrew-kde/master/tools/empty"
+  system "touch", "/tmp/empty"
+  url "file:///tmp/empty"
   version "0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 

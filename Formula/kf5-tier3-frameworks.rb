@@ -1,10 +1,12 @@
 class Kf5Tier3Frameworks < Formula
   desc "Metapackage for Tier 3 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
-  url "https://raw.githubusercontent.com/KDE-mac/homebrew-kde/master/tools/empty"
+  system "touch", "/tmp/empty"
+  url "file:///tmp/empty"
   version "0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
+  depends_on "KDE-mac/kde/kf5-tier2-frameworks" => :build
   depends_on "KDE-mac/kde/kf5-kbookmarks" => :build
   depends_on "KDE-mac/kde/kf5-kcmutils" => :build
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build
