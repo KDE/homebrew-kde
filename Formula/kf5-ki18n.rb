@@ -14,6 +14,14 @@ class Kf5Ki18n < Formula
 
   depends_on "qt"
 
+  # This patch is already in upstream and should be removed for the next
+  # stable version, but without this patch we cannot build any KDE
+  # applications that depend on this package because while building it will
+  # hit the maximum number of proecesses per user limit and crash the system
+  stable do
+    patch :DATA
+  end
+
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
@@ -30,3 +38,16 @@ class Kf5Ki18n < Formula
     end
   end
 end
+
+__END__
+diff --git a/cmake/build-pofiles.cmake b/cmake/build-pofiles.cmake
+index d0991ad..b39be31 100644
+--- a/cmake/build-pofiles.cmake
++++ b/cmake/build-pofiles.cmake
+@@ -62,6 +62,7 @@ foreach(pofile IN LISTS pofiles)
+     if(i EQUAL ${numberOfProcesses})
+         _processCommands()
+         set(i 0)
++        set(commands)
+     endif()
+ endforeach()
