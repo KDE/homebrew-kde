@@ -2,7 +2,7 @@ class Libalkimia < Formula
   desc "Library used by KDE Finance applications"
   homepage "https://kmymoney.org"
   url "http://download.kde.org/stable/alkimia/7.0.2/alkimia-7.0.2.tar.xz"
-  sha256 "32493ff4277a48fd9e754242afe017942ef8458e"
+  sha256 "59e6b10d819479bc8dde53a8b10e6ec05e9d465c5e035528a5c0b036456a2454"
   head "git://anongit.kde.org/alkimia.git"
 
   depends_on "cmake" => :build
