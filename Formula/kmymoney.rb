@@ -4,6 +4,8 @@ class Kmymoney < Formula
   url "http://download.kde.org/stable/kmymoney/5.0.1/src/kmymoney-5.0.1.tar.xz"
   sha256 "dd6e8fc22a48ddcb322565c8f385d6aa44d582cfcf6fe2ff3dc11fc0b6bd2ab1"
 
+  revision 1
+
   head "git://anongit.kde.org/kmymoney.git"
 
   depends_on "cmake" => :build
