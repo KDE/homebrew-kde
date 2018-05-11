@@ -13,7 +13,7 @@ class Atcore < Formula
 
   def install
     args = std_cmake_args
-    args << "-DBUILD_TESTGUI=ON"
+    args << "-DBUILD_GUI=ON"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
