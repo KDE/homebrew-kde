@@ -1,8 +1,8 @@
 class Kf5Kpty < Formula
   desc "Pty abstraction"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.45/kpty-5.45.0.tar.xz"
-  sha256 "ee3c9d1513a1a0f32708083fc9c06bdf616448014b973440572ac7e577570d3d"
+  url "https://download.kde.org/stable/frameworks/5.46/kpty-5.46.0.tar.xz"
+  sha256 "e12063178dcf7b3f2d07a797005cdf4b201223eb05b6c6fbfc2aca971fbf3ad4"
 
   head "git://anongit.kde.org/kpty.git"
 

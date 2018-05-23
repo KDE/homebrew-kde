@@ -1,8 +1,8 @@
 class Kf5Kwidgetsaddons < Formula
   desc "Addons to QtWidgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.45/kwidgetsaddons-5.45.0.tar.xz"
-  sha256 "e082fd226c80e5839a4ef2a88a084b03551362dbb35275246ffb60a09c519e7b"
+  url "https://download.kde.org/stable/frameworks/5.46/kwidgetsaddons-5.46.0.tar.xz"
+  sha256 "a612a99bf8bb8811a666a6fcbb740eb36dd82d4f374b5474f3e65a99f5fb8b48"
 
   head "git://anongit.kde.org/kwidgetsaddons.git"
 

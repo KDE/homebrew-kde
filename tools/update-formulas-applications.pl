@@ -6,6 +6,8 @@ use Digest::SHA qw(sha256_hex);
 use strict;
 use warnings;
 
+my $version = "18.04.1";
+
 my %applications = (
 
     'dolphin' => '',
@@ -21,7 +23,6 @@ my %applications = (
     'kio-extras'      => '',
 );
 
-my $version = "18.04.0";
 my $upstream_url =
   "https://download.kde.org/stable/applications/${version}/src/";
 
@@ -54,14 +55,12 @@ sub updatePackage($) {
     }
 
     my $cached_file = "$brew_prefix/$package$upstream_suffix";
-
-    if ( !-e $cached_file ) {
-        `curl -L -s -o "$cached_file" "$package_upstream_url"`;
-        if ( $? != 0 ) {
-            die "Unable to download $package_upstream_url: $!";
-        }
+    print("$package_upstream_url\n");
+    `curl -C - -L -o "$cached_file" "$package_upstream_url"`;
+    if ( $? != 0 ) {
+        die "Unable to download $package_upstream_url: $!";
     }
-
+    
     if ( !-e $cached_file ) {
         die "$cached_file not available!";
     }

@@ -1,8 +1,8 @@
 class Kf5Kplotting < Formula
   desc "Lightweight plotting framework"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.45/kplotting-5.45.0.tar.xz"
-  sha256 "7191e97f96a3c95cf036ab0f64e7476988a14c58b8a86ee29b5121774a5bbbb9"
+  url "https://download.kde.org/stable/frameworks/5.46/kplotting-5.46.0.tar.xz"
+  sha256 "da41ad5acc410627dcbbc97a3952208f92a4de565fc1b1758417e4d394314a57"
 
   head "git://anongit.kde.org/kplotting.git"
 

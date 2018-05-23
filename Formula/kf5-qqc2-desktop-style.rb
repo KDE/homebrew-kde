@@ -1,8 +1,8 @@
 class Kf5Qqc2DesktopStyle < Formula
   desc "Style for Qt QC2 to follow your desktop theme"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.45/qqc2-desktop-style-5.45.0.tar.xz"
-  sha256 "4ae78d9b3e00e90f4b36b4ea892a385f2be3ca0a3bbcc94f83de3101270782b5"
+  url "https://download.kde.org/stable/frameworks/5.46/qqc2-desktop-style-5.46.0.tar.xz"
+  sha256 "2171d374618371e1bea99ee43510046ae3782fbcaa033bbd14bf294b2606d441"
 
   head "git://anongit.kde.org/qqc2-desktop-style.git"
 

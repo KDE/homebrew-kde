@@ -6,6 +6,8 @@ use Digest::SHA qw(sha256_hex);
 use strict;
 use warnings;
 
+my $version      = "5.46";
+
 my %frameworks = (
 
     ### Updated list in https://api.kde.org/frameworks/
@@ -90,7 +92,6 @@ my %frameworks = (
     'kross'           => 'portingAids/kross'
 );
 
-my $version      = "5.45";
 my $upstream_url = "https://download.kde.org/stable/frameworks/${version}/";
 
 my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
@@ -123,11 +124,9 @@ sub updatePackage($) {
 
     my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
 
-    if ( !-e $cached_file ) {
-        `curl -L -s -o "$cached_file" "$package_upstream_url"`;
-        if ( $? != 0 ) {
-            die "Unable to download $package_upstream_url: $!";
-        }
+    `curl -C - -L -o "$cached_file" "$package_upstream_url"`;
+    if ( $? != 0 ) {
+        die "Unable to download $package_upstream_url: $!";
     }
 
     if ( !-e $cached_file ) {
