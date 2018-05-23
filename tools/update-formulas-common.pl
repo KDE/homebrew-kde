@@ -2,11 +2,13 @@
 
 use File::Copy;
 use Digest::SHA qw(sha256_hex);
+use Getopt::Long;
 
 use strict;
 use warnings;
 
-my $version      = "5.46";
+my $frameworks_version   = "5.46";
+my $applications_version = "18.04.1";
 
 my %frameworks = (
 
@@ -92,10 +94,22 @@ my %frameworks = (
     'kross'           => 'portingAids/kross'
 );
 
-my $upstream_url = "https://download.kde.org/stable/frameworks/${version}/";
+my %applications = (
 
-my $frameworks_upstream_suffix = "-${version}.0.tar.xz";
-my $brew_prefix                = `brew --cache`;
+    'dolphin' => '',
+    'kate'    => '',
+    'konsole' => '',
+#    'okteta'  => '',
+    'okular'  => '',
+
+    'kimap'           => '',
+    'kmime'           => '',
+    'libkexiv2'       => '',
+    'libkomparediff2' => '',
+    'kio-extras'      => '',
+);
+
+my $brew_prefix          = `brew --cache`;
 
 if ( $? != 0 ) {
     die "Unable to call brew -cache: $!";
@@ -103,34 +117,87 @@ if ( $? != 0 ) {
 
 chomp($brew_prefix);
 
-sub updatePackage($) {
+sub update_frameworks {
+    for my $package ( keys %frameworks ) {
+        my $upstream_suffix = "-${frameworks_version}.0.tar.xz";
+        my $upstream_url = "https://download.kde.org/stable/frameworks/${frameworks_version}/";
+        
+        my $upstream = $frameworks{$package};
+        if ( $upstream eq '' ) {
+            $upstream = $package;
+        }
 
-    my $package = $_[0];
+        my $formula              = "Formula/kf5-$package.rb";
+        my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
 
-    my $upstream_suffix = $frameworks_upstream_suffix;
+        if ( !-e $formula ) {
+            print("Formula $formula does not exist!\n");
+            return;
+        }
 
-    my $upstream = $frameworks{$package};
-    if ( $upstream eq '' ) {
-        $upstream = $package;
+        my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
+
+        download_and_update($formula, $package_upstream_url, $cached_file);
     }
+}
 
-    my $formula              = "Formula/kf5-$package.rb";
-    my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
+sub update_applications {
+    for my $package ( keys %applications ) {
+        my $upstream_url =
+        "https://download.kde.org/stable/applications/${applications_version}/src/";
+
+        my $upstream_suffix = "-${applications_version}.tar.xz";
+
+        my $upstream = $applications{$package};
+        if ( $upstream eq '' ) {
+            $upstream = $package;
+        }
+
+        my $formula              = "Formula/$package.rb";
+        my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
+        my $cached_file = "$brew_prefix/$package$upstream_suffix";
+        download_and_update($formula, $package_upstream_url, $cached_file);
+    }
+}
+
+sub download_and_update($$$) {
+    my $formula = $_[0];
+    my $package_upstream_url = $_[1];
+    my $cached_file = $_[2];
 
     if ( !-e $formula ) {
         print("Formula $formula does not exist!\n");
         return;
-    }
-
-    my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
-
-    `curl -C - -L -o "$cached_file" "$package_upstream_url"`;
-    if ( $? != 0 ) {
-        die "Unable to download $package_upstream_url: $!";
-    }
-
+    }    
+    
     if ( !-e $cached_file ) {
-        die "$cached_file not available!";
+        print("$package_upstream_url\n");
+        `curl -L -o "$cached_file" "$package_upstream_url"`;
+        if ( $? != 0 ) {
+            die "Unable to download $package_upstream_url: $!";
+        }
+    }
+
+    my $package_sig_upstream_url    = "$package_upstream_url.sig";
+    my $cached_file_sig             = "$cached_file.sig";
+
+     if ( !-e $cached_file_sig ) {
+        print("$package_sig_upstream_url\n");
+
+        `curl -L -o "$cached_file_sig" "$package_sig_upstream_url"`;
+        if ( $? != 0 ) {
+            die "Unable to download $package_sig_upstream_url: $!";
+        }
+    }
+
+    if ( !-e $cached_file_sig ) {
+        die "$cached_file_sig not available!";
+    }
+
+    `gpg2 --verify $cached_file_sig`;
+
+    if ( $? != 0 ) {
+        die "Unable to verify singnature $cached_file_sig $!";
     }
 
     open( CACHED_FILE, "<", $cached_file );
@@ -168,6 +235,6 @@ sub updatePackage($) {
     print "Updated $formula\n";
 }
 
-for my $package ( keys %frameworks ) {
-    updatePackage($package);
-}
+
+GetOptions ('applications' => \&update_applications,
+            'frameworks' => \&update_frameworks);
