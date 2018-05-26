@@ -4,22 +4,22 @@ class Atcore < Formula
   url "https://download.kde.org/stable/atcore/1.0.0/atcore-1.0.0.tar.xz"
   sha256 "ffd12455c9b8db853e455a437d6c6b601e0003c6732bbc6c2828032e004530e2"
 
-  head "git://anongit.kde.org/atcore.git"
-  option "with-gui", "Build atcore-gui (HEAD ONLY)" 
+  head do
+    url "git://anongit.kde.org/atcore.git"
+    patch :DATA
+  end
+
+  option "with-gui", "Build atcore-gui (HEAD ONLY)"
 
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "cmake" => :build
   depends_on "qt"
-  
-  head do
-    patch :DATA
-  end
-  
+
   def install
     args = std_cmake_args
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     if build.with?("gui")
-         args << "-DBUILD_GUI=ON"
+      args << "-DBUILD_GUI=ON"
     end
 
     mkdir "build" do
