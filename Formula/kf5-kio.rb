@@ -3,6 +3,7 @@ class Kf5Kio < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.46/kio-5.46.0.tar.xz"
   sha256 "eb6a793f46777980633b0c41de596a14a76845d3d763fdac16e90678a88cd3a5"
+  revision 1
 
   head "git://anongit.kde.org/kio.git"
 
