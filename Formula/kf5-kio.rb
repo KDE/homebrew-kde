@@ -6,9 +6,6 @@ class Kf5Kio < Formula
 
   head "git://anongit.kde.org/kio.git"
 
-  # Fix getxattr which takes six inputs in macOS
-  patch :DATA
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
@@ -47,38 +44,3 @@ class Kf5Kio < Formula
     EOS
   end
 end
-
-__END__
-diff --git a/src/ioslaves/file/file_unix.cpp b/src/ioslaves/file/file_unix.cpp
-index 9c9a83b..4eafbc8 100644
---- a/src/ioslaves/file/file_unix.cpp
-+++ b/src/ioslaves/file/file_unix.cpp
-@@ -418,13 +418,13 @@ static bool isNtfsHidden(const QString &filename)
- {
-     constexpr auto attrName = "system.ntfs_attrib_be";
-     const auto filenameEncoded = QFile::encodeName(filename);
--    auto length = getxattr(filenameEncoded.data(), attrName, nullptr, 0);
-+    auto length = getxattr(filenameEncoded.data(), attrName, nullptr, 0, 0, XATTR_NOFOLLOW);
-     if (length <= 0) {
-         return false;
-     }
-     constexpr size_t xattr_size = 1024;
-     char strAttr[xattr_size];
--    length = getxattr(filenameEncoded.data(), attrName, strAttr, xattr_size);
-+    length = getxattr(filenameEncoded.data(), attrName, strAttr, xattr_size, 0, XATTR_NOFOLLOW);
-     if (length <= 0) {
-         return false;
-     }
-diff --git a/src/widgets/kpropertiesdialog.cpp b/src/widgets/kpropertiesdialog.cpp
-index 17e1688..f2b8a37 100644
---- a/src/widgets/kpropertiesdialog.cpp
-+++ b/src/widgets/kpropertiesdialog.cpp
-@@ -1943,7 +1943,7 @@ static bool fileSystemSupportsACL(const QByteArray &path)
-     fileSystemSupportsACLs = (statfs(path.data(), &buf) == 0) && (buf.f_flags & MNT_ACLS);
- #else
-     fileSystemSupportsACLs =
--        getxattr(path.data(), "system.posix_acl_access", nullptr, 0) >= 0 || errno == ENODATA;
-+        getxattr(path.data(), "system.posix_acl_access", nullptr, 0, 0, XATTR_NOFOLLOW) >= 0 || errno == ENODATA;
- #endif
-     return fileSystemSupportsACLs;
- }
