@@ -3,7 +3,6 @@ class Kf5Ki18n < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.46/ki18n-5.46.0.tar.xz"
   sha256 "da8eb3ddc002ad88c3bec817aa2f38fbe73894d2c019544195bc43ec66af9253"
-  version "5.46.0"
 
   head "git://anongit.kde.org/ki18n.git"
 
