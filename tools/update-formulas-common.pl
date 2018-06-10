@@ -99,8 +99,9 @@ my %applications = (
     'dolphin' => '',
     'kate'    => '',
     'konsole' => '',
-#    'okteta'  => '',
-    'okular'  => '',
+
+    #    'okteta'  => '',
+    'okular' => '',
 
     'kimap'           => '',
     'kmime'           => '',
@@ -109,7 +110,7 @@ my %applications = (
     'kio-extras'      => '',
 );
 
-my $brew_prefix          = `brew --cache`;
+my $brew_prefix = `brew --cache`;
 
 if ( $? != 0 ) {
     die "Unable to call brew -cache: $!";
@@ -120,8 +121,9 @@ chomp($brew_prefix);
 sub update_frameworks {
     for my $package ( keys %frameworks ) {
         my $upstream_suffix = "-${frameworks_version}.0.tar.xz";
-        my $upstream_url = "https://download.kde.org/stable/frameworks/${frameworks_version}/";
-        
+        my $upstream_url =
+          "https://download.kde.org/stable/frameworks/${frameworks_version}/";
+
         my $upstream = $frameworks{$package};
         if ( $upstream eq '' ) {
             $upstream = $package;
@@ -137,14 +139,14 @@ sub update_frameworks {
 
         my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
 
-        download_and_update($formula, $package_upstream_url, $cached_file);
+        download_and_update( $formula, $package_upstream_url, $cached_file );
     }
 }
 
 sub update_applications {
     for my $package ( keys %applications ) {
         my $upstream_url =
-        "https://download.kde.org/stable/applications/${applications_version}/src/";
+"https://download.kde.org/stable/applications/${applications_version}/src/";
 
         my $upstream_suffix = "-${applications_version}.tar.xz";
 
@@ -155,21 +157,21 @@ sub update_applications {
 
         my $formula              = "Formula/$package.rb";
         my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
-        my $cached_file = "$brew_prefix/$package$upstream_suffix";
-        download_and_update($formula, $package_upstream_url, $cached_file);
+        my $cached_file          = "$brew_prefix/$package$upstream_suffix";
+        download_and_update( $formula, $package_upstream_url, $cached_file );
     }
 }
 
 sub download_and_update($$$) {
-    my $formula = $_[0];
+    my $formula              = $_[0];
     my $package_upstream_url = $_[1];
-    my $cached_file = $_[2];
+    my $cached_file          = $_[2];
 
     if ( !-e $formula ) {
         print("Formula $formula does not exist!\n");
         return;
-    }    
-    
+    }
+
     if ( !-e $cached_file ) {
         print("$package_upstream_url\n");
         `curl -L -o "$cached_file" "$package_upstream_url"`;
@@ -178,10 +180,10 @@ sub download_and_update($$$) {
         }
     }
 
-    my $package_sig_upstream_url    = "$package_upstream_url.sig";
-    my $cached_file_sig             = "$cached_file.sig";
+    my $package_sig_upstream_url = "$package_upstream_url.sig";
+    my $cached_file_sig          = "$cached_file.sig";
 
-     if ( !-e $cached_file_sig ) {
+    if ( !-e $cached_file_sig ) {
         print("$package_sig_upstream_url\n");
 
         `curl -L -o "$cached_file_sig" "$package_sig_upstream_url"`;
@@ -235,6 +237,7 @@ sub download_and_update($$$) {
     print "Updated $formula\n";
 }
 
-
-GetOptions ('applications' => \&update_applications,
-            'frameworks' => \&update_frameworks);
+GetOptions(
+    'applications' => \&update_applications,
+    'frameworks'   => \&update_frameworks
+);
