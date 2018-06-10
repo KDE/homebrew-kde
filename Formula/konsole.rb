@@ -1,8 +1,8 @@
 class Konsole < Formula
   desc "KDE's terminal emulator"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/18.04.1/src/konsole-18.04.1.tar.xz"
-  sha256 "86431f84ac4e452d1804db1ab511251f6df60d4c0ce7950c5595be604689de42"
+  url "https://download.kde.org/stable/applications/18.04.2/src/konsole-18.04.2.tar.xz"
+  sha256 "5d4f4f429cd246fe4021f628dd7ec4e53fe6168e868c69a777a29adb7a5a1967"
   head "git://anongit.kde.org/konsole.git"
 
   depends_on "cmake" => :build

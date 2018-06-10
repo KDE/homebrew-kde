@@ -7,8 +7,8 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.46";
-my $applications_version = "18.04.1";
+my $frameworks_version   = "5.47";
+my $applications_version = "18.04.2";
 
 my %frameworks = (
 

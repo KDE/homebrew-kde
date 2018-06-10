@@ -1,8 +1,8 @@
 class Kf5Kfilemetadata < Formula
   desc "Library for extracting file metadata"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.46/kfilemetadata-5.46.0.tar.xz"
-  sha256 "83025c3ff3fd0e72d3d1a72799006471ea9e62bc54d3dbd088edd8beb5b7ea96"
+  url "https://download.kde.org/stable/frameworks/5.47/kfilemetadata-5.47.0.tar.xz"
+  sha256 "758b0b741a1f1b79365cf4bae3bb0054504cae71f3ab538e9f0cd83d5521977b"
 
   head "git://anongit.kde.org/kfilemetadata.git"
 
@@ -14,7 +14,7 @@ class Kf5Kfilemetadata < Formula
   depends_on "exiv2"
   depends_on "ffmpeg"
   depends_on "taglib"
-  depends_on "poppler" => "with-qt"
+  depends_on "poppler"
   depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "KDE-mac/kde/kf5-ki18n"
 

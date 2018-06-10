@@ -1,8 +1,8 @@
 class Kf5Kross < Formula
   desc "Multi-language application scripting"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.46/portingAids/kross-5.46.0.tar.xz"
-  sha256 "4d873c1dfec4d8dc7db4d1014cf59a2e4de4576888d36b1c9171c8416b00d272"
+  url "https://download.kde.org/stable/frameworks/5.47/portingAids/kross-5.47.0.tar.xz"
+  sha256 "01af097ef87d37ca21ce87b4ee6b67555f2c1051167d1e6b553748181ddaca8e"
 
   head "git://anongit.kde.org/kross.git"
 

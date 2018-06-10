@@ -1,8 +1,8 @@
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/18.04.1/src/okular-18.04.1.tar.xz"
-  sha256 "0fa82f9a31de184966303395148dd03f627c64be2d5a2eb070bf13c5a95c0e3a"
+  url "https://download.kde.org/stable/applications/18.04.2/src/okular-18.04.2.tar.xz"
+  sha256 "bf9e4e9ce6cc6f7fae3dfe021ea7954403c7bab77a33434974eb3efe999999c9"
 
   head "git://anongit.kde.org/okular.git"
 
@@ -20,7 +20,7 @@ class Okular < Formula
   depends_on "freetype"
   depends_on "libspectre"
   depends_on "djvulibre"
-  depends_on "poppler" => "with-qt"
+  depends_on "poppler"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kjs"

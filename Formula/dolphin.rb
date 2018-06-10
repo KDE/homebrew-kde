@@ -1,8 +1,8 @@
 class Dolphin < Formula
   desc "KDE File Manager"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/18.04.1/src/dolphin-18.04.1.tar.xz"
-  sha256 "50db0e6c59383c3141ba96f733d36ac63b8f4d3e1f3d233b4a27da5931179587"
+  url "https://download.kde.org/stable/applications/18.04.2/src/dolphin-18.04.2.tar.xz"
+  sha256 "b27ecfc4864638d88f2efd59f183d469f801ba0d85c37ca872e85ed70ba8683e"
 
   head "git://anongit.kde.org/dolphin.git"
 
