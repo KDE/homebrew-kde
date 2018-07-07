@@ -96,15 +96,17 @@ my %frameworks = (
 
 		my %applications = (
 
-				'dolphin' => '',
-				'kate'    => '',
-				'konsole' => '',
-				'okular' => '',
-				'kimap'           => '',
-				'kmime'           => '',
-				'libkexiv2'       => '',
-				'libkomparediff2' => '',
-				'kio-extras'      => '',
+				'dolphin' 			=> '',
+				'kate'    			=> '',
+				'konsole' 			=> '',
+				'okular' 			=> '',
+				'kimap'           	=> '',
+				'kmime'           	=> '',
+				'libkexiv2'       	=> '',
+				'libkomparediff2' 	=> '',
+				'kio-extras'      	=> '',
+				'lokalize'      	=> '',
+				'poxml'      		=> '',
 				);
 
 my $brew_prefix = `brew --cache`;
