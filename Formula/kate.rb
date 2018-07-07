@@ -59,12 +59,12 @@ class Kate < Formula
       ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/kate.app" $HOME/Applications/KDE/
-      ln -sf "#{prefix}/bin/kwrite.app" $HOME/Applications/KDE/
-    EOS
+      ln -sf "$(brew --prefix)/bin/kate.app" $HOME/Applications/KDE/
+      ln -sf "$(brew --prefix)/bin/kwrite.app" $HOME/Applications/KDE/
+  EOS
   end
 
   test do
-    assert `/Applications/KDE/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
+    assert `$(brew --prefix)/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
   end
 end
