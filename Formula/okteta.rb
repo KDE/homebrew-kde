@@ -1,8 +1,8 @@
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/18.04.1/src/okteta-18.04.1.tar.xz"
-  sha256 "af938035cbd6f27d2d88f43ad2c47890d3604f8c02217a62e9aa99cba26018ce"
+  url "https://download.kde.org/stable/okteta/0.25.0/src/okteta-0.25.0.tar.xz"
+  sha256 "5e0399195fc2177fc39caf5c24585c9521f38b92c0780f92c329ee737e5e644d"
 
   head "git://anongit.kde.org/okteta.git"
 
@@ -49,7 +49,7 @@ class Okteta < Formula
       ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -p $HOME/Applications/KDE
       ln -sf "#{prefix}/bin/okteta.app" $HOME/Applications/KDE/
-    EOS
+  EOS
   end
 end
 
