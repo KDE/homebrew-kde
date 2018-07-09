@@ -87,25 +87,3 @@ index 7537220..5fef3d7 100644
  ENDIF(APPLE)
 
  target_link_libraries(okularcore
-diff --git a/core/utils.cpp b/core/utils.cpp
-index c9bfc2d..b8c955f 100644
---- a/core/utils.cpp
-+++ b/core/utils.cpp
-@@ -134,7 +134,7 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
-         return err;
-     }
-
--double Utils::realDpiX()
-+static double realDpiX()
- {
-     double x,y;
-     CGDisplayErr err = GetDisplayDPI( CGDisplayCurrentMode(kCGDirectMainDisplay),
-@@ -144,7 +144,7 @@ double Utils::realDpiX()
-     return err == CGDisplayNoErr ? x : 72.0;
- }
-
--double Utils::realDpiY()
-+static double realDpiY()
- {
-     double x,y;
-     CGDisplayErr err = GetDisplayDPI( CGDisplayCurrentMode(kCGDirectMainDisplay),
