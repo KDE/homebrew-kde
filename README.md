@@ -3,7 +3,7 @@ homebrew-kde
 
 [![Build Status](https://travis-ci.org/KDE-mac/homebrew-kde.svg?branch=master)](https://travis-ci.org/KDE-mac/homebrew-kde)
 
-Experimental Homebrew (http://brew.sh) tap for KDE Frameworks on Mac OS X.
+Experimental Homebrew (http://brew.sh) tap for KDE Frameworks on macOS.
 
 To add the KDE Frameworks Tap to your homebrew installation:
 
@@ -11,11 +11,9 @@ To add the KDE Frameworks Tap to your homebrew installation:
 brew tap kde-mac/kde
 ```
 
-In order to build them, you first need an up to date Qt:
-
+In order to build them, you first need to do one manuall step that setup all things in order to work-around brew sandbox limitations
 ```sh
-brew install dbus
-brew install qt
+"$(brew --repo)/Library/Taps/kde-mac/homebrew-kde/tools/all-fixes.sh"
 ```
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
@@ -34,8 +32,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-cd `brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde
-./tools/install.sh
+`brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde/tools/install.sh
 ```
 
 Note that *install.sh* passes all parameters on to brew, so you can specify
@@ -47,7 +44,7 @@ To remove all KDE Frameworks 5 packages, run:
 
 ```sh
 brew uninstall `brew list -1 | grep '^kf5-'`
-rm -rf /Applications/KDE
+rm -rf ~/Applications/KDE
 ```
 
 **Installing HEAD**
