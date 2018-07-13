@@ -1,9 +1,8 @@
 class Kolourpaint < Formula
   desc "Paint Program"
   homepage "https://kde.org/applications/graphics/kolourpaint/"
-  url "https://download.kde.org/stable/applications/17.08.3/src/kolourpaint-17.08.3.tar.xz"
-  sha256 "4c23dee5c76524d16f0be397a02fd2516129e72001b96a19ab2d2fe348c084f8"
-  revision 1
+  url "https://download.kde.org/stable/applications/18.04.3/src/kolourpaint-18.04.3.tar.xz"
+  sha256 "b7bf37957c188c84b885311ce56d9dc20f3d63193803a7b1151adf9460f4539e"
 
   head "git://anongit.kde.org/kolourpaint.git"
 
@@ -31,7 +30,7 @@ class Kolourpaint < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kolourpaint.app/Contents/Info.plist"
+      "$(brew --cellar)/kolourpaint/18.04.3/bin/kolourpaint.app/Contents/Info.plist"
   end
 
   def post_install
@@ -40,11 +39,11 @@ class Kolourpaint < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kolourpaint" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/kolourpaint.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/kolourpaint" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/kolourpaint/18.04.3/bin/kolourpaint.app" "$HOME/Applications/KDE/"
     EOS
   end
 end

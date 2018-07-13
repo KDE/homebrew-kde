@@ -36,10 +36,10 @@ class Kate < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kate.app/Contents/Info.plist"
+      "$(brew --cellar)/kate/18.04.3/bin/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kwrite.app/Contents/Info.plist"
+      "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app/Contents/Info.plist"
   end
 
   def post_install
@@ -51,20 +51,21 @@ class Kate < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "$(brew --prefix)/bin/kate.app" $HOME/Applications/KDE/
-      ln -sf "$(brew --prefix)/bin/kwrite.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/kate/18.04.3/bin/kate.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app" "$HOME/Applications/KDE/"
   EOS
   end
 
   test do
-    assert `$(brew --prefix)/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
+    assert `"$(brew --cellar)/kate/18.04.3/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
+    assert `"$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
   end
 end

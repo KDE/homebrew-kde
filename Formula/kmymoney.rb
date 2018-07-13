@@ -40,7 +40,7 @@ class Kmymoney < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kmymoney.app/Contents/Info.plist"
+      "$(brew --cellar)/kmymoney/5.0.1/bin/kmymoney.app/Contents/Info.plist"
   end
 
   def post_install
@@ -50,16 +50,16 @@ class Kmymoney < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kmymoney" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kmm_weboob" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kmm_printcheck" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservices" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/kmymoney.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/kmymoney" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kmm_weboob" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kmm_printcheck" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservices" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/kmymoney/5.0.1/bin/kmymoney.app" "$HOME/Applications/KDE/"
     EOS
   end
 end

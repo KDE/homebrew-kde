@@ -98,6 +98,7 @@ my %frameworks = (
 
 				'dolphin' 			=> '',
 				'kate'    			=> '',
+				'kolourpaint'		=> '',
 				'konsole' 			=> '',
 				'okular' 			=> '',
 				'kimap'           	=> '',

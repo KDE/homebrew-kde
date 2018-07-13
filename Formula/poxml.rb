@@ -26,10 +26,10 @@ class Poxml < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/opt/poxml/bin/po2xml.app" $HOME/Applications/KDE/
-      ln -sf "$(brew --prefix)/opt/poxml/bin/split2po.app" $HOME/Applications/KDE/
-      ln -sf "$(brew --prefix)/opt/poxml/bin/swappo.app" $HOME/Applications/KDE/
-      ln -sf "$(brew --prefix)/opt/poxml/bin/xml2pot.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/opt/poxml/bin/po2xml.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/poxml/bin/split2po.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/poxml/bin/swappo.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/poxml/bin/xml2pot.app" "$HOME/Applications/KDE/"
   EOS
   end
 

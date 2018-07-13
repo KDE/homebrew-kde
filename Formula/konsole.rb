@@ -30,7 +30,7 @@ class Konsole < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/konsole.app/Contents/Info.plist"
+      "$(brew --cellar)/konsole/18.04.3/bin/konsole.app/Contents/Info.plist"
   end
 
   def post_install
@@ -39,13 +39,13 @@ class Konsole < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/konsole.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/konsole/18.04.3/bin/konsole.app" "$HOME/Applications/KDE/"
     EOS
   end
 end

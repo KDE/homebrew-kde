@@ -1,9 +1,8 @@
 class Konversation < Formula
   desc "User-friendly and fully-featured IRC client"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/konversation/1.7.3/src/konversation-1.7.3.tar.xz"
-  sha256 "5e6bf0afc682aad870b6258b20001c1f119c0784946dd4265b8554678563dcd8"
-  revision 1
+  url "https://download.kde.org/stable/konversation/1.7.5/src/konversation-1.7.5.tar.xz"
+  sha256 "60bf7533062b5fc63a37105461b4776437f4e24859e8ddaed1d48c4ba1470940"
 
   head "git://anongit.kde.org/konversation.git"
 
@@ -35,7 +34,7 @@ class Konversation < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/konversation.app/Contents/Info.plist"
+      "$(brew --cellar)/konversation/1.7.5/bin/konversation.app/Contents/Info.plist"
   end
 
   def post_install
@@ -44,11 +43,11 @@ class Konversation < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/konversation.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/konversation/1.7.5/bin/konversation.app" "$HOME/Applications/KDE/"
     EOS
   end
 end

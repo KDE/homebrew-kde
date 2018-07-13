@@ -30,8 +30,8 @@ class Kf5Kparts < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
     EOS
   end
 end

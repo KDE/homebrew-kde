@@ -1,8 +1,8 @@
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/okteta/0.25.0/src/okteta-0.25.0.tar.xz"
-  sha256 "5e0399195fc2177fc39caf5c24585c9521f38b92c0780f92c329ee737e5e644d"
+  url "https://download.kde.org/stable/okteta/0.25.1/src/okteta-0.25.1.tar.xz"
+  sha256 "20f69089f6c1b0fe72a600caa4b255a7cebd7d4fae191a0d3cade57b28f7149a"
 
   head "git://anongit.kde.org/okteta.git"
 
@@ -34,7 +34,7 @@ class Okteta < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/okteta.app/Contents/Info.plist"
+      "$(brew --cellar)/okteta/0.25.1/bin/okteta.app/Contents/Info.plist"
   end
 
   def post_install
@@ -44,11 +44,11 @@ class Okteta < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/okteta.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --cellar)/okteta/0.25.1/bin/okteta.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

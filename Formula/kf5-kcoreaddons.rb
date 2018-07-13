@@ -36,7 +36,7 @@ class Kf5Kcoreaddons < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
     EOS
   end
 end

@@ -31,8 +31,8 @@ class Lokalize < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "$(brew --prefix)/opt/lokalize/bin/lokalize.app" $HOME/Applications/KDE/
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/opt/lokalize/bin/lokalize.app" "$HOME/Applications/KDE/"
   EOS
   end
 

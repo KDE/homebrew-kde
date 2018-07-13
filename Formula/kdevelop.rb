@@ -1,8 +1,8 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.2.0/src/kdevelop-5.2.0.tar.xz"
-  sha256 "88e7a8f2f57a4c688da7a6d522b06e2e70ebddf2f9129b8f93e4c74df029e900"
+  url "https://download.kde.org/stable/kdevelop/5.2.3/src/kdevelop-5.2.3.tar.xz"
+  sha256 "209cf2ac52716d396dc10f408121f437876086d016d519a31b31566655912a75"
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "boost" => :build
@@ -48,7 +48,7 @@ class Kdevelop < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kdevelop.app/Contents/Info.plist"
+      "$(brew --cellar)/kdevelop/5.2.3/bin/kdevelop.app/Contents/Info.plist"
   end
 
   def post_install
@@ -58,17 +58,17 @@ class Kdevelop < Formula
 
   def caveats; <<~EOS
     You need to make sime manual steps in order to make this formula work:
-      ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
-      ln -sf "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
-      mkdir -p $HOME/Applications/KDE
-      ln -sf "#{prefix}/bin/kdevelop.app" $HOME/Applications/KDE/
+      ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
+      ln -sfv "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      "$(brew --cellar)/kdevelop/5.2.3/bin/kdevelop.app" "$HOME/Applications/KDE/"
       EOS
   end
 end
