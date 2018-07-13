@@ -1,0 +1,65 @@
+# cpanm
+brew install cpanminus
+cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+cpanm --local-lib=~/perl5 URI::Escape && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+cpanm --local-lib=~/perl5 URI && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+
+mkdir -p $HOME/Applications/KDE
+ln -sf "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/knotifycations5" "$HOME/Library/Application Support"
+# kf5-breeze-icons
+ln -sf "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
+# kf5-kemoticons
+ln -sf "$(brew --prefix)/share/emoticons" "$HOME/Library/Application Support"
+# kf5-kparts
+ln -sf "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
+ln -sf "#{prefix}/bin/kdebugdialog5.app" $HOME/Applications/KDE/
+# dolphin
+ln -sf "$(brew --prefix)/share/dolphin" "$HOME/Library/Application Support"
+# kate
+ln -sf "$(brew --prefix)/bin/kate.app" $HOME/Applications/KDE/
+ln -sf "$(brew --prefix)/bin/kwrite.app" $HOME/Applications/KDE/
+# kf5-kross
+ln -sf "$(brew --prefix)/opt/kf5-kross/bin/kf5kross.app" $HOME/Applications/KDE/
+# kio-extras
+ln -sf "$(brew --prefix)/share/kio_bookmarks" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kio_info" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/konqsidebartng" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/konqueror" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/remoteview" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/solid" "$HOME/Library/Application Support"
+# kmymoney
+ln -sf "$(brew --prefix)/share/kmymoney" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kmm_weboob" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kmm_printcheck" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
+ln -sf "#{prefix}/bin/kmymoney.app" $HOME/Applications/KDE/
+# kolourpaint
+ln -sf "$(brew --prefix)/share/kolourpaint" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
+# konsole
+ln -sf "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
+ln -sf "#{prefix}/bin/konsole.app" $HOME/Applications/KDE/
+# konversation
+ln -sf "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
+ln -sf "#{prefix}/bin/konversation.app" $HOME/Applications/KDE/
+# lokalize
+ln -sf "$(brew --prefix)/opt/lokalize/bin/lokalize.app" $HOME/Applications/KDE/
+# okteta
+ln -sf "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
+ln -sf "#{prefix}/bin/okteta.app" $HOME/Applications/KDE/
+# poxml
+ln -sf "$(brew --prefix)/opt/poxml/bin/po2xml.app" $HOME/Applications/KDE/
+ln -sf "$(brew --prefix)/opt/poxml/bin/split2po.app" $HOME/Applications/KDE/
+ln -sf "$(brew --prefix)/opt/poxml/bin/swappo.app" $HOME/Applications/KDE/
+ln -sf "$(brew --prefix)/opt/poxml/bin/xml2pot.app" $HOME/Applications/KDE/
