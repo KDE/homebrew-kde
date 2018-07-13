@@ -4,7 +4,8 @@ cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mloca
 cpanm --local-lib=~/perl5 URI::Escape && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 cpanm --local-lib=~/perl5 URI && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
-mkdir -p $HOME/Applications/KDE
+mkdir -pv "$HOME/Applications/KDE"
+rm -rfv "$HOME/Applications/KDE/*"
 ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
@@ -22,12 +23,12 @@ ln -sfv "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/emoticons" "$HOME/Library/Application Support"
 # kf5-kparts
 ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
-ln -sfv "#{prefix}/bin/kdebugdialog5.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/kdebugdialog5/18.04.3/bin/kdebugdialog5.app" $HOME/Applications/KDE/
 # dolphin
-ln -sfv "$(brew --prefix)/share/dolphin" "$HOME/Library/Application Support"
+ln -sfv "$(brew --cellar)/dolphin/18.04.3/bin/dolphin" "$HOME/Library/Application Support"
 # kate
-ln -sfv "$(brew --prefix)/bin/kate.app" $HOME/Applications/KDE/
-ln -sfv "$(brew --prefix)/bin/kwrite.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/kate/18.04.3/bin/kate.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app" $HOME/Applications/KDE/
 # kf5-kross
 ln -sfv "$(brew --prefix)/opt/kf5-kross/bin/kf5kross.app" $HOME/Applications/KDE/
 # kio-extras
@@ -42,22 +43,22 @@ ln -sfv "$(brew --prefix)/share/kmymoney" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kmm_weboob" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kmm_printcheck" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-ln -sfv "#{prefix}/bin/kmymoney.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/kdebugdialog5/18.04.3/bin/kmymoney.app" $HOME/Applications/KDE/
 # kolourpaint
 ln -sfv "$(brew --prefix)/share/kolourpaint" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
 # konsole
 ln -sfv "$(brew --prefix)/share/konsole" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
-ln -sfv "#{prefix}/bin/konsole.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/konsole/18.04.3/bin/konsole.app" $HOME/Applications/KDE/
 # konversation
 ln -sfv "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
-ln -sfv "#{prefix}/bin/konversation.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/konversation/18.04.3//bin/konversation.app" $HOME/Applications/KDE/
 # lokalize
 ln -sfv "$(brew --prefix)/opt/lokalize/bin/lokalize.app" $HOME/Applications/KDE/
 # okteta
 ln -sfv "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
-ln -sfv "#{prefix}/bin/okteta.app" $HOME/Applications/KDE/
+ln -sfv "$(brew --cellar)/okteta/18.04.3/bin/okteta.app" $HOME/Applications/KDE/
 # poxml
 ln -sfv "$(brew --prefix)/opt/poxml/bin/po2xml.app" $HOME/Applications/KDE/
 ln -sfv "$(brew --prefix)/opt/poxml/bin/split2po.app" $HOME/Applications/KDE/
