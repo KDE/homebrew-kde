@@ -26,7 +26,7 @@ ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Suppor
 # kf5-kdelibs4support
 ln -sfv "$(brew --cellar)/kf5-kdelibs4support/5.47.0/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
 # dolphin
-ln -sfv "$(brew --cellar)/dolphin/18.04.3/bin/dolphin" "$HOME/Library/Application Support"
+ln -sfv "$(brew --cellar)/dolphin/18.04.3/bin/dolphin" "$HOME/Applications/KDE/"
 # kate
 ln -sfv "$(brew --cellar)/kate/18.04.3/bin/kate.app" "$HOME/Applications/KDE/"
 ln -sfv "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app" "$HOME/Applications/KDE/"
