@@ -11,8 +11,8 @@ class KioExtras < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "taglib" => :optional
-  depends_on "KDE-mac/kde/khtml" => :optional
-  depends_on "KDE-mac/kde/kimageformats" => :optional
+  depends_on "KDE-mac/kde/kf5-khtml" => :optional
+  depends_on "KDE-mac/kde/kf5-kimageformats" => :optional
   depends_on "exiv2"
   depends_on "libmtp"
   depends_on "openexr"

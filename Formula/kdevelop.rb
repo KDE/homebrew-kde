@@ -15,7 +15,7 @@ class Kdevelop < Formula
   depends_on "cvs" => :build
   depends_on "gdb" => :build
   depends_on "KDE-mac/kde/konsole" => :optional
-  depends_on "KDE-mac/kde/plasma-framework" => :optional
+  depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "cmake" # For cmake integration need set as depends instead of :build ([:build, :optional] fails)
   depends_on "llvm"
