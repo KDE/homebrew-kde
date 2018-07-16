@@ -74,9 +74,13 @@ ln -sfv "$(brew --prefix)/share/okular" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
 #labplot
 ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
-[ -d "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" ] \
+[ -d "$(brew --prefix)/opt/labplot/bin/labplot2.app" ] && \
 	ln -sfv "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" "/Applications"
-[ -d "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app/Contents/Resources" ] \
-	&& ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc" \
-	"$(brew --cellar)/labplot/2.5.0/bin/labplot2.app/Contents/Resources"
+[ -d "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources" ] && \
+	ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc" \
+	"$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
+#kdenlive
+ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
+ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
+
 exit 0
