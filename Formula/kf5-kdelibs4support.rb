@@ -37,7 +37,7 @@ class Kf5Kdelibs4support < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kf5-kdelibs4support/5.47.0/bin/kdebugdialog5.app/Contents/Info.plist"
+      "$(brew --cellar)/kf5-kdelibs4support/5.48.0/bin/kdebugdialog5.app/Contents/Info.plist"
   end
 
   def caveats; <<~EOS
@@ -50,7 +50,7 @@ class Kf5Kdelibs4support < Formula
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/kf5-kdelibs4support/5.47.0/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --cellar)/kf5-kdelibs4support/5.48.0/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
   EOS
   end
 end
