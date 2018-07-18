@@ -8,8 +8,8 @@ class Analitza < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kf5-extra-cmake-modules" => :build
+  depends_on "kf5-kdoctools" => :build
 
   def install
     args = std_cmake_args
