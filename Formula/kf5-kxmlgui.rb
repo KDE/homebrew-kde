@@ -1,8 +1,8 @@
 class Kf5Kxmlgui < Formula
   desc "User configurable main windows"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.47/kxmlgui-5.47.0.tar.xz"
-  sha256 "975afe9db3c2d0952991db9681309974fdd41dfbf92d480099b5f40ba08d94a4"
+  url "https://download.kde.org/stable/frameworks/5.48/kxmlgui-5.48.0.tar.xz"
+  sha256 "502835c15ba254a7e405957c40ba8b212c885182774b00e47384851b7b5f6858"
 
   head "git://anongit.kde.org/kxmlgui.git"
 

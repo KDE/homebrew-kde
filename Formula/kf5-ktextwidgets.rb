@@ -1,8 +1,8 @@
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.47/ktextwidgets-5.47.0.tar.xz"
-  sha256 "d9eb46747c0f2d4d4db5ac20c788b8894d2f7048f530b31c892c7bb44d2388a7"
+  url "https://download.kde.org/stable/frameworks/5.48/ktextwidgets-5.48.0.tar.xz"
+  sha256 "0fa272b7f2eb31b99cc753d95bd03179ee9d65ce7a99eaaebd0e2736edcdc441"
 
   head "git://anongit.kde.org/ktextwidgets.git"
 

@@ -1,8 +1,8 @@
 class Kf5Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.47/kservice-5.47.0.tar.xz"
-  sha256 "a92d60aae5ebf99c1b518e39cb624b4da9a7f88ebc7e77e52722c1e677bdd167"
+  url "https://download.kde.org/stable/frameworks/5.48/kservice-5.48.0.tar.xz"
+  sha256 "3a5e9f84c4459e3441cea5b9c3036cd7321bdea34a425121b2d8afba1b1bade4"
 
   head "git://anongit.kde.org/kservice.git"
 

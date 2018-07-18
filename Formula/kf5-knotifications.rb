@@ -1,8 +1,8 @@
 class Kf5Knotifications < Formula
   desc "Abstraction for system notifications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.47/knotifications-5.47.0.tar.xz"
-  sha256 "5b9bfcce9b6492639288fe386e96a4b992e95611d72c0fd9d59f96a1a7129521"
+  url "https://download.kde.org/stable/frameworks/5.48/knotifications-5.48.0.tar.xz"
+  sha256 "ebd778d052ba4a0d445082fb6ced8cfd4ea8cbef7e60439576fb233e9f1ce086"
 
   head "git://anongit.kde.org/knotifications.git"
 

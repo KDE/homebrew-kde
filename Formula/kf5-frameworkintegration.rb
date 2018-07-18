@@ -1,8 +1,8 @@
 class Kf5Frameworkintegration < Formula
   desc "Components to integrate with a KDE Workspace"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.47/frameworkintegration-5.47.0.tar.xz"
-  sha256 "ce936bce5606e2f41d8b8c36478594c3cebe508f6f0d2ea8feda67848f728d47"
+  url "https://download.kde.org/stable/frameworks/5.48/frameworkintegration-5.48.0.tar.xz"
+  sha256 "1e55cb94774fe766e0c6b7b06b7bbe042671c3122204c35ca5b614d6ec0849d9"
 
   head "git://anongit.kde.org/frameworkintegration.git"
 
