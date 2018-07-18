@@ -1,9 +1,8 @@
-# cpanm
-brew install cpanminus
-cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-cpanm --local-lib=~/perl5 URI::Escape && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-cpanm --local-lib=~/perl5 URI && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-
+# cpan
+brew install perl
+export PERL_MM_USE_DEFAULT=1
+cpan URI URI::Escape
+# common
 mkdir -pv "$HOME/Applications/KDE"
 rm -rfv "$HOME/Applications/KDE/*"
 ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"

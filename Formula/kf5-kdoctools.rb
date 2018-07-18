@@ -32,8 +32,9 @@ class Kf5Kdoctools < Formula
 
   def caveats; <<~EOS
     Before install of this formula you need to run:
-      brew install cpanminus
-      cpanm URI
+      brew install perl
+      export PERL_MM_USE_DEFAULT=1
+      cpan URI URI::Escape
 
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
