@@ -39,8 +39,9 @@ class Labplot < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
        ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
-       ln -sfv "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" "$HOME/Applications/KDE"
-       ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc" "$HOME/Applications/KDE/labplot2.app/Contents/Resources/labplot2ui.rc"
+       ln -sfv "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" "/Applications"
+       ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc"\
+       "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app/Contents/Resources"
   EOS
   end
 
