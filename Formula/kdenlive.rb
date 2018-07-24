@@ -21,8 +21,10 @@ class Kdenlive < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
-    args << "-DCMAKE_INSTALL_LIBDIR=#{lib}"
+    args << "-DKDE_INSTALL_BUNDLEDIR=#{bin}"
+    args << "-DKDE_INSTALL_LIBDIR=lib"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DBUILD_TESTING=OFF"
     args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
@@ -32,6 +34,14 @@ class Kdenlive < Formula
       system "make", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "/usr/libexec/PlistBuddy", "-c",
+           "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+           "#{bin}/kdenlive.app/Contents/Info.plist"
+
+    # Rename the .so files
+    mv "#{prefix}/lib/qt5/plugins/mltpreview.so", "#{prefix}/lib/qt5/plugins/mltpreview.dylib"
   end
 
   def post_install
@@ -41,9 +51,17 @@ class Kdenlive < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-       ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
-       mkdir -pv "$HOME/Applications/KDE"
-       ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
+
+    OTHER NOTES
+    -----------
+    When starting the program it may be crash, solved it changing in ~/Library/Preferences/kdenliverc
+    from true to false: Window-Maximized = false
+    For ffmpeg, you could install --with-: chromaprint fdk-aac fontconfig freetype frei0r game-music-emu libass libbluray libbs2b libcaca libgsm libmodplug libsoxr libssh libvidstab libvorbis libvpx opencore-amr openh264 openjpeg openssl opus rtmpdump rubberband sdl2 snappy speex srt tesseract theora tools two-lame wavpack webp x265 xz zeromq zimg
+
+    There seems to be a problem with librsvg
   EOS
   end
 
