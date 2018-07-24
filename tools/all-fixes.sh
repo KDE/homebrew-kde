@@ -81,6 +81,6 @@ ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
 	"$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
 #kdenlive
 ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
-ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
+ln -sfv "$(brew --cellar)/kdenlive/18.04.3/bin/kdenlive.app" "$HOME/Applications/KDE"
 
 exit 0
