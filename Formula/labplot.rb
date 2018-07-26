@@ -20,7 +20,6 @@ class Labplot < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
     args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
 
@@ -39,13 +38,13 @@ class Labplot < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
        ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
-       ln -sfv "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" "/Applications"
-       ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc"\
-       "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app/Contents/Resources"
+       ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "/Applications"
+       ln -sfv "$(brew --prefix)/opt/labplot/share/kxmlgui5/labplot2/labplot2ui.rc" \
+          "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
   EOS
   end
 
   test do
-    assert "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app/Contents/MacOS/labplot2 --help | grep -- --help"
+    assert "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/MacOS/labplot2 --help | grep -- --help"
   end
 end

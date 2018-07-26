@@ -75,9 +75,9 @@ ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
 #labplot
 ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
 [ -d "$(brew --prefix)/opt/labplot/bin/labplot2.app" ] && \
-	ln -sfv "$(brew --cellar)/labplot/2.5.0/bin/labplot2.app" "/Applications"
+	ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "/Applications"
 [ -d "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources" ] && \
-	ln -sfv "$(brew --cellar)/labplot/2.5.0/share/kxmlgui5/labplot2/labplot2ui.rc" \
+	ln -sfv "$(brew --prefix)/opt/labplot/share/kxmlgui5/labplot2/labplot2ui.rc" \
 	"$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
 #kdenlive
 ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
