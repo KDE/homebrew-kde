@@ -3,6 +3,7 @@ class Labplot < Formula
   homepage "https://labplot.kde.org/"
   url "https://download.kde.org/stable/labplot/2.5.0/labplot-2.5.0.tar.xz"
   sha256 "f1ef2d95a4d4f18902e38cd1f2f79d041d4eeed1eb7f6284ec9a6a6954792225"
+  revision 1
 
   head "git://anongit.kde.org/labplot.git"
 
