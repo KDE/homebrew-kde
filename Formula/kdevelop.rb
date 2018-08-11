@@ -57,7 +57,7 @@ class Kdevelop < Formula
   end
 
   def caveats; <<~EOS
-    You need to make sime manual steps in order to make this formula work:
+    You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
