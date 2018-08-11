@@ -34,7 +34,7 @@ class Konversation < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/konversation/1.7.5/bin/konversation.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/konversation/bin/konversation.app/Contents/Info.plist"
   end
 
   def post_install
@@ -47,7 +47,7 @@ class Konversation < Formula
       ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/konversation/1.7.5/bin/konversation.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/konversation/bin/konversation.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

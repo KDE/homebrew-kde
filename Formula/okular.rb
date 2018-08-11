@@ -51,7 +51,7 @@ class Okular < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/okular/18.04.3/bin/okular.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/okular/bin/okular.app/Contents/Info.plist"
   end
 
   def post_install
@@ -68,7 +68,7 @@ class Okular < Formula
       ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/okular/18.04.3/bin/okular.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/okular/bin/okular.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

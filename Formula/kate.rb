@@ -36,10 +36,10 @@ class Kate < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kate/18.04.3/bin/kate.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/kate/bin/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/kwrite/bin/kwrite.app/Contents/Info.plist"
   end
 
   def post_install
@@ -59,13 +59,13 @@ class Kate < Formula
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/kate/18.04.3/bin/kate.app" "$HOME/Applications/KDE/"
-      ln -sfv "$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kate/bin/kate.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kwrite/bin/kwrite.app" "$HOME/Applications/KDE/"
   EOS
   end
 
   test do
-    assert `"$(brew --cellar)/kate/18.04.3/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
-    assert `"$(brew --cellar)/kwrite/18.04.3/bin/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
+    assert `"$(brew --prefix)/opt/kate/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
+    assert `"$(brew --prefix)/opt/kwrite/bin/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
   end
 end

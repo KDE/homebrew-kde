@@ -40,7 +40,7 @@ class Kmymoney < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kmymoney/5.0.1/bin/kmymoney.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app/Contents/Info.plist"
   end
 
   def post_install
@@ -59,7 +59,7 @@ class Kmymoney < Formula
       ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/kmymoney/5.0.1/bin/kmymoney.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

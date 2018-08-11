@@ -48,7 +48,7 @@ class Kdevelop < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kdevelop/5.2.3/bin/kdevelop.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
   end
 
   def post_install
@@ -68,7 +68,7 @@ class Kdevelop < Formula
       ln -sfv "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/kdevelop/5.2.3/bin/kdevelop.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

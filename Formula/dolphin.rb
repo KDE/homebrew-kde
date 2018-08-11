@@ -38,7 +38,7 @@ class Dolphin < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/dolphin/18.04.3/bin/dolphin.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/dolphin/bin/dolphin.app/Contents/Info.plist"
   end
 
   def post_install
@@ -53,7 +53,7 @@ class Dolphin < Formula
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/dolphin/18.04.3/bin/dolphin.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

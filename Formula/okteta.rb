@@ -34,7 +34,7 @@ class Okteta < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/okteta/0.25.1/bin/okteta.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/okteta/bin/okteta.app/Contents/Info.plist"
   end
 
   def post_install
@@ -48,7 +48,7 @@ class Okteta < Formula
       ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/okteta/0.25.1/bin/okteta.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/okteta/bin/okteta.app" "$HOME/Applications/KDE/"
   EOS
   end
 end

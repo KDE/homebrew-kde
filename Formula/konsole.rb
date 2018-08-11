@@ -30,7 +30,7 @@ class Konsole < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/konsole/18.04.3/bin/konsole.app/Contents/Info.plist"
+      "$(brew --prefix)/opt/konsole/bin/konsole.app/Contents/Info.plist"
   end
 
   def post_install
@@ -45,7 +45,7 @@ class Konsole < Formula
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/konsole/18.04.3/bin/konsole.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/konsole/bin/konsole.app" "$HOME/Applications/KDE/"
   EOS
   end
 end
