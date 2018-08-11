@@ -2,7 +2,9 @@ class QtWebkit < Formula
   desc "Classes for a WebKit2 based implementation and a new QML API"
   homepage "https://www1.qt.io/developers/"
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
-  sha256 "f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a"
+  sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
+
+  revision 1
 
   head "https://github.com/qt/qtwebkit.git"
 
