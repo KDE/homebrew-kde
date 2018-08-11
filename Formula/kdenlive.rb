@@ -39,7 +39,7 @@ class Kdenlive < Formula
     system "/usr/libexec/PlistBuddy", "-c",
            "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
            "#{bin}/kdenlive.app/Contents/Info.plist"
-    
+
     # Rename the .so files
     mv "#{prefix}/lib/qt5/plugins/mltpreview.so", "#{prefix}/lib/qt5/plugins/mltpreview.dylib"
   end
@@ -67,6 +67,6 @@ class Kdenlive < Formula
   end
 
   test do
-    assert "$(brew --cellar)/kdenlive/18.04.3/bin/kdenlive.app/Contents/MacOS/kdenlive --help | grep -- --help"
+    assert `"#{bin}"/kdenlive.app/Contents/MacOS/kdenlive --help | grep -- --help` =~ /--help/
   end
 end

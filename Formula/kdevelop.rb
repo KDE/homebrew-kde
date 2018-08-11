@@ -3,6 +3,8 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.2.3/src/kdevelop-5.2.3.tar.xz"
   sha256 "209cf2ac52716d396dc10f408121f437876086d016d519a31b31566655912a75"
+  revision 1
+
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "boost" => :build
@@ -17,7 +19,7 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
   depends_on "KDE-mac/kde/konsole" => :optional
-  depends_on "cmake" # For cmake integration need set as depends instead of :build ([:build, :optional] fails)
+  depends_on "cmake"
   depends_on "llvm"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
@@ -46,11 +48,11 @@ class Kdevelop < Formula
       prefix.install "install_manifest.txt"
     end
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
-    system "chmod", "+w", "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
+    chmod "+w", "#{bin}/kdevelop.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "'Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"'",
-      "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
-    system "chmod", "-w", "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kdevelop.app/Contents/Info.plist"
+    chmod "-w", "#{bin}/kdevelop.app/Contents/Info.plist"
   end
 
   def post_install
@@ -72,6 +74,10 @@ class Kdevelop < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "$HOME/Applications/KDE/"
   EOS
+  end
+
+  test do
+    assert `"#{bin}"/kdevelop.app/Contents/MacOS/kdevelop --help | grep -- --help` =~ /--help/
   end
 end
 

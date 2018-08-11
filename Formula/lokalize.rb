@@ -37,6 +37,6 @@ class Lokalize < Formula
   end
 
   test do
-    assert `$(brew --prefix)/opt/lokalize/bin/lokalize.app/Contents/MacOS/lokalize --help | grep -- --help` =~ /--help/
+    assert `"#{bin}"/lokalize.app/Contents/MacOS/lokalize --help | grep -- --help` =~ /--help/
   end
 end

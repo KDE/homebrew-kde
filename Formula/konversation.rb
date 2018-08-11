@@ -34,7 +34,7 @@ class Konversation < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --prefix)/opt/konversation/bin/konversation.app/Contents/Info.plist"
+      "#{bin}/konversation.app/Contents/Info.plist"
   end
 
   def post_install

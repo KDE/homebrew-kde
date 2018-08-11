@@ -36,10 +36,10 @@ class Kate < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --prefix)/opt/kate/bin/kate.app/Contents/Info.plist"
+      "#{bin}/bin/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --prefix)/opt/kwrite/bin/kwrite.app/Contents/Info.plist"
+      "#{bin}/bin/kwrite.app/Contents/Info.plist"
   end
 
   def post_install
@@ -65,7 +65,7 @@ class Kate < Formula
   end
 
   test do
-    assert `"$(brew --prefix)/opt/kate/bin/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
-    assert `"$(brew --prefix)/opt/kwrite/bin/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
+    assert `"#{bin}"/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
+    assert `"#{bin}"/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
   end
 end

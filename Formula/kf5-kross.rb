@@ -43,6 +43,6 @@ class Kf5Kross < Formula
   end
 
   test do
-    assert `$(brew --prefix)/opt/kf5-kross/bin/kf5kross.app/Contents/MacOS/kf5kross --help | grep -- --help` =~ /--help/
+    assert `"#{bin}"/kf5kross.app/Contents/MacOS/kf5kross --help | grep -- --help` =~ /--help/
   end
 end

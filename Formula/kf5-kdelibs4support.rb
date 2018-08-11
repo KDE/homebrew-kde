@@ -37,7 +37,7 @@ class Kf5Kdelibs4support < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "$(brew --cellar)/kf5-kdelibs4support/5.49.0/bin/kdebugdialog5.app/Contents/Info.plist"
+      "#{bin}/kdebugdialog5.app/Contents/Info.plist"
   end
 
   def caveats; <<~EOS

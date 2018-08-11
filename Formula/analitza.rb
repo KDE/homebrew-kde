@@ -24,8 +24,4 @@ class Analitza < Formula
       prefix.install "install_manifest.txt"
     end
   end
-
-  test do
-    system "false"
-  end
 end

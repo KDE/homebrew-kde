@@ -46,6 +46,6 @@ class Labplot < Formula
   end
 
   test do
-    assert "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/MacOS/labplot2 --help | grep -- --help"
+    assert `"#{bin}"/labplot.app/Contents/MacOS/labplot --help | grep -- --help` =~ /--help/
   end
 end
