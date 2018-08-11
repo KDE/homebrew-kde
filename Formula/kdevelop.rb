@@ -46,9 +46,11 @@ class Kdevelop < Formula
       prefix.install "install_manifest.txt"
     end
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "chmod", "+w", "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "'Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"'",
       "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
+    system "chmod", "-w", "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app/Contents/Info.plist"
   end
 
   def post_install
