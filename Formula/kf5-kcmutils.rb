@@ -1,8 +1,8 @@
 class Kf5Kcmutils < Formula
   desc "Utilities for interacting with KCModules"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kcmutils-5.48.0.tar.xz"
-  sha256 "bc523c83d317409ef5b6d9af645e02d23256c9ef71191ec28782d527f6fe745b"
+  url "https://download.kde.org/stable/frameworks/5.49/kcmutils-5.49.0.tar.xz"
+  sha256 "388587f864352e98670c41a9fb615cc6580c42b2b026041a341202976e4a6877"
 
   head "git://anongit.kde.org/kcmutils.git"
 
@@ -30,6 +30,6 @@ class Kf5Kcmutils < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

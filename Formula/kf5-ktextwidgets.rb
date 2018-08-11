@@ -1,8 +1,8 @@
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/ktextwidgets-5.48.0.tar.xz"
-  sha256 "0fa272b7f2eb31b99cc753d95bd03179ee9d65ce7a99eaaebd0e2736edcdc441"
+  url "https://download.kde.org/stable/frameworks/5.49/ktextwidgets-5.49.0.tar.xz"
+  sha256 "81eb2c1832c2fb013565ed019c9a9d55ca3b0472967e28eee4aef25ba1a6ec91"
 
   head "git://anongit.kde.org/ktextwidgets.git"
 
@@ -34,6 +34,6 @@ class Kf5Ktextwidgets < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

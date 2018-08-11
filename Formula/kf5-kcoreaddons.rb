@@ -1,8 +1,8 @@
 class Kf5Kcoreaddons < Formula
   desc "Addons to QtCore"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kcoreaddons-5.48.0.tar.xz"
-  sha256 "2e78c66ca5b765c95e61d028ff9d7778a96b987bd1d99867f196eb780c25f394"
+  url "https://download.kde.org/stable/frameworks/5.49/kcoreaddons-5.49.0.tar.xz"
+  sha256 "12afb12f79505614f6d5624d6c39b90b5fc39e4b1b5ddb2203622bbeb6144203"
 
   head "git://anongit.kde.org/kcoreaddons.git"
 
@@ -37,7 +37,7 @@ class Kf5Kcoreaddons < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
 

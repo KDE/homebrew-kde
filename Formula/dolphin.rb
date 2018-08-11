@@ -54,6 +54,6 @@ class Dolphin < Formula
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/dolphin/18.04.3/bin/dolphin.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end

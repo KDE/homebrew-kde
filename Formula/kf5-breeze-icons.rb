@@ -1,8 +1,8 @@
 class Kf5BreezeIcons < Formula
   desc "Breeze icon themes"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/breeze-icons-5.48.0.tar.xz"
-  sha256 "10fb18b3ab1cc8991054bd984f70e0f966dd41f4d2d2743cc4e09aef7ace13dc"
+  url "https://download.kde.org/stable/frameworks/5.49/breeze-icons-5.49.0.tar.xz"
+  sha256 "f0b26f538905175ce763089b00c91d0be95278ac4b5085116d66530c2110069d"
 
   head "git://anongit.kde.org/breeze-icons.git"
 
@@ -28,6 +28,6 @@ class Kf5BreezeIcons < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

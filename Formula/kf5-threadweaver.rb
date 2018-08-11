@@ -1,8 +1,8 @@
 class Kf5Threadweaver < Formula
   desc "High-level multithreading framework"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/threadweaver-5.48.0.tar.xz"
-  sha256 "45840dd049cd4ce6f0562d0bad997b033ee0a5590684f570661436dc9a467a5e"
+  url "https://download.kde.org/stable/frameworks/5.49/threadweaver-5.49.0.tar.xz"
+  sha256 "e77b8681bcac5b990c264ff973c759832362770ee617e171fe2d9c9b04d12b25"
 
   head "git://anongit.kde.org/threadweaver.git"
 

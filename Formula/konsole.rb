@@ -46,6 +46,6 @@ class Konsole < Formula
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/konsole/18.04.3/bin/konsole.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end

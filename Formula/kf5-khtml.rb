@@ -1,8 +1,8 @@
 class Kf5Khtml < Formula
   desc "KHTML APIs"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/portingAids/khtml-5.48.0.tar.xz"
-  sha256 "a1923402f04f4a72e8688004a00e47fe79f7f72d703d53a14058eebdb7a531ff"
+  url "https://download.kde.org/stable/frameworks/5.49/portingAids/khtml-5.49.0.tar.xz"
+  sha256 "c4f819588a5eb8c5abf875491ee7741cc162ac75ff726fd8abf91183df15354d"
 
   head "git://anongit.kde.org/khtml.git"
 
@@ -35,6 +35,6 @@ class Kf5Khtml < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

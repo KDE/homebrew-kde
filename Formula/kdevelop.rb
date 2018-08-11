@@ -69,7 +69,7 @@ class Kdevelop < Formula
       ln -sfv "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       "$(brew --cellar)/kdevelop/5.2.3/bin/kdevelop.app" "$HOME/Applications/KDE/"
-      EOS
+  EOS
   end
 end
 

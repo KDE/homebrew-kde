@@ -48,6 +48,6 @@ class Konversation < Formula
       ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/konversation/1.7.5/bin/konversation.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end

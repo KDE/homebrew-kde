@@ -1,8 +1,8 @@
 class Kf5Sonnet < Formula
   desc "Spelling framework for Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/sonnet-5.48.0.tar.xz"
-  sha256 "04ebc3d6b912c09641771c8780d8124e23417e3ae0e639a9a50e67198c12f4d7"
+  url "https://download.kde.org/stable/frameworks/5.49/sonnet-5.49.0.tar.xz"
+  sha256 "63053a671a8dc7a2a97cd49fe915e02e4b37fe41a06f3cd8785a7218d4acb754"
 
   head "git://anongit.kde.org/sonnet.git"
 
@@ -37,7 +37,7 @@ class Kf5Sonnet < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end
 

@@ -1,8 +1,8 @@
 class Kf5Kemoticons < Formula
   desc "Support for emoticons and emoticons themes"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kemoticons-5.48.0.tar.xz"
-  sha256 "69b9ec2dfc28919d21824850f702855531eab563bc5daf519da4b6643397da98"
+  url "https://download.kde.org/stable/frameworks/5.49/kemoticons-5.49.0.tar.xz"
+  sha256 "36cf12edfe58e70590562bd4824e11001ec491dc0c5752b0cb4be66be184e957"
 
   head "git://anongit.kde.org/kemoticons.git"
 
@@ -32,6 +32,6 @@ class Kf5Kemoticons < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/emoticons" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

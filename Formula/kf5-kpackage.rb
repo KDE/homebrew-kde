@@ -1,8 +1,8 @@
 class Kf5Kpackage < Formula
   desc "Lets applications manage user installable packages"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kpackage-5.48.0.tar.xz"
-  sha256 "995db29fa77466b3b4b914a7021a5be4e1d55265f5c801508b5efefac27d06a3"
+  url "https://download.kde.org/stable/frameworks/5.49/kpackage-5.49.0.tar.xz"
+  sha256 "8d4dab6fd11b4e565e38590a9d8f98f85b26814eb56808de43ce3db23a976ef5"
 
   head "git://anongit.kde.org/kpackage.git"
 
@@ -34,6 +34,6 @@ class Kf5Kpackage < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end

@@ -1,8 +1,8 @@
 class Kf5Ktexteditor < Formula
   desc "Advanced embeddable text editor"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/ktexteditor-5.48.0.tar.xz"
-  sha256 "475e056bf5ca2dd687d083b014aceeee65aedb2b053f3bdecae7083f4733d8ba"
+  url "https://download.kde.org/stable/frameworks/5.49/ktexteditor-5.49.0.tar.xz"
+  sha256 "9255792eece773a75922e06830fc240f968736dce84d01c1563b91be35d23a92"
 
   head "git://anongit.kde.org/ktexteditor.git"
 
@@ -35,6 +35,6 @@ class Kf5Ktexteditor < Formula
       ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

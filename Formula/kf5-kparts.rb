@@ -1,8 +1,8 @@
 class Kf5Kparts < Formula
   desc "Document centric plugin system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kparts-5.48.0.tar.xz"
-  sha256 "1b12ce7858368f455b563642952cba3ed3c400ebee21f74f90bde0ed7a6e9ddc"
+  url "https://download.kde.org/stable/frameworks/5.49/kparts-5.49.0.tar.xz"
+  sha256 "53c87663828613d6d64a5a5cdd0c9f2f388ff8191df903c07a4b3f20fd02bf7d"
 
   head "git://anongit.kde.org/kparts.git"
 
@@ -32,6 +32,6 @@ class Kf5Kparts < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

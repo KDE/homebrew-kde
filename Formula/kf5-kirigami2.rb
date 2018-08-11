@@ -1,8 +1,8 @@
 class Kf5Kirigami2 < Formula
   desc "QtQuick based components set"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kirigami2-5.48.0.tar.xz"
-  sha256 "a2d8bfbf79f33c03793631e9f3575b7c3043e09d282b0e56ad878bfdbfcd0138"
+  url "https://download.kde.org/stable/frameworks/5.49/kirigami2-5.49.0.tar.xz"
+  sha256 "5fd1c7fb34faa9d739967d24a261be85a9d8a908a54927ddf7fbcb3d0f4c56f1"
 
   head "git://anongit.kde.org/kirigami.git"
 
@@ -31,6 +31,6 @@ class Kf5Kirigami2 < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kpackage" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end

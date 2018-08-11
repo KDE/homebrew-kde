@@ -1,8 +1,8 @@
 class Kf5Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kservice-5.48.0.tar.xz"
-  sha256 "3a5e9f84c4459e3441cea5b9c3036cd7321bdea34a425121b2d8afba1b1bade4"
+  url "https://download.kde.org/stable/frameworks/5.49/kservice-5.49.0.tar.xz"
+  sha256 "1fd516e6454523707bd173b253fdde5fd39c0b60b3a943ae096b38540d338bf3"
 
   head "git://anongit.kde.org/kservice.git"
 
@@ -37,6 +37,6 @@ class Kf5Kservice < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

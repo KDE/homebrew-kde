@@ -1,8 +1,8 @@
 class Kf5Kwidgetsaddons < Formula
   desc "Addons to QtWidgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kwidgetsaddons-5.48.0.tar.xz"
-  sha256 "6771af7310b7ae62b8780c47f9ccaaebbcdd068796f258c9dcb037e522122e1d"
+  url "https://download.kde.org/stable/frameworks/5.49/kwidgetsaddons-5.49.0.tar.xz"
+  sha256 "2251de1577e7d1e379e9d9fa301e3d2705e821b8863ee3dd0d882d69d3c72fbb"
 
   head "git://anongit.kde.org/kwidgetsaddons.git"
 
@@ -30,6 +30,6 @@ class Kf5Kwidgetsaddons < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end

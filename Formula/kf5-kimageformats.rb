@@ -1,8 +1,8 @@
 class Kf5Kimageformats < Formula
   desc "Image format plugins for Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kimageformats-5.48.0.tar.xz"
-  sha256 "4c87b488afbf05afe85c55bd349b1ed3b8dfd68d66cfd91a28adf03750b9ddd7"
+  url "https://download.kde.org/stable/frameworks/5.49/kimageformats-5.49.0.tar.xz"
+  sha256 "c4738100d449f501b1ba8d56980e06cc04c0b7f42a287babe22e95b95e0ae0e0"
 
   head "git://anongit.kde.org/kimageformats.git"
 
@@ -29,6 +29,6 @@ class Kf5Kimageformats < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end

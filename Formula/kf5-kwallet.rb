@@ -1,8 +1,8 @@
 class Kf5Kwallet < Formula
   desc "Secure and unified container for user passwords"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kwallet-5.48.0.tar.xz"
-  sha256 "196a0882e2edd4487e1eb8a13d946ba3f541135ee54183752c40d1178db8f210"
+  url "https://download.kde.org/stable/frameworks/5.49/kwallet-5.49.0.tar.xz"
+  sha256 "3fd8d7a940adc974b6ee8a9af0d3f40eae9d279eb8884d99b9d08f25939e758d"
 
   head "git://anongit.kde.org/kwallet.git"
 
@@ -40,7 +40,7 @@ class Kf5Kwallet < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
 

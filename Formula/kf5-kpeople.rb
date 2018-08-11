@@ -1,8 +1,8 @@
 class Kf5Kpeople < Formula
   desc "Provides access to all contacts and the people"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kpeople-5.48.0.tar.xz"
-  sha256 "c77d02ae35e420ba7648db00beb0c6adb4881fb41c4cd047b5136b7847a3adbd"
+  url "https://download.kde.org/stable/frameworks/5.49/kpeople-5.49.0.tar.xz"
+  sha256 "1bce022f72a32b4e3a3673f46c6dc681aaa61b12bcdd36d8dd1a5e295a68b744"
 
   head "git://anongit.kde.org/kpeople.git"
 
@@ -33,6 +33,6 @@ class Kf5Kpeople < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

@@ -1,8 +1,8 @@
 class Kf5Knotifications < Formula
   desc "Abstraction for system notifications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/knotifications-5.48.0.tar.xz"
-  sha256 "ebd778d052ba4a0d445082fb6ced8cfd4ea8cbef7e60439576fb233e9f1ce086"
+  url "https://download.kde.org/stable/frameworks/5.49/knotifications-5.49.0.tar.xz"
+  sha256 "a9b55f92ceb1bbd1804e9b5ad52ca0d25bfa561781c46e42c310d31c850c8880"
 
   head "git://anongit.kde.org/knotifications.git"
 
@@ -33,6 +33,6 @@ class Kf5Knotifications < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

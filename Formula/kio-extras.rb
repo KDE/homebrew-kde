@@ -51,7 +51,7 @@ class KioExtras < Formula
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/remoteview" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/solid" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
 

@@ -1,8 +1,8 @@
 class Kf5Kauth < Formula
   desc "Abstraction to system policy and authentication features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kauth-5.48.0.tar.xz"
-  sha256 "47afa9e89543be8bd732fc8b8c0b6e04b71d36e55c547697623ed546845eb702"
+  url "https://download.kde.org/stable/frameworks/5.49/kauth-5.49.0.tar.xz"
+  sha256 "c8029c6a3bdeb296e27eaf3791d269ebe88641ee9170bdabd5a2bb391effe361"
 
   head "git://anongit.kde.org/kauth.git"
 
@@ -31,6 +31,6 @@ class Kf5Kauth < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-     EOS
+  EOS
   end
 end

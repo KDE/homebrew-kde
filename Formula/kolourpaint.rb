@@ -44,6 +44,6 @@ class Kolourpaint < Formula
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/kolourpaint/18.04.3/bin/kolourpaint.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end

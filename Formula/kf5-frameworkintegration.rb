@@ -1,8 +1,8 @@
 class Kf5Frameworkintegration < Formula
   desc "Components to integrate with a KDE Workspace"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/frameworkintegration-5.48.0.tar.xz"
-  sha256 "1e55cb94774fe766e0c6b7b06b7bbe042671c3122204c35ca5b614d6ec0849d9"
+  url "https://download.kde.org/stable/frameworks/5.49/frameworkintegration-5.49.0.tar.xz"
+  sha256 "dd3d965979edea79b6a39e8a9450c92a3edcce4775e1caff701f0ce36d9624da"
 
   head "git://anongit.kde.org/frameworkintegration.git"
 
@@ -30,6 +30,6 @@ class Kf5Frameworkintegration < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/knotifycations5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

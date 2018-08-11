@@ -1,8 +1,8 @@
 class Kf5PlasmaFramework < Formula
   desc "Plasma library and runtime components based upon KF5 & Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/plasma-framework-5.48.0.tar.xz"
-  sha256 "02c1c73265db705b0cd360c5a9c493340717babcd92d51ff0202d78976c081c2"
+  url "https://download.kde.org/stable/frameworks/5.49/plasma-framework-5.49.0.tar.xz"
+  sha256 "5b16c9808a0e8c6c920bf879bcc39ed01d566affbfdeef8e7dcbd9dbe6622cfb"
 
   head "git://anongit.kde.org/plasma-framework.git"
 
@@ -41,7 +41,7 @@ class Kf5PlasmaFramework < Formula
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
 

@@ -69,7 +69,7 @@ class Okular < Formula
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/okular/18.04.3/bin/okular.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end
 

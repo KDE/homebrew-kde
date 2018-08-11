@@ -1,8 +1,8 @@
 class Kf5Kmediaplayer < Formula
   desc "Plugin interface for media player features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/portingAids/kmediaplayer-5.48.0.tar.xz"
-  sha256 "78cad59e3e1dbc06972894395aa3078ffdc1f7fbd4d7e76c9c59f3da0a2b83cf"
+  url "https://download.kde.org/stable/frameworks/5.49/portingAids/kmediaplayer-5.49.0.tar.xz"
+  sha256 "3d53974896e79f4e7475d65419779654332f44dbc9a6f694372912b923227d41"
 
   head "git://anongit.kde.org/kmediaplayer.git"
 
@@ -28,6 +28,6 @@ class Kf5Kmediaplayer < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

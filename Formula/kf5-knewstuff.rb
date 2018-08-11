@@ -1,8 +1,8 @@
 class Kf5Knewstuff < Formula
   desc "Support for downloading application assets from the network"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/knewstuff-5.48.0.tar.xz"
-  sha256 "dbc192755ea9e94810bffb58469227f2569da99d5d9aff70b5fe61cccdec5a3c"
+  url "https://download.kde.org/stable/frameworks/5.49/knewstuff-5.49.0.tar.xz"
+  sha256 "b32eb46afc101771e9d50ed96aec3dc186e8fdb09c050ad2400fb39cbea00cee"
 
   head "git://anongit.kde.org/knewstuff.git"
 
@@ -32,6 +32,6 @@ class Kf5Knewstuff < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end

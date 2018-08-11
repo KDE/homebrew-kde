@@ -1,8 +1,8 @@
 class Kf5Kdesignerplugin < Formula
   desc "Integration of Frameworks widgets in Qt Designer/Creator"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kdesignerplugin-5.48.0.tar.xz"
-  sha256 "5450307bb9d0bc369022fd6f7519e419628f5c2bbd7cf266b821fa2b5fdf5ccf"
+  url "https://download.kde.org/stable/frameworks/5.49/kdesignerplugin-5.49.0.tar.xz"
+  sha256 "8d75b0fb2335ee220347c3327b012376cfc139c430474027e13b0b11c1b34442"
 
   head "git://anongit.kde.org/kdesignerplugin.git"
 
@@ -34,7 +34,7 @@ class Kf5Kdesignerplugin < Formula
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
 

@@ -1,7 +1,7 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  url "http://download.kde.org/stable/kmymoney/5.0.1/src/kmymoney-5.0.1.tar.xz"
+  url "https://download.kde.org/stable/kmymoney/5.0.1/src/kmymoney-5.0.1.tar.xz"
   sha256 "dd6e8fc22a48ddcb322565c8f385d6aa44d582cfcf6fe2ff3dc11fc0b6bd2ab1"
 
   revision 1
@@ -60,6 +60,6 @@ class Kmymoney < Formula
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --cellar)/kmymoney/5.0.1/bin/kmymoney.app" "$HOME/Applications/KDE/"
-    EOS
+  EOS
   end
 end

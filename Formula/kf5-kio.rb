@@ -1,8 +1,8 @@
 class Kf5Kio < Formula
   desc "Resource and network access abstraction"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.48/kio-5.48.0.tar.xz"
-  sha256 "40b9b04dc1e53a4e752e234c5dceee47b34aac521849a47b2bab45b7b81da02a"
+  url "https://download.kde.org/stable/frameworks/5.49/kio-5.49.0.tar.xz"
+  sha256 "f3089c1746dcd86d100b57a011e6f6fcbdf0622bad6f546e63048815de783a67"
 
   head "git://anongit.kde.org/kio.git"
 
@@ -41,6 +41,6 @@ class Kf5Kio < Formula
       ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-    EOS
+  EOS
   end
 end
