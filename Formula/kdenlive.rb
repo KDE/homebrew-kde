@@ -51,10 +51,9 @@ class Kdenlive < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-
-        ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
-        mkdir -pv "$HOME/Applications/KDE"
-        ln -sfv "$(brew --cellar)/kdenlive/18.04.3/bin/kdenlive.app" "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
 
     OTHER NOTES
     -----------
