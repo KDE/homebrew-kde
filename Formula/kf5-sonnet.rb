@@ -11,7 +11,7 @@ class Kf5Sonnet < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "hunspell" => :optional
+  conflicts_with "hunspell", :because => "fatal error: 'hunspell.hxx' file not found"
   depends_on "hspell" => :optional
   depends_on "aspell" => :optional
   depends_on "libvoikko" => :optional
