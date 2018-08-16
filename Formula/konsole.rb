@@ -11,6 +11,7 @@ class Konsole < Formula
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kpty"
 
