@@ -108,6 +108,8 @@ my %frameworks = (
 				'kio-extras'      	=> '',
 				'lokalize'      	=> '',
 				'poxml'      		=> '',
+				'kdenlive'			=> '',
+				'analitza'			=> '',
 				);
 
 my $brew_prefix = `brew --cache`;
