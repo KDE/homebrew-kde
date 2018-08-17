@@ -1,8 +1,8 @@
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/applications/18.04.3/src/okular-18.04.3.tar.xz"
-  sha256 "c51d6d4b007144a567f8a86b7b31409001f668b0b41d44fcd6e2e5c5f9c2554a"
+  url "https://download.kde.org/stable/applications/18.08.0/src/okular-18.08.0.tar.xz"
+  sha256 "f6a27b9b2707358dfed713458ed52cb1ac7dbc48ce3c06bfe04dd0b036809c87"
 
   head "git://anongit.kde.org/okular.git"
 
