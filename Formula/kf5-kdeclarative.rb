@@ -11,9 +11,9 @@ class Kf5Kdeclarative < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "libepoxy"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kpackage"
+  depends_on "libepoxy"
 
   patch :DATA
 

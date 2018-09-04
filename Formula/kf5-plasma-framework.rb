@@ -7,8 +7,8 @@ class Kf5PlasmaFramework < Formula
   head "git://anongit.kde.org/plasma-framework.git"
 
   depends_on "cmake" => :build
-  depends_on "gettext" => :build
   depends_on "doxygen" => :build
+  depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build

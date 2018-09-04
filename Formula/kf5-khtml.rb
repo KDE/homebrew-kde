@@ -10,13 +10,13 @@ class Kf5Khtml < Formula
   depends_on "gperf" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "openssl"
-  depends_on "jpeg"
   depends_on "giflib"
-  depends_on "libpng"
-  depends_on "zlib"
+  depends_on "jpeg"
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "libpng"
+  depends_on "openssl"
+  depends_on "zlib"
 
   def install
     args = std_cmake_args

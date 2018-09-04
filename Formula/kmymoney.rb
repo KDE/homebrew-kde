@@ -9,20 +9,20 @@ class Kmymoney < Formula
   head "git://anongit.kde.org/kmymoney.git"
 
   depends_on "cmake" => :build
+  depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "docbook-xsl" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kross" => :optional
-  depends_on "gpgme"
   depends_on "boost"
-  depends_on "libical"
-  depends_on "libofx"
+  depends_on "gpgme"
+  depends_on "KDE-mac/kde/kdiagram"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/libalkimia"
-  depends_on "KDE-mac/kde/kdiagram"
+  depends_on "libical"
+  depends_on "libofx"
+  depends_on "KDE-mac/kde/kf5-kross" => :optional
 
   def install
     args = std_cmake_args

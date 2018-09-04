@@ -11,9 +11,8 @@ class Kf5Knewstuff < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
-
   depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
 
   def install
     args = std_cmake_args

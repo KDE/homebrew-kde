@@ -8,19 +8,13 @@ class Kdevelop < Formula
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "boost" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
-  depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
-  depends_on "gdb" => :optional
-  depends_on "cppcheck" => :optional
-  depends_on "subversion" => :optional
   depends_on "cvs" => :build
   depends_on "gdb" => :build
-  depends_on "KDE-mac/kde/konsole" => :optional
-  depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
-  depends_on "KDE-mac/kde/konsole" => :optional
+  depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "cmake"
-  depends_on "llvm"
+  depends_on "KDE-mac/kde/grantlee5"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
@@ -28,8 +22,14 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
   depends_on "KDE-mac/kde/kf5-threadweaver"
-  depends_on "KDE-mac/kde/grantlee5"
   depends_on "KDE-mac/kde/libkomparediff2"
+  depends_on "llvm"
+  depends_on "cppcheck" => :optional
+  depends_on "gdb" => :optional
+  depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
+  depends_on "KDE-mac/kde/konsole" => :optional
+  depends_on "KDE-mac/kde/konsole" => :optional
+  depends_on "subversion" => :optional
 
   conflicts_with "KDE-mac/kde/kdevplatform", :because => "Now included in Kdevelop"
 

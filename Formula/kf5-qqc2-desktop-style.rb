@@ -9,10 +9,10 @@ class Kf5Qqc2DesktopStyle < Formula
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
-  depends_on "KDE-mac/kde/kf5-kirigami2" => :build
-  depends_on "KDE-mac/kde/kf5-kiconthemes" => :build
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build
+  depends_on "KDE-mac/kde/kf5-kiconthemes" => :build
+  depends_on "KDE-mac/kde/kf5-kirigami2" => :build
+  depends_on "qt"
 
   def install
     args = std_cmake_args

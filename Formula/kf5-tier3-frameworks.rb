@@ -6,7 +6,6 @@ class Kf5Tier3Frameworks < Formula
   version "5.45.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-  depends_on "KDE-mac/kde/kf5-tier2-frameworks" => :build
   depends_on "KDE-mac/kde/kf5-kbookmarks" => :build
   depends_on "KDE-mac/kde/kf5-kcmutils" => :build
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build
@@ -32,6 +31,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kxmlgui" => :build
   depends_on "KDE-mac/kde/kf5-kxmlrpcclient" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
+  depends_on "KDE-mac/kde/kf5-tier2-frameworks" => :build
 
   def install
     touch "empty"

@@ -12,14 +12,13 @@ class Kf5Kio < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "KDE-mac/kde/kio-extras" => :optional
-
   depends_on "desktop-file-utils"
-  depends_on "libxslt"
   depends_on "KDE-mac/kde/kf5-kbookmarks"
   depends_on "KDE-mac/kde/kf5-kjobwidgets"
   depends_on "KDE-mac/kde/kf5-kwallet"
   depends_on "KDE-mac/kde/kf5-solid"
+  depends_on "libxslt"
+  depends_on "KDE-mac/kde/kio-extras" => :optional
 
   def install
     args = std_cmake_args

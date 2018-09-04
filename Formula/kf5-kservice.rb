@@ -6,12 +6,12 @@ class Kf5Kservice < Formula
 
   head "git://anongit.kde.org/kservice.git"
 
-  depends_on "cmake" => :build
   depends_on "bison" => :build
-  depends_on "flex" => :build
+  depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
+  depends_on "flex" => :build
   depends_on "gettext" => :build
+  depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 

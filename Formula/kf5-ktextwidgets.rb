@@ -11,11 +11,11 @@ class Kf5Ktextwidgets < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
-  depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
   depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-sonnet"
+  depends_on "qt"
 
   def install
     args = std_cmake_args
