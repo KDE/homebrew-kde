@@ -3,6 +3,7 @@ class Okular < Formula
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/applications/18.08.0/src/okular-18.08.0.tar.xz"
   sha256 "f6a27b9b2707358dfed713458ed52cb1ac7dbc48ce3c06bfe04dd0b036809c87"
+  revision 1
 
   head "git://anongit.kde.org/okular.git"
 
@@ -10,17 +11,8 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "chmlib" => :optional
-  depends_on "ebook-tools" => :optional
-  depends_on "KDE-mac/kde/kf5-khtml" => :optional
-  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
-
-  depends_on "qca"
-  depends_on "zlib"
-  depends_on "freetype"
-  depends_on "libspectre"
   depends_on "djvulibre"
-  depends_on "poppler"
+  depends_on "freetype"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kjs"
@@ -28,11 +20,15 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-kpty"
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
+  depends_on "libspectre"
+  depends_on "poppler"
+  depends_on "qca"
+  depends_on "zlib"
+  depends_on "chmlib" => :optional
+  depends_on "ebook-tools" => :optional
+  depends_on "KDE-mac/kde/kf5-khtml" => :optional
+  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
 
-  patch do
-    url "https://raw.githubusercontent.com/RJVB/macstrop/master/kf5/kf5-okular/files/patch-plugin-depends.diff"
-    sha256 "33e5e0fa2a10fea2f11a1b975bfee3d87d80215aedb8013ea2d318818a250a46"
-  end
   patch :DATA
 
   def install
@@ -75,15 +71,15 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 7537220..5fef3d7 100644
+index d69765e6c..70d459684 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -190,7 +190,7 @@ generate_export_header(okularcore BASE_NAME okularcore EXPORT_FILE_NAME "${CMAKE
-
+@@ -261,7 +261,7 @@ endif()
+ 
  # Special handling for linking okularcore on OSX/Apple
  IF(APPLE)
 -    SET(OKULAR_IOKIT "-framework IOKit" CACHE STRING "Apple IOKit framework")
 +    SET(OKULAR_IOKIT "-framework CoreFoundation -framework CoreGraphics -framework IOKit" CACHE STRING "Apple IOKit framework")
  ENDIF(APPLE)
-
- target_link_libraries(okularcore
+ 
+ # Extra library needed by imported synctex code on Windows
