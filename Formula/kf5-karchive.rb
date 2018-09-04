@@ -11,9 +11,9 @@ class Kf5Karchive < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 
+  depends_on "bzip2"
   depends_on "qt"
   depends_on "zlib"
-  depends_on "bzip2"
 
   def install
     args = std_cmake_args

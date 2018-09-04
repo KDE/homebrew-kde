@@ -10,13 +10,13 @@ class Kf5Sonnet < Formula
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-
-  conflicts_with "hunspell", :because => "fatal error: 'hunspell.hxx' file not found"
-  depends_on "hspell" => :optional
+  depends_on "qt"
   depends_on "aspell" => :optional
+  depends_on "aspell" => :optional
+  depends_on "hspell" => :optional
   depends_on "libvoikko" => :optional
 
-  depends_on "qt"
+  conflicts_with "hunspell", :because => "fatal error: 'hunspell.hxx' file not found"
 
   patch :DATA
 

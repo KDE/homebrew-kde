@@ -6,10 +6,10 @@ class Kf5Solid < Formula
 
   head "git://anongit.kde.org/solid.git"
 
-  depends_on "cmake" => :build
   depends_on "bison" => :build
-  depends_on "flex" => :build
+  depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "flex" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
 

@@ -7,15 +7,15 @@ class Kf5Kdoctools < Formula
   head "git://anongit.kde.org/kdoctools.git"
 
   depends_on "cmake" => :build
-  depends_on "perl" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-ki18n" => :build
+  depends_on "perl" => :build
 
   depends_on "docbook-xsl"
+  depends_on "KDE-mac/kde/kf5-karchive"
   depends_on "libxml2"
   depends_on "libxslt"
-  depends_on "KDE-mac/kde/kf5-karchive"
 
   def install
     args = std_cmake_args

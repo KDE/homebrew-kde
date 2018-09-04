@@ -41,7 +41,7 @@ class Kdenlive < Formula
            "#{bin}/kdenlive.app/Contents/Info.plist"
 
     # Rename the .so files
-    mv "#{prefix}/lib/qt5/plugins/mltpreview.so", "#{prefix}/lib/qt5/plugins/mltpreview.dylib"
+    mv "#{lib}/qt5/plugins/mltpreview.so", "#{lib}/qt5/plugins/mltpreview.dylib"
   end
 
   def post_install

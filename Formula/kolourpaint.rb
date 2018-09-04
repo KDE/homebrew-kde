@@ -8,8 +8,8 @@ class Kolourpaint < Formula
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kdelibs4support"

@@ -6,7 +6,6 @@ class Kf5Tier2Frameworks < Formula
   version "5.45.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-  depends_on "KDE-mac/kde/kf5-tier1-frameworks" => :build
   depends_on "KDE-mac/kde/kf5-kactivities" => :build
   depends_on "KDE-mac/kde/kf5-kauth" => :build
   depends_on "KDE-mac/kde/kf5-kcompletion" => :build
@@ -17,8 +16,9 @@ class Kf5Tier2Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kjobwidgets" => :build
   depends_on "KDE-mac/kde/kf5-knotifications" => :build
   depends_on "KDE-mac/kde/kf5-kpackage" => :build
-  depends_on "KDE-mac/kde/kf5-kpty" => :build # the page say is not ready for macos, but build ok (?)
+  depends_on "KDE-mac/kde/kf5-kpty" => :build
   depends_on "KDE-mac/kde/kf5-kunitconversion" => :build
+  depends_on "KDE-mac/kde/kf5-tier1-frameworks" => :build # the page say is not ready for macos, but build ok (?)
 
   def install
     touch "empty"

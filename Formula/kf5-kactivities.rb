@@ -6,8 +6,8 @@ class Kf5Kactivities < Formula
 
   head "git://anongit.kde.org/kactivities.git"
 
-  depends_on "cmake" => :build
   depends_on "boost" => :build
+  depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

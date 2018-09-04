@@ -6,19 +6,19 @@ class Kf5Kwallet < Formula
 
   head "git://anongit.kde.org/kwallet.git"
 
-  depends_on "cmake" => :build
   depends_on "boost" => :build
+  depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "gettext" => :build
+  depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "libgcrypt"
   depends_on "gpgme"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
   depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "KDE-mac/kde/kf5-kservice"
+  depends_on "libgcrypt"
 
   patch :DATA
 

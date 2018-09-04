@@ -6,9 +6,9 @@ class Kf5Kapidox < Formula
 
   head "git://anongit.kde.org/kapidox.git"
 
-  depends_on "qt" => :build
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "qt" => :build
 
   def install
     args = std_cmake_args

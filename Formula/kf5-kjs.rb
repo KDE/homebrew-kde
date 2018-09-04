@@ -10,8 +10,8 @@ class Kf5Kjs < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
 
-  depends_on "qt"
   depends_on "pcre"
+  depends_on "qt"
 
   def install
     args = std_cmake_args

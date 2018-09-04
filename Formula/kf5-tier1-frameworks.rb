@@ -23,11 +23,11 @@ class Kf5Tier1Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kitemmodels" => :build
   depends_on "KDE-mac/kde/kf5-kitemviews" => :build
   depends_on "KDE-mac/kde/kf5-kplotting" => :build
-  depends_on "KDE-mac/kde/kf5-syntax-highlighting" => :build
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons" => :build
   depends_on "KDE-mac/kde/kf5-kwindowsystem" => :build
   depends_on "KDE-mac/kde/kf5-solid" => :build
   depends_on "KDE-mac/kde/kf5-sonnet" => :build
+  depends_on "KDE-mac/kde/kf5-syntax-highlighting" => :build
   depends_on "KDE-mac/kde/kf5-threadweaver" => :build
 
   def install

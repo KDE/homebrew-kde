@@ -7,17 +7,17 @@ class Kf5Kdelibs4support < Formula
   head "git://anongit.kde.org/kdelibs4support.git"
 
   depends_on "cmake" => :build
-  depends_on "perl" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "perl" => :build
 
-  depends_on "openssl"
   depends_on "KDE-mac/kde/kf5-kded"
   depends_on "KDE-mac/kde/kf5-kemoticons"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kunitconversion"
+  depends_on "openssl"
 
   patch :DATA
 

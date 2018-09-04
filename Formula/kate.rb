@@ -11,14 +11,13 @@ class Kate < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
 
-  depends_on "KDE-mac/kde/konsole" => [:optional]
-
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
   depends_on "KDE-mac/kde/kf5-threadweaver"
+  depends_on "KDE-mac/kde/konsole" => [:optional]
 
   def install
     args = std_cmake_args

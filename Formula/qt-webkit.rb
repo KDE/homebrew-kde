@@ -20,15 +20,15 @@ class QtWebkit < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gperf" => :build
   depends_on "fontconfig" => :build
   depends_on "freetype" => :build
+  depends_on "gperf" => :build
   depends_on "sqlite" => :build
 
-  depends_on "qt"
-  depends_on "zlib"
-  depends_on "webp"
   depends_on "libxslt"
+  depends_on "qt"
+  depends_on "webp"
+  depends_on "zlib"
 
   def cmake_args
     args = %W[
