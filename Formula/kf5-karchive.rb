@@ -1,8 +1,8 @@
 class Kf5Karchive < Formula
   desc "Qt 5 addon providing access to numerous types of archives"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.49/karchive-5.49.0.tar.xz"
-  sha256 "c0d6df96d86d2a8f21e3c3f67200755eabd5a86efc3d72b56f522fa11ae62fdc"
+  url "https://download.kde.org/stable/frameworks/5.50/karchive-5.50.0.tar.xz"
+  sha256 "5420a1d94f699415aa3587ca44f631be62c7c8bcac5a813dd70099d7b66701ca"
 
   head "git://anongit.kde.org/karchive.git"
 

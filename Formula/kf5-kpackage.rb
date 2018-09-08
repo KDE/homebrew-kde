@@ -1,8 +1,8 @@
 class Kf5Kpackage < Formula
   desc "Lets applications manage user installable packages"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.49/kpackage-5.49.0.tar.xz"
-  sha256 "8d4dab6fd11b4e565e38590a9d8f98f85b26814eb56808de43ce3db23a976ef5"
+  url "https://download.kde.org/stable/frameworks/5.50/kpackage-5.50.0.tar.xz"
+  sha256 "17496b33814b237f2a5f40f56cc6b3d33d0575ce90d693f44828d542e587a12f"
 
   head "git://anongit.kde.org/kpackage.git"
 

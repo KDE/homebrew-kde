@@ -1,8 +1,8 @@
 class Kf5Solid < Formula
   desc "Hardware integration and detection"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.49/solid-5.49.0.tar.xz"
-  sha256 "f70dc2006d84f1eb342ec9d5827977d2fb1f19edfcdc7f5807a220275c6df9dc"
+  url "https://download.kde.org/stable/frameworks/5.50/solid-5.50.0.tar.xz"
+  sha256 "107ce376baa5c15ee2c218ad35febe7d6e99e9ac35d4b5f184c4618a2e651af9"
 
   head "git://anongit.kde.org/solid.git"
 

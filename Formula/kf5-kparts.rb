@@ -1,8 +1,8 @@
 class Kf5Kparts < Formula
   desc "Document centric plugin system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.49/kparts-5.49.0.tar.xz"
-  sha256 "53c87663828613d6d64a5a5cdd0c9f2f388ff8191df903c07a4b3f20fd02bf7d"
+  url "https://download.kde.org/stable/frameworks/5.50/kparts-5.50.0.tar.xz"
+  sha256 "41a05e792c844c75d6c9885a64fefe88a8d1df18f4bd963d904369e0fd058aff"
 
   head "git://anongit.kde.org/kparts.git"
 

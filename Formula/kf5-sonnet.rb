@@ -1,8 +1,8 @@
 class Kf5Sonnet < Formula
   desc "Spelling framework for Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.49/sonnet-5.49.0.tar.xz"
-  sha256 "63053a671a8dc7a2a97cd49fe915e02e4b37fe41a06f3cd8785a7218d4acb754"
+  url "https://download.kde.org/stable/frameworks/5.50/sonnet-5.50.0.tar.xz"
+  sha256 "0dd49f3d64f97981781c385f4c6c5488ba0e64688435d50b78d8db9d68b9ad8d"
 
   head "git://anongit.kde.org/sonnet.git"
 
