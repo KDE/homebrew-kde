@@ -4,9 +4,11 @@ class QtWebkit < Formula
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
 
-  revision 1
+  revision 2
 
   head "https://github.com/qt/qtwebkit.git"
+
+  patch :DATA
 
   patch do
     # Fix null point dereference (Fedora) https://github.com/annulen/webkit/issues/573
@@ -59,3 +61,18 @@ class QtWebkit < Formula
     end
   end
 end
+
+__END__
+--- a/Source/WTF/wtf/spi/darwin/XPCSPI.h 2017-06-17 13:46:54.000000000 +0300
++++ b/Source/WTF/wtf/spi/darwin/XPCSPI.h 2018-09-08 23:41:06.397523110 +0300
+@@ -89,10 +89,6 @@
+ EXTERN_C const struct _xpc_type_s _xpc_type_string;
+
+ EXTERN_C xpc_object_t xpc_array_create(const xpc_object_t*, size_t count);
+-#if COMPILER_SUPPORTS(BLOCKS)
+-EXTERN_C bool xpc_array_apply(xpc_object_t, xpc_array_applier_t);
+-EXTERN_C bool xpc_dictionary_apply(xpc_object_t xdict, xpc_dictionary_applier_t applier);
+-#endif
+ EXTERN_C size_t xpc_array_get_count(xpc_object_t);
+ EXTERN_C const char* xpc_array_get_string(xpc_object_t, size_t index);
+ EXTERN_C void xpc_array_set_string(xpc_object_t, size_t index, const char* string);
