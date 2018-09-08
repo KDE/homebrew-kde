@@ -23,7 +23,7 @@ ln -sfv "$(brew --prefix)/share/emoticons" "$HOME/Library/Application Support"
 # kf5-kparts
 ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
 # kf5-kdelibs4support
-ln -sfv "$(brew --cellar)/kf5-kdelibs4support/5.49.0/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
+ln -sfv "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
 # dolphin
 ln -sfv "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "$HOME/Applications/KDE/"
 # kate

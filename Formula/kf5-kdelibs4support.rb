@@ -50,7 +50,7 @@ class Kf5Kdelibs4support < Formula
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --cellar)/kf5-kdelibs4support/5.49.0/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
   EOS
   end
 end
