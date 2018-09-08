@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version   = "5.50";
-my $applications_version = "18.08.0";
+my $applications_version = "18.08.1";
 
 my %frameworks = (
 
@@ -112,13 +112,9 @@ my %frameworks = (
 				'analitza'			=> '',
 				);
 
-my $brew_prefix = `brew --cache`;
-
-if ( $? != 0 ) {
-	die "Unable to call brew -cache: $!";
-}
-
-chomp($brew_prefix);
+my $tmp_dir = '/tmp/kde';
+mkdir "${tmp_dir}";
+chomp($tmp_dir);
 
 sub update_frameworks {
 	for my $package ( keys %frameworks ) {
@@ -139,7 +135,7 @@ sub update_frameworks {
 			return;
 		}
 
-		my $cached_file = "$brew_prefix/kf5-$package$upstream_suffix";
+		my $cached_file = "$tmp_dir/kf5-$package$upstream_suffix";
 
 		download_and_update( $formula, $package_upstream_url, $cached_file );
 	}
@@ -159,7 +155,7 @@ sub update_applications {
 
 		my $formula              = "Formula/$package.rb";
 		my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
-		my $cached_file          = "$brew_prefix/$package$upstream_suffix";
+		my $cached_file          = "$tmp_dir/$package$upstream_suffix";
 		download_and_update( $formula, $package_upstream_url, $cached_file );
 	}
 }

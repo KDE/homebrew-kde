@@ -1,8 +1,8 @@
 class Kolourpaint < Formula
   desc "Paint Program"
   homepage "https://kde.org/applications/graphics/kolourpaint/"
-  url "https://download.kde.org/stable/applications/18.08.0/src/kolourpaint-18.08.0.tar.xz"
-  sha256 "f1e2e5d0bb1086037517c691c6bfb1159c7dd9ef86eccadba29485a810eb085c"
+  url "https://download.kde.org/stable/applications/18.08.1/src/kolourpaint-18.08.1.tar.xz"
+  sha256 "9596f6298ed6782b1fd76b0941d9977785ab576a49e738113600d01950fa3b80"
 
   head "git://anongit.kde.org/kolourpaint.git"
 
