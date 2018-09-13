@@ -13,6 +13,7 @@ class Kf5Kdnssd < Formula
 
   depends_on "qt"
 
+  # upstream: https://phabricator.kde.org/D15479
   patch :DATA
 
   def install
