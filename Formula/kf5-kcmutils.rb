@@ -1,8 +1,8 @@
 class Kf5Kcmutils < Formula
   desc "Utilities for interacting with KCModules"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.50/kcmutils-5.50.0.tar.xz"
-  sha256 "d70e08568a16cb294fae094383afdd4565f2fc39d8020fb347d35807c4453fe1"
+  url "https://download.kde.org/stable/frameworks/5.51/kcmutils-5.51.0.tar.xz"
+  sha256 "c838d4671e87314897da62c62d3663d97e38ecb560fd5bf922a5806f7d611305"
 
   head "git://anongit.kde.org/kcmutils.git"
 

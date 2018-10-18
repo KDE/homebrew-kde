@@ -1,8 +1,8 @@
 class Kf5Kcompletion < Formula
   desc "Text completion helpers and widgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.50/kcompletion-5.50.0.tar.xz"
-  sha256 "5fe538fc18c57f167cac95262f75d4c638b16408c0e9cc3250c6c12be6cc0ed8"
+  url "https://download.kde.org/stable/frameworks/5.51/kcompletion-5.51.0.tar.xz"
+  sha256 "f30f23a75498d41abf262dd3fab5cebb0ceea5353d57ad5113ccc2e1bb5ea6aa"
 
   head "git://anongit.kde.org/kcompletion.git"
 

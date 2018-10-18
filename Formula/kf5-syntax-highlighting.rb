@@ -1,8 +1,8 @@
 class Kf5SyntaxHighlighting < Formula
   desc "Syntax highlighting engine for structured text and code"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.50/syntax-highlighting-5.50.0.tar.xz"
-  sha256 "a4d58e7b65a35e9ee4b6dae7422c530730a590efa905e49e2456ef87a1433c82"
+  url "https://download.kde.org/stable/frameworks/5.51/syntax-highlighting-5.51.0.tar.xz"
+  sha256 "47a36d7976b8332dd23992a558a5e0953e428d2b4f8429ab4d480cd14ba90d52"
 
   head "git://anongit.kde.org/syntax-highlighting.git"
 

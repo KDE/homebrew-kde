@@ -1,8 +1,8 @@
 class Kf5Kdnssd < Formula
   desc "Abstraction to system DNSSD features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.50/kdnssd-5.50.0.tar.xz"
-  sha256 "f19a11caa211f577addcee51c17ae888b84ede7a8a40506b7dabed5a80f0a215"
+  url "https://download.kde.org/stable/frameworks/5.51/kdnssd-5.51.0.tar.xz"
+  sha256 "14f81cd8318ab6c853eccc56c1d49ff575c30d9117e38f3f9f14a86438bd7d2e"
 
   head "git://anongit.kde.org/kdnssd.git"
 
