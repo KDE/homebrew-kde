@@ -1,8 +1,8 @@
 class KioExtras < Formula
   desc "Additional components to increase the functionality of KIO"
   homepage "https://www.kde.org/applications/internet/"
-  url "https://download.kde.org/stable/applications/18.08.2/src/kio-extras-18.08.2.tar.xz"
-  sha256 "25e89675d9036bc0740f91e44c0a912e9a06247753ab5081740f67e3616044b3"
+  url "https://download.kde.org/stable/applications/18.08.3/src/kio-extras-18.08.3.tar.xz"
+  sha256 "450d69b16a873da51190c9397b2b0ecb08bc0dcae0d2a07f7ab1d2efcd02c280"
 
   head "git://anongit.kde.org/kio-extras.git"
 
