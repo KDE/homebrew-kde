@@ -15,6 +15,11 @@ class Kf5Kglobalaccel < Formula
   depends_on "KDE-mac/kde/kf5-kcrash"
   depends_on "KDE-mac/kde/kf5-kdbusaddons"
 
+  patch do
+    url "https://phabricator.kde.org/file/data/6d2wlflmwz5uzmaiiic4/PHID-FILE-5vestnis7wlktirlka5w/D16801.diff"
+    sha256 "41f89a161aee93e235889568536b8c834e260f556a4aa537be997edf8818fe53"
+  end
+
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
