@@ -1,8 +1,8 @@
 class Kf5Kdbusaddons < Formula
   desc "Addons to QtDBus"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.51/kdbusaddons-5.51.0.tar.xz"
-  sha256 "6b8e86ef5e5060ce4475a6e3a24f5860ff1b18be8340ba9348828fc86093a4c4"
+  url "https://download.kde.org/stable/frameworks/5.52/kdbusaddons-5.52.0.tar.xz"
+  sha256 "d757340e5727b6437dad5cdb5cbe51fe6d96c814c44279b774fe56e2b66e7db9"
 
   head "git://anongit.kde.org/kdbusaddons.git"
 

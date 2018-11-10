@@ -1,8 +1,8 @@
 class Kf5Kcrash < Formula
   desc "Support for application crash analysis and bug report from apps"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.51/kcrash-5.51.0.tar.xz"
-  sha256 "621ca1be4958b299ddd44ddbf130999cf23aafc1193d0fbfa4ec06ab1682d7f9"
+  url "https://download.kde.org/stable/frameworks/5.52/kcrash-5.52.0.tar.xz"
+  sha256 "2b5cd37d67edaba93a9fd90f12889c57bb83c178c58e1635b6204b8e742f9481"
 
   head "git://anongit.kde.org/kcrash.git"
 

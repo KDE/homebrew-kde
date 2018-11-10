@@ -1,8 +1,8 @@
 class Kf5Kimageformats < Formula
   desc "Image format plugins for Qt5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.51/kimageformats-5.51.0.tar.xz"
-  sha256 "3f053d777397b42403374eb815100c74c5195673907172b6c487af648fd73dbc"
+  url "https://download.kde.org/stable/frameworks/5.52/kimageformats-5.52.0.tar.xz"
+  sha256 "cfd0a93ebd846fe246788ad91973c233e3e16f5cf9b9e0e094c76490f021abb2"
 
   head "git://anongit.kde.org/kimageformats.git"
 

@@ -1,8 +1,8 @@
 class Kf5Kguiaddons < Formula
   desc "Addons to QtGui"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.51/kguiaddons-5.51.0.tar.xz"
-  sha256 "2e09e9c872b5f7c5a8eb2c3bae9ceadebd9fc3028c9be4c8bac126d875580ddd"
+  url "https://download.kde.org/stable/frameworks/5.52/kguiaddons-5.52.0.tar.xz"
+  sha256 "6bda17a5252a627607a1110510676435772dcf27e2ca8486b7e5a1a56844c254"
 
   head "git://anongit.kde.org/kguiaddons.git"
 
