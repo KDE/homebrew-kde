@@ -15,10 +15,7 @@ class Kf5Kglobalaccel < Formula
   depends_on "KDE-mac/kde/kf5-kcrash"
   depends_on "KDE-mac/kde/kf5-kdbusaddons"
 
-  patch do
-    url "https://phabricator.kde.org/file/data/6d2wlflmwz5uzmaiiic4/PHID-FILE-5vestnis7wlktirlka5w/D16801.diff"
-    sha256 "41f89a161aee93e235889568536b8c834e260f556a4aa537be997edf8818fe53"
-  end
+  patch :DATA
 
   def install
     args = std_cmake_args
@@ -40,3 +37,14 @@ class Kf5Kglobalaccel < Formula
   EOS
   end
 end
+
+__END__
+diff --git a/src/runtime/plugins/CMakeLists.txt b/src/runtime/plugins/CMakeLists.txt
+--- a/src/runtime/plugins/CMakeLists.txt
++++ b/src/runtime/plugins/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-if (${XCB_XCB_FOUND} AND ${XCB_KEYSYMS_FOUND} AND ${XCB_XKB_FOUND})
++if (XCB_XCB_FOUND AND XCB_KEYSYMS_FOUND AND XCB_XKB_FOUND)
+     add_subdirectory(xcb)
+ endif()
+ # if (APPLE)
