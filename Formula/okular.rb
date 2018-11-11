@@ -20,7 +20,7 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
   depends_on "libspectre"
-  depends_on "poppler"
+  depends_on "poppler" => "--with-qt"
   depends_on "qca"
   depends_on "zlib"
   depends_on "chmlib" => :optional
