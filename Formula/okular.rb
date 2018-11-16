@@ -50,6 +50,7 @@ class Okular < Formula
   end
 
   def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/okular"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/okular/icontheme.rcc"
   end
 
