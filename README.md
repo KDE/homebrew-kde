@@ -12,6 +12,7 @@ brew tap kde-mac/kde
 ```
 
 In order to build them, you first need to do one manuall step that setup all things in order to work-around brew sandbox limitations
+
 ```sh
 "$(brew --repo)/Library/Taps/kde-mac/homebrew-kde/tools/all-fixes.sh"
 ```
@@ -32,7 +33,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-`brew --prefix`/Homebrew/Library/Taps/kde-mac/homebrew-kde/tools/install.sh
+"$(brew --repo)/Library/Taps/kde-mac/homebrew-kde/tools/install.sh"
 ```
 
 Note that *install.sh* passes all parameters on to brew, so you can specify
