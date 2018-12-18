@@ -1,8 +1,8 @@
 class Kf5Kwindowsystem < Formula
   desc "Access to the windowing system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.52/kwindowsystem-5.52.0.tar.xz"
-  sha256 "fd7adee58e803732cda7ea1ba1d99f6750920a774945293174e0512254bdaeab"
+  url "https://download.kde.org/stable/frameworks/5.53/kwindowsystem-5.53.0.tar.xz"
+  sha256 "9fb2009a1915167e243d4182a5cf8932bfe416b31a2f13f06256f3e1eb5809fd"
 
   head "git://anongit.kde.org/kwindowsystem.git"
 

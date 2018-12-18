@@ -8,6 +8,16 @@ class QtWebkit < Formula
 
   head "https://github.com/qt/qtwebkit.git"
 
+  depends_on "cmake" => :build
+  depends_on "fontconfig" => :build
+  depends_on "freetype" => :build
+  depends_on "gperf" => :build
+  depends_on "sqlite" => :build
+  depends_on "libxslt"
+  depends_on "qt"
+  depends_on "webp"
+  depends_on "zlib"
+
   patch :DATA
 
   patch do
@@ -20,17 +30,6 @@ class QtWebkit < Formula
     url "https://github.com/annulen/webkit/commit/f51554bf104ab0491370f66631fe46143a23d5c2.diff?full_index=1"
     sha256 "874b56c30cdc43627f94d999083f0617c4bfbcae4594fe1a6fc302bf39ad6c30"
   end
-
-  depends_on "cmake" => :build
-  depends_on "fontconfig" => :build
-  depends_on "freetype" => :build
-  depends_on "gperf" => :build
-  depends_on "sqlite" => :build
-
-  depends_on "libxslt"
-  depends_on "qt"
-  depends_on "webp"
-  depends_on "zlib"
 
   def cmake_args
     args = %W[

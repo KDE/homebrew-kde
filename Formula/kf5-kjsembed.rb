@@ -1,8 +1,8 @@
 class Kf5Kjsembed < Formula
   desc "Embedded JS"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.52/portingAids/kjsembed-5.52.0.tar.xz"
-  sha256 "cefff15d12331338cedd64386c67a6c924b6a233475b14e0bd22e71b29586813"
+  url "https://download.kde.org/stable/frameworks/5.53/portingAids/kjsembed-5.53.0.tar.xz"
+  sha256 "d90c68121cc90e7eba276a74acefb72f4f197719c485d95fe23a418e8ffd7248"
 
   head "git://anongit.kde.org/kjsembed.git"
 

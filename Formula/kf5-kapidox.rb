@@ -1,8 +1,8 @@
 class Kf5Kapidox < Formula
   desc "Frameworks API Documentation Tools"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.52/kapidox-5.52.0.tar.xz"
-  sha256 "a83ec6ca3be9a9e4cc9e7dead919a2936c2c471fc288f0496635432724611ef6"
+  url "https://download.kde.org/stable/frameworks/5.53/kapidox-5.53.0.tar.xz"
+  sha256 "8a25d63d23bd3424793edcc8189c4889e882c0393c394c338bd460a60bc5daea"
 
   head "git://anongit.kde.org/kapidox.git"
 
