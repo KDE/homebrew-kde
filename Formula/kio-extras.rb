@@ -67,3 +67,17 @@ index c0272256..5d6712c1 100644
 -update_xdg_mimetypes( ${XDG_MIME_INSTALL_DIR} )
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes( ${XDG_MIME_INSTALL_DIR} )
+
+diff --git a/mtp/kiod_module/mtpstorage.cpp b/mtp/kiod_module/mtpstorage.cpp
+index 4b5dfc5..30a72ab 100644
+--- a/mtp/kiod_module/mtpstorage.cpp
++++ b/mtp/kiod_module/mtpstorage.cpp
+@@ -545,7 +545,7 @@ int MTPStorage::sendFileFromFileDescriptor(const QDBusUnixFileDescriptor &descri
+         int result = 1;
+         QT_STATBUF srcBuf;
+         if (QT_FSTAT(descriptor.fileDescriptor(), &srcBuf) != -1) {
+-            const QDateTime lastModified = QDateTime::fromSecsSinceEpoch(srcBuf.st_mtim.tv_sec);
++            const QDateTime lastModified = QDateTime::fromSecsSinceEpoch(srcBuf.st_mtime);
+
+             LIBMTP_file_t *file = LIBMTP_new_file_t();
+             file->parent_id = parentId;
