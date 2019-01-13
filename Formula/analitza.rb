@@ -1,8 +1,8 @@
 class Analitza < Formula
   desc "Library to add mathematical features to your program"
   homepage "https://edu.kde.org/"
-  url "https://download.kde.org/stable/applications/18.12.0/src/analitza-18.12.0.tar.xz"
-  sha256 "2e3c78589e7d6054c2e98445b502c68c877f208a122b953506ec09cc92f9113d"
+  url "https://download.kde.org/stable/applications/18.12.1/src/analitza-18.12.1.tar.xz"
+  sha256 "7b060607324c873f2096038a126a1535c23dab2f62a8db6811541889599f9447"
 
   head "git://anongit.kde.org/analitza.git"
 

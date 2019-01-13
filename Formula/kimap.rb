@@ -1,8 +1,8 @@
 class Kimap < Formula
   desc "Job-based API for interacting with IMAP servers"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/applications/18.12.0/src/kimap-18.12.0.tar.xz"
-  sha256 "a59a5496d6d9f99bd27ca388c57ab9215465c04ec477ab708c849b6946d3a612"
+  url "https://download.kde.org/stable/applications/18.12.1/src/kimap-18.12.1.tar.xz"
+  sha256 "d53ee58a575b7cb4d1bf204e90d8b120faa5d9458fe2bd3507bd937c436a38ec"
 
   head "git://anongit.kde.org/kimap.git"
 
