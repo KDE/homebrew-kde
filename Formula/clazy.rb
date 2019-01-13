@@ -1,9 +1,8 @@
 class Clazy < Formula
   desc "Qt oriented code checker based on clang framework"
   homepage "https://github.com/KDE/clazy"
-  url "https://download.kde.org/stable/clazy/1.2/src/clazy-1.2.tar.xz"
-  sha256 "c68fed3d719c23ffefeedd88a02984bf37dba6a55dad6359786909a9e5778f91"
-  revision 1
+  url "https://download.kde.org/stable/clazy/1.4/src/clazy-1.4.tar.xz"
+  sha256 "3f5d5e148c9e9c4e43f095796261794da5385578d2375b12c9179d340d6d5a8a"
 
   head "git://anongit.kde.org/clazy.git"
 
