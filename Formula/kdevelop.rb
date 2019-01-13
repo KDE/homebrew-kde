@@ -1,9 +1,8 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.2.3/src/kdevelop-5.2.3.tar.xz"
-  sha256 "209cf2ac52716d396dc10f408121f437876086d016d519a31b31566655912a75"
-  revision 1
+  url "https://download.kde.org/stable/kdevelop/5.3.1/src/kdevelop-5.3.1.tar.xz"
+  sha256 "d919274f7522ff974bc650f282ae3e640fc3fa9e406c0dd12986aa8b8fca2881"
 
   head "git://anongit.kde.org/kdevelop.git"
 
@@ -27,7 +26,6 @@ class Kdevelop < Formula
   depends_on "cppcheck" => :optional
   depends_on "gdb" => :optional
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
-  depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "subversion" => :optional
 
