@@ -1,8 +1,8 @@
 class Kf5Kdewebkit < Formula
   desc "KDE Integration for QtWebKit"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.53/kdewebkit-5.53.0.tar.xz"
-  sha256 "c27905942807c418ff7d7a231f55137fbbd0b551391023e9dc6232936941abf4"
+  url "https://download.kde.org/stable/frameworks/5.54/kdewebkit-5.54.0.tar.xz"
+  sha256 "0e5a09c820c4c53f68a3ba882b78389052809fc768bbf3203edb2215ca49345f"
 
   head "git://anongit.kde.org/kdewebkit.git"
 

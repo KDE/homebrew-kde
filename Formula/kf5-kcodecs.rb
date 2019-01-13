@@ -1,8 +1,8 @@
 class Kf5Kcodecs < Formula
   desc "Collection of methods to manipulate strings"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.53/kcodecs-5.53.0.tar.xz"
-  sha256 "7a939fbe83df5911103c12f94cc0039ee97f6e8e1b655378debb05ce26a6b172"
+  url "https://download.kde.org/stable/frameworks/5.54/kcodecs-5.54.0.tar.xz"
+  sha256 "4c4f59936999c824273b030ef4d0dc9faef5c3e26dbbbb1427232e7750f013e8"
 
   head "git://anongit.kde.org/kcodecs.git"
 
