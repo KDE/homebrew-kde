@@ -110,6 +110,7 @@ my %frameworks = (
 				'poxml'      		=> '',
 				'kdenlive'			=> '',
 				'analitza'			=> '',
+				'kcalc'				=> '',
 				);
 
 my $tmp_dir = '/tmp/kde';
