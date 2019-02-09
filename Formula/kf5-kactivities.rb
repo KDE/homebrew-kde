@@ -34,18 +34,6 @@ class Kf5Kactivities < Formula
 end
 
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a871ecc..d33094b 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -36,6 +36,7 @@ include (KDECompilerSettings NO_POLICY_SCOPE)
- include (GenerateExportHeader)
- include (ECMGenerateHeaders)
- include (ECMAddQch)
-+include (ECMMarkNonGuiExecutable)
- 
- option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
- add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 diff --git a/src/cli/CMakeLists.txt b/src/cli/CMakeLists.txt
 index d0e13be..479031b 100644
 --- a/src/cli/CMakeLists.txt
