@@ -1,8 +1,8 @@
 class Kdenlive < Formula
   desc "Video editor"
   homepage "https://www.kdenlive.org/"
-  url "https://download.kde.org/stable/applications/18.12.1/src/kdenlive-18.12.1.tar.xz"
-  sha256 "4e2e513a6a71597e784add11133f51d0f0a96b05b0061f9bee6aba4ab10637a1"
+  url "https://download.kde.org/stable/applications/18.12.2/src/kdenlive-18.12.2.tar.xz"
+  sha256 "47675eca0af26b4716aa587612f05364b6e49da47eb42e9f19d2fbd8aa236d16"
 
   head "git://anongit.kde.org/kdenlive.git"
 
