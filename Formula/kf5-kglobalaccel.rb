@@ -1,8 +1,8 @@
 class Kf5Kglobalaccel < Formula
   desc "Add support for global workspace shortcuts"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.54/kglobalaccel-5.54.0.tar.xz"
-  sha256 "41070d9909de17efeb95b5c0dc2bf52d9dded09ff4c5ca44891ad8c0f245f481"
+  url "https://download.kde.org/stable/frameworks/5.55/kglobalaccel-5.55.0.tar.xz"
+  sha256 "e4c31aa5abb56be283691b7e7d08498b8cec85d960d760c9a188af2dcdedcdb0"
   head "git://anongit.kde.org/kglobalaccel.git"
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Kf5Kpeople < Formula
   desc "Provides access to all contacts and the people"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.54/kpeople-5.54.0.tar.xz"
-  sha256 "1d86fcfaa1dc0f232fd851e3005753be45f82c95db55b4d9676f277e24e3886a"
+  url "https://download.kde.org/stable/frameworks/5.55/kpeople-5.55.0.tar.xz"
+  sha256 "05a1e931eaac6aadcb8cb6d87e217c207af3149373e1bee8048e3c1228896f6d"
 
   head "git://anongit.kde.org/kpeople.git"
 
