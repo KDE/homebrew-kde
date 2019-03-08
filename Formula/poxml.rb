@@ -1,8 +1,8 @@
 class Poxml < Formula
   desc "Translates DocBook XML files using gettext po files"
   homepage "https://www.kde.org/applications/development/"
-  url "https://download.kde.org/stable/applications/18.12.2/src/poxml-18.12.2.tar.xz"
-  sha256 "e9a058a7420a6081b37c723e4972fe687b8e2f9a82a34c8621cb859b584da752"
+  url "https://download.kde.org/stable/applications/18.12.3/src/poxml-18.12.3.tar.xz"
+  sha256 "6714e371957d175b859894149a3791acb3b8ef62b653b7b09f34819e92c8eaf7"
   head "git://anongit.kde.org/poxml.git"
 
   depends_on "cmake" => :build
