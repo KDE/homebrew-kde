@@ -1,8 +1,8 @@
 class Kf5Kjs < Formula
   desc "Support for JS scripting in applications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.55/portingAids/kjs-5.55.0.tar.xz"
-  sha256 "0c9c9bf3e91a416f2dc5f651ed77efe9e9c445e0574af60fdf121cfb74f73c30"
+  url "https://download.kde.org/stable/frameworks/5.56/portingAids/kjs-5.56.0.tar.xz"
+  sha256 "963e452ff3aa18ddc858fbfdcf234bdc97576b9496b871f742d90177a33974ac"
 
   head "git://anongit.kde.org/kjs.git"
 

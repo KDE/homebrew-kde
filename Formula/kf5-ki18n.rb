@@ -1,8 +1,8 @@
 class Kf5Ki18n < Formula
   desc "Advanced internationalization framework"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.55/ki18n-5.55.0.tar.xz"
-  sha256 "22fdd19fe805467b15abc977143d951acaa5026a0b2de7b972c9af15f1977c4f"
+  url "https://download.kde.org/stable/frameworks/5.56/ki18n-5.56.0.tar.xz"
+  sha256 "b885bcde4cdf700ecbd8487c52ced453de67c44dac014b53b4eefbba5353ae41"
 
   head "git://anongit.kde.org/ki18n.git"
 

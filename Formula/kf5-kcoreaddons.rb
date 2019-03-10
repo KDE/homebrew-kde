@@ -1,8 +1,8 @@
 class Kf5Kcoreaddons < Formula
   desc "Addons to QtCore"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.55/kcoreaddons-5.55.0.tar.xz"
-  sha256 "3cd840b3f308b4529012d16aeee05494b5e55c938b6ad7f6580d4d055d61ebc8"
+  url "https://download.kde.org/stable/frameworks/5.56/kcoreaddons-5.56.0.tar.xz"
+  sha256 "9f41039f1bd453087ff784e9e95d4f09624ff893fe0298d3c986a6a554b37b9e"
 
   head "git://anongit.kde.org/kcoreaddons.git"
 
