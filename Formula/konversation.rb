@@ -3,13 +3,14 @@ class Konversation < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/konversation/1.7.5/src/konversation-1.7.5.tar.xz"
   sha256 "60bf7533062b5fc63a37105461b4776437f4e24859e8ddaed1d48c4ba1470940"
-  revision 1
+  revision 2
 
   head "git://anongit.kde.org/konversation.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kemoticons"
@@ -29,8 +30,9 @@ class Konversation < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

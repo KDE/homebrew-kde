@@ -3,12 +3,13 @@ class KdevelopPgQt < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop-pg-qt/2.1.0/src/kdevelop-pg-qt-2.1.0.tar.xz"
   sha256 "20d84d25bd40610bd6c0964e4fe0642e56c41b76a65575122dc5196649621e5d"
-  revision 1
+  revision 2
 
   head "git://anongit.kde.org/kdevelop-pg-qt.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "qt"
 
@@ -19,8 +20,9 @@ class KdevelopPgQt < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

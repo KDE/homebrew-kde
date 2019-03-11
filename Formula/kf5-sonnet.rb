@@ -4,12 +4,13 @@ class Kf5Sonnet < Formula
   url "https://download.kde.org/stable/frameworks/5.56/sonnet-5.56.0.tar.xz"
   sha256 "3c6539eb6e50a01ec0a823dd21ba8a49e1b9fb709cf91c25d95be6a48ed30b65"
 
+  revision 1
   head "git://anongit.kde.org/sonnet.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
   depends_on "qt"
   depends_on "aspell" => :optional
   depends_on "aspell" => :optional
@@ -28,8 +29,9 @@ class Kf5Sonnet < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

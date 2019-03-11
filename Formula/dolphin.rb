@@ -4,11 +4,12 @@ class Dolphin < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/dolphin-18.12.3.tar.xz"
   sha256 "c4921759bdfec9a96201a5d76a67869f867ec7e3caf92f8e46fa5d853a0741b1"
 
+  revision 1
   head "git://anongit.kde.org/dolphin.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
@@ -29,8 +30,9 @@ class Dolphin < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

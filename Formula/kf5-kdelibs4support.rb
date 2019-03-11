@@ -4,12 +4,13 @@ class Kf5Kdelibs4support < Formula
   url "https://download.kde.org/stable/frameworks/5.56/portingAids/kdelibs4support-5.56.0.tar.xz"
   sha256 "edcc14715699f247c57303d7418014202bd0ed3b06cf9752ddd156fefeb60efa"
 
+  revision 1
   head "git://anongit.kde.org/kdelibs4support.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
   depends_on "perl" => :build
 
   depends_on "KDE-mac/kde/kf5-kded"
@@ -29,8 +30,9 @@ class Kf5Kdelibs4support < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

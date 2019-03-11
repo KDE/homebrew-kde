@@ -4,12 +4,13 @@ class Kf5Kwidgetsaddons < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kwidgetsaddons-5.56.0.tar.xz"
   sha256 "9b06e67a05d6f90287edf6a7cc31b93c01c9e58f35ae456b6d89e8ef78e0953a"
 
+  revision 1
   head "git://anongit.kde.org/kwidgetsaddons.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "qt"
 
@@ -21,8 +22,9 @@ class Kf5Kwidgetsaddons < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

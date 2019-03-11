@@ -4,12 +4,13 @@ class Kf5Kjobwidgets < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kjobwidgets-5.56.0.tar.xz"
   sha256 "3ea6001724c82e2158f6ee3719f7b4974f271b056661fac037b39ce2338d04b6"
 
+  revision 1
   head "git://anongit.kde.org/kjobwidgets.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
@@ -22,8 +23,9 @@ class Kf5Kjobwidgets < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

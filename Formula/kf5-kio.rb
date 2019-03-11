@@ -4,13 +4,14 @@ class Kf5Kio < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kio-5.56.0.tar.xz"
   sha256 "d6fb0bdae9454cd67de19806e338fdcb72e8678a27e95fad3626491d8b1a4cd4"
 
+  revision 1
   head "git://anongit.kde.org/kio.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "desktop-file-utils"
   depends_on "KDE-mac/kde/kf5-kbookmarks"
@@ -28,8 +29,9 @@ class Kf5Kio < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

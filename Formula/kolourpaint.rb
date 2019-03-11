@@ -4,12 +4,13 @@ class Kolourpaint < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/kolourpaint-18.12.3.tar.xz"
   sha256 "450b714f0d73b59d31c4ceda142a3496d14e51d84b8c8968548a15e05c138f98"
 
+  revision 1
   head "git://anongit.kde.org/kolourpaint.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kdelibs4support"
@@ -22,8 +23,9 @@ class Kolourpaint < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

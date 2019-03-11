@@ -4,10 +4,11 @@ class Kf5Frameworkintegration < Formula
   url "https://download.kde.org/stable/frameworks/5.56/frameworkintegration-5.56.0.tar.xz"
   sha256 "ee8d46b629a95e49fda80e50ba8863504a6c463fec887f83370b7e7977db80f5"
 
+  revision 1
   head "git://anongit.kde.org/frameworkintegration.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kpackage"
@@ -20,8 +21,9 @@ class Kf5Frameworkintegration < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

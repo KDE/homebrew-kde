@@ -41,8 +41,9 @@ class Kdevelop < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp

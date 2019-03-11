@@ -4,12 +4,13 @@ class Kate < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/kate-18.12.3.tar.xz"
   sha256 "f7f2cba41a4c88b65885532db6b6161c66055a6697d20ee88adb70f302d387e1"
 
+  revision 1
   head "git://anongit.kde.org/kate.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
@@ -27,8 +28,9 @@ class Kate < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

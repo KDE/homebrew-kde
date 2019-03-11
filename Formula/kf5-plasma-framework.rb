@@ -4,14 +4,15 @@ class Kf5PlasmaFramework < Formula
   url "https://download.kde.org/stable/frameworks/5.56/plasma-framework-5.56.0.tar.xz"
   sha256 "0accc21e8dd47531821d9a4a339fb790d3695fe12868d8c92e1b00564e028943"
 
+  revision 1
   head "git://anongit.kde.org/plasma-framework.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kdeclarative"
@@ -29,8 +30,9 @@ class Kf5PlasmaFramework < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

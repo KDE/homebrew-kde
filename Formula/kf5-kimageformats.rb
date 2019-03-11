@@ -4,10 +4,11 @@ class Kf5Kimageformats < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kimageformats-5.56.0.tar.xz"
   sha256 "a58ddeb83295d1c0305897788aa303aba6ec8d3f9663f3d175cb8337a518f0b1"
 
+  revision 1
   head "git://anongit.kde.org/kimageformats.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
   depends_on "jasper"
   depends_on "openexr"
   depends_on "qt"
@@ -20,8 +21,9 @@ class Kf5Kimageformats < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

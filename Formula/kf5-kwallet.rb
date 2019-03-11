@@ -4,6 +4,7 @@ class Kf5Kwallet < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kwallet-5.56.0.tar.xz"
   sha256 "d2957ca5e0539a4f7689373ded3bbe642cb48bb37f76b6e5f2dac499f0ec260a"
 
+  revision 1
   head "git://anongit.kde.org/kwallet.git"
 
   depends_on "boost" => :build
@@ -13,6 +14,7 @@ class Kf5Kwallet < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "gpgme"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
@@ -30,8 +32,9 @@ class Kf5Kwallet < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

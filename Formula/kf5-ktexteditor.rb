@@ -4,12 +4,13 @@ class Kf5Ktexteditor < Formula
   url "https://download.kde.org/stable/frameworks/5.56/ktexteditor-5.56.0.tar.xz"
   sha256 "4c88d0033775e0715ad115370a36680ede95d29c7c4b840c0e06f23ef64959a8"
 
+  revision 1
   head "git://anongit.kde.org/ktexteditor.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
@@ -23,8 +24,9 @@ class Kf5Ktexteditor < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

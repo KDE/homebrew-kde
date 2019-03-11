@@ -4,11 +4,12 @@ class Okteta < Formula
   url "https://download.kde.org/stable/okteta/0.25.5/src/okteta-0.25.5.tar.xz"
   sha256 "e9193ab0832551943ce26ee7bf97bf19397b76c94d4bff0cfaba9a6149870099"
 
+  revision 1
   head "git://anongit.kde.org/okteta.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
@@ -26,8 +27,9 @@ class Okteta < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

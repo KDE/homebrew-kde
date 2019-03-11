@@ -3,7 +3,7 @@ class Labplot < Formula
   homepage "https://labplot.kde.org/"
   url "https://download.kde.org/stable/labplot/2.5.0/labplot-2.5.0.tar.xz"
   sha256 "f1ef2d95a4d4f18902e38cd1f2f79d041d4eeed1eb7f6284ec9a6a6954792225"
-  revision 1
+  revision 2
 
   head "git://anongit.kde.org/labplot.git"
 
@@ -12,6 +12,7 @@ class Labplot < Formula
   depends_on "kf5-kdelibs4support" => :build
   depends_on "kf5-kdesignerplugin" => :build
   depends_on "kf5-kdoctools" => :build
+  depends_on "ninja" => :build
   depends_on "cfitsio"
   depends_on "fftw"
   depends_on "gettext"
@@ -25,8 +26,9 @@ class Labplot < Formula
     args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

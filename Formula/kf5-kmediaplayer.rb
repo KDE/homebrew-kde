@@ -4,10 +4,11 @@ class Kf5Kmediaplayer < Formula
   url "https://download.kde.org/stable/frameworks/5.56/portingAids/kmediaplayer-5.56.0.tar.xz"
   sha256 "508251507d8432ad29d6cde3d5da258b9d8c14519014901c46f3060a485c982e"
 
+  revision 1
   head "git://anongit.kde.org/kmediaplayer.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kparts"
 
@@ -19,8 +20,9 @@ class Kf5Kmediaplayer < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

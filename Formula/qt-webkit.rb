@@ -4,7 +4,7 @@ class QtWebkit < Formula
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
 
-  revision 2
+  revision 3
 
   head "https://github.com/qt/qtwebkit.git"
 
@@ -12,6 +12,7 @@ class QtWebkit < Formula
   depends_on "fontconfig" => :build
   depends_on "freetype" => :build
   depends_on "gperf" => :build
+  depends_on "ninja" => :build
   depends_on "sqlite" => :build
   depends_on "libxslt"
   depends_on "qt"
@@ -54,8 +55,9 @@ class QtWebkit < Formula
     # Fuck up rpath
     inreplace "Source/cmake/OptionsQt.cmake", "RPATH\ ON", "RPATH\ OFF"
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

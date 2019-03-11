@@ -4,12 +4,13 @@ class Kf5Kxmlrpcclient < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kxmlrpcclient-5.56.0.tar.xz"
   sha256 "14a300a68ac6ade06206ebfc296c5ae2aa55b6f95629f87e19fb055108bd56ae"
 
+  revision 1
   head "git://anongit.kde.org/kxmlrpcclient.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "qt"
@@ -22,8 +23,9 @@ class Kf5Kxmlrpcclient < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

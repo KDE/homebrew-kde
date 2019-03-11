@@ -3,12 +3,13 @@ class Kf5Kdnssd < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.56/kdnssd-5.56.0.tar.xz"
   sha256 "7e1383580f97248d8bfb6522bd230657bd002d3eb0e74a178bccc8a511e353bf"
+  revision 1
   head "git://anongit.kde.org/kdnssd.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "qt"
 
@@ -20,8 +21,9 @@ class Kf5Kdnssd < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

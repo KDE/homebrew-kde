@@ -4,12 +4,13 @@ class Kf5Kirigami2 < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kirigami2-5.56.0.tar.xz"
   sha256 "fea01ea5d277a1d415a3b2f0fe8f7659bf345933c4fd1c78c5f92fab40c97e5d"
 
+  revision 1
   head "git://anongit.kde.org/kirigami.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
@@ -21,8 +22,9 @@ class Kf5Kirigami2 < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

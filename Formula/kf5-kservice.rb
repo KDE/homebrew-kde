@@ -4,6 +4,7 @@ class Kf5Kservice < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kservice-5.56.0.tar.xz"
   sha256 "dbc67e2b0cdc2616e39842a1a9a7ab0ab99a96a083de98b6bf9abff8d4454cc3"
 
+  revision 1
   head "git://anongit.kde.org/kservice.git"
 
   depends_on "bison" => :build
@@ -14,6 +15,7 @@ class Kf5Kservice < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kcrash"
@@ -28,8 +30,9 @@ class Kf5Kservice < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

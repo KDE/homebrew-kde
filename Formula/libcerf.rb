@@ -8,8 +8,9 @@ class Libcerf < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
-    system "make", "check" if build.with? "test"
-    system "make", "install"
+    system "ninja"
+    system "ninja", "check" if build.with? "test"
+    system "ninja", "install"
   end
 
   test do

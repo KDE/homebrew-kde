@@ -4,12 +4,13 @@ class KioExtras < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/kio-extras-18.12.3.tar.xz"
   sha256 "f8879abaea6fcf31ee0bd4a55d0c24a5fded6d61abed1b059f704f797793aef2"
 
+  revision 1
   head "git://anongit.kde.org/kio-extras.git"
-
   depends_on "cmake" => :build
   depends_on "gperf" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
   depends_on "exiv2"
   depends_on "KDE-mac/kde/kf5-kdnssd"
   depends_on "KDE-mac/kde/kf5-kio"
@@ -30,8 +31,9 @@ class KioExtras < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

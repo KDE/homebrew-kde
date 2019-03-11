@@ -4,11 +4,12 @@ class Kf5Kinit < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kinit-5.56.0.tar.xz"
   sha256 "473f6ba85f99d0d907fdb8105935854ec9b687191e0391a3e66348e5ad5519c6"
 
+  revision 1
   head "git://anongit.kde.org/kinit.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
 
@@ -21,8 +22,9 @@ class Kf5Kinit < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

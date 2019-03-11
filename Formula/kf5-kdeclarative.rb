@@ -4,12 +4,13 @@ class Kf5Kdeclarative < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kdeclarative-5.56.0.tar.xz"
   sha256 "799c21af97dfbd25d844ff4839461a7ce29bd7e8ec04e00edf43c8bc3eee906a"
 
+  revision 1
   head "git://anongit.kde.org/kdeclarative.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kpackage"
@@ -25,8 +26,9 @@ class Kf5Kdeclarative < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

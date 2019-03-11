@@ -4,12 +4,13 @@ class Kf5Ktextwidgets < Formula
   url "https://download.kde.org/stable/frameworks/5.56/ktextwidgets-5.56.0.tar.xz"
   sha256 "17af96f8fcc4dc67245d2d3c4d1c997dab8619a35599fb516c49f873ca4fa1ce"
 
+  revision 1
   head "git://anongit.kde.org/ktextwidgets.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kiconthemes"
@@ -25,8 +26,9 @@ class Kf5Ktextwidgets < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

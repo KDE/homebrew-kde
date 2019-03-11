@@ -4,11 +4,12 @@ class Okular < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/okular-18.12.3.tar.xz"
   sha256 "d7ef9b59acb5746ebc64399f4c1a99faf0c1530bf6a818b3bfd34b73476d90ab"
 
+  revision 1
   head "git://anongit.kde.org/okular.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "djvulibre"
   depends_on "freetype"
@@ -38,8 +39,9 @@ class Okular < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

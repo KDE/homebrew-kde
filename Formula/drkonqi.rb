@@ -4,12 +4,13 @@ class Drkonqi < Formula
   url "https://download.kde.org/stable/plasma/5.14.4/drkonqi-5.14.4.tar.xz"
   sha256 "b1dada2c6ab6e23ff9425c77d1adc273dbf2dcaf8644927a0059d1583b2fdfbb"
 
+  revision 1
   head "git://anongit.kde.org/drkonqi.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kconfigwidgets"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
@@ -31,8 +32,9 @@ class Drkonqi < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

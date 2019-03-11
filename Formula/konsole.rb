@@ -3,11 +3,12 @@ class Konsole < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/18.12.3/src/konsole-18.12.3.tar.xz"
   sha256 "01ff3245d755a6e38207e58e50e5f82e5c681ead2ad7176d46aec00a8a562e08"
+  revision 1
   head "git://anongit.kde.org/konsole.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "kde-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-knewstuff"
@@ -23,8 +24,9 @@ class Konsole < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

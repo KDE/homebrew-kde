@@ -6,13 +6,14 @@ class Kmymoney < Formula
 
   revision 1
 
+  revision 1
   head "git://anongit.kde.org/kmymoney.git"
-
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
   depends_on "boost"
   depends_on "gpgme"
   depends_on "KDE-mac/kde/kdiagram"
@@ -33,8 +34,9 @@ class Kmymoney < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
     # Extract Qt plugin path

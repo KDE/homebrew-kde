@@ -4,11 +4,12 @@ class Kf5Kross < Formula
   url "https://download.kde.org/stable/frameworks/5.56/portingAids/kross-5.56.0.tar.xz"
   sha256 "bbfafe4abd2c2166f31eb36daa1849f4dc4a829c06fe85402e1fad0ce875c667"
 
+  revision 1
   head "git://anongit.kde.org/kross.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kxmlgui" => :build
+  depends_on "ninja" => :build
   depends_on "gettext"
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
@@ -29,8 +30,9 @@ class Kf5Kross < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

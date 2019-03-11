@@ -4,10 +4,11 @@ class Krename < Formula
   url "https://download.kde.org/stable/krename/5.0.0/src/krename-5.0.0.tar.xz"
   sha256 "0a61761853787fd46b35f3a733cf87cde00de5df631728332a64c38c670bd28c"
 
+  revision 1
   head "git://anongit.kde.org/krename.git"
-
   depends_on "cmake" => :build
   depends_on "kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
   depends_on "exiv2"
   depends_on "hicolor-icon-theme"
   depends_on "kf5-kio"
@@ -20,8 +21,9 @@ class Krename < Formula
     args << "-DBUILD_TESTING=OFF"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

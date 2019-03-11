@@ -4,11 +4,12 @@ class Kcalc < Formula
   url "https://download.kde.org/stable/applications/18.12.3/src/kcalc-18.12.3.tar.xz"
   sha256 "10b3ebb5efab3731e9f12a8632546685281179881b03aae98f96a2cdbd21f02f"
 
+  revision 1
   head "git://anongit.kde.org/kcalc.git"
-
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
 
@@ -22,8 +23,9 @@ class Kcalc < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

@@ -4,12 +4,13 @@ class Kf5Kparts < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kparts-5.56.0.tar.xz"
   sha256 "1ff0d7ffc327f29c250d9c13c782a772b630d6146de68fe5fd1c38575a5645ee"
 
+  revision 1
   head "git://anongit.kde.org/kparts.git"
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "qt"
@@ -22,8 +23,9 @@ class Kf5Kparts < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

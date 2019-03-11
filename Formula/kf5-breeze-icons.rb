@@ -4,10 +4,11 @@ class Kf5BreezeIcons < Formula
   url "https://download.kde.org/stable/frameworks/5.56/breeze-icons-5.56.0.tar.xz"
   sha256 "7d98d6be0795cc5dd7468e3d8093541726dcc10586a91477c02879f5eb8fcf58"
 
+  revision 1
   head "git://anongit.kde.org/breeze-icons.git"
-
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "ninja" => :build
 
   depends_on "qt"
 
@@ -19,8 +20,9 @@ class Kf5BreezeIcons < Formula
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end

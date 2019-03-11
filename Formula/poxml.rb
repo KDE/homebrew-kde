@@ -3,9 +3,10 @@ class Poxml < Formula
   homepage "https://www.kde.org/applications/development/"
   url "https://download.kde.org/stable/applications/18.12.3/src/poxml-18.12.3.tar.xz"
   sha256 "6714e371957d175b859894149a3791acb3b8ef62b653b7b09f34819e92c8eaf7"
+  revision 1
   head "git://anongit.kde.org/poxml.git"
-
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "gettext"
   depends_on "KDE-mac/kde/kf5-kdoctools"
   depends_on "qt"
@@ -18,8 +19,9 @@ class Poxml < Formula
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+      system "cmake", "-G", "Ninja", "..", *args
+      system "ninja"
+      system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
   end
