@@ -26,7 +26,7 @@ class CyrusSasl < Formula
            "LDFLAGS=-L#{Formula["openssl"].opt_lib}",
            "--disable-macos-framework",
            "--prefix=#{prefix}"
-    system "ninja"
-    system "ninja", "install"
+    system "make"
+    system "make", "install"
   end
 end
