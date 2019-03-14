@@ -19,8 +19,6 @@ In order to build them, you first need to do one manuall step that setup all thi
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
 
-**Note**: Read the D-Bus notes below if this is your first D-Bus installation.
-
 **Note**: Webkit for Qt is installed by separate package called `qt-webkit` if you want use kdevelop or kdewebkit
 
 Now, the fun begins. You can either install individual frameworks via
@@ -64,18 +62,3 @@ everything from git, for example by using the *install.sh* utility:
 ```sh
 `brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
 ```
-
-**D-Bus first time users**
-
-Follow the description in the D-Bus formula to set up the LaunchAgent. You might
-have to log out and log in again in order to make it work.
-
-To verify D-Bus working with Qt:
-
-```sh
-echo $DBUS_LAUNCHD_SESSION_BUS_SOCKET
-`brew --prefix qt`/bin/qdbus
-```
-
-The first command should echo a valid path, e.g. */tmp/launch-NHyucl/unix_domain_listener*.
-The second command should show the available services, at least *org.freedesktop.DBus*.
