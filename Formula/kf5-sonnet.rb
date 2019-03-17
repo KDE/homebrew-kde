@@ -13,7 +13,6 @@ class Kf5Sonnet < Formula
   depends_on "ninja" => :build
   depends_on "qt"
   depends_on "aspell" => :optional
-  depends_on "aspell" => :optional
   depends_on "hspell" => :optional
   depends_on "libvoikko" => :optional
 

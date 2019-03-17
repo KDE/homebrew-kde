@@ -57,4 +57,8 @@ class Dolphin < Formula
       ln -sfv "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "$HOME/Applications/KDE/"
   EOS
   end
+
+  test do
+    assert `"#{bin}/dolphin.app/Contents/MacOS/dolphin" --help | grep -- --help` =~ /--help/
+  end
 end

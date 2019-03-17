@@ -9,14 +9,15 @@ class Libkexiv2 < Formula
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+
   depends_on "exiv2"
   depends_on "qt"
+
   patch do
     # Fix build with Exiv2 0.27
-    url "https://github.com/KDE/libkexiv2/commit/d1be9298c7f2b9c717cda154d41732f230ea13a6.patch"
+    url "https://github.com/KDE/libkexiv2/commit/d1be9298c7f2b9c717cda154d41732f230ea13a6.patch?full_index=1"
     sha256 "e47869b9ab5640d0ead20d645b0bdf07cec3f4a5b52749b5de303c6dd27faf8c"
   end
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"

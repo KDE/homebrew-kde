@@ -37,6 +37,7 @@ class Konsole < Formula
   end
 
   def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/konsole"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/konsole/icontheme.rcc"
   end
 
@@ -50,5 +51,9 @@ class Konsole < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/konsole/bin/konsole.app" "$HOME/Applications/KDE/"
   EOS
+  end
+
+  test do
+    assert `"#{bin}/konsole.app/Contents/MacOS/konsole" --help | grep -- --help` =~ /--help/
   end
 end

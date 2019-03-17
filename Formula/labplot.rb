@@ -34,8 +34,8 @@ class Labplot < Formula
   end
 
   def post_install
-    mkdir_p "#{HOMEBREW_PREFIX}/share/labplot2"
-    ln_sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{HOMEBREW_PREFIX}/share/labplot2/icontheme.rcc"
+    mkdir_p HOMEBREW_PREFIX/"share/labplot2"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/labplot2/icontheme.rcc"
   end
 
   def caveats; <<~EOS
@@ -48,6 +48,6 @@ class Labplot < Formula
   end
 
   test do
-    assert `"#{bin}"/labplot.app/Contents/MacOS/labplot --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/labplot.app/Contents/MacOS/labplot" --help | grep -- --help` =~ /--help/
   end
 end

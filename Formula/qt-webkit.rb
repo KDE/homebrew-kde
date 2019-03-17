@@ -5,7 +5,6 @@ class QtWebkit < Formula
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
 
   revision 3
-
   head "https://github.com/qt/qtwebkit.git"
 
   depends_on "cmake" => :build

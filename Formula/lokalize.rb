@@ -29,6 +29,16 @@ class Lokalize < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/lokalize.app/Contents/Info.plist"
+  end
+
+  def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/lokalize"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/lokalize/icontheme.rcc"
   end
 
   def caveats; <<~EOS
@@ -39,6 +49,6 @@ class Lokalize < Formula
   end
 
   test do
-    assert `"#{bin}"/lokalize.app/Contents/MacOS/lokalize --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/lokalize.app/Contents/MacOS/lokalize" --help | grep -- --help` =~ /--help/
   end
 end

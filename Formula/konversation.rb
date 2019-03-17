@@ -43,6 +43,7 @@ class Konversation < Formula
   end
 
   def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/konversation"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/konversation/icontheme.rcc"
   end
 
@@ -54,6 +55,10 @@ class Konversation < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/konversation/bin/konversation.app" "$HOME/Applications/KDE/"
   EOS
+  end
+
+  test do
+    assert `"#{bin}/konversation.app/Contents/MacOS/konversation" --help | grep -- --help` =~ /--help/
   end
 end
 

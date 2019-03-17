@@ -38,17 +38,17 @@ class Kdenlive < Formula
     end
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
-    system "/usr/libexec/PlistBuddy", "-c",
-           "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-           "#{bin}/kdenlive.app/Contents/Info.plist"
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kdenlive.app/Contents/Info.plist"
 
     # Rename the .so files
     mv "#{lib}/qt5/plugins/mltpreview.so", "#{lib}/qt5/plugins/mltpreview.dylib"
   end
 
   def post_install
-    mkdir_p "#{HOMEBREW_PREFIX}/share/kdenlive"
-    ln_sf "#{HOMEBREW_PREFIX}/share/icons/breeze/breeze-icons.rcc", "#{HOMEBREW_PREFIX}/share/kdenlive/icontheme.rcc"
+    mkdir_p HOMEBREW_PREFIX/"share/kdenlive"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kdenlive/icontheme.rcc"
   end
 
   def caveats; <<~EOS
@@ -68,6 +68,6 @@ class Kdenlive < Formula
   end
 
   test do
-    assert `"#{bin}"/kdenlive.app/Contents/MacOS/kdenlive --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kdenlive.app/Contents/MacOS/kdenlive" --help | grep -- --help` =~ /--help/
   end
 end

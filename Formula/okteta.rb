@@ -41,6 +41,7 @@ class Okteta < Formula
 
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
+    mkdir_p HOMEBREW_PREFIX/"share/okteta"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/okteta/icontheme.rcc"
   end
 
@@ -52,6 +53,10 @@ class Okteta < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/okteta/bin/okteta.app" "$HOME/Applications/KDE/"
   EOS
+  end
+
+  test do
+    assert `"#{bin}/okteta.app/Contents/MacOS/okteta" --help | grep -- --help` =~ /--help/
   end
 end
 

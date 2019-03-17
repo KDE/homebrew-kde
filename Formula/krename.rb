@@ -35,6 +35,7 @@ class Krename < Formula
   end
 
   def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/krename"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/krename/icontheme.rcc"
   end
 
@@ -48,6 +49,6 @@ class Krename < Formula
   end
 
   test do
-    assert "$(brew --prefix)/opt/krename/bin/krename.app/Contents/MacOS/krename --help | grep -- --help"
+    assert `"#{bin}/krename.app/Contents/MacOS/krename" --help | grep -- --help` =~ /--help/
   end
 end

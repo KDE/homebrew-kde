@@ -48,6 +48,7 @@ class Kmymoney < Formula
 
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
+    mkdir_p HOMEBREW_PREFIX/"share/kmymoney"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kmymoney/icontheme.rcc"
   end
 
@@ -64,5 +65,9 @@ class Kmymoney < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app" "$HOME/Applications/KDE/"
   EOS
+  end
+  
+  test do
+    assert `"#{bin}/kmymoney.app/Contents/MacOS/kmymoney" --help | grep -- --help` =~ /--help/
   end
 end

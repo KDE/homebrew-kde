@@ -28,10 +28,27 @@ class Kcalc < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/kcalc.app/Contents/Info.plist"
+  end
+
+  def post_install
+    mkdir_p HOMEBREW_PREFIX/"share/kcalc"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kcalc/icontheme.rcc"
+  end
+
+  def caveats; <<~EOS
+    You need to take some manual steps in order to make this formula work:
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/opt/kcalc/bin/kcalc.app" "$HOME/Applications/KDE/"
+  EOS
   end
 
   test do
-    assert `"#{bin}"/kcalc.app/Contents/MacOS/kcalc --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kcalc.app/Contents/MacOS/kcalc" --help | grep -- --help` =~ /--help/
   end
 end
 

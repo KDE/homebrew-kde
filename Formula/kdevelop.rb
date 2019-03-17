@@ -77,7 +77,7 @@ class Kdevelop < Formula
   end
 
   test do
-    assert `"#{bin}"/kdevelop.app/Contents/MacOS/kdevelop --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kdevelop.app/Contents/MacOS/kdevelop" --help | grep -- --help` =~ /--help/
   end
 end
 

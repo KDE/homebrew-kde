@@ -55,6 +55,11 @@ class Kf5Kdelibs4support < Formula
       ln -sfv "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KDELibs4Support)")
+    system bin/"cmake", "."
+  end
 end
 
 # Patch based from

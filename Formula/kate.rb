@@ -45,8 +45,8 @@ class Kate < Formula
 
   def post_install
     mkdir_p HOMEBREW_PREFIX/"share/kate"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kate/icontheme.rcc"
     mkdir_p HOMEBREW_PREFIX/"share/kwrite"
+    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kate/icontheme.rcc"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kwrite/icontheme.rcc"
   end
 
@@ -66,7 +66,7 @@ class Kate < Formula
   end
 
   test do
-    assert `"#{bin}"/kate.app/Contents/MacOS/kate --help | grep -- --help` =~ /--help/
-    assert `"#{bin}"/kwrite.app/Contents/MacOS/kwrite --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kate.app/Contents/MacOS/kate" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kwrite.app/Contents/MacOS/kwrite" --help | grep -- --help` =~ /--help/
   end
 end
