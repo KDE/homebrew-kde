@@ -86,5 +86,9 @@ ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE
 #krename
 ln -sfv "$(brew --prefix)/share/krename" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/krename/bin/krename.app" "$HOME/Applications/KDE"
+#ktorrent
+ln -sfv "$(brew --prefix)/share/ktorrent" "$HOME/Library/Application Support"
+ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktorrent.app" "$HOME/Applications/KDE/"
+ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "$HOME/Applications/KDE/"
 
 exit 0
