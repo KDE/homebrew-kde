@@ -4,7 +4,7 @@ class Kf5Kiconthemes < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kiconthemes-5.56.0.tar.xz"
   sha256 "0ae1525aafc9083218a1b0540510b3c65f5843a5f1bd4adf88988ba5f1dab765"
 
-  revision 1
+  revision 2
   head "git://anongit.kde.org/kiconthemes.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
