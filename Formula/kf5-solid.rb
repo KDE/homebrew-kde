@@ -23,6 +23,10 @@ class Kf5Solid < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    # The setTime_t function is deprecated since 5.8.
+    args << "-DQT_DISABLE_DEPRECATED_BEFORE=0x000000"
+    args << "-DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x000000"
+    args << "-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x000000"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
