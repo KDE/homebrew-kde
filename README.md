@@ -14,7 +14,7 @@ brew tap kde-mac/kde
 In order to build them, you first need to do one manuall step that setup all things in order to work-around brew sandbox limitations
 
 ```sh
-"$(brew --repo)/Library/Taps/kde-mac/homebrew-kde/tools/all-fixes.sh"
+"$(brew --repo kde-mac/kde)/tools/all-fixes.sh"
 ```
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
@@ -31,7 +31,7 @@ or you can install them all with the install.sh shell script provided in the
 *tools* directory:
 
 ```sh
-"$(brew --repo)/Library/Taps/kde-mac/homebrew-kde/tools/install.sh"
+"$(brew --repo kde-mac/kde)/tools/install.sh"
 ```
 
 Note that *install.sh* passes all parameters on to brew, so you can specify
@@ -42,7 +42,7 @@ any brew parameter like *--verbose* also to *install.sh*
 To remove all KDE Frameworks 5 packages, run:
 
 ```sh
-brew uninstall `brew list -1 | grep '^kf5-'`
+brew uninstall `brew list --full-name -1 | grep '^kde-mac/kde'`
 rm -rf ~/Applications/KDE
 ```
 
@@ -60,5 +60,5 @@ uninstall all installed kf5 formulas (see chapter *Uninstallation* above) and in
 everything from git, for example by using the *install.sh* utility:
 
 ```sh
-`brew --prefix`/Homebrew/Library/Taps/KDE-mac/homebrew-kde/tools/install.sh --HEAD
+"$(brew --repo kde-mac/kde)/tools/install.sh" --HEAD
 ```
