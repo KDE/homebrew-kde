@@ -16,6 +16,8 @@ class Atcore < Formula
   def install
     args = std_cmake_args
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
     if build.with?("gui")
       args << "-DBUILD_GUI=ON"
     end
@@ -25,6 +27,26 @@ class Atcore < Formula
       system "ninja"
       system "ninja", "install"
       prefix.install "install_manifest.txt"
+      
+      # move the plugins to real path
+      mv "#{bin}/plugins", "#{bin}/AtCoreTest.app/Contents/MacOS/plugins"
     end
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/AtCoreTest.app/Contents/Info.plist"
+  end
+
+  def caveats; <<~EOS
+    You need to take some manual steps in order to make this formula work:
+      mkdir -pv "$HOME/Applications/KDE"
+      ln -sfv "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "$HOME/Applications/KDE/"
+  EOS
+  end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(AtCore)")
+    system bin/"cmake", "."
   end
 end
