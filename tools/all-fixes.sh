@@ -90,5 +90,9 @@ ln -sfv "$(brew --prefix)/opt/krename/bin/krename.app" "$HOME/Applications/KDE"
 ln -sfv "$(brew --prefix)/share/ktorrent" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktorrent.app" "$HOME/Applications/KDE/"
 ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "$HOME/Applications/KDE/"
+#krusader
+rm -rfv "$HOME/Library/Application Support"/krusader
+ln -sfv "$(brew --prefix)/share/krusader" "$HOME/Library/Application Support"
+ln -sfv "$(brew --prefix)/opt/krusader/bin/krusader.app" "$HOME/Applications/KDE/"
 
 exit 0
