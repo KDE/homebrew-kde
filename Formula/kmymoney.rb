@@ -1,12 +1,9 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  url "https://download.kde.org/stable/kmymoney/5.0.2/src/kmymoney-5.0.2.tar.xz"
-  sha256 "57f321ebdb1e8bc04e41531a7d0ce947c65101d7768c2aa45c65370b5d67a593"
+  url "https://download.kde.org/stable/kmymoney/5.0.3/src/kmymoney-5.0.3.tar.xz"
+  sha256 "698c0fc7ef2134c5c120a98b10f033e14dc37bff723b562c3b50a018c6ebdbf8"
 
-  revision 1
-
-  revision 1
   head "git://anongit.kde.org/kmymoney.git"
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
@@ -66,7 +63,7 @@ class Kmymoney < Formula
       ln -sfv "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app" "$HOME/Applications/KDE/"
   EOS
   end
-  
+
   test do
     assert `"#{bin}/kmymoney.app/Contents/MacOS/kmymoney" --help | grep -- --help` =~ /--help/
   end
