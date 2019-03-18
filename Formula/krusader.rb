@@ -3,7 +3,7 @@ class Krusader < Formula
   homepage "https://krusader.org/"
   url "https://download.kde.org/stable/krusader/2.7.1/krusader-2.7.1.tar.xz"
   sha256 "d5c14d7e0698b84a1285efe7058074f760924d13d0823e1b5123fbe771907deb"
-  head "https://github.com/yurikoles/krusader.git", :branch => "fix-icons"
+  head "https://anongit.kde.org/krusader.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
