@@ -57,7 +57,7 @@ class Kdevelop < Formula
 
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
-    mkdir_p HOMEBREW_PREFIX}/"share/kdevelop"
+    mkdir_p HOMEBREW_PREFIX/"share/kdevelop"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kdevelop/icontheme.rcc"
   end
 
