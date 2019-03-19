@@ -15,19 +15,20 @@ class Okular < Formula
   depends_on "freetype"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
+  depends_on "KDE-mac/kde/kf5-khtml"
+  depends_on "KDE-mac/kde/kf5-kirigami2"
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kpty"
   depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
+  depends_on "KDE-mac/kde/phonon"
   depends_on "libspectre"
   depends_on "poppler" => "--with-qt"
   depends_on "qca"
   depends_on "zlib"
   depends_on "chmlib" => :optional
   depends_on "ebook-tools" => :optional
-  depends_on "KDE-mac/kde/kf5-khtml" => :optional
-  depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
 
   patch :DATA
 
@@ -68,6 +69,10 @@ class Okular < Formula
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/okular/bin/okular.app" "$HOME/Applications/KDE/"
   EOS
+  end
+
+  test do
+    assert `"#{bin}/okular.app/Contents/MacOS/okular" --help | grep -- --help` =~ /--help/
   end
 end
 
