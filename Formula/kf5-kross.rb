@@ -4,7 +4,7 @@ class Kf5Kross < Formula
   url "https://download.kde.org/stable/frameworks/5.56/portingAids/kross-5.56.0.tar.xz"
   sha256 "bbfafe4abd2c2166f31eb36daa1849f4dc4a829c06fe85402e1fad0ce875c667"
 
-  revision 1
+  revision 2
   head "git://anongit.kde.org/kross.git"
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
@@ -27,6 +27,7 @@ class Kf5Kross < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
