@@ -16,7 +16,7 @@ class Libkexiv2 < Formula
   patch do
     # Fix build with Exiv2 0.27
     url "https://github.com/KDE/libkexiv2/commit/d1be9298c7f2b9c717cda154d41732f230ea13a6.patch?full_index=1"
-    sha256 "e47869b9ab5640d0ead20d645b0bdf07cec3f4a5b52749b5de303c6dd27faf8c"
+    sha256 "8fc831c6918b7a274de1fa7737dd678d127299552f3e564a110d58898ae8af17"
   end
   def install
     args = std_cmake_args
