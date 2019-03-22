@@ -4,7 +4,7 @@ class Kf5Kcoreaddons < Formula
   url "https://download.kde.org/stable/frameworks/5.56/kcoreaddons-5.56.0.tar.xz"
   sha256 "9f41039f1bd453087ff784e9e95d4f09624ff893fe0298d3c986a6a554b37b9e"
 
-  revision 1
+  revision 2
   head "git://anongit.kde.org/kcoreaddons.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
@@ -23,6 +23,7 @@ class Kf5Kcoreaddons < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
