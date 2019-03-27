@@ -4,7 +4,7 @@ class QtWebkit < Formula
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
 
-  revision 3
+  revision 4
   head "https://github.com/qt/qtwebkit.git"
 
   depends_on "cmake" => :build
