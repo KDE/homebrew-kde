@@ -12,6 +12,7 @@ class Libktorrent < Formula
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "qca"
   depends_on "qt"
 
   def install
