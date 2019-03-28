@@ -11,6 +11,7 @@ class Kf5Kdbusaddons < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+  depends_on "shared-mime-info" => :build
 
   depends_on "dbus"
   depends_on "qt"
