@@ -27,7 +27,7 @@ class Libktorrent < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(LibKWorkspace)")
+    (testpath/"CMakeLists.txt").write("find_package(KF5Torrent)")
     system bin/"cmake", "."
   end
 end
