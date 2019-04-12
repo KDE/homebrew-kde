@@ -3,18 +3,18 @@ class Kdenlive < Formula
   homepage "https://www.kdenlive.org/"
   url "https://download.kde.org/stable/applications/18.12.3/src/kdenlive-18.12.3.tar.xz"
   sha256 "fcfe2474bc271e730ed95edb21ae46e93c1ce773ed036f63c9fb2db02cbc7e64"
-
-  revision 1
+  revision 2
   head "git://anongit.kde.org/kdenlive.git"
+
   depends_on "cmake" => :build
-  depends_on "kf5-extra-cmake-modules" => :build
-  depends_on "kf5-kdoctools" => :build
+  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
-  depends_on "kf5-kfilemetadata"
-  depends_on "kf5-knewstuff"
-  depends_on "kf5-knotifyconfig"
+  depends_on "KDE-mac/kde/kf5-kfilemetadata"
+  depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/kf5-knotifyconfig"
+  depends_on "KDE-mac/kde/qt-webkit"
   depends_on "mlt"
-  depends_on "qt-webkit"
   depends_on "cdrtools" => :optional
   depends_on "dvdauthor" => :optional
   depends_on "ffmpeg" => :optional
