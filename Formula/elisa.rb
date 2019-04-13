@@ -1,6 +1,8 @@
 class Elisa < Formula
   desc "KDE Music Player"
   homepage "https://community.kde.org/Elisa"
+  url "https://github.com/KDE/elisa/archive/v0.3.0.tar.gz"
+  sha256 "43ba3803bdbbdeb2e33fdcb2d08748400a23ffe2b57cfc8cf4c75d59da4b53e5"
   head "https://anongit.kde.org/elisa.git"
 
   depends_on "cmake" => :build
@@ -31,7 +33,7 @@ class Elisa < Formula
     end
   end
 
-   def caveats; <<~EOS
+  def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
