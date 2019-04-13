@@ -1,10 +1,9 @@
 class Kf5Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/kservice-5.56.0.tar.xz"
-  sha256 "dbc67e2b0cdc2616e39842a1a9a7ab0ab99a96a083de98b6bf9abff8d4454cc3"
+  url "https://download.kde.org/stable/frameworks/5.57/kservice-5.57.0.tar.xz"
+  sha256 "531940baa47273714fbc35941f2ef5fbdb801b7a5ed5fef5a8ff1d86bf1dae14"
 
-  revision 1
   head "git://anongit.kde.org/kservice.git"
 
   depends_on "bison" => :build

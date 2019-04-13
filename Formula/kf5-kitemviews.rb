@@ -1,10 +1,9 @@
 class Kf5Kitemviews < Formula
   desc "Widget addons for Qt Model/View"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/kitemviews-5.56.0.tar.xz"
-  sha256 "a84036e6dd2974ddcfcc4d8c0f5a1eab59dafdb20f60fbd8df3d5f7fa54824ab"
+  url "https://download.kde.org/stable/frameworks/5.57/kitemviews-5.57.0.tar.xz"
+  sha256 "6b499a21c88d5998c903e8e4dd480c612b96e5e31d17430a507c07566febdd30"
 
-  revision 1
   head "git://anongit.kde.org/kitemviews.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

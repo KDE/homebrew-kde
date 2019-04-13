@@ -1,10 +1,9 @@
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/ktextwidgets-5.56.0.tar.xz"
-  sha256 "17af96f8fcc4dc67245d2d3c4d1c997dab8619a35599fb516c49f873ca4fa1ce"
+  url "https://download.kde.org/stable/frameworks/5.57/ktextwidgets-5.57.0.tar.xz"
+  sha256 "b74036eea1ec19a22aa0e76cd1a8338f55e5c32a30dc47d602783c6bc5ba54bf"
 
-  revision 1
   head "git://anongit.kde.org/ktextwidgets.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

@@ -1,10 +1,9 @@
 class Kf5Frameworkintegration < Formula
   desc "Components to integrate with a KDE Workspace"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/frameworkintegration-5.56.0.tar.xz"
-  sha256 "ee8d46b629a95e49fda80e50ba8863504a6c463fec887f83370b7e7977db80f5"
+  url "https://download.kde.org/stable/frameworks/5.57/frameworkintegration-5.57.0.tar.xz"
+  sha256 "9c5850c1d41900bcb81e7929d54856d0cdd2565a276e5e262f624eb1217cbb78"
 
-  revision 1
   head "git://anongit.kde.org/frameworkintegration.git"
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

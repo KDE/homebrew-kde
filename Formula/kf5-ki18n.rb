@@ -1,10 +1,9 @@
 class Kf5Ki18n < Formula
   desc "Advanced internationalization framework"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/ki18n-5.56.0.tar.xz"
-  sha256 "b885bcde4cdf700ecbd8487c52ced453de67c44dac014b53b4eefbba5353ae41"
+  url "https://download.kde.org/stable/frameworks/5.57/ki18n-5.57.0.tar.xz"
+  sha256 "bbd60981c9a0c1f9d9a52c8dd86adef7c4c30caf603f806d8730febaa36f0dd9"
 
-  revision 1
   head "git://anongit.kde.org/ki18n.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

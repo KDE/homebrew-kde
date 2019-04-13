@@ -1,9 +1,8 @@
 class Kf5Kdnssd < Formula
   desc "Abstraction to system DNSSD features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/kdnssd-5.56.0.tar.xz"
-  sha256 "7e1383580f97248d8bfb6522bd230657bd002d3eb0e74a178bccc8a511e353bf"
-  revision 1
+  url "https://download.kde.org/stable/frameworks/5.57/kdnssd-5.57.0.tar.xz"
+  sha256 "5a61b942fd14c9d96370e19fd7a29594bfcbd3074e12625caac083206fce2789"
   head "git://anongit.kde.org/kdnssd.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

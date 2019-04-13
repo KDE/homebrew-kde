@@ -1,10 +1,9 @@
 class Kf5ExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/extra-cmake-modules-5.56.0.tar.xz"
-  sha256 "913ce70cd64c5a35586f1ecdac5d6417cb128a9d3829ded7bb95e602d0ecb528"
+  url "https://download.kde.org/stable/frameworks/5.57/extra-cmake-modules-5.57.0.tar.xz"
+  sha256 "aa53f8953792b452672f275c2ea9b96ab2adf3e13d9645c3451b06dbc8055b18"
 
-  revision 1
   head "git://anongit.kde.org/extra-cmake-modules"
   depends_on "cmake" => :build
   depends_on "ninja" => :build

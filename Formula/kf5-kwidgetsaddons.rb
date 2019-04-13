@@ -1,10 +1,9 @@
 class Kf5Kwidgetsaddons < Formula
   desc "Addons to QtWidgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.56/kwidgetsaddons-5.56.0.tar.xz"
-  sha256 "9b06e67a05d6f90287edf6a7cc31b93c01c9e58f35ae456b6d89e8ef78e0953a"
+  url "https://download.kde.org/stable/frameworks/5.57/kwidgetsaddons-5.57.0.tar.xz"
+  sha256 "abd80a566e1003bca7c72d3a0dc1ee470bc9935d11371cfff0d960f11e1ef5c2"
 
-  revision 2
   head "git://anongit.kde.org/kwidgetsaddons.git"
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
