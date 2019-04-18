@@ -94,24 +94,24 @@ my %frameworks = (
 		'kross'           => 'portingAids/kross'
 		);
 
-		my %applications = (
+my %applications = (
 
-				'dolphin' 			=> '',
-				'kate'    			=> '',
-				'kolourpaint'		=> '',
-				'konsole' 			=> '',
-				'okular' 			=> '',
-				'kimap'           	=> '',
-				'kmime'           	=> '',
-				'libkexiv2'       	=> '',
-				'libkomparediff2' 	=> '',
-				'kio-extras'      	=> '',
-				'lokalize'      	=> '',
-				'poxml'      		=> '',
-				'kdenlive'			=> '',
-				'analitza'			=> '',
-				'kcalc'				=> '',
-				);
+        'dolphin'         => '',
+        'kate'            => '',
+        'kolourpaint'     => '',
+        'konsole'         => '',
+        'okular'          => '',
+        'kimap'           => '',
+        'kmime'           => '',
+        'libkexiv2'       => '',
+        'libkomparediff2' => '',
+        'kio-extras'      => '',
+        'lokalize'        => '',
+        'poxml'           => '',
+        'kdenlive'        => '',
+        'analitza'        => '',
+        'kcalc'           => '',
+        );
 
 my $tmp_dir = '/tmp/kde';
 mkdir "${tmp_dir}";
