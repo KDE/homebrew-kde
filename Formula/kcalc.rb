@@ -1,10 +1,9 @@
 class Kcalc < Formula
   desc "KCalc"
   homepage "https://utils.kde.org/projects/kcalc/"
-  url "https://download.kde.org/stable/applications/18.12.3/src/kcalc-18.12.3.tar.xz"
-  sha256 "10b3ebb5efab3731e9f12a8632546685281179881b03aae98f96a2cdbd21f02f"
+  url "https://download.kde.org/stable/applications/19.04.0/src/kcalc-19.04.0.tar.xz"
+  sha256 "0384ebf83c62e74a2412f71f648bad112f91ef3ec6aa64fe55e63fd88a156593"
 
-  revision 1
   head "git://anongit.kde.org/kcalc.git"
   depends_on "cmake" => :build
   depends_on "gettext" => :build

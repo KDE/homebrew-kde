@@ -1,10 +1,9 @@
 class KioExtras < Formula
   desc "Additional components to increase the functionality of KIO"
   homepage "https://www.kde.org/applications/internet/"
-  url "https://download.kde.org/stable/applications/18.12.3/src/kio-extras-18.12.3.tar.xz"
-  sha256 "f8879abaea6fcf31ee0bd4a55d0c24a5fded6d61abed1b059f704f797793aef2"
+  url "https://download.kde.org/stable/applications/19.04.0/src/kio-extras-19.04.0.tar.xz"
+  sha256 "0f3f2eaf40512cf4a61b09b94ca365d7d05c7b1a75f4e8afd047143a8e962d85"
 
-  revision 1
   head "git://anongit.kde.org/kio-extras.git"
   depends_on "cmake" => :build
   depends_on "gperf" => :build
