@@ -1,7 +1,8 @@
 # cpan
-brew install perl
+brew install perl dbus
 export PERL_MM_USE_DEFAULT=1
 cpan URI URI::Escape
+brew services start dbus
 # common
 mkdir -pv "$HOME/Applications/KDE"
 rm -rfv "$HOME/Applications/KDE/*"
