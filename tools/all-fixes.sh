@@ -95,7 +95,7 @@ ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "$HOME/Applications/K
 rm -rfv "$HOME/Library/Application Support"/krusader
 ln -sfv "$(brew --prefix)/share/krusader" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/krusader/bin/krusader.app" "$HOME/Applications/KDE/"
-elisa
+#elisa
 ln -sfv "$(brew --prefix)/opt/elisa/bin/elisa.app" "$HOME/Applications/KDE/"
 
 exit 0
