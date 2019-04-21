@@ -15,6 +15,6 @@
   </pre>
 </details>
 
-# URL to gist, invoke `brew gist-log <failed-formula>`
+# URL to gist, invoke `brew gist-logs <failed-formula>`
 
 <!-- replace me -->
