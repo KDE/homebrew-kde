@@ -18,6 +18,7 @@ class Kmymoney < Formula
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kdewebkit"
   depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/libalkimia"
   depends_on "libical"
   depends_on "libofx"
