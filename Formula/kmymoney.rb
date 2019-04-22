@@ -22,6 +22,7 @@ class Kmymoney < Formula
   depends_on "KDE-mac/kde/libalkimia"
   depends_on "libical"
   depends_on "libofx"
+  depends_on "sqlcipher"
   depends_on "KDE-mac/kde/kf5-kross" => :optional
 
   def install
