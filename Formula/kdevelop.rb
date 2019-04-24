@@ -113,9 +113,9 @@ index a0eed7be91..e18a905103 100644
 --- a/plugins/git/CMakeLists.txt
 +++ b/plugins/git/CMakeLists.txt
 @@ -36,4 +36,5 @@ add_subdirectory(icons)
-install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+ install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
-install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
+ install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 -update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
