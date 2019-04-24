@@ -105,7 +105,7 @@ index cbf6b2c9ce..aaea30c9a5 100644
  )
  
  install(FILES kdevclang.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
--   (${KDE_INSTALL_MIMEDIR})
+-update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 diff --git a/plugins/git/CMakeLists.txt b/plugins/git/CMakeLists.txt
