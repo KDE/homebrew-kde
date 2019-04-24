@@ -1,15 +1,15 @@
 class Krename < Formula
   desc "Very powerful batch file renamer"
   homepage "http://www.krename.net/"
-  url "https://download.kde.org/stable/krename/5.0.0/src/krename-5.0.0.tar.xz"
-  sha256 "0a61761853787fd46b35f3a733cf87cde00de5df631728332a64c38c670bd28c"
+  version "5.0.1"
+  url "git://anongit.kde.org/krename.git", :commit => "db407cbfa2d3528dcf4b5b59ae9c5f9edbf13b7c"
 
-  revision 1
   head "git://anongit.kde.org/krename.git"
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
-  #  depends_on "exiv2"
+
+  depends_on "exiv2"
   depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kio"
