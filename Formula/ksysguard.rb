@@ -12,6 +12,7 @@ class Ksysguard < Formula
   depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-kinit"
   depends_on "KDE-mac/kde/kf5-knewstuff"
+  depends_on "KDE-mac/kde/libksysguard"
 
   def install
     args = std_cmake_args
