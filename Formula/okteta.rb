@@ -1,16 +1,16 @@
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/okteta/0.25.5/src/okteta-0.25.5.tar.xz"
-  sha256 "e9193ab0832551943ce26ee7bf97bf19397b76c94d4bff0cfaba9a6149870099"
+  url "https://download.kde.org/stable/okteta/0.26.1/src/okteta-0.26.1.tar.xz"
+  sha256 "a4c4ee823b225c8bbffed366d9ca73f7951534d4ba1bcb671cd5f743ba1a18af"
 
-  revision 1
   head "git://anongit.kde.org/okteta.git"
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
+  depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-knewstuff"
@@ -24,6 +24,7 @@ class Okteta < Formula
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
@@ -74,17 +75,3 @@ __END__
 +
 +# Need generate out of brew by update-mime-database
 +#update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-
-diff --git a/designer/CMakeLists.txt b/designer/CMakeLists.txt
-index 653f4082..2567f20a 100644
---- a/designer/CMakeLists.txt
-+++ b/designer/CMakeLists.txt
-@@ -26,7 +26,7 @@ set_target_properties( oktetadesignerplugin PROPERTIES
-     OUTPUT_NAME oktetawidgets
- )
- 
--install( TARGETS oktetadesignerplugin  DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer )
-+install( TARGETS oktetadesignerplugin  DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer )
- 
- 
- if( OKTETA_BUILD_EXAMPLES )

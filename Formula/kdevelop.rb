@@ -3,8 +3,9 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.3.2/src/kdevelop-5.3.2.tar.xz"
   sha256 "08ccd575514187dcbd01ac976a619803410c26bdfabf5d2d5fd52c95b76d6f2a"
-  head "git://anongit.kde.org/kdevelop.git"
 
+  revision 1
+  head "git://anongit.kde.org/kdevelop.git"
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "gdb" => :build
@@ -12,6 +13,7 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
+  
   depends_on "cmake"
   depends_on "KDE-mac/kde/grantlee5"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
@@ -24,6 +26,7 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/ksysguard"
   depends_on "KDE-mac/kde/libkomparediff2"
   depends_on "llvm"
+  
   depends_on "cppcheck" => :optional
   depends_on "gdb" => :optional
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :optional
