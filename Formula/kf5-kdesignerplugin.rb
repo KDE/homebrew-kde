@@ -15,13 +15,12 @@ class Kf5Kdesignerplugin < Formula
   depends_on "KDE-mac/kde/kf5-kplotting"
   depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
 
-  patch :DATA
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -37,26 +36,3 @@ class Kf5Kdesignerplugin < Formula
   EOS
   end
 end
-
-# Fix typo(?)
-__END__
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index fac92fd..3f86d7b 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -55,7 +55,7 @@ if(BUILD_KF5_DESIGNER_PLUGIN)
-         )
-     endif()
- 
--    install(TARGETS kf5widgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
-+    install(TARGETS kf5widgets DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer)
- endif()
- 
- 
-@@ -79,5 +79,5 @@ if(BUILD_KDEWEBKIT_DESIGNER_PLUGIN)
-         )
-     endif()
- 
--    install(TARGETS kdewebkitwidgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
-+    install(TARGETS kdewebkitwidgets DESTINATION ${KDE_INSTALL_PLUGINDIR}/designer)
- endif()
