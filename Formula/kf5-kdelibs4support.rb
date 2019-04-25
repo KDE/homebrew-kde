@@ -57,8 +57,8 @@ class Kf5Kdelibs4support < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KDELibs4Support)")
-    system bin/"cmake", "."
+    (testpath/"CMakeLists.txt").write("find_package(KDELibs4Support REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
   end
 end
 
