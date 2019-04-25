@@ -28,15 +28,14 @@ class Ksysguard < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
-  end
-  # Extract Qt plugin path
-  qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
-  system "/usr/libexec/PlistBuddy",
-    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-    "#{bin}/bin/ksysguard.app/Contents/Info.plist"
-  system "/usr/libexec/PlistBuddy",
-    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-    "#{bin}/bin/ksysguardd.app/Contents/Info.plist"
+    # Extract Qt plugin path
+    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/bin/ksysguard.app/Contents/Info.plist"
+    system "/usr/libexec/PlistBuddy",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/bin/ksysguardd.app/Contents/Info.plist"
   end
 
   def post_install
@@ -45,17 +44,19 @@ class Ksysguard < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/ksysguard/icontheme.rcc"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/ksysguardd/icontheme.rcc"
   end
+
   def caveats; <<~EOS
-      You need to take some manual steps in order to make this formula work:
+    You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/ksysguard" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
       ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
-        ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguard.app" "$HOME/Applications/KDE/"
-        ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguardd.app" "$HOME/Applications/KDE/"
-      EOS
+      ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguard.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguardd.app" "$HOME/Applications/KDE/"
+  EOS
   end
+
   test do
     assert `"#{bin}/ksysguard.app/Contents/MacOS/ksysguard" --help | grep -- --help` =~ /--help/
     assert `"#{bin}/ksysguardd.app/Contents/MacOS/ksysguardd" --help | grep -- --help` =~ /--help/
