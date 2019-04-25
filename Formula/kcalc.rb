@@ -11,6 +11,7 @@ class Kcalc < Formula
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
+  depends_on "KDE-mac/kde/kf5-kinit"
 
   patch :DATA
 
