@@ -28,7 +28,7 @@ class Libktorrent < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5Torrent)")
-    system bin/"cmake", "."
+    (testpath/"CMakeLists.txt").write("find_package(KF5Torrent REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
   end
 end
