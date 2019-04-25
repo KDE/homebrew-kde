@@ -5,6 +5,7 @@ class Kf5Kwidgetsaddons < Formula
   sha256 "abd80a566e1003bca7c72d3a0dc1ee470bc9935d11371cfff0d960f11e1ef5c2"
 
   head "git://anongit.kde.org/kwidgetsaddons.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

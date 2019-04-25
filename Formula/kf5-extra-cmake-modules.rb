@@ -5,6 +5,7 @@ class Kf5ExtraCmakeModules < Formula
   sha256 "aa53f8953792b452672f275c2ea9b96ab2adf3e13d9645c3451b06dbc8055b18"
 
   head "git://anongit.kde.org/extra-cmake-modules"
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "qt" => :build

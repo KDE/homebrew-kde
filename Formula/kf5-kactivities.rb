@@ -7,7 +7,6 @@ class Kf5Kactivities < Formula
   head "git://anongit.kde.org/kactivities.git"
 
   depends_on "boost" => :build
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
@@ -35,6 +34,8 @@ class Kf5Kactivities < Formula
     end
   end
 end
+
+# Mark executables as nongui type
 
 __END__
 diff --git a/src/cli/CMakeLists.txt b/src/cli/CMakeLists.txt

@@ -47,6 +47,7 @@ class Kf5Kwallet < Formula
 end
 
 # Mark executables as nongui type
+
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 6f1d918..0dbc257 100644

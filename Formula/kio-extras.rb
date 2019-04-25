@@ -7,6 +7,7 @@ class KioExtras < Formula
   revision 1
 
   head "git://anongit.kde.org/kio-extras.git"
+
   depends_on "cmake" => :build
   depends_on "gperf" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
@@ -20,6 +21,7 @@ class KioExtras < Formula
   depends_on "libmtp"
   depends_on "openexr"
   depends_on "openslp"
+
   depends_on "KDE-mac/kde/kf5-khtml" => :optional
   depends_on "KDE-mac/kde/kf5-kimageformats" => :optional
   depends_on "taglib" => :optional
@@ -59,8 +61,10 @@ class KioExtras < Formula
   end
 end
 
-__END__
+# Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)
+# Mark executable as nongui type
 
+__END__
 diff --git a/mtp/kiod_module/mtpstorage.cpp b/mtp/kiod_module/mtpstorage.cpp
 index 30a72ab5..4b5dfc5e 100644
 --- a/mtp/kiod_module/mtpstorage.cpp

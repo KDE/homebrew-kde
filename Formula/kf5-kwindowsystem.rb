@@ -5,6 +5,7 @@ class Kf5Kwindowsystem < Formula
   sha256 "0c8a009dde7ca1722810777b99aa4e1a3471687460c25e0f41645c9e11daf274"
 
   head "git://anongit.kde.org/kwindowsystem.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

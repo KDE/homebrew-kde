@@ -5,6 +5,7 @@ class Kf5Kparts < Formula
   sha256 "5a079986963d186e98a1174e19e490731012732ad5ad31a431a8f7a31c6b6ed2"
 
   head "git://anongit.kde.org/kparts.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

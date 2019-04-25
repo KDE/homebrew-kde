@@ -5,6 +5,7 @@ class Kf5Karchive < Formula
   sha256 "e0e64e7e88c8df96f894de20aff4d12925e0d362c5134df83473ea48c0432783"
 
   head "git://anongit.kde.org/karchive.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Kf5Kpackage < Formula
   sha256 "2d2d497d50e8ce986d6de4462391122963d9b7605889fd20cd3ceb4dd6910814"
 
   head "git://anongit.kde.org/kpackage.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

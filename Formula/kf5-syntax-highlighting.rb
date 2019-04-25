@@ -5,6 +5,7 @@ class Kf5SyntaxHighlighting < Formula
   sha256 "e82261e791005a55414fc81a396ca33ee8c061acd66c2c351492d866b3592e9f"
 
   head "git://anongit.kde.org/syntax-highlighting.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Libktorrent < Formula
   sha256 "3eefdcceec73410c558e82d7be22eb2ed18679e9ab64f34cc100b54e186fe26f"
 
   head "git://anongit.kde.org/libktorrent.git"
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

@@ -5,6 +5,7 @@ class Kf5Kpty < Formula
   sha256 "14a0f9d5ecc387c88d24270dbf4c128deb8ad18ab64b39766b335ad03a47c3b6"
 
   head "git://anongit.kde.org/kpty.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

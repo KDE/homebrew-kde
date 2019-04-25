@@ -5,6 +5,7 @@ class Kf5Kmediaplayer < Formula
   sha256 "521dcb4b3f9a67203e9eac27b8d777cb22557861b9fae0006c2aecda96d9bad4"
 
   head "git://anongit.kde.org/kmediaplayer.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

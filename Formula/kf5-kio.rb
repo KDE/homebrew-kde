@@ -5,6 +5,7 @@ class Kf5Kio < Formula
   sha256 "d68151d58f1ed2e0724074c6bca42510dd3e19617baa4b4130198ad3a36a64ab"
 
   head "git://anongit.kde.org/kio.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Kf5Kjsembed < Formula
   sha256 "741aae8db274febe7e5d0d10dc99271efc590b2465d2c4d4e4a9162d2b36e3b4"
 
   head "git://anongit.kde.org/kjsembed.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
@@ -33,6 +34,7 @@ class Kf5Kjsembed < Formula
 end
 
 # Mark executable as nongui type
+
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 8939ba5..1ab9bdc 100644

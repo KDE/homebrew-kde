@@ -5,6 +5,7 @@ class Libkexiv2 < Formula
   sha256 "9fcafa932631429af1693642415d2f202ad29338b63949b5e8661135eb69dc19"
 
   head "git://anongit.kde.org/libkexiv2.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

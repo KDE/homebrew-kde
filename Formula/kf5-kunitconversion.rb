@@ -5,6 +5,7 @@ class Kf5Kunitconversion < Formula
   sha256 "157f4d21e83a6e92e30894f472b65452ecd2183ac2e25e24f740e971befed383"
 
   head "git://anongit.kde.org/kunitconversion.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

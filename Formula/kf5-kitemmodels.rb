@@ -5,6 +5,7 @@ class Kf5Kitemmodels < Formula
   sha256 "b0eef30ce3e5f2fe9afb60d589bea16a0d0e4a57ffffb37ae0e14a54f1681464"
 
   head "git://anongit.kde.org/kitemmodels.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

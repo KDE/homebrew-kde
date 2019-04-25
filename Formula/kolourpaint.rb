@@ -5,6 +5,7 @@ class Kolourpaint < Formula
   sha256 "d6cd087ba34a1a8fec9349dea06c1b71a70f6e8455adb41d4820a376eb2ed141"
 
   head "git://anongit.kde.org/kolourpaint.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build

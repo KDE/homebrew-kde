@@ -5,6 +5,7 @@ class Kf5Kdewebkit < Formula
   sha256 "809e9df4ac3ca8b59799c8781694092cb1793f03af0b87a347a1c6019f96a592"
 
   head "git://anongit.kde.org/kdewebkit.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

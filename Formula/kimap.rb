@@ -5,6 +5,7 @@ class Kimap < Formula
   sha256 "cda62c81c47011ad2adbf78222eab4528a62116487531ce1aa98f6100706d2fd"
 
   head "git://anongit.kde.org/kimap.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build

@@ -5,6 +5,7 @@ class Kcalc < Formula
   sha256 "0384ebf83c62e74a2412f71f648bad112f91ef3ec6aa64fe55e63fd88a156593"
 
   head "git://anongit.kde.org/kcalc.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -56,6 +57,8 @@ class Kcalc < Formula
     assert `"#{bin}/kcalc.app/Contents/MacOS/kcalc" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Fix retina display
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt

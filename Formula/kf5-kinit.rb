@@ -5,6 +5,7 @@ class Kf5Kinit < Formula
   sha256 "7d5ca84d7bd554531aa6d720d3dc41ac091cf047a52d097a23e5c8fad08b684c"
 
   head "git://anongit.kde.org/kinit.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -28,6 +29,8 @@ class Kf5Kinit < Formula
     end
   end
 end
+
+# Fix the "?"
 
 __END__
 diff --git a/src/kdeinit/CMakeLists.txt b/src/kdeinit/CMakeLists.txt

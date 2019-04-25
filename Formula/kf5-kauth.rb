@@ -5,6 +5,7 @@ class Kf5Kauth < Formula
   sha256 "9d6b9135cc47710b28e2a7731c4c5c1f6dba2b0e5fe982b9d2a82a11d7d497c2"
 
   head "git://anongit.kde.org/kauth.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

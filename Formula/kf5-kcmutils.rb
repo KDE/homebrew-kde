@@ -5,6 +5,7 @@ class Kf5Kcmutils < Formula
   sha256 "f3ee63a356e18be95a15141346356f3f43bb067d0326021d99f4b73ee4716fbb"
 
   head "git://anongit.kde.org/kcmutils.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

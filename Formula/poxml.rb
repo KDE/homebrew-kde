@@ -3,9 +3,12 @@ class Poxml < Formula
   homepage "https://www.kde.org/applications/development/"
   url "https://download.kde.org/stable/applications/19.04.0/src/poxml-19.04.0.tar.xz"
   sha256 "c0a24557cc7e243790c5273fb2a4ff585a3e89cc994772a52979015d2e57a985"
+
   head "git://anongit.kde.org/poxml.git"
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+
   depends_on "gettext"
   depends_on "KDE-mac/kde/kf5-kdoctools"
   depends_on "qt"

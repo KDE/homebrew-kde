@@ -5,12 +5,14 @@ class Kf5Kpeople < Formula
   sha256 "7c239b80b7976e3bfa46338e05a048aecb9c1972548dc33cc8a17e66eb08a85c"
 
   head "git://anongit.kde.org/kpeople.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+
   depends_on "KDE-mac/kde/kf5-kitemviews"
   depends_on "KDE-mac/kde/kf5-kservice"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"

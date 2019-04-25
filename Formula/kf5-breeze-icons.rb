@@ -5,6 +5,7 @@ class Kf5BreezeIcons < Formula
   sha256 "c3ba92acb5bfcff66f41232ebc6e8c893dab78ac59a713fa4bfa2a0e097f4ed2"
 
   head "git://anongit.kde.org/breeze-icons.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

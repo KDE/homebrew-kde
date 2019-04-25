@@ -3,11 +3,13 @@ class Elisa < Formula
   homepage "https://community.kde.org/Elisa"
   url "https://github.com/KDE/elisa/archive/v0.3.0.tar.gz"
   sha256 "43ba3803bdbbdeb2e33fdcb2d08748400a23ffe2b57cfc8cf4c75d59da4b53e5"
+
   head "https://anongit.kde.org/elisa.git"
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "kf5-extra-cmake-modules" => :build
+
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kconfigwidgets"

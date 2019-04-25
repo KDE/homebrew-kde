@@ -5,6 +5,7 @@ class Kf5Kfilemetadata < Formula
   sha256 "49e6c281fdffd4f5fe363c6cefdb6c3022ef57c935d7d6b135607cdde9b2d116"
 
   head "git://anongit.kde.org/kfilemetadata.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

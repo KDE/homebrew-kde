@@ -5,6 +5,7 @@ class Kf5Kxmlgui < Formula
   sha256 "325124518e8fa4847c898dee193d96b76a7ba27d7c79d875f34c632f46fe1f90"
 
   head "git://anongit.kde.org/kxmlgui.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

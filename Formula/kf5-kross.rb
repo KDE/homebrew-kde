@@ -5,10 +5,12 @@ class Kf5Kross < Formula
   sha256 "3b0f92751bb70c64b2ac25b466f886cc8b02babf02c744bcc909aa3ce6915a66"
 
   head "git://anongit.kde.org/kross.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kxmlgui" => :build
   depends_on "ninja" => :build
+
   depends_on "gettext"
   depends_on "KDE-mac/kde/kf5-kcompletion"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
@@ -18,6 +20,7 @@ class Kf5Kross < Formula
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
   depends_on "qt"
+
   depends_on "KDE-mac/kde/kf5-kdoctools" => :optional
 
   def install

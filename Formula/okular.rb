@@ -5,6 +5,7 @@ class Okular < Formula
   sha256 "1947b394dfd8da9c7cc4234e308e2476ffa44dc58542d246eafc8397d8991b6e"
 
   head "git://anongit.kde.org/okular.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -26,6 +27,7 @@ class Okular < Formula
   depends_on "poppler" => "--with-qt"
   depends_on "qca"
   depends_on "zlib"
+
   depends_on "chmlib" => :optional
   depends_on "ebook-tools" => :optional
 
@@ -74,6 +76,10 @@ class Okular < Formula
     assert `"#{bin}/okular.app/Contents/MacOS/okular" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Fix build
+# Avoid the Brew sandbox
+# Fix Retina display
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt

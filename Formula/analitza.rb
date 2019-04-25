@@ -5,6 +5,7 @@ class Analitza < Formula
   sha256 "ac8bf7d66f8a2fc7198238f23d82efd1021943ffe8bd5915808e31b800a802f6"
 
   head "git://anongit.kde.org/analitza.git"
+
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "kf5-extra-cmake-modules" => :build

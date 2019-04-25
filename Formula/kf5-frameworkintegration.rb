@@ -5,6 +5,7 @@ class Kf5Frameworkintegration < Formula
   sha256 "9c5850c1d41900bcb81e7929d54856d0cdd2565a276e5e262f624eb1217cbb78"
 
   head "git://anongit.kde.org/frameworkintegration.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

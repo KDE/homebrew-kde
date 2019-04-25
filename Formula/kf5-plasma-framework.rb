@@ -5,6 +5,7 @@ class Kf5PlasmaFramework < Formula
   sha256 "b886aeee6691911ead25e6fd5631fa41ce2330b0fbbdc040717fa576bacae2ca"
 
   head "git://anongit.kde.org/plasma-framework.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
@@ -45,6 +46,8 @@ class Kf5PlasmaFramework < Formula
   EOS
   end
 end
+
+# Mark executables as nongui type
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt

@@ -5,6 +5,7 @@ class Dolphin < Formula
   sha256 "f3f45b9048c283252067eebfad8c6e1efc6bc64d43fcba78b933850ea4762375"
 
   head "git://anongit.kde.org/dolphin.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -18,6 +19,7 @@ class Dolphin < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kio-extras"
+
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "ruby" => :optional
 

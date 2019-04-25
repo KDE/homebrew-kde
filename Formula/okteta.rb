@@ -5,6 +5,7 @@ class Okteta < Formula
   sha256 "a4c4ee823b225c8bbffed366d9ca73f7951534d4ba1bcb671cd5f743ba1a18af"
 
   head "git://anongit.kde.org/okteta.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
@@ -61,8 +62,7 @@ class Okteta < Formula
   end
 end
 
-# Externalized the generation of the mimetypes
-# Fix typo(?)
+# Avoid the Brew sandbox
 
 __END__
 --- a/mimetypes/CMakeLists.txt	2017-10-29 06:06:00.746991760 +0100

@@ -5,6 +5,7 @@ class Kf5Qqc2DesktopStyle < Formula
   sha256 "ff40fd6d48815c39e46e19eadf4048f04e79f34f7522a9ba655e6d4a1690546e"
 
   head "git://anongit.kde.org/qqc2-desktop-style.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build

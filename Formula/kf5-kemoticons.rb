@@ -5,6 +5,7 @@ class Kf5Kemoticons < Formula
   sha256 "c07b69c9275c117507166622e185c2bf0f36e1e4e8ad7b25fa3e1d793da4711b"
 
   head "git://anongit.kde.org/kemoticons.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

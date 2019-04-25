@@ -5,6 +5,7 @@ class Kf5Kguiaddons < Formula
   sha256 "744eb0ec35c936c17c3d11a08d19014e2166c4a307370207e0f5a38f01a91ebd"
 
   head "git://anongit.kde.org/kguiaddons.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

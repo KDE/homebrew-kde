@@ -5,6 +5,7 @@ class Kf5Kcoreaddons < Formula
   sha256 "7c2573de9b745e55fe61cff26941839cff0d2e40b6c5d791c24c9d6cc8cf7485"
 
   head "git://anongit.kde.org/kcoreaddons.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
@@ -42,6 +43,8 @@ class Kf5Kcoreaddons < Formula
   EOS
   end
 end
+
+# Avoid the Brew sandbox
 
 __END__
 --- a/src/mimetypes/CMakeLists.txt      2017-10-29 05:46:14.027699012 +0100

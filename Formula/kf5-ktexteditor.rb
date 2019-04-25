@@ -5,6 +5,7 @@ class Kf5Ktexteditor < Formula
   sha256 "aa510656f632ef09c18af4263386265c293cb929f139786acd102881250314c3"
 
   head "git://anongit.kde.org/ktexteditor.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

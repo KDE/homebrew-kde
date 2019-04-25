@@ -4,7 +4,6 @@ class Kdiagram < Formula
   url "https://download.kde.org/stable/kdiagram/2.6.0/src/kdiagram-2.6.0.tar.xz"
   sha256 "02788dad7e15c64b74a2d1073c5910469ab4cf46ba905030c1713dce45981882"
   revision 2
-
   head "git://anongit.kde.org/kdiagram.git"
 
   depends_on "cmake" => :build

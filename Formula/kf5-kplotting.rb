@@ -5,6 +5,7 @@ class Kf5Kplotting < Formula
   sha256 "c2c35030b1a2ca25f503c1a2df7ca225d156a9ea80f52883e136679aea6efc8e"
 
   head "git://anongit.kde.org/kplotting.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Kf5Kcodecs < Formula
   sha256 "c98b98cf7258c03fa5131a987e278f348d52f792dcb9f2a5664fe35aadea6995"
 
   head "git://anongit.kde.org/kcodecs.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gperf" => :build

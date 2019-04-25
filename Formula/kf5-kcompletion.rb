@@ -5,6 +5,7 @@ class Kf5Kcompletion < Formula
   sha256 "5ad8746a57cef2b12da5a97e296cbb0b708e8ecfb4253786a899fa86951395ec"
 
   head "git://anongit.kde.org/kcompletion.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Kf5Kdeclarative < Formula
   sha256 "5335b39ac1cca34209c0420dab867b67ddb0e9ee483bdd6d4192269a1d5f654f"
 
   head "git://anongit.kde.org/kdeclarative.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
@@ -34,6 +35,7 @@ class Kf5Kdeclarative < Formula
 end
 
 # Mark executables as nongui type
+
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 51c04dd..f0ef51e 100644

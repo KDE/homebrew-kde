@@ -5,6 +5,7 @@ class Kf5Ktextwidgets < Formula
   sha256 "b74036eea1ec19a22aa0e76cd1a8338f55e5c32a30dc47d602783c6bc5ba54bf"
 
   head "git://anongit.kde.org/ktextwidgets.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

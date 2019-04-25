@@ -5,6 +5,7 @@ class Kf5Kdoctools < Formula
   sha256 "649dbaff4f1559302e7da07f423a0bc9e3faa1c7a93dfeb170e50bf452d8def2"
 
   head "git://anongit.kde.org/kdoctools.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

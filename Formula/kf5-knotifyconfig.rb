@@ -5,6 +5,7 @@ class Kf5Knotifyconfig < Formula
   sha256 "e7fe39ed72b7f79d8cafe6c30d5c62ade0f33be37a62d9e5b929064dd1750ac1"
 
   head "git://anongit.kde.org/knotifyconfig.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

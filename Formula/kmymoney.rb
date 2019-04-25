@@ -5,6 +5,7 @@ class Kmymoney < Formula
   sha256 "698c0fc7ef2134c5c120a98b10f033e14dc37bff723b562c3b50a018c6ebdbf8"
 
   head "git://anongit.kde.org/kmymoney.git"
+
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
@@ -24,6 +25,7 @@ class Kmymoney < Formula
   depends_on "libical"
   depends_on "libofx"
   depends_on "sqlcipher"
+
   depends_on "KDE-mac/kde/kf5-kross" => :optional
 
   def install

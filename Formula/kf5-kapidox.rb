@@ -5,6 +5,7 @@ class Kf5Kapidox < Formula
   sha256 "16f53e4722adddaa8729b4cccc374d16bdbfdd987f8655d2b431a91b046fe2b2"
 
   head "git://anongit.kde.org/kapidox.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

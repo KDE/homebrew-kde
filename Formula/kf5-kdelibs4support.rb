@@ -5,6 +5,7 @@ class Kf5Kdelibs4support < Formula
   sha256 "e9d1c06191031b482ea01d891756d125ff32927239c36a3011fc7b8f17aca1b0"
 
   head "git://anongit.kde.org/kdelibs4support.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build

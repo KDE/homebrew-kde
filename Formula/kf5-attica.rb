@@ -5,6 +5,7 @@ class Kf5Attica < Formula
   sha256 "a13682bccaca3529df6e3b54e1d4e48fb3d1654fe1b142701e73ce9fe0b87655"
 
   head "git://anongit.kde.org/attica.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

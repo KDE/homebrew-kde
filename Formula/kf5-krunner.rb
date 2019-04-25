@@ -5,6 +5,7 @@ class Kf5Krunner < Formula
   sha256 "40f52d4d883748f5b9a78b5bd7dd6aaa52eae88b89d7a33eafbcbb9ccf6f4805"
 
   head "git://anongit.kde.org/krunner.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

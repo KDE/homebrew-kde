@@ -3,9 +3,9 @@ class Clazy < Formula
   homepage "https://github.com/KDE/clazy"
   url "https://download.kde.org/stable/clazy/1.5/src/clazy-1.5.tar.xz"
   sha256 "87e37aace395e31359d4258452bbf7d1bdb5eae39e21e0dc0d80a75db8b8b779"
-
   revision 1
   head "git://anongit.kde.org/clazy.git"
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 

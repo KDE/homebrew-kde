@@ -5,6 +5,7 @@ class Kf5Kconfigwidgets < Formula
   sha256 "771c5641a9ae465feaf00ffbb3f3c0433ad8d4a90355dc50d5b6b1b472912eb0"
 
   head "git://anongit.kde.org/kconfigwidgets.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

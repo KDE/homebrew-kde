@@ -5,6 +5,7 @@ class Libkomparediff2 < Formula
   sha256 "ffb3370aa869831f86dc009353abd72a5f0c7a7d1c570d5fecf9747131247464"
 
   head "git://anongit.kde.org/libkomparediff2.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build

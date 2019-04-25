@@ -5,6 +5,7 @@ class Kf5Sonnet < Formula
   sha256 "08e13a707b64055f512bba982ec5e69a9e7c62c02d1ee8b6fdc67c67b1265334"
 
   head "git://anongit.kde.org/sonnet.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
@@ -38,4 +39,3 @@ class Kf5Sonnet < Formula
   EOS
   end
 end
-

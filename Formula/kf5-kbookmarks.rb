@@ -5,6 +5,7 @@ class Kf5Kbookmarks < Formula
   sha256 "bf57f111e176ab2ecb79646b1f93cf5d84a8d3fcfb13b805b5140e75b42eb085"
 
   head "git://anongit.kde.org/kbookmarks.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -5,6 +5,7 @@ class Kf5Kidletime < Formula
   sha256 "e99a07f814573526ed5141fc9e4bc2df12298df53a0d2787c3b7a4c3af915665"
 
   head "git://anongit.kde.org/kidletime.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

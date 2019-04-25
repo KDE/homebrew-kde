@@ -5,6 +5,7 @@ class Kf5Kdesu < Formula
   sha256 "76d98db52f7f375991cd7ccbbf1dc100716f99a5792b71ef31a75cc33cf45b19"
 
   head "git://anongit.kde.org/kdesu.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

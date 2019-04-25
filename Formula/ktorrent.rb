@@ -5,6 +5,7 @@ class Ktorrent < Formula
   sha256 "b54149cf1dd3ed59cb7be54c326469a64e152f39f2d7db01de9fdd6b2ce3562a"
 
   head "git://anongit.kde.org/ktorrent.git"
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

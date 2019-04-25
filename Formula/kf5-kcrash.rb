@@ -5,11 +5,13 @@ class Kf5Kcrash < Formula
   sha256 "4b12719a20f2ff0fe0a2656609d0aa277245cd2a9f764a7b6cfaa6da9d928dc0"
 
   head "git://anongit.kde.org/kcrash.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
 

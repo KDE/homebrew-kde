@@ -4,12 +4,12 @@ class Libalkimia < Formula
   url "https://download.kde.org/stable/alkimia/7.0.2/alkimia-7.0.2.tar.xz"
   sha256 "59e6b10d819479bc8dde53a8b10e6ec05e9d465c5e035528a5c0b036456a2454"
   revision 2
-
   head "git://anongit.kde.org/alkimia.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+
   depends_on "gmp"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
 

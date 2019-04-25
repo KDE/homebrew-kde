@@ -5,6 +5,7 @@ class Kf5Kdbusaddons < Formula
   sha256 "86946d97e74420637f59ea0fff93e303bcbdc5b1d5e1c6361e2d9a3ceb0e1259"
 
   head "git://anongit.kde.org/kdbusaddons.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

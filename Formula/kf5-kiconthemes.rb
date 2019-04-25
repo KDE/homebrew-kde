@@ -5,6 +5,7 @@ class Kf5Kiconthemes < Formula
   sha256 "09abb03a97027948a1116bfb2ca9842d3f8fb2def83b0b02aaed194dd5bd16f3"
 
   head "git://anongit.kde.org/kiconthemes.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

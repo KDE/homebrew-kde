@@ -3,8 +3,7 @@ class Konversation < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/konversation/1.7.5/src/konversation-1.7.5.tar.xz"
   sha256 "60bf7533062b5fc63a37105461b4776437f4e24859e8ddaed1d48c4ba1470940"
-  revision 2
-
+  revision 3
   head "git://anongit.kde.org/konversation.git"
 
   depends_on "cmake" => :build
@@ -12,6 +11,7 @@ class Konversation < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
+  depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kemoticons"
   depends_on "KDE-mac/kde/kf5-kidletime"
@@ -61,6 +61,8 @@ class Konversation < Formula
     assert `"#{bin}/konversation.app/Contents/MacOS/konversation" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Fix Retina display
 
 __END__
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt

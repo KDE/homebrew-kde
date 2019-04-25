@@ -5,6 +5,7 @@ class Kf5Kjs < Formula
   sha256 "865fb86566a0ea904ab0a3bd6a63787161b28578660d475fc316c50c8a7b1e90"
 
   head "git://anongit.kde.org/kjs.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build

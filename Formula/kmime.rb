@@ -5,6 +5,7 @@ class Kmime < Formula
   sha256 "2081adec0e6972e513206bee69c0e165904670b7bcf34c52e7da07323537d513"
 
   head "git://anongit.kde.org/kmime.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

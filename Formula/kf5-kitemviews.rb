@@ -5,6 +5,7 @@ class Kf5Kitemviews < Formula
   sha256 "6b499a21c88d5998c903e8e4dd480c612b96e5e31d17430a507c07566febdd30"
 
   head "git://anongit.kde.org/kitemviews.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

@@ -3,7 +3,6 @@ class QtWebkit < Formula
   homepage "https://www1.qt.io/developers/"
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
-
   revision 4
   head "https://github.com/qt/qtwebkit.git"
 
@@ -13,6 +12,7 @@ class QtWebkit < Formula
   depends_on "gperf" => :build
   depends_on "ninja" => :build
   depends_on "sqlite" => :build
+
   depends_on "libxslt"
   depends_on "qt"
   depends_on "webp"
@@ -61,6 +61,8 @@ class QtWebkit < Formula
     end
   end
 end
+
+# Fix build
 
 __END__
 --- a/Source/WTF/wtf/spi/darwin/XPCSPI.h 2017-06-17 13:46:54.000000000 +0300

@@ -1,10 +1,11 @@
 class Krename < Formula
   desc "Very powerful batch file renamer"
-  homepage "http://www.krename.net/"
-  version "5.0.1"
+  homepage "https://userbase.kde.org/KRename"
   url "git://anongit.kde.org/krename.git", :commit => "db407cbfa2d3528dcf4b5b59ae9c5f9edbf13b7c"
+  version "5.0.1"
 
   head "git://anongit.kde.org/krename.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
@@ -30,8 +31,8 @@ class Krename < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-    "#{bin}/krename.app/Contents/Info.plist"
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "#{bin}/krename.app/Contents/Info.plist"
   end
 
   def post_install

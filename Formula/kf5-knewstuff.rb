@@ -5,6 +5,7 @@ class Kf5Knewstuff < Formula
   sha256 "6a9d77a62b036b4ed0f32ffaa9f204db1403030d01dbe8fb055d02361db2f981"
 
   head "git://anongit.kde.org/knewstuff.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

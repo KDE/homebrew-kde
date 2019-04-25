@@ -9,6 +9,7 @@ class Libksysguard < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
+
   depends_on "KDE-mac/kde/kf5-kio"
 
   def install

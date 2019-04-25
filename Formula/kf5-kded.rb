@@ -5,6 +5,7 @@ class Kf5Kded < Formula
   sha256 "04327dda12fa547bebb8e1b1bc26373e8f4174007dd629231403d59ce004201f"
 
   head "git://anongit.kde.org/kded.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

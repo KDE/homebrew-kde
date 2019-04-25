@@ -5,6 +5,7 @@ class Kf5Ki18n < Formula
   sha256 "bbd60981c9a0c1f9d9a52c8dd86adef7c4c30caf603f806d8730febaa36f0dd9"
 
   head "git://anongit.kde.org/ki18n.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gettext" => :build

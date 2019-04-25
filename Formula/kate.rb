@@ -3,20 +3,23 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/applications/19.04.0/src/kate-19.04.0.tar.xz"
   sha256 "64c3c312a69d45624e3619309b86de796f67d30a864433a5c24aeb4e299bacc9"
-
+  revision 1
   head "git://anongit.kde.org/kate.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 
+  depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
   depends_on "KDE-mac/kde/kf5-threadweaver"
+
   depends_on "KDE-mac/kde/konsole" => [:optional]
 
   def install

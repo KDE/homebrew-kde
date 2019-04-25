@@ -5,6 +5,7 @@ class Kf5Kdesignerplugin < Formula
   sha256 "9e85a4ac798122b459722773a6e81f639be6dfe9c9714a16704f555c88334393"
 
   head "git://anongit.kde.org/kdesignerplugin.git"
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build

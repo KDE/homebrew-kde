@@ -5,6 +5,7 @@ class Kf5Kconfig < Formula
   sha256 "155b0dbba8772aa8ea3e75217029daa00ada8699e5a807154214f66b2462c010"
 
   head "git://anongit.kde.org/kconfig.git"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build

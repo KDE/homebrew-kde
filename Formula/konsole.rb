@@ -3,7 +3,9 @@ class Konsole < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/applications/19.04.0/src/konsole-19.04.0.tar.xz"
   sha256 "62d53840f6cac4686feafa7f75d641bb56867b7dfc12e6ce95afa7e796e37cef"
+
   head "git://anongit.kde.org/konsole.git"
+
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "kde-mac/kde/kf5-kdoctools" => :build
