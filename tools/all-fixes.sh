@@ -105,5 +105,10 @@ ln -sfv "$(brew --prefix)/opt/elisa/bin/elisa.app" "$HOME/Applications/KDE/"
 # kcalc
 ln -sfv "$(brew --prefix)/share/kcalc" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/kcalc/bin/kcalc.app" "$HOME/Applications/KDE/"
+# libksysguard
+ln -sfv "$(brew --prefix)/share/ksysguard" "$HOME/Library/Application Support"
+# ksysguard
+ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguard.app" "$HOME/Applications/KDE/"
+ln -sfv "$(brew --prefix)/opt/ksysguard/bin/ksysguardd.app" "$HOME/Applications/KDE/"
 
 exit 0
