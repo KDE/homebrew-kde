@@ -19,6 +19,7 @@ ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Suppo
 ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/knotifycations5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
+ln -sfv "$(brew --prefix)/share/kpackage" "$HOME/Library/Application Support"
 # kf5-breeze-icons
 ln -sfv "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
 # kf5-kemoticons
