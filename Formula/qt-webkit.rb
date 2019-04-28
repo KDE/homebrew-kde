@@ -21,12 +21,12 @@ class QtWebkit < Formula
   patch :DATA
 
   patch do
-    # Fix null point dereference (Fedora) https://github.com/annulen/webkit/issues/573
-    url "https://git.archlinux.org/svntogit/packages.git/plain/trunk/qt5-webkit-null-pointer-dereference.patch?h=packages/qt5-webkit"
-    sha256 "510e1f78c2bcd76909703a097dbc1d5c9c6ce4cd94883c26138f09cc10121f43"
+    # Fix null point dereference https://github.com/annulen/webkit/issues/573
+    url "https://github.com/annulen/webkit/commit/0e75f3272d149bc64899c161f150eb341a2417af.patch?full_index=1"
+    sha256 "2c65526b0903b78b2363ee64eb245e180d83bc45c91ab96a46d9fcde1318517c"
   end
   patch do
-    # Fix build with cmake 3.10
+    # Fix build with cmake 3.10 https://github.com/annulen/webkit/issues/638
     url "https://github.com/annulen/webkit/commit/f51554bf104ab0491370f66631fe46143a23d5c2.diff?full_index=1"
     sha256 "874b56c30cdc43627f94d999083f0617c4bfbcae4594fe1a6fc302bf39ad6c30"
   end
@@ -52,7 +52,10 @@ class QtWebkit < Formula
     args << "-DCMAKE_SKIP_INSTALL_RPATH=ON"
 
     # Fuck off rpath
-    inreplace "Source/cmake/OptionsQt.cmake", "RPATH\ ON", "RPATH\ OFF"
+    inreplace "Source/cmake/OptionsQt.cmake",
+              "set(CMAKE_MACOSX_RPATH\ ON)",
+              ""
+
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
       system "ninja"
