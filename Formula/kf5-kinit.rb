@@ -30,7 +30,7 @@ class Kf5Kinit < Formula
   end
 end
 
-# Fix the "?"
+# Fix the build
 
 __END__
 diff --git a/src/kdeinit/CMakeLists.txt b/src/kdeinit/CMakeLists.txt

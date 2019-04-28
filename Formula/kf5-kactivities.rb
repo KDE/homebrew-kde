@@ -42,13 +42,11 @@ diff --git a/src/cli/CMakeLists.txt b/src/cli/CMakeLists.txt
 index d0e13be..479031b 100644
 --- a/src/cli/CMakeLists.txt
 +++ b/src/cli/CMakeLists.txt
-@@ -30,6 +30,10 @@ target_link_libraries (
+@@ -30,6 +30,8 @@ target_link_libraries (
     KF5::Activities
     )
  
-+ecm_mark_nongui_executable(
-+   kactivities-cli
-+   )
++ecm_mark_nongui_executable(kactivities-cli)
 +
  install (TARGETS
     kactivities-cli

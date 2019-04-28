@@ -3,6 +3,7 @@ class Kf5Kservice < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kservice-5.57.0.tar.xz"
   sha256 "531940baa47273714fbc35941f2ef5fbdb801b7a5ed5fef5a8ff1d86bf1dae14"
+
   head "git://anongit.kde.org/kservice.git"
 
   depends_on "bison" => :build

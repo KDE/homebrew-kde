@@ -35,14 +35,13 @@ class Kdevelop < Formula
 
   conflicts_with "KDE-mac/kde/kdevplatform", :because => "Now included in Kdevelop"
 
-  patch :DATA
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -84,40 +83,3 @@ class Kdevelop < Formula
     assert `"#{bin}/kdevelop.app/Contents/MacOS/kdevelop" --help | grep -- --help` =~ /--help/
   end
 end
-
-# Avoid the Brew sandbox
-
-__END__
-diff --git a/app/CMakeLists.txt b/app/CMakeLists.txt
-index 43574b58e4..8d9cd8b4ab 100644
---- a/app/CMakeLists.txt
-+++ b/app/CMakeLists.txt
-@@ -98,4 +98,5 @@ install( PROGRAMS org.kde.kdevelop.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
- install( PROGRAMS org.kde.kdevelop_ps.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
- install( FILES kdevelop.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
- install( FILES kdevelop.xml DESTINATION ${KDE_INSTALL_MIMEDIR} )
--update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-+# Need generate out of brew by update-mime-database
-+#update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-diff --git a/plugins/clang/CMakeLists.txt b/plugins/clang/CMakeLists.txt
-index cbf6b2c9ce..aaea30c9a5 100644
---- a/plugins/clang/CMakeLists.txt
-+++ b/plugins/clang/CMakeLists.txt
-@@ -135,4 +135,5 @@ target_link_libraries(kdevclangsupport
- )
- 
- install(FILES kdevclang.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
--update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-+# Need generate out of brew by update-mime-database
-+#update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-diff --git a/plugins/git/CMakeLists.txt b/plugins/git/CMakeLists.txt
-index a0eed7be91..e18a905103 100644
---- a/plugins/git/CMakeLists.txt
-+++ b/plugins/git/CMakeLists.txt
-@@ -36,4 +36,5 @@ add_subdirectory(icons)
- install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-
- install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
--update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-+# Need generate out of brew by update-mime-database
-+#update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})

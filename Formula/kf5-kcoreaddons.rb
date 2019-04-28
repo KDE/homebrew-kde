@@ -15,8 +15,6 @@ class Kf5Kcoreaddons < Formula
 
   depends_on "qt"
 
-  patch :DATA
-
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
@@ -24,6 +22,7 @@ class Kf5Kcoreaddons < Formula
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -43,21 +42,3 @@ class Kf5Kcoreaddons < Formula
   EOS
   end
 end
-
-# Avoid the Brew sandbox
-
-__END__
---- a/src/mimetypes/CMakeLists.txt      2017-10-29 05:46:14.027699012 +0100
-+++ b/src/mimetypes/CMakeLists.txt      2017-10-07 21:09:54.000000000 +0200
-@@ -9,6 +9,8 @@
-                       )
-
- # update XDG mime-types if shared mime info is around
--if(SharedMimeInfo_FOUND)
--    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
--endif()
-+
-+# Need generate out of brew by update-mime-database
-+#if(SharedMimeInfo_FOUND)
-+#    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-+#endif()

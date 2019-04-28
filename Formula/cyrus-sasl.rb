@@ -16,6 +16,7 @@ class CyrusSasl < Formula
   depends_on "openldap" => :build
   depends_on "openssl" => :build
   depends_on "postgresql" => :build
+
   depends_on "libtool"
 
   def install

@@ -14,6 +14,7 @@ class Kf5Kdesignerplugin < Formula
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kplotting"
+
   depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
 
   def install

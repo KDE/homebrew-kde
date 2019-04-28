@@ -51,7 +51,7 @@ class QtWebkit < Formula
     args << "-DCMAKE_SKIP_RPATH=ON"
     args << "-DCMAKE_SKIP_INSTALL_RPATH=ON"
 
-    # Fuck up rpath
+    # Fuck off rpath
     inreplace "Source/cmake/OptionsQt.cmake", "RPATH\ ON", "RPATH\ OFF"
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

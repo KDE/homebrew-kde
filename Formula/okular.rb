@@ -78,7 +78,6 @@ class Okular < Formula
 end
 
 # Fix build
-# Avoid the Brew sandbox
 # Fix Retina display
 
 __END__
