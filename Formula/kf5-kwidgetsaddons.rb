@@ -35,4 +35,9 @@ class Kf5Kwidgetsaddons < Formula
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5WidgetsAddons REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

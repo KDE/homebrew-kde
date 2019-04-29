@@ -31,4 +31,9 @@ class Kf5Kiconthemes < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5IconThemes REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

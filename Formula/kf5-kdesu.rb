@@ -31,4 +31,9 @@ class Kf5Kdesu < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Su REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

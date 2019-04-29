@@ -44,6 +44,11 @@ class Kf5Kwallet < Formula
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Wallet REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Mark executables as nongui type

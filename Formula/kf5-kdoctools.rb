@@ -42,4 +42,9 @@ class Kf5Kdoctools < Formula
       ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5DocTools REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

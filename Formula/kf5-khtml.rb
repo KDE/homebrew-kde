@@ -39,4 +39,9 @@ class Kf5Khtml < Formula
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5KHtml REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

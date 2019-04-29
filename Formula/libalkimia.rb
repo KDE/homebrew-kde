@@ -26,4 +26,9 @@ class Libalkimia < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(LibAlkimia5 REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

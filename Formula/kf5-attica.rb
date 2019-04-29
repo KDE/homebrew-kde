@@ -28,4 +28,9 @@ class Kf5Attica < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Attica REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

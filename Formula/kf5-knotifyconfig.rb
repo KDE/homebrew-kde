@@ -28,4 +28,9 @@ class Kf5Knotifyconfig < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5NotifiConfig REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

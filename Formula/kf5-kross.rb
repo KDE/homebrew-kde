@@ -50,4 +50,9 @@ class Kf5Kross < Formula
   test do
     assert `"#{bin}"/kf5kross.app/Contents/MacOS/kf5kross --help | grep -- --help` =~ /--help/
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Kross REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

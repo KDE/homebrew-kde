@@ -25,4 +25,12 @@ class Kdiagram < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write <<~EOS
+      find_package(KChart REQUIRED)
+      find_package(KGrantt REQUIRED)
+    EOS
+    system "cmake", ".", "-Wno-dev"
+  end
 end

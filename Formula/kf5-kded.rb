@@ -34,4 +34,9 @@ class Kf5Kded < Formula
       ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KDED REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

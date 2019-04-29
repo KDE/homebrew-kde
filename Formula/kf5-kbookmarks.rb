@@ -28,4 +28,9 @@ class Kf5Kbookmarks < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Bookmarks REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

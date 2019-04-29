@@ -45,7 +45,7 @@ class Atcore < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(AtCore)")
-    system bin/"cmake", "."
+    (testpath/"CMakeLists.txt").write("find_package(AtCore REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
   end
 end

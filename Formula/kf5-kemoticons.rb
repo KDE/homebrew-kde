@@ -36,4 +36,9 @@ class Kf5Kemoticons < Formula
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Emoticons REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

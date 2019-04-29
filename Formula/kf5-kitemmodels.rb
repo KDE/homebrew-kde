@@ -28,4 +28,9 @@ class Kf5Kitemmodels < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5ItemModels REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

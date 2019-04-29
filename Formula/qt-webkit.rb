@@ -63,6 +63,11 @@ class QtWebkit < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(Qt5 CONFIG COMPONENTS WebKit WebKitWidgets REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Fix build

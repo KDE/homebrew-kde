@@ -29,4 +29,9 @@ class Kf5Kcrash < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Crash REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

@@ -33,6 +33,11 @@ class Kf5Kactivities < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Activities REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Mark executables as nongui type

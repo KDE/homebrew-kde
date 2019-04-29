@@ -22,6 +22,7 @@ class Libksysguard < Formula
   end
 
   test do
-    system "false"
+    (testpath/"CMakeLists.txt").write("find_package(KF5SysGuard REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
   end
 end

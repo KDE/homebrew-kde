@@ -31,6 +31,11 @@ class Kf5Kjsembed < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5JsEmbed REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Mark executable as nongui type

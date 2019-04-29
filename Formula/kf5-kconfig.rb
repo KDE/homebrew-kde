@@ -28,4 +28,9 @@ class Kf5Kconfig < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Config REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

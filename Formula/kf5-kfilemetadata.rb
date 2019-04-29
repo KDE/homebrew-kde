@@ -34,4 +34,9 @@ class Kf5Kfilemetadata < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5FileMetaData REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

@@ -59,6 +59,11 @@ class KioExtras < Formula
       ln -sfv "$(brew --prefix)/share/solid" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5KioArchive REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)

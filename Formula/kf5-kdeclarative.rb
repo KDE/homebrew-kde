@@ -32,6 +32,11 @@ class Kf5Kdeclarative < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Declarative REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
 
 # Mark executables as nongui type

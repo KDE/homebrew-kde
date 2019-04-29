@@ -25,4 +25,9 @@ class KdevelopPgQt < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KDevelop-PG-Qt REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

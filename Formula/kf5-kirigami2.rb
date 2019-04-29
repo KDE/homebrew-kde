@@ -34,4 +34,9 @@ class Kf5Kirigami2 < Formula
       ln -sfv "$(brew --prefix)/share/kpackage" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5Kirigami2 REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end

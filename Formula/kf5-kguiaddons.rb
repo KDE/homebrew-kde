@@ -28,4 +28,9 @@ class Kf5Kguiaddons < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(KF5GuiAddons REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
