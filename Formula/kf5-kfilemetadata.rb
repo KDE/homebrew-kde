@@ -16,6 +16,8 @@ class Kf5Kfilemetadata < Formula
   depends_on "exiv2"
   depends_on "ffmpeg"
   depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "KDE-mac/kde/kf5-kconfig"
+  depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "poppler"
   depends_on "taglib"
