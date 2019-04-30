@@ -3,14 +3,17 @@ class Kdenlive < Formula
   homepage "https://www.kdenlive.org/"
   url "https://download.kde.org/stable/applications/19.04.0/src/kdenlive-19.04.0.tar.xz"
   sha256 "274ae17b4376258ef83d810cb33677ca3224e205ea8b69982dd0fc4e5ee5878a"
-
+  revision 1
   head "git://anongit.kde.org/kdenlive.git"
 
   depends_on "cmake" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
+  depends_on "shared-mime-info" => :build
 
+  depends_on "hicolor-icon-theme"
+  depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kfilemetadata"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
@@ -22,15 +25,17 @@ class Kdenlive < Formula
   depends_on "ffmpeg" => :optional
   depends_on "libdv" => :optional
 
+  patch :DATA
+
   def install
     args = std_cmake_args
     args << "-DKDE_INSTALL_BUNDLEDIR=#{bin}"
     args << "-DKDE_INSTALL_LIBDIR=lib"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
+    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DBUILD_TESTING=OFF"
-    args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -73,3 +78,27 @@ class Kdenlive < Formula
     assert `"#{bin}/kdenlive.app/Contents/MacOS/kdenlive" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Fix shared-mime-info for use with ECM instead of set as hard requeriment.
+
+__END__
+diff --git a/data/CMakeLists.txt b/data/CMakeLists.txt
+index a69ba42..8bf8b1c 100644
+--- a/data/CMakeLists.txt
++++ b/data/CMakeLists.txt
+@@ -33,7 +33,13 @@ install(FILES profiles.xml DESTINATION ${DATA_INSTALL_DIR}/kdenlive/export)
+ install(FILES org.kde.kdenlive.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+ install(FILES org.kde.kdenlive.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+
+-find_package(SharedMimeInfo REQUIRED)
++find_package(SharedMimeInfo 0.70)
++set_package_properties(SharedMimeInfo PROPERTIES
++                       TYPE OPTIONAL
++                       PURPOSE "Allows KDE applications to determine file types"
++                       )
+ install(FILES org.kde.kdenlive.xml westley.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
+-update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
++if(SharedMimeInfo_FOUND)
++    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++endif()
+
