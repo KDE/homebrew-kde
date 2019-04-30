@@ -32,7 +32,7 @@ ln -sfv "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/kate/bin/kate.app" "$HOME/Applications/KDE/"
-ln -sfv "$(brew --prefix)/opt/kwrite/bin/kwrite.app" "$HOME/Applications/KDE/"
+ln -sfv "$(brew --prefix)/opt/kate/bin/kwrite.app" "$HOME/Applications/KDE/"
 # kio-extras
 ln -sfv "$(brew --prefix)/share/kio_bookmarks" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kio_info" "$HOME/Library/Application Support"

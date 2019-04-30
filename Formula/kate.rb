@@ -63,7 +63,7 @@ class Kate < Formula
       ln -sfv "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
       mkdir -pv "$HOME/Applications/KDE"
       ln -sfv "$(brew --prefix)/opt/kate/bin/kate.app" "$HOME/Applications/KDE/"
-      ln -sfv "$(brew --prefix)/opt/kwrite/bin/kwrite.app" "$HOME/Applications/KDE/"
+      ln -sfv "$(brew --prefix)/opt/kate/bin/kwrite.app" "$HOME/Applications/KDE/"
   EOS
   end
 
