@@ -59,11 +59,6 @@ ln -sfv "$(brew --prefix)/opt/lokalize/bin/lokalize.app" "$HOME/Applications/KDE
 # okteta
 ln -sfv "$(brew --prefix)/share/okteta" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/okteta/bin/okteta.app" "$HOME/Applications/KDE/"
-# poxml
-ln -sfv "$(brew --prefix)/opt/poxml/bin/po2xml.app" "$HOME/Applications/KDE/"
-ln -sfv "$(brew --prefix)/opt/poxml/bin/split2po.app" "$HOME/Applications/KDE/"
-ln -sfv "$(brew --prefix)/opt/poxml/bin/swappo.app" "$HOME/Applications/KDE/"
-ln -sfv "$(brew --prefix)/opt/poxml/bin/xml2pot.app" "$HOME/Applications/KDE/"
 # kdevelop
 ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
