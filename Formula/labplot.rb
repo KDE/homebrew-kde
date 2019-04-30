@@ -1,9 +1,9 @@
 class Labplot < Formula
   desc "Application for interactive graphing and analysis of scientific data"
   homepage "https://labplot.kde.org/"
-  url "https://download.kde.org/stable/labplot/2.5.0/labplot-2.5.0.tar.xz"
-  sha256 "f1ef2d95a4d4f18902e38cd1f2f79d041d4eeed1eb7f6284ec9a6a6954792225"
-  revision 2
+  url "https://download.kde.org/stable/labplot/2.6.0/labplot-2.6.0.tar.xz"
+  sha256 "4556541fb6544cda56c2625a1fc5c9c8b0ba6bc8178af076c68a792b545c5657"
+
   head "git://anongit.kde.org/labplot.git"
 
   depends_on "cmake" => :build
@@ -12,6 +12,7 @@ class Labplot < Formula
   depends_on "kf5-kdesignerplugin" => :build
   depends_on "kf5-kdoctools" => :build
   depends_on "ninja" => :build
+  depends_on "shared-mime-info" => :build
 
   depends_on "cfitsio"
   depends_on "fftw"
@@ -19,11 +20,14 @@ class Labplot < Formula
   depends_on "gsl"
   depends_on "libcerf"
   depends_on "netcdf"
+  depends_on "qt"
+
+  patch :DATA
 
   def install
     args = std_cmake_args
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
-    args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -34,6 +38,7 @@ class Labplot < Formula
   end
 
   def post_install
+    system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
     mkdir_p HOMEBREW_PREFIX/"share/labplot2"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/labplot2/icontheme.rcc"
   end
@@ -42,8 +47,7 @@ class Labplot < Formula
     You need to take some manual steps in order to make this formula work:
        ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
        ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "/Applications"
-       ln -sfv "$(brew --prefix)/opt/labplot/share/kxmlgui5/labplot2/labplot2ui.rc" \
-          "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
+       ln -sfv "$(brew --prefix)/opt/labplot/share/kxmlgui5/labplot2/labplot2ui.rc" "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
   EOS
   end
 
@@ -51,3 +55,29 @@ class Labplot < Formula
     assert `"#{bin}/labplot.app/Contents/MacOS/labplot" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Fix shared-mime-info for use with ECM instead of set as hard requeriment.
+
+__END__
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 042b5a1..e4bd13e 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1,4 +1,8 @@
+-find_package(SharedMimeInfo REQUIRED)
++find_package(SharedMimeInfo 0.70)
++set_package_properties(SharedMimeInfo PROPERTIES
++                       TYPE OPTIONAL
++                       PURPOSE "Allows KDE applications to determine file types"
++                       )
+ set(KDE_FRONTEND true)
+ set(KDEFRONTEND_DIR kdefrontend)
+ set(BACKEND_DIR backend)
+@@ -471,4 +474,7 @@ install( PROGRAMS org.kde.labplot2.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+ install( FILES labplot2.xml DESTINATION ${XDG_MIME_INSTALL_DIR} )
+ install( FILES labplot2_themes.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
+-update_xdg_mimetypes( ${XDG_MIME_INSTALL_DIR} )
++# update XDG mime-types if shared mime info is around
++if(SharedMimeInfo_FOUND)
++    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++endif()
