@@ -24,7 +24,7 @@ class Okular < Formula
   depends_on "KDE-mac/kde/libkexiv2"
   depends_on "KDE-mac/kde/phonon"
   depends_on "libspectre"
-  depends_on "poppler" => "--with-qt"
+  depends_on "poppler"
   depends_on "qca"
   depends_on "zlib"
 
