@@ -12,17 +12,7 @@ class Drkonqi < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kcompletion"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kcrash"
-  depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "KDE-mac/kde/kf5-kidletime"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kjobwidgets"
-  depends_on "KDE-mac/kde/kf5-knotifications"
-  depends_on "KDE-mac/kde/kf5-kservice"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
   depends_on "KDE-mac/kde/kf5-kxmlrpcclient"
 
   def install
@@ -30,7 +20,7 @@ class Drkonqi < Formula
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
