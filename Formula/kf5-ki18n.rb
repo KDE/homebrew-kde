@@ -21,7 +21,9 @@ class Kf5Ki18n < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_SHARED_LINKER_FLAGS=-lintl" # cmake thinks libintl is part of libc
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    # cmake thinks libintl is part of libc
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-lintl"
     args << "-DCMAKE_EXE_LINKER_FLAGS=-lintl"
 
     mkdir "build" do

@@ -34,4 +34,33 @@ class Kf5Tier1Frameworks < Formula
     touch "empty"
     prefix.install "empty"
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write <<~EOS
+      find_package(KF5Attica REQUIRED)
+      find_package(ECM REQUIRED)
+      find_package(KF5Archive REQUIRED)
+      find_package(KF5Config REQUIRED)
+      find_package(KF5Codecs REQUIRED)
+      find_package(KF5CoreAddons REQUIRED)
+      find_package(KF5DBusAddons REQUIRED)
+      find_package(KF5DNSSD REQUIRED)
+      find_package(KF5GuiAddons REQUIRED)
+      find_package(KF5I18n REQUIRED)
+      find_package(KF5IdleTime REQUIRED)
+      find_package(KF5Kirigami2 REQUIRED)
+      find_package(KF5ItemModels REQUIRED)
+      find_package(KF5Plotting REQUIRED)
+      find_package(KF5WidgetsAddons REQUIRED)
+      find_package(KF5WindowSystem REQUIRED)
+      find_package(KF5Solid REQUIRED)
+      find_package(KF5Sonnet REQUIRED)
+      find_package(KF5SyntaxHighlighting REQUIRED)
+      find_package(KF5ThreadWeaver REQUIRED)
+    EOS
+    system "cmake", ".", "-Wno-dev"
+    breeze = Formula["kf5-breeze-icons"].opt_share
+    assert_predicate breeze/"icons/breeze/index.theme", :exist?
+    assert_predicate breeze/"icons/breeze-dark/index.theme", :exist?
+  end
 end

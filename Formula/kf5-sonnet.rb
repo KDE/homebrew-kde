@@ -11,7 +11,9 @@ class Kf5Sonnet < Formula
   depends_on "graphviz" => :build
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
+
   depends_on "qt"
+
   depends_on "aspell" => :optional
   depends_on "hspell" => :optional
   depends_on "libvoikko" => :optional
@@ -24,6 +26,7 @@ class Kf5Sonnet < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

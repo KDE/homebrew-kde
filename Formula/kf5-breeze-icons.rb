@@ -17,6 +17,7 @@ class Kf5BreezeIcons < Formula
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
 
     mkdir "build" do
@@ -32,4 +33,9 @@ class Kf5BreezeIcons < Formula
       ln -sfv "$(brew --prefix)/share/icons" "$HOME/Library/Application Support"
   EOS
   end
+
+  test do
+    assert_predicate share/"icons/breeze/index.theme", :exist?
+    assert_predicate share/"icons/breeze-dark/index.theme", :exist?
+    end
 end
