@@ -50,6 +50,7 @@ class Kf5PlasmaFramework < Formula
     (testpath/"CMakeLists.txt").write <<~EOS
       find_package(KF5Plasma REQUIRED)
       find_package(KF5PlasmaQuick REQUIRED)
+    EOS
     system "cmake", ".", "-Wno-dev"
   end
 end
