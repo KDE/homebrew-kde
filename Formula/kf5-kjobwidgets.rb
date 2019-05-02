@@ -3,7 +3,7 @@ class Kf5Kjobwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kjobwidgets-5.57.0.tar.xz"
   sha256 "4b98e7cd9b8d877326854addcee300071afc92f4378d3a94734e470271638002"
-
+  revision 1
   head "git://anongit.kde.org/kjobwidgets.git"
 
   depends_on "cmake" => :build
@@ -14,6 +14,7 @@ class Kf5Kjobwidgets < Formula
 
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "qt"
 
   def install
     args = std_cmake_args
@@ -21,6 +22,7 @@ class Kf5Kjobwidgets < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

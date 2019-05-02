@@ -3,7 +3,7 @@ class Kf5Kimageformats < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kimageformats-5.57.0.tar.xz"
   sha256 "d7ce6c4737ae2846f015633e7479b60460d960a3a578777c2a884d499bd6cc14"
-
+  revision 1
   head "git://anongit.kde.org/kimageformats.git"
 
   depends_on "cmake" => :build
@@ -20,6 +20,7 @@ class Kf5Kimageformats < Formula
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -33,5 +34,10 @@ class Kf5Kimageformats < Formula
     You need to take some manual steps in order to make this formula work:
       ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
   EOS
+  end
+
+  test do
+    assert_predicate lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
+    assert_predicate share/"kservices5/qimageioplugins/eps.desktop", :exist?
   end
 end

@@ -3,7 +3,7 @@ class Kf5Knotifications < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/knotifications-5.57.0.tar.xz"
   sha256 "7de068f4cf9bcefef54ae1cb180e2c0af9be951afbcaa960245507259620cf15"
-
+  revision 1
   head "git://anongit.kde.org/knotifications.git"
 
   depends_on "cmake" => :build
@@ -17,6 +17,7 @@ class Kf5Knotifications < Formula
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-kwindowsystem"
   depends_on "KDE-mac/kde/phonon"
+  depends_on "libcanberra"
 
   def install
     args = std_cmake_args
@@ -24,6 +25,7 @@ class Kf5Knotifications < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     # setBadgeLabelText method is deprecated since 5.12
     args << "-DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00"
     args << "-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00"

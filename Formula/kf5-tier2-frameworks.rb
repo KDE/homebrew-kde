@@ -18,10 +18,31 @@ class Kf5Tier2Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kpackage" => :build
   depends_on "KDE-mac/kde/kf5-kpty" => :build
   depends_on "KDE-mac/kde/kf5-kunitconversion" => :build
-  depends_on "KDE-mac/kde/kf5-tier1-frameworks" => :build # the page say is not ready for macos, but build ok (?)
+  depends_on "KDE-mac/kde/kf5-tier1-frameworks" => :build
 
   def install
     touch "empty"
     prefix.install "empty"
+  end
+
+  test do
+    (testpath/"CMakeLists.txt").write <<~EOS
+      find_package(KF5Activities REQUIRED)
+      find_package(KF5Auth REQUIRED)
+      find_package(KF5Completion REQUIRED)
+      find_package(KF5Crash REQUIRED)
+      find_package(KF5DocTools REQUIRED)
+      find_package(KF5FileMetaData REQUIRED)
+      find_package(KF5JobWidgets REQUIRED)
+      find_package(KF5Notifications REQUIRED)
+      find_package(KF5Package REQUIRED)
+      find_package(KF5Pty REQUIRED)
+      find_package(KF5UnitConversion REQUIRED)
+    EOS
+    system "cmake", ".", "-Wno-dev"
+    imageformats_lib = Formula["kf5-kimageformats"].opt_lib
+    imageformats_share = Formula["kf5-kimageformats"].opt_share
+    assert_predicate imageformats_lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
+    assert_predicate imageformats_share/"kservices5/qimageioplugins/eps.desktop", :exist?
   end
 end
