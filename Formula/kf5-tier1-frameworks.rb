@@ -50,7 +50,6 @@ class Kf5Tier1Frameworks < Formula
       find_package(KF5IdleTime REQUIRED)
       find_package(KF5Kirigami2 REQUIRED)
       find_package(KF5ItemModels REQUIRED)
-      find_package(KF5ItemViews REQUIRED)
       find_package(KF5Plotting REQUIRED)
       find_package(KF5WidgetsAddons REQUIRED)
       find_package(KF5WindowSystem REQUIRED)
@@ -60,7 +59,6 @@ class Kf5Tier1Frameworks < Formula
       find_package(KF5ThreadWeaver REQUIRED)
     EOS
     system "cmake", ".", "-Wno-dev"
-    # kf5-breeze-icons
     breeze = Formula["kf5-breeze-icons"].opt_share
     assert_predicate breeze/"icons/breeze/index.theme", :exist?
     assert_predicate breeze/"icons/breeze-dark/index.theme", :exist?
