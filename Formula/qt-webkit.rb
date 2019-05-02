@@ -3,7 +3,7 @@ class QtWebkit < Formula
   homepage "https://www1.qt.io/developers/"
   url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
   sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
-  revision 5
+  revision 6
   head "https://github.com/qt/qtwebkit.git"
 
   depends_on "cmake" => :build
