@@ -36,7 +36,6 @@ my %frameworks = (
 		'syntax-highlighting' => '',
 		'kwidgetsaddons'      => '',
 		'kwindowsystem'       => '',
-		'qqc2-desktop-style'  => '',
 		'solid'               => '',
 		'sonnet'              => '',
 		'threadweaver'        => '',
@@ -84,6 +83,7 @@ my %frameworks = (
 
 ### Tier 4
 		'frameworkintegration' => '',
+        'qqc2-desktop-style'   => '',
 
 ### Porting Aids
 		'kdelibs4support' => 'portingAids/kdelibs4support',
