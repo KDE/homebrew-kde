@@ -58,7 +58,10 @@ class Kf5Kdelibs4support < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KDELibs4Support REQUIRED)")
+    (testpath/"CMakeLists.txt").write <<~EOS
+      find_package(KF5KDELibs4Support REQUIRED)
+      find_package(KF5KDE4Support REQUIRED)
+    EOS
     system "cmake", ".", "-Wno-dev"
   end
 end
