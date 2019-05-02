@@ -3,7 +3,7 @@ class Kf5Kparts < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kparts-5.57.0.tar.xz"
   sha256 "5a079986963d186e98a1174e19e490731012732ad5ad31a431a8f7a31c6b6ed2"
-
+  revision 1
   head "git://anongit.kde.org/kparts.git"
 
   depends_on "cmake" => :build
@@ -13,7 +13,6 @@ class Kf5Kparts < Formula
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "qt"
 
   def install
     args = std_cmake_args
@@ -21,6 +20,7 @@ class Kf5Kparts < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

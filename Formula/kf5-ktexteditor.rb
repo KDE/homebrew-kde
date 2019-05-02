@@ -3,7 +3,7 @@ class Kf5Ktexteditor < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/ktexteditor-5.57.0.tar.xz"
   sha256 "aa510656f632ef09c18af4263386265c293cb929f139786acd102881250314c3"
-
+  revision 1
   head "git://anongit.kde.org/ktexteditor.git"
 
   depends_on "cmake" => :build
@@ -12,6 +12,7 @@ class Kf5Ktexteditor < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
 
+  depends_on "edotorconfig"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
   depends_on "libgit2"
@@ -22,6 +23,7 @@ class Kf5Ktexteditor < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

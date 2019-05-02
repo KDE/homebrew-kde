@@ -18,6 +18,7 @@ class Kf5Kdewebkit < Formula
     args << "-DBUILD_TESTING=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
 
     mkdir "build" do

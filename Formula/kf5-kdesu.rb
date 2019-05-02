@@ -3,7 +3,7 @@ class Kf5Kdesu < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kdesu-5.57.0.tar.xz"
   sha256 "76d98db52f7f375991cd7ccbbf1dc100716f99a5792b71ef31a75cc33cf45b19"
-
+  revision 1
   head "git://anongit.kde.org/kdesu.git"
 
   depends_on "cmake" => :build
@@ -15,7 +15,6 @@ class Kf5Kdesu < Formula
 
   depends_on "KDE-mac/kde/kf5-kpty"
   depends_on "KDE-mac/kde/kf5-kservice"
-  depends_on "qt"
 
   def install
     args = std_cmake_args
@@ -23,6 +22,7 @@ class Kf5Kdesu < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args

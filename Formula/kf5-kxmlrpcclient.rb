@@ -3,7 +3,7 @@ class Kf5Kxmlrpcclient < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.57/kxmlrpcclient-5.57.0.tar.xz"
   sha256 "d47d5cc49f050dda3a26f7654226c0d124ca5ba5503a60e606307426bbe43b9d"
-
+  revision 1
   head "git://anongit.kde.org/kxmlrpcclient.git"
 
   depends_on "cmake" => :build
@@ -13,7 +13,6 @@ class Kf5Kxmlrpcclient < Formula
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "qt"
 
   def install
     args = std_cmake_args
@@ -21,6 +20,7 @@ class Kf5Kxmlrpcclient < Formula
     args << "-DBUILD_QCH=ON"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
