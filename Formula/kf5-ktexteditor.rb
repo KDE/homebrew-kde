@@ -12,7 +12,7 @@ class Kf5Ktexteditor < Formula
   depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "ninja" => :build
 
-  depends_on "edotorconfig"
+  depends_on "editorconfig"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-syntax-highlighting"
   depends_on "libgit2"
