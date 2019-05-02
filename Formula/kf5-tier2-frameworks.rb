@@ -40,6 +40,7 @@ class Kf5Tier2Frameworks < Formula
       find_package(KF5UnitConversion REQUIRED)
     EOS
     system "cmake", ".", "-Wno-dev"
+    # kf5-kimageformats
     imageformats_lib = Formula["kf5-kimageformats"].opt_lib
     imageformats_share = Formula["kf5-kimageformats"].opt_share
     assert_predicate imageformats_lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
