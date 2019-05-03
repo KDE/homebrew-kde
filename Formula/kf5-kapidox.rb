@@ -29,7 +29,7 @@ class Kf5Kapidox < Formula
 
   def cmake_args
     args = %W[
-      -DCMAKE_INSTALL_PREFIX=#{prefix}/libexec
+      -DCMAKE_INSTALL_PREFIX=#{libexec}
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_FIND_FRAMEWORK=LAST
       -DCMAKE_VERBOSE_MAKEFILE=ON
@@ -48,7 +48,7 @@ class Kf5Kapidox < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
-    
+
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
     resources.each do |r|

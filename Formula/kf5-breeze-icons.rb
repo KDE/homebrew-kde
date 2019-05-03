@@ -37,5 +37,5 @@ class Kf5BreezeIcons < Formula
   test do
     assert_predicate share/"icons/breeze/index.theme", :exist?
     assert_predicate share/"icons/breeze-dark/index.theme", :exist?
-    end
+  end
 end
