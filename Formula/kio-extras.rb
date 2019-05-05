@@ -26,6 +26,12 @@ class KioExtras < Formula
   depends_on "KDE-mac/kde/kf5-kimageformats" => :optional
   depends_on "taglib" => :optional
 
+  patch do
+    # Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)
+    url "https://bugsfiles.kde.org/attachment.cgi?id=117165"
+    sha256 "bce9033737ef90b038fa5521f0b9b5e192b8ae27a4fedc96eda76ac8f7943315"
+  end
+
   patch :DATA
 
   def install
@@ -67,19 +73,27 @@ class KioExtras < Formula
   end
 end
 
-# Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)
+# Set shared-mime-info as optional.
 
 __END__
-diff --git a/mtp/kiod_module/mtpstorage.cpp b/mtp/kiod_module/mtpstorage.cpp
-index 30a72ab5..4b5dfc5e 100644
---- a/mtp/kiod_module/mtpstorage.cpp
-+++ b/mtp/kiod_module/mtpstorage.cpp
-@@ -545,7 +545,7 @@ int MTPStorage::sendFileFromFileDescriptor(const QDBusUnixFileDescriptor &descri
-         int result = 1;
-         QT_STATBUF srcBuf;
-         if (QT_FSTAT(descriptor.fileDescriptor(), &srcBuf) != -1) {
--            const QDateTime lastModified = QDateTime::fromSecsSinceEpoch(srcBuf.st_mtim.tv_sec);
-+            const QDateTime lastModified = QDateTime::fromSecsSinceEpoch(srcBuf.st_mtime);
- 
-             LIBMTP_file_t *file = LIBMTP_new_file_t();
-             file->parent_id = parentId;
+diff --git a/network/mimetypes/CMakeLists.txt b/network/mimetypes/CMakeLists.txt
+index 4d7368b..3c5151f 100644
+--- a/network/mimetypes/CMakeLists.txt
++++ b/network/mimetypes/CMakeLists.txt
+@@ -1,6 +1,12 @@
+-# shared-mime-info 0.40 is mandatory for generic-icon
+-set( SHARED_MIME_INFO_MINIMUM_VERSION "0.40" )
+-find_package( SharedMimeInfo REQUIRED )
++# shared-mime-info 0.70 is mandatory for generic-icon
++find_package(SharedMimeInfo 0.70)
++set_package_properties(SharedMimeInfo PROPERTIES
++                       TYPE OPTIONAL
++                       PURPOSE "Allows KDE applications to determine file types"
++                       )
+
+ install( FILES network.xml  DESTINATION ${KDE_INSTALL_MIMEDIR} RENAME kf5_network.xml )
+-update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
++# update XDG mime-types if shared mime info is around
++if(SharedMimeInfo_FOUND)
++    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++endif()
