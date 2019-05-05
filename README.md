@@ -42,8 +42,7 @@ any brew parameter like *--verbose* also to *install.sh*
 To remove all KDE Frameworks 5 packages, run:
 
 ```sh
-brew uninstall `brew list --full-name -1 | grep '^kde-mac/kde'`
-rm -rf ~/Applications/KDE
+"$(brew --repo kde-mac/kde)/tools/uninstall.sh"
 ```
 
 **Installing HEAD**

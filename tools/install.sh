@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [[ -f "/tmp/kf5_dep_map" ]] && rm /tmp/kf5_dep_map
 

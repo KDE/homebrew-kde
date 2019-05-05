@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # cpan
 brew install perl dbus
 export PERL_MM_USE_DEFAULT=1
