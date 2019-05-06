@@ -36,6 +36,8 @@ class Kdevelop < Formula
 
   conflicts_with "KDE-mac/kde/kdevplatform", :because => "Now included in Kdevelop"
 
+  patch :DATA
+
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
@@ -84,3 +86,52 @@ class Kdevelop < Formula
     assert `"#{bin}/kdevelop.app/Contents/MacOS/kdevelop" --help | grep -- --help` =~ /--help/
   end
 end
+
+# Set shared-mime-info as optional.
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 55dabcc..28a9f6e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -81,7 +81,12 @@ set_package_properties(KDevelop-PG-Qt PROPERTIES
+     TYPE RECOMMENDED
+ )
+
+-find_package(SharedMimeInfo REQUIRED)
++# shared-mime-info 0.70 is mandatory for generic-icon
++find_package(SharedMimeInfo 0.70)
++set_package_properties(SharedMimeInfo PROPERTIES
++                       TYPE OPTIONAL
++                       PURPOSE "Allows KDE applications to determine file types"
++                      )
+
+ if(NOT CMAKE_VERSION VERSION_LESS "3.10.0" AND KF5_VERSION VERSION_LESS "5.42.0")
+   # CMake 3.9+ warns about automoc on files without Q_OBJECT, and doesn't know about other macros.
+diff --git a/plugins/git/CMakeLists.txt b/plugins/git/CMakeLists.txt
+index 8c6c711..e6c3650 100644
+--- a/plugins/git/CMakeLists.txt
++++ b/plugins/git/CMakeLists.txt
+@@ -36,4 +36,7 @@ add_subdirectory(icons)
+ install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+ 
+ install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
+-update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++# update XDG mime-types if shared mime info is around
++if(SharedMimeInfo_FOUND)
++    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++endif()
+diff --git a/plugins/clang/CMakeLists.txt b/plugins/clang/CMakeLists.txt
+index 0ed104f..f8067c5 100644
+--- a/plugins/clang/CMakeLists.txt
++++ b/plugins/clang/CMakeLists.txt
+@@ -130,4 +130,7 @@ target_link_libraries(kdevclangsupport
+ )
+ 
+ install(FILES kdevclang.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
+-update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++# update XDG mime-types if shared mime info is around
++if(SharedMimeInfo_FOUND)
++    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++endif()
+
