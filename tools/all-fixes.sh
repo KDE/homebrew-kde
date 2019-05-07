@@ -8,6 +8,10 @@ brew services start dbus
 # common
 mkdir -pv "$HOME/Applications/KDE"
 rm -rfv "$HOME/Applications/KDE/*"
+mkdir -pv "$HOME/Library/Application Support/doc"
+rm -rfv "$HOME/Library/Application Support/doc/*"
+ln -sfv "$(brew --prefix)/share/doc/HTML" "$HOME/Library/Application Support/doc"
+ln -sfv "$(brew --prefix)/share/doc/qch" "$HOME/Library/Application Support/doc"
 ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
