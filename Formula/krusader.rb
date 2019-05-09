@@ -47,6 +47,6 @@ class Krusader < Formula
   end
 
   test do
-    system "false"
+    assert `"#{bin}/krusader.app/Contents/MacOS/krusader" --help | grep -- --help` =~ /--help/
   end
 end
