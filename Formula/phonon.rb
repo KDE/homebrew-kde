@@ -34,4 +34,9 @@ class Phonon < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    (testpath/"CMakeLists.txt").write("find_package(Phonon4Qt5 REQUIRED)")
+    system "cmake", ".", "-Wno-dev"
+  end
 end
