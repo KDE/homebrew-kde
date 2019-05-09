@@ -30,4 +30,8 @@ class PhononMpv < Formula
       prefix.install "install_manifest.txt"
     end
   end
+
+  test do
+    assert_predicate lib/"qt5/plugins/phonon4qt5_backend/phonon_mpv.so", :exist?
+  end
 end
