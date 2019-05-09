@@ -3,7 +3,7 @@ class Drkonqi < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/plasma/5.14.4/drkonqi-5.14.4.tar.xz"
   sha256 "b1dada2c6ab6e23ff9425c77d1adc273dbf2dcaf8644927a0059d1583b2fdfbb"
-  revision 1
+  revision 2
   head "git://anongit.kde.org/drkonqi.git"
 
   depends_on "cmake" => :build
@@ -21,6 +21,7 @@ class Drkonqi < Formula
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args << "-DCMAKE_INSTALL_LIBEXECDIR=lib"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -28,5 +29,9 @@ class Drkonqi < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
+  end
+
+  test do
+    assert_predicate lib/"drkonqi", :exist?
   end
 end
