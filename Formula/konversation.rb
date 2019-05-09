@@ -49,11 +49,7 @@ class Konversation < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/konversation" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/konversation/bin/konversation.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

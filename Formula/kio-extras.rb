@@ -55,15 +55,7 @@ class KioExtras < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kio_bookmarks" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kio_info" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/konqsidebartng" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/konqueror" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/remoteview" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/solid" "$HOME/Library/Application Support"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

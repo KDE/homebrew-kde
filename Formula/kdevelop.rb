@@ -68,17 +68,7 @@ class Kdevelop < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kdevappwizard" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevclangsupport" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevcodeutils" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevelop" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevfiletemplates" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevgdb" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevmanpage" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevqmakebuilder" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kdevqmljssupport" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

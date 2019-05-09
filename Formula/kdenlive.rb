@@ -60,9 +60,7 @@ class Kdenlive < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
 
     OTHER NOTES
     -----------

@@ -49,12 +49,7 @@ class Ktorrent < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/ktorrent" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/knotifications5" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktorrent.app" "$HOME/Applications/KDE/"
-      ln -sfv "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

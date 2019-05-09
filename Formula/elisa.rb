@@ -66,11 +66,7 @@ class Elisa < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kpackage" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/elisa/bin/elisa.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

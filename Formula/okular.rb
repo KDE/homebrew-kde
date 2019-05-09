@@ -60,15 +60,7 @@ class Okular < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/okular" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kconf_update" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/config.kcfg" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservicetypes5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kxmlgui5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/okular/bin/okular.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

@@ -35,6 +35,8 @@ class Labplot < Formula
       system "ninja", "install"
       prefix.install "install_manifest.txt"
     end
+    # see https://github.com/KDE-mac/homebrew-kde/pull/242
+    ln_sf "#{share}/kxmlgui5/labplot2/labplot2ui.rc", "#{bin}/labplot2.app/Contents/Resources/labplot2ui.rc"
   end
 
   def post_install
@@ -45,9 +47,7 @@ class Labplot < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-       ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
-       ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "/Applications"
-       ln -sfv "$(brew --prefix)/opt/labplot/share/kxmlgui5/labplot2/labplot2ui.rc" "$(brew --prefix)/opt/labplot/bin/labplot2.app/Contents/Resources"
+       "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

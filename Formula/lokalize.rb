@@ -45,8 +45,7 @@ class Lokalize < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/lokalize/bin/lokalize.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

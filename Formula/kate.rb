@@ -54,16 +54,7 @@ class Kate < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kate" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kwrite" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kateproject" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/katexmltools" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/metainfo" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/plasma" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/kate/bin/kate.app" "$HOME/Applications/KDE/"
-      ln -sfv "$(brew --prefix)/opt/kate/bin/kwrite.app" "$HOME/Applications/KDE/"
+     "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

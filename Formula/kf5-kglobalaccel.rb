@@ -34,7 +34,7 @@ class Kf5Kglobalaccel < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 

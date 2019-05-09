@@ -7,7 +7,7 @@ rvm: system
 before_install:
   - brew update || brew update
   - export HOMEBREW_DEVELOPER="1"
-  - tools/all-fixes.sh
+  - tools/do-caveats.sh
 install:
   - brew tap KDE-mac/kde file://$PWD
 script:

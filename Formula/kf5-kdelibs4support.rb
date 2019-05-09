@@ -50,10 +50,7 @@ class Kf5Kdelibs4support < Formula
       cpan URI URI::Escape
 
     You need to take some manual steps in order to make this formula work:
-      ln -sfv "$(brew --prefix)/share/kf5" "$HOME/Library/Application Support"
-      ln -sfv "$(brew --prefix)/share/kservices5" "$HOME/Library/Application Support"
-      mkdir -pv "$HOME/Applications/KDE"
-      ln -sfv "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "$HOME/Applications/KDE/"
+      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
   EOS
   end
 
