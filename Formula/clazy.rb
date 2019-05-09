@@ -24,4 +24,8 @@ class Clazy < Formula
       prefix.install "install_manifest.txt"
     end
   end
+  
+  test do
+    assert `"#{bin}/clazy-standalone" --help | grep -- -help` =~ /-help/
+  end
 end
