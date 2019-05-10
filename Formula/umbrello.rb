@@ -51,7 +51,7 @@ class Umbrello < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do_caveats.sh"
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
   EOS
   end
 
