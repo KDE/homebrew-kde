@@ -73,4 +73,9 @@ class Kf5Tier3Frameworks < Formula
     EOS
     system "cmake", ".", "-Wno-dev"
   end
+
+  def caveats; <<~EOS
+    You need to take some manual steps in order to make this formula work:
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+  EOS
 end

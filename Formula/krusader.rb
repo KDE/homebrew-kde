@@ -46,6 +46,11 @@ class Krusader < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/krusader/icontheme.rcc"
   end
 
+  def caveats; <<~EOS
+    You need to take some manual steps in order to make this formula work:
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+  EOS
+
   test do
     assert `"#{bin}/krusader.app/Contents/MacOS/krusader" --help | grep -- --help` =~ /--help/
   end
