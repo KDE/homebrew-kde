@@ -25,6 +25,12 @@ class Kf5Tier2Frameworks < Formula
     prefix.install "empty"
   end
 
+  def caveats; <<~EOS
+    You need to take some manual steps in order to make this formula work:
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+  EOS
+  end
+
   test do
     (testpath/"CMakeLists.txt").write <<~EOS
       find_package(KF5Activities REQUIRED)
@@ -46,9 +52,4 @@ class Kf5Tier2Frameworks < Formula
     assert_predicate imageformats_lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
     assert_predicate imageformats_share/"kservices5/qimageioplugins/eps.desktop", :exist?
   end
-
-  def caveats; <<~EOS
-    You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-  EOS
 end

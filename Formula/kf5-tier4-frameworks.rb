@@ -15,6 +15,12 @@ class Kf5Tier4Frameworks < Formula
     prefix.install "empty"
   end
 
+  def caveats; <<~EOS
+      You need to take some manual steps in order to make this formula work:
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+  EOS
+  end
+
   test do
     (testpath/"CMakeLists.txt").write <<~EOS
       find_package(KF5FrameworkIntegration REQUIRED)
@@ -22,9 +28,4 @@ class Kf5Tier4Frameworks < Formula
     EOS
     system "cmake", ".", "-Wno-dev"
   end
-
-  def caveats; <<~EOS
-    You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-  EOS
 end
