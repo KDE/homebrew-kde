@@ -83,7 +83,7 @@ ln -sfv "$(brew --prefix)/share/okular" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/okular/bin/okular.app" "$HOME/Applications/KDE"
 # labplot
 ln -sfv "$(brew --prefix)/share/labplot2" "$HOME/Library/Application Support"
-ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "/Applications/KDE"
+ln -sfv "$(brew --prefix)/opt/labplot/bin/labplot2.app" "$HOME/Applications/KDE"
 # kdenlive
 ln -sfv "$(brew --prefix)/share/kdenlive" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "$HOME/Applications/KDE"
