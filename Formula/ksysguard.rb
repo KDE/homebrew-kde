@@ -3,7 +3,7 @@ class Ksysguard < Formula
   homepage "https://userbase.kde.org/KSysGuard"
   url "https://download.kde.org/stable/plasma/5.15.4/ksysguard-5.15.4.tar.xz"
   sha256 "aa6dd5af4ff47092a3540590bd1c088727f0775b064dacfcb95f3fcf44d02fb7"
-  revision 1
+  revision 2
   head "git://anongit.kde.org/ksysguard.git"
 
   depends_on "cmake" => :build
@@ -36,7 +36,7 @@ class Ksysguard < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/bin/ksysguard.app/Contents/Info.plist"
+      "#{bin}/ksysguard.app/Contents/Info.plist"
   end
 
   def post_install

@@ -3,7 +3,7 @@ class Kmymoney < Formula
   homepage "https://kmymoney.org"
   url "https://download.kde.org/stable/kmymoney/5.0.3/src/kmymoney-5.0.3.tar.xz"
   sha256 "698c0fc7ef2134c5c120a98b10f033e14dc37bff723b562c3b50a018c6ebdbf8"
-
+  revision 1
   head "git://anongit.kde.org/kmymoney.git"
 
   depends_on "cmake" => :build
@@ -47,7 +47,7 @@ class Kmymoney < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/bin/kmymoney.app/Contents/Info.plist"
+      "#{bin}/kmymoney.app/Contents/Info.plist"
   end
 
   def post_install

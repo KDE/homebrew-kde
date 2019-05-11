@@ -3,7 +3,7 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/applications/19.04.0/src/kate-19.04.0.tar.xz"
   sha256 "64c3c312a69d45624e3619309b86de796f67d30a864433a5c24aeb4e299bacc9"
-  revision 1
+  revision 2
   head "git://anongit.kde.org/kate.git"
 
   depends_on "cmake" => :build
@@ -39,10 +39,10 @@ class Kate < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/bin/kate.app/Contents/Info.plist"
+      "#{bin}/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/bin/kwrite.app/Contents/Info.plist"
+      "#{bin}/kwrite.app/Contents/Info.plist"
   end
 
   def post_install
