@@ -1,8 +1,8 @@
 class Kf5Kfilemetadata < Formula
   desc "Library for extracting file metadata"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.57/kfilemetadata-5.57.0.tar.xz"
-  sha256 "49e6c281fdffd4f5fe363c6cefdb6c3022ef57c935d7d6b135607cdde9b2d116"
+  url "https://download.kde.org/stable/frameworks/5.58/kfilemetadata-5.58.0.tar.xz"
+  sha256 "76665ba8ba6ab90cc0e8d682a5c5421fde7c436f5521c614d0b63c5277fabf9c"
 
   head "git://anongit.kde.org/kfilemetadata.git"
 

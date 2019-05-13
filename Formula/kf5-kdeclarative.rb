@@ -1,8 +1,8 @@
 class Kf5Kdeclarative < Formula
   desc "Provides integration of QML and KDE Frameworks"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.57/kdeclarative-5.57.0.tar.xz"
-  sha256 "5335b39ac1cca34209c0420dab867b67ddb0e9ee483bdd6d4192269a1d5f654f"
+  url "https://download.kde.org/stable/frameworks/5.58/kdeclarative-5.58.0.tar.xz"
+  sha256 "267d1dbe55ca65c74289e56200b51de95bcbc231b2d4a2867cb6735d04783bec"
 
   head "git://anongit.kde.org/kdeclarative.git"
 

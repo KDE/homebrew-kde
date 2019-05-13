@@ -1,8 +1,8 @@
 class Kf5Kconfigwidgets < Formula
   desc "Widgets for KConfig"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.57/kconfigwidgets-5.57.0.tar.xz"
-  sha256 "771c5641a9ae465feaf00ffbb3f3c0433ad8d4a90355dc50d5b6b1b472912eb0"
+  url "https://download.kde.org/stable/frameworks/5.58/kconfigwidgets-5.58.0.tar.xz"
+  sha256 "8d68cf5618b7123a39e62a8ee52a01af7f95325b1d7b7bcac097c0d723c054c0"
 
   head "git://anongit.kde.org/kconfigwidgets.git"
 

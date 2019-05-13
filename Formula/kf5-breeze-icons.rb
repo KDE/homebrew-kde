@@ -1,8 +1,8 @@
 class Kf5BreezeIcons < Formula
   desc "Breeze icon themes"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.57/breeze-icons-5.57.0.tar.xz"
-  sha256 "c3ba92acb5bfcff66f41232ebc6e8c893dab78ac59a713fa4bfa2a0e097f4ed2"
+  url "https://download.kde.org/stable/frameworks/5.58/breeze-icons-5.58.0.tar.xz"
+  sha256 "536d2790a143bf0d8cc9ee4de74dea0924eb7d3ac4888fece7bf7c7038066491"
 
   head "git://anongit.kde.org/breeze-icons.git"
 
