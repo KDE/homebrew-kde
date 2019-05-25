@@ -1,10 +1,11 @@
 class QtWebkit < Formula
   desc "Classes for a WebKit2 based implementation and a new QML API"
   homepage "https://www1.qt.io/developers/"
-  url "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz"
-  sha256 "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
-  revision 6
-  head "https://github.com/qt/qtwebkit.git"
+  url "https://github.com/annulen/webkit/archive/95401fe3908e0b4eebc9447e678298d768617bc7.tar.gz"
+  version "5.212.0alpha2+156+g95401fe3908"
+  sha256 "abb506f757a195fb92f9ebdc6b4119c3961a1a40b44b1c1b6f8dceab5a2c70d2"
+
+  head "https://github.com/annulen/webkit.git"
 
   depends_on "cmake" => :build
   depends_on "fontconfig" => :build
@@ -19,17 +20,6 @@ class QtWebkit < Formula
   depends_on "zlib"
 
   patch :DATA
-
-  patch do
-    # Fix null point dereference https://github.com/annulen/webkit/issues/573
-    url "https://github.com/annulen/webkit/commit/0e75f3272d149bc64899c161f150eb341a2417af.patch?full_index=1"
-    sha256 "2c65526b0903b78b2363ee64eb245e180d83bc45c91ab96a46d9fcde1318517c"
-  end
-  patch do
-    # Fix build with cmake 3.10 https://github.com/annulen/webkit/issues/638
-    url "https://github.com/annulen/webkit/commit/f51554bf104ab0491370f66631fe46143a23d5c2.diff?full_index=1"
-    sha256 "874b56c30cdc43627f94d999083f0617c4bfbcae4594fe1a6fc302bf39ad6c30"
-  end
 
   def cmake_args
     args = %W[
