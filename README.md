@@ -14,7 +14,7 @@ brew tap kde-mac/kde
 In order to build them, you first need to do one manuall step that setup all things in order to work-around brew sandbox limitations
 
 ```sh
-"$(brew --repo kde-mac/kde)/tools/all-fixes.sh"
+"$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
 ```
 
 **Note**: It seems that building Qt currently requires the whole Xcode to be installed
