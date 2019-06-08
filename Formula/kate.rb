@@ -1,9 +1,8 @@
 class Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "https://kate-editor.org"
-  url "https://download.kde.org/stable/applications/19.04.0/src/kate-19.04.0.tar.xz"
-  sha256 "64c3c312a69d45624e3619309b86de796f67d30a864433a5c24aeb4e299bacc9"
-  revision 2
+  url "https://download.kde.org/stable/applications/19.04.2/src/kate-19.04.2.tar.xz"
+  sha256 "7bac7edca897a5123fc14f135f7f0f1e579ed0ead7462221f20006516c704ab7"
   head "git://anongit.kde.org/kate.git"
 
   depends_on "cmake" => :build
