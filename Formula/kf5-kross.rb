@@ -1,8 +1,8 @@
 class Kf5Kross < Formula
   desc "Embedding of scripting into applications"
   homepage "https://api.kde.org/frameworks/kross/html"
-  url "https://download.kde.org/stable/frameworks/5.58/portingAids/kross-5.58.0.tar.xz"
-  sha256 "b71c521718acd9829124264e97990222c458eca4a2e0be471a853db55b07d872"
+  url "https://download.kde.org/stable/frameworks/5.59/portingAids/kross-5.59.0.tar.xz"
+  sha256 "0dff1001b4d667d03ada2cb96ced640918bf526a5ac7445674a2f86c85f478da"
   head "git://anongit.kde.org/kross.git"
 
   depends_on "cmake" => :build

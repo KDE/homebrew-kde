@@ -1,8 +1,8 @@
 class Kf5Kauth < Formula
   desc "Abstraction to system policy and authentication features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.58/kauth-5.58.0.tar.xz"
-  sha256 "8c004199f1e7aa14f9244299bb8b288f6d077e5c2557f089a530d0c1cd072f4f"
+  url "https://download.kde.org/stable/frameworks/5.59/kauth-5.59.0.tar.xz"
+  sha256 "e7d9cbbc108df1c2d41038785967ed9a9489987462ba5f1f1a9d270ae9e1093c"
 
   head "git://anongit.kde.org/kauth.git"
 

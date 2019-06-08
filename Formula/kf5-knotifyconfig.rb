@@ -1,8 +1,8 @@
 class Kf5Knotifyconfig < Formula
   desc "Configuration system for KNotify"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.58/knotifyconfig-5.58.0.tar.xz"
-  sha256 "a40555d9645c4ed283e61a9e5718d5476359124e23d52a838e30fca7e089dc01"
+  url "https://download.kde.org/stable/frameworks/5.59/knotifyconfig-5.59.0.tar.xz"
+  sha256 "0b2e7207685c5fdcd9640c60de66b416636f71898cc5da0396e2a2c8ecc3373e"
 
   head "git://anongit.kde.org/knotifyconfig.git"
 
