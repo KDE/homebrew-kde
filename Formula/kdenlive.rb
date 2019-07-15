@@ -1,8 +1,8 @@
 class Kdenlive < Formula
   desc "Video editor"
   homepage "https://www.kdenlive.org/"
-  url "https://download.kde.org/stable/applications/19.04.2/src/kdenlive-19.04.2.tar.xz"
-  sha256 "c0c19895629b2183e51c04fe55baa2df7ea370a27bb991151dbbb75486549ac9"
+  url "https://download.kde.org/stable/applications/19.04.3/src/kdenlive-19.04.3.tar.xz"
+  sha256 "c981954ce9759da2878b4c76d97b9bb7aa92fc1f073a9f759142870e287d2a1e"
   head "git://anongit.kde.org/kdenlive.git"
 
   depends_on "cmake" => :build

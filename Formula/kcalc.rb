@@ -1,8 +1,8 @@
 class Kcalc < Formula
   desc "KCalc"
   homepage "https://utils.kde.org/projects/kcalc/"
-  url "https://download.kde.org/stable/applications/19.04.2/src/kcalc-19.04.2.tar.xz"
-  sha256 "cd1e4ca0fff1a4b596335fdeb570cf549808be399ff12bced79e4a908c7cf0d0"
+  url "https://download.kde.org/stable/applications/19.04.3/src/kcalc-19.04.3.tar.xz"
+  sha256 "42da5439af4f59402d27f2c48d4ee9c68d4a84bfda8d16a5ab9d7ab6bdcc02d5"
 
   head "git://anongit.kde.org/kcalc.git"
 
