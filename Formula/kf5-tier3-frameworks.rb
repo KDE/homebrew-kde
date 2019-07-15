@@ -3,7 +3,7 @@ class Kf5Tier3Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.59.0"
+  version "5.60.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "KDE-mac/kde/kf5-kbookmarks" => :build
@@ -13,7 +13,6 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kded" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdesu" => :build
-  depends_on "KDE-mac/kde/kf5-kdewebkit" => :build
   depends_on "KDE-mac/kde/kf5-kemoticons" => :build
   depends_on "KDE-mac/kde/kf5-kglobalaccel" => :build
   depends_on "KDE-mac/kde/kf5-kiconthemes" => :build

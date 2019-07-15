@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.59";
+my $frameworks_version   = "5.60";
 my $applications_version = "19.04.2";
 
 my %frameworks = (
@@ -62,7 +62,7 @@ my %frameworks = (
 		'kded'             => '',
 		'kdesignerplugin'  => '',
 		'kdesu'            => '',
-		'kdewebkit'        => '',
+		# 'kdewebkit'        => '',
 		'kemoticons'       => '',
 		'kglobalaccel'     => '',
 		'kiconthemes'      => '',

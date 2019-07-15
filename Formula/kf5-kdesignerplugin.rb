@@ -1,8 +1,8 @@
 class Kf5Kdesignerplugin < Formula
   desc "Integration of Frameworks widgets in Qt Designer/Creator"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.59/kdesignerplugin-5.59.0.tar.xz"
-  sha256 "b8a13a834fbcc7f4e7e4bb0d4e71ee2846d9660c02f3500b0f14c3a834649d3b"
+  url "https://download.kde.org/stable/frameworks/5.60/kdesignerplugin-5.60.0.tar.xz"
+  sha256 "9472332c5a8f7c27d6c581a4f0f4f837d82e2780c1f9b25f2f034afd1d250607"
 
   head "git://anongit.kde.org/kdesignerplugin.git"
 
@@ -14,8 +14,6 @@ class Kf5Kdesignerplugin < Formula
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kplotting"
-
-  depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
 
   def install
     args = std_cmake_args
