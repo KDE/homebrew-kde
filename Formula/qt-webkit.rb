@@ -1,11 +1,10 @@
 class QtWebkit < Formula
   desc "Classes for a WebKit2 based implementation and a new QML API"
   homepage "https://www1.qt.io/developers/"
-  url "https://github.com/annulen/webkit/archive/95401fe3908e0b4eebc9447e678298d768617bc7.tar.gz"
-  version "5.212.0alpha2+156+g95401fe3908"
-  sha256 "abb506f757a195fb92f9ebdc6b4119c3961a1a40b44b1c1b6f8dceab5a2c70d2"
+  url "https://github.com/qtwebkit/qtwebkit.git", :tag => "qtwebkit-5.212.0-alpha3", :shallow => true
+  version "5.212.0.alpha3"
 
-  head "https://github.com/annulen/webkit.git"
+  head "https://github.com/qtwebkit/qtwebkit.git"
 
   depends_on "cmake" => :build
   depends_on "fontconfig" => :build
@@ -18,8 +17,6 @@ class QtWebkit < Formula
   depends_on "qt"
   depends_on "webp"
   depends_on "zlib"
-
-  patch :DATA
 
   def cmake_args
     args = %W[
@@ -62,20 +59,3 @@ class QtWebkit < Formula
     system "cmake", ".", "-Wno-dev"
   end
 end
-
-# Fix build
-
-__END__
---- a/Source/WTF/wtf/spi/darwin/XPCSPI.h 2017-06-17 13:46:54.000000000 +0300
-+++ b/Source/WTF/wtf/spi/darwin/XPCSPI.h 2018-09-08 23:41:06.397523110 +0300
-@@ -89,10 +89,6 @@
- EXTERN_C const struct _xpc_type_s _xpc_type_string;
-
- EXTERN_C xpc_object_t xpc_array_create(const xpc_object_t*, size_t count);
--#if COMPILER_SUPPORTS(BLOCKS)
--EXTERN_C bool xpc_array_apply(xpc_object_t, xpc_array_applier_t);
--EXTERN_C bool xpc_dictionary_apply(xpc_object_t xdict, xpc_dictionary_applier_t applier);
--#endif
- EXTERN_C size_t xpc_array_get_count(xpc_object_t);
- EXTERN_C const char* xpc_array_get_string(xpc_object_t, size_t index);
- EXTERN_C void xpc_array_set_string(xpc_object_t, size_t index, const char* string);

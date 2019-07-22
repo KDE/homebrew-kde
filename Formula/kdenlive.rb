@@ -3,6 +3,7 @@ class Kdenlive < Formula
   homepage "https://www.kdenlive.org/"
   url "https://download.kde.org/stable/applications/19.04.3/src/kdenlive-19.04.3.tar.xz"
   sha256 "c981954ce9759da2878b4c76d97b9bb7aa92fc1f073a9f759142870e287d2a1e"
+  revision 1
   head "git://anongit.kde.org/kdenlive.git"
 
   depends_on "cmake" => :build
@@ -16,12 +17,11 @@ class Kdenlive < Formula
   depends_on "KDE-mac/kde/kf5-kfilemetadata"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
-  depends_on "KDE-mac/kde/qt-webkit"
   depends_on "mlt"
-
   depends_on "cdrtools" => :optional
   depends_on "dvdauthor" => :optional
   depends_on "ffmpeg" => :optional
+  depends_on "KDE-mac/kde/qt-webkit" => :optional
   depends_on "libdv" => :optional
 
   patch :DATA
