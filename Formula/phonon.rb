@@ -1,10 +1,9 @@
 class Phonon < Formula
   desc "The multimedia framework for KF5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/phonon/4.10.2/phonon-4.10.2.tar.xz"
-  sha256 "34edb1985778575eb7004e4e45151cd7bc995f61ddd6ce3b050b97b7bd778809"
+  url "https://download.kde.org/stable/phonon/4.10.3/phonon-4.10.3.tar.xz"
+  sha256 "2e8b145669afa0e93833e4064b657677abc9413e4007fa5ddc91397c9bddc295"
 
-  revision 2
   head "git://anongit.kde.org/phonon.git"
 
   depends_on "cmake" => :build

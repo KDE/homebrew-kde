@@ -3,6 +3,7 @@ class Kf5Khtml < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.60/portingAids/khtml-5.60.0.tar.xz"
   sha256 "c18a5fa51cbf9f9a0a0f104e2fc0581abdb99a5bd36f8426ef129ea848414037"
+  revision 1
   head "git://anongit.kde.org/khtml.git"
 
   depends_on "cmake" => :build
