@@ -1,8 +1,8 @@
 class Drkonqi < Formula
   desc "The KDE Crash Handler"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/plasma/5.16.3/drkonqi-5.16.3.tar.xz"
-  sha256 "118afd1d85fd78e34faac0bd6aa548edb501f16d733ea9f0a28630c817496fda"
+  url "https://download.kde.org/stable/plasma/5.16.4/drkonqi-5.16.4.tar.xz"
+  sha256 "9d030a59a6d1d732241f8c54a54291ac60584d542ea0b891ca4b2bcb958bd51f"
 
   head "git://anongit.kde.org/drkonqi.git"
 
