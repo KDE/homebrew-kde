@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # cpan
 brew install perl dbus
@@ -112,5 +112,7 @@ ln -sfv "$(brew --prefix)/share/umbrello5" "$HOME/Library/Application Support"
 ln -sfv "$(brew --prefix)/opt/umbrello/bin/umbrello5.app" "$HOME/Applications/KDE"
 # atcore
 ln -sfv "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "$HOME/Applications/KDE"
+#kdeconnect
+ln -sfv "$(brew --prefix)/opt/kdeconnect/bin/kdeconnect"{,-indicator,-settings,-sms,-handler}.app "$HOME/Applications/KDE"
 
 exit 0
