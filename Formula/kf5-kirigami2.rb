@@ -1,8 +1,8 @@
 class Kf5Kirigami2 < Formula
   desc "QtQuick based components set"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.60/kirigami2-5.60.0.tar.xz"
-  sha256 "f016481d393041513dda11345e9ee84723587fa4be9f17391ed1a5868477e153"
+  url "https://download.kde.org/stable/frameworks/5.61/kirigami2-5.61.0.tar.xz"
+  sha256 "afdbe922f0627330319f22834d6631af13edb0081c687422d36acb8697a88c30"
   head "git://anongit.kde.org/kirigami.git"
 
   depends_on "cmake" => :build
