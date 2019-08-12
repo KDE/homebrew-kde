@@ -3,6 +3,7 @@ class Kf5Kio < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.61/kio-5.61.0.tar.xz"
   sha256 "1fa35126f8167bdbe029e515d01c8d4b91a07556ce6d5c9418e0ea10d7c2e44e"
+  revision 1
   head "git://anongit.kde.org/kio.git"
 
   depends_on "cmake" => :build
@@ -40,7 +41,7 @@ class Kf5Kio < Formula
 
   def caveats; <<~EOS
     You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh""
+      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
   EOS
   end
 
