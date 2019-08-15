@@ -1,8 +1,8 @@
 class Krename < Formula
   desc "Very powerful batch file renamer"
   homepage "https://userbase.kde.org/KRename"
-  url "git://anongit.kde.org/krename.git", :revision => "db407cbfa2d3528dcf4b5b59ae9c5f9edbf13b7c"
-  version "5.0.1"
+  url "git://anongit.kde.org/krename.git", :branch => "5.0"
+  version "5.0.60"
 
   head "git://anongit.kde.org/krename.git"
 
