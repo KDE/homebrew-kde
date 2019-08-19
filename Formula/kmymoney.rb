@@ -1,8 +1,8 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  url "https://download.kde.org/stable/kmymoney/5.0.3/src/kmymoney-5.0.3.tar.xz"
-  sha256 "698c0fc7ef2134c5c120a98b10f033e14dc37bff723b562c3b50a018c6ebdbf8"
+  url "https://download.kde.org/stable/kmymoney/5.0.6/src/kmymoney-5.0.6.tar.xz"
+  sha256 "ba945fb26fff581f95e1132f50d222bd51a2458b959a9b7cb468ba617cfa9183"
   revision 1
   head "git://anongit.kde.org/kmymoney.git"
 
@@ -20,6 +20,8 @@ class Kmymoney < Formula
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kactivities"
   depends_on "KDE-mac/kde/kf5-kcmutils"
+  depends_on "KDE-mac/kde/kf5-kdewebkit"
+  depends_on "KDE-mac/kde/kf5-kdewebkit"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/libalkimia"

@@ -3,6 +3,7 @@ class Kf5Kdesignerplugin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.61/kdesignerplugin-5.61.0.tar.xz"
   sha256 "6b204dffbb4897f51143650d75383b5a3ddf4254455e5827d316c7b4ee7b3f33"
+  revision 1
 
   head "git://anongit.kde.org/kdesignerplugin.git"
 
@@ -14,6 +15,8 @@ class Kf5Kdesignerplugin < Formula
 
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kplotting"
+
+  depends_on "KDE-mac/kde/kf5-kdewebkit" => :optional
 
   def install
     args = std_cmake_args
