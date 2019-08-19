@@ -3,6 +3,7 @@ class Kf5Kdeclarative < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.61/kdeclarative-5.61.0.tar.xz"
   sha256 "464a77f88cce72c1616654c371068c11d51e484e0de5c0c5e032126d71afedaa"
+  revision 1
 
   head "git://anongit.kde.org/kdeclarative.git"
 
@@ -21,7 +22,7 @@ class Kf5Kdeclarative < Formula
   def install
     args = std_cmake_args
     args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
+    args << "-DBUILD_QCH=OFF"
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
