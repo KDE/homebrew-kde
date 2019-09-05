@@ -1,8 +1,8 @@
 class Phonon < Formula
   desc "The multimedia framework for KF5"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/phonon/4.10.3/phonon-4.10.3.tar.xz"
-  sha256 "2e8b145669afa0e93833e4064b657677abc9413e4007fa5ddc91397c9bddc295"
+  url "https://download.kde.org/stable/phonon/4.11.0/phonon-4.11.0.tar.xz"
+  sha256 "91250a38feb0adb62385ad9bacc0ea0e67bbba3e0ceb3c2111d83803fb52582e"
 
   head "git://anongit.kde.org/phonon.git"
 
@@ -16,15 +16,12 @@ class Phonon < Formula
   conflicts_with "pulseaudio", :because => "fatal error: 'pulse/glib-mainloop.h' file not found"
 
   def install
-    inreplace "#{buildpath}/doc/CMakeLists.txt",
-              "SHARE_INSTALL_PREFIX}/libphonon/",
-              "CMAKE_INSTALL_DOCDIR}/libphonon"
-
     args = std_cmake_args
     args << "-DCMAKE_SKIP_RPATH=ON"
     args << "-DPHONON_BUILD_PHONON4QT5=ON"
     args << "-DPHONON_BUILD_DOC=ON"
     args << "-DCMAKE_INSTALL_DOCDIR=share/doc"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
