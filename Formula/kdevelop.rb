@@ -1,9 +1,8 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.3.2/src/kdevelop-5.3.2.tar.xz"
-  sha256 "08ccd575514187dcbd01ac976a619803410c26bdfabf5d2d5fd52c95b76d6f2a"
-  revision 1
+  url "https://download.kde.org/stable/kdevelop/5.4.2/src/kdevelop-5.4.2.tar.xz"
+  sha256 "52e253da4892428ef3059568a93263bf7f9dec5ddeb17b0e5d258726492dc6c4"
   head "git://anongit.kde.org/kdevelop.git"
 
   depends_on "boost" => :build
@@ -16,7 +15,7 @@ class Kdevelop < Formula
   depends_on "shared-mime-info" => :build
 
   depends_on "cmake"
-  depends_on "KDE-mac/kde/grantlee5"
+  depends_on "KDE-mac/kde/grantlee"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kcmutils"
   depends_on "KDE-mac/kde/kf5-kitemmodels"
