@@ -12,9 +12,7 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build
   depends_on "KDE-mac/kde/kf5-kdeclarative" => :build
   depends_on "KDE-mac/kde/kf5-kded" => :build
-  depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdesu" => :build
-  depends_on "KDE-mac/kde/kf5-kdewebkit" => :build
   depends_on "KDE-mac/kde/kf5-kemoticons" => :build
   depends_on "KDE-mac/kde/kf5-kglobalaccel" => :build
   depends_on "KDE-mac/kde/kf5-kiconthemes" => :build

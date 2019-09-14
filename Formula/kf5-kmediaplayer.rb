@@ -1,8 +1,8 @@
 class Kf5Kmediaplayer < Formula
   desc "Plugin interface for media player features"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.61/portingAids/kmediaplayer-5.61.0.tar.xz"
-  sha256 "ae15a4a39e6530b505d699fb1b1ab3fd5f0e64d87dd758db17702463e44ce181"
+  url "https://download.kde.org/stable/frameworks/5.62/portingAids/kmediaplayer-5.62.0.tar.xz"
+  sha256 "2d7fa77c085ab0a48e3ce41ec5d6ffa16fbf7194f2d6ace43e37967c0ffb7880"
 
   head "git://anongit.kde.org/kmediaplayer.git"
 

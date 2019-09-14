@@ -1,8 +1,8 @@
 class Kf5Kemoticons < Formula
   desc "Support for emoticons and emoticons themes"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.61/kemoticons-5.61.0.tar.xz"
-  sha256 "cfc17de43320fbb353be30ae8d5b448b88da6f83bd23e29d678cd95a4bd7a380"
+  url "https://download.kde.org/stable/frameworks/5.62/kemoticons-5.62.0.tar.xz"
+  sha256 "fab145b2c4106be8a4f0024cb436d02d0fdcbf8666e9a790cc1cd98db1e70313"
 
   head "git://anongit.kde.org/kemoticons.git"
 

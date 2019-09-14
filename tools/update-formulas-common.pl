@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.61";
+my $frameworks_version   = "5.62";
 my $applications_version = "19.08.0";
 
 my %frameworks = (
@@ -60,9 +60,7 @@ my %frameworks = (
 		'kconfigwidgets'   => '',
 		'kdeclarative'     => '',
 		'kded'             => '',
-		'kdesignerplugin'  => '',
 		'kdesu'            => '',
-		'kdewebkit'        => '',
 		'kemoticons'       => '',
 		'kglobalaccel'     => '',
 		'kiconthemes'      => '',
@@ -87,6 +85,8 @@ my %frameworks = (
 
 ### Porting Aids
 		'kdelibs4support' => 'portingAids/kdelibs4support',
+		'kdesignerplugin' => 'portingAids/kdesignerplugin',
+		'kdewebkit'       => 'portingAids/kdewebkit',
 		'khtml'           => 'portingAids/khtml',
 		'kjs'             => 'portingAids/kjs',
 		'kjsembed'        => 'portingAids/kjsembed',

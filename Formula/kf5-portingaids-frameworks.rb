@@ -7,6 +7,8 @@ class Kf5PortingaidsFrameworks < Formula
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "KDE-mac/kde/kf5-kdelibs4support" => :build
+  depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
+  depends_on "KDE-mac/kde/kf5-kdewebkit" => :build
   depends_on "KDE-mac/kde/kf5-khtml" => :build
   depends_on "KDE-mac/kde/kf5-kjs" => :build
   depends_on "KDE-mac/kde/kf5-kjsembed" => :build
@@ -20,8 +22,8 @@ class Kf5PortingaidsFrameworks < Formula
   end
 
   def caveats; <<~EOS
-      You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+    You need to take some manual steps in order to make this formula work:
+    "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
   EOS
   end
 
