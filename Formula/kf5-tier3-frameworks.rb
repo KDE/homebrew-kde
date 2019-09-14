@@ -3,7 +3,7 @@ class Kf5Tier3Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.61.0"
+  version "5.62.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   revision 1
 
