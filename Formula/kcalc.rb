@@ -3,6 +3,7 @@ class Kcalc < Formula
   homepage "https://utils.kde.org/projects/kcalc/"
   url "https://download.kde.org/stable/applications/19.08.0/src/kcalc-19.08.0.tar.xz"
   sha256 "58c26a9698bfc9e0d3a5614ab26c53878e87fc601688ad6c5848fbdbc21c4103"
+  revision 1
 
   head "git://anongit.kde.org/kcalc.git"
 
@@ -13,6 +14,7 @@ class Kcalc < Formula
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"
   depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "mpfr"
 
   patch :DATA
 
