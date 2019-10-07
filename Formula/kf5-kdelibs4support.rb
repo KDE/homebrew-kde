@@ -3,6 +3,7 @@ class Kf5Kdelibs4support < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.62/portingAids/kdelibs4support-5.62.0.tar.xz"
   sha256 "9cc10b4727b8ee3bae46af796e7da5d6ae620c543278814176a389ea178595ed"
+  revision 1
 
   head "git://anongit.kde.org/kdelibs4support.git"
 
@@ -44,11 +45,6 @@ class Kf5Kdelibs4support < Formula
   end
 
   def caveats; <<~EOS
-    Before install of this formula you need to run:
-      brew install perl
-      export PERL_MM_USE_DEFAULT=1
-      cpan URI URI::Escape
-
     You need to take some manual steps in order to make this formula work:
       "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
   EOS

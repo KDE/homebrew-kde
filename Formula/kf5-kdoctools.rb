@@ -35,11 +35,6 @@ class Kf5Kdoctools < Formula
   end
 
   def caveats; <<~EOS
-    Before install of this formula you need to run:
-      brew install perl
-      export PERL_MM_USE_DEFAULT=1
-      cpan URI URI::Escape
-
     You need to take some manual steps in order to make this formula work:
       "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
   EOS
