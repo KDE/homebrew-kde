@@ -1,8 +1,8 @@
 class Kf5Kidletime < Formula
   desc "Monitoring user activity"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.62/kidletime-5.62.0.tar.xz"
-  sha256 "dd2b6a9f7815c8e84b635e694cbf9ee207996d2cf3adb5a85eadd4a8de37f276"
+  url "https://download.kde.org/stable/frameworks/5.63/kidletime-5.63.0.tar.xz"
+  sha256 "196cb99c7f30ea571f9a7e8c0b507ef95aa54731457f4bc9e4380ff1350da57d"
 
   head "git://anongit.kde.org/kidletime.git"
 
