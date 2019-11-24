@@ -1,8 +1,8 @@
 class Elisa < Formula
   desc "KDE Music Player"
   homepage "https://community.kde.org/Elisa"
-  url "https://github.com/KDE/elisa/archive/v0.4.2.tar.gz"
-  sha256 "a275475e382c58ebc737235fff827ef5f3fa4fe37c175b120c8c47f5305db451"
+  url "https://github.com/KDE/elisa/archive/v19.11.80.tar.gz"
+  sha256 "d81c1f38e4805008481e9c8b50653afee99dac50a9e7b96e3f529afbfccf049e"
 
   head "https://anongit.kde.org/elisa.git"
 

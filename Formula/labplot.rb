@@ -1,9 +1,8 @@
 class Labplot < Formula
   desc "Application for interactive graphing and analysis of scientific data"
   homepage "https://labplot.kde.org/"
-  url "https://download.kde.org/stable/labplot/2.6.0/labplot-2.6.0.tar.xz"
-  sha256 "4556541fb6544cda56c2625a1fc5c9c8b0ba6bc8178af076c68a792b545c5657"
-
+  url "https://download.kde.org/stable/labplot/2.7.0/labplot-2.7.0.tar.xz"
+  sha256 "5c4d6ed7df6e98557a6b78f018933c92654b7e50e7f051ad89ec4755e0f4e935"
   head "git://anongit.kde.org/labplot.git"
 
   depends_on "cmake" => :build

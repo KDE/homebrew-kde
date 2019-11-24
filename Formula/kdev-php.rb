@@ -1,8 +1,8 @@
 class KdevPhp < Formula
   desc "PHP Language Plugin for KDevelop/Quanta"
   homepage "https://kde.org/applications/development/org.kde.kdev-php"
-  url "https://download.kde.org/stable/kdevelop/5.4.2/src/kdev-php-5.4.2.tar.xz"
-  sha256 "360444b7ac7c2f35144b4e13054a169b705b44e66219bd988ec1137e07994967"
+  url "https://download.kde.org/stable/kdevelop/5.4.4/src/kdev-php-5.4.4.tar.xz"
+  sha256 "6047265553018f30c6f55ecfa3b095d8bf5c629223b078e0968c75710f1f670e"
   head "git://anongit.kde.org/kdev-php.git"
 
   depends_on "cmake" => :build

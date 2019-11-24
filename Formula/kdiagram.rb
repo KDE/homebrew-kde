@@ -1,9 +1,8 @@
 class Kdiagram < Formula
   desc "Powerful libraries for creating business diagrams"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/kdiagram/2.6.0/src/kdiagram-2.6.0.tar.xz"
-  sha256 "02788dad7e15c64b74a2d1073c5910469ab4cf46ba905030c1713dce45981882"
-  revision 2
+  url "https://download.kde.org/stable/kdiagram/2.6.1/kdiagram-2.6.1.tar.xz"
+  sha256 "bde71ca5ef70b3077696d56b24e0e1f69ae255c0bf7bf453e9596afdd25dcdb0"
   head "git://anongit.kde.org/kdiagram.git"
 
   depends_on "cmake" => :build

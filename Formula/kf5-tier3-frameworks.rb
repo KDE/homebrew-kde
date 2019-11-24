@@ -5,7 +5,7 @@ class Kf5Tier3Frameworks < Formula
   url "file:///tmp/empty"
   version "5.64.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  
+
   depends_on "KDE-mac/kde/kf5-kbookmarks" => :build
   depends_on "KDE-mac/kde/kf5-kcmutils" => :build
   depends_on "KDE-mac/kde/kf5-kconfigwidgets" => :build
