@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version   = "5.64";
-my $applications_version = "19.08.2";
+my $applications_version = "19.08.3";
 
 my %frameworks = (
 

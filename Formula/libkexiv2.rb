@@ -1,8 +1,8 @@
 class Libkexiv2 < Formula
   desc "Library to manipulate pictures metadata"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/applications/19.08.2/src/libkexiv2-19.08.2.tar.xz"
-  sha256 "abdafabe834862e157356f2686ae871f00302d82ae639dbf89030d19ccc54b1b"
+  url "https://download.kde.org/stable/applications/19.08.3/src/libkexiv2-19.08.3.tar.xz"
+  sha256 "4c8a1acc4fe6c7105130ac93f5486ddbffb09921a9f34d3af418bd7e1695435e"
 
   head "git://anongit.kde.org/libkexiv2.git"
 
