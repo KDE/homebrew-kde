@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version   = "5.65";
-my $applications_version = "19.08.3";
+my $applications_version = "19.12.0";
 
 my %frameworks = (
 
@@ -146,7 +146,7 @@ sub update_frameworks {
 sub update_applications {
 	for my $package ( keys %applications ) {
 		my $upstream_url =
-			"https://download.kde.org/stable/applications/${applications_version}/src/";
+			"https://download.kde.org/stable/release-service/${applications_version}/src/";
 
 		my $upstream_suffix = "-${applications_version}.tar.xz";
 
