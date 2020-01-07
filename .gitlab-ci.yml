@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - brew update || brew update
+    - export HOMEBREW_DEVELOPER="1"
+    - tools/do-caveats.sh
+    - brew tap KDE-mac/kde file://$PWD
+    - CHANGED_FILES=`git diff --name-only "${CI_COMMIT_BEFORE_SHA}"`
+    - echo $CHANGED_FILES
+    - tools/ci.sh $CHANGED_FILES
+  tags:
+    - ios
