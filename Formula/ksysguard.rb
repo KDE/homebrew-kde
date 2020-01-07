@@ -1,8 +1,8 @@
 class Ksysguard < Formula
   desc "Track and control the processes running in your system"
   homepage "https://userbase.kde.org/KSysGuard"
-  url "https://download.kde.org/stable/plasma/5.17.4/ksysguard-5.17.4.tar.xz"
-  sha256 "e43a241ad0810fc1abbad9bb5ac631eda9d2127370fbfab52c7b5b3feb0040a6"
+  url "https://download.kde.org/stable/plasma/5.17.5/ksysguard-5.17.5.tar.xz"
+  sha256 "69bc12311dcf363b168a259139d30456ed395ec03b948bd35e992300c7e7bd82"
   head "git://anongit.kde.org/ksysguard.git"
 
   depends_on "cmake" => :build
