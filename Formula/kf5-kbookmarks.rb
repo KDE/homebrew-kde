@@ -1,8 +1,8 @@
 class Kf5Kbookmarks < Formula
   desc "Support for bookmarks and the XBEL format"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.65/kbookmarks-5.65.0.tar.xz"
-  sha256 "c00a04d77ce2b4744feb5ae43f50f8ae5c18b752eae52a8f4d9db47046daf18a"
+  url "https://download.kde.org/stable/frameworks/5.66/kbookmarks-5.66.0.tar.xz"
+  sha256 "b225463ec0fe2424a1f5e70c83b02e3ece6a3ca80832cd2621732d18d7160a43"
 
   head "git://anongit.kde.org/kbookmarks.git"
 
