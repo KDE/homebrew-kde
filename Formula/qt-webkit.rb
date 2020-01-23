@@ -3,6 +3,7 @@ class QtWebkit < Formula
   homepage "https://www1.qt.io/developers/"
   url "https://github.com/qtwebkit/qtwebkit.git", :tag => "qtwebkit-5.212.0-alpha3", :shallow => true
   version "5.212.0.alpha3"
+  revision 1
 
   head "https://github.com/qtwebkit/qtwebkit.git"
 
