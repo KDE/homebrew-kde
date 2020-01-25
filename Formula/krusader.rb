@@ -3,6 +3,7 @@ class Krusader < Formula
   homepage "https://krusader.org/"
   url "https://download.kde.org/stable/krusader/2.7.2/krusader-2.7.2.tar.xz"
   sha256 "41a39a43b3c42dd1d1ecaea86df30caff6a061fecc1d66f60859b2a3ca976109"
+  revision 1
   head "https://anongit.kde.org/krusader.git"
 
   depends_on "cmake" => :build
@@ -37,7 +38,7 @@ class Krusader < Formula
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/dolphin.app/Contents/Info.plist"
+      "#{bin}/krusader.app/Contents/Info.plist"
   end
 
   def post_install
