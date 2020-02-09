@@ -1,8 +1,8 @@
 class Kf5Kactivities < Formula
   desc "Core components for the KDE's Activities"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.66/kactivities-5.66.0.tar.xz"
-  sha256 "7c37c8f189cb3c9f0cacbcef606562d8bc596e685d2a47bc9994deae6e69f41f"
+  url "https://download.kde.org/stable/frameworks/5.67/kactivities-5.67.0.tar.xz"
+  sha256 "d9da10f505ef6ea9031e0f22b0c5b1d5f72e969de1082707d87be953c80cba69"
 
   head "git://anongit.kde.org/kactivities.git"
 

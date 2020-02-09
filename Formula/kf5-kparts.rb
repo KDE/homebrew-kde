@@ -1,8 +1,8 @@
 class Kf5Kparts < Formula
   desc "Document centric plugin system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.66/kparts-5.66.0.tar.xz"
-  sha256 "6de2395cd6a9993f216f4dc4718f352bc4cbbd8147734c76be0e1e6149f733d0"
+  url "https://download.kde.org/stable/frameworks/5.67/kparts-5.67.0.tar.xz"
+  sha256 "0e2c3e4584f9327cb0f4d3b7ffb7e02657fb02ed1b510643a39e6b8cacbda76a"
   head "git://anongit.kde.org/kparts.git"
 
   depends_on "cmake" => :build

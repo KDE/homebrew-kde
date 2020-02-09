@@ -1,8 +1,8 @@
 class Kf5Kwallet < Formula
   desc "Secure and unified container for user passwords"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.66/kwallet-5.66.0.tar.xz"
-  sha256 "6e48070e22a822a4003e1f7a739fe1e335bcf46982cbf4909d23a6e40689a827"
+  url "https://download.kde.org/stable/frameworks/5.67/kwallet-5.67.0.tar.xz"
+  sha256 "90e1609872235812265599d1fbd218b9c36a325d2d4160ede6621027163581c3"
 
   head "git://anongit.kde.org/kwallet.git"
 
