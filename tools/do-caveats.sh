@@ -115,7 +115,7 @@ ln -sfv "$(brew --prefix)/opt/umbrello/bin/umbrello5.app" "$HOME/Applications/KD
 ln -sfv "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "$HOME/Applications/KDE"
 #kdeconnect
 rm "$HOME/Applications/KDE/kdeconnect.app"
-ln -sfv "$(brew --prefix)/opt/kdeconnect/bin/"* "$HOME/Applications/KDE"
+ln -sfv "$(brew --prefix)/opt/kdeconnect/bin/"*.app "$HOME/Applications/KDE"
 #kf5-kjsembed
 ln -sfv "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "$HOME/Applications/KDE"
 exit 0
