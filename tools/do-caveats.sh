@@ -118,4 +118,7 @@ rm "$HOME/Applications/KDE/kdeconnect.app"
 ln -sfv "$(brew --prefix)/opt/kdeconnect/bin/"*.app "$HOME/Applications/KDE"
 #kf5-kjsembed
 ln -sfv "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "$HOME/Applications/KDE"
+#kdialog
+ln -sfv "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "$HOME/Applications/KDE"
+ln -sfv "$(brew --prefix)/opt/kdialog/bin/kdialog.app/Contents/MacOS/kdialog" "$(brew --prefix)/bin"
 exit 0
