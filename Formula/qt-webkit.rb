@@ -3,9 +3,9 @@ class QtWebkit < Formula
   homepage "https://www1.qt.io/developers/"
   url "https://code.qt.io/qt/qtwebkit.git", :tag => "v5.212.0-alpha3", :shallow => true
   version "5.212.0.alpha3"
-  revision 2
+  revision 3
 
-  head "https://code.qt.io/qt/qtwebkit.git"
+  head "https://code.qt.io/qt/qtwebkit.git", :revision => "dev"
 
   depends_on "cmake" => :build
   depends_on "fontconfig" => :build
