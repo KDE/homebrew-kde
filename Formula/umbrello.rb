@@ -1,8 +1,8 @@
 class Umbrello < Formula
   desc "UML modeller"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/19.12.2/src/umbrello-19.12.2.tar.xz"
-  sha256 "689236ed6bd425d275854b86a948dda2f3d696d87379e78fb87d2af4aaefdffb"
+  url "https://download.kde.org/stable/release-service/19.12.3/src/umbrello-19.12.3.tar.xz"
+  sha256 "b2f769c7bd1cc259170b62c68d2dca05b4a143dd1048dbb507cf2bbb3020a193"
 
   head "git://anongit.kde.org/umbrello.git"
   depends_on "cmake" => :build
