@@ -1,8 +1,8 @@
 class Kf5Ktexteditor < Formula
   desc "Advanced embeddable text editor"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.67/ktexteditor-5.67.0.tar.xz"
-  sha256 "5d685922d35745a7d7f11f543721e289a8f92edef5969f567a68ea2acf57c6ea"
+  url "https://download.kde.org/stable/frameworks/5.68/ktexteditor-5.68.0.tar.xz"
+  sha256 "dad373d4c136d113cca1ee6d700753563b7348813ff3229db670eedc63980cd6"
   head "git://anongit.kde.org/ktexteditor.git"
 
   depends_on "cmake" => :build

@@ -7,9 +7,9 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.67";
+my $frameworks_version   = "5.68";
 my $applications_version = "19.12.2";
-my $plasam_version       = "5.18.2";
+my $plasma_version       = "5.18.2";
 
 my %frameworks = (
 
@@ -171,9 +171,9 @@ sub update_applications {
 sub update_plasmas {
     for my $package ( keys %plasmas ) {
         my $upstream_url
-            = "https://download.kde.org/stable/plasma/${plasam_version}/";
+            = "https://download.kde.org/stable/plasma/${plasma_version}/";
 
-        my $upstream_suffix = "-${plasam_version}.tar.xz";
+        my $upstream_suffix = "-${plasma_version}.tar.xz";
 
         my $upstream = $plasmas{$package};
         if ( $upstream eq '' ) {

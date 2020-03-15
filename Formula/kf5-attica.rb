@@ -1,8 +1,8 @@
 class Kf5Attica < Formula
   desc "Qt5 library that implements the Open Collaboration Services API"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.67/attica-5.67.0.tar.xz"
-  sha256 "f4f3f6892287192deb61f38bab01c457d7950701f3e09c44a15809e7880ec3fa"
+  url "https://download.kde.org/stable/frameworks/5.68/attica-5.68.0.tar.xz"
+  sha256 "9b4001a32831c9bae1d44161247acd5e6d3048ca2ece98c2c756c72a1464b9e9"
 
   head "git://anongit.kde.org/attica.git"
 
