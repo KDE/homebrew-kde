@@ -12,6 +12,9 @@ class Libalkimia < Formula
   depends_on "gettext"
   depends_on "gmp"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kdelibs4support"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-plasma-framework"
   depends_on "KDE-mac/kde/qt-webkit"
 
   def install
