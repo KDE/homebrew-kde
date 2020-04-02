@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-[[ -f "/tmp/kf5_dep_map" ]] && rm /tmp/kf5_dep_map
+rm -f /tmp/kf5_dep_map /tmp/kf5_filtered
+
+`brew list > /tmp/brew_installed.list`
 
 formuladir="$(brew --repo kde-mac/kde)/Formula"
 
@@ -11,8 +13,17 @@ for formula in $formuladir/*.rb; do
   done
 done
 
-tsort /tmp/kf5_dep_map > /tmp/kf5_install_order
+tsort /tmp/kf5_dep_map > /tmp/kf5_install_order 2> /dev/null
 
-for formula in `cat /tmp/kf5_install_order`; do
-  brew install "$@" "${formula}"
+for candidate_formula in `cat /tmp/kf5_install_order`; do
+  for installed_formula in `cat /tmp/brew_installed.list`; do
+    if [[ "${candidate_formula}" == "${installed_formula}" ]]; then
+      continue 2
+    fi
+  done
+  echo "${candidate_formula}" >> /tmp/kf5_filtered
+done
+
+for formula in `cat /tmp/kf5_filtered`; do
+  brew install "$@" "${formula}" || true
 done
