@@ -1,8 +1,8 @@
 class Kf5Kxmlrpcclient < Formula
   desc "XML-RPC client library for KDE"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.68/kxmlrpcclient-5.68.0.tar.xz"
-  sha256 "e49f2ab649aafb292e01dacefb7b6f28fc596606764bef61e7ce622b67241324"
+  url "https://download.kde.org/stable/frameworks/5.69/kxmlrpcclient-5.69.0.tar.xz"
+  sha256 "bce2dcf7a8290168c6057343e82ea0b1d0cce4f51cf8f161dc99e951c5d7c74e"
   head "git://anongit.kde.org/kxmlrpcclient.git"
 
   depends_on "cmake" => :build
