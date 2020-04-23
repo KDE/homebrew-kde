@@ -13,6 +13,7 @@ class Kdenlive < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "KDE-mac/kde/kf5-breeze-icons"
+  depends_on "KDE-mac/kde/kf5-kdeclarative"
   depends_on "KDE-mac/kde/kf5-kfilemetadata"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
@@ -56,18 +57,19 @@ class Kdenlive < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kdenlive/icontheme.rcc"
   end
 
-  def caveats; <<~EOS
-    You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+  def caveats
+    <<~EOS
+      You need to take some manual steps in order to make this formula work:
+        "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
 
-    OTHER NOTES
-    -----------
-    When starting the program it may be crash, solved it changing in ~/Library/Preferences/kdenliverc
-    from true to false: Window-Maximized = false
-    For ffmpeg, you could install --with-: chromaprint fdk-aac fontconfig freetype frei0r game-music-emu libass libbluray libbs2b libcaca libgsm libmodplug libsoxr libssh libvidstab libvorbis libvpx opencore-amr openh264 openjpeg openssl opus rtmpdump rubberband sdl2 snappy speex srt tesseract theora tools two-lame wavpack webp x265 xz zeromq zimg
+      OTHER NOTES
+      -----------
+      When starting the program it may be crash, solved it changing in ~/Library/Preferences/kdenliverc
+      from true to false: Window-Maximized = false
+      For ffmpeg, you could install --with-: chromaprint fdk-aac fontconfig freetype frei0r game-music-emu libass libbluray libbs2b libcaca libgsm libmodplug libsoxr libssh libvidstab libvorbis libvpx opencore-amr openh264 openjpeg openssl opus rtmpdump rubberband sdl2 snappy speex srt tesseract theora tools two-lame wavpack webp x265 xz zeromq zimg
 
-    There seems to be a problem with librsvg
-  EOS
+      There seems to be a problem with librsvg
+    EOS
   end
 
   test do
