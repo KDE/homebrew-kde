@@ -41,10 +41,11 @@ class Krename < Formula
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/krename/icontheme.rcc"
   end
 
-  def caveats; <<~EOS
-    You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-  EOS
+  def caveats
+    <<~EOS
+      You need to take some manual steps in order to make this formula work:
+        "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+    EOS
   end
 
   test do

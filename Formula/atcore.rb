@@ -18,9 +18,7 @@ class Atcore < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
-    if build.with?("gui")
-      args << "-DBUILD_GUI=ON"
-    end
+    args << "-DBUILD_GUI=ON" if build.with?("gui")
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -38,10 +36,11 @@ class Atcore < Formula
       "#{bin}/AtCoreTest.app/Contents/Info.plist"
   end
 
-  def caveats; <<~EOS
-    You need to take some manual steps in order to make this formula work:
-      "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-  EOS
+  def caveats
+    <<~EOS
+      You need to take some manual steps in order to make this formula work:
+        "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
+    EOS
   end
 
   test do
