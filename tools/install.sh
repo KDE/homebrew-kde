@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+brew update
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 rm -f /tmp/kf5_dep_map /tmp/kf5_filtered
 
