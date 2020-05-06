@@ -7,6 +7,8 @@ assignees: yurikoles
 
 ---
 
+- [ ] ran `brew install --HEAD <failed-formula>` and can still reproduce the problem?
+
 # Please specify exact formula that has issue
 
 <!-- replace me -->
