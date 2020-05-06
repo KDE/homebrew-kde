@@ -1,8 +1,8 @@
 class KdevPython < Formula
   desc "KDevelop plugin which provides Python language support"
   homepage "https://kde.org/applications/development/org.kde.kdev-python"
-  url "https://download.kde.org/stable/kdevelop/5.4.5/src/kdev-python-5.4.5.tar.xz"
-  sha256 "a8469886df9a81f3f16db31474a9ed440b1a60224eb28505b5ac63479ad45812"
+  url "https://download.kde.org/stable/kdevelop/5.5.1/src/kdev-python-5.5.1.tar.xz"
+  sha256 "9828109d14546bb85fa0ef868919dfe07f6d9e377e4710be6f215ed3343e5bfa"
   head "git://anongit.kde.org/kdev-python.git"
 
   depends_on "cmake" => :build
