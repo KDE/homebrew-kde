@@ -1,8 +1,8 @@
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/okteta/0.26.2/src/okteta-0.26.2.tar.xz"
-  sha256 "bb8d819af1d2d7ebb286542918985afcd1937f0ec6172180ff5b1acc5383684c"
+  url "https://download.kde.org/stable/okteta/0.26.3/src/okteta-0.26.3.tar.xz"
+  sha256 "29dc30fd71dfc5337c7d2f814feed1ced5799337c5b1fb5098539ba30941a490"
   head "git://anongit.kde.org/okteta.git"
 
   depends_on "cmake" => :build
