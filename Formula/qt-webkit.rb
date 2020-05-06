@@ -1,7 +1,7 @@
 class QtWebkit < Formula
   desc "Classes for a WebKit2 based implementation and a new QML API"
   homepage "https://www1.qt.io/developers/"
-  url "https://code.qt.io/qt/qtwebkit.git", :tag => "v5.212.0-alpha3", :shallow => true
+  url "https://code.qt.io/qt/qtwebkit.git", :tag => "v5.212.0-alpha4", :shallow => true
   version "5.212.0.alpha3"
   revision 3
 
