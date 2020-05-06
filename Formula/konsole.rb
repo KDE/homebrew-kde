@@ -1,8 +1,8 @@
 class Konsole < Formula
   desc "KDE's terminal emulator"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/19.12.3/src/konsole-19.12.3.tar.xz"
-  sha256 "0bde8eb6365c53e96489d0ceb05baa0bb0385ee865492622033164a4c4bfccdc"
+  url "https://download.kde.org/stable/release-service/20.04.0/src/konsole-20.04.0.tar.xz"
+  sha256 "179b2bb442e13c22032e56457986c68074b31a5c2da67e0e6e854658a37e24de"
 
   head "git://anongit.kde.org/konsole.git"
 

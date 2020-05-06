@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version   = "5.69";
-my $applications_version = "19.12.3";
+my $applications_version = "20.04.0";
 my $plasma_version       = "5.18.4";
 
 my %frameworks = (
@@ -96,21 +96,23 @@ my %frameworks = (
 );
 
 my %applications = (
+    'analitza'        => '',
     'dolphin'         => '',
+    'elisa'           => '',
     'kate'            => '',
+    'kcalc'           => '',
+    'kdenlive'        => '',
+    'kdialog'         => '',
+    'kimap'           => '',
+    'kio-extras'      => '',
+    'kmime'           => '',
     'kolourpaint'     => '',
     'konsole'         => '',
-    'okular'          => '',
-    'kimap'           => '',
-    'kmime'           => '',
     'libkexiv2'       => '',
     'libkomparediff2' => '',
-    'kio-extras'      => '',
     'lokalize'        => '',
+    'okular'          => '',
     'poxml'           => '',
-    'kdenlive'        => '',
-    'analitza'        => '',
-    'kcalc'           => '',
     'umbrello'        => '',
 );
 
