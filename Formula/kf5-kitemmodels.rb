@@ -1,8 +1,8 @@
 class Kf5Kitemmodels < Formula
   desc "Models for Qt Model/View system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.69/kitemmodels-5.69.0.tar.xz"
-  sha256 "a67bca5267a2f25d6bb07c10bbb534b480b74479b27ad4f91058f3c94b909dcb"
+  url "https://download.kde.org/stable/frameworks/5.70/kitemmodels-5.70.0.tar.xz"
+  sha256 "ecdbf98705cedb7b2a193800106452900520d10ae8cfba2148e45ef1a02efe74"
 
   head "git://anongit.kde.org/kitemmodels.git"
 
