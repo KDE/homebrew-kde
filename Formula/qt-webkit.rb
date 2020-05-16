@@ -1,11 +1,9 @@
 class QtWebkit < Formula
-  desc "Classes for a WebKit2 based implementation and a new QML API"
+  desc "Port of WebKit on top of Qt"
   homepage "https://www1.qt.io/developers/"
-  url "https://code.qt.io/qt/qtwebkit.git", :tag => "v5.212.0-alpha4", :shallow => true
-  version "5.212.0.alpha3"
-  revision 3
-
-  head "https://code.qt.io/qt/qtwebkit.git", :revision => "dev"
+  head "https://github.com/qtwebkit/qtwebkit.git",
+   :revision => "qtwebkit-stable",
+   :shallow  => true
 
   depends_on "cmake" => :build
   depends_on "fontconfig" => :build
