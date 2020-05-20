@@ -1,8 +1,8 @@
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
-  homepage "https://www1.qt.io/developers/"
+  homepage "https://github.com/qtwebkit/qtwebkit"
   head "https://github.com/qtwebkit/qtwebkit.git",
-   :revision => "qtwebkit-stable",
+   :revision => "qtwebkit-5.212",
    :shallow  => true
 
   depends_on "cmake" => :build
