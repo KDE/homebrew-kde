@@ -13,25 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: jonchang/audit-action@master
-  build-linux-bottles:
-    runs-on: ubuntu-latest
-    container:
-      image: homebrew/brew
-    steps:
-      - uses: actions/checkout@master
-      - name: Build bottles
-        run: |
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
-          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
-          mkdir ~/bottles
-          cd ~/bottles
-          brew test-bot --bintray-org=kde-mac --root-url=https://kde-mac.bintray.com/bottles-kde --git-name="Yurii Kolesnykov" --git-email=root@yurikoles.com
-          cp -a ~/bottles $RUNNER_TEMP/
-      - name: Upload bottles
-        uses: actions/upload-artifact@v1
-        with:
-          name: bottles
-          path: ${{runner.temp}}/bottles
   build-macos-bottles:
     runs-on: macos-latest
     steps:

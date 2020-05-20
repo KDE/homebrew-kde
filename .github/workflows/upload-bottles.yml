@@ -2,7 +2,7 @@ name: Upload bottles
 
 on:
   push:
-    branches: [develop]
+    branches: [master]
 
 jobs:
   upload-bottles:

@@ -1,15 +1,18 @@
 #!/bin/bash
 
-export PERL_ENV='PERL5LIB'
-export BREW_PERL_ADVICE='HOME/perl5'
+export BREW_PERL_SEARCH='HOME/perl5'
+export BASH_PROFILE="${HOME}/.bash_profile"
+export ZSHRC="${HOME}/.zshrc"
 
-if grep -F "${BREW_PERL_ADVICE}" ~/.zshrc ~/.bash_profile; 
+if [[ -f "${ZSHRC}" ]] && grep -F "${BREW_PERL_SEARCH}" "${ZSHRC}" /dev/null ||
+   [[ -f "${BASH_PROFILE}" ]] && grep -F "${BREW_PERL_SEARCH}" "${BASH_PROFILE}" /dev/null;
 then
 	echo
 	echo "Your CPAN setup will not work with KDE, please remove line(-s) from corresponding file(-s) above."
 	echo "Then re-run do-caveats.sh from new terminal session."
 	exit -1
-elif env|grep -q ${PERL_ENV}; then
+elif env | grep -q PERL5LIB;
+then
 	echo "Your CPAN setup will not work with KDE."
 	echo "Please remove all perl-related stuff from your shell's profile"
 	echo "Please don't report any perl-related bugs on kde-mac/kde, since they are out of scope of the project"
@@ -132,11 +135,13 @@ ln -sf "$(brew --prefix)/opt/umbrello/bin/umbrello5.app" "$HOME/Applications/KDE
 # atcore
 ln -sf "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "$HOME/Applications/KDE"
 #kdeconnect
-rm "$HOME/Applications/KDE/kdeconnect.app"
+rm -rf "$HOME/Applications/KDE/kdeconnect.app"
 ln -sf "$(brew --prefix)/opt/kdeconnect/bin/"*.app "$HOME/Applications/KDE"
 #kf5-kjsembed
 ln -sf "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "$HOME/Applications/KDE"
 #kdialog
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "$HOME/Applications/KDE"
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app/Contents/MacOS/kdialog" "$(brew --prefix)/bin"
+
+echo "Caveats setup success"
 exit 0
