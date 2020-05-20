@@ -1,6 +1,9 @@
 ---
 name: New issue for Feature Suggestion
 about: Request our thoughts on your suggestion for a new feature for kde-mac/kde.
+title: "[FR]"
+labels: feature-request
+assignees: yurikoles
 
 ---
 
