@@ -8,6 +8,12 @@ class Kf5ExtraCmakeModules < Formula
 
   head "git://anongit.kde.org/extra-cmake-modules"
 
+  bottle do
+    root_url "https://dl.bintray.com/kde-mac/homebrew-kde"
+    cellar :any_skip_relocation
+    sha256 "d71ccf307719d0b26f67525a8eba506a79cc48057bb09274d5cd57796987e896" => :catalina
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "qt" => :build
