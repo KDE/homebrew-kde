@@ -45,7 +45,7 @@ jobs:
           git -C "$(brew --repo ${{github.repository}})" status
           git config --global user.name "Yurii Kolesnykov"
           git config --global user.email "root@yurikoles.com"
-          brew pr-upload --bintray-org=kde-mac --root-url=https://kde-mac.bintray.com/bottles-kde
+          brew pr-upload --bintray-org=kde-mac --root-url=https://dl.bintray.com/kde-mac/homebrew-kde
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
           git fetch origin master

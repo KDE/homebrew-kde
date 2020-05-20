@@ -26,7 +26,7 @@ jobs:
           "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --cleanup --root-url=https://kde-mac.bintray.com/bottles-kde
+          brew test-bot --cleanup --root-url=https://dl.bintray.com/kde-mac/homebrew-kde
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1
