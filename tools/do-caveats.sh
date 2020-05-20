@@ -21,8 +21,8 @@ fi
 # cpan
 brew install perl dbus
 export PERL_MM_USE_DEFAULT=1
-cpan CPAN
-cpan URI URI::Escape
+cpan CPAN > /dev/null
+cpan URI URI::Escape > /dev/null
 brew services start dbus
 # common
 mkdir -p "$HOME/Applications/KDE"
