@@ -3,10 +3,9 @@ class Kcalc < Formula
   homepage "https://utils.kde.org/projects/kcalc/"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kcalc-20.04.0.tar.xz"
   sha256 "316897861de9f727f3d842532260bbc3e9f6a30d6b800c87b9cb91316b71748b"
-
   head "git://anongit.kde.org/kcalc.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build

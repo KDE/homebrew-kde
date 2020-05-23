@@ -5,9 +5,9 @@ class Kf5Kded < Formula
   sha256 "695acee1db56c989f8bb63048ca90d1fb21071390daea1557ac75be2f7180d7f"
   head "git://anongit.kde.org/kded.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

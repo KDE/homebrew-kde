@@ -5,9 +5,9 @@ class Kf5Khtml < Formula
   sha256 "458be2a73ac661faebf14358a523dd2ff845c571a093022d651e9eb2bb7900ca"
   head "git://anongit.kde.org/khtml.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gperf" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "giflib"

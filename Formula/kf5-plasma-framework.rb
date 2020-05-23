@@ -5,11 +5,11 @@ class Kf5PlasmaFramework < Formula
   sha256 "6cd229ac8ec44832c3ea83099c4b6d35ca8a8c8683b5dcdf788d225b37041f5d"
   head "git://anongit.kde.org/plasma-framework.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

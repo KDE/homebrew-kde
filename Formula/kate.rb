@@ -5,8 +5,8 @@ class Kate < Formula
   sha256 "fe36f9a612c580d6e0067f9e83ad28722e88e99796ad971a0afe916907be2cd2"
   head "git://anongit.kde.org/kate.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build

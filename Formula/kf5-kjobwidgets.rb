@@ -5,10 +5,10 @@ class Kf5Kjobwidgets < Formula
   sha256 "8eb20763b73ea73c4cad48f5b2d42ad813bb4aa40442ba8d832740efff676d8e"
   head "git://anongit.kde.org/kjobwidgets.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kcoreaddons"

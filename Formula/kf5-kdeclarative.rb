@@ -3,13 +3,12 @@ class Kf5Kdeclarative < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kdeclarative-5.70.0.tar.xz"
   sha256 "8914c2266d7ea32f8028aee13ae5a7f39a3583f7ec74a74584577fb0f2bc09ef"
-
   head "git://anongit.kde.org/kdeclarative.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"

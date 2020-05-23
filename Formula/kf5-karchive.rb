@@ -3,13 +3,12 @@ class Kf5Karchive < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/karchive-5.70.0.tar.xz"
   sha256 "f5f361a2ce857d7e7af49276ab70506c6a2ece45a183971ed9abdd5386d50a7d"
-
   head "git://anongit.kde.org/karchive.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "bzip2"

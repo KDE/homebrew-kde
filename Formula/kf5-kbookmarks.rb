@@ -3,13 +3,12 @@ class Kf5Kbookmarks < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kbookmarks-5.70.0.tar.xz"
   sha256 "5ae557a511ef90f1930d2cb0e898f62341264c61533cb6a8ab9027e6b767bbc4"
-
   head "git://anongit.kde.org/kbookmarks.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kxmlgui"

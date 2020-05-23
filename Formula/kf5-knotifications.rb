@@ -5,10 +5,10 @@ class Kf5Knotifications < Formula
   sha256 "ccaf1fa79f3fa777a733ee4f5e97311a696c251b95a6446d82a358c1fb107605"
   head "git://anongit.kde.org/knotifications.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kcodecs"

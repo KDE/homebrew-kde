@@ -3,13 +3,12 @@ class Kf5SyntaxHighlighting < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/syntax-highlighting-5.70.0.tar.xz"
   sha256 "4b0e25e2e0070e52f0e463dc876087dc1613910df644757512c3a0ab313d568a"
-
   head "git://anongit.kde.org/syntax-highlighting.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

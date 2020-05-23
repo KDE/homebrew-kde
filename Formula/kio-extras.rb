@@ -5,9 +5,9 @@ class KioExtras < Formula
   sha256 "a70f6079a8d2acb8c64bf0d08f7f7e5685f2e9c4e49548c138609437fdc6cd4d"
   head "git://anongit.kde.org/kio-extras.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gperf" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build

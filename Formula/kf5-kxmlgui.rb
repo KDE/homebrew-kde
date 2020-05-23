@@ -3,13 +3,12 @@ class Kf5Kxmlgui < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kxmlgui-5.70.0.tar.xz"
   sha256 "0ef58f324d4cfbc625ce5baee6ea410a57078140cb6de81c60097dd604667f33"
-
   head "git://anongit.kde.org/kxmlgui.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-attica"

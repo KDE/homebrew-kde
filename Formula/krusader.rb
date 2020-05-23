@@ -6,8 +6,8 @@ class Krusader < Formula
   revision 1
   head "https://anongit.kde.org/krusader.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 

@@ -5,11 +5,11 @@ class Kmymoney < Formula
   sha256 "ac6bcef37def09ca2530276254eab5e9ae57f3a1cd5ed7c87c3d38045400d4c0"
   head "git://anongit.kde.org/kmymoney.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

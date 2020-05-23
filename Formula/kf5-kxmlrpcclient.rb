@@ -5,10 +5,10 @@ class Kf5Kxmlrpcclient < Formula
   sha256 "0b75fdd516efa6f2c7eec58eccca0c7949c4e7f98e2b5b2494283a9fb8d8aeb2"
   head "git://anongit.kde.org/kxmlrpcclient.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"

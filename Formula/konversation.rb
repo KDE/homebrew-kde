@@ -3,8 +3,8 @@ class Konversation < Formula
   homepage "https://www.kde.org"
   head "git://anongit.kde.org/konversation.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

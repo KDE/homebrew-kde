@@ -3,14 +3,13 @@ class Kf5Kpty < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kpty-5.70.0.tar.xz"
   sha256 "50d5b7404e297b3f4aefcd7314753e4f7ab2e557ce469a8c104e2b91698ce6c2"
-
   head "git://anongit.kde.org/kpty.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kcoreaddons"

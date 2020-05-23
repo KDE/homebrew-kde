@@ -3,14 +3,13 @@ class Kf5Ki18n < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/ki18n-5.70.0.tar.xz"
   sha256 "8c320c7c0048c0c908879a5611c601ffb027ae7c3c864840aa5a2482101125b9"
-
   head "git://anongit.kde.org/ki18n.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

@@ -3,13 +3,12 @@ class Kf5Kitemviews < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kitemviews-5.70.0.tar.xz"
   sha256 "c848a39526d6332b5eab84400c6b9cbdaba2e04bbb4db32e3bb0f8c1f6ac7413"
-
   head "git://anongit.kde.org/kitemviews.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

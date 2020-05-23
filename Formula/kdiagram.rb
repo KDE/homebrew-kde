@@ -5,8 +5,8 @@ class Kdiagram < Formula
   sha256 "63a2eabfa1554ceb1d686d5f17ed6308139b6d9155aaf224e0309585b070fbdd"
   head "git://anongit.kde.org/kdiagram.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

@@ -5,8 +5,8 @@ class Kdeconnect < Formula
   sha256 "caee7945a9d9bb881a943dc8d2fd0d702c04da5bdb2df14d4f875e7cf5d5261a"
   head "https://github.com/KDE/kdeconnect-kde.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdeclarative" => :build
   depends_on "ninja" => :build
   depends_on "gettext"

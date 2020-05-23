@@ -3,13 +3,12 @@ class Kf5Kemoticons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kemoticons-5.70.0.tar.xz"
   sha256 "b9bf726d9dc8bda4c8a3fd5b053bffec9ac4dbc6293862d99124463b6cd66187"
-
   head "git://anongit.kde.org/kemoticons.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-karchive"

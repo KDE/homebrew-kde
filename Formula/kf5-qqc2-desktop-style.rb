@@ -5,8 +5,8 @@ class Kf5Qqc2DesktopStyle < Formula
   sha256 "43cfb6b2e249621576dfa43b8e6ab08e68be0ccf04d038bde10d7f81006587d8"
   head "git://anongit.kde.org/qqc2-desktop-style.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kiconthemes"

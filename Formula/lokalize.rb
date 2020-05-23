@@ -5,7 +5,7 @@ class Lokalize < Formula
   sha256 "746620117294e2e6b7eb22a470789d2c1b3196f12cf15e3b186256d587658361"
   head "git://anongit.kde.org/lokalize.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "gettext"

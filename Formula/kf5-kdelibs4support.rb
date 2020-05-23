@@ -3,11 +3,10 @@ class Kf5Kdelibs4support < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/portingAids/kdelibs4support-5.70.0.tar.xz"
   sha256 "9dab898bd5fcea327258c92aa7df86ae76e15bf9ae80fc1bd4123047e58ab346"
-
   head "git://anongit.kde.org/kdelibs4support.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build

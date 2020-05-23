@@ -3,12 +3,11 @@ class Kf5Kdesignerplugin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/portingAids/kdesignerplugin-5.70.0.tar.xz"
   sha256 "622a76c429eb8eef63e59e95a41bf73ab22c07209de8d8b743fd7bf1147b2637"
-
   head "git://anongit.kde.org/kdesignerplugin.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

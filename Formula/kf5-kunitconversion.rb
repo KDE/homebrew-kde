@@ -3,14 +3,13 @@ class Kf5Kunitconversion < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kunitconversion-5.70.0.tar.xz"
   sha256 "d63e7646a8059fb333f95b27548044e897b38ed5c939db416c0c1077bf7be46a"
-
   head "git://anongit.kde.org/kunitconversion.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-ki18n"

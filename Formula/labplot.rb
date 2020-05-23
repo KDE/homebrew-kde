@@ -5,8 +5,8 @@ class Labplot < Formula
   sha256 "5c4d6ed7df6e98557a6b78f018933c92654b7e50e7f051ad89ec4755e0f4e935"
   head "git://anongit.kde.org/labplot.git"
 
-  depends_on "cmake" => :build
-  depends_on "kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "kf5-kdelibs4support" => :build
   depends_on "kf5-kdesignerplugin" => :build
   depends_on "kf5-kdoctools" => :build

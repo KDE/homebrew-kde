@@ -3,15 +3,14 @@ class Kf5Solid < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/solid-5.70.0.tar.xz"
   sha256 "e76b0f2d64853dcfa7e5887e9733d4e9821bba6e68e62f3488b21b1ed979962a"
-
   head "git://anongit.kde.org/solid.git"
 
   depends_on "bison" => :build
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "flex" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

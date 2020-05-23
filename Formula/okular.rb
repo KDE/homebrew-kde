@@ -5,8 +5,8 @@ class Okular < Formula
   sha256 "1b6521b4eaa0a0eb41a39c3f84252d9833f6d26fa410afaef815ec661737dfe7"
   head "git://anongit.kde.org/okular.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

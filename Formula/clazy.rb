@@ -5,7 +5,7 @@ class Clazy < Formula
   sha256 "806d1befaddba82316f4ea34f1cba38bcc7545d0981007e3527c1ff1576dd0de"
   head "git://anongit.kde.org/clazy.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "llvm"

@@ -5,7 +5,7 @@ class QtWebkit < Formula
    :revision => "qtwebkit-5.212",
    :shallow  => true
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "fontconfig" => :build
   depends_on "freetype" => :build
   depends_on "gperf" => :build

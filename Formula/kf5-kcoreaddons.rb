@@ -3,13 +3,12 @@ class Kf5Kcoreaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kcoreaddons-5.70.0.tar.xz"
   sha256 "fa86760b2074ccadab0417220fee1253d731ab7f2f4d7a2857ba463ab4ff4781"
-
   head "git://anongit.kde.org/kcoreaddons.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

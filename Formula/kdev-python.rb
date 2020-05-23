@@ -5,7 +5,7 @@ class KdevPython < Formula
   sha256 "9828109d14546bb85fa0ef868919dfe07f6d9e377e4710be6f215ed3343e5bfa"
   head "git://anongit.kde.org/kdev-python.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "kdevelop"
 

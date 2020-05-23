@@ -3,13 +3,12 @@ class Kf5Kidletime < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kidletime-5.70.0.tar.xz"
   sha256 "a5c25a1b6846e4eec2099a81789456da7aa60ee51f75cafaea024ea400d27d6d"
-
   head "git://anongit.kde.org/kidletime.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

@@ -3,13 +3,12 @@ class Kf5Kwindowsystem < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kwindowsystem-5.70.0.tar.xz"
   sha256 "9003fded6cb8338521024bdcfccc4d36336f3f9cc9a4e6ba4eaa50bd8064c828"
-
   head "git://anongit.kde.org/kwindowsystem.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

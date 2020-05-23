@@ -4,8 +4,8 @@ class Libksysguard < Formula
   url "https://download.kde.org/stable/plasma/5.18.5/libksysguard-5.18.5.tar.xz"
   sha256 "d4d7030a2869a546a211844aa158dcef3598386cc035a8655529938ba102440b"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build

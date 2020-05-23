@@ -5,8 +5,8 @@ class Kdialog < Formula
   sha256 "3e05c6fac266ef48a8adb2f13451f04c4f956d7c9f150f9cff639165ee6793db"
   head "git://anongit.kde.org/dolphin.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "KDE-mac/kde/kf5-kdbusaddons"
   depends_on "KDE-mac/kde/kf5-kguiaddons"

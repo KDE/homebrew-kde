@@ -5,7 +5,7 @@ class Poxml < Formula
   sha256 "49bf918e67f5abce1ff192da4abf1dd8352e348cda7425d4214a2163f2124e2b"
   head "git://anongit.kde.org/poxml.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "gettext"

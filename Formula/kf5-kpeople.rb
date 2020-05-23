@@ -3,14 +3,13 @@ class Kf5Kpeople < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kpeople-5.70.0.tar.xz"
   sha256 "d4e7e4f29a2d7e21c418ff930d7750b9fe15994e88d5f3d0e934c99b82a71bb6"
-
   head "git://anongit.kde.org/kpeople.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kitemviews"

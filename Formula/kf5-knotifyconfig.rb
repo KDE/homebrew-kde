@@ -3,13 +3,12 @@ class Kf5Knotifyconfig < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/knotifyconfig-5.70.0.tar.xz"
   sha256 "f2012fd1e774b3e61d1e52c0f09185841cf4c2a6131cca36d6bc2aff321e88b4"
-
   head "git://anongit.kde.org/knotifyconfig.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"

@@ -3,13 +3,12 @@ class Drkonqi < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/plasma/5.18.5/drkonqi-5.18.5.tar.xz"
   sha256 "b1a626c4ed2f9de8f8bc3359d8827e7fa6ac17486b8477674e47627fcf6efad1"
-
   head "git://anongit.kde.org/drkonqi.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kidletime"

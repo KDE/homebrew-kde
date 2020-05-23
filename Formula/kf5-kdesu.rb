@@ -5,11 +5,11 @@ class Kf5Kdesu < Formula
   sha256 "b53806e2edc5c9e5e326b9c189fa2f06ebb4d02009945c5b2f123f2ecf4b629e"
   head "git://anongit.kde.org/kdesu.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kpty"

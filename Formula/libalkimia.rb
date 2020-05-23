@@ -5,8 +5,8 @@ class Libalkimia < Formula
   sha256 "1e57ed9279557d8e3575e7556a81b08dff4e882e9f5ad8502da63bfc98c7b33e"
   head "git://anongit.kde.org/alkimia.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "gettext"

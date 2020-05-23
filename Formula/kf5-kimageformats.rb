@@ -5,8 +5,8 @@ class Kf5Kimageformats < Formula
   sha256 "7a84fe4ae40ad99861de258a912f730e7d43196ecdd41a766fff2a5ec459645e"
   head "git://anongit.kde.org/kimageformats.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "jasper"
   depends_on "openexr"

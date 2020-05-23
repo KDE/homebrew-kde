@@ -3,12 +3,11 @@ class Elisa < Formula
   homepage "https://community.kde.org/Elisa"
   url "https://download.kde.org/stable/release-service/20.04.0/src/elisa-20.04.0.tar.xz"
   sha256 "dacb49adeb0bcae6abc4a0748731de924d2291b8ac82876590018fa947181b3b"
-
   head "https://anongit.kde.org/elisa.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
-  depends_on "kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

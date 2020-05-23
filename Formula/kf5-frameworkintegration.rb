@@ -3,11 +3,10 @@ class Kf5Frameworkintegration < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/frameworkintegration-5.70.0.tar.xz"
   sha256 "c08a96e02bb8e37853497053d8fa22d83d14741b7c1e61380cbbfd09e1666cd3"
-
   head "git://anongit.kde.org/frameworkintegration.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-knewstuff"

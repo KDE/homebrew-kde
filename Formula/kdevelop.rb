@@ -8,8 +8,8 @@ class Kdevelop < Formula
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "gdb" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build

@@ -3,14 +3,13 @@ class Kf5Kcodecs < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kcodecs-5.70.0.tar.xz"
   sha256 "f3f6c8a74d4d070258b8648e2ea43f8226452141ab839b6bd3eaa2608b123679"
-
   head "git://anongit.kde.org/kcodecs.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gperf" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

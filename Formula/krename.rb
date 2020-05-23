@@ -4,11 +4,10 @@ class Krename < Formula
   url "https://download.kde.org/stable/krename/5.0.0/src/krename-5.0.0.tar.xz"
   sha256 "0a61761853787fd46b35f3a733cf87cde00de5df631728332a64c38c670bd28c"
   head "git://anongit.kde.org/krename.git"
-
   head "git://anongit.kde.org/krename.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "exiv2"

@@ -5,10 +5,10 @@ class Kf5Kirigami2 < Formula
   sha256 "3cb81f127d5767848aad38fa1722dea7d9c77f70d31ac9088787266b5cf4732a"
   head "git://anongit.kde.org/kirigami.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kpackage" => :build
   depends_on "ninja" => :build
 

@@ -5,8 +5,8 @@ class Ksysguard < Formula
   sha256 "4acb352698b612a21a5eccf22042ab46265d50bbf3aa85844bbca762a64c9e2f"
   head "git://anongit.kde.org/ksysguard.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build

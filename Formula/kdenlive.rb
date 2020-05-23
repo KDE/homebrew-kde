@@ -5,8 +5,8 @@ class Kdenlive < Formula
   sha256 "3d56657af2c3946bd44ee821be48fb777457de3a9123485e7a3a3f51de0f9e52"
   head "git://anongit.kde.org/kdenlive.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build

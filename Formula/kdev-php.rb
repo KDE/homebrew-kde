@@ -5,7 +5,7 @@ class KdevPhp < Formula
   sha256 "907398753fdd30361b922252f0cde76cfe336692f7180f612e1706085bce7542"
   head "git://anongit.kde.org/kdev-php.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "kdevelop"
 

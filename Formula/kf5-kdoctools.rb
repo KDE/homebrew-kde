@@ -5,10 +5,10 @@ class Kf5Kdoctools < Formula
   sha256 "551dd4a571e0142879523a74ced63c16f8bf5d8124b8ab0b985d7571ed40133c"
   head "git://anongit.kde.org/kdoctools.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-ki18n" => :build
   depends_on "ninja" => :build
   depends_on "perl" => :build

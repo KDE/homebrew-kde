@@ -3,13 +3,12 @@ class Kf5Knewstuff < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/knewstuff-5.70.0.tar.xz"
   sha256 "d8a5e07b3ec3d472de4ca493ea5cecd79559cba2573e6228e2a740ae2c91fdc2"
-
   head "git://anongit.kde.org/knewstuff.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"

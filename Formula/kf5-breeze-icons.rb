@@ -3,11 +3,10 @@ class Kf5BreezeIcons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/breeze-icons-5.70.0.tar.xz"
   sha256 "75e9873dd731b5b7deb844a35025c1c856a6ce4c8b9e5c1f55992cf964a60f53"
-
   head "git://anongit.kde.org/breeze-icons.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt"

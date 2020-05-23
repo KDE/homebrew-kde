@@ -5,8 +5,8 @@ class Okteta < Formula
   sha256 "29dc30fd71dfc5337c7d2f814feed1ced5799337c5b1fb5098539ba30941a490"
   head "git://anongit.kde.org/okteta.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build

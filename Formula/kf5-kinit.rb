@@ -3,11 +3,10 @@ class Kf5Kinit < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.70/kinit-5.70.0.tar.xz"
   sha256 "719abdd2ff3c0d60083190177d021fdd9d9d7b06c7e949ae935db57091869cf4"
-
   head "git://anongit.kde.org/kinit.git"
 
-  depends_on "cmake" => :build
-  depends_on "KDE-mac/kde/kf5-extra-cmake-modules" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 

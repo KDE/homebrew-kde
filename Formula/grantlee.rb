@@ -3,7 +3,7 @@ class Grantlee < Formula
   homepage "http://grantlee.org"
   head "https://github.com/steveire/grantlee.git"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "lcov" => :build
