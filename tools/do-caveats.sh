@@ -1,8 +1,9 @@
 #!/bin/bash
 
-export BREW_PERL_SEARCH='HOME/perl5'
-export BASH_PROFILE="${HOME}/.bash_profile"
-export ZSHRC="${HOME}/.zshrc"
+BREW_PERL_SEARCH='HOME/perl5'
+PERL_ENV_CHEK='PERL5LIB'
+BASH_PROFILE="${HOME}/.bash_profile"
+ZSHRC="${HOME}/.zshrc"
 
 if [[ -f "${ZSHRC}" ]] && grep -F "${BREW_PERL_SEARCH}" "${ZSHRC}" /dev/null ||
    [[ -f "${BASH_PROFILE}" ]] && grep -F "${BREW_PERL_SEARCH}" "${BASH_PROFILE}" /dev/null;
@@ -11,7 +12,7 @@ then
 	echo "Your CPAN setup will not work with KDE, please remove line(-s) from corresponding file(-s) above."
 	echo "Then re-run do-caveats.sh from new terminal session."
 	exit -1
-elif env | grep -q PERL5LIB;
+elif env | grep -q "${PERL_ENV_CHEK}";
 then
 	echo "Your CPAN setup will not work with KDE."
 	echo "Please remove all perl-related stuff from your shell's profile"
@@ -22,11 +23,27 @@ else
 fi
 
 # cpan
-brew install perl dbus
+if ! brew list| grep -q perl; then
+    brew install perl
+fi
+
 export PERL_MM_USE_DEFAULT=1
 cpan CPAN > /dev/null
 cpan URI URI::Escape > /dev/null
+
+# dbus
+if ! brew list| grep -q dbus; then
+    brew install dbus
+fi
+
 brew services start dbus
+
+# ecm
+if brew list| grep -q kf5-extra-cmake-modules; then
+    brew uninstall -f --ignore-dependencies kf5-extra-cmake-modules
+    brew install kde-extra-cmake-modules
+fi
+
 # common
 mkdir -p "$HOME/Applications/KDE"
 rm -rf "$HOME/Applications/KDE*"
