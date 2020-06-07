@@ -1,1 +1,0 @@
-# Please fill out one of the templates on: https://github.com/KDE-mac/homebrew-kde/issues/new/choose or we will close it without comment.
