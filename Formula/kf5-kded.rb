@@ -1,8 +1,8 @@
 class Kf5Kded < Formula
   desc "Extensible deamon for providing system level services"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.70/kded-5.70.0.tar.xz"
-  sha256 "695acee1db56c989f8bb63048ca90d1fb21071390daea1557ac75be2f7180d7f"
+  url "https://download.kde.org/stable/frameworks/5.71/kded-5.71.0.tar.xz"
+  sha256 "404c8caae0f4abe2ef85c2e82b5db2b14ae4b607fa30e4f16d15dad53c269fcc"
   head "git://anongit.kde.org/kded.git"
 
   depends_on "cmake" => [:build, :test]

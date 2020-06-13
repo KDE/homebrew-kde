@@ -1,8 +1,8 @@
 class Kf5Kconfigwidgets < Formula
   desc "Widgets for KConfig"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.70/kconfigwidgets-5.70.0.tar.xz"
-  sha256 "bfa73d28d33397c91aaaac71809c21933f0e0194deba3d3c3ad78decede1ada4"
+  url "https://download.kde.org/stable/frameworks/5.71/kconfigwidgets-5.71.0.tar.xz"
+  sha256 "5778523c49a5294e9376ce8ee6db1a51ffaa506418a19e8632f73287a596276f"
   head "git://anongit.kde.org/kconfigwidgets.git"
 
   depends_on "cmake" => [:build, :test]

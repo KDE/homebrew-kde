@@ -7,16 +7,13 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.70";
+my $frameworks_version   = "5.71";
 my $applications_version = "20.04.0";
 my $plasma_version       = "5.18.5";
 
 my %frameworks = (
 
 ### Updated list in https://api.kde.org/frameworks/
-### ECM
-    'extra-cmake-modules' => '',
-
 ### Tier 1
     'attica'              => '',
     'breeze-icons'        => '',
@@ -76,8 +73,7 @@ my %frameworks = (
     'ktexteditor'      => '',
     'ktextwidgets'     => '',
     'kwallet'          => '',
-    'kxmlgui'          => '',
-    'kxmlrpcclient'    => '',
+    'kxmlgui'          => '',    
     'plasma-framework' => '',
 
 ### Tier 4
@@ -92,7 +88,8 @@ my %frameworks = (
     'kjs'             => 'portingAids/kjs',
     'kjsembed'        => 'portingAids/kjsembed',
     'kmediaplayer'    => 'portingAids/kmediaplayer',
-    'kross'           => 'portingAids/kross'
+    'kross'           => 'portingAids/kross',
+    'kxmlrpcclient'   => 'portingAids/kxmlrpcclient'
 );
 
 my %applications = (

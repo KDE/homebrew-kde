@@ -1,8 +1,8 @@
 class Kf5Kjs < Formula
   desc "Support for JS scripting in applications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.70/portingAids/kjs-5.70.0.tar.xz"
-  sha256 "053e4639b74050101d2a00c59df62a93a4458756ace77f4cdae5a6f2db057668"
+  url "https://download.kde.org/stable/frameworks/5.71/portingAids/kjs-5.71.0.tar.xz"
+  sha256 "702224482139e500da1ea4e0d2b5132bf762f87f426f294587a0f2f47b9a9734"
   head "git://anongit.kde.org/kjs.git"
 
   depends_on "cmake" => [:build, :test]

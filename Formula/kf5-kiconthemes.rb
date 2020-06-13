@@ -1,8 +1,8 @@
 class Kf5Kiconthemes < Formula
   desc "Support for icon themes"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.70/kiconthemes-5.70.0.tar.xz"
-  sha256 "2903b8ad05c6a0d115fc8c4accdb5fb8541ea05e69a9b70362cee3dc86bb7825"
+  url "https://download.kde.org/stable/frameworks/5.71/kiconthemes-5.71.0.tar.xz"
+  sha256 "3fa986207e9d967840bd7a3f1af1e4d0105905012a0e4cf56f7ef1b3740b3496"
   head "git://anongit.kde.org/kiconthemes.git"
 
   depends_on "cmake" => [:build, :test]
