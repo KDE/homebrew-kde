@@ -1,6 +1,7 @@
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
   homepage "https://github.com/qtwebkit/qtwebkit"
+  revision 1
   head "https://github.com/qtwebkit/qtwebkit.git",
    :revision => "qtwebkit-5.212",
    :shallow  => true
