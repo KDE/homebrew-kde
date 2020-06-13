@@ -1,9 +1,9 @@
 class Kdevelop < Formula
   desc "Integrated Development Environment for KDE"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.5.1/src/kdevelop-5.5.1.tar.xz"
-  sha256 "beded25c1076fe25388a21a183404deb37ce396a66cb14eed01870b7dae41da2"
-  head "git://anongit.kde.org/kdevelop.git"
+  url "https://download.kde.org/stable/kdevelop/5.5.2/src/kdevelop-5.5.2.tar.xz"
+  sha256 "228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da"
+  head "https://invent.kde.org/kdevelop/kdevelop.git"
 
   depends_on "boost" => :build
   depends_on "cvs" => :build
