@@ -1,8 +1,8 @@
 class Kmime < Formula
   desc "Library for handling mail messages and newsgroup articles"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/release-service/20.04.0/src/kmime-20.04.0.tar.xz"
-  sha256 "4230ca0147d31fa688cf84ac8e7bb46e64deb9536b7a25544be73171615c8fac"
+  url "https://download.kde.org/stable/release-service/20.04.2/src/kmime-20.04.2.tar.xz"
+  sha256 "5ac4c9fe779b2652c2afb07b5771fd3c498599dec2d5cbc66756106a05cca9c5"
   head "https://invent.kde.org/pim/kmime.git"
 
   depends_on "cmake" => [:build, :test]

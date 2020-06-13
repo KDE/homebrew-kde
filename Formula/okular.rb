@@ -1,8 +1,8 @@
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/release-service/20.04.0/src/okular-20.04.0.tar.xz"
-  sha256 "1b6521b4eaa0a0eb41a39c3f84252d9833f6d26fa410afaef815ec661737dfe7"
+  url "https://download.kde.org/stable/release-service/20.04.2/src/okular-20.04.2.tar.xz"
+  sha256 "b783aaac1661d1d8ec5c5e26fdec7035a6b0241a21d18caac1587ecfde44c49b"
   head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]

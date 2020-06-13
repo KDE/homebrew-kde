@@ -1,8 +1,8 @@
 class Libkomparediff2 < Formula
   desc "Library to compare files and strings"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.04.0/src/libkomparediff2-20.04.0.tar.xz"
-  sha256 "a4f0d91a274bbc7e7a47d428be5e252750d081499c2e2514b8691a051aaa35f5"
+  url "https://download.kde.org/stable/release-service/20.04.2/src/libkomparediff2-20.04.2.tar.xz"
+  sha256 "35d6c0b5bccfedb4a8d407c4db30fa279e109341a42852b3cccd47ec377c842f"
   head "https://invent.kde.org/sdk/libkomparediff2.git"
 
   depends_on "cmake" => [:build, :test]
