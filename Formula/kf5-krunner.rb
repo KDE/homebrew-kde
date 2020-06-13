@@ -3,7 +3,7 @@ class Kf5Krunner < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/krunner-5.71.0.tar.xz"
   sha256 "fb3ce4c587a1b114550487b5716f0aba53b775018b6eef2ae48b8d6fdda40952"
-  head "git://anongit.kde.org/krunner.git"
+  head "https://invent.kde.org/frameworks/krunner.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

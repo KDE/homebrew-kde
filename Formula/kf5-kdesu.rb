@@ -3,7 +3,7 @@ class Kf5Kdesu < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kdesu-5.71.0.tar.xz"
   sha256 "b183e67c089b02f984284b5eb3c05f7216d289bef7ae08a9e6c6f991b2a1a23a"
-  head "git://anongit.kde.org/kdesu.git"
+  head "https://invent.kde.org/frameworks/kdesu.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kwallet < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kwallet-5.71.0.tar.xz"
   sha256 "d53b5bc4bbe054101b012d63672efc30af6a5aea58f467037cab4735b6ace9b5"
-  head "git://anongit.kde.org/kwallet.git"
+  head "https://invent.kde.org/frameworks/kwallet.git"
 
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]

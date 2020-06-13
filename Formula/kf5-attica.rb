@@ -3,7 +3,7 @@ class Kf5Attica < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/attica-5.71.0.tar.xz"
   sha256 "9e24fd7f58c66879a05e056b781637196eea69d3276ed470643c505f9fd46d3d"
-  head "git://anongit.kde.org/attica.git"
+  head "https://invent.kde.org/frameworks/attica.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

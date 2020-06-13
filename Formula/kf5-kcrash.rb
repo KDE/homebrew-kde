@@ -3,7 +3,7 @@ class Kf5Kcrash < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kcrash-5.71.0.tar.xz"
   sha256 "526242aa9fde7cff11ecaa88bf75d6fbbfc412f46bf19a7a9e185f2adb616005"
-  head "git://anongit.kde.org/kcrash.git"
+  head "https://invent.kde.org/frameworks/kcrash.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

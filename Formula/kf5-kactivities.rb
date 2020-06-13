@@ -3,7 +3,7 @@ class Kf5Kactivities < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kactivities-5.71.0.tar.xz"
   sha256 "b4e63fec6532e4bdc41470985cea46b0a88c1b2298b80286cbf0ed2d2139b66f"
-  head "git://anongit.kde.org/kactivities.git"
+  head "https://invent.kde.org/frameworks/kactivities.git"
 
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]

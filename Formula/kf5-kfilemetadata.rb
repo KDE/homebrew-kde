@@ -3,7 +3,7 @@ class Kf5Kfilemetadata < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kfilemetadata-5.71.0.tar.xz"
   sha256 "2e302958065157c1f9ea4a189bbca40b7dbed019767a3380e34e0b6a633c75fe"
-  head "git://anongit.kde.org/kfilemetadata.git"
+  head "https://invent.kde.org/frameworks/kfilemetadata.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

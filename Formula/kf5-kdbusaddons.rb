@@ -3,7 +3,7 @@ class Kf5Kdbusaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kdbusaddons-5.71.0.tar.xz"
   sha256 "b441f525248d9d675333cebedf97ee0232a3a9b7aa9aff84d825dfcdb3bcd23c"
-  head "git://anongit.kde.org/kdbusaddons.git"
+  head "https://invent.kde.org/frameworks/kdbusaddons.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

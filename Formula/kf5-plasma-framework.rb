@@ -3,7 +3,7 @@ class Kf5PlasmaFramework < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/plasma-framework-5.71.0.tar.xz"
   sha256 "a54c8603ca261c89609a3009536a9217ce3415a7fd63527ed36f266399613067"
-  head "git://anongit.kde.org/plasma-framework.git"
+  head "https://invent.kde.org/frameworks/plasma-framework.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

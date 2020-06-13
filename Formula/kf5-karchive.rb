@@ -3,7 +3,7 @@ class Kf5Karchive < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/karchive-5.71.0.tar.xz"
   sha256 "cc81e856365dec2bcf3ec78aa01d42347ca390a2311ea12050f309dfbdb09624"
-  head "git://anongit.kde.org/karchive.git"
+  head "https://invent.kde.org/frameworks/karchive.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

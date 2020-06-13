@@ -3,7 +3,7 @@ class Kf5Kunitconversion < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kunitconversion-5.71.0.tar.xz"
   sha256 "65bfba8e88e2cf6de40e06ce24fe5f48948cc92f16ce78eb8538de532dcf36cb"
-  head "git://anongit.kde.org/kunitconversion.git"
+  head "https://invent.kde.org/frameworks/kunitconversion.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

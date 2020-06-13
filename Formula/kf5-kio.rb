@@ -3,7 +3,7 @@ class Kf5Kio < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kio-5.71.0.tar.xz"
   sha256 "b972c8dede50be3e89babb5a536054759db2a87003e6df770c598c7c1c94b8d6"
-  head "git://anongit.kde.org/kio.git"
+  head "https://invent.kde.org/frameworks/kio.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

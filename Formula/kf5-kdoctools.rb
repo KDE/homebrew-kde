@@ -3,7 +3,7 @@ class Kf5Kdoctools < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kdoctools-5.71.0.tar.xz"
   sha256 "1e2fcaa97a014e82f68c0c36591ce84568ead7abd59b66e534789103e162cd09"
-  head "git://anongit.kde.org/kdoctools.git"
+  head "https://invent.kde.org/frameworks/kdoctools.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

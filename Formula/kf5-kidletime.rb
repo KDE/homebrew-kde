@@ -3,7 +3,7 @@ class Kf5Kidletime < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kidletime-5.71.0.tar.xz"
   sha256 "1bcacd6c9ec8d65f93434f51d865723a50609ec074f88da2890a8f37ea8d207d"
-  head "git://anongit.kde.org/kidletime.git"
+  head "https://invent.kde.org/frameworks/kidletime.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

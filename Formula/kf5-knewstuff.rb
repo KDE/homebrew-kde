@@ -3,7 +3,7 @@ class Kf5Knewstuff < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/knewstuff-5.71.0.tar.xz"
   sha256 "aba867855d69641f73db30405e787fc9ea22e3386a45be9626ba84cbe208f855"
-  head "git://anongit.kde.org/knewstuff.git"
+  head "https://invent.kde.org/frameworks/knewstuff.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

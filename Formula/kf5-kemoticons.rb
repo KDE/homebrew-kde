@@ -3,7 +3,7 @@ class Kf5Kemoticons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kemoticons-5.71.0.tar.xz"
   sha256 "20bcb111971cc2e8c17b38a0c20aff7cf453174f885c4b4bcc5899141113e2fc"
-  head "git://anongit.kde.org/kemoticons.git"
+  head "https://invent.kde.org/frameworks/kemoticons.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

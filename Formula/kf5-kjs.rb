@@ -3,7 +3,7 @@ class Kf5Kjs < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/portingAids/kjs-5.71.0.tar.xz"
   sha256 "702224482139e500da1ea4e0d2b5132bf762f87f426f294587a0f2f47b9a9734"
-  head "git://anongit.kde.org/kjs.git"
+  head "https://invent.kde.org/frameworks/kjs.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

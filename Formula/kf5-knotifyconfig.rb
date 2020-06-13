@@ -3,7 +3,7 @@ class Kf5Knotifyconfig < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/knotifyconfig-5.71.0.tar.xz"
   sha256 "226b7f956f7013027621c4018b4376b76129ea4195df67fc7df4435c54baf50e"
-  head "git://anongit.kde.org/knotifyconfig.git"
+  head "https://invent.kde.org/frameworks/knotifyconfig.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

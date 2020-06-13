@@ -3,7 +3,7 @@ class Kf5Kcmutils < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kcmutils-5.71.0.tar.xz"
   sha256 "27743a81e9aa48baac12bb844e48d3098250699122ed6040b1e3c50a5e8f276d"
-  head "git://anongit.kde.org/kcmutils.git"
+  head "https://invent.kde.org/frameworks/kcmutils.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Ktextwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/ktextwidgets-5.71.0.tar.xz"
   sha256 "0a7fae03d8b59ec8a4f7c49a228536ea4121bd3d8f19fb1ff9831ada428509f4"
-  head "git://anongit.kde.org/ktextwidgets.git"
+  head "https://invent.kde.org/frameworks/ktextwidgets.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

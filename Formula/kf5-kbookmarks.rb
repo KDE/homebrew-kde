@@ -3,7 +3,7 @@ class Kf5Kbookmarks < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kbookmarks-5.71.0.tar.xz"
   sha256 "e00db1e62a769863a1bf90bb508f108f2740298aa40173cad34ef34a1c23a01a"
-  head "git://anongit.kde.org/kbookmarks.git"
+  head "https://invent.kde.org/frameworks/kbookmarks.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

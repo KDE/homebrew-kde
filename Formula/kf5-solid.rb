@@ -3,7 +3,7 @@ class Kf5Solid < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/solid-5.71.0.tar.xz"
   sha256 "72a7bdd8306ec4cda5f504819e0ff3f8baca6530fa04e33f10b6b89dc010505b"
-  head "git://anongit.kde.org/solid.git"
+  head "https://invent.kde.org/frameworks/solid.git"
 
   depends_on "bison" => :build
   depends_on "cmake" => [:build, :test]

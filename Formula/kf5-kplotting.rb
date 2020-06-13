@@ -3,7 +3,7 @@ class Kf5Kplotting < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kplotting-5.71.0.tar.xz"
   sha256 "84bacfbd86105e454f3d97f4ac4062e2f992556fca66d2c73806d1d12095bec1"
-  head "git://anongit.kde.org/kplotting.git"
+  head "https://invent.kde.org/frameworks/kplotting.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kauth < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kauth-5.71.0.tar.xz"
   sha256 "a0de83bd662e20253011216ab8cba597f8db7429f8706237e7307580125025b5"
-  head "git://anongit.kde.org/kauth.git"
+  head "https://invent.kde.org/frameworks/kauth.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Ktexteditor < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/ktexteditor-5.71.0.tar.xz"
   sha256 "6e50b6669b288f8e624cba11bca53b78748faf6cb978628f02664038cfa294da"
-  head "git://anongit.kde.org/ktexteditor.git"
+  head "https://invent.kde.org/frameworks/ktexteditor.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

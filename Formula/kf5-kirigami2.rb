@@ -3,7 +3,7 @@ class Kf5Kirigami2 < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kirigami2-5.71.0.tar.xz"
   sha256 "f323efb96a809dc9e572a0e68e04c4f485fc27f9ae65ffa3988830e348151356"
-  head "git://anongit.kde.org/kirigami.git"
+  head "https://invent.kde.org/frameworks/kirigami.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kxmlrpcclient < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/portingAids/kxmlrpcclient-5.71.0.tar.xz"
   sha256 "5947de8ec9cd57d8ccf6ea8a764066733d2633d93e11f94ecfb47a75e1e7a91f"
-  head "git://anongit.kde.org/kxmlrpcclient.git"
+  head "https://invent.kde.org/frameworks/kxmlrpcclient.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

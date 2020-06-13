@@ -3,7 +3,7 @@ class Kf5Kparts < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kparts-5.71.0.tar.xz"
   sha256 "d038f97dfdccdd85dbac09c0f64cf852191ec2e535fd7928740e03d4ffe63b90"
-  head "git://anongit.kde.org/kparts.git"
+  head "https://invent.kde.org/frameworks/kparts.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Sonnet < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/sonnet-5.71.0.tar.xz"
   sha256 "cd663b3e1b23aef58d85f72dfdc92aaae33f358b22ad1fc36fde6c66eb7f0e72"
-  head "git://anongit.kde.org/sonnet.git"
+  head "https://invent.kde.org/frameworks/sonnet.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kpeople < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kpeople-5.71.0.tar.xz"
   sha256 "d63d5f5cbbedc2e4ef85fa8c2ff4adcd5cb9e05d1d1ee0e7b2c2d151193f5403"
-  head "git://anongit.kde.org/kpeople.git"
+  head "https://invent.kde.org/frameworks/kpeople.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

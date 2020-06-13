@@ -3,7 +3,7 @@ class Kf5Kpty < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kpty-5.71.0.tar.xz"
   sha256 "7629d35ff783aff8fe801db30eb146efe50620f7500c4f7f1bf7d2619568c6b9"
-  head "git://anongit.kde.org/kpty.git"
+  head "https://invent.kde.org/frameworks/kpty.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

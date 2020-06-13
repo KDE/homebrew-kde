@@ -3,7 +3,7 @@ class Kf5Ki18n < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/ki18n-5.71.0.tar.xz"
   sha256 "f2fc8c40c10576da8b74070b7dc8e752fdd04204cb2bfe522f37a0458fbaf881"
-  head "git://anongit.kde.org/ki18n.git"
+  head "https://invent.kde.org/frameworks/ki18n.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kcoreaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kcoreaddons-5.71.0.tar.xz"
   sha256 "e95008b032e299cf47f596739d9236701e2f55e507734f33b8ea497882fd130b"
-  head "git://anongit.kde.org/kcoreaddons.git"
+  head "https://invent.kde.org/frameworks/kcoreaddons.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

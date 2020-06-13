@@ -3,7 +3,7 @@ class Kf5Kxmlgui < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kxmlgui-5.71.0.tar.xz"
   sha256 "2e4b2563daeedf35a54d38002c05d7c39017a36c0b8a19c236ea87324eebf7cc"
-  head "git://anongit.kde.org/kxmlgui.git"
+  head "https://invent.kde.org/frameworks/kxmlgui.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kimageformats < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kimageformats-5.71.0.tar.xz"
   sha256 "0d6d6a8664e4a01df27e9970ec9ec10a92c1d43a00a3e9ef0471d740b4c93d94"
-  head "git://anongit.kde.org/kimageformats.git"
+  head "https://invent.kde.org/frameworks/kimageformats.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

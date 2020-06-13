@@ -3,7 +3,7 @@ class Kf5Kwindowsystem < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kwindowsystem-5.71.0.tar.xz"
   sha256 "a3613aea6fa73ebc53f28c011a6bca31ed157e29f85df767e617c44399360cda"
-  head "git://anongit.kde.org/kwindowsystem.git"
+  head "https://invent.kde.org/frameworks/kwindowsystem.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

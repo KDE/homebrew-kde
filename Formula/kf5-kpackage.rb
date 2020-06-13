@@ -3,7 +3,7 @@ class Kf5Kpackage < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kpackage-5.71.0.tar.xz"
   sha256 "c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba"
-  head "git://anongit.kde.org/kpackage.git"
+  head "https://invent.kde.org/frameworks/kpackage.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

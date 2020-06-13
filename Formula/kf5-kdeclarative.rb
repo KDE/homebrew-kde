@@ -3,7 +3,7 @@ class Kf5Kdeclarative < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kdeclarative-5.71.0.tar.xz"
   sha256 "ace0e52f561a9cfba1de4b77144a0a68037a1229530fb39070dc837da80ac8f8"
-  head "git://anongit.kde.org/kdeclarative.git"
+  head "https://invent.kde.org/frameworks/kdeclarative.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

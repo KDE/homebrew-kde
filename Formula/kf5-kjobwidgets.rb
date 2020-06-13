@@ -3,7 +3,7 @@ class Kf5Kjobwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kjobwidgets-5.71.0.tar.xz"
   sha256 "63f3b2fc1c062b1a485ff543e2d5afa68a9f9a918676bf3a6a5dc8f56f5f30e3"
-  head "git://anongit.kde.org/kjobwidgets.git"
+  head "https://invent.kde.org/frameworks/kjobwidgets.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

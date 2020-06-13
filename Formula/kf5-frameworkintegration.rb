@@ -3,7 +3,7 @@ class Kf5Frameworkintegration < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/frameworkintegration-5.71.0.tar.xz"
   sha256 "f5ba2d5c363dcb09177424b82d9a59ce0f0a6b2dea372799dcba000452764961"
-  head "git://anongit.kde.org/frameworkintegration.git"
+  head "https://invent.kde.org/frameworks/frameworkintegration.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

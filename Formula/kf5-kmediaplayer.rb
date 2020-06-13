@@ -3,7 +3,7 @@ class Kf5Kmediaplayer < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/portingAids/kmediaplayer-5.71.0.tar.xz"
   sha256 "72492a6c877dded4f2333f140c025fdc4a271a68695c635c0dbc09b08d832eca"
-  head "git://anongit.kde.org/kmediaplayer.git"
+  head "https://invent.kde.org/frameworks/kmediaplayer.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

@@ -3,7 +3,7 @@ class Kf5Kded < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kded-5.71.0.tar.xz"
   sha256 "404c8caae0f4abe2ef85c2e82b5db2b14ae4b607fa30e4f16d15dad53c269fcc"
-  head "git://anongit.kde.org/kded.git"
+  head "https://invent.kde.org/frameworks/kded.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build

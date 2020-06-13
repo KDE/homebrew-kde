@@ -3,7 +3,7 @@ class Kf5Kguiaddons < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kguiaddons-5.71.0.tar.xz"
   sha256 "c1f7bf540a689319962275916c0434f47ba5ed8f7d46a78704393163e32eccd2"
-  head "git://anongit.kde.org/kguiaddons.git"
+  head "https://invent.kde.org/frameworks/kguiaddons.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

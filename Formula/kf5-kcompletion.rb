@@ -3,7 +3,7 @@ class Kf5Kcompletion < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kcompletion-5.71.0.tar.xz"
   sha256 "bf0b6ce1ee133900f169662dbd35da6f766d3e4e02c0c102a9402e20450a22a4"
-  head "git://anongit.kde.org/kcompletion.git"
+  head "https://invent.kde.org/frameworks/kcompletion.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

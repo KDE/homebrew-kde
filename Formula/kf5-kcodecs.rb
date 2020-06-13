@@ -3,7 +3,7 @@ class Kf5Kcodecs < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kcodecs-5.71.0.tar.xz"
   sha256 "3392c4df652e3a44a2b941ccb419dee9521642e503104de403ec1c6be9f43a28"
-  head "git://anongit.kde.org/kcodecs.git"
+  head "https://invent.kde.org/frameworks/kcodecs.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -3,7 +3,7 @@ class Kf5Kglobalaccel < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kglobalaccel-5.71.0.tar.xz"
   sha256 "218d77aa4f6089d57932d627c4a46a8a4a5e964c2bfcee0d1c54338c25c7a06c"
-  head "git://anongit.kde.org/kglobalaccel.git"
+  head "https://invent.kde.org/frameworks/kglobalaccel.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

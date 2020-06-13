@@ -3,7 +3,7 @@ class Kf5Kdewebkit < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/portingAids/kdewebkit-5.71.0.tar.xz"
   sha256 "04b8b90734ddf6d5e72ffa69707d473e1d1f8605ba06d4ceca83f4a1d195c65d"
-  head "git://anongit.kde.org/kdewebkit.git"
+  head "https://invent.kde.org/frameworks/kdewebkit.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

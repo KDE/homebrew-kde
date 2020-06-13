@@ -3,7 +3,7 @@ class Kf5Kitemmodels < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kitemmodels-5.71.0.tar.xz"
   sha256 "68205f09d63a916f236e2b3b729c0055377d852de48f7cf29fa7174ca97b84e7"
-  head "git://anongit.kde.org/kitemmodels.git"
+  head "https://invent.kde.org/frameworks/kitemmodels.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

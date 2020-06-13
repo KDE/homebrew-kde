@@ -3,7 +3,7 @@ class Kf5Qqc2DesktopStyle < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/qqc2-desktop-style-5.71.0.tar.xz"
   sha256 "b968ce6fc7c1d111aa2c63584dddc0f74e9066a0b4ea26d1194e46e2f7b38700"
-  head "git://anongit.kde.org/qqc2-desktop-style.git"
+  head "https://invent.kde.org/frameworks/qqc2-desktop-style.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

@@ -3,7 +3,7 @@ class Kf5Kinit < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.71/kinit-5.71.0.tar.xz"
   sha256 "6ea625bced2c19b0f3e5bb504775dd6764358f02412364a16cbad731c5c299b6"
-  head "git://anongit.kde.org/kinit.git"
+  head "https://invent.kde.org/frameworks/kinit.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
