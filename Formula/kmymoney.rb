@@ -3,7 +3,7 @@ class Kmymoney < Formula
   homepage "https://kmymoney.org"
   url "https://download.kde.org/stable/kmymoney/5.0.8/src/kmymoney-5.0.8.tar.xz"
   sha256 "ac6bcef37def09ca2530276254eab5e9ae57f3a1cd5ed7c87c3d38045400d4c0"
-  head "git://anongit.kde.org/kmymoney.git"
+  head "https://invent.kde.org/office/kmymoney.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "docbook-xsl" => :build

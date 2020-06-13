@@ -1,7 +1,7 @@
 class Konversation < Formula
   desc "User-friendly and fully-featured IRC client"
   homepage "https://www.kde.org"
-  head "git://anongit.kde.org/konversation.git"
+  head "https://invent.kde.org/network/konversation.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

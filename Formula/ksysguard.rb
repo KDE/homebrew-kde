@@ -3,7 +3,7 @@ class Ksysguard < Formula
   homepage "https://userbase.kde.org/KSysGuard"
   url "https://download.kde.org/stable/plasma/5.18.5/ksysguard-5.18.5.tar.xz"
   sha256 "4acb352698b612a21a5eccf22042ab46265d50bbf3aa85844bbca762a64c9e2f"
-  head "git://anongit.kde.org/ksysguard.git"
+  head "https://invent.kde.org/plasma/ksysguard.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

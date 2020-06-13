@@ -3,7 +3,7 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kate-20.04.0.tar.xz"
   sha256 "fe36f9a612c580d6e0067f9e83ad28722e88e99796ad971a0afe916907be2cd2"
-  head "git://anongit.kde.org/kate.git"
+  head "https://invent.kde.org/utilities/kate.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

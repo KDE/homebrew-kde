@@ -3,7 +3,7 @@ class Dolphin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.04.0/src/dolphin-20.04.0.tar.xz"
   sha256 "3c5bb9dc0b5ba55c54eb1c13b123b34f3437c22424142cb7d1957b6ebe4ad5ba"
-  head "git://anongit.kde.org/dolphin.git"
+  head "https://invent.kde.org/system/dolphin.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

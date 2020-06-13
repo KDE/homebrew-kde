@@ -3,7 +3,7 @@ class Okular < Formula
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/release-service/20.04.0/src/okular-20.04.0.tar.xz"
   sha256 "1b6521b4eaa0a0eb41a39c3f84252d9833f6d26fa410afaef815ec661737dfe7"
-  head "git://anongit.kde.org/okular.git"
+  head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

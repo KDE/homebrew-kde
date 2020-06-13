@@ -3,7 +3,7 @@ class Analitza < Formula
   homepage "https://edu.kde.org/"
   url "https://download.kde.org/stable/release-service/20.04.0/src/analitza-20.04.0.tar.xz"
   sha256 "d4c719af3e918c4c999b8a31746bff8e946908fcaa11b25178e1c3dd908c0ff7"
-  head "git://anongit.kde.org/analitza.git"
+  head "https://invent.kde.org/education/analitza.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "eigen" => :build

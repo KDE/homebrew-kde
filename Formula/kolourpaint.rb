@@ -3,7 +3,7 @@ class Kolourpaint < Formula
   homepage "https://kde.org/applications/graphics/kolourpaint/"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kolourpaint-20.04.0.tar.xz"
   sha256 "e3f26fa76b171d06c1fac3926ebfb90da47bacb64989527a4c7bef54349b63fb"
-  head "git://anongit.kde.org/kolourpaint.git"
+  head "https://invent.kde.org/graphics/kolourpaint.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

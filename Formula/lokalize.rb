@@ -3,7 +3,7 @@ class Lokalize < Formula
   homepage "https://www.kde.org/applications/development/lokalize/"
   url "https://download.kde.org/stable/release-service/20.04.0/src/lokalize-20.04.0.tar.xz"
   sha256 "746620117294e2e6b7eb22a470789d2c1b3196f12cf15e3b186256d587658361"
-  head "git://anongit.kde.org/lokalize.git"
+  head "https://invent.kde.org/sdk/lokalize.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build

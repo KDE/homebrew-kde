@@ -3,7 +3,7 @@ class Labplot < Formula
   homepage "https://labplot.kde.org/"
   url "https://download.kde.org/stable/labplot/2.7.0/labplot-2.7.0.tar.xz"
   sha256 "5c4d6ed7df6e98557a6b78f018933c92654b7e50e7f051ad89ec4755e0f4e935"
-  head "git://anongit.kde.org/labplot.git"
+  head "https://invent.kde.org/education/labplot.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

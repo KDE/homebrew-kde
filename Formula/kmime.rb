@@ -3,7 +3,7 @@ class Kmime < Formula
   homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kmime-20.04.0.tar.xz"
   sha256 "4230ca0147d31fa688cf84ac8e7bb46e64deb9536b7a25544be73171615c8fac"
-  head "git://anongit.kde.org/kmime.git"
+  head "https://invent.kde.org/pim/kmime.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build

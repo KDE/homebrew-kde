@@ -3,7 +3,7 @@ class Libkexiv2 < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.04.0/src/libkexiv2-20.04.0.tar.xz"
   sha256 "6456ed484817a4556b960faa4b8e290122f9aa222c86664177e862527c30c67e"
-  head "git://anongit.kde.org/libkexiv2.git"
+  head "https://invent.kde.org/graphics/libkexiv2.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

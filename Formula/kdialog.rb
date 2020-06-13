@@ -3,7 +3,7 @@ class Kdialog < Formula
   homepage "https://kde.org/applications/utilities/org.kde.kdialog"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kdialog-20.04.0.tar.xz"
   sha256 "3e05c6fac266ef48a8adb2f13451f04c4f956d7c9f150f9cff639165ee6793db"
-  head "git://anongit.kde.org/dolphin.git"
+  head "https://invent.kde.org/utilities/kdialog.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]

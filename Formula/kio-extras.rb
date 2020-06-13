@@ -3,7 +3,7 @@ class KioExtras < Formula
   homepage "https://www.kde.org/applications/internet/"
   url "https://download.kde.org/stable/release-service/20.04.0/src/kio-extras-20.04.0.tar.xz"
   sha256 "a70f6079a8d2acb8c64bf0d08f7f7e5685f2e9c4e49548c138609437fdc6cd4d"
-  head "git://anongit.kde.org/kio-extras.git"
+  head "https://invent.kde.org/network/kio-extras.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gperf" => :build
