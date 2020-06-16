@@ -4,6 +4,7 @@ class Libalkimia < Formula
   url "https://download.kde.org/stable/alkimia/8.0.3/alkimia-8.0.3.tar.xz"
   sha256 "1e57ed9279557d8e3575e7556a81b08dff4e882e9f5ad8502da63bfc98c7b33e"
   head "https://invent.kde.org/office/alkimia.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -24,6 +25,7 @@ class Libalkimia < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args << "-DSHARE_INSTALL_DIR=#{pkgshare}"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
