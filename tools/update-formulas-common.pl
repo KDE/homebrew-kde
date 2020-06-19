@@ -18,7 +18,6 @@ my %frameworks = (
     'attica'              => '',
     'breeze-icons'        => '',
     'kapidox'             => '',
-    'karchive'            => '',
     'kcodecs'             => '',
     'kconfig'             => '',
     'kcoreaddons'         => '',
@@ -36,7 +35,6 @@ my %frameworks = (
     'kwindowsystem'       => '',
     'solid'               => '',
     'sonnet'              => '',
-    'threadweaver'        => '',
 
 ### Tier 2
     'kactivities'     => '',

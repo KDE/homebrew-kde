@@ -4,6 +4,7 @@ class Kf5Kpackage < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kpackage-5.71.0.tar.xz"
   sha256 "c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba"
   head "https://invent.kde.org/frameworks/kpackage.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -13,7 +14,7 @@ class Kf5Kpackage < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "kde-karchive"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-ki18n"
 

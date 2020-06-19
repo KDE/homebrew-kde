@@ -4,6 +4,7 @@ class Okular < Formula
   url "https://download.kde.org/stable/release-service/20.04.2/src/okular-20.04.2.tar.xz"
   sha256 "b783aaac1661d1d8ec5c5e26fdec7035a6b0241a21d18caac1587ecfde44c49b"
   head "https://invent.kde.org/graphics/okular.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -19,9 +20,9 @@ class Okular < Formula
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/libkexiv2"
   depends_on "KDE-mac/kde/phonon"
+  depends_on "kde-threadweaver"
   depends_on "libspectre"
   depends_on "poppler"
   depends_on "qca"

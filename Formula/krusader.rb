@@ -3,7 +3,7 @@ class Krusader < Formula
   homepage "https://krusader.org/"
   url "https://download.kde.org/stable/krusader/2.7.2/krusader-2.7.2.tar.xz"
   sha256 "41a39a43b3c42dd1d1ecaea86df30caff6a061fecc1d66f60859b2a3ca976109"
-  revision 1
+  revision 2
   head "https://anongit.kde.org/krusader.git"
 
   depends_on "cmake" => [:build, :test]
@@ -13,7 +13,7 @@ class Krusader < Formula
 
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "kde-karchive"
   depends_on "KDE-mac/kde/kf5-kdoctools"
   depends_on "KDE-mac/kde/kf5-kio"
   depends_on "KDE-mac/kde/kf5-kparts"

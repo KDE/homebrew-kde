@@ -14,7 +14,7 @@ class Kf5Krunner < Formula
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-plasma-framework"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
+  depends_on "kde-threadweaver"
 
   def install
     args = std_cmake_args

@@ -4,6 +4,7 @@ class Kate < Formula
   url "https://download.kde.org/stable/release-service/20.04.2/src/kate-20.04.2.tar.xz"
   sha256 "6b255987ba3d413ac34d668c75677a5b68f7cad2ce3d11ceb6e1d6977f46c478"
   head "https://invent.kde.org/utilities/kate.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -17,7 +18,7 @@ class Kate < Formula
   depends_on "KDE-mac/kde/kf5-kitemmodels"
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
+  depends_on "kde-threadweaver"
 
   depends_on "KDE-mac/kde/konsole" => [:optional]
 

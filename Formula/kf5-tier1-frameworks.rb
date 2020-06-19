@@ -5,12 +5,13 @@ class Kf5Tier1Frameworks < Formula
   url "file:///tmp/empty"
   version "5.70.1"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  revision 1
 
   depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "kde-karchive" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-attica" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-breeze-icons" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kapidox" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-karchive" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kcodecs" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kconfig" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kcoreaddons" => [:build, :test]
@@ -28,7 +29,7 @@ class Kf5Tier1Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-solid" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-sonnet" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-syntax-highlighting" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-threadweaver" => [:build, :test]
+  depends_on "kde-threadweaver" => [:build, :test]
 
   def install
     touch "empty"

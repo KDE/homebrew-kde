@@ -15,7 +15,7 @@ brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git --force-a
 Now, the fun begins. You can either install individual frameworks via
 
 ```sh
-brew install kde-mac/kde/kf5-karchive
+brew install kde-mac/kde/kf5-attica
 ```
 
 or you can install them all with the install.sh shell script provided in the `tools` directory:

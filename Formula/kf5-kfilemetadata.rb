@@ -4,6 +4,7 @@ class Kf5Kfilemetadata < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kfilemetadata-5.71.0.tar.xz"
   sha256 "2e302958065157c1f9ea4a189bbca40b7dbed019767a3380e34e0b6a633c75fe"
   head "https://invent.kde.org/frameworks/kfilemetadata.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -14,7 +15,7 @@ class Kf5Kfilemetadata < Formula
   depends_on "ebook-tools"
   depends_on "exiv2"
   depends_on "ffmpeg"
-  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "kde-karchive"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "KDE-mac/kde/kf5-ki18n"

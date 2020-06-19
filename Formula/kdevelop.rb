@@ -4,6 +4,7 @@ class Kdevelop < Formula
   url "https://download.kde.org/stable/kdevelop/5.5.2/src/kdevelop-5.5.2.tar.xz"
   sha256 "228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da"
   head "https://invent.kde.org/kdevelop/kdevelop.git"
+  revision 1
 
   depends_on "boost" => :build
   depends_on "cvs" => :build
@@ -22,9 +23,9 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-knotifyconfig"
   depends_on "KDE-mac/kde/kf5-ktexteditor"
-  depends_on "KDE-mac/kde/kf5-threadweaver"
   depends_on "KDE-mac/kde/ksysguard"
   depends_on "KDE-mac/kde/libkomparediff2"
+  depends_on "kde-threadweaver"
   depends_on "llvm"
 
   depends_on "cppcheck" => :optional

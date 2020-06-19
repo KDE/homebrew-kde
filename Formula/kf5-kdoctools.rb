@@ -4,6 +4,7 @@ class Kf5Kdoctools < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kdoctools-5.71.0.tar.xz"
   sha256 "1e2fcaa97a014e82f68c0c36591ce84568ead7abd59b66e534789103e162cd09"
   head "https://invent.kde.org/frameworks/kdoctools.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -14,7 +15,7 @@ class Kf5Kdoctools < Formula
   depends_on "perl" => :build
 
   depends_on "docbook-xsl"
-  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "kde-karchive"
   depends_on "libxml2"
   depends_on "libxslt"
 

@@ -4,6 +4,7 @@ class Kf5Kiconthemes < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kiconthemes-5.71.0.tar.xz"
   sha256 "3fa986207e9d967840bd7a3f1af1e4d0105905012a0e4cf56f7ef1b3740b3496"
   head "https://invent.kde.org/frameworks/kiconthemes.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -12,7 +13,7 @@ class Kf5Kiconthemes < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-karchive"
+  depends_on "kde-karchive"
   depends_on "KDE-mac/kde/kf5-kconfigwidgets"
   depends_on "KDE-mac/kde/kf5-kitemviews"
 

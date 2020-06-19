@@ -4,6 +4,7 @@ class Kf5Kimageformats < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kimageformats-5.71.0.tar.xz"
   sha256 "0d6d6a8664e4a01df27e9970ec9ec10a92c1d43a00a3e9ef0471d740b4c93d94"
   head "https://invent.kde.org/frameworks/kimageformats.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -12,7 +13,7 @@ class Kf5Kimageformats < Formula
   depends_on "openexr"
   depends_on "qt"
 
-  depends_on "KDE-mac/kde/kf5-karchive" => :optional
+  depends_on "kde-karchive" => :optional
 
   def install
     args = std_cmake_args
