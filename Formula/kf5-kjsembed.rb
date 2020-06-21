@@ -4,6 +4,7 @@ class Kf5Kjsembed < Formula
   url "https://download.kde.org/stable/frameworks/5.71/portingAids/kjsembed-5.71.0.tar.xz"
   sha256 "9352a31b5f735d71d6db4b09825ca01adb337e37f2b0cfce48c679e932238486"
   head "https://invent.kde.org/frameworks/kjsembed.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
@@ -11,7 +12,7 @@ class Kf5Kjsembed < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-ki18n"
+  depends_on "kde-ki18n"
   depends_on "KDE-mac/kde/kf5-kjs"
 
   patch :DATA

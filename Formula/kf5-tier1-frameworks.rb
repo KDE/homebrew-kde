@@ -5,10 +5,11 @@ class Kf5Tier1Frameworks < Formula
   url "file:///tmp/empty"
   version "5.70.1"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  revision 1
+  revision 2
 
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "kde-karchive" => [:build, :test]
+  depends_on "kde-ki18n" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-attica" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-breeze-icons" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kapidox" => [:build, :test]
@@ -18,7 +19,6 @@ class Kf5Tier1Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-kdbusaddons" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kdnssd" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kguiaddons" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-ki18n" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kidletime" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kirigami2" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kitemmodels" => [:build, :test]

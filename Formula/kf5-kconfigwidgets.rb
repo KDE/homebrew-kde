@@ -4,6 +4,7 @@ class Kf5Kconfigwidgets < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kconfigwidgets-5.71.0.tar.xz"
   sha256 "5778523c49a5294e9376ce8ee6db1a51ffaa506418a19e8632f73287a596276f"
   head "https://invent.kde.org/frameworks/kconfigwidgets.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -13,11 +14,11 @@ class Kf5Kconfigwidgets < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
+  depends_on "kde-ki18n"
   depends_on "KDE-mac/kde/kf5-kauth"
   depends_on "KDE-mac/kde/kf5-kcodecs"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kguiaddons"
-  depends_on "KDE-mac/kde/kf5-ki18n"
   depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
 
   def install

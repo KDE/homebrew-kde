@@ -4,6 +4,7 @@ class Kf5Kservice < Formula
   url "https://download.kde.org/stable/frameworks/5.71/kservice-5.71.0.tar.xz"
   sha256 "6b7f4784cb514ec966f3cb01d26aa2dbdfd2425919efa57a4efa6117fcafc9ce"
   head "https://invent.kde.org/frameworks/kservice.git"
+  revision 1
 
   depends_on "bison" => :build
   depends_on "cmake" => [:build, :test]
@@ -15,10 +16,10 @@ class Kf5Kservice < Formula
   depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
+  depends_on "kde-ki18n"
   depends_on "KDE-mac/kde/kf5-kconfig"
   depends_on "KDE-mac/kde/kf5-kcrash"
   depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-ki18n"
 
   def install
     args = std_cmake_args

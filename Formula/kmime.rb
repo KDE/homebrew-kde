@@ -4,14 +4,15 @@ class Kmime < Formula
   url "https://download.kde.org/stable/release-service/20.04.2/src/kmime-20.04.2.tar.xz"
   sha256 "5ac4c9fe779b2652c2afb07b5771fd3c498599dec2d5cbc66756106a05cca9c5"
   head "https://invent.kde.org/pim/kmime.git"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
+  depends_on "kde-ki18n"
   depends_on "KDE-mac/kde/kf5-kcodecs"
-  depends_on "KDE-mac/kde/kf5-ki18n"
 
   def install
     args = std_cmake_args
