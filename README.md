@@ -10,7 +10,11 @@ brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git --force-a
 "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
 ```
 
-**Note**: It seems that building Qt currently requires the whole Xcode to be installed
+## Migration
+
+Currently this tap is in process of migration most of frameworks to homebrew/core, so it's best practice to run `"$(brew --repo kde-mac/kde)/tools/do-caveats.sh"` in case you are seeing any issue with linking. Sorry for inconvenience.
+
+## Installation 
 
 Now, the fun begins. You can either install individual frameworks via
 
@@ -26,7 +30,7 @@ or you can install them all with the install.sh shell script provided in the `to
 
 Note that `install.sh` passes all parameters on to brew, so you can specify any brew parameter like `--verbose` also to `install.sh`
 
-**Uninstallation**
+## Uninstallation
 
 To remove all KDE Frameworks 5 packages, run:
 
@@ -34,7 +38,7 @@ To remove all KDE Frameworks 5 packages, run:
 "$(brew --repo kde-mac/kde)/tools/uninstall.sh"
 ```
 
-**Installing HEAD**
+## Installing HEAD
 
 Currently, installing a formula installs the last released version from tarballs. However, not all frameworks and apps were released as tarballs yet or latest stable release fails to build. If you get an error saying *is a head-only formula*, that formula can only be installed from latest git and not from released packages. This can be done by passing `--HEAD` as parameter to brew.
 
