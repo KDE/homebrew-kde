@@ -38,29 +38,20 @@ fi
 
 brew services start dbus
 
-# ecm
-if brew list | grep -q kf5-extra-cmake-modules; then
-    brew uninstall -f --ignore-dependencies kf5-extra-cmake-modules
-    brew install kde-extra-cmake-modules
-fi
+MIGRATED=(
+	extra-cmake-modules
+	karchive
+	ki18n
+	threadweaver
+)
 
-# threadweaver
-if brew list | grep -q kf5-threadweaver; then
-    brew uninstall -f --ignore-dependencies kf5-threadweaver
-    brew install kde-threadweaver
-fi
-
-# threadweaver
-if brew list | grep -q kf5-karchive; then
-    brew uninstall -f --ignore-dependencies kf5-karchive
-    brew install kde-karchive
-fi
-
-# ki18n
-if brew list | grep -q kf5-ki18n; then
-    brew uninstall -f --ignore-dependencies kf5-ki18n
-    brew install kde-ki18n
-fi
+for FORMULA in "${MIGRATED[@]}"; do
+	if brew list | grep -q kf5-"${FORMULA}"; then
+    	brew uninstall -f --ignore-dependencies kf5-"${FORMULA}"
+    	brew install kde-"${FORMULA}"
+    	brew link kde-"${FORMULA}"
+	fi
+done
 
 # common
 mkdir -p "$HOME/Applications/KDE"
