@@ -50,6 +50,6 @@ class Konversation < Formula
   end
 
   test do
-    assert `"#{bin}/konversation.app/Contents/MacOS/konversation" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/konversation.app/Contents/MacOS/konversation" --help | grep -- --help`.include?("--help")
   end
 end

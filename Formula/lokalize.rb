@@ -50,6 +50,6 @@ class Lokalize < Formula
   end
 
   test do
-    assert `"#{bin}/lokalize.app/Contents/MacOS/lokalize" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/lokalize.app/Contents/MacOS/lokalize" --help | grep -- --help`.include?("--help")
   end
 end

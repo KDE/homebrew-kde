@@ -51,7 +51,7 @@ class Ksysguard < Formula
   end
 
   test do
-    assert `"#{bin}/ksysguard.app/Contents/MacOS/ksysguard" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/ksysguard.app/Contents/MacOS/ksysguard" --help | grep -- --help`.include?("--help")
   end
 end
 

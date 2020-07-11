@@ -63,6 +63,6 @@ class Kmymoney < Formula
   end
 
   test do
-    assert `"#{bin}/kmymoney.app/Contents/MacOS/kmymoney" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kmymoney.app/Contents/MacOS/kmymoney" --help | grep -- --help`.include?("--help")
   end
 end

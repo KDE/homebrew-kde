@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.71";
+my $frameworks_version   = "5.72";
 my $applications_version = "20.04.2";
 my $plasma_version       = "5.19.3";
 
@@ -24,7 +24,6 @@ my %frameworks = (
     'kdbusaddons'         => '',
     'kdnssd'              => '',
     'kguiaddons'          => '',
-    'ki18n'               => '',
     'kidletime'           => '',
     'kirigami2'           => '',
     'kitemmodels'         => '',

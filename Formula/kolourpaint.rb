@@ -47,6 +47,6 @@ class Kolourpaint < Formula
   end
 
   test do
-    assert `"#{bin}/kolourpaint.app/Contents/MacOS/kolourpaint" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kolourpaint.app/Contents/MacOS/kolourpaint" --help | grep -- --help`.include?("--help")
   end
 end

@@ -1,8 +1,8 @@
 class Kf5Kapidox < Formula
   desc "Frameworks API Documentation Tools"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.71/kapidox-5.71.0.tar.xz"
-  sha256 "da75660fc2808f38441ec0f59d3c58ce29fcfdcea29e251308a11a92546f1ed5"
+  url "https://download.kde.org/stable/frameworks/5.72/kapidox-5.72.0.tar.xz"
+  sha256 "70702d0e5a8eb8158e1429bef6c3fb3d3caa0b9d00479bbb600a5f0f44550b93"
   head "https://invent.kde.org/frameworks/kapidox.git"
 
   depends_on "cmake" => [:build, :test]
@@ -27,14 +27,13 @@ class Kf5Kapidox < Formula
   end
 
   def cmake_args
-    args = %W[
+    %W[
       -DCMAKE_INSTALL_PREFIX=#{libexec}
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_FIND_FRAMEWORK=LAST
       -DCMAKE_VERBOSE_MAKEFILE=ON
       -Wno-dev
     ]
-    args
   end
 
   def install

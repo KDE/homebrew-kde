@@ -47,6 +47,6 @@ class Krename < Formula
   end
 
   test do
-    assert `"#{bin}/krename.app/Contents/MacOS/krename" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/krename.app/Contents/MacOS/krename" --help | grep -- --help`.include?("--help")
   end
 end

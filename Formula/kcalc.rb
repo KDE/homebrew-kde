@@ -49,7 +49,7 @@ class Kcalc < Formula
   end
 
   test do
-    assert `"#{bin}/kcalc.app/Contents/MacOS/kcalc" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kcalc.app/Contents/MacOS/kcalc" --help | grep -- --help`.include?("--help")
   end
 end
 

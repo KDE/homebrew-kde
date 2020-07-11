@@ -57,6 +57,6 @@ class Umbrello < Formula
   end
 
   test do
-    assert `"#{bin}/umbrello5.app/Contents/MacOS/umbrello5" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/umbrello5.app/Contents/MacOS/umbrello5" --help | grep -- --help`.include?("--help")
   end
 end

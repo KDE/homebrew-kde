@@ -52,7 +52,7 @@ class Labplot < Formula
   end
 
   test do
-    assert `"#{bin}/labplot.app/Contents/MacOS/labplot" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/labplot.app/Contents/MacOS/labplot" --help | grep -- --help`.include?("--help")
   end
 end
 

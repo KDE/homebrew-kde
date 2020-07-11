@@ -55,6 +55,6 @@ class Dolphin < Formula
   end
 
   test do
-    assert `"#{bin}/dolphin.app/Contents/MacOS/dolphin" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/dolphin.app/Contents/MacOS/dolphin" --help | grep -- --help`.include?("--help")
   end
 end

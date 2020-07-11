@@ -3,8 +3,8 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/release-service/20.04.2/src/kate-20.04.2.tar.xz"
   sha256 "6b255987ba3d413ac34d668c75677a5b68f7cad2ce3d11ceb6e1d6977f46c478"
-  head "https://invent.kde.org/utilities/kate.git"
   revision 1
+  head "https://invent.kde.org/utilities/kate.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -60,7 +60,7 @@ class Kate < Formula
   end
 
   test do
-    assert `"#{bin}/kate.app/Contents/MacOS/kate" --help | grep -- --help` =~ /--help/
-    assert `"#{bin}/kwrite.app/Contents/MacOS/kwrite" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kate.app/Contents/MacOS/kate" --help | grep -- --help`.include?("--help")
+    assert `"#{bin}/kwrite.app/Contents/MacOS/kwrite" --help | grep -- --help`.include?("--help")
   end
 end

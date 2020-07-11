@@ -54,6 +54,6 @@ class Krusader < Formula
   end
 
   test do
-    assert `"#{bin}/krusader.app/Contents/MacOS/krusader" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/krusader.app/Contents/MacOS/krusader" --help | grep -- --help`.include?("--help")
   end
 end

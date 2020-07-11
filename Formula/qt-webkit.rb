@@ -19,14 +19,13 @@ class QtWebkit < Formula
   depends_on "zlib"
 
   def cmake_args
-    args = %W[
+    %W[
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_FIND_FRAMEWORK=LAST
       -DCMAKE_VERBOSE_MAKEFILE=ON
       -Wno-dev
     ]
-    args
   end
 
   def install

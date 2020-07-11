@@ -54,6 +54,6 @@ class Okteta < Formula
   end
 
   test do
-    assert `"#{bin}/okteta.app/Contents/MacOS/okteta" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/okteta.app/Contents/MacOS/okteta" --help | grep -- --help`.include?("--help")
   end
 end

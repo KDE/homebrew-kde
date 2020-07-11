@@ -3,8 +3,8 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.5.2/src/kdevelop-5.5.2.tar.xz"
   sha256 "228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da"
-  head "https://invent.kde.org/kdevelop/kdevelop.git"
   revision 1
+  head "https://invent.kde.org/kdevelop/kdevelop.git"
 
   depends_on "boost" => :build
   depends_on "cvs" => :build
@@ -34,7 +34,7 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "subversion" => :optional
 
-  conflicts_with "KDE-mac/kde/kdevplatform", :because => "Now included in Kdevelop"
+  conflicts_with "KDE-mac/kde/kdevplatform", :because => "now included in Kdevelop"
 
   patch :DATA
 
@@ -74,7 +74,7 @@ class Kdevelop < Formula
   end
 
   test do
-    assert `"#{bin}/kdevelop.app/Contents/MacOS/kdevelop" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kdevelop.app/Contents/MacOS/kdevelop" --help | grep -- --help`.include?("--help")
   end
 end
 

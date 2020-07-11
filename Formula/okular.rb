@@ -3,8 +3,8 @@ class Okular < Formula
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/release-service/20.04.2/src/okular-20.04.2.tar.xz"
   sha256 "b783aaac1661d1d8ec5c5e26fdec7035a6b0241a21d18caac1587ecfde44c49b"
-  head "https://invent.kde.org/graphics/okular.git"
   revision 1
+  head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -69,8 +69,8 @@ class Okular < Formula
       system "#{Formula["qt"].bin}/qmake"
       system "make"
     end
-    qtpp = Utils.popen_read("#{Formula["qt"].bin}/qtpaths --plugin-dir").chomp
-    qml2pp = Utils.popen_read("./getqmlpath/qmlpath").chomp
+    qtpp = Utils.safe_popen_read("#{Formula["qt"].bin}/qtpaths --plugin-dir").chomp
+    qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/okular.app/Contents/Info.plist"
@@ -93,8 +93,8 @@ class Okular < Formula
   end
 
   test do
-    assert `"#{bin}/okular.app/Contents/MacOS/okular" --help | grep -- --help` =~ /--help/
-    assert `"#{bin}/okularkirigami.app/Contents/MacOS/okularkirigami" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/okular.app/Contents/MacOS/okular" --help | grep -- --help`.include?("--help")
+    assert `"#{bin}/okularkirigami.app/Contents/MacOS/okularkirigami" --help | grep -- --help`.include?("--help")
   end
 end
 

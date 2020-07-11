@@ -50,6 +50,6 @@ class Konsole < Formula
   end
 
   test do
-    assert `"#{bin}/konsole.app/Contents/MacOS/konsole" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/konsole.app/Contents/MacOS/konsole" --help | grep -- --help`.include?("--help")
   end
 end

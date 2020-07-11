@@ -1,10 +1,9 @@
 class Kf5Kpty < Formula
   desc "Pty abstraction"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.71/kpty-5.71.0.tar.xz"
-  sha256 "7629d35ff783aff8fe801db30eb146efe50620f7500c4f7f1bf7d2619568c6b9"
+  url "https://download.kde.org/stable/frameworks/5.72/kpty-5.72.0.tar.xz"
+  sha256 "618a086fe025f34e37fef23902b90387f7ce6db4451815852d226327a9b31c99"
   head "https://invent.kde.org/frameworks/kpty.git"
-  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
@@ -13,8 +12,8 @@ class Kf5Kpty < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
   depends_on "kde-ki18n"
+  depends_on "KDE-mac/kde/kf5-kcoreaddons"
 
   def install
     args = std_cmake_args

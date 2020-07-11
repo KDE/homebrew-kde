@@ -54,7 +54,7 @@ class Ktorrent < Formula
   end
 
   test do
-    assert `"#{bin}/ktorrent.app/Contents/MacOS/ktorrent" --help | grep -- --help` =~ /--help/
-    assert `"#{bin}/ktupnptest.app/Contents/MacOS/ktupnptest" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/ktorrent.app/Contents/MacOS/ktorrent" --help | grep -- --help`.include?("--help")
+    assert `"#{bin}/ktupnptest.app/Contents/MacOS/ktupnptest" --help | grep -- --help`.include?("--help")
   end
 end

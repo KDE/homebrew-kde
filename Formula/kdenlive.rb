@@ -73,7 +73,7 @@ class Kdenlive < Formula
   end
 
   test do
-    assert `"#{bin}/kdenlive.app/Contents/MacOS/kdenlive" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kdenlive.app/Contents/MacOS/kdenlive" --help | grep -- --help`.include?("--help")
   end
 end
 

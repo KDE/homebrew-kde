@@ -1,8 +1,8 @@
 class Kf5Kidletime < Formula
   desc "Monitoring user activity"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.71/kidletime-5.71.0.tar.xz"
-  sha256 "1bcacd6c9ec8d65f93434f51d865723a50609ec074f88da2890a8f37ea8d207d"
+  url "https://download.kde.org/stable/frameworks/5.72/kidletime-5.72.0.tar.xz"
+  sha256 "6f3120724569d596a0e9b70512ca14fe13751b0bcd7fca224a69299eb92b3ee8"
   head "https://invent.kde.org/frameworks/kidletime.git"
 
   depends_on "cmake" => [:build, :test]

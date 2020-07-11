@@ -50,8 +50,8 @@ class Elisa < Formula
       system "#{Formula["qt"].bin}/qmake"
       system "make"
     end
-    qtpp = Utils.popen_read("#{Formula["qt"].bin}/qtpaths --plugin-dir").chomp
-    qml2pp = Utils.popen_read("./getqmlpath/qmlpath").chomp
+    qtpp = Utils.safe_popen_read("#{Formula["qt"].bin}/qtpaths --plugin-dir").chomp
+    qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "-c", "Add :LSEnvironment:QML2_IMPORT_PATH string \"#{qml2pp}\:#{HOMEBREW_PREFIX}/lib/qt5/qml\"",
@@ -71,6 +71,6 @@ class Elisa < Formula
   end
 
   test do
-    assert `"#{bin}/elisa.app/Contents/MacOS/elisa" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/elisa.app/Contents/MacOS/elisa" --help | grep -- --help`.include?("--help")
   end
 end

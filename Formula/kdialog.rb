@@ -50,6 +50,6 @@ class Kdialog < Formula
   end
 
   test do
-    assert `"#{bin}/kdialog.app/Contents/MacOS/kdialog" --help | grep -- --help` =~ /--help/
+    assert `"#{bin}/kdialog.app/Contents/MacOS/kdialog" --help | grep -- --help`.include?("--help")
   end
 end
