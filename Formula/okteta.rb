@@ -3,6 +3,7 @@ class Okteta < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/okteta/0.26.3/src/okteta-0.26.3.tar.xz"
   sha256 "29dc30fd71dfc5337c7d2f814feed1ced5799337c5b1fb5098539ba30941a490"
+  revision 1
   head "https://invent.kde.org/utilities/okteta.git"
 
   depends_on "cmake" => [:build, :test]
@@ -17,6 +18,7 @@ class Okteta < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "qca"
+  depends_on "shared-mime-info"
 
   def install
     args = std_cmake_args
@@ -25,7 +27,6 @@ class Okteta < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
-    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
@@ -54,6 +55,6 @@ class Okteta < Formula
   end
 
   test do
-    assert `"#{bin}/okteta.app/Contents/MacOS/okteta" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/okteta.app/Contents/MacOS/okteta --help")
   end
 end

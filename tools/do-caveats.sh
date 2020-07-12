@@ -53,6 +53,16 @@ for FORMULA in "${MIGRATED[@]}"; do
 	fi
 done
 
+BROKEN_LINK=(
+	okteta
+)
+
+for FORMULA in "${BROKEN_LINK[@]}"; do
+	if brew list | grep -q "${FORMULA}"; then
+    	brew link --overwrite "${FORMULA}"
+	fi
+done
+
 # common
 mkdir -p "$HOME/Applications/KDE"
 rm -rf "$HOME/Applications/KDE*"
