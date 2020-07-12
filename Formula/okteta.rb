@@ -3,7 +3,7 @@ class Okteta < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/okteta/0.26.3/src/okteta-0.26.3.tar.xz"
   sha256 "29dc30fd71dfc5337c7d2f814feed1ced5799337c5b1fb5098539ba30941a490"
-  revision 1
+  revision 2
   head "https://invent.kde.org/utilities/okteta.git"
 
   depends_on "cmake" => [:build, :test]
@@ -18,7 +18,6 @@ class Okteta < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff"
   depends_on "KDE-mac/kde/kf5-kparts"
   depends_on "qca"
-  depends_on "shared-mime-info"
 
   def install
     args = std_cmake_args
@@ -42,7 +41,6 @@ class Okteta < Formula
   end
 
   def post_install
-    system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
     mkdir_p HOMEBREW_PREFIX/"share/okteta"
     ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/okteta/icontheme.rcc"
   end
