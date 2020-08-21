@@ -1,8 +1,8 @@
 class Kf5Solid < Formula
   desc "Hardware integration and detection"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.72/solid-5.72.0.tar.xz"
-  sha256 "d3228ac90f0aa203340cac1bc0c0fd1d2c77b6c94a811d52409d8608d1477e9f"
+  url "https://download.kde.org/stable/frameworks/5.74/solid-5.74.0.tar.xz"
+  sha256 "70e2356267ed1fdd3a13cd729d91c622aad1ea68a51e1172b0ed9db2468cd4e6"
   head "https://invent.kde.org/frameworks/solid.git"
 
   depends_on "bison" => :build

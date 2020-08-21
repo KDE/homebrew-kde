@@ -1,8 +1,8 @@
 class Kf5Kpackage < Formula
   desc "Lets applications manage user installable packages"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.72/kpackage-5.72.0.tar.xz"
-  sha256 "ec512226309be1f44c527cb940d6995214611617f12c49ec7b6c3aaa3786933a"
+  url "https://download.kde.org/stable/frameworks/5.74/kpackage-5.74.0.tar.xz"
+  sha256 "b5616d265b2f404b3bc8e389644185d66bf59a685ab40bbf646d36c3f56ff6ae"
   head "https://invent.kde.org/frameworks/kpackage.git"
 
   depends_on "cmake" => [:build, :test]

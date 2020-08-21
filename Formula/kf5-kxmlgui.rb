@@ -1,8 +1,8 @@
 class Kf5Kxmlgui < Formula
   desc "User configurable main windows"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.72/kxmlgui-5.72.0.tar.xz"
-  sha256 "7ea6e2292c087a278cc33f641e731a9cb69ff12f2fbf0b30274be8ed52dff8f2"
+  url "https://download.kde.org/stable/frameworks/5.74/kxmlgui-5.74.0.tar.xz"
+  sha256 "c5601a811c5d680b370ccf0388de71a49af090718b5f25716c38ce9689c783a1"
   head "https://invent.kde.org/frameworks/kxmlgui.git"
 
   depends_on "cmake" => [:build, :test]
