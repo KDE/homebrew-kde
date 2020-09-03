@@ -19,7 +19,7 @@ then
 	echo "Please don't report any perl-related bugs on kde-mac/kde, since they are out of scope of the project"
 	exit -1
 else
-	echo "cpan good, contine"
+	echo "cpan good, continue"
 fi
 
 # cpan
