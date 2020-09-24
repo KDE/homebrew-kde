@@ -1,8 +1,8 @@
 class Kdiff3 < Formula
-  desc "File And Folder Comparison And Merge Tool"
+  desc "Utility for comparing and merging files and directories"
   homepage "https://kde.org/applications/en/development/org.kde.kdiff3"
-  url "https://download.kde.org/stable/kdiff3/kdiff3-1.8.3.tar.xz"
-  sha256 "2f35e9357a303144e3dd5a033a1a8caa70d3eecdb355213e9473cd04bc308bab"
+  url "https://download.kde.org/stable/kdiff3/kdiff3-1.8.4.tar.xz"
+  sha256 "76e18e097a078c1a440a32562734391d71d12446fcd3b2afeece87c136f43bb8"
   head "https://invent.kde.org/sdk/kdiff3.git"
 
   depends_on "cmake" => :build
