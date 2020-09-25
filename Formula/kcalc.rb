@@ -1,5 +1,5 @@
 class Kcalc < Formula
-  desc "KCalc"
+  desc "Calculator offering everything a scientific calculator does, and more"
   homepage "https://utils.kde.org/projects/kcalc/"
   url "https://download.kde.org/stable/release-service/20.04.2/src/kcalc-20.04.2.tar.xz"
   sha256 "3f68a36c94cf309fb9c4a2aafc7bc2fa6c0d61c8fc967d60155d10d4028d61a0"

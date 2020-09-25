@@ -18,7 +18,7 @@ class Krename < Formula
   depends_on "KDE-mac/kde/kf5-kjs"
   depends_on "podofo"
 
-  conflicts_with "taglib", :because => "linking errors"
+  conflicts_with "taglib", because: "linking errors"
 
   def install
     args = std_cmake_args

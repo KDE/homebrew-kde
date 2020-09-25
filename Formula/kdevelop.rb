@@ -34,7 +34,7 @@ class Kdevelop < Formula
   depends_on "KDE-mac/kde/konsole" => :optional
   depends_on "subversion" => :optional
 
-  conflicts_with "KDE-mac/kde/kdevplatform", :because => "now included in Kdevelop"
+  conflicts_with "KDE-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
   patch :DATA
 

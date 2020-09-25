@@ -25,7 +25,7 @@ class KioExtras < Formula
   depends_on "KDE-mac/kde/kf5-khtml" => :optional
   depends_on "KDE-mac/kde/kf5-kimageformats" => :optional
 
-  conflicts_with "taglib", :because => "linking errors"
+  conflicts_with "taglib", because: "linking errors"
 
   patch do
     # Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)

@@ -1,5 +1,5 @@
 class Phonon < Formula
-  desc "The multimedia framework for KF5"
+  desc "Multimedia framework for KF5"
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/phonon/4.11.1/phonon-4.11.1.tar.xz"
   sha256 "b4431ea2600df8137a717741ad9ebc7f7ec1649fa3e138541d8f42597144de2d"
@@ -12,7 +12,7 @@ class Phonon < Formula
   depends_on "glib"
   depends_on "qt"
 
-  conflicts_with "pulseaudio", :because => "fatal error: 'pulse/glib-mainloop.h' file not found"
+  conflicts_with "pulseaudio", because: "fatal error: 'pulse/glib-mainloop.h' file not found"
 
   def install
     args = std_cmake_args
