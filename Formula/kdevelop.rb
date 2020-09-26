@@ -1,9 +1,8 @@
 class Kdevelop < Formula
-  desc "Integrated Development Environment for KDE"
+  desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.5.2/src/kdevelop-5.5.2.tar.xz"
-  sha256 "228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da"
-  revision 1
+  url "https://download.kde.org/stable/kdevelop/5.6.0/src/kdevelop-5.6.0.tar.xz"
+  sha256 "38adc7d4c4cf2f0fb4191650001e979b5e1b5a3476db28737020baf2fb56f532"
   head "https://invent.kde.org/kdevelop/kdevelop.git"
 
   depends_on "boost" => :build
