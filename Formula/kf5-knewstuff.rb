@@ -3,6 +3,7 @@ class Kf5Knewstuff < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.74/knewstuff-5.74.0.tar.xz"
   sha256 "638ba6cee3091a94a0ef60977b6e22c7b58267ea6fd1bc17d3e7ac47bd9a3d27"
+  revision 1
   head "https://invent.kde.org/frameworks/knewstuff.git"
 
   depends_on "cmake" => [:build, :test]
@@ -22,6 +23,7 @@ class Kf5Knewstuff < Formula
     args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
