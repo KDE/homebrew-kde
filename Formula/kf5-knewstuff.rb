@@ -3,16 +3,16 @@ class Kf5Knewstuff < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.74/knewstuff-5.74.0.tar.xz"
   sha256 "638ba6cee3091a94a0ef60977b6e22c7b58267ea6fd1bc17d3e7ac47bd9a3d27"
-  revision 1
+  revision 2
   head "https://invent.kde.org/frameworks/knewstuff.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "KDE-mac/kde/kf5-kpackage"
 
   depends_on "KDE-mac/kde/kf5-kirigami2" => :optional
 
@@ -48,6 +48,13 @@ class Kf5Knewstuff < Formula
       find_package(KF5NewStuffCore REQUIRED)
       find_package(KF5NewStuffQuick REQUIRED)
     EOS
-    system "cmake", ".", "-Wno-dev"
+
+    args = std_cmake_args
+    args << "-Wno-dev"
+    args << "-DQt5Widgets_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Widgets"}"
+    args << "-DQt5Xml_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Xml"}"
+    args << "-DQt5Network_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Network"}"
+
+    system "cmake", ".", *args
   end
 end
