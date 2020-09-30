@@ -181,6 +181,8 @@ ln -sf "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "$HOME/Application
 #kdialog
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "$HOME/Applications/KDE"
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app/Contents/MacOS/kdialog" "$(brew --prefix)/bin"
+#kile
+ln -sf "$(brew --prefix)/opt/kile/bin/Kile.app" "$HOME/Applications/KDE"
 
 echo "Caveats setup success"
 exit 0
