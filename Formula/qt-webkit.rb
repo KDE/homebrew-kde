@@ -3,7 +3,7 @@ class QtWebkit < Formula
   homepage "https://github.com/qtwebkit/qtwebkit"
   revision 2
   head "https://code.qt.io/qt/qtwebkit.git",
-   revision: "5.212"
+   branch: "5.212"
 
   depends_on "cmake" => [:build, :test]
   depends_on "fontconfig" => :build
