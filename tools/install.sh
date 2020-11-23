@@ -5,7 +5,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 rm -f /tmp/kf5_dep_map /tmp/kf5_filtered
 
-`brew list > /tmp/brew_installed.list`
+`brew ls --formula > /tmp/brew_installed.list`
 
 formuladir="$(brew --repo kde-mac/kde)/Formula"
 

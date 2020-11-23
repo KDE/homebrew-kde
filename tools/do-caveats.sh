@@ -23,7 +23,7 @@ else
 fi
 
 # cpan
-if ! brew list| grep -q perl; then
+if ! brew ls --formula| grep -q perl; then
     brew install perl
 fi
 
@@ -32,7 +32,7 @@ cpan CPAN > /dev/null
 cpan URI URI::Escape > /dev/null
 
 # dbus
-if ! brew list| grep -q dbus; then
+if ! brew ls --formula| grep -q dbus; then
     brew install dbus
 fi
 
@@ -46,7 +46,7 @@ MIGRATED=(
 )
 
 for FORMULA in "${MIGRATED[@]}"; do
-	if brew list | grep -q kf5-"${FORMULA}"; then
+	if brew ls --formula | grep -q kf5-"${FORMULA}"; then
     	brew uninstall -f --ignore-dependencies kf5-"${FORMULA}"
     	brew install kde-"${FORMULA}"
     	brew link kde-"${FORMULA}"
@@ -58,7 +58,7 @@ BROKEN_LINK=(
 )
 
 for FORMULA in "${BROKEN_LINK[@]}"; do
-	if brew list | grep -q "${FORMULA}"; then
+	if brew ls --formula | grep -q "${FORMULA}"; then
     	brew link --overwrite "${FORMULA}"
 	fi
 done
