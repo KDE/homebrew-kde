@@ -1,5 +1,8 @@
 #!/bin/bash
 
+brew update
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 BREW_PERL_SEARCH='HOME/perl5'
 PERL_ENV_CHEK='PERL5LIB'
 BASH_PROFILE="${HOME}/.bash_profile"
