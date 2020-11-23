@@ -1,8 +1,8 @@
 class Drkonqi < Formula
   desc "Crash handler for KDE software"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/plasma/5.19.5/drkonqi-5.19.5.tar.xz"
-  sha256 "43bcf7141115e98d590384b1e2081de5c055a341ce38c76b0cda9933b00f7771"
+  url "https://download.kde.org/stable/plasma/5.20.2/drkonqi-5.20.2.tar.xz"
+  sha256 "7b9fa6f4c77b5ab4c110bb15ec463b00a7bb94c5af46ff57f249cd71a1947106"
   head "https://invent.kde.org/plasma/drkonqi.git"
 
   depends_on "cmake" => [:build, :test]
