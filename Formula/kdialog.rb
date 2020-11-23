@@ -1,8 +1,8 @@
 class Kdialog < Formula
   desc "Utility for displaying dialog boxes from shell scripts"
   homepage "https://kde.org/applications/utilities/org.kde.kdialog"
-  url "https://download.kde.org/stable/release-service/20.04.2/src/kdialog-20.04.2.tar.xz"
-  sha256 "7771d597ad67cef6f0d94fbdc195e3260ed030ccbf5f2d7a2044645856e83201"
+  url "https://download.kde.org/stable/release-service/20.08.2/src/kdialog-20.08.2.tar.xz"
+  sha256 "1bb808c2d01680e2396f282b798d9e22d2c1722f992c672eaf7451bf83a5d459"
   head "https://invent.kde.org/utilities/kdialog.git"
 
   depends_on "cmake" => [:build, :test]

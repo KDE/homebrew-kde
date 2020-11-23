@@ -1,8 +1,8 @@
 class Kolourpaint < Formula
   desc "Paint Program"
   homepage "https://kde.org/applications/graphics/kolourpaint/"
-  url "https://download.kde.org/stable/release-service/20.04.2/src/kolourpaint-20.04.2.tar.xz"
-  sha256 "51c4f709a9059581b9d79e3cd9d2f3752e213de4e68855334090bb9dfc41a60d"
+  url "https://download.kde.org/stable/release-service/20.08.2/src/kolourpaint-20.08.2.tar.xz"
+  sha256 "fbcd875a4a407d9b1e5a637d4947bacfb50f39e10af3327f30fdbb953528aae0"
   head "https://invent.kde.org/graphics/kolourpaint.git"
 
   depends_on "cmake" => [:build, :test]
