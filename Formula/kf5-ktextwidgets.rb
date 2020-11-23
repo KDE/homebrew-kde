@@ -1,8 +1,8 @@
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/ktextwidgets-5.74.0.tar.xz"
-  sha256 "dcb8ba04284bca6436d83b6c3d8137f5ba1da881aa4feab9eb656de29a2ee742"
+  url "https://download.kde.org/stable/frameworks/5.76/ktextwidgets-5.76.0.tar.xz"
+  sha256 "a104e894cf21c245a6c22e6f2c38fdbbdb094cb7fde3d7ebff801bfd73af4c84"
   head "https://invent.kde.org/frameworks/ktextwidgets.git"
 
   depends_on "cmake" => [:build, :test]

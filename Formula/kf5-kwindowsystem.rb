@@ -1,8 +1,8 @@
 class Kf5Kwindowsystem < Formula
   desc "Access to the windowing system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/kwindowsystem-5.74.0.tar.xz"
-  sha256 "33da54b0f76a661919445c9352c04cc23f9b6a0f4c842a76aa810091ca09b12f"
+  url "https://download.kde.org/stable/frameworks/5.76/kwindowsystem-5.76.0.tar.xz"
+  sha256 "8dced74012bed3f33c3c51874aa9c3a57093573c1c0e263b758cefa96c26f7b7"
   head "https://invent.kde.org/frameworks/kwindowsystem.git"
 
   depends_on "cmake" => [:build, :test]

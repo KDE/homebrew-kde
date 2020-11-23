@@ -1,8 +1,8 @@
 class Kf5Krunner < Formula
   desc "Process launcher to speed up launching KDE applications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/krunner-5.74.0.tar.xz"
-  sha256 "ab1c004a8bffa8f88f5aac3b993fca265a5da3b4210c0359c15b8f68f77c65ec"
+  url "https://download.kde.org/stable/frameworks/5.76/krunner-5.76.0.tar.xz"
+  sha256 "08c8addcdd3dac87472e84bd14c6d02b99f98c5efbbda7802de92286105dcdda"
   head "https://invent.kde.org/frameworks/krunner.git"
 
   depends_on "cmake" => [:build, :test]

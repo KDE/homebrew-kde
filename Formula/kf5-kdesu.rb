@@ -1,8 +1,8 @@
 class Kf5Kdesu < Formula
   desc "Integration with su for elevated privileges"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/kdesu-5.74.0.tar.xz"
-  sha256 "7b59327835ca7a49e26e1adcc69b94309025d1ce82b53673e82edf43ad8d8afc"
+  url "https://download.kde.org/stable/frameworks/5.76/kdesu-5.76.0.tar.xz"
+  sha256 "421ef43bd47c3eb6b05806af033276c19df20fd76a06b67fada529bb9c52e642"
   head "https://invent.kde.org/frameworks/kdesu.git"
 
   depends_on "cmake" => [:build, :test]

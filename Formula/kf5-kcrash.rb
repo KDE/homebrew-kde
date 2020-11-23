@@ -1,8 +1,8 @@
 class Kf5Kcrash < Formula
   desc "Support for application crash analysis and bug report from apps"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/kcrash-5.74.0.tar.xz"
-  sha256 "4aaffaed77c0aebf7f68183ed2256173a35c7200be1e99984cbfd9c9f332b07f"
+  url "https://download.kde.org/stable/frameworks/5.76/kcrash-5.76.0.tar.xz"
+  sha256 "c4e32254b22f1f02db556be2ad40000cc52cac2e30a35682af3c75ac69710993"
   head "https://invent.kde.org/frameworks/kcrash.git"
 
   depends_on "cmake" => [:build, :test]

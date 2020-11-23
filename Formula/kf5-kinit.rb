@@ -1,8 +1,8 @@
 class Kf5Kinit < Formula
   desc "Process launcher to speed up launching KDE applications"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/kinit-5.74.0.tar.xz"
-  sha256 "e952750a9d2c5d72f2fbf8faff55ffdae0e667bf5fc4e1e1f1fd985464bb8092"
+  url "https://download.kde.org/stable/frameworks/5.76/kinit-5.76.0.tar.xz"
+  sha256 "a5b63c10b4fc5efcbb5f92b7bce928b4a4880c0ad5d12ff12518106b09239546"
   head "https://invent.kde.org/frameworks/kinit.git"
 
   depends_on "cmake" => [:build, :test]

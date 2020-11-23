@@ -1,8 +1,8 @@
 class Kf5Kcmutils < Formula
   desc "Utilities for interacting with KCModules"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.74/kcmutils-5.74.0.tar.xz"
-  sha256 "c2d54364997ed75961ad875d73a667f6bc8d6732cfacd7ad40ba84c594d567c7"
+  url "https://download.kde.org/stable/frameworks/5.76/kcmutils-5.76.0.tar.xz"
+  sha256 "0ea51ea9e46e6359c76fe099fd2cd03c20891a1cad26ea156ca921a9f0869009"
   head "https://invent.kde.org/frameworks/kcmutils.git"
 
   depends_on "cmake" => [:build, :test]
