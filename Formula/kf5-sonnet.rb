@@ -11,13 +11,12 @@ class Kf5Sonnet < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
+  depends_on "hunspell"
   depends_on "qt"
 
   depends_on "aspell" => :optional
   depends_on "hspell" => :optional
   depends_on "libvoikko" => :optional
-
-  conflicts_with "hunspell", because: "fatal error: 'hunspell.hxx' file not found"
 
   def install
     args = std_cmake_args
