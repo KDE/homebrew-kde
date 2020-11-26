@@ -1,9 +1,8 @@
 class Libalkimia < Formula
   desc "Library used by KDE Finance applications"
   homepage "https://kmymoney.org"
-  url "https://download.kde.org/stable/alkimia/8.0.3/alkimia-8.0.3.tar.xz"
-  sha256 "1e57ed9279557d8e3575e7556a81b08dff4e882e9f5ad8502da63bfc98c7b33e"
-  revision 1
+  url "https://download.kde.org/stable/alkimia/8.0.4/alkimia-8.0.4.tar.xz"
+  sha256 "0004a7068dff0aa2cb6f47f70d21c129073be11f2edb21f14512bc4470487d1f"
   head "https://invent.kde.org/office/alkimia.git"
 
   depends_on "cmake" => [:build, :test]
