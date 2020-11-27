@@ -1,6 +1,8 @@
 class Konversation < Formula
   desc "User-friendly and fully-featured IRC client"
   homepage "https://www.kde.org"
+  url "https://download.kde.org/stable/konversation/1.7.7/src/konversation-1.7.7.tar.xz"
+  sha256 "47ec161c1385981a8b99d28c419e88b24823dc01b68fb1623894818974c218a7"
   head "https://invent.kde.org/network/konversation.git"
 
   depends_on "cmake" => [:build, :test]
@@ -50,6 +52,6 @@ class Konversation < Formula
   end
 
   test do
-    assert `"#{bin}/konversation.app/Contents/MacOS/konversation" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/konversation.app/Contents/MacOS/konversation --help")
   end
 end
