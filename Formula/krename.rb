@@ -1,9 +1,8 @@
 class Krename < Formula
   desc "Very powerful batch file renamer"
   homepage "https://userbase.kde.org/KRename"
-  url "https://download.kde.org/stable/krename/5.0.0/src/krename-5.0.0.tar.xz"
-  sha256 "0a61761853787fd46b35f3a733cf87cde00de5df631728332a64c38c670bd28c"
-  revision 1
+  url "https://download.kde.org/stable/krename/5.0.1/src/krename-5.0.1.tar.xz"
+  sha256 "caac78afd3ba06613df47bbd1570bb900acf4185547354d6eb588e70656f6a7d"
   head "https://invent.kde.org/utilities/krename.git"
 
   depends_on "cmake" => [:build, :test]
@@ -50,6 +49,6 @@ class Krename < Formula
   end
 
   test do
-    assert `"#{bin}/krename.app/Contents/MacOS/krename" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/krename.app/Contents/MacOS/krename --help")
   end
 end
