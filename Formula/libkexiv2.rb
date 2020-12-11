@@ -1,8 +1,8 @@
 class Libkexiv2 < Formula
   desc "Library to manipulate pictures metadata"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.08.2/src/libkexiv2-20.08.2.tar.xz"
-  sha256 "793c4d11bb1b60beca7b25a2427650b3f358364c55be022dfd4a7ccfd889578d"
+  url "https://download.kde.org/stable/release-service/20.12.0/src/libkexiv2-20.12.0.tar.xz"
+  sha256 "534a28648861f1d10e46a5b95c4c7dc27eb2028bf1e0cddd9814237d9c8d114c"
   head "https://invent.kde.org/graphics/libkexiv2.git"
 
   depends_on "cmake" => [:build, :test]

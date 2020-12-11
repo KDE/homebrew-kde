@@ -1,8 +1,8 @@
 class Lokalize < Formula
   desc "Computer-aided translation system"
   homepage "https://www.kde.org/applications/development/lokalize/"
-  url "https://download.kde.org/stable/release-service/20.08.2/src/lokalize-20.08.2.tar.xz"
-  sha256 "c11616bc02763fb1f3b1abf0b2ba70d0c6c550435c94ff25c5096f9a90375e23"
+  url "https://download.kde.org/stable/release-service/20.12.0/src/lokalize-20.12.0.tar.xz"
+  sha256 "c3229f3fa876e6b096b29d9b578ecf9bfd93d5ff46ab23df4edfdf821f2c2fde"
   head "https://invent.kde.org/sdk/lokalize.git"
 
   depends_on "cmake" => [:build, :test]

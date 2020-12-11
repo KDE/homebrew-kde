@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version   = "5.76";
-my $applications_version = "20.08.2";
+my $applications_version = "20.12.0";
 my $plasma_version       = "5.20.2";
 
 my %frameworks = (
@@ -29,11 +29,11 @@ my %frameworks = (
     'kitemmodels'         => '',
     'kitemviews'          => '',
     'kplotting'           => '',
-    'syntax-highlighting' => '',
     'kwidgetsaddons'      => '',
     'kwindowsystem'       => '',
     'solid'               => '',
     'sonnet'              => '',
+    'syntax-highlighting' => '',
 
 ### Tier 2
     'kactivities'     => '',
@@ -43,8 +43,8 @@ my %frameworks = (
     'kdoctools'       => '',
     'kfilemetadata'   => '',
     'kimageformats'   => '',
-    'knotifications'  => '',
     'kjobwidgets'     => '',
+    'knotifications'  => '',
     'kpackage'        => '',
     'kpty'            => '',
     'kunitconversion' => '',
@@ -102,8 +102,11 @@ my %applications = (
     'kmime'           => '',
     'kolourpaint'     => '',
     'konsole'         => '',
+    'konversation'    => '',
+    'ktorrent'        => '',
     'libkexiv2'       => '',
     'libkomparediff2' => '',
+    'libktorrent'     => '',
     'lokalize'        => '',
     'okular'          => '',
     'poxml'           => '',
@@ -183,7 +186,7 @@ sub update_plasmas {
     }
 }
 
-sub download_and_update($$$) {
+sub download_and_update {
     my $formula              = $_[0];
     my $package_upstream_url = $_[1];
     my $cached_file          = $_[2];
@@ -223,35 +226,32 @@ sub download_and_update($$$) {
         die "Unable to verify singnature $cached_file_sig $!";
     }
 
-    open( CACHED_FILE, "<", $cached_file );
+    open my $CACHED_FILE, "<", $cached_file or die $!;
     my $ctx = Digest::SHA->new(256);
-    $ctx->addfile(*CACHED_FILE);
+    $ctx->addfile($CACHED_FILE);
     my $sha = $ctx->hexdigest;
-    close(CACHED_FILE);
+    close($CACHED_FILE);
 
     # print("$cached_file: $sha1\n");
 
-    open( FORMULA, "<", $formula ) or die $!;
+    open my $FORMULA, '<', $formula or die $!;
+    open my $NEW_FORMULA, '>', "$formula.new" or die $!;
 
-    open( NEW_FORMULA, ">", "$formula.new" ) or die $!;
-
-    while (<FORMULA>) {
-        my $line = $_;
-
+    while (my $line = <$FORMULA>) {
         next if ( $line =~ /^\s*^  url\s+\"(.*)\"\s*$/ );
         next if ( $line =~ /^\s*^  sha256\s+\"(.*)\"\s*$/ );
         next if ( $line =~ /^\s*^  revision\s+\d$/ );
 
-        print NEW_FORMULA $line;
+        print $NEW_FORMULA $line;
 
         if ( $line =~ /^\s*^  homepage\s+(.*)\"/ ) {
-            print NEW_FORMULA "  url \"$package_upstream_url\"\n";
-            print NEW_FORMULA "  sha256 \"$sha\"\n";
+            print $NEW_FORMULA "  url \"$package_upstream_url\"\n";
+            print $NEW_FORMULA "  sha256 \"$sha\"\n";
         }
     }
 
-    close FORMULA;
-    close NEW_FORMULA;
+    close $FORMULA;
+    close $NEW_FORMULA;
 
     move( "$formula.new", "$formula" ) or die $!;
 

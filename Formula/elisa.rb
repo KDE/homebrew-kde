@@ -1,8 +1,8 @@
 class Elisa < Formula
   desc "KDE Music Player"
   homepage "https://community.kde.org/Elisa"
-  url "https://download.kde.org/stable/release-service/20.08.2/src/elisa-20.08.2.tar.xz"
-  sha256 "6c04377dfd5e82b2b67b3a43cc3ffd3b206f24ab75c3fe18298ec80876dcc268"
+  url "https://download.kde.org/stable/release-service/20.12.0/src/elisa-20.12.0.tar.xz"
+  sha256 "0e1bed3836da289361b9a9616caadf24479e184e6b8918747567b46535058508"
   head "https://anongit.kde.org/elisa.git"
 
   depends_on "cmake" => [:build, :test]

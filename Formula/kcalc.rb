@@ -1,8 +1,8 @@
 class Kcalc < Formula
   desc "Calculator offering everything a scientific calculator does, and more"
   homepage "https://utils.kde.org/projects/kcalc/"
-  url "https://download.kde.org/stable/release-service/20.08.2/src/kcalc-20.08.2.tar.xz"
-  sha256 "76b6c8e44c789090c0155f79878df8f27c96d2df4273443b0f05a42ec81902cf"
+  url "https://download.kde.org/stable/release-service/20.12.0/src/kcalc-20.12.0.tar.xz"
+  sha256 "3c92a39a349225cbe6fa1eeb84ea5a937172d6a216e06e9f63b954118390482b"
   head "https://invent.kde.org/utilities/kcalc.git"
 
   depends_on "cmake" => [:build, :test]
