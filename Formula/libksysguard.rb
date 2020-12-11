@@ -1,8 +1,8 @@
 class Libksysguard < Formula
   desc "Libraries for ksysguard"
   homepage "https://www.kde.org/workspaces/plasmadesktop/"
-  url "https://download.kde.org/stable/plasma/5.20.2/libksysguard-5.20.2.tar.xz"
-  sha256 "9f57a3719d665df6d6b3c494a62bb7d60c79b06f30c0e9c75eb03568d2046d71"
+  url "https://download.kde.org/stable/plasma/5.20.4/libksysguard-5.20.4.tar.xz"
+  sha256 "a89968476cb8a888550e1a5138ab8e86eeb49788187192cba71f79abd4aad422"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
