@@ -21,6 +21,7 @@ class Kdeconnect < Formula
   depends_on "KDE-mac/kde/kf5-kirigami2"
   depends_on "KDE-mac/kde/kf5-knotifications"
   depends_on "KDE-mac/kde/kf5-kservice"
+  depends_on "KDE-mac/kde/kf5-kpeople"
   depends_on "qca"
   depends_on "qt"
   depends_on "KDE-mac/kde/kf5-kdoctools" => :optional
