@@ -1,4 +1,4 @@
-#/usr/bin/env bash -ex
+#/bin/bash -ex
 
 for file in "$@"; do
     if [[ $file =~ .rb$ ]] ; then

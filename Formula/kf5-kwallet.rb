@@ -1,8 +1,8 @@
 class Kf5Kwallet < Formula
   desc "Secure and unified container for user passwords"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.76/kwallet-5.76.0.tar.xz"
-  sha256 "5addd560d3f650fbb43cd9c8c9e964c2d6893fa45ac53420b711f6bbb4e7a4fc"
+  url "https://download.kde.org/stable/frameworks/5.77/kwallet-5.77.0.tar.xz"
+  sha256 "e33272fedd9d8b1c008e35e2bae3963355e4f8b5ddfab8d6d06c63ddbddad8a0"
   head "https://invent.kde.org/frameworks/kwallet.git"
 
   depends_on "boost" => :build

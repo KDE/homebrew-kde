@@ -1,8 +1,8 @@
 class Kf5Kdelibs4support < Formula
   desc "Porting aid from KDELibs4"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.76/portingAids/kdelibs4support-5.76.0.tar.xz"
-  sha256 "b581273dfaebc5697eb7aa616d858119227dd6c5b781f216abdbff1d93076f0d"
+  url "https://download.kde.org/stable/frameworks/5.77/portingAids/kdelibs4support-5.77.0.tar.xz"
+  sha256 "d62ebe8aaa63218b293bc77b68aa9e6394ca314d525f8b170692a9465a436f7c"
   head "https://invent.kde.org/frameworks/kdelibs4support.git"
 
   depends_on "cmake" => [:build, :test]

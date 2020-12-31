@@ -1,8 +1,8 @@
 class Kf5Khtml < Formula
   desc "KHTML APIs"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.76/portingAids/khtml-5.76.0.tar.xz"
-  sha256 "163139cf9ed9c43bba9532e64ae6376e8ced9b19ea8bb8235ff91c91c4c5a3f4"
+  url "https://download.kde.org/stable/frameworks/5.77/portingAids/khtml-5.77.0.tar.xz"
+  sha256 "36d648c3e50fbc43ee0fcd565e67e531e8029d6f0346c09cb0cb3d693825576e"
   head "https://invent.kde.org/frameworks/khtml.git"
 
   depends_on "cmake" => [:build, :test]

@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.76";
+my $frameworks_version   = "5.77";
 my $applications_version = "20.12.0";
 my $plasma_version       = "5.20.4";
 
@@ -31,6 +31,7 @@ my %frameworks = (
     'kplotting'           => '',
     'kwidgetsaddons'      => '',
     'kwindowsystem'       => '',
+    'qqc2-desktop-style'  => '',
     'solid'               => '',
     'sonnet'              => '',
     'syntax-highlighting' => '',
@@ -46,6 +47,7 @@ my %frameworks = (
     'kjobwidgets'     => '',
     'knotifications'  => '',
     'kpackage'        => '',
+    'kpeople'         => '',
     'kpty'            => '',
     'kunitconversion' => '',
 
@@ -64,7 +66,6 @@ my %frameworks = (
     'knewstuff'        => '',
     'knotifyconfig'    => '',
     'kparts'           => '',
-    'kpeople'          => '',
     'krunner'          => '',
     'kservice'         => '',
     'ktexteditor'      => '',
@@ -75,7 +76,6 @@ my %frameworks = (
 
 ### Tier 4
     'frameworkintegration' => '',
-    'qqc2-desktop-style'   => '',
 
 ### Porting Aids
     'kdelibs4support' => 'portingAids/kdelibs4support',
@@ -95,6 +95,7 @@ my %applications = (
     'elisa'           => '',
     'kate'            => '',
     'kcalc'           => '',
+    'kdeconnect-kde'  => '',
     'kdenlive'        => '',
     'kdialog'         => '',
     'kimap'           => '',
@@ -196,24 +197,20 @@ sub download_and_update {
         return;
     }
 
-    if ( !-e $cached_file ) {
-        print("$package_upstream_url\n");
-        `curl -L -o "$cached_file" "$package_upstream_url"`;
-        if ( $? != 0 ) {
-            die "Unable to download $package_upstream_url: $!";
-        }
+    print("$package_upstream_url\n");
+    `aria2c --allow-overwrite=true --continue=true --file-allocation=none --max-tries=2 --max-connection-per-server=16 --max-file-not-found=5 --min-split-size=1M --no-conf --remote-time=true --timeout=5 --split=16 --dir=/ --out "$cached_file" "$package_upstream_url"`;
+    if ( $? != 0 ) {
+        die "Unable to download $package_upstream_url: $!";
     }
 
     my $package_sig_upstream_url = "$package_upstream_url.sig";
     my $cached_file_sig          = "$cached_file.sig";
 
-    if ( !-e $cached_file_sig ) {
-        print("$package_sig_upstream_url\n");
+    print("$package_sig_upstream_url\n");
 
-        `curl -L -o "$cached_file_sig" "$package_sig_upstream_url"`;
-        if ( $? != 0 ) {
-            die "Unable to download $package_sig_upstream_url: $!";
-        }
+    `aria2c --allow-overwrite=true --continue=true --file-allocation=none --max-tries=2 --max-connection-per-server=16 --max-file-not-found=5 --min-split-size=1M --no-conf --remote-time=true --timeout=5 --split=16 --dir=/ --out "$cached_file_sig" "$package_sig_upstream_url"`;
+    if ( $? != 0 ) {
+        die "Unable to download $package_sig_upstream_url: $!";
     }
 
     if ( !-e $cached_file_sig ) {
@@ -234,10 +231,10 @@ sub download_and_update {
 
     # print("$cached_file: $sha1\n");
 
-    open my $FORMULA, '<', $formula or die $!;
+    open my $FORMULA,     '<', $formula       or die $!;
     open my $NEW_FORMULA, '>', "$formula.new" or die $!;
 
-    while (my $line = <$FORMULA>) {
+    while ( my $line = <$FORMULA> ) {
         next if ( $line =~ /^\s*^  url\s+\"(.*)\"\s*$/ );
         next if ( $line =~ /^\s*^  sha256\s+\"(.*)\"\s*$/ );
         next if ( $line =~ /^\s*^  revision\s+\d$/ );

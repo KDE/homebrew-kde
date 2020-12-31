@@ -3,7 +3,7 @@ class Kf5Tier3Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.76.0"
+  version "5.77.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "KDE-mac/kde/kf5-kbookmarks" => [:build, :test]
@@ -20,14 +20,12 @@ class Kf5Tier3Frameworks < Formula
   depends_on "KDE-mac/kde/kf5-knewstuff" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-knotifyconfig" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kparts" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kpeople" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-krunner" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kservice" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-ktexteditor" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-ktextwidgets" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kwallet" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-kxmlgui" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kxmlrpcclient" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-plasma-framework" => [:build, :test]
   depends_on "KDE-mac/kde/kf5-tier2-frameworks" => :build
 

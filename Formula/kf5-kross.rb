@@ -1,8 +1,8 @@
 class Kf5Kross < Formula
   desc "Embedding of scripting into applications"
   homepage "https://api.kde.org/frameworks/kross/html"
-  url "https://download.kde.org/stable/frameworks/5.76/portingAids/kross-5.76.0.tar.xz"
-  sha256 "15591f2a50f995bcaf17ef72662851c805d4644f13848387f056f686b77c5291"
+  url "https://download.kde.org/stable/frameworks/5.77/portingAids/kross-5.77.0.tar.xz"
+  sha256 "7e48494f1383f91b2bf448692db2f3bafc123275daaf4a5b37d7dfd141380d31"
   head "https://invent.kde.org/frameworks/kross.git"
 
   depends_on "cmake" => [:build, :test]
@@ -31,7 +31,7 @@ class Kf5Kross < Formula
   end
 
   test do
-    assert `"#{bin}"/kf5kross --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/kf5kross --help")
   end
 
   test do

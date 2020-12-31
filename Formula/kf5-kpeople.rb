@@ -1,8 +1,8 @@
 class Kf5Kpeople < Formula
   desc "Provides access to all contacts and the people"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.76/kpeople-5.76.0.tar.xz"
-  sha256 "25c03e48a0951f2d17556912893f55750ffbc1333b07b9b42e2ff0bb571b6545"
+  url "https://download.kde.org/stable/frameworks/5.77/kpeople-5.77.0.tar.xz"
+  sha256 "c7f40eea87062d585fe70504e5e83d81df3fd71f63ea8bf3b04dd35419348f26"
   head "https://invent.kde.org/frameworks/kpeople.git"
 
   depends_on "cmake" => [:build, :test]

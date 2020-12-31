@@ -1,8 +1,8 @@
 class Kf5Kactivities < Formula
   desc "Core components for the KDE's Activities"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.76/kactivities-5.76.0.tar.xz"
-  sha256 "efba13d0d720502bf8bee161b688ba21704f7c213c8b95da65b77b76c9cb3422"
+  url "https://download.kde.org/stable/frameworks/5.77/kactivities-5.77.0.tar.xz"
+  sha256 "971179beb7b214edb9954cfe38b35a62331a7dad5cacd61b41401778c095dca2"
   head "https://invent.kde.org/frameworks/kactivities.git"
 
   depends_on "boost" => :build
