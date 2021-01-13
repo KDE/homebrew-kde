@@ -1,8 +1,8 @@
 class Analitza < Formula
   desc "Library to add mathematical features to your program"
   homepage "https://edu.kde.org/"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/analitza-20.12.0.tar.xz"
-  sha256 "dda39c7ffbb8c47e8b6ff4682948e68be2ea382c16f3f4bb4c1484631eb3a4cb"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/analitza-20.12.1.tar.xz"
+  sha256 "6d7e7744fae960e44d6fe88938a223e0f7de2b769e622e9d5bcdfe2bf3c2d8e2"
   head "https://invent.kde.org/education/analitza.git"
 
   depends_on "cmake" => [:build, :test]

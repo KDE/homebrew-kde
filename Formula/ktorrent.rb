@@ -1,8 +1,8 @@
 class Ktorrent < Formula
   desc "Powerful BitTorrent client for KDE"
   homepage "https://kde.org/applications/internet/ktorrent/"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/ktorrent-20.12.0.tar.xz"
-  sha256 "e4b55c47ceea349e8cc248b74e27ae42c53cd48dc6bfcf416519c7bb5a399749"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/ktorrent-20.12.1.tar.xz"
+  sha256 "8c5f52d9b4597c117c0ed189c2ada3b9716bc0d5ceb53fde66f6a009bee68354"
   head "https://invent.kde.org/network/ktorrent.git"
 
   depends_on "boost" => :build

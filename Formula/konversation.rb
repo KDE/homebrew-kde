@@ -1,8 +1,8 @@
 class Konversation < Formula
   desc "User-friendly and fully-featured IRC client"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/konversation-20.12.0.tar.xz"
-  sha256 "d933d6b2f3dab4633cf58f5ea7b961cb8a7886d09263f9199fa7228eaadf5e8c"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/konversation-20.12.1.tar.xz"
+  sha256 "441e8924763893e5933309dd90525ed8fc37e6e7dc2eda2b1e6cab7176f4d7f4"
   head "https://invent.kde.org/network/konversation.git"
 
   depends_on "cmake" => [:build, :test]

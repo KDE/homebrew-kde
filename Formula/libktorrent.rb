@@ -1,8 +1,8 @@
 class Libktorrent < Formula
   desc "BitTorrent protocol implementation"
   homepage "https://www.kde.org/applications/internet/ktorrent/"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/libktorrent-20.12.0.tar.xz"
-  sha256 "3780a29f401c02b1851d39fcad4697cc105371a70fefa28fde090830c66968e7"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/libktorrent-20.12.1.tar.xz"
+  sha256 "bbaa68598993cf83e21d036b53b901efa190ea5e49b394ccc23f3e62c0caaca2"
   head "https://invent.kde.org/network/libktorrent.git"
 
   depends_on "boost" => :build

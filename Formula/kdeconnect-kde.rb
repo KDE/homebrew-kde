@@ -1,8 +1,8 @@
 class KdeconnectKde < Formula
   desc "Multi-platform app that allows your devices to communicate"
   homepage "https://community.kde.org/KDEConnect"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/kdeconnect-kde-20.12.0.tar.xz"
-  sha256 "caee7945a9d9bb881a943dc8d2fd0d702c04da5bdb2df14d4f875e7cf5d5261a"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/kdeconnect-kde-20.12.1.tar.xz"
+  sha256 "fc15b7dba854b5ccc0fbaf1f7accb2c60ef89f311925c89e0c76c5e653182160"
   head "https://github.com/KDE/kdeconnect-kde.git"
 
   depends_on "cmake" => [:build, :test]

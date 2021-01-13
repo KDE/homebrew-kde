@@ -1,8 +1,8 @@
 class Dolphin < Formula
   desc "KDE File Manager"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.0/src/dolphin-20.12.0.tar.xz"
-  sha256 "02b384e85b00aaaf1b4efd7ee7ca9d2f98991b850aa3645b7161219e9087ccd3"
+  url "https://download.kde.org/stable/release-service/20.12.1/src/dolphin-20.12.1.tar.xz"
+  sha256 "b71652f40f28d92e790a0cdffbd0124c09a7a2264a7a798297b9238171454f58"
   head "https://invent.kde.org/system/dolphin.git"
 
   depends_on "cmake" => [:build, :test]
