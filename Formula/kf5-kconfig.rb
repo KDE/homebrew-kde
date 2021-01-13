@@ -1,8 +1,8 @@
 class Kf5Kconfig < Formula
   desc "Configuration system"
   homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.77/kconfig-5.77.0.tar.xz"
-  sha256 "30e81a7d00cc862e9d07d0e6d0fa55b561641850b7aaffcf51d4b390f1eff981"
+  url "https://download.kde.org/stable/frameworks/5.78/kconfig-5.78.0.tar.xz"
+  sha256 "b27a1e97d520e98178f955b8ab29e794df7733beab1898ef06ab5f14afcfffbb"
   head "https://invent.kde.org/frameworks/kconfig.git"
 
   depends_on "cmake" => [:build, :test]
