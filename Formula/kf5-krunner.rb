@@ -3,6 +3,7 @@ class Kf5Krunner < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/krunner-5.78.0.tar.xz"
   sha256 "755e627292550d56ae77e356eb7bd5991652c196d8499af6fb6da7989e301e02"
+  revision 1
   head "https://invent.kde.org/frameworks/krunner.git"
 
   depends_on "cmake" => [:build, :test]
@@ -10,7 +11,7 @@ class Kf5Krunner < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-plasma-framework"

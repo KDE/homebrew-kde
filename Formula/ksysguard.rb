@@ -3,11 +3,12 @@ class Ksysguard < Formula
   homepage "https://userbase.kde.org/KSysGuard"
   url "https://download.kde.org/stable/plasma/5.20.4/ksysguard-5.20.4.tar.xz"
   sha256 "a5f247b24ce75a28f301446fbeb25abf968e77e0c32cd4be9b574a21d3bbfaf4"
+  revision 1
   head "https://invent.kde.org/plasma/ksysguard.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 

@@ -3,11 +3,12 @@ class Kdenlive < Formula
   homepage "https://www.kdenlive.org/"
   url "https://download.kde.org/stable/release-service/20.12.1/src/kdenlive-20.12.1.tar.xz"
   sha256 "9b6e22ad311c33457e7f7147ad873286945fc6c3b610129856fd01cbb51da458"
+  revision 1
   head "https://invent.kde.org/multimedia/kdenlive.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

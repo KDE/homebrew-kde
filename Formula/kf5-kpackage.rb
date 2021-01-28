@@ -3,6 +3,7 @@ class Kf5Kpackage < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kpackage-5.78.0.tar.xz"
   sha256 "ec906a1037b91d747a858b77e40e24c279c1af72199cc15dec422a1707741b34"
+  revision 1
   head "https://invent.kde.org/frameworks/kpackage.git"
 
   depends_on "cmake" => [:build, :test]
@@ -10,7 +11,7 @@ class Kf5Kpackage < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-karchive"

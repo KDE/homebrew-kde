@@ -3,11 +3,12 @@ class Okteta < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/okteta/0.26.4/src/okteta-0.26.4.tar.xz"
   sha256 "ef22b096c4d8a682b5467ee7d8e9e05ede44cde116daef804312745c4bfd0f03"
+  revision 1
   head "https://invent.kde.org/utilities/okteta.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

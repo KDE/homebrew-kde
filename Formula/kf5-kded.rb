@@ -3,12 +3,13 @@ class Kf5Kded < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kded-5.78.0.tar.xz"
   sha256 "35156cac1df945e7420351b8a361567f20f21af78fef053fa51d8a0ebac2bd52"
+  revision 1
   head "https://invent.kde.org/frameworks/kded.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kinit"

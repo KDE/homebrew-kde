@@ -3,11 +3,12 @@ class Okular < Formula
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/release-service/20.12.1/src/okular-20.12.1.tar.xz"
   sha256 "2ca17ad0b2a1a0f9f70c7ca4bc1f44a9ed758b0ca6a8e5c9935a467f883df53e"
+  revision 1
   head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "djvulibre"

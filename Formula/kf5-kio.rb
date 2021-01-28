@@ -3,13 +3,14 @@ class Kf5Kio < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kio-5.78.0.tar.xz"
   sha256 "e211dba2c1ed73b67188d3ddbaf40043409912ab731aed4eba5bea32a587d620"
+  revision 1
   head "https://invent.kde.org/frameworks/kio.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "desktop-file-utils"

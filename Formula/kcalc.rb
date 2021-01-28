@@ -3,11 +3,12 @@ class Kcalc < Formula
   homepage "https://utils.kde.org/projects/kcalc/"
   url "https://download.kde.org/stable/release-service/20.12.1/src/kcalc-20.12.1.tar.xz"
   sha256 "bca173af793573b52abf0a40474c99efe7ecc74f4bb3a71d7b9de009a689a9dc"
+  revision 1
   head "https://invent.kde.org/utilities/kcalc.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"

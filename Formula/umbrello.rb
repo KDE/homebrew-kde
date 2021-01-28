@@ -3,13 +3,14 @@ class Umbrello < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.12.1/src/umbrello-20.12.1.tar.xz"
   sha256 "74a787947b670024c8a39fc8fb764fba1e79dfcc2664390b903dd85fb8efdd1d"
+  revision 1
   head "https://invent.kde.org/sdk/umbrello.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "kde-kdoctools" => :build
   depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

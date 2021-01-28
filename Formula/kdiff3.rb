@@ -3,13 +3,14 @@ class Kdiff3 < Formula
   homepage "https://kde.org/applications/en/development/org.kde.kdiff3"
   url "https://download.kde.org/stable/kdiff3/kdiff3-1.8.4.tar.xz"
   sha256 "76e18e097a078c1a440a32562734391d71d12446fcd3b2afeece87c136f43bb8"
+  revision 1
   head "https://invent.kde.org/sdk/kdiff3.git"
 
   depends_on "cmake" => :build
   depends_on "kde-extra-cmake-modules" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-kcoreaddons" => :build
   depends_on "KDE-mac/kde/kf5-kcrash" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-kiconthemes" => :build
   depends_on "KDE-mac/kde/kf5-kparts" => :build
   depends_on "ninja" => :build

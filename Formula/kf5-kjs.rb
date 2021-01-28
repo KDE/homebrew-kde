@@ -3,11 +3,12 @@ class Kf5Kjs < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/portingAids/kjs-5.78.0.tar.xz"
   sha256 "9070e1d8b28ea111f1946de57fd80c74dd03e92e31fa3106c4fbb5d38de4566a"
+  revision 1
   head "https://invent.kde.org/frameworks/kjs.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "pcre"

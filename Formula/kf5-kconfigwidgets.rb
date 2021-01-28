@@ -3,6 +3,7 @@ class Kf5Kconfigwidgets < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kconfigwidgets-5.78.0.tar.xz"
   sha256 "87d4cd10145d5bf0e07f1913682553e368db0ee4a900d18368517ad9fda2ec39"
+  revision 1
   head "https://invent.kde.org/frameworks/kconfigwidgets.git"
 
   depends_on "cmake" => [:build, :test]
@@ -10,7 +11,7 @@ class Kf5Kconfigwidgets < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-ki18n"

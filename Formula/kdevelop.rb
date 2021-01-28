@@ -3,14 +3,15 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.6.0/src/kdevelop-5.6.0.tar.xz"
   sha256 "38adc7d4c4cf2f0fb4191650001e979b5e1b5a3476db28737020baf2fb56f532"
+  revision 1
   head "https://invent.kde.org/kdevelop/kdevelop.git"
 
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "gdb" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "kde-kdoctools" => :build
   depends_on "KDE-mac/kde/kdevelop-pg-qt" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

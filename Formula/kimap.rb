@@ -3,11 +3,12 @@ class Kimap < Formula
   homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/release-service/20.12.1/src/kimap-20.12.1.tar.xz"
   sha256 "9bd0b19ec6f8bacb6cf6d2e47949eaa470dde4a7359fd8da1d3cebb1ea55d4f4"
+  revision 1
   head "https://invent.kde.org/pim/kimap.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kio"

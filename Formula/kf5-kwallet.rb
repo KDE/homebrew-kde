@@ -3,6 +3,7 @@ class Kf5Kwallet < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kwallet-5.78.0.tar.xz"
   sha256 "9730997f28ca4e55b015a5d76adcb1200d3e26ec21af9f1a598ce3e4532b16a9"
+  revision 1
   head "https://invent.kde.org/frameworks/kwallet.git"
 
   depends_on "boost" => :build
@@ -11,7 +12,7 @@ class Kf5Kwallet < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "gpgme"

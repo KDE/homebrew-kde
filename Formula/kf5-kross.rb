@@ -3,12 +3,13 @@ class Kf5Kross < Formula
   homepage "https://api.kde.org/frameworks/kross/html"
   url "https://download.kde.org/stable/frameworks/5.78/portingAids/kross-5.78.0.tar.xz"
   sha256 "6121ce648605b8de960889a6c48a5fda967b3f52e38c626c5ac6f5f2e766d41f"
+  revision 1
   head "https://invent.kde.org/frameworks/kross.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kparts"

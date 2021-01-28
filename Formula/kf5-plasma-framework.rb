@@ -3,6 +3,7 @@ class Kf5PlasmaFramework < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/plasma-framework-5.78.0.tar.xz"
   sha256 "46aee1e872728af5ec5c28c604494bbcdf01c32c19f9fe2593b749bbeb698481"
+  revision 1
   head "https://invent.kde.org/frameworks/plasma-framework.git"
 
   depends_on "cmake" => [:build, :test]
@@ -10,7 +11,7 @@ class Kf5PlasmaFramework < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-kactivities"

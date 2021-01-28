@@ -3,12 +3,13 @@ class Ktorrent < Formula
   homepage "https://kde.org/applications/internet/ktorrent/"
   url "https://download.kde.org/stable/release-service/20.12.1/src/ktorrent-20.12.1.tar.xz"
   sha256 "8c5f52d9b4597c117c0ed189c2ada3b9716bc0d5ceb53fde66f6a009bee68354"
+  revision 1
   head "https://invent.kde.org/network/ktorrent.git"
 
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"

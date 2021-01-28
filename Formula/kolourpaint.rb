@@ -3,12 +3,13 @@ class Kolourpaint < Formula
   homepage "https://kde.org/applications/graphics/kolourpaint/"
   url "https://download.kde.org/stable/release-service/20.12.1/src/kolourpaint-20.12.1.tar.xz"
   sha256 "5ee17da9790d931953acedeebc434e11edb2f3e9a8593183913b47985c7e5ca8"
+  revision 1
   head "https://invent.kde.org/graphics/kolourpaint.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "kde-kdoctools" => :build
   depends_on "KDE-mac/kde/kf5-kdesignerplugin" => :build
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"

@@ -3,11 +3,12 @@ class Konsole < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.12.1/src/konsole-20.12.1.tar.xz"
   sha256 "b690be392462cab5abac74d1e1010c3f991c3d00968b51ed5525040640d769ec"
+  revision 1
   head "https://invent.kde.org/utilities/konsole.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"

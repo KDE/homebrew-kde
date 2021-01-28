@@ -3,11 +3,12 @@ class Konversation < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.12.1/src/konversation-20.12.1.tar.xz"
   sha256 "441e8924763893e5933309dd90525ed8fc37e6e7dc2eda2b1e6cab7176f4d7f4"
+  revision 1
   head "https://invent.kde.org/network/konversation.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

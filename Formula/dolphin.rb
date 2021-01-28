@@ -3,11 +3,12 @@ class Dolphin < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/release-service/20.12.1/src/dolphin-20.12.1.tar.xz"
   sha256 "b71652f40f28d92e790a0cdffbd0124c09a7a2264a7a798297b9238171454f58"
+  revision 1
   head "https://invent.kde.org/system/dolphin.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "KDE-mac/kde/kf5-breeze-icons"

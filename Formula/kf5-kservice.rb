@@ -3,6 +3,7 @@ class Kf5Kservice < Formula
   homepage "https://www.kde.org"
   url "https://download.kde.org/stable/frameworks/5.78/kservice-5.78.0.tar.xz"
   sha256 "2ce68ad220b2bc6975f84d8f231afe1a1b5cf6922a75e0ce9541c61e3c5535a0"
+  revision 1
   head "https://invent.kde.org/frameworks/kservice.git"
 
   depends_on "bison" => :build
@@ -12,7 +13,7 @@ class Kf5Kservice < Formula
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-ki18n"
