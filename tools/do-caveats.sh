@@ -44,6 +44,7 @@ brew services start dbus
 MIGRATED=(
 	extra-cmake-modules
 	karchive
+	kdoctools
 	ki18n
 	threadweaver
 )
