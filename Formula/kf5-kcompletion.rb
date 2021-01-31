@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kcompletion < Formula
-  desc "Text completion helpers and widgets"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kcompletion-5.78.0.tar.xz"
-  sha256 "a73972651b5230c8df2d5d7b463d48004b8fd6672bda164e834eec5345113fa9"
+  desc "Completion framework"
+  homepage "https://api.kde.org/frameworks/kcompletion/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kcompletion-5.79.0.tar.xz"
+  sha256 "9bff8b791d2434057a0137805e8dcc81ddfaa6dc87f0b5180c74be770934d7fe"
   head "https://invent.kde.org/frameworks/kcompletion.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,23 +13,16 @@ class Kf5Kcompletion < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kwidgetsaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

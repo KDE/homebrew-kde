@@ -1,13 +1,10 @@
+require_relative "../lib/cmake"
+
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
   homepage "https://github.com/qtwebkit/qtwebkit"
-  revision 2
-  head "https://code.qt.io/qt/qtwebkit.git",
-   branch: "5.212"
-  patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
-    url "https://github.com/qtwebkit/qtwebkit/commit/219aaeee642bce47773df3e797fe8083207b29e2.patch"
-    sha256 "b518072091270114a4aa25f34ca8cf9756bcd14f7598e88d0c286d0c8a57534c"
-  end
+  revision 3
+  head "https://code.qt.io/qt/qtwebkit.git", branch: "5.212"
 
   depends_on "cmake" => [:build, :test]
   depends_on "fontconfig" => :build
@@ -15,45 +12,35 @@ class QtWebkit < Formula
   depends_on "gperf" => :build
   depends_on "ninja" => :build
   depends_on "sqlite" => :build
-
   depends_on "libxslt"
   depends_on "qt"
   depends_on "webp"
   depends_on "zlib"
 
-  def cmake_args
-    %W[
-      -DCMAKE_INSTALL_PREFIX=#{prefix}
-      -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_FIND_FRAMEWORK=LAST
-      -DCMAKE_VERBOSE_MAKEFILE=ON
-      -Wno-dev
-    ]
+  patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
+    url "https://github.com/qtwebkit/qtwebkit/commit/219aaeee642bce47773df3e797fe8083207b29e2.patch?full_index=1"
+    sha256 "42278c3360d12531487b831e55cfe70b5120c5713f655f3cc6d1c027ca63ec79"
   end
 
   def install
-    args = cmake_args
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
-    args << "-DPORT=Qt"
-    args << "-DENABLE_TOOLS=OFF"
-    args << "-DCMAKE_MACOSX_RPATH=OFF"
-    args << "-DEGPF_SET_RPATH=OFF"
-    args << "-DCMAKE_SKIP_RPATH=ON"
-    args << "-DCMAKE_SKIP_INSTALL_RPATH=ON"
+    args = kde_cmake_args + %w[
+      -DPORT=Qt
+      -DENABLE_TOOLS=OFF
+      -DCMAKE_MACOSX_RPATH=OFF
+      -DEGPF_SET_RPATH=OFF
+      -DCMAKE_SKIP_RPATH=ON
+      -DCMAKE_SKIP_INSTALL_RPATH=ON
+    ]
 
     # Fuck off rpath
     inreplace "Source/cmake/OptionsQt.cmake",
               "set(CMAKE_MACOSX_RPATH\ ON)",
               ""
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

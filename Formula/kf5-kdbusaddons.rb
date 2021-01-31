@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kdbusaddons < Formula
   desc "Addons to QtDBus"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kdbusaddons-5.78.0.tar.xz"
-  sha256 "4f91d0b5762243e5e044c087d4faaa584ad5f779fdede138a0048fd4af24d399"
+  homepage "https://api.kde.org/frameworks/kdbusaddons/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kdbusaddons-5.79.0.tar.xz"
+  sha256 "2071c5a06226b77c4cb1d4e46b50258c980e57448fdbb1a49259db64a7a2539f"
   head "https://invent.kde.org/frameworks/kdbusaddons.git"
 
   depends_on "cmake" => [:build, :test]
@@ -15,19 +17,12 @@ class Kf5Kdbusaddons < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

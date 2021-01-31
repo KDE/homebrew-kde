@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Libkexiv2 < Formula
   desc "Library to manipulate pictures metadata"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/libkexiv2-20.12.1.tar.xz"
-  sha256 "60b3c6d16ea02b335ce5b377e153e39268726d9b80187674547dccfe06f5d4ef"
+  homepage "https://api.kde.org/libkexiv2/html/index.html"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/libkexiv2-20.12.2.tar.xz"
+  sha256 "eb364ea254d8d72317124e725b4a5b2db0d45c627020ad934f6e1f7f66174882"
   head "https://invent.kde.org/graphics/libkexiv2.git"
 
   depends_on "cmake" => [:build, :test]
@@ -13,17 +15,12 @@ class Libkexiv2 < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

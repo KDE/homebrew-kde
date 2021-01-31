@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kpeople < Formula
   desc "Provides access to all contacts and the people"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kpeople-5.78.0.tar.xz"
-  sha256 "b180d9623f9ed0c83deb49a299bad6f7b88b50a2f83ea745d0c970e830088c31"
+  homepage "https://api.kde.org/frameworks/kpeople/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kpeople-5.79.0.tar.xz"
+  sha256 "c4310f04bf7f7de6b0ab9b997f5374f2a0237caf034d518f1cc7644025834836"
   head "https://invent.kde.org/frameworks/kpeople.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,24 +14,17 @@ class Kf5Kpeople < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kitemviews"
-  depends_on "KDE-mac/kde/kf5-kservice"
-  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "kde-mac/kde/kf5-kitemviews"
+  depends_on "kde-mac/kde/kf5-kservice"
+  depends_on "kde-mac/kde/kf5-kwidgetsaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

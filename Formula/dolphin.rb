@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Dolphin < Formula
   desc "KDE File Manager"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/dolphin-20.12.1.tar.xz"
-  sha256 "b71652f40f28d92e790a0cdffbd0124c09a7a2264a7a798297b9238171454f58"
-  revision 1
+  homepage "https://apps.kde.org/dolphin"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/dolphin-20.12.2.tar.xz"
+  sha256 "59f82f599fec19fc3065f034089b6d35a58ddc419e10c370d99d1ca0b7d0baa6"
   head "https://invent.kde.org/system/dolphin.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,31 +12,24 @@ class Dolphin < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kcmutils"
-  depends_on "KDE-mac/kde/kf5-kdelibs4support"
-  depends_on "KDE-mac/kde/kf5-kfilemetadata"
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kio-extras"
-
-  depends_on "KDE-mac/kde/konsole" => :optional
-  depends_on "ruby" => :optional
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kcmutils"
+  depends_on "kde-mac/kde/kf5-kdelibs4support"
+  depends_on "kde-mac/kde/kf5-kfilemetadata"
+  depends_on "kde-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kio-extras"
+  depends_on "kde-mac/kde/konsole"
+  depends_on "ruby"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -56,6 +50,6 @@ class Dolphin < Formula
   end
 
   test do
-    assert `"#{bin}/dolphin.app/Contents/MacOS/dolphin" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/dolphin.app/Contents/MacOS/dolphin --help")
   end
 end

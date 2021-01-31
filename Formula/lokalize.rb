@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Lokalize < Formula
   desc "Computer-aided translation system"
   homepage "https://www.kde.org/applications/development/lokalize/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/lokalize-20.12.1.tar.xz"
-  sha256 "9dcaa76001b383ee875c6229ccec607f66bb170ff43670e4434e660f749abf57"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/lokalize-20.12.2.tar.xz"
+  sha256 "e77f5ef9122768acecc708fea516963e8d1968437d38e3bbc0c3fcc255e947d7"
   head "https://invent.kde.org/sdk/lokalize.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,25 +13,19 @@ class Lokalize < Formula
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
   depends_on "hunspell"
-  depends_on "KDE-mac/kde/kf5-kross"
+  depends_on "kde-mac/kde/kf5-kross"
   depends_on "poxml"
   depends_on "qt"
+  depends_on "subversion"
   depends_on "translate-toolkit"
-  depends_on "subversion" => :optional
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -50,6 +46,6 @@ class Lokalize < Formula
   end
 
   test do
-    assert `"#{bin}/lokalize.app/Contents/MacOS/lokalize" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/lokalize.app/Contents/MacOS/lokalize --help")
   end
 end

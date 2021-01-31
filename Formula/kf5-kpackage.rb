@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kpackage < Formula
   desc "Lets applications manage user installable packages"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kpackage-5.78.0.tar.xz"
-  sha256 "ec906a1037b91d747a858b77e40e24c279c1af72199cc15dec422a1707741b34"
-  revision 1
+  homepage "https://api.kde.org/frameworks/kpackage/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kpackage-5.79.0.tar.xz"
+  sha256 "47782782f9cda0d38ab87be340b868cfb9350e3a53b4126d8ea2c33429e173f6"
   head "https://invent.kde.org/frameworks/kpackage.git"
 
   depends_on "cmake" => [:build, :test]
@@ -16,22 +17,15 @@ class Kf5Kpackage < Formula
 
   depends_on "kde-karchive"
   depends_on "kde-ki18n"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

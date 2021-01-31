@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kbookmarks < Formula
-  desc "Support for bookmarks and the XBEL format"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kbookmarks-5.78.0.tar.xz"
-  sha256 "8301b0857e253bd12ffdbcde2866f91c4dcfe438bccd51b8bbbc61efa703ef2c"
+  desc "Bookmarks management library"
+  homepage "https://api.kde.org/frameworks/kbookmarks/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kbookmarks-5.79.0.tar.xz"
+  sha256 "0dcfdf8b2f1d6cebdf830adc338d07a10cf2ddca815c21365cf5ec8e67943981"
   head "https://invent.kde.org/frameworks/kbookmarks.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,22 +13,15 @@ class Kf5Kbookmarks < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kxmlgui"
+  depends_on "kde-mac/kde/kf5-kxmlgui"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

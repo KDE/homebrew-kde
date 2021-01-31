@@ -1,32 +1,28 @@
+require_relative "../lib/cmake"
+
 class Kf5Kimageformats < Formula
   desc "Image format plugins for Qt5"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kimageformats-5.78.0.tar.xz"
-  sha256 "ecd4cf4ec006998b73724776cb2cb11f636057bd5f29ae134451fec612e1623f"
+  homepage "https://api.kde.org/frameworks/kimageformats/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kimageformats-5.79.0.tar.xz"
+  sha256 "ecc8e38500d2723ab2db343252955df73c75d4e20a54e8671436b2bf0961ce25"
   head "https://invent.kde.org/frameworks/kimageformats.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
+
   depends_on "jasper"
+  depends_on "kde-karchive"
   depends_on "openexr"
   depends_on "qt"
 
-  depends_on "kde-karchive" => :optional
-
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

@@ -1,31 +1,27 @@
+require_relative "../lib/cmake"
+
 class Poxml < Formula
   desc "Translates DocBook XML files using gettext po files"
   homepage "https://www.kde.org/applications/development/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/poxml-20.12.1.tar.xz"
-  sha256 "93562e6b86dd0e75af4b7943227824a461b82bc3246ba19d1a9b49d0e9dab2ea"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/poxml-20.12.2.tar.xz"
+  sha256 "ff0be949f2559c35ce3989f0298a4fbc8d43f06dd0c677c93bd80910fa08d5c2"
   head "https://invent.kde.org/sdk/poxml.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "gettext"
-  depends_on "KDE-mac/kde/kf5-kdoctools"
+  depends_on "kde-mac/kde/kf5-kdoctools"
   depends_on "qt"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    args = kde_cmake_args
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

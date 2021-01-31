@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kcalc < Formula
   desc "Calculator offering everything a scientific calculator does, and more"
   homepage "https://utils.kde.org/projects/kcalc/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/kcalc-20.12.1.tar.xz"
-  sha256 "bca173af793573b52abf0a40474c99efe7ecc74f4bb3a71d7b9de009a689a9dc"
-  revision 1
+  url "https://download.kde.org/stable/release-service/20.12.2/src/kcalc-20.12.2.tar.xz"
+  sha256 "fd23f66404c6847a26c65b9053a37908ca373a2e59d02a9ab8cd51cb53286837"
   head "https://invent.kde.org/utilities/kcalc.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,25 +12,19 @@ class Kcalc < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kinit"
   depends_on "mpfr"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -50,7 +45,7 @@ class Kcalc < Formula
   end
 
   test do
-    assert `"#{bin}/kcalc.app/Contents/MacOS/kcalc" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/kcalc.app/Contents/MacOS/kcalc --help")
   end
 end
 

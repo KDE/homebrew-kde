@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kjsembed < Formula
   desc "Embedded JS"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/portingAids/kjsembed-5.78.0.tar.xz"
-  sha256 "296faa38f8996e8b99a7e83fb67d4b0dda5a4284a77aaec9d41ccc62f1ea1065"
-  revision 1
+  homepage "https://api.kde.org/frameworks/kjsembed/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/portingAids/kjsembed-5.79.0.tar.xz"
+  sha256 "fe1694f5ae939f049ba2585112218d1dcbafede6974f486b51619d1a6bc172a2"
   head "https://invent.kde.org/frameworks/kjsembed.git"
 
   depends_on "cmake" => [:build, :test]
@@ -13,23 +14,17 @@ class Kf5Kjsembed < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-ki18n"
-  depends_on "KDE-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kf5-kjs"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

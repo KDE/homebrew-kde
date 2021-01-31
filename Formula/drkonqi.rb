@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Drkonqi < Formula
   desc "Crash handler for KDE software"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/plasma/5.20.4/drkonqi-5.20.4.tar.xz"
-  sha256 "55d4a166ee74c4a935c69cec64ecd8eb3fdd79aae8dcd996f6432a873be3fac8"
+  homepage "https://kde.org/plasma-desktop/"
+  url "https://download.kde.org/stable/plasma/5.21.1/drkonqi-5.21.1.tar.xz"
+  sha256 "2b567213aeb0a2dd6b449cbb49baaeb92aa83d529b53c558b2bec4555e4d13c7"
   head "https://invent.kde.org/plasma/drkonqi.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,23 +13,16 @@ class Drkonqi < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kidletime"
-  depends_on "KDE-mac/kde/kf5-kxmlrpcclient"
+  depends_on "kde-mac/kde/kf5-kidletime"
+  depends_on "kde-mac/kde/kf5-kxmlrpcclient"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_LIBEXECDIR=lib"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

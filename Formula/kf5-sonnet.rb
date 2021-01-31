@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Sonnet < Formula
   desc "Spelling framework for Qt5"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/sonnet-5.78.0.tar.xz"
-  sha256 "c2e70e96c66efa359b47c66937403089b11f6f9bf5406cb24f023809e70280cb"
+  homepage "https://api.kde.org/frameworks/sonnet/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/sonnet-5.79.0.tar.xz"
+  sha256 "d86f3aa5808784af3019c38126471fdf3add7b3420ce6a8f79a04c86d0ca6125"
   head "https://invent.kde.org/frameworks/sonnet.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,26 +14,19 @@ class Kf5Sonnet < Formula
   depends_on "ninja" => :build
 
   depends_on "hunspell"
+  depends_on "libvoikko"
   depends_on "qt"
 
   depends_on "aspell" => :optional
   depends_on "hspell" => :optional
-  depends_on "libvoikko" => :optional
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

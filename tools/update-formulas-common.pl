@@ -7,9 +7,9 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.78";
-my $applications_version = "20.12.1";
-my $plasma_version       = "5.20.4";
+my $frameworks_version   = "5.79";
+my $applications_version = "20.12.2";
+my $plasma_version       = "5.21.1";
 
 my %frameworks = (
 
@@ -127,6 +127,7 @@ chomp($tmp_dir);
 sub update_frameworks {
     for my $package ( keys %frameworks ) {
         my $upstream_suffix = "-${frameworks_version}.0.tar.xz";
+
         my $upstream_url
             = "https://download.kde.org/stable/frameworks/${frameworks_version}/";
 

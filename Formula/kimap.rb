@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kimap < Formula
   desc "Job-based API for interacting with IMAP servers"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/kimap-20.12.1.tar.xz"
-  sha256 "9bd0b19ec6f8bacb6cf6d2e47949eaa470dde4a7359fd8da1d3cebb1ea55d4f4"
-  revision 1
+  url "https://download.kde.org/stable/release-service/20.12.2/src/kimap-20.12.2.tar.xz"
+  sha256 "ad809073b32a98b07d08bff09d3ac687d8121c1f278facffc8cee2b08c7d7292"
   head "https://invent.kde.org/pim/kimap.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,22 +12,16 @@ class Kimap < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kmime"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kmime"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

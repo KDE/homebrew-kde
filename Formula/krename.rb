@@ -1,8 +1,11 @@
+require_relative "../lib/cmake"
+
 class Krename < Formula
   desc "Very powerful batch file renamer"
   homepage "https://userbase.kde.org/KRename"
   url "https://download.kde.org/stable/krename/5.0.1/src/krename-5.0.1.tar.xz"
   sha256 "caac78afd3ba06613df47bbd1570bb900acf4185547354d6eb588e70656f6a7d"
+  revision 1
   head "https://invent.kde.org/utilities/krename.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,23 +15,20 @@ class Krename < Formula
 
   depends_on "exiv2"
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kjs"
   depends_on "podofo"
 
   conflicts_with "taglib", because: "linking errors"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",

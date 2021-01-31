@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kfilemetadata < Formula
   desc "Library for extracting file metadata"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kfilemetadata-5.78.0.tar.xz"
-  sha256 "9dd965188f38dfc5cdcefb3b73d41885b069acb95076b96140b64e72dc213c84"
+  homepage "https://api.kde.org/frameworks/kfilemetadata/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kfilemetadata-5.79.0.tar.xz"
+  sha256 "250d950d1009fc274db631ff6e680f68add007f82fb12a90aacc5d84f055b27b"
   head "https://invent.kde.org/frameworks/kfilemetadata.git"
 
   depends_on "cmake" => [:build, :test]
@@ -16,25 +18,18 @@ class Kf5Kfilemetadata < Formula
   depends_on "ffmpeg"
   depends_on "kde-karchive"
   depends_on "kde-ki18n"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
   depends_on "poppler"
   depends_on "taglib"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

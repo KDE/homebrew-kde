@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kauth < Formula
-  desc "Abstraction to system policy and authentication features"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kauth-5.78.0.tar.xz"
-  sha256 "efb3b050492f466c4c531217c39aed67524976884a00f395eaeca147caf61db0"
+  desc "Execute actions as privileged user"
+  homepage "https://api.kde.org/frameworks/kauth/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kauth-5.79.0.tar.xz"
+  sha256 "aa01b26a48556292141b2c103b177ec991127e6faf0e3edd0f0efa78887578a1"
   head "https://invent.kde.org/frameworks/kauth.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,22 +14,15 @@ class Kf5Kauth < Formula
   depends_on "ninja" => :build
 
   depends_on "gpgme"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kconfig < Formula
-  desc "Configuration system"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kconfig-5.78.0.tar.xz"
-  sha256 "b27a1e97d520e98178f955b8ab29e794df7733beab1898ef06ab5f14afcfffbb"
+  desc "Persistent platform-independent application settings"
+  homepage "https://api.kde.org/frameworks/kconfig/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kconfig-5.79.0.tar.xz"
+  sha256 "f948718ac87f573b14bbf73e4af02d488f023cfcf011425af7cdbc0cefca510a"
   head "https://invent.kde.org/frameworks/kconfig.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,19 +16,12 @@ class Kf5Kconfig < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

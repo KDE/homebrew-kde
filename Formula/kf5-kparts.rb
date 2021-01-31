@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kparts < Formula
   desc "Document centric plugin system"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kparts-5.78.0.tar.xz"
-  sha256 "77d33ade190828254d1e0c8855b873282168eaf6a4f8ff42c902c2f8a1dee1da"
+  homepage "https://api.kde.org/frameworks/kparts/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kparts-5.79.0.tar.xz"
+  sha256 "a941b95c1f3f6f36656fb22eca5ea9606ea59d2c3c414363c68f106cdcd32d35"
   head "https://invent.kde.org/frameworks/kparts.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,22 +13,15 @@ class Kf5Kparts < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kio"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

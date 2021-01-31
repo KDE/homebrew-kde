@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kguiaddons < Formula
   desc "Addons to QtGui"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kguiaddons-5.78.0.tar.xz"
-  sha256 "ad09ed2db12a8740c5bc2d0b1e45b4a4f5c05835b995d2aa5492c11561bc77d0"
+  homepage "https://api.kde.org/frameworks/kguiaddons/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kguiaddons-5.79.0.tar.xz"
+  sha256 "bc00488e123a1f7905682393b140b80c8340cb131cc0baa3fb6ad575878f1c85"
   head "https://invent.kde.org/frameworks/kguiaddons.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,20 +16,14 @@ class Kf5Kguiaddons < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
+
     args << "-DWITH_WAYLAND=OFF"
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

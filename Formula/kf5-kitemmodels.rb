@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kitemmodels < Formula
   desc "Models for Qt Model/View system"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kitemmodels-5.78.0.tar.xz"
-  sha256 "4a361cf0fd7bc48261fddcc5b916367cb22b5a2cfdbb91a6eff5d0da4e7cc8fa"
+  homepage "https://api.kde.org/frameworks/kitemmodels/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kitemmodels-5.79.0.tar.xz"
+  sha256 "7a29b2b7f20a3dbfd65a12e38f431716e14c8d43f9f1edc32e15e03920503dbd"
   head "https://invent.kde.org/frameworks/kitemmodels.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,19 +16,12 @@ class Kf5Kitemmodels < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

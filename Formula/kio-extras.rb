@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class KioExtras < Formula
   desc "Additional components to increase the functionality of KIO"
   homepage "https://www.kde.org/applications/internet/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/kio-extras-20.12.1.tar.xz"
-  sha256 "eff93820cf427adffa6019ae566a7eeb788b5e6f4a15395c764170e2bf3ca0fa"
-  revision 1
+  url "https://download.kde.org/stable/release-service/20.12.2/src/kio-extras-20.12.2.tar.xz"
+  sha256 "237df668c8bdeac4a362659c00b64c6e89d8b60080fcbdcaf21f387a22e25ae4"
   head "https://invent.kde.org/network/kio-extras.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,16 +15,15 @@ class KioExtras < Formula
   depends_on "shared-mime-info" => :build
 
   depends_on "exiv2"
-  depends_on "KDE-mac/kde/kf5-kdnssd"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-syntax-highlighting"
+  depends_on "kde-mac/kde/kf5-kdnssd"
+  depends_on "kde-mac/kde/kf5-khtml"
+  depends_on "kde-mac/kde/kf5-kimageformats"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/kf5-syntax-highlighting"
   depends_on "libmtp"
   depends_on "openexr"
   depends_on "openslp"
-
-  depends_on "KDE-mac/kde/kf5-khtml" => :optional
-  depends_on "KDE-mac/kde/kf5-kimageformats" => :optional
 
   conflicts_with "taglib", because: "linking errors"
 
@@ -36,18 +36,12 @@ class KioExtras < Formula
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
+    args = kde_cmake_argsargs << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def post_install

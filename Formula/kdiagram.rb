@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kdiagram < Formula
   desc "Powerful libraries for creating business diagrams"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/kdiagram/2.7.0/kdiagram-2.7.0.tar.xz"
-  sha256 "63a2eabfa1554ceb1d686d5f17ed6308139b6d9155aaf224e0309585b070fbdd"
+  homepage "https://api.kde.org/kdiagram/index.html"
+  url "https://download.kde.org/stable/kdiagram/2.8.0/kdiagram-2.8.0.tar.xz"
+  sha256 "579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f"
   head "https://invent.kde.org/graphics/kdiagram.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,17 +14,12 @@ class Kdiagram < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

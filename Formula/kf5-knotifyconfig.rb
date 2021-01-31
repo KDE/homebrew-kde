@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Knotifyconfig < Formula
   desc "Configuration system for KNotify"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/knotifyconfig-5.78.0.tar.xz"
-  sha256 "df01a3c61502d60d16adcdc1c7b75de4b05e0850243c86dbd8fd1012a339fa5b"
+  homepage "https://api.kde.org/frameworks/knotifyconfig/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/knotifyconfig-5.79.0.tar.xz"
+  sha256 "2d111a6b80dab8cfce710440824cd528d2d1ee5194a5d1e467e620e45649cd30"
   head "https://invent.kde.org/frameworks/knotifyconfig.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,22 +13,15 @@ class Kf5Knotifyconfig < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kio"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

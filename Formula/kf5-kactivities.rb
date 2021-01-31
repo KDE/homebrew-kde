@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kactivities < Formula
-  desc "Core components for the KDE's Activities"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kactivities-5.78.0.tar.xz"
-  sha256 "114eba7e76f3341c20fc7ac3936a8385d3d9d7b985aa1491689d4c6a38cb6787"
+  desc "Core components for the KDE Activity concept"
+  homepage "https://api.kde.org/frameworks/kactivities/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kactivities-5.79.0.tar.xz"
+  sha256 "f4903fa1ad41cfb23e419b287070c51d8df12d10ee5cde538c8b621c07d16d34"
   head "https://invent.kde.org/frameworks/kactivities.git"
 
   depends_on "boost" => :build
@@ -12,26 +14,19 @@ class Kf5Kactivities < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kwindowsystem"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

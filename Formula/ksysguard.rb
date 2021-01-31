@@ -1,37 +1,32 @@
+require_relative "../lib/cmake"
+
 class Ksysguard < Formula
   desc "Track and control the processes running in your system"
-  homepage "https://userbase.kde.org/KSysGuard"
-  url "https://download.kde.org/stable/plasma/5.20.4/ksysguard-5.20.4.tar.xz"
-  sha256 "a5f247b24ce75a28f301446fbeb25abf968e77e0c32cd4be9b574a21d3bbfaf4"
-  revision 1
+  homepage "https://apps.kde.org/ksysguard"
+  url "https://download.kde.org/stable/plasma/5.21.1/ksysguard-5.21.1.tar.xz"
+  sha256 "95f7c9072fe0f0e3dd03b05f820bff07928ede00bc728e56db772c02b464ccba"
   head "https://invent.kde.org/plasma/ksysguard.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "kde-kdoctools" => :build
-  depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
+  depends_on "kde-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/libksysguard"
+  depends_on "kde-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/libksysguard"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -52,7 +47,7 @@ class Ksysguard < Formula
   end
 
   test do
-    assert `"#{bin}/ksysguard.app/Contents/MacOS/ksysguard" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/ksysguard.app/Contents/MacOS/ksysguard --help")
   end
 end
 

@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kdoctools < Formula
   desc "Documentation generation from docbook"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kdoctools-5.78.0.tar.xz"
-  sha256 "7a08eef3d7c0e4eac7d46ddc0d25942e008907bcac10ed27bca02a1169e2cf62"
+  homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kdoctools-5.79.0.tar.xz"
+  sha256 "ebc37ba10261fc05808ae332260eabfc86705b1d0cf906b529ca7099df907b0d"
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
   depends_on "cmake" => [:build, :test]
@@ -19,19 +21,12 @@ class Kf5Kdoctools < Formula
   depends_on "libxslt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

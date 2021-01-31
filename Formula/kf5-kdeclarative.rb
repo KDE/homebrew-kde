@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kdeclarative < Formula
   desc "Provides integration of QML and KDE Frameworks"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kdeclarative-5.78.0.tar.xz"
-  sha256 "4759319fd1569d64f53d299f67c8564e75f687376f2774dadc7c53e45d2f4797"
+  homepage "https://api.kde.org/frameworks/kdeclarative/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kdeclarative-5.79.0.tar.xz"
+  sha256 "f07b19a737cd0c5d824718332a2f20386583645fc075aca3b06d781cf7556115"
   head "https://invent.kde.org/frameworks/kdeclarative.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,26 +13,19 @@ class Kf5Kdeclarative < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-kpackage"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kpackage"
   depends_on "libepoxy"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/okular-20.12.1.tar.xz"
-  sha256 "2ca17ad0b2a1a0f9f70c7ca4bc1f44a9ed758b0ca6a8e5c9935a467f883df53e"
-  revision 1
+  url "https://download.kde.org/stable/release-service/20.12.2/src/okular-20.12.2.tar.xz"
+  sha256 "78a9bb766b7ae79fba630aac6e8804876e1f99de2ede37d6d33ce7442975a9a4"
   head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,41 +12,34 @@ class Okular < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
+  depends_on "chmlib"
   depends_on "djvulibre"
+  depends_on "ebook-tools"
   depends_on "freetype"
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-khtml"
-  depends_on "KDE-mac/kde/kf5-kirigami2"
-  depends_on "KDE-mac/kde/kf5-kjs"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/libkexiv2"
-  depends_on "KDE-mac/kde/phonon"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kactivities"
+  depends_on "kde-mac/kde/kf5-khtml"
+  depends_on "kde-mac/kde/kf5-kirigami2"
+  depends_on "kde-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/libkexiv2"
+  depends_on "kde-mac/kde/phonon"
   depends_on "kde-threadweaver"
   depends_on "libspectre"
   depends_on "poppler"
   depends_on "qca"
   depends_on "zlib"
 
-  depends_on "chmlib" => :optional
-  depends_on "ebook-tools" => :optional
-
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin and QML2 path
     mkdir "getqmlpath" do
       (Pathname.pwd/"main.cpp").write <<~EOS
@@ -93,8 +87,8 @@ class Okular < Formula
   end
 
   test do
-    assert `"#{bin}/okular.app/Contents/MacOS/okular" --help | grep -- --help`.include?("--help")
-    assert `"#{bin}/okularkirigami.app/Contents/MacOS/okularkirigami" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/okular.app/Contents/MacOS/okular --help")
+    assert_match "help", shell_output("#{bin}/okularkirigami.app/Contents/MacOS/okularkirigami --help")
   end
 end
 

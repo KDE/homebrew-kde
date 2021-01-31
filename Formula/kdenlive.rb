@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kdenlive < Formula
   desc "Video editor"
   homepage "https://www.kdenlive.org/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/kdenlive-20.12.1.tar.xz"
-  sha256 "9b6e22ad311c33457e7f7147ad873286945fc6c3b610129856fd01cbb51da458"
-  revision 1
+  url "https://download.kde.org/stable/release-service/20.12.2/src/kdenlive-20.12.2.tar.xz"
+  sha256 "3fcb3f4fd7d77d70296fb6bcbbf716cda92acc8e5d6733448787b6a9a064013e"
   head "https://invent.kde.org/multimedia/kdenlive.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,37 +13,32 @@ class Kdenlive < Formula
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 
+  depends_on "cdrtools"
+  depends_on "dvdauthor"
+  depends_on "ffmpeg"
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kdeclarative"
-  depends_on "KDE-mac/kde/kf5-kfilemetadata"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-knotifyconfig"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kdeclarative"
+  depends_on "kde-mac/kde/kf5-kfilemetadata"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-knotifyconfig"
+  depends_on "libdv"
   depends_on "mlt"
-  depends_on "cdrtools" => :optional
-  depends_on "dvdauthor" => :optional
-  depends_on "ffmpeg" => :optional
-  depends_on "KDE-mac/kde/qt-webkit" => :optional
-  depends_on "libdv" => :optional
+
+  depends_on "kde-mac/kde/qt-webkit" => :optional
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DKDE_INSTALL_BUNDLEDIR=#{bin}"
-    args << "-DKDE_INSTALL_LIBDIR=lib"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DBUILD_TESTING=OFF"
+    args = kde_cmake_args
+
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
     args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -74,7 +70,7 @@ class Kdenlive < Formula
   end
 
   test do
-    assert `"#{bin}/kdenlive.app/Contents/MacOS/kdenlive" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/kdenlive.app/Contents/MacOS/kdenlive --help")
   end
 end
 

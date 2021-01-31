@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Konsole < Formula
   desc "KDE's terminal emulator"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/konsole-20.12.1.tar.xz"
-  sha256 "b690be392462cab5abac74d1e1010c3f991c3d00968b51ed5525040640d769ec"
-  revision 1
+  homepage "https://konsole.kde.org/"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/konsole-20.12.2.tar.xz"
+  sha256 "fc1bbdd4b77cc94698dd4d7b90e95577dd5cc99f3b27633a52d49177efea0873"
   head "https://invent.kde.org/utilities/konsole.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,26 +12,20 @@ class Konsole < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-knotifyconfig"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-knotifyconfig"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kf5-kpty"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
@@ -51,6 +46,6 @@ class Konsole < Formula
   end
 
   test do
-    assert `"#{bin}/konsole.app/Contents/MacOS/konsole" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/konsole.app/Contents/MacOS/konsole --help")
   end
 end

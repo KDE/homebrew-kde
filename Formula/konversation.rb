@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Konversation < Formula
-  desc "User-friendly and fully-featured IRC client"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/konversation-20.12.1.tar.xz"
-  sha256 "441e8924763893e5933309dd90525ed8fc37e6e7dc2eda2b1e6cab7176f4d7f4"
-  revision 1
+  desc "User-friendly IRC client built on the KDE Platform"
+  homepage "https://konversation.kde.org/"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/konversation-20.12.2.tar.xz"
+  sha256 "14c53896848b870534ec83415a424a5b1a23f4f35040acb9caaad4fef7c52354"
   head "https://invent.kde.org/network/konversation.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,27 +13,21 @@ class Konversation < Formula
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-breeze-icons"
-  depends_on "KDE-mac/kde/kf5-kemoticons"
-  depends_on "KDE-mac/kde/kf5-kidletime"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-knotifyconfig"
-  depends_on "KDE-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kemoticons"
+  depends_on "kde-mac/kde/kf5-kidletime"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-knotifyconfig"
+  depends_on "kde-mac/kde/kf5-kparts"
   depends_on "qca"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",

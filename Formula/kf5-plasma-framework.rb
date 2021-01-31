@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5PlasmaFramework < Formula
   desc "Plasma library and runtime components based upon KF5 & Qt5"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/plasma-framework-5.78.0.tar.xz"
-  sha256 "46aee1e872728af5ec5c28c604494bbcdf01c32c19f9fe2593b749bbeb698481"
-  revision 1
+  homepage "https://api.kde.org/frameworks/plasma-framework/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/plasma-framework-5.79.0.tar.xz"
+  sha256 "9dfc3d9a97b6a12ec29df27db063d4ac850c50339688968d9c4768e51b760b96"
   head "https://invent.kde.org/frameworks/plasma-framework.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,27 +15,19 @@ class Kf5PlasmaFramework < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kactivities"
-  depends_on "KDE-mac/kde/kf5-kdeclarative"
-  depends_on "KDE-mac/kde/kf5-kirigami2"
+  depends_on "kde-mac/kde/kf5-kactivities"
+  depends_on "kde-mac/kde/kf5-kdeclarative"
+  depends_on "kde-mac/kde/kf5-kirigami2"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

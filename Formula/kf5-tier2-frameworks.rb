@@ -1,25 +1,27 @@
+require_relative "../lib/cmake"
+
 class Kf5Tier2Frameworks < Formula
   desc "Metapackage for Tier 2 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.78.0"
+  version "5.79.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-  depends_on "KDE-mac/kde/kf5-kactivities" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kauth" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kcompletion" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kcrash" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdoctools" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kfilemetadata" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kimageformats" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kjobwidgets" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-knotifications" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kpackage" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kpeople" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kpty" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kunitconversion" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-tier1-frameworks" => :build
+  depends_on "kde-mac/kde/kf5-kactivities" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kauth" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kcompletion" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kcrash" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kdoctools" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kfilemetadata" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kimageformats" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kjobwidgets" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-knotifications" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kpackage" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kpeople" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kpty" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kunitconversion" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-tier1-frameworks" => :build
 
   def install
     touch "empty"

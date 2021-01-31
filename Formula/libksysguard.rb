@@ -1,25 +1,27 @@
+require_relative "../lib/cmake"
+
 class Libksysguard < Formula
   desc "Libraries for ksysguard"
-  homepage "https://www.kde.org/workspaces/plasmadesktop/"
-  url "https://download.kde.org/stable/plasma/5.20.4/libksysguard-5.20.4.tar.xz"
-  sha256 "a89968476cb8a888550e1a5138ab8e86eeb49788187192cba71f79abd4aad422"
+  homepage "https://apps.kde.org/ksysguard"
+  url "https://download.kde.org/stable/plasma/5.21.1/libksysguard-5.21.1.tar.xz"
+  sha256 "e846b0ebf1a347e6f8637a70866c17b1aa8e806c910085729b0fcf08ae74ea93"
+  head "https://invent.kde.org/plasma/libksysguard.git"
 
-  revision 1
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "kde-kdoctools" => :build
-  depends_on "KDE-mac/kde/kf5-plasma-framework" => :build
+  depends_on "kde-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kio"
 
   def install
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *std_cmake_args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    args = kde_cmake_args
+
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

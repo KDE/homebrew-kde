@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5BreezeIcons < Formula
   desc "Breeze icon themes"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/breeze-icons-5.78.0.tar.xz"
-  sha256 "425f6d0163dac092939dede0b1023de5b175738cb59bb2ec002c821973a449b9"
+  homepage "https://api.kde.org/frameworks/breeze-icons/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/breeze-icons-5.79.0.tar.xz"
+  sha256 "c6320406a8e93df3a5918e24ef94b76b3c0ddd3e17567451b7dce403f33b4d1b"
   head "https://invent.kde.org/frameworks/breeze-icons.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,20 +14,14 @@ class Kf5BreezeIcons < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
     args << "-DSKIP_INSTALL_ICONS=TRUE"
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

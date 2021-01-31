@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kidletime < Formula
   desc "Monitoring user activity"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kidletime-5.78.0.tar.xz"
-  sha256 "aa96864a2ea370a08ef3b6c720d2716b03d18213973b21e617e3d635ae79862b"
+  homepage "https://api.kde.org/frameworks/kidletime/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kidletime-5.79.0.tar.xz"
+  sha256 "53e59c7f8465753f58d23543a1bc25f83ed9f0cd6381a800f9cff7cd488ce25e"
   head "https://invent.kde.org/frameworks/kidletime.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,19 +16,12 @@ class Kf5Kidletime < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kinit < Formula
   desc "Process launcher to speed up launching KDE applications"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kinit-5.78.0.tar.xz"
-  sha256 "7b93fd213ca6b0787a18033f97255acf159d65bdf8e5f90a706a036c6aa5509b"
-  revision 1
+  homepage "https://api.kde.org/frameworks/kinit/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kinit-5.79.0.tar.xz"
+  sha256 "3b1727caf611f354ec2d3a2c0d74458cdfcc98325122ee64f35cf1a8de88f95e"
   head "https://invent.kde.org/frameworks/kinit.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,23 +12,17 @@ class Kf5Kinit < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-kio"
 
   patch :DATA
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

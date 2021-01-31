@@ -1,33 +1,35 @@
+require_relative "../lib/cmake"
+
 class Kf5Tier3Frameworks < Formula
   desc "Metapackage for Tier 3 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.78.0"
+  version "5.79.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-  depends_on "KDE-mac/kde/kf5-kbookmarks" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kcmutils" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdeclarative" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kded" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kdesu" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kemoticons" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kglobalaccel" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kiconthemes" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kinit" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kio" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-knewstuff" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-knotifyconfig" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kparts" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-krunner" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kservice" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-ktexteditor" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-ktextwidgets" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kwallet" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-kxmlgui" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-plasma-framework" => [:build, :test]
-  depends_on "KDE-mac/kde/kf5-tier2-frameworks" => :build
+  depends_on "kde-mac/kde/kf5-kbookmarks" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kcmutils" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kconfigwidgets" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kdeclarative" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kded" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kdesu" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kemoticons" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kglobalaccel" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kiconthemes" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kinit" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kio" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-knewstuff" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-knotifyconfig" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kparts" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-krunner" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kservice" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-ktexteditor" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-ktextwidgets" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kwallet" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kxmlgui" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-plasma-framework" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-tier2-frameworks" => :build
 
   def install
     touch "empty"

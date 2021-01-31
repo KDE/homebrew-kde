@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kio < Formula
   desc "Resource and network access abstraction"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kio-5.78.0.tar.xz"
-  sha256 "e211dba2c1ed73b67188d3ddbaf40043409912ab731aed4eba5bea32a587d620"
-  revision 1
+  homepage "https://api.kde.org/frameworks/kio/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kio-5.79.0.tar.xz"
+  sha256 "767c67aab4e1a43d1d2ebf74f9deab21791150cc5f533be561dc1346d16e25e6"
   head "https://invent.kde.org/frameworks/kio.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,29 +15,21 @@ class Kf5Kio < Formula
   depends_on "ninja" => :build
 
   depends_on "desktop-file-utils"
-  depends_on "KDE-mac/kde/kf5-kbookmarks"
-  depends_on "KDE-mac/kde/kf5-kjobwidgets"
-  depends_on "KDE-mac/kde/kf5-kwallet"
-  depends_on "KDE-mac/kde/kf5-solid"
+  depends_on "kde-mac/kde/kf5-kbookmarks"
+  depends_on "kde-mac/kde/kf5-kjobwidgets"
+  depends_on "kde-mac/kde/kf5-kwallet"
+  depends_on "kde-mac/kde/kf5-solid"
+  depends_on "kde-mac/kde/kio-extras"
   depends_on "libxslt"
   depends_on "qt"
 
-  depends_on "KDE-mac/kde/kio-extras" => :optional
-
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

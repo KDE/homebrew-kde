@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kded < Formula
   desc "Extensible deamon for providing system level services"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kded-5.78.0.tar.xz"
-  sha256 "35156cac1df945e7420351b8a361567f20f21af78fef053fa51d8a0ebac2bd52"
-  revision 1
+  homepage "https://api.kde.org/frameworks/kded/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kded-5.79.0.tar.xz"
+  sha256 "7569df00afdf22419038afa1f8c537806bbb1974c504262b31b12d9c8941cbbf"
   head "https://invent.kde.org/frameworks/kded.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,21 +13,15 @@ class Kf5Kded < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-kinit"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

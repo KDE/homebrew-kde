@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kcodecs < Formula
-  desc "Collection of methods to manipulate strings"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kcodecs-5.78.0.tar.xz"
-  sha256 "36b461cef0bb95c34298615a8a6d1f2da37676c9605ebae76d6cbdb393e8fc7a"
+  desc "String encoding library"
+  homepage "https://api.kde.org/frameworks/kcodecs/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kcodecs-5.79.0.tar.xz"
+  sha256 "c81fa7229cb70021339d4c822517980e30f0a9dc79f143f577a6d56dcd6f64a9"
   head "https://invent.kde.org/frameworks/kcodecs.git"
 
   depends_on "cmake" => [:build, :test]
@@ -15,19 +17,12 @@ class Kf5Kcodecs < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

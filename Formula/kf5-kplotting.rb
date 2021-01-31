@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kplotting < Formula
   desc "Lightweight plotting framework"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kplotting-5.78.0.tar.xz"
-  sha256 "6cb34efc35645ee26801587f65d7f4ba452dd219c1fcb6dcb31a30725f1e8d03"
+  homepage "https://api.kde.org/frameworks/kplotting/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kplotting-5.79.0.tar.xz"
+  sha256 "c67238fb1395197b2ee2a65f327458132106df6110765952bd979b11cfbb5c51"
   head "https://invent.kde.org/frameworks/kplotting.git"
 
   depends_on "cmake" => [:build, :test]
@@ -14,19 +16,12 @@ class Kf5Kplotting < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

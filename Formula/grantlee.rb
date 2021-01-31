@@ -1,6 +1,9 @@
+require_relative "../lib/cmake"
+
 class Grantlee < Formula
   desc "String template engine based on the Django template system"
-  homepage "http://grantlee.org"
+  homepage "https://github.com/steveire/grantlee"
+  revision 1
   head "https://github.com/steveire/grantlee.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,15 +15,12 @@ class Grantlee < Formula
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTS=OFF"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

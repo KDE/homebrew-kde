@@ -1,9 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kconfigwidgets < Formula
-  desc "Widgets for KConfig"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kconfigwidgets-5.78.0.tar.xz"
-  sha256 "87d4cd10145d5bf0e07f1913682553e368db0ee4a900d18368517ad9fda2ec39"
-  revision 1
+  desc "Widgets for configuration dialogs"
+  homepage "https://api.kde.org/frameworks/kconfigwidgets/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kconfigwidgets-5.79.0.tar.xz"
+  sha256 "7ea01c69328f460a1e70131626d00a7a668814ab415dca7692dbc6a1631330d3"
   head "https://invent.kde.org/frameworks/kconfigwidgets.git"
 
   depends_on "cmake" => [:build, :test]
@@ -15,26 +16,19 @@ class Kf5Kconfigwidgets < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-ki18n"
-  depends_on "KDE-mac/kde/kf5-kauth"
-  depends_on "KDE-mac/kde/kf5-kcodecs"
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kguiaddons"
-  depends_on "KDE-mac/kde/kf5-kwidgetsaddons"
+  depends_on "kde-mac/kde/kf5-kauth"
+  depends_on "kde-mac/kde/kf5-kcodecs"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kguiaddons"
+  depends_on "kde-mac/kde/kf5-kwidgetsaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

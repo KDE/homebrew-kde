@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/ktextwidgets-5.78.0.tar.xz"
-  sha256 "e8133b3f5ba809c48a92895ecb4b4a1c4beb11ddb589fe6691b6545ce9eef8be"
+  homepage "https://api.kde.org/frameworks/ktextwidgets/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/ktextwidgets-5.79.0.tar.xz"
+  sha256 "b4a03b6f38e6dcf45eec16b2ed545377d1e81614168552386d932d7f25c1d0ae"
   head "https://invent.kde.org/frameworks/ktextwidgets.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,26 +13,19 @@ class Kf5Ktextwidgets < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kcompletion"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kservice"
-  depends_on "KDE-mac/kde/kf5-sonnet"
+  depends_on "kde-mac/kde/kf5-kcompletion"
+  depends_on "kde-mac/kde/kf5-kiconthemes"
+  depends_on "kde-mac/kde/kf5-kservice"
+  depends_on "kde-mac/kde/kf5-sonnet"
   depends_on "qt"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

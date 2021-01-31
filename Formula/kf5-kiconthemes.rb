@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kiconthemes < Formula
   desc "Support for icon themes"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kiconthemes-5.78.0.tar.xz"
-  sha256 "fb887e4d93cdd240545c8c16431cafafe3ec3c696589540d79a0e28b92084d6b"
+  homepage "https://api.kde.org/frameworks/kiconthemes/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kiconthemes-5.79.0.tar.xz"
+  sha256 "dd12bde84d39889c7d67ec772564a90018fb559765e2d074f798fcdb00467a2d"
   head "https://invent.kde.org/frameworks/kiconthemes.git"
 
   depends_on "cmake" => [:build, :test]
@@ -13,23 +15,16 @@ class Kf5Kiconthemes < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-karchive"
-  depends_on "KDE-mac/kde/kf5-kconfigwidgets"
-  depends_on "KDE-mac/kde/kf5-kitemviews"
+  depends_on "kde-mac/kde/kf5-kconfigwidgets"
+  depends_on "kde-mac/kde/kf5-kitemviews"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

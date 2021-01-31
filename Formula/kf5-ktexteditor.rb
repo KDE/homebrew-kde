@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Ktexteditor < Formula
   desc "Advanced embeddable text editor"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/ktexteditor-5.78.0.tar.xz"
-  sha256 "5664c5eb12fc1282f751be6874ac2b99fb59056ddd6562b7e05e8e6e874524e4"
+  homepage "https://api.kde.org/frameworks/ktexteditor/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/ktexteditor-5.79.0.tar.xz"
+  sha256 "83b94589d3a23f0b268eb5cfa9544541ac0015ecfab5cf3fd5e95e4499d155b3"
   head "https://invent.kde.org/frameworks/ktexteditor.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,24 +14,17 @@ class Kf5Ktexteditor < Formula
   depends_on "ninja" => :build
 
   depends_on "editorconfig"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/kf5-syntax-highlighting"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kf5-syntax-highlighting"
   depends_on "libgit2"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

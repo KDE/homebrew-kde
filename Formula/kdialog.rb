@@ -1,35 +1,32 @@
+require_relative "../lib/cmake"
+
 class Kdialog < Formula
   desc "Utility for displaying dialog boxes from shell scripts"
   homepage "https://kde.org/applications/utilities/org.kde.kdialog"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/kdialog-20.12.1.tar.xz"
-  sha256 "c481729a5757d1668da648005b48b711eb4cb6fc7c6e7249343b45ac065bc68e"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/kdialog-20.12.2.tar.xz"
+  sha256 "ad8b87d6c92821de027cabb4ac242536ecc0d0b43550dc9f14503c7c3b755eec"
   head "https://invent.kde.org/utilities/kdialog.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
-  depends_on "KDE-mac/kde/kf5-kguiaddons"
-  depends_on "KDE-mac/kde/kf5-kiconthemes"
-  depends_on "KDE-mac/kde/kf5-kio"
-  depends_on "KDE-mac/kde/kf5-knotifications"
-  depends_on "KDE-mac/kde/kf5-ktextwidgets"
-  depends_on "KDE-mac/kde/kf5-kwindowsystem"
-  depends_on "KDE-mac/kde/kf5-kcoreaddons" => :optional
+
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kdbusaddons"
+  depends_on "kde-mac/kde/kf5-kguiaddons"
+  depends_on "kde-mac/kde/kf5-kiconthemes"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-knotifications"
+  depends_on "kde-mac/kde/kf5-ktextwidgets"
+  depends_on "kde-mac/kde/kf5-kwindowsystem"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # # Extract Qt plugin path
     # qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
     # system "/usr/libexec/PlistBuddy",
@@ -50,6 +47,6 @@ class Kdialog < Formula
   end
 
   test do
-    assert `"#{bin}/kdialog.app/Contents/MacOS/kdialog" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/kdialog.app/Contents/MacOS/kdialog --help")
   end
 end

@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Analitza < Formula
   desc "Library to add mathematical features to your program"
   homepage "https://edu.kde.org/"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/analitza-20.12.1.tar.xz"
-  sha256 "6d7e7744fae960e44d6fe88938a223e0f7de2b769e622e9d5bcdfe2bf3c2d8e2"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/analitza-20.12.2.tar.xz"
+  sha256 "dde08edce2c553c7ddd21db3d8645796b02e7e44d2aedd10e308267dbdc41727"
   head "https://invent.kde.org/education/analitza.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,18 +14,14 @@ class Analitza < Formula
   depends_on "ninja" => :build
 
   def install
-    args = std_cmake_args
-    args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
-    args << "-DCMAKE_INSTALL_LIBDIR=#{lib}"
-    args << "-DBUILD_TESTING=OFF"
+    args = kde_cmake_args
+
     args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

@@ -1,30 +1,26 @@
+require_relative "../lib/cmake"
+
 class Kf5Frameworkintegration < Formula
-  desc "Components to integrate with a KDE Workspace"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/frameworkintegration-5.78.0.tar.xz"
-  sha256 "908b5977cf711d6b78b5eab30bc9093bb2804a45cd15986d57124d869d407167"
+  desc "Integration of Qt application with KDE workspaces"
+  homepage "https://api.kde.org/frameworks/frameworkintegration/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/frameworkintegration-5.79.0.tar.xz"
+  sha256 "41c88a378d37fa0c1e89f3c26e26eb30e28d54a0d82cf8025cc5c48d31441130"
   head "https://invent.kde.org/frameworks/frameworkintegration.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-knewstuff"
-  depends_on "KDE-mac/kde/kf5-kpackage"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-kpackage"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

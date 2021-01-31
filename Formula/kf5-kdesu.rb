@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kdesu < Formula
   desc "Integration with su for elevated privileges"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kdesu-5.78.0.tar.xz"
-  sha256 "d5f942ebfa602acf61a46f45474ec2f5403a15111906641f3108de0e8db44b1c"
+  homepage "https://api.kde.org/frameworks/kdesu/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kdesu-5.79.0.tar.xz"
+  sha256 "81018fb3a53e00dd19a15b472d7189f96b0aa5481d8371f923666271f22d9fc2"
   head "https://invent.kde.org/frameworks/kdesu.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,23 +14,16 @@ class Kf5Kdesu < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kpty"
-  depends_on "KDE-mac/kde/kf5-kservice"
+  depends_on "kde-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/kf5-kservice"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do

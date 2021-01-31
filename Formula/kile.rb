@@ -1,3 +1,5 @@
+require_relative "../lib/cmake"
+
 class Kile < Formula
   desc "Integrated LaTeX Editing Environment"
   homepage "https://kile.sourceforge.io"
@@ -11,25 +13,18 @@ class Kile < Formula
   depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kinit"
-  depends_on "KDE-mac/kde/kf5-ktexteditor"
-  depends_on "KDE-mac/kde/okular"
-
-  depends_on "KDE-mac/kde/konsole" => [:optional]
+  depends_on "kde-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-ktexteditor"
+  depends_on "kde-mac/kde/konsole"
+  depends_on "kde-mac/kde/okular"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "cmake", "--build", "."
-      system "cmake", "--install", "."
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "."
+    system "cmake", "--install", "."
+    prefix.install "build/install_manifest.txt"
 
     # Extract Qt plugin path
     qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp

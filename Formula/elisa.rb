@@ -1,9 +1,11 @@
+require_relative "../lib/cmake"
+
 class Elisa < Formula
   desc "KDE Music Player"
   homepage "https://community.kde.org/Elisa"
-  url "https://download.kde.org/stable/release-service/20.12.1/src/elisa-20.12.1.tar.xz"
-  sha256 "3e360105dd08296bee61d2d92adfc7311b46bdb813be5842f4f2fbd64fecafd2"
-  head "https://anongit.kde.org/elisa.git"
+  url "https://download.kde.org/stable/release-service/20.12.2/src/elisa-20.12.2.tar.xz"
+  sha256 "59fef44232d8a9864fedcb9bda493909f7ee0b9a4d7e53dbf5aaf369fd2c85ea"
+  head "https://invent.kde.org/multimedia/elisa.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
@@ -11,22 +13,15 @@ class Elisa < Formula
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "KDE-mac/kde/kf5-kcmutils"
+  depends_on "kde-mac/kde/kf5-kcmutils"
 
   def install
-    args = std_cmake_args
-    args << "-DCMAKE_INSTALL_BUNDLEDIR=#{bin}"
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
     # Extract Qt plugin and QML2 path
     mkdir "getqmlpath" do
       (Pathname.pwd/"main.cpp").write <<~EOS
@@ -71,6 +66,6 @@ class Elisa < Formula
   end
 
   test do
-    assert `"#{bin}/elisa.app/Contents/MacOS/elisa" --help | grep -- --help`.include?("--help")
+    assert_match "help", shell_output("#{bin}/elisa.app/Contents/MacOS/elisa --help")
   end
 end

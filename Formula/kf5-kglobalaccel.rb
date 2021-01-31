@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kglobalaccel < Formula
   desc "Add support for global workspace shortcuts"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kglobalaccel-5.78.0.tar.xz"
-  sha256 "3f196edde20388b2c1b1aa0139de7701e86d1faa85578827e89f96f56293b822"
+  homepage "https://api.kde.org/frameworks/kglobalaccel/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kglobalaccel-5.79.0.tar.xz"
+  sha256 "c8778522f31a677d99b199247b43858ad4aa3e6c5db3f6a6aa84ac53c7de1d63"
   head "https://invent.kde.org/frameworks/kglobalaccel.git"
 
   depends_on "cmake" => [:build, :test]
@@ -11,24 +13,17 @@ class Kf5Kglobalaccel < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "KDE-mac/kde/kf5-kconfig"
-  depends_on "KDE-mac/kde/kf5-kcrash"
-  depends_on "KDE-mac/kde/kf5-kdbusaddons"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kcrash"
+  depends_on "kde-mac/kde/kf5-kdbusaddons"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

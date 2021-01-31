@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Khtml < Formula
   desc "KHTML APIs"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/portingAids/khtml-5.78.0.tar.xz"
-  sha256 "16b63351a779bb877263c86fcc3600f8385dbfb7218593560fe022ba1830515d"
+  homepage "https://api.kde.org/frameworks/khtml/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/portingAids/khtml-5.79.0.tar.xz"
+  sha256 "1ece8dbd1bae528e07a335ef53278b8fda3e79a6c52ce0163d0de439d69d26a4"
   head "https://invent.kde.org/frameworks/khtml.git"
 
   depends_on "cmake" => [:build, :test]
@@ -12,26 +14,20 @@ class Kf5Khtml < Formula
 
   depends_on "giflib"
   depends_on "jpeg"
-  depends_on "KDE-mac/kde/kf5-kjs"
-  depends_on "KDE-mac/kde/kf5-kparts"
-  depends_on "KDE-mac/kde/phonon"
+  depends_on "kde-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/phonon"
   depends_on "libpng"
   depends_on "openssl"
   depends_on "zlib"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   def caveats

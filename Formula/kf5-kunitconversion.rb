@@ -1,8 +1,10 @@
+require_relative "../lib/cmake"
+
 class Kf5Kunitconversion < Formula
   desc "Support for unit conversion"
-  homepage "https://www.kde.org"
-  url "https://download.kde.org/stable/frameworks/5.78/kunitconversion-5.78.0.tar.xz"
-  sha256 "8c790c9870362032556e3c7d6b37c01bfb571eef32d33a4ac3c96260d8a5439d"
+  homepage "https://api.kde.org/frameworks/kunitconversion/html/index.html"
+  url "https://download.kde.org/stable/frameworks/5.79/kunitconversion-5.79.0.tar.xz"
+  sha256 "549c31f8adc5806a1e1a1657b9ea9d80bce5c21b2bcd832f5642afbdaba856a7"
   head "https://invent.kde.org/frameworks/kunitconversion.git"
 
   depends_on "cmake" => [:build, :test]
@@ -15,19 +17,12 @@ class Kf5Kunitconversion < Formula
   depends_on "kde-ki18n"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF"
-    args << "-DBUILD_QCH=ON"
-    args << "-DKDE_INSTALL_QMLDIR=lib/qt5/qml"
-    args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
-    args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
+    args = kde_cmake_args
 
-    mkdir "build" do
-      system "cmake", "-G", "Ninja", "..", *args
-      system "ninja"
-      system "ninja", "install"
-      prefix.install "install_manifest.txt"
-    end
+    system "cmake", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do
