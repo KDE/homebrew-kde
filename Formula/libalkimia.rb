@@ -1,9 +1,16 @@
 class Libalkimia < Formula
   desc "Library used by KDE Finance applications"
   homepage "https://kmymoney.org"
-  url "https://download.kde.org/stable/alkimia/8.0.4/alkimia-8.0.4.tar.xz"
-  sha256 "0004a7068dff0aa2cb6f47f70d21c129073be11f2edb21f14512bc4470487d1f"
-  head "https://invent.kde.org/office/alkimia.git"
+  
+  stable do
+    url "https://download.kde.org/stable/alkimia/8.0.4/alkimia-8.0.4.tar.xz"
+    sha256 "0004a7068dff0aa2cb6f47f70d21c129073be11f2edb21f14512bc4470487d1f"
+    depends_on "kde-mac/kde/kf5-kdelibs4support"
+  end
+
+  head do 
+    url "https://invent.kde.org/office/alkimia.git"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "kde-extra-cmake-modules" => [:build, :test]
@@ -12,7 +19,6 @@ class Libalkimia < Formula
   depends_on "gettext"
   depends_on "gmp"
   depends_on "KDE-mac/kde/kf5-kcoreaddons"
-  depends_on "kde-mac/kde/kf5-kdelibs4support"
   depends_on "kde-mac/kde/kf5-knewstuff"
   depends_on "kde-mac/kde/kf5-plasma-framework"
   depends_on "KDE-mac/kde/qt-webkit"
