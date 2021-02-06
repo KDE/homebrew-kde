@@ -4,6 +4,10 @@ class QtWebkit < Formula
   revision 2
   head "https://code.qt.io/qt/qtwebkit.git",
    branch: "5.212"
+  patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
+    url "https://github.com/qtwebkit/qtwebkit/commit/219aaeee642bce47773df3e797fe8083207b29e2.patch"
+    sha256 "b518072091270114a4aa25f34ca8cf9756bcd14f7598e88d0c286d0c8a57534c"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "fontconfig" => :build
