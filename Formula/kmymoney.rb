@@ -6,9 +6,6 @@ class Kmymoney < Formula
   head "https://invent.kde.org/office/kmymoney.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "docbook-xsl" => :build
-  depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
