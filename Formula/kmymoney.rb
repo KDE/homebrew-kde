@@ -1,8 +1,8 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  url "https://download.kde.org/stable/kmymoney/5.1.0/src/kmymoney-5.1.0.tar.xz"
-  sha256 "2db968f1d112b913fde3e0e5160215ca689ea2ca5ce3f6f00a4ef97330f71351"
+  url "https://download.kde.org/stable/kmymoney/5.1.1/src/kmymoney-5.1.1.tar.xz"
+  sha256 "df7b9f78e8596f99d28295ca738708f0655ee057789dfd921c7b1bab96578298"
   head "https://invent.kde.org/office/kmymoney.git"
 
   depends_on "cmake" => [:build, :test]
