@@ -1,11 +1,12 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
+  revision 1
 
   stable do
     url "https://download.kde.org/stable/kmymoney/5.1.1/src/kmymoney-5.1.1.tar.xz"
     sha256 "df7b9f78e8596f99d28295ca738708f0655ee057789dfd921c7b1bab96578298"
-    depends_on "KDE-mac/kde/kf5-breeze-icons"
+    depends_on "KDE-mac/kde/kf5-kiconthemes"
   end
   
   head do 
@@ -56,7 +57,7 @@ class Kmymoney < Formula
   def post_install
     system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
     
-    stable do
+    if build.stable? then
       mkdir_p HOMEBREW_PREFIX/"share/kmymoney"
       ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kmymoney/icontheme.rcc"
     end
