@@ -18,6 +18,7 @@ class Kf5BreezeIcons < Formula
     args << "-DKDE_INSTALL_PLUGINDIR=lib/qt5/plugins"
     args << "-DKDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins"
     args << "-DBINARY_ICONS_RESOURCE=TRUE"
+    args << "-DSKIP_INSTALL_ICONS=TRUE"
 
     mkdir "build" do
       system "cmake", "-G", "Ninja", "..", *args
