@@ -1,7 +1,7 @@
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  revision 1
+  revision 2
 
   stable do
     url "https://download.kde.org/stable/kmymoney/5.1.1/src/kmymoney-5.1.1.tar.xz"
@@ -31,8 +31,7 @@ class Kmymoney < Formula
   depends_on "libical"
   depends_on "libofx"
   depends_on "sqlcipher"
-
-  conflicts_with "gwenhywfar", because: "cmake error"
+  depends_on "aqbanking"
 
   def install
     args = std_cmake_args
