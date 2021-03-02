@@ -18,14 +18,14 @@ class Phonon < Formula
   conflicts_with "pulseaudio", because: "fatal error: 'pulse/glib-mainloop.h' file not found"
 
   def install
-    args = kde_cmake_argsargs << "-DCMAKE_SKIP_RPATH=ON"
+    args = kde_cmake_args << "-DCMAKE_SKIP_RPATH=ON"
     args << "-DPHONON_BUILD_PHONON4QT5=ON"
     args << "-DPHONON_BUILD_DOC=ON"
 
     system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    prefix.install build/"install_manifest.txt"
+    prefix.install "build/install_manifest.txt"
   end
 
   test do
