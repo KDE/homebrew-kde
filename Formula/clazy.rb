@@ -12,7 +12,7 @@ class Clazy < Formula
   depends_on "ninja" => :build
 
   depends_on "llvm"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

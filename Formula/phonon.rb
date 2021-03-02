@@ -13,7 +13,7 @@ class Phonon < Formula
   depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "glib"
-  depends_on "qt"
+  depends_on "qt@5"
 
   conflicts_with "pulseaudio", because: "fatal error: 'pulse/glib-mainloop.h' file not found"
 

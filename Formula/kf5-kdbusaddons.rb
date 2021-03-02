@@ -14,7 +14,7 @@ class Kf5Kdbusaddons < Formula
   depends_on "ninja" => :build
 
   depends_on "dbus"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

@@ -17,7 +17,7 @@ class Kdiff3 < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-breeze-icons"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

@@ -15,7 +15,7 @@ class Kf5Sonnet < Formula
 
   depends_on "hunspell"
   depends_on "libvoikko"
-  depends_on "qt"
+  depends_on "qt@5"
 
   depends_on "aspell" => :optional
   depends_on "hspell" => :optional

@@ -15,7 +15,7 @@ class Lokalize < Formula
   depends_on "hunspell"
   depends_on "kde-mac/kde/kf5-kross"
   depends_on "poxml"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "subversion"
   depends_on "translate-toolkit"
 

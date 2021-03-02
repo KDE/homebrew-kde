@@ -12,7 +12,7 @@ class Libkexiv2 < Formula
   depends_on "ninja" => :build
 
   depends_on "exiv2"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

@@ -13,7 +13,7 @@ class Kf5Kjs < Formula
   depends_on "ninja" => :build
 
   depends_on "pcre"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

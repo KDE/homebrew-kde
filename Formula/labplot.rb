@@ -22,7 +22,7 @@ class Labplot < Formula
   depends_on "gsl"
   depends_on "libcerf"
   depends_on "netcdf"
-  depends_on "qt"
+  depends_on "qt@5"
 
   patch :DATA
 

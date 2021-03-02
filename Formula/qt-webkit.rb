@@ -13,7 +13,7 @@ class QtWebkit < Formula
   depends_on "ninja" => :build
   depends_on "sqlite" => :build
   depends_on "libxslt"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "webp"
   depends_on "zlib"
 

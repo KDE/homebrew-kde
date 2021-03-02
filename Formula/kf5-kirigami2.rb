@@ -14,7 +14,7 @@ class Kf5Kirigami2 < Formula
   depends_on "kde-mac/kde/kf5-kpackage" => :build
   depends_on "ninja" => :build
 
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

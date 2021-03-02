@@ -15,7 +15,7 @@ class Kf5Kjobwidgets < Formula
 
   depends_on "kde-mac/kde/kf5-kcoreaddons"
   depends_on "kde-mac/kde/kf5-kwidgetsaddons"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

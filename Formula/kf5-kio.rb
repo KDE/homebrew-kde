@@ -21,7 +21,7 @@ class Kf5Kio < Formula
   depends_on "kde-mac/kde/kf5-solid"
   depends_on "kde-mac/kde/kio-extras"
   depends_on "libxslt"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

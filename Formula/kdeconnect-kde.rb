@@ -25,7 +25,7 @@ class KdeconnectKde < Formula
   depends_on "kde-mac/kde/kf5-kpeople"
   depends_on "kde-mac/kde/kf5-kservice"
   depends_on "qca"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args

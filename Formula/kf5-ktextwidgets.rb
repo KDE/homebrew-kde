@@ -17,7 +17,7 @@ class Kf5Ktextwidgets < Formula
   depends_on "kde-mac/kde/kf5-kiconthemes"
   depends_on "kde-mac/kde/kf5-kservice"
   depends_on "kde-mac/kde/kf5-sonnet"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     args = kde_cmake_args
