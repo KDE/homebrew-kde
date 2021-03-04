@@ -19,7 +19,6 @@ class Kf5Kio < Formula
   depends_on "kde-mac/kde/kf5-kjobwidgets"
   depends_on "kde-mac/kde/kf5-kwallet"
   depends_on "kde-mac/kde/kf5-solid"
-  depends_on "kde-mac/kde/kio-extras"
   depends_on "libxslt"
   depends_on "qt@5"
 
