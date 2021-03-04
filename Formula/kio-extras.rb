@@ -16,7 +16,6 @@ class KioExtras < Formula
 
   depends_on "exiv2"
   depends_on "kde-mac/kde/kf5-kdnssd"
-  depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kimageformats"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kpty"
