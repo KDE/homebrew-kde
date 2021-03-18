@@ -58,4 +58,17 @@ index 7744b77..b87a5dc 100644
  )
  
 +ecm_mark_nongui_executable(kpackagelauncherqml)
- install(TARGETS kpackagelauncherqml ${INSTALL_TARGETS_DEFAULT_ARGS})
+ install(TARGETS kpackagelauncherqml ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+ddiff --git a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
+index e211526..0511e00 100644
+--- a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
++++ b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
+@@ -10,7 +10,7 @@
+ #define KQUICKCONTROLSADDONSPLUGIN_H
+
+ #include <QQmlExtensionPlugin>
+-
++#include <QScreen>
+
+ class KQuickControlsAddonsPlugin : public QQmlExtensionPlugin
+ {
