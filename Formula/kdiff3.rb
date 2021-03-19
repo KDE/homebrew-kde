@@ -8,8 +8,8 @@ class Kdiff3 < Formula
   head "https://invent.kde.org/sdk/kdiff3.git"
 
   depends_on "cmake" => :build
-  depends_on "extra-cmake-modules" => :build
-  depends_on "kdoctools" => :build
+  depends_on "kde-extra-cmake-modules" => :build
+  depends_on "kde-kdoctools" => :build
   depends_on "kde-mac/kde/kf5-kcoreaddons" => :build
   depends_on "kde-mac/kde/kf5-kcrash" => :build
   depends_on "kde-mac/kde/kf5-kiconthemes" => :build

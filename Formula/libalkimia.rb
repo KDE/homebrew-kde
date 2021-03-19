@@ -13,7 +13,7 @@ class Libalkimia < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "gettext"

@@ -11,12 +11,12 @@ class Kf5Krunner < Formula
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "kde-kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-plasma-framework"
-  depends_on "threadweaver"
+  depends_on "kde-threadweaver"
 
   def install
     args = kde_cmake_args

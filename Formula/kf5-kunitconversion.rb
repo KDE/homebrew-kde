@@ -11,10 +11,10 @@ class Kf5Kunitconversion < Formula
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "ki18n"
+  depends_on "kde-ki18n"
 
   def install
     args = kde_cmake_args

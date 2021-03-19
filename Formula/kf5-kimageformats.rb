@@ -8,11 +8,11 @@ class Kf5Kimageformats < Formula
   head "https://invent.kde.org/frameworks/kimageformats.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "jasper"
-  depends_on "karchive"
+  depends_on "kde-karchive"
   depends_on "openexr"
   depends_on "qt@5"
 

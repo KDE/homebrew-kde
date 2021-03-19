@@ -11,10 +11,10 @@ class Kf5Kiconthemes < Formula
   depends_on "doxygen" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kde-extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "karchive"
+  depends_on "kde-karchive"
   depends_on "kde-mac/kde/kf5-kconfigwidgets"
   depends_on "kde-mac/kde/kf5-kitemviews"
 
