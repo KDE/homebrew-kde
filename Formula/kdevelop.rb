@@ -10,8 +10,8 @@ class Kdevelop < Formula
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "gdb" => :build
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "kde-kdoctools" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
@@ -30,7 +30,7 @@ class Kdevelop < Formula
   depends_on "kde-mac/kde/konsole"
   depends_on "kde-mac/kde/ksysguard"
   depends_on "kde-mac/kde/libkomparediff2"
-  depends_on "kde-threadweaver"
+  depends_on "threadweaver"
   depends_on "llvm"
   depends_on "subversion"
 

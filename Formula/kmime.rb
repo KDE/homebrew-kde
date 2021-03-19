@@ -9,10 +9,10 @@ class Kmime < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "kde-ki18n"
+  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kcodecs"
 
   def install

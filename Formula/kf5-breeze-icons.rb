@@ -8,7 +8,7 @@ class Kf5BreezeIcons < Formula
   head "https://invent.kde.org/frameworks/breeze-icons.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt@5"

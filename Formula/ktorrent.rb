@@ -9,8 +9,8 @@ class Ktorrent < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "kde-kdoctools" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-breeze-icons"
