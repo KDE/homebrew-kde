@@ -8,8 +8,8 @@ class Okular < Formula
   head "https://invent.kde.org/graphics/okular.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "kde-kdoctools" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "chmlib"
@@ -25,7 +25,7 @@ class Okular < Formula
   depends_on "kde-mac/kde/kf5-kpty"
   depends_on "kde-mac/kde/libkexiv2"
   depends_on "kde-mac/kde/phonon"
-  depends_on "kde-threadweaver"
+  depends_on "threadweaver"
   depends_on "libspectre"
   depends_on "poppler"
   depends_on "qca"

@@ -9,13 +9,13 @@ class Krusader < Formula
   head "https://invent.kde.org/utilities/krusader.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
-  depends_on "kde-karchive"
+  depends_on "karchive"
   depends_on "kde-mac/kde/kf5-kdoctools"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kparts"

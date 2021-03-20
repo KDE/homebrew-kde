@@ -13,11 +13,11 @@ class Kf5Kservice < Formula
   depends_on "flex" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
-  depends_on "kde-kdoctools" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-ki18n"
+  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kconfig"
   depends_on "kde-mac/kde/kf5-kcrash"
   depends_on "kde-mac/kde/kf5-kdbusaddons"

@@ -8,12 +8,12 @@ class KdeconnectKde < Formula
   head "https://invent.kde.org/network/kdeconnect-kde.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdeclarative" => :build
   depends_on "ninja" => :build
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
-  depends_on "kde-ki18n"
+  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kcmutils"
   depends_on "kde-mac/kde/kf5-kconfigwidgets"
   depends_on "kde-mac/kde/kf5-kdbusaddons"

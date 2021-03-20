@@ -12,7 +12,7 @@ class Kf5Solid < Formula
   depends_on "doxygen" => :build
   depends_on "flex" => :build
   depends_on "graphviz" => :build
-  depends_on "kde-extra-cmake-modules" => [:build, :test]
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
   depends_on "qt@5"
