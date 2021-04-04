@@ -3,24 +3,24 @@ require_relative "../lib/cmake"
 class Kf5Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://api.kde.org/frameworks/kservice/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/kservice-5.79.0.tar.xz"
-  sha256 "d7e6dfb95fc343521dad4840712dc83bbc33b5e4210f689dbb05ae1f34913fb7"
+  url "https://download.kde.org/stable/frameworks/5.80/kservice-5.80.0.tar.xz"
+  sha256 "e868f2a337e8e05a8cc596f8baaa9c310cbc51e73b3dfd4f81ed3c3ca8217319"
   head "https://invent.kde.org/frameworks/kservice.git"
 
   depends_on "bison" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "flex" => :build
   depends_on "gettext" => :build
   depends_on "graphviz" => :build
-  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kconfig"
   depends_on "kde-mac/kde/kf5-kcrash"
   depends_on "kde-mac/kde/kf5-kdbusaddons"
+  depends_on "ki18n"
 
   def install
     args = kde_cmake_args

@@ -5,12 +5,11 @@ class Kf5Tier1Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.79.0"
+  version "5.80.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "karchive" => [:build, :test]
-  depends_on "ki18n" => [:build, :test]
   depends_on "kde-mac/kde/kf5-attica" => [:build, :test]
   depends_on "kde-mac/kde/kf5-breeze-icons" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kapidox" => [:build, :test]
@@ -31,6 +30,7 @@ class Kf5Tier1Frameworks < Formula
   depends_on "kde-mac/kde/kf5-solid" => [:build, :test]
   depends_on "kde-mac/kde/kf5-sonnet" => [:build, :test]
   depends_on "kde-mac/kde/kf5-syntax-highlighting" => [:build, :test]
+  depends_on "ki18n" => [:build, :test]
   depends_on "threadweaver" => [:build, :test]
 
   def install

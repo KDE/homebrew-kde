@@ -3,14 +3,14 @@ require_relative "../lib/cmake"
 class Kf5Kdoctools < Formula
   desc "Documentation generation from docbook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/kdoctools-5.79.0.tar.xz"
-  sha256 "ebc37ba10261fc05808ae332260eabfc86705b1d0cf906b529ca7099df907b0d"
+  url "https://download.kde.org/stable/frameworks/5.80/kdoctools-5.80.0.tar.xz"
+  sha256 "1eae100e641206ef01275d3577c286f73523a516854fe146121ceb302fc0ac83"
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
-  depends_on "gettext" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "gettext" => :build
   depends_on "ki18n" => :build
   depends_on "ninja" => :build
   depends_on "perl" => :build

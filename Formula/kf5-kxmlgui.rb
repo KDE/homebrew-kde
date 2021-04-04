@@ -3,14 +3,14 @@ require_relative "../lib/cmake"
 class Kf5Kxmlgui < Formula
   desc "User configurable main windows"
   homepage "https://api.kde.org/frameworks/kxmlgui/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/kxmlgui-5.79.0.tar.xz"
-  sha256 "6983ae7d11a3518fd02850e8c9598aa35ea101b383c0a055d1f89e1d62590ec9"
+  url "https://download.kde.org/stable/frameworks/5.80/kxmlgui-5.80.0.tar.xz"
+  sha256 "81af735b097231e4343e9d695dc4b8d80e64ab49a32d34c4bce1cd17c566b79d"
   head "https://invent.kde.org/frameworks/kxmlgui.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-attica"

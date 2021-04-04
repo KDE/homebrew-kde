@@ -3,14 +3,14 @@ require_relative "../lib/cmake"
 class Kf5Kbookmarks < Formula
   desc "Bookmarks management library"
   homepage "https://api.kde.org/frameworks/kbookmarks/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/kbookmarks-5.79.0.tar.xz"
-  sha256 "0dcfdf8b2f1d6cebdf830adc338d07a10cf2ddca815c21365cf5ec8e67943981"
+  url "https://download.kde.org/stable/frameworks/5.80/kbookmarks-5.80.0.tar.xz"
+  sha256 "5880324922e465b66384acbdd4f6db2f26c533c2e27c1cb121ec0e0e37f53586"
   head "https://invent.kde.org/frameworks/kbookmarks.git"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-kxmlgui"

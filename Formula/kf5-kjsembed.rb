@@ -3,18 +3,18 @@ require_relative "../lib/cmake"
 class Kf5Kjsembed < Formula
   desc "Embedded JS"
   homepage "https://api.kde.org/frameworks/kjsembed/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/portingAids/kjsembed-5.79.0.tar.xz"
-  sha256 "fe1694f5ae939f049ba2585112218d1dcbafede6974f486b51619d1a6bc172a2"
+  url "https://download.kde.org/stable/frameworks/5.80/portingAids/kjsembed-5.80.0.tar.xz"
+  sha256 "a7446a5439c5be9ec24715c506d287379398d65ce4836937480afaa367ba6f20"
   head "https://invent.kde.org/frameworks/kjsembed.git"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "gettext" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "gettext" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kjs"
+  depends_on "ki18n"
 
   patch :DATA
 
