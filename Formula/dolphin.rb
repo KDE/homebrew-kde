@@ -7,6 +7,11 @@ class Dolphin < Formula
   sha256 "59f82f599fec19fc3065f034089b6d35a58ddc419e10c370d99d1ca0b7d0baa6"
   head "https://invent.kde.org/system/dolphin.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

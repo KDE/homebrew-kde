@@ -7,6 +7,11 @@ class Kf5Qqc2DesktopStyle < Formula
   sha256 "efb3ed865996100921b8dd7340d4f7dd1bc477381ce401cf36b8ed548d3dbe91"
   head "https://invent.kde.org/frameworks/qqc2-desktop-style.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

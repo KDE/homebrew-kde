@@ -7,6 +7,11 @@ class Kf5Knotifications < Formula
   sha256 "5a7c9914f868818d57e2062e27c258a94c4041e702a0b55dafe3e1067730d6e9"
   head "https://invent.kde.org/frameworks/knotifications.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

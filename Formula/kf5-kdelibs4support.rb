@@ -7,6 +7,11 @@ class Kf5Kdelibs4support < Formula
   sha256 "43e258cac33f5dc85438034e20dbe29627cddad3b595527fc524681d110a6d05"
   head "https://invent.kde.org/frameworks/kdelibs4support.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdesignerplugin" => :build

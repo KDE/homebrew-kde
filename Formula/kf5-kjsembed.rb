@@ -7,6 +7,11 @@ class Kf5Kjsembed < Formula
   sha256 "a7446a5439c5be9ec24715c506d287379398d65ce4836937480afaa367ba6f20"
   head "https://invent.kde.org/frameworks/kjsembed.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build

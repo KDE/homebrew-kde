@@ -7,6 +7,11 @@ class Analitza < Formula
   sha256 "dde08edce2c553c7ddd21db3d8645796b02e7e44d2aedd10e308267dbdc41727"
   head "https://invent.kde.org/education/analitza.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "eigen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

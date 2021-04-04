@@ -7,9 +7,14 @@ class KioExtras < Formula
   sha256 "237df668c8bdeac4a362659c00b64c6e89d8b60080fcbdcaf21f387a22e25ae4"
   head "https://invent.kde.org/network/kio-extras.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
-  depends_on "gperf" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "gperf" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build

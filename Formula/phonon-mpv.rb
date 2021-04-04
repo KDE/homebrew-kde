@@ -8,6 +8,11 @@ class PhononMpv < Formula
   revision 1
   head "https://github.com/OpenProgger/phonon-mpv.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 

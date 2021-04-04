@@ -7,10 +7,15 @@ class Drkonqi < Formula
   sha256 "c1d9dc90d01554ac277f8e1734df45c551f46913c19e44df56267560e047b909"
   head "https://invent.kde.org/plasma/drkonqi.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
-  depends_on "graphviz" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-kidletime"

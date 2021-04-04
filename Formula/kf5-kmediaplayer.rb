@@ -7,6 +7,11 @@ class Kf5Kmediaplayer < Formula
   sha256 "cb94adfd7fa6b24742cd958dd765fd82957bfb1cf242658cbd451e2ffdcf2628"
   head "https://invent.kde.org/frameworks/kmediaplayer.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

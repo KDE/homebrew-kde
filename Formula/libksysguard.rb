@@ -7,10 +7,15 @@ class Libksysguard < Formula
   sha256 "0306e2556d94e3366b015d8bb5d7430c1fb66269ad7c0fbce1fecb8970649982"
   head "https://invent.kde.org/plasma/libksysguard.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kf5-plasma-framework" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-kio"

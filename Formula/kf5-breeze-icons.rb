@@ -7,6 +7,11 @@ class Kf5BreezeIcons < Formula
   sha256 "a266908cafc0233e5da6f11747bbbef94b7d9503e2c1f59c68013ae11f1d6584"
   head "https://invent.kde.org/frameworks/breeze-icons.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

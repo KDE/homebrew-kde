@@ -7,6 +7,11 @@ class Kdiagram < Formula
   sha256 "579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f"
   head "https://invent.kde.org/graphics/kdiagram.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

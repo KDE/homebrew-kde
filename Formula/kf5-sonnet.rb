@@ -7,6 +7,11 @@ class Kf5Sonnet < Formula
   sha256 "b0d2eda96edc461319d48b05171457a3648217805f3481b893b8be65bc6b788e"
   head "https://invent.kde.org/frameworks/sonnet.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

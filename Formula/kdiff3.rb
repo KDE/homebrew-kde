@@ -7,13 +7,18 @@ class Kdiff3 < Formula
   sha256 "bc92f7d04eb123f9c56dbe3047af67bf715240fa99487ac1d1ccf2a45e0854c1"
   head "https://invent.kde.org/sdk/kdiff3.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => :build
   depends_on "extra-cmake-modules" => :build
-  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kf5-kcoreaddons" => :build
   depends_on "kde-mac/kde/kf5-kcrash" => :build
   depends_on "kde-mac/kde/kf5-kiconthemes" => :build
   depends_on "kde-mac/kde/kf5-kparts" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-breeze-icons"

@@ -7,13 +7,17 @@ class KdeconnectKde < Formula
   sha256 "21ca118b9ca7c6107c2cbedc95778f6f0ea03411f3b8d9f815660511ec0a9d71"
   head "https://invent.kde.org/network/kdeconnect-kde.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdeclarative" => :build
   depends_on "ninja" => :build
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
-  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kcmutils"
   depends_on "kde-mac/kde/kf5-kconfigwidgets"
   depends_on "kde-mac/kde/kf5-kdbusaddons"
@@ -24,6 +28,7 @@ class KdeconnectKde < Formula
   depends_on "kde-mac/kde/kf5-knotifications"
   depends_on "kde-mac/kde/kf5-kpeople"
   depends_on "kde-mac/kde/kf5-kservice"
+  depends_on "ki18n"
   depends_on "qca"
   depends_on "qt@5"
 

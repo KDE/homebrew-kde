@@ -7,6 +7,11 @@ class Ktorrent < Formula
   sha256 "8200cd9926aa53ab8f5caed1e357c6e430fd8ff78db8f81f55c55700ce786bbb"
   head "https://invent.kde.org/network/ktorrent.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,6 +7,11 @@ class Poxml < Formula
   sha256 "ff0be949f2559c35ce3989f0298a4fbc8d43f06dd0c677c93bd80910fa08d5c2"
   head "https://invent.kde.org/sdk/poxml.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 

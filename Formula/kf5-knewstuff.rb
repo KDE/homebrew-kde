@@ -7,6 +7,11 @@ class Kf5Knewstuff < Formula
   sha256 "dfe874f7fe944fe877c0d443349102ceacb268c45dc1f666ec42ff219024735d"
   head "https://invent.kde.org/frameworks/knewstuff.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

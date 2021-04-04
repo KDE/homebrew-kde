@@ -8,6 +8,11 @@ class Labplot < Formula
   revision 1
   head "https://invent.kde.org/education/labplot.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kf5-kdelibs4support" => :build

@@ -7,10 +7,15 @@ class Kate < Formula
   sha256 "a7ee1973da3534390ba45f937fec239d56b4aa3c26ea2b63561709887fb4bfcd"
   head "https://invent.kde.org/utilities/kate.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kf5-plasma-framework" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

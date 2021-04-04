@@ -7,6 +7,11 @@ class Kf5Kactivities < Formula
   sha256 "1a90e14a16e2efa5ae460843f05e88ca412c7fe078fc077dee8a1cf022303592"
   head "https://invent.kde.org/frameworks/kactivities.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

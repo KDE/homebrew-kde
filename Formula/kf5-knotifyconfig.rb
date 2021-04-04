@@ -7,6 +7,11 @@ class Kf5Knotifyconfig < Formula
   sha256 "fd474e9d231330b141e1443f46036d5b6d884c0edb9e55f1a4e762e1e2bd812c"
   head "https://invent.kde.org/frameworks/knotifyconfig.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

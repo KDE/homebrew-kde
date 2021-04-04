@@ -7,6 +7,11 @@ class Kf5Ktextwidgets < Formula
   sha256 "e8d5dd11835b8245ad1cb0ce0de74d40a9e8310df93b3c64998b2e3eb29d2289"
   head "https://invent.kde.org/frameworks/ktextwidgets.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

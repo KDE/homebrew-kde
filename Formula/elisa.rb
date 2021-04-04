@@ -7,9 +7,14 @@ class Elisa < Formula
   sha256 "59fef44232d8a9864fedcb9bda493909f7ee0b9a4d7e53dbf5aaf369fd2c85ea"
   head "https://invent.kde.org/multimedia/elisa.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
-  depends_on "gettext" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "gettext" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

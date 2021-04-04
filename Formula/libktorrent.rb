@@ -7,6 +7,11 @@ class Libktorrent < Formula
   sha256 "6bfc3c64b2689b1520320c9c6ff49024d64c1cf39bb468fae178d3b901d8dc97"
   head "https://invent.kde.org/network/libktorrent.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

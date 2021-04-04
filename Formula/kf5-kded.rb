@@ -7,6 +7,11 @@ class Kf5Kded < Formula
   sha256 "4157de65d9acc6620da42f777c6fc56ef4ecb846cd3b80db5e349b35dc1f736a"
   head "https://invent.kde.org/frameworks/kded.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build

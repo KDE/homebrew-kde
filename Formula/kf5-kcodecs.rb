@@ -7,6 +7,11 @@ class Kf5Kcodecs < Formula
   sha256 "4f56744c9647096b8d403d212081afffa890b4f386eeb33d1be497cee560881a"
   head "https://invent.kde.org/frameworks/kcodecs.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

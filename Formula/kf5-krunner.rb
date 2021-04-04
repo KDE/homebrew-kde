@@ -7,6 +7,11 @@ class Kf5Krunner < Formula
   sha256 "fcf6e404e4a56877751ea5dc60c7a4b58cfb8986ae4262cc77bdeeca01342d2e"
   head "https://invent.kde.org/frameworks/krunner.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,6 +7,11 @@ class Kf5Attica < Formula
   sha256 "e3aa866b01dfcdc1f59012c57f6bd49eabfe5d920560f766116a6633b394ce71"
   head "https://invent.kde.org/frameworks/attica.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

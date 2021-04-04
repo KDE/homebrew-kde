@@ -7,6 +7,11 @@ class KdevPhp < Formula
   sha256 "f1083daec2b8c752de1a0441d0f9f72274b1e2d29c723005ed78dcf8ba717e0c"
   head "https://invent.kde.org/kdevelop/kdev-php.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "kdevelop"

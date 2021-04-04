@@ -7,6 +7,11 @@ class Okteta < Formula
   sha256 "9fc7edfff73e7b0583af540b0c052f9221ca3f11ea3fc3604c2bcedb09c29a97"
   head "https://invent.kde.org/utilities/okteta.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

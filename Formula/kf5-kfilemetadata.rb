@@ -7,6 +7,11 @@ class Kf5Kfilemetadata < Formula
   sha256 "75cd4d04eced8a30eb372157f0d0cfbe5dd89737b5083aceb0b650afa7f7600a"
   head "https://invent.kde.org/frameworks/kfilemetadata.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

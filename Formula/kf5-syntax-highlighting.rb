@@ -7,6 +7,11 @@ class Kf5SyntaxHighlighting < Formula
   sha256 "91f458918613703468512b00690a02b617eb47be4df5ed7d9e3f1311b3b31218"
   head "https://invent.kde.org/frameworks/syntax-highlighting.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

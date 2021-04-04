@@ -7,6 +7,11 @@ class Kf5Kjobwidgets < Formula
   sha256 "572a9b6475a5e07ad6b8b7e138533a84d0aaeac72bd86143814d076965b2c5fb"
   head "https://invent.kde.org/frameworks/kjobwidgets.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

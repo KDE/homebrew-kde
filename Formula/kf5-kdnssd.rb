@@ -7,6 +7,11 @@ class Kf5Kdnssd < Formula
   sha256 "afa10cdb6cc97413a045e5f152d74e1ef2f0a7bab057460a3d20ab62e098144d"
   head "https://invent.kde.org/frameworks/kdnssd.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

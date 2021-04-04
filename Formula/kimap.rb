@@ -7,6 +7,11 @@ class Kimap < Formula
   sha256 "ad809073b32a98b07d08bff09d3ac687d8121c1f278facffc8cee2b08c7d7292"
   head "https://invent.kde.org/pim/kimap.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

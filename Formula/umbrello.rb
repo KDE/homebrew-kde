@@ -7,11 +7,16 @@ class Umbrello < Formula
   sha256 "4e4fdc0cbff6d578d6e2510c186a27e402995d35265ac203e100e6950c61f17f"
   head "https://invent.kde.org/sdk/umbrello.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
   depends_on "kde-mac/kde/kf5-kdesignerplugin" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"

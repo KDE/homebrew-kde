@@ -7,6 +7,11 @@ class Kf5Kross < Formula
   sha256 "29ce280dd59d2019387bbe29326dbfd2a0a66b7f73ea15149b3ee5d561c5be19"
   head "https://invent.kde.org/frameworks/kross.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build

@@ -7,6 +7,11 @@ class Konsole < Formula
   sha256 "fc1bbdd4b77cc94698dd4d7b90e95577dd5cc99f3b27633a52d49177efea0873"
   head "https://invent.kde.org/utilities/konsole.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

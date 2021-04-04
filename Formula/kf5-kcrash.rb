@@ -7,6 +7,11 @@ class Kf5Kcrash < Formula
   sha256 "64a3e918fbf41c1bc1b708b526d2c928ac7d4c10579a10416e15788553444bb0"
   head "https://invent.kde.org/frameworks/kcrash.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

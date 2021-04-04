@@ -7,6 +7,11 @@ class Kf5Kitemmodels < Formula
   sha256 "93948d1b2a29a9d6e8c436af5bc0ac5fc59e0d7a5632a5c611ee31a648856faf"
   head "https://invent.kde.org/frameworks/kitemmodels.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

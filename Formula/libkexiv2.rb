@@ -7,6 +7,11 @@ class Libkexiv2 < Formula
   sha256 "eb364ea254d8d72317124e725b4a5b2db0d45c627020ad934f6e1f7f66174882"
   head "https://invent.kde.org/graphics/libkexiv2.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

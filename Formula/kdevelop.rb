@@ -7,12 +7,17 @@ class Kdevelop < Formula
   sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
   head "https://invent.kde.org/kdevelop/kdevelop.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "boost" => :build
   depends_on "cvs" => :build
-  depends_on "gdb" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
+  depends_on "gdb" => :build
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 
@@ -30,9 +35,9 @@ class Kdevelop < Formula
   depends_on "kde-mac/kde/konsole"
   depends_on "kde-mac/kde/ksysguard"
   depends_on "kde-mac/kde/libkomparediff2"
-  depends_on "threadweaver"
   depends_on "llvm"
   depends_on "subversion"
+  depends_on "threadweaver"
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 

@@ -7,10 +7,15 @@ class Kolourpaint < Formula
   sha256 "d699f2e56234eda8787c9ddc20904248cc87c7c4468d9e6254fc659c7202eb8e"
   head "https://invent.kde.org/graphics/kolourpaint.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kdoctools" => :build
   depends_on "kde-mac/kde/kf5-kdesignerplugin" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-breeze-icons"

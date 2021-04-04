@@ -7,6 +7,11 @@ class Kf5Kdoctools < Formula
   sha256 "1eae100e641206ef01275d3577c286f73523a516854fe146121ceb302fc0ac83"
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

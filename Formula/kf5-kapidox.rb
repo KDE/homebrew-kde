@@ -7,6 +7,11 @@ class Kf5Kapidox < Formula
   sha256 "7f14805350c5f0c1326b3ad2b2923c71f3d41e6782249723013a0f3ef18b1204"
   head "https://invent.kde.org/frameworks/kapidox.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

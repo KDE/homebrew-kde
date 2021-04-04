@@ -7,6 +7,11 @@ class Kf5Kwidgetsaddons < Formula
   sha256 "1a9bfd5653d4c45d55bac5d0a28c8caec8d504bce2ee192d68ecf3ce10a0fcf1"
   head "https://invent.kde.org/frameworks/kwidgetsaddons.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

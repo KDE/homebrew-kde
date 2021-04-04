@@ -7,6 +7,11 @@ class Kf5Kdbusaddons < Formula
   sha256 "14924319878951a4fbbf7b93da22428274449bec2bdd93b092e89f11bfbc1bf0"
   head "https://invent.kde.org/frameworks/kdbusaddons.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

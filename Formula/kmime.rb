@@ -7,13 +7,18 @@ class Kmime < Formula
   sha256 "f18520bd2c4106edf996ea01ab6060071f4c5359ca83a61840515ec19486eeca"
   head "https://invent.kde.org/pim/kmime.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
-  depends_on "gettext" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "gettext" => :build
   depends_on "ninja" => :build
 
-  depends_on "ki18n"
   depends_on "kde-mac/kde/kf5-kcodecs"
+  depends_on "ki18n"
 
   def install
     args = kde_cmake_args

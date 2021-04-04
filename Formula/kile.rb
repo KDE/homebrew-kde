@@ -8,6 +8,11 @@ class Kile < Formula
   revision 1
   head "https://invent.kde.org/office/kile.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => :build
   depends_on "extra-cmake-modules" => :build
   depends_on "kdoctools" => :build

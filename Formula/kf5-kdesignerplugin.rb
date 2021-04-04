@@ -7,6 +7,11 @@ class Kf5Kdesignerplugin < Formula
   sha256 "43e36e8ba3b0c9d84de2359c89ee332f96e6cbf7cfebd4bc81b9d9e3c7c3e9b4"
   head "https://invent.kde.org/frameworks/kdesignerplugin.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build

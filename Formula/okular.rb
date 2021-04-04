@@ -7,6 +7,11 @@ class Okular < Formula
   sha256 "78a9bb766b7ae79fba630aac6e8804876e1f99de2ede37d6d33ce7442975a9a4"
   head "https://invent.kde.org/graphics/okular.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build
@@ -25,10 +30,10 @@ class Okular < Formula
   depends_on "kde-mac/kde/kf5-kpty"
   depends_on "kde-mac/kde/libkexiv2"
   depends_on "kde-mac/kde/phonon"
-  depends_on "threadweaver"
   depends_on "libspectre"
   depends_on "poppler"
   depends_on "qca"
+  depends_on "threadweaver"
   depends_on "zlib"
 
   patch :DATA

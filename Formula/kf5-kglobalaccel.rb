@@ -7,6 +7,11 @@ class Kf5Kglobalaccel < Formula
   sha256 "36f0abd93064b1b213c87d2e182649bc2f43cdd78ab45a4d686d9fb2c609bd04"
   head "https://invent.kde.org/frameworks/kglobalaccel.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

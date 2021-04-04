@@ -7,6 +7,11 @@ class Kf5Kjs < Formula
   sha256 "3286281f3ebbfc78336cff73a012106f836f39b7ef1ed32e6040c4ffb98f72ec"
   head "https://invent.kde.org/frameworks/kjs.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

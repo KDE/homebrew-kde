@@ -7,6 +7,11 @@ class Kf5Kxmlgui < Formula
   sha256 "81af735b097231e4343e9d695dc4b8d80e64ab49a32d34c4bce1cd17c566b79d"
   head "https://invent.kde.org/frameworks/kxmlgui.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

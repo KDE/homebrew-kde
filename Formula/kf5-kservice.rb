@@ -7,6 +7,11 @@ class Kf5Kservice < Formula
   sha256 "e868f2a337e8e05a8cc596f8baaa9c310cbc51e73b3dfd4f81ed3c3ca8217319"
   head "https://invent.kde.org/frameworks/kservice.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "bison" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

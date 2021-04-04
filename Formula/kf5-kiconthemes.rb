@@ -7,6 +7,11 @@ class Kf5Kiconthemes < Formula
   sha256 "92f2dc363fb8e6b7acdf1d7013d5b06f1f825466d8db00f79cd73cfc3ed9768c"
   head "https://invent.kde.org/frameworks/kiconthemes.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,6 +7,11 @@ class Kf5Kdewebkit < Formula
   sha256 "917defa04b29407e8b89daedb16e1fe5dfdc1b116811b5b9815faa2a78ea0687"
   head "https://invent.kde.org/frameworks/kdewebkit.git"
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
