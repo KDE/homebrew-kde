@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl
 
 use File::Copy;
 use Digest::SHA qw(sha256_hex);
