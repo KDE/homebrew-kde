@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kmime < Formula
   desc "Library for handling mail messages and newsgroup articles"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/release-service/20.12.2/src/kmime-20.12.2.tar.xz"
-  sha256 "f18520bd2c4106edf996ea01ab6060071f4c5359ca83a61840515ec19486eeca"
+  url "https://download.kde.org/stable/release-service/21.04.0/src/kmime-21.04.0.tar.xz"
+  sha256 "042b6cb9eaa5160ee722680c340984d92d3ac1e49d52c38ee68c5b8cf25adb24"
   head "https://invent.kde.org/pim/kmime.git"
 
   livecheck do

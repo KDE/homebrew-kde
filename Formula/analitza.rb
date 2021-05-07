@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Analitza < Formula
   desc "Library to add mathematical features to your program"
   homepage "https://edu.kde.org/"
-  url "https://download.kde.org/stable/release-service/20.12.2/src/analitza-20.12.2.tar.xz"
-  sha256 "dde08edce2c553c7ddd21db3d8645796b02e7e44d2aedd10e308267dbdc41727"
+  url "https://download.kde.org/stable/release-service/21.04.0/src/analitza-21.04.0.tar.xz"
+  sha256 "11c839454b1393ca48cc7af8872f4bbf9cae8e7c971816985bba8f701b739abc"
   head "https://invent.kde.org/education/analitza.git"
 
   livecheck do
