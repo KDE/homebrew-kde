@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Ksysguard < Formula
   desc "Track and control the processes running in your system"
   homepage "https://apps.kde.org/ksysguard"
-  url "https://download.kde.org/stable/plasma/5.21.3/ksysguard-5.21.3.tar.xz"
-  sha256 "4ee3595e30a932846dd2ad668231c2fdc7086135ba51d83e3bc6a685658b417b"
+  url "https://download.kde.org/stable/plasma/5.21.5/ksysguard-5.21.5.tar.xz"
+  sha256 "103b34b83fd2ea1af1cb01b67de70be2ad5362e22270d23cd437ac210bca1bb0"
   head "https://invent.kde.org/plasma/ksysguard.git"
 
   livecheck do
