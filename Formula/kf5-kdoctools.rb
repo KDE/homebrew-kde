@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdoctools < Formula
   desc "Documentation generation from docbook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.80/kdoctools-5.80.0.tar.xz"
-  sha256 "1eae100e641206ef01275d3577c286f73523a516854fe146121ceb302fc0ac83"
+  url "https://download.kde.org/stable/frameworks/5.81/kdoctools-5.81.0.tar.xz"
+  sha256 "398677ebea07c6db652a735689c5e2fdb4a6fd42757dec850f90c0433af60a87"
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
   livecheck do

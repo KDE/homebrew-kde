@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kplotting < Formula
   desc "Lightweight plotting framework"
   homepage "https://api.kde.org/frameworks/kplotting/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.80/kplotting-5.80.0.tar.xz"
-  sha256 "bc5ba241d24d063d6973303eaed1dce9d2d9aba630b83c74e4e73d06fe63711c"
+  url "https://download.kde.org/stable/frameworks/5.81/kplotting-5.81.0.tar.xz"
+  sha256 "cbfb7207c45b2e2afae2f78f9f924ec269515d07ac93bf52ca556287ab4266e8"
   head "https://invent.kde.org/frameworks/kplotting.git"
 
   livecheck do
