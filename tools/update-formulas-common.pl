@@ -7,9 +7,9 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version   = "5.81";
-my $applications_version = "21.04.0";
-my $plasma_version       = "5.21.5";
+my $frameworks_version  = "5.81";
+my $gear_version        = "21.04.0";
+my $plasma_version      = "5.21.5";
 
 my %frameworks = (
 
@@ -89,7 +89,7 @@ my %frameworks = (
     'kxmlrpcclient'   => 'portingAids/kxmlrpcclient'
 );
 
-my %applications = (
+my %gear = (
     'analitza'        => '',
     'dolphin'         => '',
     'elisa'           => '',
@@ -114,7 +114,7 @@ my %applications = (
     'umbrello'        => '',
 );
 
-my %plasmas = (
+my %plasma = (
     'drkonqi'      => '',
     'ksysguard'    => '',
     'libksysguard' => '',
@@ -150,14 +150,14 @@ sub update_frameworks {
     }
 }
 
-sub update_applications {
-    for my $package ( keys %applications ) {
+sub update_gear {
+    for my $package ( keys %gear ) {
         my $upstream_url
-            = "https://download.kde.org/stable/release-service/${applications_version}/src/";
+            = "https://download.kde.org/stable/release-service/${gear_version}/src/";
 
-        my $upstream_suffix = "-${applications_version}.tar.xz";
+        my $upstream_suffix = "-${gear_version}.tar.xz";
 
-        my $upstream = $applications{$package};
+        my $upstream = $gear{$package};
         if ( $upstream eq '' ) {
             $upstream = $package;
         }
@@ -169,14 +169,14 @@ sub update_applications {
     }
 }
 
-sub update_plasmas {
-    for my $package ( keys %plasmas ) {
+sub update_plasma {
+    for my $package ( keys %plasma ) {
         my $upstream_url
             = "https://download.kde.org/stable/plasma/${plasma_version}/";
 
         my $upstream_suffix = "-${plasma_version}.tar.xz";
 
-        my $upstream = $plasmas{$package};
+        my $upstream = $plasma{$package};
         if ( $upstream eq '' ) {
             $upstream = $package;
         }
@@ -257,7 +257,7 @@ sub download_and_update {
 }
 
 GetOptions(
-    'applications' => \&update_applications,
-    'frameworks'   => \&update_frameworks,
-    'plasma'       => \&update_plasmas
+    'gear'          => \&update_gear,
+    'frameworks'    => \&update_frameworks,
+    'plasma'        => \&update_plasma
 );
