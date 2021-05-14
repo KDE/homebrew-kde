@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kpackage < Formula
   desc "Lets applications manage user installable packages"
   homepage "https://api.kde.org/frameworks/kpackage/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.81/kpackage-5.81.0.tar.xz"
-  sha256 "6a164389b07a6f00176a985cf9f88f9d5880514ba57084281a94722d7cd93ee4"
+  url "https://download.kde.org/stable/frameworks/5.82/kpackage-5.82.0.tar.xz"
+  sha256 "b354f3a7e0c6b62513260b0caf5810143647cb21c495d8a1bc3411ee521137a4"
   head "https://invent.kde.org/frameworks/kpackage.git"
 
   livecheck do

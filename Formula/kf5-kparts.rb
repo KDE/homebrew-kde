@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kparts < Formula
   desc "Document centric plugin system"
   homepage "https://api.kde.org/frameworks/kparts/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.81/kparts-5.81.0.tar.xz"
-  sha256 "eb90dee4329fbc97acf3349fe344a86b2ef742dece35edf80e44ca5b1eaf58be"
+  url "https://download.kde.org/stable/frameworks/5.82/kparts-5.82.0.tar.xz"
+  sha256 "00ae5edf41eac55d69d5de408d755671866eeaeb1a67d9ff0b4d5bbfa28d1251"
   head "https://invent.kde.org/frameworks/kparts.git"
 
   livecheck do

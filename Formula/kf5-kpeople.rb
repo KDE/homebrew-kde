@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kpeople < Formula
   desc "Provides access to all contacts and the people"
   homepage "https://api.kde.org/frameworks/kpeople/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.81/kpeople-5.81.0.tar.xz"
-  sha256 "305a2b5c43c8964fa88e4326ef9d8a487b56af04c858a4f18e991b9218d2c3a8"
+  url "https://download.kde.org/stable/frameworks/5.82/kpeople-5.82.0.tar.xz"
+  sha256 "d2fd93bbe53d2e38a52d1054b7b53df6fac26d61f37e778e6fc383893460c2fb"
   head "https://invent.kde.org/frameworks/kpeople.git"
 
   livecheck do
