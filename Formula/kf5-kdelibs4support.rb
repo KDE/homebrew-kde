@@ -17,7 +17,6 @@ class Kf5Kdelibs4support < Formula
   depends_on "kde-mac/kde/kf5-kdesignerplugin" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
-  depends_on "perl" => :build
 
   depends_on "kde-mac/kde/kf5-kded"
   depends_on "kde-mac/kde/kf5-kemoticons"
@@ -26,10 +25,25 @@ class Kf5Kdelibs4support < Formula
   depends_on "kde-mac/kde/kf5-kunitconversion"
   depends_on "openssl"
 
+  uses_from_macos "perl"
+
+  resource "URI::Escape" do
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
+    sha256 "03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a"
+  end
+
   patch :DATA
 
   def install
     args = kde_cmake_args
+
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV.prepend_path "PERL5LIB", libexec/"lib"
+
+    resource("URI::Escape").stage do
+      system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+      system "make", "install"
+    end
 
     system "cmake", *args
     system "cmake", "--build", "build"
