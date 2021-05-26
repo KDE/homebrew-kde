@@ -15,7 +15,7 @@ class Analitza < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "eigen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kf5-kdoctools" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   def install

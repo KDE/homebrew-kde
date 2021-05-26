@@ -68,7 +68,7 @@ class Okular < Formula
       system "#{Formula["qt"].bin}/qmake"
       system "make"
     end
-    qtpp = Utils.safe_popen_read("#{Formula["qt"].bin}/qtpaths --plugin-dir").chomp
+    qtpp = Utils.safe_popen_read("#{Formula[qt].bin}/qtpaths", "--plugin-dir").chomp
     qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",

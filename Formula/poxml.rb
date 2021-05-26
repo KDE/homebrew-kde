@@ -16,7 +16,7 @@ class Poxml < Formula
   depends_on "ninja" => :build
 
   depends_on "gettext"
-  depends_on "kde-mac/kde/kf5-kdoctools"
+  depends_on "kdoctools"
   depends_on "qt@5"
 
   patch :DATA

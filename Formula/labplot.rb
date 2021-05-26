@@ -15,9 +15,9 @@ class Labplot < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "kf5-kdelibs4support" => :build
   depends_on "kf5-kdesignerplugin" => :build
-  depends_on "kf5-kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 

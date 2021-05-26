@@ -12,7 +12,6 @@ class Kf5Tier2Frameworks < Formula
   depends_on "kde-mac/kde/kf5-kauth" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kcompletion" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kcrash" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdoctools" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kfilemetadata" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kimageformats" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kjobwidgets" => [:build, :test]
@@ -22,6 +21,7 @@ class Kf5Tier2Frameworks < Formula
   depends_on "kde-mac/kde/kf5-kpty" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kunitconversion" => [:build, :test]
   depends_on "kde-mac/kde/kf5-tier1-frameworks" => :build
+  depends_on "kdoctools" => [:build, :test]
 
   def install
     touch "empty"

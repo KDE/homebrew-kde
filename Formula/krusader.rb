@@ -21,12 +21,12 @@ class Krusader < Formula
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
   depends_on "karchive"
-  depends_on "kde-mac/kde/kf5-kdoctools"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kparts"
   depends_on "kde-mac/kde/kf5-kwallet"
   depends_on "kde-mac/kde/kf5-kxmlgui"
   depends_on "kde-mac/kde/kio-extras"
+  depends_on "kdoctools"
 
   def install
     args = kde_cmake_args
