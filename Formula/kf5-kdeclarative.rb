@@ -39,40 +39,16 @@ class Kf5Kdeclarative < Formula
   end
 end
 
-# Mark executables as nongui type
-
+# Fix compilation
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 51c04dd..f0ef51e 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -48,6 +48,7 @@ include(ECMSetupVersion)
- include(ECMGenerateHeaders)
- include(CMakePackageConfigHelpers)
- include(ECMAddQch)
-+include(ECMMarkNonGuiExecutable)
- 
- option(BUILD_EXAMPLES "Build and install examples." OFF)
- option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-diff --git a/src/kpackagelauncherqml/CMakeLists.txt b/src/kpackagelauncherqml/CMakeLists.txt
-index 7744b77..b87a5dc 100644
---- a/src/kpackagelauncherqml/CMakeLists.txt
-+++ b/src/kpackagelauncherqml/CMakeLists.txt
-@@ -18,4 +18,5 @@ target_link_libraries(kpackagelauncherqml
-  KF5::QuickAddons
- )
- 
-+ecm_mark_nongui_executable(kpackagelauncherqml)
- install(TARGETS kpackagelauncherqml ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-ddiff --git a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
-index e211526..0511e00 100644
+diff --git a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
+index 1a50956..0511e00 100644
 --- a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
 +++ b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
-@@ -10,7 +10,7 @@
+@@ -10,6 +10,7 @@
  #define KQUICKCONTROLSADDONSPLUGIN_H
 
  #include <QQmlExtensionPlugin>
--
 +#include <QScreen>
 
  class KQuickControlsAddonsPlugin : public QQmlExtensionPlugin
