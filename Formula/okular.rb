@@ -65,7 +65,7 @@ class Okular < Formula
         SOURCES += main.cpp
       EOS
 
-      system "#{Formula["qt"].bin}/qmake"
+      system "#{Formula["qt@5"].bin}/qmake"
       system "make"
     end
     qtpp = Utils.safe_popen_read("#{Formula[qt].bin}/qtpaths", "--plugin-dir").chomp

@@ -31,7 +31,7 @@ class Atcore < Formula
     # move the plugins to real path
     mv "#{bin}/plugins", "#{bin}/AtCoreTest.app/Contents/MacOS/plugins"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/AtCoreTest.app/Contents/Info.plist"

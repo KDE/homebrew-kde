@@ -48,9 +48,9 @@ class Kf5Knewstuff < Formula
 
     args = kde_cmake_args
 
-    args << "-DQt5Widgets_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Widgets"}"
-    args << "-DQt5Xml_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Xml"}"
-    args << "-DQt5Network_DIR=#{Formula["qt"].opt_prefix/"lib/cmake/Qt5Network"}"
+    args << "-DQt5Widgets_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Widgets"}"
+    args << "-DQt5Xml_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Xml"}"
+    args << "-DQt5Network_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Network"}"
 
     system "cmake", ".", *args
   end

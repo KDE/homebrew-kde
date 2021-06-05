@@ -34,7 +34,7 @@ class Konversation < Formula
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/konversation.app/Contents/Info.plist"

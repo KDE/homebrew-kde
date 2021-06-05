@@ -21,7 +21,7 @@ class Analitza < Formula
   def install
     args = kde_cmake_args
 
-    args << "-DCMAKE_PREFIX_PATH=" + Formula["qt"].opt_prefix + "/lib/cmake"
+    args << "-DCMAKE_PREFIX_PATH=" + Formula["qt@5"].opt_prefix + "/lib/cmake"
 
     system "cmake", *args
     system "cmake", "--build", "build"

@@ -51,7 +51,7 @@ class Kdevelop < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
-    qtpp = `#{Formula["qt"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     chmod "+w", "#{bin}/kdevelop.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
