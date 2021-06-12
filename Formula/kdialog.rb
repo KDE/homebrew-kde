@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdialog < Formula
   desc "Utility for displaying dialog boxes from shell scripts"
   homepage "https://kde.org/applications/utilities/org.kde.kdialog"
-  url "https://download.kde.org/stable/release-service/21.04.1/src/kdialog-21.04.1.tar.xz"
-  sha256 "a55889bc31b5c20859dd77c27904a47c4017eace6c722b0631681b02f55ae0d6"
+  url "https://download.kde.org/stable/release-service/21.04.2/src/kdialog-21.04.2.tar.xz"
+  sha256 "46466caf3395066b6210d81c04da61bb04f1b9b137e0c1d8c669a02c1da36a6f"
   head "https://invent.kde.org/utilities/kdialog.git"
 
   livecheck do

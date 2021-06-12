@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kolourpaint < Formula
   desc "Paint Program"
   homepage "https://kde.org/applications/graphics/kolourpaint/"
-  url "https://download.kde.org/stable/release-service/21.04.1/src/kolourpaint-21.04.1.tar.xz"
-  sha256 "aa212fc8af0c74110651579b5cad87046aadcdf99450adac596f1beb201ed074"
+  url "https://download.kde.org/stable/release-service/21.04.2/src/kolourpaint-21.04.2.tar.xz"
+  sha256 "e22922d1b5f45d58ebb0ac5912adb2fb98d95cfd2324fd63e3a28779ce2f158b"
   head "https://invent.kde.org/graphics/kolourpaint.git"
 
   livecheck do

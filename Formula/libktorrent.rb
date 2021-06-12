@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Libktorrent < Formula
   desc "BitTorrent protocol implementation"
   homepage "https://www.kde.org/applications/internet/ktorrent/"
-  url "https://download.kde.org/stable/release-service/21.04.1/src/libktorrent-21.04.1.tar.xz"
-  sha256 "f6ee742ca5e3f64bc56e94cd65dd8b69ecbb9b2a901262f6274be69b22793e9c"
+  url "https://download.kde.org/stable/release-service/21.04.2/src/libktorrent-21.04.2.tar.xz"
+  sha256 "33a5b63fd09a082f78f7d54254ef06d40e837b4135eeea40231d00dae8a4c05e"
   head "https://invent.kde.org/network/libktorrent.git"
 
   livecheck do
