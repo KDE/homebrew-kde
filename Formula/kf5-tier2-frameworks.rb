@@ -5,7 +5,7 @@ class Kf5Tier2Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.82.0"
+  version "5.83.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   depends_on "kde-mac/kde/kf5-kactivities" => [:build, :test]

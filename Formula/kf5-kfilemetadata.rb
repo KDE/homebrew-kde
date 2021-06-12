@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kfilemetadata < Formula
   desc "Library for extracting file metadata"
   homepage "https://api.kde.org/frameworks/kfilemetadata/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.82/kfilemetadata-5.82.0.tar.xz"
-  sha256 "a5625e00e91ffcbe34a8bd38c8af9339784a596a2ae844ded5250b3c213ceab8"
+  url "https://download.kde.org/stable/frameworks/5.83/kfilemetadata-5.83.0.tar.xz"
+  sha256 "d65dff0ede7eb7e823bce6da9f8e3359cb39a40c046f2ea578a321e85594098e"
   head "https://invent.kde.org/frameworks/kfilemetadata.git"
 
   livecheck do

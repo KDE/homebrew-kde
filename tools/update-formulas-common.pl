@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version  = "5.82";
+my $frameworks_version  = "5.83";
 my $gear_version        = "21.04.1";
 my $plasma_version      = "5.21.5";
 
@@ -41,7 +41,6 @@ my %frameworks = (
     'kauth'           => '',
     'kcompletion'     => '',
     'kcrash'          => '',
-    'kdoctools'       => '',
     'kfilemetadata'   => '',
     'kimageformats'   => '',
     'kjobwidgets'     => '',
@@ -87,6 +86,14 @@ my %frameworks = (
     'kmediaplayer'    => 'portingAids/kmediaplayer',
     'kross'           => 'portingAids/kross',
     'kxmlrpcclient'   => 'portingAids/kxmlrpcclient'
+);
+
+my %meta_frameworks = (
+    'tier1-frameworks'          => '',
+    'tier2-frameworks'          => '',
+    'tier3-frameworks'          => '',
+    'tier4-frameworks'          => '',
+    'portingaids-frameworks'    => '',
 );
 
 my %gear = (
@@ -146,7 +153,36 @@ sub update_frameworks {
 
         my $cached_file = "$tmp_dir/kf5-$package$upstream_suffix";
 
-        download_and_update( $formula, $package_upstream_url, $cached_file );
+        download_and_update( $formula, $package_upstream_url, $cached_file );   
+    }
+    
+    update_meta_frameworks()
+}
+
+sub update_meta_frameworks {
+    for my $package ( keys %meta_frameworks ) {
+        my $formula = "Formula/kf5-$package.rb";
+    
+        open my $FORMULA,     '<', $formula       or die $!;
+        open my $NEW_FORMULA, '>', "$formula.new" or die $!;
+
+        while ( my $line = <$FORMULA> ) {
+            next if ( $line =~ /^\s*^  version\s+\"(.*)\"\s*$/ );
+            next if ( $line =~ /^\s*^  revision\s+\d$/ );
+
+            print $NEW_FORMULA $line;
+
+            if ( $line =~ /^\s*^  url\s+(.*)\"/ ) {
+                print $NEW_FORMULA "  version \"${frameworks_version}.0\"\n";
+            }
+        }
+
+        close $FORMULA;
+        close $NEW_FORMULA;
+
+        move( "$formula.new", "$formula" ) or die $!;
+
+        print "Updated $formula\n";
     }
 }
 

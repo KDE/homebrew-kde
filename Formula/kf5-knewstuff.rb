@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Knewstuff < Formula
   desc "Support for downloading application assets from the network"
   homepage "https://api.kde.org/frameworks/knewstuff/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.82/knewstuff-5.82.0.tar.xz"
-  sha256 "1f91693dc3104aa97dcb24720bb20b0f927cb7633185630121cb634cb5b25bbb"
+  url "https://download.kde.org/stable/frameworks/5.83/knewstuff-5.83.0.tar.xz"
+  sha256 "0c3b5cb45eecadcebaa524ae26f0a2e8b8cb456f6e2831bf1065e4c2362ce687"
   head "https://invent.kde.org/frameworks/knewstuff.git"
 
   livecheck do
