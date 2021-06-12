@@ -9,7 +9,7 @@ use warnings;
 
 my $frameworks_version  = "5.83";
 my $gear_version        = "21.04.2";
-my $plasma_version      = "5.21.5";
+my $plasma_version      = "5.22.0";
 
 my %frameworks = (
 
@@ -123,7 +123,7 @@ my %gear = (
 
 my %plasma = (
     'drkonqi'      => '',
-    'ksysguard'    => '',
+    # 'ksysguard'    => '',
     'libksysguard' => '',
 );
 
