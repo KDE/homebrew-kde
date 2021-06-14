@@ -184,6 +184,9 @@ ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "$HOME/Applications/KDE"
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app/Contents/MacOS/kdialog" "$(brew --prefix)/bin"
 #kile
 ln -sf "$(brew --prefix)/opt/kile/bin/Kile.app" "$HOME/Applications/KDE"
+#tellico
+ln -sf "$(brew --prefix)/share/tellico" "$HOME/Library/Application Support"
+ln -sf "$(brew --prefix)/opt/tellico/bin/tellico.app" "$HOME/Applications/KDE"
 
 echo "Caveats setup success"
 exit 0
