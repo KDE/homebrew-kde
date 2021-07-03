@@ -3,12 +3,11 @@ require_relative "../lib/cmake"
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  revision 3
   head "https://invent.kde.org/office/kmymoney.git"
 
   stable do
-    url "https://download.kde.org/stable/kmymoney/5.1.1/src/kmymoney-5.1.1.tar.xz"
-    sha256 "df7b9f78e8596f99d28295ca738708f0655ee057789dfd921c7b1bab96578298"
+    url "https://download.kde.org/stable/kmymoney/5.1.2/src/kmymoney-5.1.2.tar.xz"
+    sha256 "37bdc4e763a2849b9f739f73e38b389c02bde1c1b1844edcfa7e3ab1d5bf7b3b"
     depends_on "kde-mac/kde/kf5-kiconthemes"
   end
 
