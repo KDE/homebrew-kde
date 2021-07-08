@@ -1,7 +1,9 @@
-require 'formula'
+# frozen_string_literal: true
+
+require "formula"
 
 def kde_cmake_args
-  args = std_cmake_args + %W[
+  std_cmake_args + %W[
     -G Ninja
     -B build
     -S .
