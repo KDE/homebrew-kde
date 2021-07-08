@@ -8,6 +8,10 @@ class Kf5Tier1Frameworks < Formula
   version "5.83.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
+  livecheck do
+    skip "Meta package"
+  end
+
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "karchive" => [:build, :test]
   depends_on "kde-mac/kde/kf5-attica" => [:build, :test]

@@ -8,6 +8,10 @@ class Kf5PortingaidsFrameworks < Formula
   version "5.83.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
+  livecheck do
+    skip "Meta package"
+  end
+
   depends_on "kde-mac/kde/kf5-kdelibs4support" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdesignerplugin" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdewebkit" => [:build, :test]
