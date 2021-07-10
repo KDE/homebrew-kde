@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kxmlrpcclient < Formula
   desc "XML-RPC client library for KDE"
   homepage "https://api.kde.org/frameworks/kxmlrpcclient/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.83/portingAids/kxmlrpcclient-5.83.0.tar.xz"
-  sha256 "916f8c243b54e70dc956a0e80c97de81b785c2d1bbc625c8e650062708d5c4dd"
+  url "https://download.kde.org/stable/frameworks/5.84/portingAids/kxmlrpcclient-5.84.0.tar.xz"
+  sha256 "d15ca2c58d3db2ff66cb3a26ee20a481de42e0efa6a5ba47278da734956f4d82"
   head "https://invent.kde.org/frameworks/kxmlrpcclient.git"
 
   livecheck do

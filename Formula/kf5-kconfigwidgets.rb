@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kconfigwidgets < Formula
   desc "Widgets for configuration dialogs"
   homepage "https://api.kde.org/frameworks/kconfigwidgets/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.83/kconfigwidgets-5.83.0.tar.xz"
-  sha256 "d73260735be071fa6a1893ad6498d1ead1288a81bfb9a0b26d085cf7defd40c3"
+  url "https://download.kde.org/stable/frameworks/5.84/kconfigwidgets-5.84.0.tar.xz"
+  sha256 "36ea5e2263776f988a9b2301f4605ccb4b3683afbe770c1896a5525e12711e9e"
   head "https://invent.kde.org/frameworks/kconfigwidgets.git"
 
   livecheck do

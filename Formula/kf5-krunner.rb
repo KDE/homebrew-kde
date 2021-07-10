@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Krunner < Formula
   desc "Process launcher to speed up launching KDE applications"
   homepage "https://api.kde.org/frameworks/krunner/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.83/krunner-5.83.0.tar.xz"
-  sha256 "a2c44640acdda78a76581d4b62e389439c8270d838ef64774b1fa8daa9b4db0a"
+  url "https://download.kde.org/stable/frameworks/5.84/krunner-5.84.0.tar.xz"
+  sha256 "37a8049e2161cfaa2659160fef0734c5a918a522ec40888fdca5c2b2530f5195"
   head "https://invent.kde.org/frameworks/krunner.git"
 
   livecheck do

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Knotifications < Formula
   desc "Abstraction for system notifications"
   homepage "https://api.kde.org/frameworks/knotifications/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.83/knotifications-5.83.0.tar.xz"
-  sha256 "2cc2a9bf03733c38e70767dcd90da9957e7b6432b0308e5924609bcf52728d05"
+  url "https://download.kde.org/stable/frameworks/5.84/knotifications-5.84.0.tar.xz"
+  sha256 "b09c4d6091a793673019dbbe2d4934747f6a5b2cd5f78c59c054a189154a5f09"
   head "https://invent.kde.org/frameworks/knotifications.git"
 
   livecheck do
