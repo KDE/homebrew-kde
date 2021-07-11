@@ -5,6 +5,7 @@ class Kf5Kdeclarative < Formula
   homepage "https://api.kde.org/frameworks/kdeclarative/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.84/kdeclarative-5.84.0.tar.xz"
   sha256 "26c7cea97973c242a34d511f8e41b1cebcfdbb864cce7570ec513af0b91cf779"
+  revision 1
   head "https://invent.kde.org/frameworks/kdeclarative.git"
 
   livecheck do
@@ -22,8 +23,6 @@ class Kf5Kdeclarative < Formula
   depends_on "kde-mac/kde/kf5-kpackage"
   depends_on "libepoxy"
 
-  patch :DATA
-
   def install
     args = kde_cmake_args
 
@@ -38,18 +37,3 @@ class Kf5Kdeclarative < Formula
     system "cmake", ".", "-Wno-dev"
   end
 end
-
-# Fix compilation
-__END__
-diff --git a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
-index 1a50956..0511e00 100644
---- a/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
-+++ b/src/qmlcontrols/kquickcontrolsaddons/kquickcontrolsaddonsplugin.h
-@@ -10,6 +10,7 @@
- #define KQUICKCONTROLSADDONSPLUGIN_H
-
- #include <QQmlExtensionPlugin>
-+#include <QScreen>
-
- class KQuickControlsAddonsPlugin : public QQmlExtensionPlugin
- {
