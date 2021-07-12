@@ -18,8 +18,9 @@ class Kf5Kimageformats < Formula
 
   depends_on "jasper"
   depends_on "karchive"
-  depends_on "openexr"
   depends_on "qt@5"
+
+  conflicts_with "openexr", because: "compile errors"
 
   def install
     args = kde_cmake_args
