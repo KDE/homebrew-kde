@@ -40,7 +40,8 @@ class KioExtras < Formula
   patch :DATA
 
   def install
-    args = kde_cmake_argsargs << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
+    args = kde_cmake_args
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args
     system "cmake", "--build", "build"
