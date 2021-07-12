@@ -3,13 +3,13 @@ require_relative "../lib/cmake"
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://apps.kde.org/okteta"
-  url "https://download.kde.org/stable/okteta/0.26.5/src/okteta-0.26.5.tar.xz"
-  sha256 "9fc7edfff73e7b0583af540b0c052f9221ca3f11ea3fc3604c2bcedb09c29a97"
+  url "https://download.kde.org/stable/okteta/0.26.6/src/okteta-0.26.6.tar.xz"
+  sha256 "c569cd5b55503e46df1a5b5c9162b08888c426aa52c6f3f2f926c658bee0144c"
   head "https://invent.kde.org/utilities/okteta.git"
 
   livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https://download.kde.org/stable/okteta/"
+    regex(/href=["']?(\d+(?:\.\d+)+)/i)
   end
 
   depends_on "cmake" => [:build, :test]
