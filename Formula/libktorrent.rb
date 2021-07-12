@@ -3,13 +3,14 @@ require_relative "../lib/cmake"
 class Libktorrent < Formula
   desc "BitTorrent protocol implementation"
   homepage "https://www.kde.org/applications/internet/ktorrent/"
-  url "https://download.kde.org/stable/release-service/21.04.3/src/libktorrent-21.04.3.tar.xz"
-  sha256 "5a4fd6715e14150fc21697f251d923a2e3407ef89ffdad3bc94135454087c3d9"
+  url "https://download.kde.org/stable/ktorrent/5.2.0/libktorrent-2.2.0.tar.xz"
+  sha256 "77c1ddfb0a56c40227e0624c078836a8c22bf5a2fb4a3c0cbd53ee6b174c126e"
   head "https://invent.kde.org/network/libktorrent.git"
 
   livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=430896"
+    # url :head
+    # regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on "boost" => :build
