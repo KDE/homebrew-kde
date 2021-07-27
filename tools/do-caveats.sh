@@ -36,10 +36,10 @@ for FORMULA in "${BROKEN_LINK[@]}"; do
 done
 
 # common
-rm -rf "${HOME}/Applications/KDE/"
+# rm -rf "${HOME}/Applications/KDE/"
 mkdir -p "${HOME}/Applications/KDE"
 mkdir -p "${HOME}/Library/Application Support/doc"
-rm -rf "${HOME}/Library/Application Support/doc/*"
+# rm -rf "${HOME}/Library/Application Support/doc/*"
 ln -sf "$(brew --prefix)/share/doc/HTML" "${HOME}/Library/Application Support/doc"
 ln -sf "$(brew --prefix)/share/doc/qch" "${HOME}/Library/Application Support/doc"
 ln -sf "$(brew --prefix)/share/kf5" "${HOME}/Library/Application Support"
