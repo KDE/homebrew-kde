@@ -36,125 +36,138 @@ for FORMULA in "${BROKEN_LINK[@]}"; do
 done
 
 # common
-# rm -rf "${HOME}/Applications/KDE/"
-mkdir -p "${HOME}/Applications/KDE"
-mkdir -p "${HOME}/Library/Application Support/doc"
+HOME_APPS_KDE="${HOME}/Applications/KDE"
+APPLICATION_SUPPORT="${HOME}/Library/Application Support"
+APPLICATION_SUPPORT_DOC="${APPLICATION_SUPPORT}/doc"
+mkdir -p "${HOME_APPS_KDE}"
+mkdir -p "${APPLICATION_SUPPORT_DOC}"
 # rm -rf "${HOME}/Library/Application Support/doc/*"
-ln -sf "$(brew --prefix)/share/doc/HTML" "${HOME}/Library/Application Support/doc"
-ln -sf "$(brew --prefix)/share/doc/qch" "${HOME}/Library/Application Support/doc"
-ln -sf "$(brew --prefix)/share/kf5" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kservices5" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/metainfo" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kservicetypes5" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/config.kcfg" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/knotifycations5" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/doc/HTML" "${APPLICATION_SUPPORT_DOC}"
+ln -sf "$(brew --prefix)/share/doc/qch" "${APPLICATION_SUPPORT_DOC}"
+ln -sf "$(brew --prefix)/share/kf5" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kservices5" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/metainfo" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kservicetypes5" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/config.kcfg" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/knotifycations5" "${APPLICATION_SUPPORT}"
 mkdir -p /usr/local/share/kxmlgui5
-ln -sf "$(brew --prefix)/share/kxmlgui5" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kpackage" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kxmlgui5" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kpackage" "${APPLICATION_SUPPORT}"
 # kf5-breeze-icons
-ln -sf "$(brew --prefix)/share/icons" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/icons" "${APPLICATION_SUPPORT}"
 # kf5-kemoticons
-ln -sf "$(brew --prefix)/share/emoticons" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/emoticons" "${APPLICATION_SUPPORT}"
 # kf5-kparts
-ln -sf "$(brew --prefix)/share/kdevappwizard" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kdevappwizard" "${APPLICATION_SUPPORT}"
 # kf5-kdelibs4support
-ln -sf "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "${HOME_APPS_KDE}"
 # kf5-plasma-frameworks
-ln -sf "$(brew --prefix)/share/plasma" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/plasma" "${APPLICATION_SUPPORT}"
 # dolphin
-ln -sf "$(brew --prefix)/share/dolphin" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/dolphin" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "${HOME_APPS_KDE}"
 # kate
-ln -sf "$(brew --prefix)/share/kate" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kwrite" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kateproject" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/katexmltools" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kate/bin/kate.app" "${HOME}/Applications/KDE"
-ln -sf "$(brew --prefix)/opt/kate/bin/kwrite.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kate" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kwrite" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kateproject" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/katexmltools" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kate/bin/kate.app" "${HOME_APPS_KDE}"
+ln -sf "$(brew --prefix)/opt/kate/bin/kwrite.app" "${HOME_APPS_KDE}"
 # kio-extras
-ln -sf "$(brew --prefix)/share/kio_bookmarks" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kio_info" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/konqsidebartng" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/konqueror" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/remoteview" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/solid" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/kio_bookmarks" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kio_info" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/konqsidebartng" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/konqueror" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/remoteview" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/solid" "${APPLICATION_SUPPORT}"
 # kmymoney
-ln -sf "$(brew --prefix)/share/kmymoney" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kmm_weboob" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kmm_printcheck" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kmymoney" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kmm_weboob" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kmm_printcheck" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kmymoney/bin/kmymoney.app" "${HOME_APPS_KDE}"
 # kolourpaint
-ln -sf "$(brew --prefix)/share/kolourpaint" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kolourpaint/bin/kolourpaint.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kolourpaint" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kolourpaint/bin/kolourpaint.app" "${HOME_APPS_KDE}"
 # konsole
-ln -sf "$(brew --prefix)/share/konsole" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/konsole/bin/konsole.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/konsole" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/konsole/bin/konsole.app" "${HOME_APPS_KDE}"
 # konversation
-ln -sf "$(brew --prefix)/share/konversation" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/konversation/bin/konversation.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/konversation" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/konversation/bin/konversation.app" "${HOME_APPS_KDE}"
 # lokalize
-ln -sf "$(brew --prefix)/opt/lokalize/bin/lokalize.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/lokalize/bin/lokalize.app" "${HOME_APPS_KDE}"
 # okteta
-ln -sf "$(brew --prefix)/share/okteta" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/okteta/bin/okteta.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/okteta" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/okteta/bin/okteta.app" "${HOME_APPS_KDE}"
 # kdevelop
-ln -sf "$(brew --prefix)/share/kdevappwizard" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevclangsupport" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevcodeutils" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevelop" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevfiletemplates" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevgdb" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevmanpage" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/share/kdevqmljssupport" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kdevappwizard" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevclangsupport" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevcodeutils" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevelop" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevfiletemplates" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevgdb" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevmanpage" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevqmakebuilder" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/share/kdevqmljssupport" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "${HOME_APPS_KDE}"
 # okular
-ln -sf "$(brew --prefix)/share/okular" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/okular/bin/okular.app" "${HOME}/Applications/KDE"
-ln -sf "$(brew --prefix)/opt/okular/bin/okularkirigami.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/okular" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/okular/bin/okular.app" "${HOME_APPS_KDE}"
+ln -sf "$(brew --prefix)/opt/okular/bin/okularkirigami.app" "${HOME_APPS_KDE}"
 # labplot
-ln -sf "$(brew --prefix)/share/labplot2" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/labplot/bin/labplot2.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/labplot2" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/labplot/bin/labplot2.app" "${HOME_APPS_KDE}"
 # kdenlive
-ln -sf "$(brew --prefix)/share/kdenlive" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kdenlive" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kdenlive/bin/kdenlive.app" "${HOME_APPS_KDE}"
 # krename
-ln -sf "$(brew --prefix)/share/krename" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/krename/bin/krename.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/krename" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/krename/bin/krename.app" "${HOME_APPS_KDE}"
 # ktorrent
-ln -sf "$(brew --prefix)/share/ktorrent" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/ktorrent/bin/ktorrent.app" "${HOME}/Applications/KDE"
-ln -sf "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/ktorrent" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/ktorrent/bin/ktorrent.app" "${HOME_APPS_KDE}"
+ln -sf "$(brew --prefix)/opt/ktorrent/bin/ktupnptest.app" "${HOME_APPS_KDE}"
 # krusader
-ln -sf "$(brew --prefix)/share/krusader" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/krusader/bin/krusader.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/krusader" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/krusader/bin/krusader.app" "${HOME_APPS_KDE}"
 # elisa
-ln -sf "$(brew --prefix)/opt/elisa/bin/elisa.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/elisa/bin/elisa.app" "${HOME_APPS_KDE}"
 # kcalc
-ln -sf "$(brew --prefix)/share/kcalc" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/kcalc/bin/kcalc.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/kcalc" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/kcalc/bin/kcalc.app" "${HOME_APPS_KDE}"
 # libksysguard
-ln -sf "$(brew --prefix)/share/ksysguard" "${HOME}/Library/Application Support"
+ln -sf "$(brew --prefix)/share/ksysguard" "${APPLICATION_SUPPORT}"
 # ksysguard
-ln -sf "$(brew --prefix)/opt/ksysguard/bin/ksysguard.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/ksysguard/bin/ksysguard.app" "${HOME_APPS_KDE}"
 # umbrello
-ln -sf "$(brew --prefix)/share/umbrello5" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/umbrello/bin/umbrello5.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/umbrello5" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/umbrello/bin/umbrello5.app" "${HOME_APPS_KDE}"
 # atcore
-ln -sf "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/atcore/bin/AtCoreTest.app" "${HOME_APPS_KDE}"
+
 #kdeconnect
-rm -rf "${HOME}/Applications/KDE/kdeconnect.app"
-ln -sf "$(brew --prefix)/opt/kdeconnect/bin/"*.app "${HOME}/Applications/KDE"
+rm -f "${HOME_APPS_KDE}"/\*.app
+KDE_CONNECT_APPS=(
+	kdeconnect-app.app
+	kdeconnect-handler.app
+	kdeconnect-indicator.app
+	kdeconnect-settings.app
+	kdeconnect-sms.app
+)
+for KDE_CONNECT_APP in "${KDE_CONNECT_APPS[@]}"; do
+	ln -sf "$(brew --prefix)/opt/kdeconnect/bin/${KDE_CONNECT_APP}" "${HOME_APPS_KDE}"
+done
+
 #kf5-kjsembed
-ln -sf "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/kf5-kjsembed/bin/kjsconsole.app" "${HOME_APPS_KDE}"
 #kdialog
-ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app" "${HOME_APPS_KDE}"
 ln -sf "$(brew --prefix)/opt/kdialog/bin/kdialog.app/Contents/MacOS/kdialog" "$(brew --prefix)/bin"
 #kile
-ln -sf "$(brew --prefix)/opt/kile/bin/Kile.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/opt/kile/bin/Kile.app" "${HOME_APPS_KDE}"
 #tellico
-ln -sf "$(brew --prefix)/share/tellico" "${HOME}/Library/Application Support"
-ln -sf "$(brew --prefix)/opt/tellico/bin/tellico.app" "${HOME}/Applications/KDE"
+ln -sf "$(brew --prefix)/share/tellico" "${APPLICATION_SUPPORT}"
+ln -sf "$(brew --prefix)/opt/tellico/bin/tellico.app" "${HOME_APPS_KDE}"
 
 echo "Caveats setup success"
 exit 0
