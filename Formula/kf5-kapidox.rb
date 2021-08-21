@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kapidox < Formula
   desc "Frameworks API Documentation Tools"
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.84/kapidox-5.84.0.tar.xz"
-  sha256 "a1bc4213ba36ac022957250bad69209100fffdb9e5a035876b02b0b75ed41141"
+  url "https://download.kde.org/stable/frameworks/5.85/kapidox-5.85.0.tar.xz"
+  sha256 "b5b5efd13dac5e9be921bfed763462d738f9d916c65aa0f716d268e19f09bdb2"
   head "https://invent.kde.org/frameworks/kapidox.git"
 
   livecheck do

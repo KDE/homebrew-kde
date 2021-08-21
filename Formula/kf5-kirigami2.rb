@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kirigami2 < Formula
   desc "QtQuick based components set"
   homepage "https://api.kde.org/frameworks/kirigami/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.84/kirigami2-5.84.0.tar.xz"
-  sha256 "598c9e245d2726ada15c50d51f38827116f25d7e966af0cdfbb3bca396e01716"
+  url "https://download.kde.org/stable/frameworks/5.85/kirigami2-5.85.0.tar.xz"
+  sha256 "33d22381cf6058c3dc54109e31f710f07452ef9baf669d4264659c5c7fd7ad2b"
   head "https://invent.kde.org/frameworks/kirigami.git"
 
   livecheck do

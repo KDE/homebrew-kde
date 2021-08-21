@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kpty < Formula
   desc "Pty abstraction"
   homepage "https://api.kde.org/frameworks/kpty/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.84/kpty-5.84.0.tar.xz"
-  sha256 "62297b5a891f156d1bf7b0d8ed5996d40c30917800ebdabbfadcf32dccc70613"
+  url "https://download.kde.org/stable/frameworks/5.85/kpty-5.85.0.tar.xz"
+  sha256 "28c7ecf29b2cba3045d5047ee92e494fe0c0198b1e6dc34f03dddeb03ffdbffe"
   head "https://invent.kde.org/frameworks/kpty.git"
 
   livecheck do

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://api.kde.org/frameworks/kservice/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.84/kservice-5.84.0.tar.xz"
-  sha256 "c2e9c7a87aa7835d7bbfb0f45838a76151733547807a80c86df8307d79287dd1"
+  url "https://download.kde.org/stable/frameworks/5.85/kservice-5.85.0.tar.xz"
+  sha256 "e2d1b7436a2bc8a73b4eec486bb8308a7997c65b981f88b17977bf15a5290b01"
   head "https://invent.kde.org/frameworks/kservice.git"
 
   livecheck do
