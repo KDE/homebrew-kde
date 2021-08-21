@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Umbrello < Formula
   desc "UML modeller"
   homepage "https://umbrello.kde.org/"
-  url "https://download.kde.org/stable/release-service/21.04.3/src/umbrello-21.04.3.tar.xz"
-  sha256 "1a51138f8987e1c23dea6954d0e1d2d42e2d2e7bed0e5bfec56524e0a8f181a4"
+  url "https://download.kde.org/stable/release-service/21.08.0/src/umbrello-21.08.0.tar.xz"
+  sha256 "8005661ae474d2fb205ee4eec5b496a363b8530ad5b005052d3694f58b189e5a"
   head "https://invent.kde.org/sdk/umbrello.git"
 
   livecheck do
@@ -27,7 +27,8 @@ class Umbrello < Formula
   depends_on "llvm"
 
   def install
-    args = kde_cmake_argsargs << "-DBUILD_KF5=ON"
+    args = kde_cmake_args
+    args << "-DBUILD_KF5=ON"
     args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
 
     system "cmake", *args

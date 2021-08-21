@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Lokalize < Formula
   desc "Computer-aided translation system"
   homepage "https://www.kde.org/applications/development/lokalize/"
-  url "https://download.kde.org/stable/release-service/21.04.3/src/lokalize-21.04.3.tar.xz"
-  sha256 "48603137bdedd40f4b473a6bbb32f07e1819603d67d34e3b24d994969b2ea470"
+  url "https://download.kde.org/stable/release-service/21.08.0/src/lokalize-21.08.0.tar.xz"
+  sha256 "03a1b47ad320bea47a6bbb9b80c13dd480400e7fcde07d4c8379f95295db9e57"
   head "https://invent.kde.org/sdk/lokalize.git"
 
   livecheck do

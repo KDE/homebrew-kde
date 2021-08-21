@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class KdeconnectKde < Formula
   desc "Multi-platform app that allows your devices to communicate"
   homepage "https://community.kde.org/KDEConnect"
-  url "https://download.kde.org/stable/release-service/21.04.3/src/kdeconnect-kde-21.04.3.tar.xz"
-  sha256 "fe5c857b588276cff575bbc0a6cf2b58da84cd4bcf6267b745f9f0b2c26ec28b"
+  url "https://download.kde.org/stable/release-service/21.08.0/src/kdeconnect-kde-21.08.0.tar.xz"
+  sha256 "9a0a31dd1af88735edbb06cfe7e11f4a42b7b31f12afa79c6e7479130060b1e2"
   head "https://invent.kde.org/network/kdeconnect-kde.git"
 
   livecheck do

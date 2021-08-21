@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Dolphin < Formula
   desc "KDE File Manager"
   homepage "https://apps.kde.org/dolphin"
-  url "https://download.kde.org/stable/release-service/21.04.3/src/dolphin-21.04.3.tar.xz"
-  sha256 "e3a1560c216efaa80c3ec99138c4657e9602e17aea250a418b18c2fc85295264"
+  url "https://download.kde.org/stable/release-service/21.08.0/src/dolphin-21.08.0.tar.xz"
+  sha256 "5666dce41371192a897a696d82acb0c8628cb8147372c33fc2b4065c572867a1"
   head "https://invent.kde.org/system/dolphin.git"
 
   livecheck do
