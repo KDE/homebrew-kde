@@ -9,7 +9,7 @@ use warnings;
 
 my $frameworks_version  = "5.85";
 my $gear_version        = "21.08.0";
-my $plasma_version      = "5.22.3";
+my $plasma_version      = "5.22.4";
 
 my %frameworks = (
 
