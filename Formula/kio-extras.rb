@@ -17,7 +17,6 @@ class KioExtras < Formula
   depends_on "gperf" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
-  depends_on "shared-mime-info" => :build
 
   depends_on "exiv2"
   depends_on "kde-mac/kde/kf5-kdnssd"
@@ -28,29 +27,21 @@ class KioExtras < Formula
   depends_on "libmtp"
   depends_on "openexr"
   depends_on "openslp"
-
-  conflicts_with "taglib", because: "linking errors"
+  depends_on "taglib"
 
   patch do
-    # Fix https://bugs.kde.org/show_bug.cgi?id=402335 (#274)
+    # Fix https://bugs.kde.org/show_bug.cgi?id=402335
     url "https://bugsfiles.kde.org/attachment.cgi?id=117165"
     sha256 "bce9033737ef90b038fa5521f0b9b5e192b8ae27a4fedc96eda76ac8f7943315"
   end
 
-  patch :DATA
-
   def install
     args = kde_cmake_args
-    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
-  end
-
-  def post_install
-    system HOMEBREW_PREFIX/"bin/update-mime-database", HOMEBREW_PREFIX/"share/mime"
   end
 
   def caveats
@@ -65,28 +56,3 @@ class KioExtras < Formula
     system "cmake", ".", "-Wno-dev"
   end
 end
-
-# Set shared-mime-info as optional.
-
-__END__
-diff --git a/network/mimetypes/CMakeLists.txt b/network/mimetypes/CMakeLists.txt
-index 4d7368b..3c5151f 100644
---- a/network/mimetypes/CMakeLists.txt
-+++ b/network/mimetypes/CMakeLists.txt
-@@ -1,6 +1,12 @@
--# shared-mime-info 0.40 is mandatory for generic-icon
--set( SHARED_MIME_INFO_MINIMUM_VERSION "0.40" )
--find_package( SharedMimeInfo REQUIRED )
-+# shared-mime-info 0.70 is mandatory for generic-icon
-+find_package(SharedMimeInfo 0.70)
-+set_package_properties(SharedMimeInfo PROPERTIES
-+                       TYPE OPTIONAL
-+                       PURPOSE "Allows KDE applications to determine file types"
-+                       )
-
- install( FILES network.xml  DESTINATION ${KDE_INSTALL_MIMEDIR} RENAME kf5_network.xml )
--update_xdg_mimetypes( ${KDE_INSTALL_MIMEDIR} )
-+# update XDG mime-types if shared mime info is around
-+if(SharedMimeInfo_FOUND)
-+    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-+endif()
