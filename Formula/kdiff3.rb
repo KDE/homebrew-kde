@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdiff3 < Formula
   desc "Utility for comparing and merging files and directories"
   homepage "https://apps.kde.org/kdiff3/"
-  url "https://download.kde.org/stable/kdiff3/kdiff3-1.9.2.tar.xz"
-  sha256 "f1775f1ca501080363707b2923d493fc314ae4f0b00b172d4cad9b4d3cc2d805"
+  url "https://download.kde.org/stable/kdiff3/kdiff3-1.9.3.tar.xz"
+  sha256 "317bf5c7e27cba81bce7e1a7a579105443133b633cbb71bc1f169e86a235af9c"
   head "https://invent.kde.org/sdk/kdiff3.git"
 
   livecheck do
