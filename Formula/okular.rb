@@ -5,6 +5,7 @@ class Okular < Formula
   homepage "https://okular.kde.org"
   url "https://download.kde.org/stable/release-service/21.08.0/src/okular-21.08.0.tar.xz"
   sha256 "dded73111fa78a9b7f544d6089de2cc0c48b1696c723ba76ab2dab8fd9c16a69"
+  revision 1
   head "https://invent.kde.org/graphics/okular.git"
 
   livecheck do
@@ -12,18 +13,19 @@ class Okular < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  depends_on "chmlib" => :build
   depends_on "cmake" => [:build, :test]
+  depends_on "ebook-tools" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-khtml" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "chmlib"
+  depends_on "discount"
   depends_on "djvulibre"
-  depends_on "ebook-tools"
   depends_on "freetype"
   depends_on "kde-mac/kde/kf5-breeze-icons"
   depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kirigami2"
   depends_on "kde-mac/kde/kf5-kjs"
   depends_on "kde-mac/kde/kf5-kparts"
@@ -31,7 +33,7 @@ class Okular < Formula
   depends_on "kde-mac/kde/libkexiv2"
   depends_on "kde-mac/kde/phonon"
   depends_on "libspectre"
-  depends_on "poppler"
+  depends_on "poppler-qt5"
   depends_on "qca"
   depends_on "threadweaver"
   depends_on "zlib"

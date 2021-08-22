@@ -5,6 +5,7 @@ class Kf5Kfilemetadata < Formula
   homepage "https://api.kde.org/frameworks/kfilemetadata/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kfilemetadata-5.85.0.tar.xz"
   sha256 "3d4ee4bfe3856917671c5f8c3c0f43b70e7ddee952f0afb4a8105749e217251e"
+  revision 1
   head "https://invent.kde.org/frameworks/kfilemetadata.git"
 
   livecheck do
@@ -25,7 +26,7 @@ class Kf5Kfilemetadata < Formula
   depends_on "kde-mac/kde/kf5-kconfig"
   depends_on "kde-mac/kde/kf5-kcoreaddons"
   depends_on "ki18n"
-  depends_on "poppler"
+  depends_on "poppler-qt5"
   depends_on "taglib"
 
   def install
