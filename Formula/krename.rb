@@ -5,7 +5,7 @@ class Krename < Formula
   homepage "https://userbase.kde.org/KRename"
   url "https://download.kde.org/stable/krename/5.0.1/src/krename-5.0.1.tar.xz"
   sha256 "caac78afd3ba06613df47bbd1570bb900acf4185547354d6eb588e70656f6a7d"
-  revision 1
+  revision 2
   head "https://invent.kde.org/utilities/krename.git", branch: "master"
 
   livecheck do
@@ -24,8 +24,7 @@ class Krename < Formula
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kjs"
   depends_on "podofo"
-
-  conflicts_with "taglib", because: "linking errors"
+  depends_on "taglib"
 
   def install
     args = kde_cmake_args
