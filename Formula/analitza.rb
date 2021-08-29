@@ -5,7 +5,7 @@ class Analitza < Formula
   homepage "https://edu.kde.org/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/analitza-21.08.0.tar.xz"
   sha256 "94605d454f25335d55cf215663d6f57b7a9444cf679c46b997c1de59da5132db"
-  head "https://invent.kde.org/education/analitza.git"
+  head "https://invent.kde.org/education/analitza.git", branch: "master"
 
   livecheck do
     url :head

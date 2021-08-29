@@ -5,7 +5,7 @@ class Kf5Kxmlgui < Formula
   homepage "https://api.kde.org/frameworks/kxmlgui/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kxmlgui-5.85.0.tar.xz"
   sha256 "253ae3984f2cc68165c683f5ac1f0a0417923d13673354e7ac8f156542cd3cb2"
-  head "https://invent.kde.org/frameworks/kxmlgui.git"
+  head "https://invent.kde.org/frameworks/kxmlgui.git", branch: "master"
 
   livecheck do
     url :head

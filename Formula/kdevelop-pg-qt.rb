@@ -6,7 +6,7 @@ class KdevelopPgQt < Formula
   url "https://download.kde.org/stable/kdevelop-pg-qt/2.2.1/src/kdevelop-pg-qt-2.2.1.tar.xz"
   sha256 "c13931788ac9dc02188cdd9c6e71e164ae81b4568b048748652bbf6fa4a9c62b"
   revision 1
-  head "https://invent.kde.org/kdevelop/kdevelop-pg-qt.git"
+  head "https://invent.kde.org/kdevelop/kdevelop-pg-qt.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class KioExtras < Formula
   homepage "https://www.kde.org/applications/internet/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kio-extras-21.08.0.tar.xz"
   sha256 "bd93d748c2883ff4cd64543516bbc90a66744db7b036075861e142d1a655486d"
-  head "https://invent.kde.org/network/kio-extras.git"
+  head "https://invent.kde.org/network/kio-extras.git", branch: "master"
 
   livecheck do
     url :head

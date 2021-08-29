@@ -6,7 +6,7 @@ class Labplot < Formula
   url "https://download.kde.org/stable/labplot/2.8.1/labplot-2.8.1.tar.xz"
   sha256 "726909a8335921c742c4d92f66663ecdb447ddee0d74568c50a22330c79e079a"
   revision 1
-  head "https://invent.kde.org/education/labplot.git"
+  head "https://invent.kde.org/education/labplot.git", branch: "master"
 
   livecheck do
     url :head

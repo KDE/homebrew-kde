@@ -5,7 +5,7 @@ class Kf5Kglobalaccel < Formula
   homepage "https://api.kde.org/frameworks/kglobalaccel/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kglobalaccel-5.85.0.tar.xz"
   sha256 "e0dcfb844572c23b0504b9cca7b1d0a0f7f47e2f4469968754ca0045c8f0b438"
-  head "https://invent.kde.org/frameworks/kglobalaccel.git"
+  head "https://invent.kde.org/frameworks/kglobalaccel.git", branch: "master"
 
   livecheck do
     url :head

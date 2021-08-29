@@ -5,7 +5,7 @@ class Ktorrent < Formula
   homepage "https://kde.org/applications/internet/ktorrent/"
   url "https://download.kde.org/stable/ktorrent/5.2.0/ktorrent-5.2.0.tar.xz"
   sha256 "d1031d745c1ace02d11b59c426610aee779d208e3d1ae81f8559c265173732ff"
-  head "https://invent.kde.org/network/ktorrent.git"
+  head "https://invent.kde.org/network/ktorrent.git", branch: "master"
 
   livecheck do
     skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=430896"

@@ -5,7 +5,7 @@ class Kf5Kdeclarative < Formula
   homepage "https://api.kde.org/frameworks/kdeclarative/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kdeclarative-5.85.0.tar.xz"
   sha256 "4de6001bb6cda802e1e7aee2a7254fa254ffdd38cb423344b2308108badbabe1"
-  head "https://invent.kde.org/frameworks/kdeclarative.git"
+  head "https://invent.kde.org/frameworks/kdeclarative.git", branch: "master"
 
   livecheck do
     url :head

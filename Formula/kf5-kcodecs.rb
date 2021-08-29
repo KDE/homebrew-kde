@@ -5,7 +5,7 @@ class Kf5Kcodecs < Formula
   homepage "https://api.kde.org/frameworks/kcodecs/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kcodecs-5.85.0.tar.xz"
   sha256 "65060af4bd3775aca56066f779ee4eeb34e05bf372023be2974302794e88f7fd"
-  head "https://invent.kde.org/frameworks/kcodecs.git"
+  head "https://invent.kde.org/frameworks/kcodecs.git", branch: "master"
 
   livecheck do
     url :head

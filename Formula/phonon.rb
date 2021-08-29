@@ -6,7 +6,7 @@ class Phonon < Formula
   url "https://download.kde.org/stable/phonon/4.11.1/phonon-4.11.1.tar.xz"
   sha256 "b4431ea2600df8137a717741ad9ebc7f7ec1649fa3e138541d8f42597144de2d"
   revision 1
-  head "https://invent.kde.org/libraries/phonon.git"
+  head "https://invent.kde.org/libraries/phonon.git", branch: "master"
 
   livecheck do
     url :head

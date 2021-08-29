@@ -5,7 +5,7 @@ class Lokalize < Formula
   homepage "https://www.kde.org/applications/development/lokalize/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/lokalize-21.08.0.tar.xz"
   sha256 "03a1b47ad320bea47a6bbb9b80c13dd480400e7fcde07d4c8379f95295db9e57"
-  head "https://invent.kde.org/sdk/lokalize.git"
+  head "https://invent.kde.org/sdk/lokalize.git", branch: "master"
 
   livecheck do
     url :head

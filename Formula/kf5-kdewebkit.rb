@@ -5,7 +5,7 @@ class Kf5Kdewebkit < Formula
   homepage "https://api.kde.org/frameworks/kdewebkit/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kdewebkit-5.85.0.tar.xz"
   sha256 "83b0eb5bf4db086315857493e928d4333843bd303e38d754a3ba8ceb38298293"
-  head "https://invent.kde.org/frameworks/kdewebkit.git"
+  head "https://invent.kde.org/frameworks/kdewebkit.git", branch: "master"
 
   livecheck do
     url :head

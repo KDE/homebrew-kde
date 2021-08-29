@@ -5,7 +5,7 @@ class Kf5Kjs < Formula
   homepage "https://api.kde.org/frameworks/kjs/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kjs-5.85.0.tar.xz"
   sha256 "8b6bff4bae2206cc92b1b7d4f18641809086bcc7b2d83a2c3961987ed28ed446"
-  head "https://invent.kde.org/frameworks/kjs.git"
+  head "https://invent.kde.org/frameworks/kjs.git", branch: "master"
 
   livecheck do
     url :head

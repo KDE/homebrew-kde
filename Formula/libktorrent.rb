@@ -5,7 +5,7 @@ class Libktorrent < Formula
   homepage "https://www.kde.org/applications/internet/ktorrent/"
   url "https://download.kde.org/stable/ktorrent/5.2.0/libktorrent-2.2.0.tar.xz"
   sha256 "77c1ddfb0a56c40227e0624c078836a8c22bf5a2fb4a3c0cbd53ee6b174c126e"
-  head "https://invent.kde.org/network/libktorrent.git"
+  head "https://invent.kde.org/network/libktorrent.git", branch: "master"
 
   livecheck do
     skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=430896"

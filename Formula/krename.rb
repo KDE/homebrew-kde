@@ -6,7 +6,7 @@ class Krename < Formula
   url "https://download.kde.org/stable/krename/5.0.1/src/krename-5.0.1.tar.xz"
   sha256 "caac78afd3ba06613df47bbd1570bb900acf4185547354d6eb588e70656f6a7d"
   revision 1
-  head "https://invent.kde.org/utilities/krename.git"
+  head "https://invent.kde.org/utilities/krename.git", branch: "master"
 
   livecheck do
     url :head

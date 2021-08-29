@@ -5,7 +5,7 @@ class KdevPhp < Formula
   homepage "https://kde.org/applications/development/org.kde.kdev-php"
   url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdev-php-5.6.2.tar.xz"
   sha256 "f1083daec2b8c752de1a0441d0f9f72274b1e2d29c723005ed78dcf8ba717e0c"
-  head "https://invent.kde.org/kdevelop/kdev-php.git"
+  head "https://invent.kde.org/kdevelop/kdev-php.git", branch: "master"
 
   livecheck do
     url :head

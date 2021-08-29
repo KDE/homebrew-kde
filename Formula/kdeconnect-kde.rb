@@ -5,7 +5,7 @@ class KdeconnectKde < Formula
   homepage "https://community.kde.org/KDEConnect"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kdeconnect-kde-21.08.0.tar.xz"
   sha256 "9a0a31dd1af88735edbb06cfe7e11f4a42b7b31f12afa79c6e7479130060b1e2"
-  head "https://invent.kde.org/network/kdeconnect-kde.git"
+  head "https://invent.kde.org/network/kdeconnect-kde.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class Kf5PlasmaFramework < Formula
   homepage "https://api.kde.org/frameworks/plasma-framework/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/plasma-framework-5.85.0.tar.xz"
   sha256 "879b3a97ec1a43a7108a2469e5d23578f05b1afcd838b286576ca5a14fadf8ff"
-  head "https://invent.kde.org/frameworks/plasma-framework.git"
+  head "https://invent.kde.org/frameworks/plasma-framework.git", branch: "master"
 
   livecheck do
     url :head

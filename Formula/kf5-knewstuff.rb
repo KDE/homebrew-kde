@@ -5,7 +5,7 @@ class Kf5Knewstuff < Formula
   homepage "https://api.kde.org/frameworks/knewstuff/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/knewstuff-5.85.0.tar.xz"
   sha256 "f0c68fd75eb18d8c70ca27031b273774fe33c38c72fdf86254cfe3c09df620c9"
-  head "https://invent.kde.org/frameworks/knewstuff.git"
+  head "https://invent.kde.org/frameworks/knewstuff.git", branch: "master"
 
   livecheck do
     url :head

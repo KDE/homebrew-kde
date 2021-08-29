@@ -5,7 +5,7 @@ class Kf5Kxmlrpcclient < Formula
   homepage "https://api.kde.org/frameworks/kxmlrpcclient/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kxmlrpcclient-5.85.0.tar.xz"
   sha256 "a1196d626fba73c79a6c78470eb873a3ce0ab901696ed0751a21f8785cdbec84"
-  head "https://invent.kde.org/frameworks/kxmlrpcclient.git"
+  head "https://invent.kde.org/frameworks/kxmlrpcclient.git", branch: "master"
 
   livecheck do
     url :head

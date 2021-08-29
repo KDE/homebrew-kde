@@ -5,7 +5,7 @@ class Kf5Kitemmodels < Formula
   homepage "https://api.kde.org/frameworks/kitemmodels/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kitemmodels-5.85.0.tar.xz"
   sha256 "7a1cd1610dc3a8d81caa1fc96554a75dc56d233299f9e7cc0ea4a3930da7a530"
-  head "https://invent.kde.org/frameworks/kitemmodels.git"
+  head "https://invent.kde.org/frameworks/kitemmodels.git", branch: "master"
 
   livecheck do
     url :head

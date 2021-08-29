@@ -5,7 +5,7 @@ class Kf5Qqc2DesktopStyle < Formula
   homepage "https://api.kde.org/frameworks/qqc2-desktop-style/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/qqc2-desktop-style-5.85.0.tar.xz"
   sha256 "b70539f9f3b222e892ec1d25feab843ccad8004647cc24abedd361f5dbf06cc2"
-  head "https://invent.kde.org/frameworks/qqc2-desktop-style.git"
+  head "https://invent.kde.org/frameworks/qqc2-desktop-style.git", branch: "master"
 
   livecheck do
     url :head

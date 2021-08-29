@@ -3,7 +3,7 @@ require_relative "../lib/cmake"
 class Libalkimia < Formula
   desc "Library used by KDE Finance applications"
   homepage "https://kmymoney.org"
-  head "https://invent.kde.org/office/alkimia.git"
+  head "https://invent.kde.org/office/alkimia.git", branch: "master"
 
   stable do
     url "https://download.kde.org/stable/alkimia/8.1.0/alkimia-8.1.0.tar.xz"

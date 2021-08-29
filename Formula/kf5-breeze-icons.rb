@@ -5,7 +5,7 @@ class Kf5BreezeIcons < Formula
   homepage "https://api.kde.org/frameworks/breeze-icons/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/breeze-icons-5.85.0.tar.xz"
   sha256 "4407aed678f85ab600b63337553ee9cd5f967bbffd383c351add1c0746ab273d"
-  head "https://invent.kde.org/frameworks/breeze-icons.git"
+  head "https://invent.kde.org/frameworks/breeze-icons.git", branch: "master"
 
   livecheck do
     url :head

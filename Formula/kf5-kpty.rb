@@ -5,7 +5,7 @@ class Kf5Kpty < Formula
   homepage "https://api.kde.org/frameworks/kpty/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kpty-5.85.0.tar.xz"
   sha256 "28c7ecf29b2cba3045d5047ee92e494fe0c0198b1e6dc34f03dddeb03ffdbffe"
-  head "https://invent.kde.org/frameworks/kpty.git"
+  head "https://invent.kde.org/frameworks/kpty.git", branch: "master"
 
   livecheck do
     url :head

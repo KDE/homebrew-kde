@@ -5,7 +5,7 @@ class Kf5Kplotting < Formula
   homepage "https://api.kde.org/frameworks/kplotting/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kplotting-5.85.0.tar.xz"
   sha256 "aafdcac762a9ce52ba0ea2040a99a919439a043752d7f4b78aa0fce84460134a"
-  head "https://invent.kde.org/frameworks/kplotting.git"
+  head "https://invent.kde.org/frameworks/kplotting.git", branch: "master"
 
   livecheck do
     url :head

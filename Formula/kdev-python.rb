@@ -5,7 +5,7 @@ class KdevPython < Formula
   homepage "https://kde.org/applications/development/org.kde.kdev-python"
   url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdev-python-5.6.2.tar.xz"
   sha256 "20f9b771b961262ded986a4f32b8d259ad9f7bc48bb29eac0a5d5853be1d917f"
-  head "https://invent.kde.org/kdevelop/kdev-python.git"
+  head "https://invent.kde.org/kdevelop/kdev-python.git", branch: "master"
 
   livecheck do
     url :head

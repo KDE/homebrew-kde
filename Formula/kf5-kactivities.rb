@@ -5,7 +5,7 @@ class Kf5Kactivities < Formula
   homepage "https://api.kde.org/frameworks/kactivities/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kactivities-5.85.0.tar.xz"
   sha256 "f5891d94176178e0dcfebbeb97e80ed0b63a09a5312523156319cdd16fcc8030"
-  head "https://invent.kde.org/frameworks/kactivities.git"
+  head "https://invent.kde.org/frameworks/kactivities.git", branch: "master"
 
   livecheck do
     url :head

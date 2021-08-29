@@ -5,7 +5,7 @@ class Kf5Attica < Formula
   homepage "https://api.kde.org/frameworks/attica/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/attica-5.85.0.tar.xz"
   sha256 "345fb419e5ef64dc23e3cfda3a8d9877fa915cd0b5d8dee0517d4326be148be7"
-  head "https://invent.kde.org/frameworks/attica.git"
+  head "https://invent.kde.org/frameworks/attica.git", branch: "master"
 
   livecheck do
     url :head

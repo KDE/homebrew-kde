@@ -5,7 +5,7 @@ class Kf5Kmediaplayer < Formula
   homepage "https://api.kde.org/frameworks/kmediaplayer/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kmediaplayer-5.85.0.tar.xz"
   sha256 "6632e59272e86e31890f187d24fd8a41120f743fb17d04b73e23453d1a11b2ae"
-  head "https://invent.kde.org/frameworks/kmediaplayer.git"
+  head "https://invent.kde.org/frameworks/kmediaplayer.git", branch: "master"
 
   livecheck do
     url :head

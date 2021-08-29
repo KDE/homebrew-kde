@@ -5,7 +5,7 @@ class Kdiff3 < Formula
   homepage "https://apps.kde.org/kdiff3/"
   url "https://download.kde.org/stable/kdiff3/kdiff3-1.9.3.tar.xz"
   sha256 "317bf5c7e27cba81bce7e1a7a579105443133b633cbb71bc1f169e86a235af9c"
-  head "https://invent.kde.org/sdk/kdiff3.git"
+  head "https://invent.kde.org/sdk/kdiff3.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class Kf5Kemoticons < Formula
   homepage "https://api.kde.org/frameworks/kemoticons/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kemoticons-5.85.0.tar.xz"
   sha256 "5ce7c97b7d50560adc069c08eecf0925df2ceb53e15804ae241851ec0088307e"
-  head "https://invent.kde.org/frameworks/kemoticons.git"
+  head "https://invent.kde.org/frameworks/kemoticons.git", branch: "master"
 
   livecheck do
     url :head

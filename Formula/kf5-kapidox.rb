@@ -5,7 +5,7 @@ class Kf5Kapidox < Formula
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kapidox-5.85.0.tar.xz"
   sha256 "b5b5efd13dac5e9be921bfed763462d738f9d916c65aa0f716d268e19f09bdb2"
-  head "https://invent.kde.org/frameworks/kapidox.git"
+  head "https://invent.kde.org/frameworks/kapidox.git", branch: "master"
 
   livecheck do
     url :head

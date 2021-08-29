@@ -5,7 +5,7 @@ class Elisa < Formula
   homepage "https://community.kde.org/Elisa"
   url "https://download.kde.org/stable/release-service/21.08.0/src/elisa-21.08.0.tar.xz"
   sha256 "d57b46c0d1518b50f2875c5eca20006389f64e91560146fda7f0a87852e7f493"
-  head "https://invent.kde.org/multimedia/elisa.git"
+  head "https://invent.kde.org/multimedia/elisa.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class Kf5Kdnssd < Formula
   homepage "https://api.kde.org/frameworks/kdnssd/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kdnssd-5.85.0.tar.xz"
   sha256 "1575b34bdd1fae9b2406ecc162e239d97128b6d143e3c82b028b362db1d93844"
-  head "https://invent.kde.org/frameworks/kdnssd.git"
+  head "https://invent.kde.org/frameworks/kdnssd.git", branch: "master"
 
   livecheck do
     url :head

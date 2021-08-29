@@ -5,7 +5,7 @@ class Kf5Kinit < Formula
   homepage "https://api.kde.org/frameworks/kinit/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kinit-5.85.0.tar.xz"
   sha256 "92dfdfc00ba87edb41d228906ea0d5e7ab5381c639845082e1019342cf8ca60e"
-  head "https://invent.kde.org/frameworks/kinit.git"
+  head "https://invent.kde.org/frameworks/kinit.git", branch: "master"
 
   livecheck do
     url :head

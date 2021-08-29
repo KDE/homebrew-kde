@@ -5,7 +5,7 @@ class Kf5Kidletime < Formula
   homepage "https://api.kde.org/frameworks/kidletime/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kidletime-5.85.0.tar.xz"
   sha256 "5ff404685d9854781d3f67c8875d4fdaf15cb2be9b12f450c45a7d7963cf94d9"
-  head "https://invent.kde.org/frameworks/kidletime.git"
+  head "https://invent.kde.org/frameworks/kidletime.git", branch: "master"
 
   livecheck do
     url :head

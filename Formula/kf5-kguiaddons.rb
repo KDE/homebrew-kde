@@ -5,7 +5,7 @@ class Kf5Kguiaddons < Formula
   homepage "https://api.kde.org/frameworks/kguiaddons/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kguiaddons-5.85.0.tar.xz"
   sha256 "0cdad481d5564417fbcd2ee93a7c9e436bc63fb72eaad535d911b263261127b4"
-  head "https://invent.kde.org/frameworks/kguiaddons.git"
+  head "https://invent.kde.org/frameworks/kguiaddons.git", branch: "master"
 
   livecheck do
     url :head

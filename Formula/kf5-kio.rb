@@ -5,7 +5,7 @@ class Kf5Kio < Formula
   homepage "https://api.kde.org/frameworks/kio/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kio-5.85.0.tar.xz"
   sha256 "e4d58a7d2ae6530c4b676fe7f7e4583a86436c68861eb971bf91af9efead19f6"
-  head "https://invent.kde.org/frameworks/kio.git"
+  head "https://invent.kde.org/frameworks/kio.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class Kf5Frameworkintegration < Formula
   homepage "https://api.kde.org/frameworks/frameworkintegration/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/frameworkintegration-5.85.0.tar.xz"
   sha256 "f9d799b70f1c8ae661775c0a968e459bff8c5411567856075ac143573c0c77c8"
-  head "https://invent.kde.org/frameworks/frameworkintegration.git"
+  head "https://invent.kde.org/frameworks/frameworkintegration.git", branch: "master"
 
   livecheck do
     url :head

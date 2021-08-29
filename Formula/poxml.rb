@@ -5,7 +5,7 @@ class Poxml < Formula
   homepage "https://www.kde.org/applications/development/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/poxml-21.08.0.tar.xz"
   sha256 "a91a82053e4a4f739a7969b48e4d8729a4ca0622d459432f9b56c49900b66371"
-  head "https://invent.kde.org/sdk/poxml.git"
+  head "https://invent.kde.org/sdk/poxml.git", branch: "master"
 
   livecheck do
     url :head

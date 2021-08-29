@@ -5,7 +5,7 @@ class Kf5Kirigami2 < Formula
   homepage "https://api.kde.org/frameworks/kirigami/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kirigami2-5.85.0.tar.xz"
   sha256 "33d22381cf6058c3dc54109e31f710f07452ef9baf669d4264659c5c7fd7ad2b"
-  head "https://invent.kde.org/frameworks/kirigami.git"
+  head "https://invent.kde.org/frameworks/kirigami.git", branch: "master"
 
   livecheck do
     url :head

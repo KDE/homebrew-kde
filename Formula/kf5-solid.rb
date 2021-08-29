@@ -5,7 +5,7 @@ class Kf5Solid < Formula
   homepage "https://api.kde.org/frameworks/solid/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/solid-5.85.0.tar.xz"
   sha256 "a7e416de2c3d699fbaea1b8395be1a0ee50f0262303d47dc6b491ef0f36b8d3d"
-  head "https://invent.kde.org/frameworks/solid.git"
+  head "https://invent.kde.org/frameworks/solid.git", branch: "master"
 
   livecheck do
     url :head

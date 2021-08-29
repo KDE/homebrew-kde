@@ -5,7 +5,7 @@ class Kf5Kcoreaddons < Formula
   homepage "https://api.kde.org/frameworks/kcoreaddons/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kcoreaddons-5.85.0.tar.xz"
   sha256 "90af5743a9e199e213e812313adf08c9034d1d79936565f22075ccb3f7445414"
-  head "https://invent.kde.org/frameworks/kcoreaddons.git"
+  head "https://invent.kde.org/frameworks/kcoreaddons.git", branch: "master"
 
   livecheck do
     url :head

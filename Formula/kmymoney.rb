@@ -3,7 +3,7 @@ require_relative "../lib/cmake"
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
-  head "https://invent.kde.org/office/kmymoney.git"
+  head "https://invent.kde.org/office/kmymoney.git", branch: "master"
 
   stable do
     url "https://download.kde.org/stable/kmymoney/5.1.2/src/kmymoney-5.1.2.tar.xz"

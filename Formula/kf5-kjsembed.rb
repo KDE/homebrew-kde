@@ -5,7 +5,7 @@ class Kf5Kjsembed < Formula
   homepage "https://api.kde.org/frameworks/kjsembed/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kjsembed-5.85.0.tar.xz"
   sha256 "413236f69e6c04fb3df05fb60847ee8fe51d8fd08d46abea79605e789ecb17c9"
-  head "https://invent.kde.org/frameworks/kjsembed.git"
+  head "https://invent.kde.org/frameworks/kjsembed.git", branch: "master"
 
   livecheck do
     url :head

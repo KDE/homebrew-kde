@@ -5,7 +5,7 @@ class Kf5Krunner < Formula
   homepage "https://api.kde.org/frameworks/krunner/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/krunner-5.85.0.tar.xz"
   sha256 "8dc01236134640daab49dcee77227a11d4582feb58e3c6856ca3e12caf31e4df"
-  head "https://invent.kde.org/frameworks/krunner.git"
+  head "https://invent.kde.org/frameworks/krunner.git", branch: "master"
 
   livecheck do
     url :head

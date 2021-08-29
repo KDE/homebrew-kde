@@ -5,7 +5,7 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kate-21.08.0.tar.xz"
   sha256 "49272edb8b649c4ac558bd5e10b891a7c9807075007654397d74cc2b6cd567e8"
-  head "https://invent.kde.org/utilities/kate.git"
+  head "https://invent.kde.org/utilities/kate.git", branch: "master"
 
   livecheck do
     url :head

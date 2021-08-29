@@ -6,7 +6,7 @@ class Krusader < Formula
   url "https://download.kde.org/stable/krusader/2.7.2/krusader-2.7.2.tar.xz"
   sha256 "41a39a43b3c42dd1d1ecaea86df30caff6a061fecc1d66f60859b2a3ca976109"
   revision 3
-  head "https://invent.kde.org/utilities/krusader.git"
+  head "https://invent.kde.org/utilities/krusader.git", branch: "master"
 
   livecheck do
     url :head

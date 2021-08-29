@@ -5,7 +5,7 @@ class Umbrello < Formula
   homepage "https://umbrello.kde.org/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/umbrello-21.08.0.tar.xz"
   sha256 "8005661ae474d2fb205ee4eec5b496a363b8530ad5b005052d3694f58b189e5a"
-  head "https://invent.kde.org/sdk/umbrello.git"
+  head "https://invent.kde.org/sdk/umbrello.git", branch: "master"
 
   livecheck do
     url :head

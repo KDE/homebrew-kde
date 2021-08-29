@@ -5,7 +5,7 @@ class Konsole < Formula
   homepage "https://konsole.kde.org/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/konsole-21.08.0.tar.xz"
   sha256 "5bdd16aadfe3e45a353dfac31c66cc769232f31dea8d4735a6de61f1384abebf"
-  head "https://invent.kde.org/utilities/konsole.git"
+  head "https://invent.kde.org/utilities/konsole.git", branch: "master"
 
   livecheck do
     url :head

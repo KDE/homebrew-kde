@@ -5,7 +5,7 @@ class Kf5Ktexteditor < Formula
   homepage "https://api.kde.org/frameworks/ktexteditor/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/ktexteditor-5.85.0.tar.xz"
   sha256 "d550711e98e1ebdfcb74840e55328ad4ab40e1a90038f6ae3f64d5c3d19fddc8"
-  head "https://invent.kde.org/frameworks/ktexteditor.git"
+  head "https://invent.kde.org/frameworks/ktexteditor.git", branch: "master"
 
   livecheck do
     url :head

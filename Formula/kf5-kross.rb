@@ -5,7 +5,7 @@ class Kf5Kross < Formula
   homepage "https://api.kde.org/frameworks/kross/html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/kross-5.85.0.tar.xz"
   sha256 "7912af27a1592dbda72963fb4c2f036f222f2796c2080297ffbfecad5082f61d"
-  head "https://invent.kde.org/frameworks/kross.git"
+  head "https://invent.kde.org/frameworks/kross.git", branch: "master"
 
   livecheck do
     url :head

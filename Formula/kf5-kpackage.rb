@@ -5,7 +5,7 @@ class Kf5Kpackage < Formula
   homepage "https://api.kde.org/frameworks/kpackage/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kpackage-5.85.0.tar.xz"
   sha256 "b2c6c90e5a9b3c46fe0fad06ab58f7356447e3c90213882c8006683b59c13c93"
-  head "https://invent.kde.org/frameworks/kpackage.git"
+  head "https://invent.kde.org/frameworks/kpackage.git", branch: "master"
 
   livecheck do
     url :head

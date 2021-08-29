@@ -5,7 +5,7 @@ class Kf5Kcompletion < Formula
   homepage "https://api.kde.org/frameworks/kcompletion/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kcompletion-5.85.0.tar.xz"
   sha256 "41baead36a7466b9184cf4bef2662e91b07f2bd1fe6a2753de0ad5b5550dc4ef"
-  head "https://invent.kde.org/frameworks/kcompletion.git"
+  head "https://invent.kde.org/frameworks/kcompletion.git", branch: "master"
 
   livecheck do
     url :head

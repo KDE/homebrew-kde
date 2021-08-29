@@ -5,7 +5,7 @@ class Kmime < Formula
   homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kmime-21.08.0.tar.xz"
   sha256 "b05789fc3ab2ec2cdce93813315dbc41dd49aed99ada3142cfa43e4357a1e9a5"
-  head "https://invent.kde.org/pim/kmime.git"
+  head "https://invent.kde.org/pim/kmime.git", branch: "master"
 
   livecheck do
     url :head

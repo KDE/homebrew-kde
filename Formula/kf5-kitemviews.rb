@@ -5,7 +5,7 @@ class Kf5Kitemviews < Formula
   homepage "https://api.kde.org/frameworks/kitemviews/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kitemviews-5.85.0.tar.xz"
   sha256 "802e0d665f4abe3933dc564d0a3b89c06868a1454e4b695f9ebeabbbef8e28bb"
-  head "https://invent.kde.org/frameworks/kitemviews.git"
+  head "https://invent.kde.org/frameworks/kitemviews.git", branch: "master"
 
   livecheck do
     url :head

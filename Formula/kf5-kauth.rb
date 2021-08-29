@@ -5,7 +5,7 @@ class Kf5Kauth < Formula
   homepage "https://api.kde.org/frameworks/kauth/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kauth-5.85.0.tar.xz"
   sha256 "1a3a93c475aa3191a7a2e1746a4d54a5b08d24e8f99a36816d6db67e2b8961c5"
-  head "https://invent.kde.org/frameworks/kauth.git"
+  head "https://invent.kde.org/frameworks/kauth.git", branch: "master"
 
   livecheck do
     url :head

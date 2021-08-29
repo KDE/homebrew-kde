@@ -5,7 +5,7 @@ class Kf5Kjobwidgets < Formula
   homepage "https://api.kde.org/frameworks/kjobwidgets/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kjobwidgets-5.85.0.tar.xz"
   sha256 "34232f1dc1d44bdd7ec55a303f8ad8bc2b71e02b517b307dd17de5b897b8f715"
-  head "https://invent.kde.org/frameworks/kjobwidgets.git"
+  head "https://invent.kde.org/frameworks/kjobwidgets.git", branch: "master"
 
   livecheck do
     url :head

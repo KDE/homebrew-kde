@@ -5,7 +5,7 @@ class Kf5SyntaxHighlighting < Formula
   homepage "https://api.kde.org/frameworks/syntax-highlighting/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/syntax-highlighting-5.85.0.tar.xz"
   sha256 "8a8cf63a59f7fea4c760256ef0e62444ec82521cc9120cd79142d8b4b5b0c9e2"
-  head "https://invent.kde.org/frameworks/syntax-highlighting.git"
+  head "https://invent.kde.org/frameworks/syntax-highlighting.git", branch: "master"
 
   livecheck do
     url :head

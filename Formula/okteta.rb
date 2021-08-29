@@ -5,7 +5,7 @@ class Okteta < Formula
   homepage "https://apps.kde.org/okteta"
   url "https://download.kde.org/stable/okteta/0.26.6/src/okteta-0.26.6.tar.xz"
   sha256 "c569cd5b55503e46df1a5b5c9162b08888c426aa52c6f3f2f926c658bee0144c"
-  head "https://invent.kde.org/utilities/okteta.git"
+  head "https://invent.kde.org/utilities/okteta.git", branch: "master"
 
   livecheck do
     url "https://download.kde.org/stable/okteta/"

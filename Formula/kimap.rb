@@ -5,7 +5,7 @@ class Kimap < Formula
   homepage "https://community.kde.org/KDE_PIM"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kimap-21.08.0.tar.xz"
   sha256 "89c08e52c0c59af61f839423242baf6c812148d54af0877252a634e07bebd163"
-  head "https://invent.kde.org/pim/kimap.git"
+  head "https://invent.kde.org/pim/kimap.git", branch: "master"
 
   livecheck do
     url :head

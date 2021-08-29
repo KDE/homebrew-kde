@@ -5,7 +5,7 @@ class Kf5Kwidgetsaddons < Formula
   homepage "https://api.kde.org/frameworks/kwidgetsaddons/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kwidgetsaddons-5.85.0.tar.xz"
   sha256 "61646fff0c2349bacbf3042f3aaaab460b8939b35157a72973885099d8160490"
-  head "https://invent.kde.org/frameworks/kwidgetsaddons.git"
+  head "https://invent.kde.org/frameworks/kwidgetsaddons.git", branch: "master"
 
   livecheck do
     url :head

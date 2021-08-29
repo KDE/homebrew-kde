@@ -5,7 +5,7 @@ class Kf5Kcrash < Formula
   homepage "https://api.kde.org/frameworks/kcrash/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kcrash-5.85.0.tar.xz"
   sha256 "ee9404564e13d6a4463891d592d8e78bee2fa9caf8074708fc18b44ae8b41392"
-  head "https://invent.kde.org/frameworks/kcrash.git"
+  head "https://invent.kde.org/frameworks/kcrash.git", branch: "master"
 
   livecheck do
     url :head

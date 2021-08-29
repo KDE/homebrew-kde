@@ -5,7 +5,7 @@ class Libkomparediff2 < Formula
   homepage "https://invent.kde.org/sdk/libkomparediff2"
   url "https://download.kde.org/stable/release-service/21.08.0/src/libkomparediff2-21.08.0.tar.xz"
   sha256 "cbe35f706d1e2c2e73cfb6278f0c1f3c537d752c0452af85fd7cdd683784be2c"
-  head "https://invent.kde.org/sdk/libkomparediff2.git"
+  head "https://invent.kde.org/sdk/libkomparediff2.git", branch: "master"
 
   livecheck do
     url :head

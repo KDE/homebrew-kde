@@ -6,7 +6,7 @@ class Atcore < Formula
   url "https://download.kde.org/stable/atcore/1.0.0/atcore-1.0.0.tar.xz"
   sha256 "ffd12455c9b8db853e455a437d6c6b601e0003c6732bbc6c2828032e004530e2"
   revision 4
-  head "https://invent.kde.org/libraries/atcore.git"
+  head "https://invent.kde.org/libraries/atcore.git", branch: "master"
 
   livecheck do
     url :head

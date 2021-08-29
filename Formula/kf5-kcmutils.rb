@@ -5,7 +5,7 @@ class Kf5Kcmutils < Formula
   homepage "https://api.kde.org/frameworks/kcmutils/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kcmutils-5.85.0.tar.xz"
   sha256 "20e8a32f1f22bc0afc682b694c2d6d8333c9de796845904685269fb3719ece93"
-  head "https://invent.kde.org/frameworks/kcmutils.git"
+  head "https://invent.kde.org/frameworks/kcmutils.git", branch: "master"
 
   livecheck do
     url :head

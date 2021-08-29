@@ -5,7 +5,7 @@ class Kdenlive < Formula
   homepage "https://www.kdenlive.org/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kdenlive-21.08.0.tar.xz"
   sha256 "e441df27deab64cb342f4b1b874313f149950d4baada12f074ad833aa996ce22"
-  head "https://invent.kde.org/multimedia/kdenlive.git"
+  head "https://invent.kde.org/multimedia/kdenlive.git", branch: "master"
 
   livecheck do
     url :head

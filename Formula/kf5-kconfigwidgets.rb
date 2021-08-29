@@ -5,7 +5,7 @@ class Kf5Kconfigwidgets < Formula
   homepage "https://api.kde.org/frameworks/kconfigwidgets/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kconfigwidgets-5.85.0.tar.xz"
   sha256 "79efd392d025c3cedbd24a7b0d336e50f5026a514312e862d61c8dc65a70a843"
-  head "https://invent.kde.org/frameworks/kconfigwidgets.git"
+  head "https://invent.kde.org/frameworks/kconfigwidgets.git", branch: "master"
 
   livecheck do
     url :head

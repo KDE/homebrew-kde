@@ -6,7 +6,7 @@ class Okular < Formula
   url "https://download.kde.org/stable/release-service/21.08.0/src/okular-21.08.0.tar.xz"
   sha256 "dded73111fa78a9b7f544d6089de2cc0c48b1696c723ba76ab2dab8fd9c16a69"
   revision 1
-  head "https://invent.kde.org/graphics/okular.git"
+  head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
   livecheck do
     url :head

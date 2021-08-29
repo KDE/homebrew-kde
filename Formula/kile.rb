@@ -6,7 +6,7 @@ class Kile < Formula
   url "https://downloads.sourceforge.net/project/kile/unstable/kile-3.0b3/kile-2.9.93.tar.bz2"
   sha256 "04499212ffcb24fb3a6829149a7cae4c6ad5d795985f080800d6df72f88c5df0"
   revision 2
-  head "https://invent.kde.org/office/kile.git"
+  head "https://invent.kde.org/office/kile.git", branch: "master"
 
   livecheck do
     url :head

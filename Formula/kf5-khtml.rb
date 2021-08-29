@@ -5,7 +5,7 @@ class Kf5Khtml < Formula
   homepage "https://api.kde.org/frameworks/khtml/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/portingAids/khtml-5.85.0.tar.xz"
   sha256 "0fbd699cc002ae3db3e65e4dd07802d52127a0d5cd65fa77c5fdeb1bcad44955"
-  head "https://invent.kde.org/frameworks/khtml.git"
+  head "https://invent.kde.org/frameworks/khtml.git", branch: "master"
 
   livecheck do
     url :head

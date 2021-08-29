@@ -5,7 +5,7 @@ class Kf5Kiconthemes < Formula
   homepage "https://api.kde.org/frameworks/kiconthemes/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kiconthemes-5.85.0.tar.xz"
   sha256 "97b592033ce8f46826824525c7c37915d3fb8b6bed32eb329aa18015ca88d64c"
-  head "https://invent.kde.org/frameworks/kiconthemes.git"
+  head "https://invent.kde.org/frameworks/kiconthemes.git", branch: "master"
 
   livecheck do
     url :head

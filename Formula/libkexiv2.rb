@@ -5,7 +5,7 @@ class Libkexiv2 < Formula
   homepage "https://api.kde.org/libkexiv2/html/index.html"
   url "https://download.kde.org/stable/release-service/21.08.0/src/libkexiv2-21.08.0.tar.xz"
   sha256 "94e23d23190cb5c8046dbb6c87853312d2ed1cd59e5865c6549c396189c46555"
-  head "https://invent.kde.org/graphics/libkexiv2.git"
+  head "https://invent.kde.org/graphics/libkexiv2.git", branch: "master"
 
   livecheck do
     url :head

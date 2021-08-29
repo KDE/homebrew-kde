@@ -5,7 +5,7 @@ class Konversation < Formula
   homepage "https://konversation.kde.org/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/konversation-21.08.0.tar.xz"
   sha256 "e8651d0309d4d5bc2f2341837ce2f056f33dca7d2788c2be592790cf126c5998"
-  head "https://invent.kde.org/network/konversation.git"
+  head "https://invent.kde.org/network/konversation.git", branch: "master"
 
   livecheck do
     url :head

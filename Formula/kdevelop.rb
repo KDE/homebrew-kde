@@ -5,7 +5,7 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdevelop-5.6.2.tar.xz"
   sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
-  head "https://invent.kde.org/kdevelop/kdevelop.git"
+  head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,7 +5,7 @@ class Kf5Kbookmarks < Formula
   homepage "https://api.kde.org/frameworks/kbookmarks/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kbookmarks-5.85.0.tar.xz"
   sha256 "36130d9347beee614574ee7f6030279d1c425bbcdca759826a174026eb532a4b"
-  head "https://invent.kde.org/frameworks/kbookmarks.git"
+  head "https://invent.kde.org/frameworks/kbookmarks.git", branch: "master"
 
   livecheck do
     url :head

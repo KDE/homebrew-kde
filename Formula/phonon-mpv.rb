@@ -6,7 +6,7 @@ class PhononMpv < Formula
   url "https://github.com/OpenProgger/phonon-mpv/archive/v0.0.7.tar.gz"
   sha256 "c674e982d81dcdb2cfca3244e55a4c1e5b35cfc4bed3c7bd65921358d8a0ebc6"
   revision 1
-  head "https://github.com/OpenProgger/phonon-mpv.git"
+  head "https://github.com/OpenProgger/phonon-mpv.git", branch: "master"
 
   livecheck do
     url :head

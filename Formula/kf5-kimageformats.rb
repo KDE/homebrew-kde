@@ -5,7 +5,7 @@ class Kf5Kimageformats < Formula
   homepage "https://api.kde.org/frameworks/kimageformats/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kimageformats-5.85.0.tar.xz"
   sha256 "50a61ac010acbde64f470cb3877403ca5aa11f70b9e54ede0a3bc09b02d40799"
-  head "https://invent.kde.org/frameworks/kimageformats.git"
+  head "https://invent.kde.org/frameworks/kimageformats.git", branch: "master"
 
   livecheck do
     url :head

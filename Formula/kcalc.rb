@@ -5,7 +5,7 @@ class Kcalc < Formula
   homepage "https://utils.kde.org/projects/kcalc/"
   url "https://download.kde.org/stable/release-service/21.08.0/src/kcalc-21.08.0.tar.xz"
   sha256 "03da123c15267c135784476c194f4c559888b76ab5311671f92a90a741b8c391"
-  head "https://invent.kde.org/utilities/kcalc.git"
+  head "https://invent.kde.org/utilities/kcalc.git", branch: "master"
 
   livecheck do
     url :head

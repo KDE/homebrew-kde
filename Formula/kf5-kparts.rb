@@ -5,7 +5,7 @@ class Kf5Kparts < Formula
   homepage "https://api.kde.org/frameworks/kparts/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kparts-5.85.0.tar.xz"
   sha256 "81751e7eaeed9658c2b7b59b7a612d866917bb09aaea3dd39ae21ed83a09fd1e"
-  head "https://invent.kde.org/frameworks/kparts.git"
+  head "https://invent.kde.org/frameworks/kparts.git", branch: "master"
 
   livecheck do
     url :head

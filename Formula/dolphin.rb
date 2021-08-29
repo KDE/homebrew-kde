@@ -5,7 +5,7 @@ class Dolphin < Formula
   homepage "https://apps.kde.org/dolphin"
   url "https://download.kde.org/stable/release-service/21.08.0/src/dolphin-21.08.0.tar.xz"
   sha256 "5666dce41371192a897a696d82acb0c8628cb8147372c33fc2b4065c572867a1"
-  head "https://invent.kde.org/system/dolphin.git"
+  head "https://invent.kde.org/system/dolphin.git", branch: "master"
 
   livecheck do
     url :head

@@ -5,8 +5,8 @@ class Tellico < Formula
   homepage "https://tellico-project.org"
   url "https://tellico-project.org/files/tellico-3.4.1.tar.xz"
   sha256 "f8514deac3b49af95a81ef096b3caba8d664e289de8f3d5724f88e2b78278561"
-  revision 1
-  head "https://invent.kde.org/office/tellico.git"
+  revision 2
+  head "https://invent.kde.org/office/tellico.git", branch: "master"
 
   livecheck do
     url :head
@@ -49,6 +49,6 @@ class Tellico < Formula
   end
 
   test do
-    assert_match "help", shell_output("#{bin}tellico.app/Contents/MacOS/tellico --help")
+    assert_match "help", shell_output("#{bin}/tellico.app/Contents/MacOS/tellico --help")
   end
 end

@@ -5,7 +5,7 @@ class Kf5Kdesu < Formula
   homepage "https://api.kde.org/frameworks/kdesu/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kdesu-5.85.0.tar.xz"
   sha256 "08b4b25b956db0a9e0c5b712d19220aaa8433d29702e85d5c8f451979a9f1ff7"
-  head "https://invent.kde.org/frameworks/kdesu.git"
+  head "https://invent.kde.org/frameworks/kdesu.git", branch: "master"
 
   livecheck do
     url :head

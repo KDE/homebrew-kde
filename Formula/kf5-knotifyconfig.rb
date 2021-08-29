@@ -5,7 +5,7 @@ class Kf5Knotifyconfig < Formula
   homepage "https://api.kde.org/frameworks/knotifyconfig/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/knotifyconfig-5.85.0.tar.xz"
   sha256 "dbd51384750c62881d0435db13a278dfb4699b31aa0c83a6cbbf7e924facf0aa"
-  head "https://invent.kde.org/frameworks/knotifyconfig.git"
+  head "https://invent.kde.org/frameworks/knotifyconfig.git", branch: "master"
 
   livecheck do
     url :head

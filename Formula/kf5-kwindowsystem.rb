@@ -5,7 +5,7 @@ class Kf5Kwindowsystem < Formula
   homepage "https://api.kde.org/frameworks/kwindowsystem/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.85/kwindowsystem-5.85.0.tar.xz"
   sha256 "6db43758f1508d30d840623b6c505aa3c8d326dd8fa60c9e9cdcd1feb469661e"
-  head "https://invent.kde.org/frameworks/kwindowsystem.git"
+  head "https://invent.kde.org/frameworks/kwindowsystem.git", branch: "master"
 
   livecheck do
     url :head
