@@ -16,5 +16,6 @@ def kde_cmake_args
     -D KDE_INSTALL_PLUGINDIR=lib/qt5/plugins
     -D KDE_INSTALL_QMLDIR=lib/qt5/qml
     -D KDE_INSTALL_QTPLUGINDIR=lib/qt5/plugins
+    -D APPLE_SUPPRESS_X11_WARNING=ON
   ]
 end
