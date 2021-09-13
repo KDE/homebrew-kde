@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kded < Formula
   desc "Extensible deamon for providing system level services"
   homepage "https://api.kde.org/frameworks/kded/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.85/kded-5.85.0.tar.xz"
-  sha256 "3c361952918e4f887a7db0ab202525488871ad8e4ea33715040ce89cd94f59f9"
+  url "https://download.kde.org/stable/frameworks/5.86/kded-5.86.0.tar.xz"
+  sha256 "dc77534c1612b1232bcc52431bbdc8a4a46b095c90ba60c09a01e6404118a36a"
   head "https://invent.kde.org/frameworks/kded.git", branch: "master"
 
   livecheck do

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kauth < Formula
   desc "Execute actions as privileged user"
   homepage "https://api.kde.org/frameworks/kauth/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.85/kauth-5.85.0.tar.xz"
-  sha256 "1a3a93c475aa3191a7a2e1746a4d54a5b08d24e8f99a36816d6db67e2b8961c5"
+  url "https://download.kde.org/stable/frameworks/5.86/kauth-5.86.0.tar.xz"
+  sha256 "a63d6f8bcfa6b2ee80a215d65d6c51a251b64450ce14567e5a045919be0e2e9c"
   head "https://invent.kde.org/frameworks/kauth.git", branch: "master"
 
   livecheck do
