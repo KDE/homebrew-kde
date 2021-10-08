@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/release-service/21.08.1/src/okular-21.08.1.tar.xz"
-  sha256 "370ca3b90b8c4b44cee88f07e56cb1649c281c0ef110dce72e0ba00888ad61ee"
+  url "https://download.kde.org/stable/release-service/21.08.2/src/okular-21.08.2.tar.xz"
+  sha256 "38ad86037dbc844ca07348d9bd353cfa77814cbae26f8273ad4fc3e500197678"
   head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
   livecheck do
