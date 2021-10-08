@@ -7,11 +7,6 @@ class Kf5Kpeople < Formula
   sha256 "d0e11c56966c34a55c86de5e90d738c28c23a133844dca6dc2624d5a63d079f9"
   head "https://invent.kde.org/frameworks/kpeople.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

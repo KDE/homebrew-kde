@@ -7,11 +7,6 @@ class Kf5Kirigami2 < Formula
   sha256 "ceec43a85c5d80b0fea3859bb0c152ead1209d0a62232832ce06be223b8c7de6"
   head "https://invent.kde.org/frameworks/kirigami.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

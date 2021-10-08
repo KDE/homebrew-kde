@@ -7,11 +7,6 @@ class Okular < Formula
   sha256 "38ad86037dbc844ca07348d9bd353cfa77814cbae26f8273ad4fc3e500197678"
   head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "chmlib" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "ebook-tools" => :build

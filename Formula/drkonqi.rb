@@ -7,11 +7,6 @@ class Drkonqi < Formula
   sha256 "be1e373e82902425f61932d1ddfe8fd3d86882e927833f45e760eacfcbb843b8"
   head "https://invent.kde.org/plasma/drkonqi.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

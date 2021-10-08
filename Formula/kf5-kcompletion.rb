@@ -7,11 +7,6 @@ class Kf5Kcompletion < Formula
   sha256 "dec689554239e05186fe1114467732b939849a649f9526112954a8f599ba86a6"
   head "https://invent.kde.org/frameworks/kcompletion.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

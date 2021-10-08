@@ -7,11 +7,6 @@ class Kf5Kidletime < Formula
   sha256 "5b5f3436f7639d86f7b8cafc50771d3933c3fe972bb15ab0f8ec0f97200bb383"
   head "https://invent.kde.org/frameworks/kidletime.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

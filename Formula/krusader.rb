@@ -8,11 +8,6 @@ class Krusader < Formula
   revision 3
   head "https://invent.kde.org/utilities/krusader.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-plasma-framework" => :build

@@ -7,11 +7,6 @@ class Kf5Kparts < Formula
   sha256 "40bd41a970c9a85d38a31e243f4db49b867e75b509d2c6591a4c7d1eb2720120"
   head "https://invent.kde.org/frameworks/kparts.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

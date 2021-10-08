@@ -7,11 +7,6 @@ class Libkomparediff2 < Formula
   sha256 "1d84be7b279c170783a6a49525e9b9d67be3d20e376d41b057ba4440e3b8c923"
   head "https://invent.kde.org/sdk/libkomparediff2.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

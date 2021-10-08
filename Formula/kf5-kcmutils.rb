@@ -7,11 +7,6 @@ class Kf5Kcmutils < Formula
   sha256 "a88797e60401a3524752df1bf5205a4bafac5d826e26df2c4d691fcd33e4ca4c"
   head "https://invent.kde.org/frameworks/kcmutils.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

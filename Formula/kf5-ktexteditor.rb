@@ -7,11 +7,6 @@ class Kf5Ktexteditor < Formula
   sha256 "6283fee0dbf2e342b227026a98acfb5eecfe54dc26791e22a77271b07542eeb8"
   head "https://invent.kde.org/frameworks/ktexteditor.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

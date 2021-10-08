@@ -7,11 +7,6 @@ class Kf5Kcoreaddons < Formula
   sha256 "c63f3ebea0cf6c53334ad5a28ed2d278700a6d0e01a841ee8df5fa8c27729cd9"
   head "https://invent.kde.org/frameworks/kcoreaddons.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

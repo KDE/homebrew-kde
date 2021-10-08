@@ -9,8 +9,6 @@ class Libktorrent < Formula
 
   livecheck do
     skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=430896"
-    # url :head
-    # regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on "boost" => :build

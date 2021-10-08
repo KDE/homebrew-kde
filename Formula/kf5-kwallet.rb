@@ -7,11 +7,6 @@ class Kf5Kwallet < Formula
   sha256 "8bf2454166bbc007893355ad0351fc40b0daa94b0402a14b9ffdb9859297ad1c"
   head "https://invent.kde.org/frameworks/kwallet.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

@@ -7,11 +7,6 @@ class Kdenlive < Formula
   sha256 "f59c3749f1432cf04151a657a7e345ac45f76e75dbc7a3d411b31dd93430a183"
   head "https://invent.kde.org/multimedia/kdenlive.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build
@@ -37,7 +32,7 @@ class Kdenlive < Formula
   def install
     args = kde_cmake_args
 
-    args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
+    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
     args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args

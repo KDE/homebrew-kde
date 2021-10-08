@@ -7,11 +7,6 @@ class Lokalize < Formula
   sha256 "5556260920d9d8afd1a80bc35ffa385cf30e4ea5cd49d71fdd25819db543c405"
   head "https://invent.kde.org/sdk/lokalize.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
 

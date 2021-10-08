@@ -7,11 +7,6 @@ class Kf5Kauth < Formula
   sha256 "a63d6f8bcfa6b2ee80a215d65d6c51a251b64450ce14567e5a045919be0e2e9c"
   head "https://invent.kde.org/frameworks/kauth.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

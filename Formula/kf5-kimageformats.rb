@@ -7,11 +7,6 @@ class Kf5Kimageformats < Formula
   sha256 "a5b92d6ea22911a68c3fc52913fc0840e4bd5943779c504ad4bcd620a0b9a985"
   head "https://invent.kde.org/frameworks/kimageformats.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

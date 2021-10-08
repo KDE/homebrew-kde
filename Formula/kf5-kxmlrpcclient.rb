@@ -7,11 +7,6 @@ class Kf5Kxmlrpcclient < Formula
   sha256 "d852eab538b2a2dc1921b9ebcd7b89a5f246a67a7d5e083440c550c7992f5b8d"
   head "https://invent.kde.org/frameworks/kxmlrpcclient.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

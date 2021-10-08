@@ -7,11 +7,6 @@ class Kf5Kdesu < Formula
   sha256 "88f6f6eae168dde81d52255c1fb80178ae101c6840892bea644137fac18bb521"
   head "https://invent.kde.org/frameworks/kdesu.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

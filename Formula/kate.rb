@@ -7,11 +7,6 @@ class Kate < Formula
   sha256 "d68898759dd2538051124681e5928ef5fb163ca61b6cd8f59ee056cc068ea6b2"
   head "https://invent.kde.org/utilities/kate.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-plasma-framework" => :build

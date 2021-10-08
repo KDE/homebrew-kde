@@ -7,11 +7,6 @@ class Kf5Kguiaddons < Formula
   sha256 "3f9834bb3d9c83ca78b45bfa70bb02aa6b4c76ba472dd886b03febc75ba43e7f"
   head "https://invent.kde.org/frameworks/kguiaddons.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

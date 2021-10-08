@@ -7,11 +7,6 @@ class Kf5Kwindowsystem < Formula
   sha256 "86b88730c9a6f971ad0c8115879e9777ae503bef13323ffb53e42b2442936595"
   head "https://invent.kde.org/frameworks/kwindowsystem.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

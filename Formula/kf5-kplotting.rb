@@ -7,11 +7,6 @@ class Kf5Kplotting < Formula
   sha256 "fce4e24d85274565f409451d4ccc25b0d8755e7c63b0eed9b0f5ff6b3351209b"
   head "https://invent.kde.org/frameworks/kplotting.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

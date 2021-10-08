@@ -7,11 +7,6 @@ class KdeconnectKde < Formula
   sha256 "dbfd0eeef729be25b72f238a750d991db5e1fdeab386a0dea55172f00a1dbb25"
   head "https://invent.kde.org/network/kdeconnect-kde.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdeclarative" => :build

@@ -7,11 +7,6 @@ class Kf5Kconfig < Formula
   sha256 "c177b3d6fb2761133042a1adcbc0eebe52719730333e2089424a5edd21e60417"
   head "https://invent.kde.org/frameworks/kconfig.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

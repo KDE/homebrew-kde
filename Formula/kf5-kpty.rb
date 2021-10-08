@@ -7,11 +7,6 @@ class Kf5Kpty < Formula
   sha256 "754accb56308b4c07a38294d3e873d90ec9471448a572a05ed2a8d298615ece5"
   head "https://invent.kde.org/frameworks/kpty.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,11 +7,6 @@ class Analitza < Formula
   sha256 "2c5583abea724ff57182eca342886d4e8efd98bfb64aff3185fd4a3d28ab8af8"
   head "https://invent.kde.org/education/analitza.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "eigen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -21,7 +16,7 @@ class Analitza < Formula
   def install
     args = kde_cmake_args
 
-    args << "-DCMAKE_PREFIX_PATH=" + Formula["qt@5"].opt_prefix + "/lib/cmake"
+    args << ("-DCMAKE_PREFIX_PATH=" + Formula["qt@5"].opt_prefix + "/lib/cmake")
 
     system "cmake", *args
     system "cmake", "--build", "build"

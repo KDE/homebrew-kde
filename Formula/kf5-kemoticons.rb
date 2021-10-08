@@ -7,11 +7,6 @@ class Kf5Kemoticons < Formula
   sha256 "ad2729ef49fd18a0d743e4137d9033246b1b3ffc599d219d768c6bb54ba7cf52"
   head "https://invent.kde.org/frameworks/kemoticons.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

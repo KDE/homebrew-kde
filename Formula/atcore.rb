@@ -8,11 +8,6 @@ class Atcore < Formula
   revision 4
   head "https://invent.kde.org/libraries/atcore.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

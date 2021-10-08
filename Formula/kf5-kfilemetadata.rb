@@ -5,12 +5,8 @@ class Kf5Kfilemetadata < Formula
   homepage "https://api.kde.org/frameworks/kfilemetadata/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.86/kfilemetadata-5.86.0.tar.xz"
   sha256 "6a72d90c6f0017cfaeea372817a4d271eaf3cc42fd09a1bab04790136d5251cf"
+  revision 1
   head "https://invent.kde.org/frameworks/kfilemetadata.git", branch: "master"
-
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

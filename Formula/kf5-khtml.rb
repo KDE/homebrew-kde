@@ -7,11 +7,6 @@ class Kf5Khtml < Formula
   sha256 "146e0c7f9c460f5b38da129d2e312703a703c95d2d5e2b58cd5806a2088306a3"
   head "https://invent.kde.org/frameworks/khtml.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gperf" => :build

@@ -11,11 +11,6 @@ class Libalkimia < Formula
     depends_on "kde-mac/kde/kf5-kdelibs4support"
   end
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
@@ -29,7 +24,7 @@ class Libalkimia < Formula
 
   def install
     args = kde_cmake_args
-    args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
+    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
 
     system "cmake", *args
     system "cmake", "--build", "build"

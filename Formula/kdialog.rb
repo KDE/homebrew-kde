@@ -7,11 +7,6 @@ class Kdialog < Formula
   sha256 "dd833fa0691a491372b7f4ec8695c12e854354d45c9f2d8fabe3f2cedc557422"
   head "https://invent.kde.org/utilities/kdialog.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

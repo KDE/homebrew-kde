@@ -5,12 +5,8 @@ class Kf5Kdewebkit < Formula
   homepage "https://api.kde.org/frameworks/kdewebkit/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.86/portingAids/kdewebkit-5.86.0.tar.xz"
   sha256 "616ffeef4dfebe81d0b6e64ad90de9fb2cac8aa0c0d4ece9e44fd68419dd7a6f"
+  revision 1
   head "https://invent.kde.org/frameworks/kdewebkit.git", branch: "master"
-
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -21,7 +17,7 @@ class Kf5Kdewebkit < Formula
 
   def install
     args = kde_cmake_args
-    args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
+    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
 
     system "cmake", *args
     system "cmake", "--build", "build"

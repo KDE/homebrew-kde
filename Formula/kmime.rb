@@ -7,11 +7,6 @@ class Kmime < Formula
   sha256 "e47d6ae33a81d7747a9f6ec823f777e379969c6fec03a4e2911b3f734adde0b5"
   head "https://invent.kde.org/pim/kmime.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "gettext" => :build

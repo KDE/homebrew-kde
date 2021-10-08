@@ -7,11 +7,6 @@ class Kf5Kdeclarative < Formula
   sha256 "2dc9ace34de78e4eb78d6132578126b25cc67dce63c5f3adb535355f2335edb4"
   head "https://invent.kde.org/frameworks/kdeclarative.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,11 +7,6 @@ class Kcalc < Formula
   sha256 "373146cb5a9adec7c811c2dd1f3235027ebae01e433b778b8a516cf50f1f2205"
   head "https://invent.kde.org/utilities/kcalc.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "gettext" => :build
   depends_on "kdoctools" => :build

@@ -7,11 +7,6 @@ class Umbrello < Formula
   sha256 "d917cc43706e9064651e9e4a1870047535b6b27dcdd2f37a365abf7b0d003ff6"
   head "https://invent.kde.org/sdk/umbrello.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -32,7 +27,7 @@ class Umbrello < Formula
   def install
     args = kde_cmake_args
     args << "-DBUILD_KF5=ON"
-    args << "-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets"
+    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
 
     system "cmake", *args
     system "cmake", "--build", "build"

@@ -7,11 +7,6 @@ class Kf5Kbookmarks < Formula
   sha256 "500a1a750ee8222999e8d6cd8108f881fcd91bd109804d46bf31412b194906a8"
   head "https://invent.kde.org/frameworks/kbookmarks.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

@@ -7,11 +7,6 @@ class Konversation < Formula
   sha256 "ea22da9832e3e049369098fd80d752d83b3704ded4932d78766120706fef8aae"
   head "https://invent.kde.org/network/konversation.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

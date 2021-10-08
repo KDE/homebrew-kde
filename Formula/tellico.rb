@@ -5,13 +5,8 @@ class Tellico < Formula
   homepage "https://tellico-project.org"
   url "https://tellico-project.org/files/tellico-3.4.1.tar.xz"
   sha256 "f8514deac3b49af95a81ef096b3caba8d664e289de8f3d5724f88e2b78278561"
-  revision 2
+  revision 3
   head "https://invent.kde.org/office/tellico.git", branch: "master"
-
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   depends_on "cmake" => [:build]
   depends_on "extra-cmake-modules" => [:build]

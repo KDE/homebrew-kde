@@ -5,12 +5,8 @@ class Kf5Kapidox < Formula
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.86/kapidox-5.86.0.tar.xz"
   sha256 "1a50744b5247349a3beef4324c367c476597f53b73cb3b4de32fe21cfc1e7288"
+  revision 1
   head "https://invent.kde.org/frameworks/kapidox.git", branch: "master"
-
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -19,8 +15,8 @@ class Kf5Kapidox < Formula
   depends_on "qt@5" => :build
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/64/a7/45e11eebf2f15bf987c3bc11d37dcc838d9dc81250e67e4c5968f6008b6c/Jinja2-2.11.2.tar.gz"
-    sha256 "89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"
+    url "https://files.pythonhosted.org/packages/f8/86/7c0eb6e8b05385d1ce682abc0f994abd1668e148fb52603fa86e15d4c110/Jinja2-3.0.2.tar.gz"
+    sha256 "827a0e32839ab1600d4eb1c4c33ec5a8edfbc5cb42dafa13b81f182f97784b45"
   end
 
   resource "MarkupSafe" do
@@ -35,7 +31,7 @@ class Kf5Kapidox < Formula
 
   def install
     args = kde_cmake_args
-    args << "-DPYTHON_EXECUTABLE=" + Formula["python"].bin + "/python3"
+    args << ("-DPYTHON_EXECUTABLE=" + Formula["python"].bin + "/python3")
 
     system "cmake", *args
     system "cmake", "--build", "build"

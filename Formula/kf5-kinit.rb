@@ -7,11 +7,6 @@ class Kf5Kinit < Formula
   sha256 "270a391b20b7ca4b747115ee99f1a5508ecd02dfbc1efefe81e79cd03be2d568"
   head "https://invent.kde.org/frameworks/kinit.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kdoctools" => :build

@@ -7,11 +7,6 @@ class Kf5PlasmaFramework < Formula
   sha256 "304715e0261370a97bc15b8fc57f2d4b9145787ba133fbdd078308c031eeae9d"
   head "https://invent.kde.org/frameworks/plasma-framework.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

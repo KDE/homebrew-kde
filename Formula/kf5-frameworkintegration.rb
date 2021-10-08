@@ -7,11 +7,6 @@ class Kf5Frameworkintegration < Formula
   sha256 "d44677cc3dff45584ab0fef72671a16dc0b45382dcb408e56c094f5feb352669"
   head "https://invent.kde.org/frameworks/frameworkintegration.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build

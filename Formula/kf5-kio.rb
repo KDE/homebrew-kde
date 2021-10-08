@@ -7,11 +7,6 @@ class Kf5Kio < Formula
   sha256 "d699faf3561c08c0cfee507c9a009b8be1ceacadce67c22151c4879d33cf7e06"
   head "https://invent.kde.org/frameworks/kio.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

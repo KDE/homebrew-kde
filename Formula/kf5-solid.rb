@@ -7,11 +7,6 @@ class Kf5Solid < Formula
   sha256 "a0862c0c78102705be5f36b2b45e2e2ceb0d7e443dc3251dbd7baf03f3218b6d"
   head "https://invent.kde.org/frameworks/solid.git", branch: "master"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "bison" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
