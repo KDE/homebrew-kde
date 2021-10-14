@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kimageformats < Formula
   desc "Image format plugins for Qt5"
   homepage "https://api.kde.org/frameworks/kimageformats/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.86/kimageformats-5.86.0.tar.xz"
-  sha256 "a5b92d6ea22911a68c3fc52913fc0840e4bd5943779c504ad4bcd620a0b9a985"
+  url "https://download.kde.org/stable/frameworks/5.87/kimageformats-5.87.0.tar.xz"
+  sha256 "af6efb6232b8de670691f1983c26e385a64c9f5339d67ae004e97f6864c19830"
   head "https://invent.kde.org/frameworks/kimageformats.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

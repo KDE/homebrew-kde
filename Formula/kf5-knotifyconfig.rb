@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Knotifyconfig < Formula
   desc "Configuration system for KNotify"
   homepage "https://api.kde.org/frameworks/knotifyconfig/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.86/knotifyconfig-5.86.0.tar.xz"
-  sha256 "da8510aa59d3f26900ff89b94d7c8affdeb2b297fbe9ade53e8dde1303d48bea"
+  url "https://download.kde.org/stable/frameworks/5.87/knotifyconfig-5.87.0.tar.xz"
+  sha256 "f03d30525b7fcdcf81071f647cef66c9306ede76ead6e546edb108f3e4f7a549"
   head "https://invent.kde.org/frameworks/knotifyconfig.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

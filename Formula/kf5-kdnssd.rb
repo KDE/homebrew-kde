@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdnssd < Formula
   desc "Abstraction to system DNSSD features"
   homepage "https://api.kde.org/frameworks/kdnssd/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.86/kdnssd-5.86.0.tar.xz"
-  sha256 "72e44e60b74954b30acdf20a07ad0fe339cddd726df5c68b8c138edac797a3a0"
+  url "https://download.kde.org/stable/frameworks/5.87/kdnssd-5.87.0.tar.xz"
+  sha256 "dc3693968a0e699617fa2191add6114e39a3a01e9b6dcb90ff6a878acb8948e7"
   head "https://invent.kde.org/frameworks/kdnssd.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

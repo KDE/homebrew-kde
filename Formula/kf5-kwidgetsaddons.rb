@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kwidgetsaddons < Formula
   desc "Addons to QtWidgets"
   homepage "https://api.kde.org/frameworks/kwidgetsaddons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.86/kwidgetsaddons-5.86.0.tar.xz"
-  sha256 "3fbeb744246aae6cc5c4bb0f7cd53f3976d75ea568aacad7d09c92b8b0f795fb"
+  url "https://download.kde.org/stable/frameworks/5.87/kwidgetsaddons-5.87.0.tar.xz"
+  sha256 "2b119b3f886131009d24e139a313fb27c2ed3f681534d9297ade40153b4dfb01"
   head "https://invent.kde.org/frameworks/kwidgetsaddons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
