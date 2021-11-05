@@ -49,7 +49,7 @@ ln -sf "$(brew --prefix)/share/metainfo" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/kservicetypes5" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/config.kcfg" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/knotifycations5" "${APPLICATION_SUPPORT}"
-mkdir -p /usr/local/share/kxmlgui5
+mkdir -p "$(brew --prefix)/share/kxmlgui5"
 ln -sf "$(brew --prefix)/share/kxmlgui5" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/kpackage" "${APPLICATION_SUPPORT}"
 # kf5-breeze-icons
