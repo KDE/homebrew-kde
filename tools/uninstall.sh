@@ -30,5 +30,5 @@ for CORE_FORMULA in "${CORE_FORMULAS[@]}"; do
 done
 
 rm "${INSTALLED_FORMULAS_LIST}"
-echo "Cleaning ~/Applications/KDE"
-rm -rf "${HOME}"/Applications/KDE
+# echo "Cleaning ~/Applications/KDE"
+# rm -rf "${HOME}"/Applications/KDE
