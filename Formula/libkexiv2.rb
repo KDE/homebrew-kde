@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Libkexiv2 < Formula
   desc "Library to manipulate pictures metadata"
   homepage "https://api.kde.org/libkexiv2/html/index.html"
-  url "https://download.kde.org/stable/release-service/21.08.2/src/libkexiv2-21.08.2.tar.xz"
-  sha256 "6adfeed75f35e956dc602d97c033e15af33241200c7c51b7fdf66693d735ea6a"
+  url "https://download.kde.org/stable/release-service/21.08.3/src/libkexiv2-21.08.3.tar.xz"
+  sha256 "166126f6d42a390afebc8f75b719e0b64fccacab299d52a991d083fbeb68a895"
   head "https://invent.kde.org/graphics/libkexiv2.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
