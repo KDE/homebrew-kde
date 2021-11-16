@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcrash < Formula
   desc "Support for application crash analysis and bug report from apps"
   homepage "https://api.kde.org/frameworks/kcrash/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.87/kcrash-5.87.0.tar.xz"
-  sha256 "5908d771dcd1387941424369ca3ae974de91910a37987d8ab69458bc8b6d88d0"
+  url "https://download.kde.org/stable/frameworks/5.88/kcrash-5.88.0.tar.xz"
+  sha256 "9effa892a1ab726f3ddb3c025e600c2fa02496925fcb37a525d4ac5713199e3e"
   head "https://invent.kde.org/frameworks/kcrash.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
