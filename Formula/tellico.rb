@@ -15,6 +15,7 @@ class Tellico < Formula
   depends_on "exempi"
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kf5-kfilemetadata"
+  depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kitemmodels"
   depends_on "kde-mac/kde/kf5-knewstuff"
