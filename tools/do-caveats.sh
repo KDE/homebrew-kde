@@ -167,6 +167,8 @@ ln -sf "$(brew --prefix)/opt/kile/bin/Kile.app" "${HOME_APPS_KDE}"
 #tellico
 ln -sf "$(brew --prefix)/share/tellico" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/tellico/bin/tellico.app" "${HOME_APPS_KDE}"
+#kdiff3
+ln -sf "$(brew --prefix)/opt/kdiff3/bin/kdiff3.app" "${HOME_APPS_KDE}"
 
 echo "Caveats setup success"
 exit 0

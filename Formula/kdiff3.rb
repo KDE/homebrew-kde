@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdiff3 < Formula
   desc "Utility for comparing and merging files and directories"
   homepage "https://apps.kde.org/kdiff3/"
-  url "https://download.kde.org/stable/kdiff3/kdiff3-1.9.3.tar.xz"
-  sha256 "317bf5c7e27cba81bce7e1a7a579105443133b633cbb71bc1f169e86a235af9c"
+  url "https://download.kde.org/stable/kdiff3/kdiff3-1.9.4.tar.xz"
+  sha256 "a130712ceef074df691426909fc4a332b66f4c3f1490a548ab5bfb46316c385a"
   head "https://invent.kde.org/sdk/kdiff3.git", branch: "master"
 
   depends_on "cmake" => :build
@@ -28,16 +28,9 @@ class Kdiff3 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
-
-    bin.write_exec_script "#{prefix}/kdiff3.app/Contents/MacOS/kdiff3"
-    # Create icns file from svg
-    mkdir "#{prefix}/kdiff3.app/Contents/Resources" do
-      system "ksvg2icns", "#{share}/icons/hicolor/scalable/apps/kdiff3.svgz"
-    end
   end
 
   test do
-    output = shell_output("#{bin}/kdiff3 --help")
-    assert_match "help", output
+    assert_match "help", shell_output("#{bin}/kdiff3.app/Contents/MacOS/kdiff3 --help")
   end
 end
