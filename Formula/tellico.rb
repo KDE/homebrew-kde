@@ -15,6 +15,8 @@ class Tellico < Formula
   depends_on "exempi"
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kf5-kfilemetadata"
+  # qt@5 is built without WebEngine on arm64 macOS
+  depends_on "kde-mac/kde/kf5-khtml" if OS.mac? && Hardware::CPU.arm?
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kitemmodels"
   depends_on "kde-mac/kde/kf5-knewstuff"
