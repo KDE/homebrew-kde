@@ -112,7 +112,7 @@ ln -sf "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "${HOME_APPS_KDE}"
 # okular
 ln -sf "$(brew --prefix)/share/okular" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/okular/bin/okular.app" "${HOME_APPS_KDE}"
-ln -sf "$(brew --prefix)/opt/okular/bin/okularkirigami.app" "${HOME_APPS_KDE}"
+rm "${HOME_APPS_KDE}/okularkirigami.app"
 # labplot
 ln -sf "$(brew --prefix)/share/labplot2" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/labplot/bin/labplot2.app" "${HOME_APPS_KDE}"

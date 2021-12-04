@@ -7,7 +7,8 @@ class Okular < Formula
   sha256 "39b922d2d7c6916025bfceacf8610214cead665369285d7a6904a434fe81f001"
   head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
-  depends_on "chmlib" => :build
+  # isn't packaged on ARM64 macOS
+  depends_on "chmlib" => :build if OS.mac? && Hardware::CPU.intel?
   depends_on "cmake" => [:build, :test]
   depends_on "ebook-tools" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -89,7 +90,6 @@ class Okular < Formula
 
   test do
     assert_match "help", shell_output("#{bin}/okular.app/Contents/MacOS/okular --help")
-    assert_match "help", shell_output("#{bin}/okularkirigami.app/Contents/MacOS/okularkirigami --help")
   end
 end
 
