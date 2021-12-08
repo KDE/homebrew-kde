@@ -5,12 +5,12 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdevelop-5.6.2.tar.xz"
   sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
+  revision 1
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "gdb" => :build
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
@@ -18,7 +18,6 @@ class Kdevelop < Formula
 
   depends_on "cmake"
   depends_on "cppcheck"
-  depends_on "gdb"
   depends_on "kde-mac/kde/grantlee"
   depends_on "kde-mac/kde/kf5-breeze-icons"
   depends_on "kde-mac/kde/kf5-kcmutils"
@@ -33,6 +32,9 @@ class Kdevelop < Formula
   depends_on "llvm"
   depends_on "subversion"
   depends_on "threadweaver"
+
+  # isn't packaged on ARM64 macOS
+  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
@@ -49,8 +51,8 @@ class Kdevelop < Formula
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     chmod "+w", "#{bin}/kdevelop.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/kdevelop.app/Contents/Info.plist"
+    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+    "#{bin}/kdevelop.app/Contents/Info.plist"
     chmod "-w", "#{bin}/kdevelop.app/Contents/Info.plist"
   end
 
