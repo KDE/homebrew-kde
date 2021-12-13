@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdevelop-5.6.2.tar.xz"
-  sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
-  revision 1
+  url "https://download.kde.org/stable/release-service/21.12.0/src/kdevelop-21.12.0.tar.xz"
+  sha256 "64337d5a3141171be920bb2c1be23556c0d2d6361b461a5ce4266f490f19619f"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
@@ -101,7 +100,7 @@ index 8c6c711..e6c3650 100644
 +++ b/plugins/git/CMakeLists.txt
 @@ -36,4 +36,7 @@ add_subdirectory(icons)
  install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
- 
+
  install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 -update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# update XDG mime-types if shared mime info is around
@@ -114,11 +113,10 @@ index 0ed104f..f8067c5 100644
 +++ b/plugins/clang/CMakeLists.txt
 @@ -130,4 +130,7 @@ target_link_libraries(kdevclangsupport
  )
- 
+
  install(FILES kdevclang.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 -update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# update XDG mime-types if shared mime info is around
 +if(SharedMimeInfo_FOUND)
 +    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
-

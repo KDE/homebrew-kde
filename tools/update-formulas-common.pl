@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version  = "5.89";
-my $gear_version        = "21.08.3";
+my $gear_version        = "21.12.0";
 my $plasma_version      = "5.23.4";
 
 my %frameworks = (
@@ -104,6 +104,9 @@ my %gear = (
     'kcalc'           => '',
     'kdeconnect-kde'  => '',
     'kdenlive'        => '',
+    'kdev-php'        => '',
+    'kdev-python'     => '',
+    'kdevelop'        => '',
     'kdialog'         => '',
     'kimap'           => '',
     'kio-extras'      => '',
@@ -111,15 +114,15 @@ my %gear = (
     'kolourpaint'     => '',
     'konsole'         => '',
     'konversation'    => '',
-    # https://bugs.kde.org/show_bug.cgi?id=430896
-    # 'ktorrent'        => '', 
-    # 'libktorrent'     => '',
     'libkexiv2'       => '',
     'libkomparediff2' => '',
     'lokalize'        => '',
     'okular'          => '',
     'poxml'           => '',
     'umbrello'        => '',
+    # https://bugs.kde.org/show_bug.cgi?id=430896
+    # 'ktorrent'        => '',
+    # 'libktorrent'     => '',
 );
 
 my %plasma = (
