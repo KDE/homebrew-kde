@@ -7,7 +7,7 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version  = "5.88";
+my $frameworks_version  = "5.89";
 my $gear_version        = "21.08.3";
 my $plasma_version      = "5.23.4";
 

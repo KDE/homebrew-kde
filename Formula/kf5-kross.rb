@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kross < Formula
   desc "Embedding of scripting into applications"
   homepage "https://api.kde.org/frameworks/kross/html"
-  url "https://download.kde.org/stable/frameworks/5.88/portingAids/kross-5.88.0.tar.xz"
-  sha256 "c889a3f8ceef51f8ad188e8cc98d7aae110268d23ff4ade8d7ef779bb90f5e6d"
+  url "https://download.kde.org/stable/frameworks/5.89/portingAids/kross-5.89.0.tar.xz"
+  sha256 "9ef4844f56f2c357de51bb381b253e0f49e51a83e3b3c9a227de5fdfe18c0849"
   head "https://invent.kde.org/frameworks/kross.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
