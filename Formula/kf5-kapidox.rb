@@ -1,6 +1,7 @@
 require_relative "../lib/cmake"
 
 class Kf5Kapidox < Formula
+  include Language::Python::Virtualenv
   desc "Frameworks API Documentation Tools"
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.89/kapidox-5.89.0.tar.xz"
@@ -10,8 +11,9 @@ class Kf5Kapidox < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
-  depends_on "python" => :build
   depends_on "qt@5" => :build
+
+  depends_on "python@3.10"
 
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/91/a5/429efc6246119e1e3fbf562c00187d04e83e54619249eb732bb423efa6c6/Jinja2-3.0.3.tar.gz"
@@ -29,27 +31,28 @@ class Kf5Kapidox < Formula
   end
 
   def install
+    version = Language::Python.major_minor_version Formula["python@3.10"].bin/"python3"
+    ENV["PYTHONPATH"] = lib/"python#{version}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{version}/site-packages"
+
+    resources.each do |r|
+      r.stage do
+        system Formula["python@3.10"].bin/"python3", *Language::Python.setup_install_args(libexec/"vendor")
+      end
+    end
+
     args = kde_cmake_args
-    args << ("-DPYTHON_EXECUTABLE=" + Formula["python"].bin + "/python3")
+    args << ("-DPYTHON_EXECUTABLE=" + Formula["python@3.10"].bin + "/python3")
 
     system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
 
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
-    resources.each do |r|
-      r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
-      end
-    end
-
-    bin.install Dir[libexec/"bin/*"]
     bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do
-    assert_predicate bin/"kapidox_generate", :exist?
+    assert_match "help", shell_output("#{bin}/kapidox_generate --help")
   end
 end
