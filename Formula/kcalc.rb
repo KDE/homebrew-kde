@@ -16,11 +16,6 @@ class Kcalc < Formula
   depends_on "kde-mac/kde/kf5-kinit"
   depends_on "mpfr"
 
-  patch do
-    url "https://invent.kde.org/yurikoles/kcalc/-/commit/575dccae306c96456980e3ea0e28a503dc35299f.diff"
-    sha256 "3ea3897414e483525828f74282c76e1208664090ceee0e2dcd472241fe05c947"
-  end
-
   def install
     args = kde_cmake_args
 
