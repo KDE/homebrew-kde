@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Libkomparediff2 < Formula
   desc "Library to compare files and strings"
   homepage "https://invent.kde.org/sdk/libkomparediff2"
-  url "https://download.kde.org/stable/release-service/21.12.0/src/libkomparediff2-21.12.0.tar.xz"
-  sha256 "0d0d85ddb687e3c2e8e8550558f48eac898500cc0fd607a3dc6b387ab44172cd"
+  url "https://download.kde.org/stable/release-service/21.12.1/src/libkomparediff2-21.12.1.tar.xz"
+  sha256 "bc64d0ae804efe2ea16b41ca2b4bf91032a3f4cdc1cd970109e260b22c748c0f"
   head "https://invent.kde.org/sdk/libkomparediff2.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

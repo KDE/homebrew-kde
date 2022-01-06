@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Okular < Formula
   desc "Document Viewer"
   homepage "https://okular.kde.org"
-  url "https://download.kde.org/stable/release-service/21.12.0/src/okular-21.12.0.tar.xz"
-  sha256 "c8d487e5f86cd951ae0f8d0b057393c3a1d4136c8d2f99e04a0e2ec0e85d7e23"
+  url "https://download.kde.org/stable/release-service/21.12.1/src/okular-21.12.1.tar.xz"
+  sha256 "04bd61cec2b794cce0f6381cf7c4db7778a8cefc5716d8a4bfd3efaafd212ba1"
   head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
   # isn't packaged on ARM64 macOS
