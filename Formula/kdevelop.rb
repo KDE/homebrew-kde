@@ -8,32 +8,33 @@ class Kdevelop < Formula
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
-  depends_on "cvs" => :build
-  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "cmake" => [:build, :recommended]
+  depends_on "extra-cmake-modules" => :build
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
+  depends_on "kde-mac/kde/kf5-knotifyconfig" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 
-  depends_on "cmake"
-  depends_on "cppcheck"
   depends_on "kde-mac/kde/grantlee"
   depends_on "kde-mac/kde/kf5-breeze-icons"
   depends_on "kde-mac/kde/kf5-kcmutils"
   depends_on "kde-mac/kde/kf5-kitemmodels"
-  depends_on "kde-mac/kde/kf5-knewstuff"
-  depends_on "kde-mac/kde/kf5-knotifyconfig"
   depends_on "kde-mac/kde/kf5-ktexteditor"
-  depends_on "kde-mac/kde/kf5-plasma-framework"
-  depends_on "kde-mac/kde/konsole"
-  depends_on "kde-mac/kde/ksysguard"
   depends_on "kde-mac/kde/libkomparediff2"
   depends_on "llvm"
   depends_on "subversion"
   depends_on "threadweaver"
 
-  # isn't packaged on ARM64 macOS
-  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
+  depends_on "clazy" => :recommended
+  depends_on "cppcheck" => :recommended
+  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel? # isn't packaged on ARM64 macOS
+  depends_on "kde-mac/kde/kf5-krunner" => :recommended
+  depends_on "kde-mac/kde/kf5-plasma-framework" => :recommended
+  depends_on "kde-mac/kde/konsole" => :recommended
+  depends_on "kde-mac/kde/libksysguard" => :recommended
+  depends_on "meson" => :recommended
+  depends_on "okteta" => :recommended
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
