@@ -7,7 +7,7 @@ if ! brew ls --formula| grep -q dbus; then
     brew install dbus
 fi
 
-brew services start dbus
+brew services restart dbus
 
 MIGRATED=(
 	extra-cmake-modules
@@ -112,7 +112,7 @@ ln -sf "$(brew --prefix)/opt/kdevelop/bin/kdevelop.app" "${HOME_APPS_KDE}"
 # okular
 ln -sf "$(brew --prefix)/share/okular" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/okular/bin/okular.app" "${HOME_APPS_KDE}"
-rm "${HOME_APPS_KDE}/okularkirigami.app"
+rm -f "${HOME_APPS_KDE}/okularkirigami.app" #doesn't being shipped anymore
 # labplot
 ln -sf "$(brew --prefix)/share/labplot2" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/labplot/bin/labplot2.app" "${HOME_APPS_KDE}"
