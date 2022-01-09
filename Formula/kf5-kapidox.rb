@@ -2,10 +2,11 @@ require_relative "../lib/cmake"
 
 class Kf5Kapidox < Formula
   include Language::Python::Virtualenv
+
   desc "Frameworks API Documentation Tools"
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.89/kapidox-5.89.0.tar.xz"
-  sha256 "6b3ccbb12fe9f944c2dbda404785864cd2a6625c44bb733ef58add9f07e47b28"
+  url "https://download.kde.org/stable/frameworks/5.90/kapidox-5.90.0.tar.xz"
+  sha256 "370946cd6a5438bf2f5f390f034e21e790fdd62bfd945eaeccf19eae5328549a"
   head "https://invent.kde.org/frameworks/kapidox.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kmediaplayer < Formula
   desc "Plugin interface for media player features"
   homepage "https://api.kde.org/frameworks/kmediaplayer/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.89/portingAids/kmediaplayer-5.89.0.tar.xz"
-  sha256 "e0abf996ef28af542f5d56aa9e06a303bea520006a1e0dfb760caf202324c441"
+  url "https://download.kde.org/stable/frameworks/5.90/portingAids/kmediaplayer-5.90.0.tar.xz"
+  sha256 "98d6bf629fa80bbb887f73c55787dd6ec68e07aae260ddabee0c0662332e1504"
   head "https://invent.kde.org/frameworks/kmediaplayer.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

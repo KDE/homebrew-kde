@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kunitconversion < Formula
   desc "Support for unit conversion"
   homepage "https://api.kde.org/frameworks/kunitconversion/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.89/kunitconversion-5.89.0.tar.xz"
-  sha256 "38bc211579d20863583236599bebe7b1b579da266e64eed1506b611435a3b6ae"
+  url "https://download.kde.org/stable/frameworks/5.90/kunitconversion-5.90.0.tar.xz"
+  sha256 "c3559d89fb43fc12b06f6b67a0c2cec2bce3fcdfb36c265fd5ae468a9a5e3bef"
   head "https://invent.kde.org/frameworks/kunitconversion.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

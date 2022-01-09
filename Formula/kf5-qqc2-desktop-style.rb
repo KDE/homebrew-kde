@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Qqc2DesktopStyle < Formula
   desc "Style for Qt QC2 to follow your desktop theme"
   homepage "https://api.kde.org/frameworks/qqc2-desktop-style/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.89/qqc2-desktop-style-5.89.0.tar.xz"
-  sha256 "ac5089295a0affd0e0abef737265b318b2ab3ad888df45b56a74b86416045ee0"
+  url "https://download.kde.org/stable/frameworks/5.90/qqc2-desktop-style-5.90.0.tar.xz"
+  sha256 "1921b1c56556c6ff6c53ef081199d5306bb9488f5457247eacd646d09bcfe115"
   head "https://invent.kde.org/frameworks/qqc2-desktop-style.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
