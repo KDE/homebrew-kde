@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kcalc < Formula
   desc "Calculator offering everything a scientific calculator does, and more"
   homepage "https://utils.kde.org/projects/kcalc/"
-  url "https://download.kde.org/stable/release-service/21.12.1/src/kcalc-21.12.1.tar.xz"
-  sha256 "d65e6c83cf623a96a07491ea074a3c4f8120dc914993c4609456436894ecf45c"
+  url "https://download.kde.org/stable/release-service/21.12.3/src/kcalc-21.12.3.tar.xz"
+  sha256 "986ca84e82fda9325171a84c8efd7fd4eb2a82e3082af536473db24f33fcd897"
   head "https://invent.kde.org/utilities/kcalc.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
