@@ -5,8 +5,8 @@ class Kf5Kapidox < Formula
 
   desc "Frameworks API Documentation Tools"
   homepage "https://api.kde.org/frameworks/kapidox/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.90/kapidox-5.90.0.tar.xz"
-  sha256 "370946cd6a5438bf2f5f390f034e21e790fdd62bfd945eaeccf19eae5328549a"
+  url "https://download.kde.org/stable/frameworks/5.91/kapidox-5.91.0.tar.xz"
+  sha256 "434daaf49056471af72a97043c054d0104f1341f92a4464f66a2256233a2b7f7"
   head "https://invent.kde.org/frameworks/kapidox.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

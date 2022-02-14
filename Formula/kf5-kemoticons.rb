@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kemoticons < Formula
   desc "Support for emoticons and emoticons themes"
   homepage "https://api.kde.org/frameworks/kemoticons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.90/kemoticons-5.90.0.tar.xz"
-  sha256 "8b191c0a06faa34bc8fb37cbe922d28530874fe80c27a35fc2433ad54c99af22"
+  url "https://download.kde.org/stable/frameworks/5.92/kemoticons-5.92.0.tar.xz"
+  sha256 "fdcfe30941c18a9cb29b58459fbb2ae54a55fd5a0e8688f0c59a7cc7ebf09f07"
   head "https://invent.kde.org/frameworks/kemoticons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

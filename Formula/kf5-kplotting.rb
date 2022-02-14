@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kplotting < Formula
   desc "Lightweight plotting framework"
   homepage "https://api.kde.org/frameworks/kplotting/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.90/kplotting-5.90.0.tar.xz"
-  sha256 "3ec1bc5b39d02b245cdbb756f45c5cebd571d775806f15ae68f3ce7fb755af44"
+  url "https://download.kde.org/stable/frameworks/5.92/kplotting-5.92.0.tar.xz"
+  sha256 "c95d63e2e4c4abbf625ec1cfe749314c1a90dc5be4a90a1ea1617bc969071ed1"
   head "https://invent.kde.org/frameworks/kplotting.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
