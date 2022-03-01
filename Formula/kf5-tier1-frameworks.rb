@@ -16,7 +16,6 @@ class Kf5Tier1Frameworks < Formula
   depends_on "karchive" => [:build, :test]
   depends_on "kde-mac/kde/kf5-attica" => [:build, :test]
   depends_on "kde-mac/kde/kf5-breeze-icons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kapidox" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kcodecs" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kconfig" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kcoreaddons" => [:build, :test]

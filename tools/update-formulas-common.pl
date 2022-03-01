@@ -17,7 +17,6 @@ my %frameworks = (
 ### Tier 1
     'attica'              => '',
     'breeze-icons'        => '',
-    'kapidox'             => '',
     'kcodecs'             => '',
     'kconfig'             => '',
     'kcoreaddons'         => '',
