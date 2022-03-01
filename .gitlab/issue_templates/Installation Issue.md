@@ -5,7 +5,7 @@ Please note we will close your issue without comment if you do not fill out the 
 - [ ] I added output from `brew gist-logs <formula>` link OR `brew config` AND `brew doctor` output below.
 
 <details>
-<summary>`brew gist-logs <formula>` link OR `brew config` AND `brew doctor` output<formula></summary>
+<summary>`brew gist-logs <formula>` link OR `brew config` AND `brew doctor` output</summary>
 ```
 Replace this text with output
 ```
