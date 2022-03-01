@@ -8,9 +8,9 @@ Please note we will close your issue without comment if you do not fill out the 
 
 <details>
 <summary>`brew gist-logs <formula>` link OR `brew config` AND `brew doctor` output</summary>
-```
+
 Replace this text with output
-```
+
 </details>
 
 
