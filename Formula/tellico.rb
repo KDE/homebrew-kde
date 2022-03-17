@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Tellico < Formula
   desc "KDE collections manager"
   homepage "https://tellico-project.org"
-  url "https://tellico-project.org/files/tellico-3.4.2.tar.xz"
-  sha256 "efa575d6368cc7c62d9e665f7dde163abffcf245141947e6acda9d5218d81d04"
+  url "https://tellico-project.org/files/tellico-3.4.4.tar.xz"
+  sha256 "8054292a76e553aaa9ed3f73da8fc35fef0841e3fe139e99c372925f9715d7c1"
   head "https://invent.kde.org/office/tellico.git", branch: "master"
 
   depends_on "cmake" => [:build]
