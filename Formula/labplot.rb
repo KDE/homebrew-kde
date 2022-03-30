@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Labplot < Formula
   desc "Application for interactive graphing and analysis of scientific data"
   homepage "https://labplot.kde.org/"
-  url "https://download.kde.org/stable/labplot/2.8.1/labplot-2.8.1.tar.xz"
-  sha256 "726909a8335921c742c4d92f66663ecdb447ddee0d74568c50a22330c79e079a"
-  revision 1
+  url "https://download.kde.org/stable/labplot/2.8.2/labplot-2.8.2.tar.xz"
+  sha256 "8ec581da971735bfab20c28b1a7507196bf102a991d895bb1ec892c521b31dfa"
   head "https://invent.kde.org/education/labplot.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -27,8 +26,8 @@ class Labplot < Formula
   patch :DATA
 
   def install
-    args = kde_cmake_arg
-    sargs << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
+    args = kde_cmake_args
+    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args
     system "cmake", "--build", "build"
