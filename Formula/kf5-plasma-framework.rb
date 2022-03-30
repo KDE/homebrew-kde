@@ -5,6 +5,7 @@ class Kf5PlasmaFramework < Formula
   homepage "https://api.kde.org/frameworks/plasma-framework/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.92/plasma-framework-5.92.0.tar.xz"
   sha256 "c6c2bc624564c74fd80bce170a1c763803d5207ef86108b5724fcba73c3506f7"
+  revision 1
   head "https://invent.kde.org/frameworks/plasma-framework.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -20,6 +21,11 @@ class Kf5PlasmaFramework < Formula
   depends_on "kde-mac/kde/kf5-kirigami2"
 
   patch :DATA
+
+  patch do
+    url "https://invent.kde.org/frameworks/plasma-framework/-/commit/7352045b388f4b0ef553706bd219457e5018ce4e.diff"
+    sha256 "7eaa124dd0161d5f1250452d58789d9af3ba299ec9a91f4f6c0f71193940fb84"
+  end
 
   def install
     args = kde_cmake_args
