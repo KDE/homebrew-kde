@@ -3,38 +3,38 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/release-service/21.12.3/src/kdevelop-21.12.3.tar.xz"
-  sha256 "86f36502559675aaae2afc8f2d649ee29997cd75a32116acf63e9edce94717ea"
+  url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdevelop-5.6.2.tar.xz"
+  version "21.13.5.6.2"
+  sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
-  depends_on "cmake" => [:build, :recommended]
-  depends_on "extra-cmake-modules" => :build
+  depends_on "cvs" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
-  depends_on "kde-mac/kde/kf5-knotifyconfig" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
   depends_on "shared-mime-info" => :build
 
+  depends_on "cmake"
+  depends_on "cppcheck"
   depends_on "kde-mac/kde/grantlee"
   depends_on "kde-mac/kde/kf5-breeze-icons"
   depends_on "kde-mac/kde/kf5-kcmutils"
   depends_on "kde-mac/kde/kf5-kitemmodels"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-knotifyconfig"
   depends_on "kde-mac/kde/kf5-ktexteditor"
+  depends_on "kde-mac/kde/kf5-plasma-framework"
+  depends_on "kde-mac/kde/konsole"
+  depends_on "kde-mac/kde/ksysguard"
   depends_on "kde-mac/kde/libkomparediff2"
   depends_on "llvm"
   depends_on "subversion"
   depends_on "threadweaver"
 
-  depends_on "clazy" => :recommended
-  depends_on "cppcheck" => :recommended
-  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel? # isn't packaged on ARM64 macOS
-  depends_on "kde-mac/kde/kf5-krunner" => :recommended
-  depends_on "kde-mac/kde/kf5-plasma-framework" => :recommended
-  depends_on "kde-mac/kde/konsole" => :recommended
-  depends_on "kde-mac/kde/libksysguard" => :recommended
-  depends_on "meson" => :recommended
-  depends_on "okteta" => :recommended
+  # isn't packaged on ARM64 macOS
+  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
@@ -101,7 +101,7 @@ index 8c6c711..e6c3650 100644
 +++ b/plugins/git/CMakeLists.txt
 @@ -36,4 +36,7 @@ add_subdirectory(icons)
  install(PROGRAMS org.kde.kdevelop_git.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-
+ 
  install(FILES kdevgit.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 -update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# update XDG mime-types if shared mime info is around
@@ -114,10 +114,11 @@ index 0ed104f..f8067c5 100644
 +++ b/plugins/clang/CMakeLists.txt
 @@ -130,4 +130,7 @@ target_link_libraries(kdevclangsupport
  )
-
+ 
  install(FILES kdevclang.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
 -update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +# update XDG mime-types if shared mime info is around
 +if(SharedMimeInfo_FOUND)
 +    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
+
