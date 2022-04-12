@@ -8,6 +8,10 @@ class Kdevelop < Formula
   sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
+  livecheck do
+    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=448152"
+  end
+
   depends_on "boost" => :build
   depends_on "cvs" => :build
   depends_on "extra-cmake-modules" => [:build, :test]

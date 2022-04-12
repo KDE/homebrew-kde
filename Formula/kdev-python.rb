@@ -8,6 +8,10 @@ class KdevPython < Formula
   sha256 "20f9b771b961262ded986a4f32b8d259ad9f7bc48bb29eac0a5d5853be1d917f"
   head "https://invent.kde.org/kdevelop/kdev-python.git", branch: "master"
 
+  livecheck do
+    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=448152"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "kdevelop"
