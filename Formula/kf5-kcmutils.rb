@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcmutils < Formula
   desc "Utilities for KDE System Settings modules"
   homepage "https://api.kde.org/frameworks/kcmutils/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.92/kcmutils-5.92.0.tar.xz"
-  sha256 "dd49e658fc85c215442a7fa9d2435819f0bef13c997a6c2a51557b82e1bc8d3a"
+  url "https://download.kde.org/stable/frameworks/5.93/kcmutils-5.93.0.tar.xz"
+  sha256 "1445f978b7ffd69fd7c25d965812755679c4fdba23eb9837da37a8b5b2d30d6d"
   head "https://invent.kde.org/frameworks/kcmutils.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

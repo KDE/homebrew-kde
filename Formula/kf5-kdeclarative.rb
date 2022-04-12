@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdeclarative < Formula
   desc "Provides integration of QML and KDE Frameworks"
   homepage "https://api.kde.org/frameworks/kdeclarative/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.92/kdeclarative-5.92.0.tar.xz"
-  sha256 "fe964d77fea37c04eee3863d2b4227b76e33f16583906c284b532a461982d5b3"
+  url "https://download.kde.org/stable/frameworks/5.93/kdeclarative-5.93.0.tar.xz"
+  sha256 "08a945c793aa8d89d87c42d29c9c11e7c28c47916ae728369ab478892d325067"
   head "https://invent.kde.org/frameworks/kdeclarative.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
