@@ -7,9 +7,9 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version  = "5.93";
-my $gear_version        = "21.12.3";
-my $plasma_version      = "5.24.4";
+my $frameworks_version = "5.93";
+my $gear_version       = "21.12.3";
+my $plasma_version     = "5.24.4";
 
 my %frameworks = (
 
@@ -88,11 +88,11 @@ my %frameworks = (
 );
 
 my %meta_frameworks = (
-    'tier1-frameworks'          => '',
-    'tier2-frameworks'          => '',
-    'tier3-frameworks'          => '',
-    'tier4-frameworks'          => '',
-    'portingaids-frameworks'    => '',
+    'tier1-frameworks'       => '',
+    'tier2-frameworks'       => '',
+    'tier3-frameworks'       => '',
+    'tier4-frameworks'       => '',
+    'portingaids-frameworks' => '',
 );
 
 my %gear = (
@@ -120,6 +120,7 @@ my %gear = (
     'okular'          => '',
     'poxml'           => '',
     'umbrello'        => '',
+
     # https://bugs.kde.org/show_bug.cgi?id=430896
     # 'ktorrent'        => '',
     # 'libktorrent'     => '',
@@ -156,16 +157,16 @@ sub update_frameworks {
 
         my $cached_file = "$tmp_dir/kf5-$package$upstream_suffix";
 
-        download_and_update( $formula, $package_upstream_url, $cached_file );   
+        download_and_update( $formula, $package_upstream_url, $cached_file );
     }
-    
-    update_meta_frameworks()
+
+    update_meta_frameworks();
 }
 
 sub update_meta_frameworks {
     for my $package ( keys %meta_frameworks ) {
         my $formula = "Formula/kf5-$package.rb";
-    
+
         open my $FORMULA,     '<', $formula       or die $!;
         open my $NEW_FORMULA, '>', "$formula.new" or die $!;
 
@@ -296,7 +297,7 @@ sub download_and_update {
 }
 
 GetOptions(
-    'gear'          => \&update_gear,
-    'frameworks'    => \&update_frameworks,
-    'plasma'        => \&update_plasma
+    'gear'       => \&update_gear,
+    'frameworks' => \&update_frameworks,
+    'plasma'     => \&update_plasma
 );
