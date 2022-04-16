@@ -21,11 +21,6 @@ class Kf5PlasmaFramework < Formula
 
   patch :DATA
 
-  patch do
-    url "https://invent.kde.org/frameworks/plasma-framework/-/commit/7352045b388f4b0ef553706bd219457e5018ce4e.diff"
-    sha256 "7eaa124dd0161d5f1250452d58789d9af3ba299ec9a91f4f6c0f71193940fb84"
-  end
-
   def install
     args = kde_cmake_args
 
