@@ -3,9 +3,9 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop/5.6.2/src/kdevelop-5.6.2.tar.xz"
-  version "21.13.5.6.2"
-  sha256 "0f86bc3fe53f761c1e3e3f7544577a0c41433be8bff310cf2e729f76f4363bf6"
+  url "https://download.kde.org/stable/release-service/21.12.3/src/kdevelop-21.12.3.tar.xz"
+  version "21.13.12.3"
+  sha256 "86f36502559675aaae2afc8f2d649ee29997cd75a32116acf63e9edce94717ea"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   livecheck do
@@ -43,6 +43,11 @@ class Kdevelop < Formula
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
   patch :DATA
+
+  patch do
+    url "https://invent.kde.org/yurikoles/kdevelop/-/commit/295656d1bf89e4440e9e6a286efc244c04948d88.diff"
+    sha256 "b18d4dcf9e016e25991fa4780dc6d0e003a385a493a10dece673563cbb7212e5"
+  end
 
   def install
     args = kde_cmake_args
