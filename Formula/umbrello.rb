@@ -5,6 +5,7 @@ class Umbrello < Formula
   homepage "https://umbrello.kde.org/"
   url "https://download.kde.org/stable/release-service/21.12.3/src/umbrello-21.12.3.tar.xz"
   sha256 "c6c5f6107870b397dcc60932cbdc1767cc2d6a2f5223dc5e0314226b61a124c5"
+  revision 1
   head "https://invent.kde.org/sdk/umbrello.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
