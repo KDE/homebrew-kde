@@ -18,7 +18,6 @@ class Kf5Tier3Frameworks < Formula
   depends_on "kde-mac/kde/kf5-kconfigwidgets"
   depends_on "kde-mac/kde/kf5-kdeclarative"
   depends_on "kde-mac/kde/kf5-kded"
-  depends_on "kde-mac/kde/kf5-kdesu"
   depends_on "kde-mac/kde/kf5-kemoticons"
   depends_on "kde-mac/kde/kf5-kglobalaccel"
   depends_on "kde-mac/kde/kf5-kiconthemes"
