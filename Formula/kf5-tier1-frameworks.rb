@@ -7,34 +7,35 @@ class Kf5Tier1Frameworks < Formula
   url "file:///tmp/empty"
   version "5.93.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  revision 1
 
   livecheck do
     skip "Meta package"
   end
 
-  depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "karchive" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-attica" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-breeze-icons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kcodecs" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kconfig" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kcoreaddons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdbusaddons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdnssd" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kguiaddons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kidletime" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kirigami2" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kitemmodels" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kitemviews" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kplotting" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kwidgetsaddons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kwindowsystem" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-qqc2-desktop-style" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-solid" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-sonnet" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-syntax-highlighting" => [:build, :test]
-  depends_on "ki18n" => [:build, :test]
-  depends_on "threadweaver" => [:build, :test]
+  depends_on "extra-cmake-modules"
+  depends_on "karchive"
+  depends_on "kde-mac/kde/kf5-attica"
+  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kcodecs"
+  depends_on "kde-mac/kde/kf5-kconfig"
+  depends_on "kde-mac/kde/kf5-kcoreaddons"
+  depends_on "kde-mac/kde/kf5-kdbusaddons"
+  depends_on "kde-mac/kde/kf5-kdnssd"
+  depends_on "kde-mac/kde/kf5-kguiaddons"
+  depends_on "kde-mac/kde/kf5-kidletime"
+  depends_on "kde-mac/kde/kf5-kirigami2"
+  depends_on "kde-mac/kde/kf5-kitemmodels"
+  depends_on "kde-mac/kde/kf5-kitemviews"
+  depends_on "kde-mac/kde/kf5-kplotting"
+  depends_on "kde-mac/kde/kf5-kwidgetsaddons"
+  depends_on "kde-mac/kde/kf5-kwindowsystem"
+  depends_on "kde-mac/kde/kf5-qqc2-desktop-style"
+  depends_on "kde-mac/kde/kf5-solid"
+  depends_on "kde-mac/kde/kf5-sonnet"
+  depends_on "kde-mac/kde/kf5-syntax-highlighting"
+  depends_on "ki18n"
+  depends_on "threadweaver"
 
   def install
     touch "empty"

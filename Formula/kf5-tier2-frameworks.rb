@@ -7,25 +7,26 @@ class Kf5Tier2Frameworks < Formula
   url "file:///tmp/empty"
   version "5.93.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  revision 1
 
   livecheck do
     skip "Meta package"
   end
 
-  depends_on "kde-mac/kde/kf5-kactivities" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kauth" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kcompletion" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kcrash" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kfilemetadata" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kimageformats" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kjobwidgets" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-knotifications" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kpackage" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kpeople" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kpty" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kunitconversion" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-tier1-frameworks" => :build
-  depends_on "kdoctools" => [:build, :test]
+  depends_on "kde-mac/kde/kf5-kactivities"
+  depends_on "kde-mac/kde/kf5-kauth"
+  depends_on "kde-mac/kde/kf5-kcompletion"
+  depends_on "kde-mac/kde/kf5-kcrash"
+  depends_on "kde-mac/kde/kf5-kfilemetadata"
+  depends_on "kde-mac/kde/kf5-kimageformats"
+  depends_on "kde-mac/kde/kf5-kjobwidgets"
+  depends_on "kde-mac/kde/kf5-knotifications"
+  depends_on "kde-mac/kde/kf5-kpackage"
+  depends_on "kde-mac/kde/kf5-kpeople"
+  depends_on "kde-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/kf5-kunitconversion"
+  depends_on "kde-mac/kde/kf5-tier1-frameworks"
+  depends_on "kdoctools"
 
   def install
     touch "empty"

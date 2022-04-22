@@ -7,33 +7,34 @@ class Kf5Tier3Frameworks < Formula
   url "file:///tmp/empty"
   version "5.93.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  revision 1
 
   livecheck do
     skip "Meta package"
   end
 
-  depends_on "kde-mac/kde/kf5-kbookmarks" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kcmutils" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kconfigwidgets" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdeclarative" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kded" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kdesu" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kemoticons" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kglobalaccel" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kiconthemes" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kinit" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kio" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-knewstuff" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-knotifyconfig" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kparts" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-krunner" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kservice" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-ktexteditor" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-ktextwidgets" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kwallet" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-kxmlgui" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-plasma-framework" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-tier2-frameworks" => :build
+  depends_on "kde-mac/kde/kf5-kbookmarks"
+  depends_on "kde-mac/kde/kf5-kcmutils"
+  depends_on "kde-mac/kde/kf5-kconfigwidgets"
+  depends_on "kde-mac/kde/kf5-kdeclarative"
+  depends_on "kde-mac/kde/kf5-kded"
+  depends_on "kde-mac/kde/kf5-kdesu"
+  depends_on "kde-mac/kde/kf5-kemoticons"
+  depends_on "kde-mac/kde/kf5-kglobalaccel"
+  depends_on "kde-mac/kde/kf5-kiconthemes"
+  depends_on "kde-mac/kde/kf5-kinit"
+  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kf5-knotifyconfig"
+  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kf5-krunner"
+  depends_on "kde-mac/kde/kf5-kservice"
+  depends_on "kde-mac/kde/kf5-ktexteditor"
+  depends_on "kde-mac/kde/kf5-ktextwidgets"
+  depends_on "kde-mac/kde/kf5-kwallet"
+  depends_on "kde-mac/kde/kf5-kxmlgui"
+  depends_on "kde-mac/kde/kf5-plasma-framework"
+  depends_on "kde-mac/kde/kf5-tier2-frameworks"
 
   def install
     touch "empty"
