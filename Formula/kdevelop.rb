@@ -39,11 +39,6 @@ class Kdevelop < Formula
 
   patch :DATA
 
-  patch do
-    url "https://invent.kde.org/yurikoles/kdevelop/-/commit/295656d1bf89e4440e9e6a286efc244c04948d88.diff"
-    sha256 "b18d4dcf9e016e25991fa4780dc6d0e003a385a493a10dece673563cbb7212e5"
-  end
-
   def install
     args = kde_cmake_args
     args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
@@ -126,3 +121,20 @@ index 0ed104f..f8067c5 100644
 +    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
 
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d2723b2f63..a5d5106bae 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,7 +14,11 @@ if (_micro LESS "10")
+ endif()
+ set(RELEASE_SERVICE_BASED_PATCHLEVEL "${RELEASE_SERVICE_VERSION_MAJOR}${RELEASE_SERVICE_VERSION_MINOR}${_micro}")
+ 
+-project(KDevelop VERSION "5.8.${RELEASE_SERVICE_BASED_PATCHLEVEL}")
++if (APPLE)
++  project(KDevelop VERSION "${RELEASE_SERVICE_VERSION}")
++else()
++  project(KDevelop VERSION "5.8.${RELEASE_SERVICE_BASED_PATCHLEVEL}")
++endif()
+ 
+ # KDevelop SOVERSION
+ # E.g. for KDevelop 5.2.0 => SOVERSION 52 (we only promise ABI compatibility between patch version updates)
