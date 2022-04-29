@@ -3,14 +3,9 @@ require_relative "../lib/cmake"
 class KdevPython < Formula
   desc "KDevelop Python language support"
   homepage "https://kde.org/applications/development/org.kde.kdev-python"
-  url "https://download.kde.org/stable/release-service/21.12.3/src/kdev-python-21.12.3.tar.xz"
-  version "21.13.12.3"
-  sha256 "06671e072a1ba61ca6a4e6710cc47d20c6c123641a71ab8499b5b8461d0bcfc7"
+  url "https://download.kde.org/stable/release-service/22.04.0/src/kdev-python-22.04.0.tar.xz"
+  sha256 "11e527aa0f0a907cf5821efa3cd7e763166fe0421b9485b1e781a1321aa548dc"
   head "https://invent.kde.org/kdevelop/kdev-python.git", branch: "master"
-
-  livecheck do
-    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=448152"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build

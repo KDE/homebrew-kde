@@ -3,14 +3,9 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/release-service/21.12.3/src/kdevelop-21.12.3.tar.xz"
-  version "21.13.12.3"
-  sha256 "86f36502559675aaae2afc8f2d649ee29997cd75a32116acf63e9edce94717ea"
+  url "https://download.kde.org/stable/release-service/22.04.0/src/kdevelop-22.04.0.tar.xz"
+  sha256 "ab7a1828ab67475c85d84f603ab245fa762006d1a4953be42add2dfd23ae4a16"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
-
-  livecheck do
-    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=448152"
-  end
 
   depends_on "boost" => :build
   depends_on "cvs" => :build

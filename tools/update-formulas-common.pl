@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 my $frameworks_version = "5.93";
-my $gear_version       = "21.12.3";
+my $gear_version       = "22.04.0";
 my $plasma_version     = "5.24.4";
 
 my %frameworks = (
@@ -103,9 +103,9 @@ my %gear = (
     'kdeconnect-kde'  => '',
     'kdenlive'        => '',
     # https://bugs.kde.org/show_bug.cgi?id=448152
-    # 'kdev-php'        => '',
-    # 'kdev-python'     => '',
-    # 'kdevelop'        => '',
+    'kdev-php'        => '',
+    'kdev-python'     => '',
+    'kdevelop'        => '',
     'kdialog'         => '',
     'kimap'           => '',
     'kio-extras'      => '',
