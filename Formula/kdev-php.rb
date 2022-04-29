@@ -7,10 +7,6 @@ class KdevPhp < Formula
   sha256 "be846cf516450e686432062ba41ce04061b9e4587e9d4e955321ab6f57f65502"
   head "https://invent.kde.org/kdevelop/kdev-php.git", branch: "master"
 
-  livecheck do
-    skip "Newer versions doesn't compile due to bug: https://bugs.kde.org/show_bug.cgi?id=448152"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "kdevelop"
