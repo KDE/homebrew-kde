@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Labplot < Formula
   desc "Application for interactive graphing and analysis of scientific data"
   homepage "https://labplot.kde.org/"
-  url "https://download.kde.org/stable/labplot/2.8.2/labplot-2.8.2.tar.xz"
-  sha256 "8ec581da971735bfab20c28b1a7507196bf102a991d895bb1ec892c521b31dfa"
+  url "https://download.kde.org/stable/labplot/2.9.0/labplot-2.9.0.tar.xz"
+  sha256 "e5a31489f0b72a70cc632e1078506d7e7bc1ec7dbc89c5428d197a14e44b21f2"
   head "https://invent.kde.org/education/labplot.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -27,7 +27,6 @@ class Labplot < Formula
 
   def install
     args = kde_cmake_args
-    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args
     system "cmake", "--build", "build"
@@ -59,24 +58,26 @@ end
 
 __END__
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 042b5a1..e4bd13e 100644
+index 563ebbd77..b816d1794 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -1,4 +1,8 @@
+@@ -1,5 +1,8 @@
+ 
 -find_package(SharedMimeInfo REQUIRED)
-+find_package(SharedMimeInfo 0.70)
++find_package(SharedMimeInfo)
 +set_package_properties(SharedMimeInfo PROPERTIES
-+                       TYPE OPTIONAL
-+                       PURPOSE "Allows KDE applications to determine file types"
-+                       )
++       TYPE OPTIONAL
++       PURPOSE "Allows KDE applications to determine file types")
  set(KDE_FRONTEND true)
  set(KDEFRONTEND_DIR kdefrontend)
  set(BACKEND_DIR backend)
-@@ -471,4 +474,7 @@ install( PROGRAMS org.kde.labplot2.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
- install( FILES labplot2.xml DESTINATION ${XDG_MIME_INSTALL_DIR} )
- install( FILES labplot2_themes.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
+@@ -604,4 +607,8 @@ install( FILES labplot2.xml DESTINATION ${XDG_MIME_INSTALL_DIR} )
+ #      install( FILES labplot2_themes.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
+ #      install( FILES labplot2_datasets.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
+ # endif ()
 -update_xdg_mimetypes( ${XDG_MIME_INSTALL_DIR} )
++
 +# update XDG mime-types if shared mime info is around
 +if(SharedMimeInfo_FOUND)
-+    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
++       update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
