@@ -39,3 +39,7 @@ To remove all KDE Frameworks 5 packages, run:
 ## Installing HEAD
 
 Currently, installing a formula installs the last released version from tarballs. However, not all frameworks and apps were released as tarballs yet or latest stable release fails to build. If you get an error saying *is a head-only formula*, that formula can only be installed from latest git and not from released packages. This can be done by passing `--HEAD` as parameter to brew.
+
+## GUI KDE apps aren't available in Spotlight
+
+This is a limitation of Spotlight, it just doesn’t want search in some folders, even a symlink to /Applications doesn’t help. But as workaround you may launch KDE apps from Launchpad. Aforementioned `tools/do-caveats.sh` script creates symlinks to GUI apps in `~/Applications/KDE`, making them available to be picked manually and searchable inside Launchpad. But its search is not as convenient and fast as via Spotlight.
