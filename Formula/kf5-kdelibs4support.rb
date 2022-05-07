@@ -5,6 +5,7 @@ class Kf5Kdelibs4support < Formula
   homepage "https://api.kde.org/frameworks/kdelibs4support/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.93/portingAids/kdelibs4support-5.93.0.tar.xz"
   sha256 "6a3e1d80cc6babc12930f24f9afd1ed10b46ae58ea71d44a466178212b07377c"
+  revision 1
   head "https://invent.kde.org/frameworks/kdelibs4support.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -23,8 +24,8 @@ class Kf5Kdelibs4support < Formula
   uses_from_macos "perl"
 
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
-    sha256 "03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.10.tar.gz"
+    sha256 "16325d5e308c7b7ab623d1bf944e1354c5f2245afcfadb8eed1e2cae9a0bd0b5"
   end
 
   patch :DATA
