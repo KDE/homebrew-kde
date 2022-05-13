@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Umbrello < Formula
   desc "UML modeller"
   homepage "https://umbrello.kde.org/"
-  url "https://download.kde.org/stable/release-service/22.04.0/src/umbrello-22.04.0.tar.xz"
-  sha256 "f4f681daedbefdeb0e6b0da0fd718c20031491d3b088e0523ff5bbfab3de72d8"
+  url "https://download.kde.org/stable/release-service/22.04.1/src/umbrello-22.04.1.tar.xz"
+  sha256 "bf2d65a6a1d08f695b3ca29c902e4fc52917870cd3d161b3a478e77b021f5306"
   head "https://invent.kde.org/sdk/umbrello.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
