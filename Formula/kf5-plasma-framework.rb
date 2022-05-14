@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5PlasmaFramework < Formula
   desc "Plasma library and runtime components based upon KF5 & Qt5"
   homepage "https://api.kde.org/frameworks/plasma-framework/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.93/plasma-framework-5.93.0.tar.xz"
-  sha256 "d4a2c687ea2ea8dfe7c256eb58441fc458102ed4b445dc24685513dd96b5c322"
+  url "https://download.kde.org/stable/frameworks/5.94/plasma-framework-5.94.0.tar.xz"
+  sha256 "6cebfb9e7b61062194119bf7c4ef0e9529cd7321c8e06fb68b68fa518815ed2a"
   head "https://invent.kde.org/frameworks/plasma-framework.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

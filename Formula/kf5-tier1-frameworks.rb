@@ -5,9 +5,8 @@ class Kf5Tier1Frameworks < Formula
   homepage "https://api.kde.org/frameworks"
   system "touch", "/tmp/empty"
   url "file:///tmp/empty"
-  version "5.93.0"
+  version "5.94.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  revision 1
 
   livecheck do
     skip "Meta package"
