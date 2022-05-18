@@ -5,6 +5,7 @@ class Kdevelop < Formula
   homepage "https://kdevelop.org"
   url "https://download.kde.org/stable/release-service/22.04.1/src/kdevelop-22.04.1.tar.xz"
   sha256 "22f3f50d2d484c821ca39f66f953d61a7f77e596ce9d38b552a721f48366cdd8"
+  revision 1
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
@@ -36,6 +37,11 @@ class Kdevelop < Formula
   depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
+
+  patch do
+    url "https://invent.kde.org/kdevelop/kdevelop/-/commit/7d02895fd0ef22fb93c4f2a5fc3fe5dfc7aba4cb.diff"
+    sha256 "6873dd369f488517c82222baafa7df707e35b90580ecd4b1a1ee4baeb387ae2a"
+  end
 
   patch :DATA
 
@@ -120,21 +126,3 @@ index 0ed104f..f8067c5 100644
 +if(SharedMimeInfo_FOUND)
 +    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
-
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d2723b2f63..a5d5106bae 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -14,7 +14,11 @@ if (_micro LESS "10")
- endif()
- set(RELEASE_SERVICE_BASED_PATCHLEVEL "${RELEASE_SERVICE_VERSION_MAJOR}${RELEASE_SERVICE_VERSION_MINOR}${_micro}")
- 
--project(KDevelop VERSION "5.8.${RELEASE_SERVICE_BASED_PATCHLEVEL}")
-+if (APPLE)
-+  project(KDevelop VERSION "${RELEASE_SERVICE_VERSION}")
-+else()
-+  project(KDevelop VERSION "5.8.${RELEASE_SERVICE_BASED_PATCHLEVEL}")
-+endif()
- 
- # KDevelop SOVERSION
- # E.g. for KDevelop 5.2.0 => SOVERSION 52 (we only promise ABI compatibility between patch version updates)
