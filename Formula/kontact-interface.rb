@@ -12,10 +12,13 @@ class KontactInterface < Formula
   
     depends_on "qt@5"
     depends_on "kde-mac/kde/kf5-kparts"
+    depends_on "kde-mac/kde/kf5-kwindowsystem"
+    depends_on "kde-mac/kde/kf5-kxmlgui"
+    depends_on "kde-mac/kde/kf5-kcoreaddons"
   
     def install
       args = kde_cmake_args
-  
+
       system "cmake", *args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
