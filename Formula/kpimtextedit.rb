@@ -1,6 +1,6 @@
 require_relative "../lib/cmake"
 
-class Kf5Kpimtextedit < Formula
+class Kpimtextedit < Formula
   desc "A textedit with PIM-specific features"
   homepage "https://api.kde.org/kdepim/kpimtextedit/html/index.html"
   url "https://download.kde.org/stable/release-service/22.04.1/src/kpimtextedit-22.04.1.tar.xz"
