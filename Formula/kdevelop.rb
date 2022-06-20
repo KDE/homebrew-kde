@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/release-service/22.04.1/src/kdevelop-22.04.1.tar.xz"
-  sha256 "22f3f50d2d484c821ca39f66f953d61a7f77e596ce9d38b552a721f48366cdd8"
-  revision 1
+  url "https://download.kde.org/stable/release-service/22.04.2/src/kdevelop-22.04.2.tar.xz"
+  sha256 "d3612b8dc6334cc481c0b1a2b8a0ccd4012d60eae5429bdad7f502ac47ef30b6"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
@@ -37,11 +36,6 @@ class Kdevelop < Formula
   depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
-
-  patch do
-    url "https://invent.kde.org/kdevelop/kdevelop/-/commit/7d02895fd0ef22fb93c4f2a5fc3fe5dfc7aba4cb.diff"
-    sha256 "6873dd369f488517c82222baafa7df707e35b90580ecd4b1a1ee4baeb387ae2a"
-  end
 
   patch :DATA
 

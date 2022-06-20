@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Konsole < Formula
   desc "KDE's terminal emulator"
   homepage "https://konsole.kde.org/"
-  url "https://download.kde.org/stable/release-service/22.04.1/src/konsole-22.04.1.tar.xz"
-  sha256 "8d049888a9be2464ec5c0c961fbab155fea679a714558f9ad6e13720c56822e3"
+  url "https://download.kde.org/stable/release-service/22.04.2/src/konsole-22.04.2.tar.xz"
+  sha256 "97d1e98cd715b03fba9a0c2b0f33d9d19a8737531d34c7120af74cf7c5337111"
   head "https://invent.kde.org/utilities/konsole.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
