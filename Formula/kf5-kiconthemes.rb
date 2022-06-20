@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kiconthemes < Formula
   desc "Support for icon themes"
   homepage "https://api.kde.org/frameworks/kiconthemes/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.94/kiconthemes-5.94.0.tar.xz"
-  sha256 "d972d81dcd7ccb74ef4abd4db2a88512a07ea459a301b94e7a98b831ab814993"
+  url "https://download.kde.org/stable/frameworks/5.95/kiconthemes-5.95.0.tar.xz"
+  sha256 "cde64a79e173330b93cf12ce5b18dfa8cc4fdbdf6ec3172ddf2524b78f26c3eb"
   head "https://invent.kde.org/frameworks/kiconthemes.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdewebkit < Formula
   desc "KDE Integration for QtWebKit"
   homepage "https://api.kde.org/frameworks/kdewebkit/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.94/portingAids/kdewebkit-5.94.0.tar.xz"
-  sha256 "9bca73e8e67ccb89a044514ff6f6c02f6e65003cb34bc7e358a44182bc710d59"
+  url "https://download.kde.org/stable/frameworks/5.95/portingAids/kdewebkit-5.95.0.tar.xz"
+  sha256 "f2616ec35cb7a9c434b8a60314b558f11112d17cb9a5a3597dfb8bb21a9fde2c"
   head "https://invent.kde.org/frameworks/kdewebkit.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
