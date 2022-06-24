@@ -16,13 +16,9 @@ class Libalkimia < Formula
   depends_on "kde-mac/kde/kf5-kcoreaddons"
   depends_on "kde-mac/kde/kf5-knewstuff"
   depends_on "kde-mac/kde/kf5-plasma-framework"
-  depends_on "kde-mac/kde/qt-webkit"
 
   def install
-    args = kde_cmake_args
-    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
-
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

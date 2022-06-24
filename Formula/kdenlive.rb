@@ -25,14 +25,10 @@ class Kdenlive < Formula
   depends_on "libdv"
   depends_on "mlt"
 
-  depends_on "kde-mac/kde/qt-webkit" => :optional
-
   patch :DATA
 
   def install
     args = kde_cmake_args
-
-    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
     args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
 
     system "cmake", *args
