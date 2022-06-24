@@ -31,4 +31,11 @@ for candidate_formula in `cat "${install_order}"`; do
     fi
 done
 
+casksadir="$(brew --repo kde-mac/kde)/Casks"
+
+for cask in "${casksadir}"/*.rb; do
+  caskname=`basename "${cask}"`
+  echo "cask \"kde-mac/kde/${caskname//\.rb/}\"" >> "${bundle}"
+done
+
 brew bundle --verbose --file "${bundle}"
