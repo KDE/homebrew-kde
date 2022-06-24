@@ -28,6 +28,7 @@ class Kdevelop < Formula
   depends_on "kde-mac/kde/konsole"
   depends_on "kde-mac/kde/ksysguard"
   depends_on "kde-mac/kde/libkomparediff2"
+  depends_on "kde-mac/kde/qt-webkit"
   depends_on "llvm"
   depends_on "subversion"
   depends_on "threadweaver"
