@@ -3,7 +3,7 @@ require_relative "../lib/cmake"
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
   homepage "https://github.com/qtwebkit/qtwebkit"
-  revision 4
+  revision 5
   head "https://github.com/qtwebkit/qtwebkit.git", branch: "qtwebkit-5.212"
 
   depends_on "cmake" => [:build, :test]
@@ -12,10 +12,16 @@ class QtWebkit < Formula
   depends_on "gperf" => :build
   depends_on "ninja" => :build
   depends_on "sqlite" => :build
+  depends_on "python@3.10" => :build
+
+  depends_on "gst-plugins-good" => :recommended
+
   depends_on "libxslt"
   depends_on "qt@5"
   depends_on "webp"
   depends_on "zlib"
+  depends_on "woff2"
+  depends_on "gst-plugins-base"
 
   patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
     url "https://github.com/qtwebkit/qtwebkit/commit/219aaeee642bce47773df3e797fe8083207b29e2.patch?full_index=1"
