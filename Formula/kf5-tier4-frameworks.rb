@@ -30,7 +30,6 @@ class Kf5Tier4Frameworks < Formula
   test do
     (testpath/"CMakeLists.txt").write <<~EOS
       find_package(KF5FrameworkIntegration REQUIRED)
-      find_package(KF5QQC2DeskopStyle REQUIRED)
     EOS
     system "cmake", ".", "-Wno-dev"
   end

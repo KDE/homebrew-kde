@@ -39,11 +39,14 @@ class Kf5PortingaidsFrameworks < Formula
     (testpath/"CMakeLists.txt").write <<~EOS
       find_package(KF5KDELibs4Support REQUIRED)
       find_package(KF5KDE4Support REQUIRED)
+      find_package(KF5DesignerPlugin REQUIRED)
+      find_package(KF5WebKit REQUIRED)
       find_package(KF5KHtml REQUIRED)
       find_package(KF5JS REQUIRED)
       find_package(KF5JsEmbed REQUIRED)
       find_package(KF5MediaPlayer REQUIRED)
       find_package(KF5Kross REQUIRED)
+      find_package(KF5XmlRpcClient REQUIRED)      
     EOS
     system "cmake", ".", "-Wno-dev"
   end
