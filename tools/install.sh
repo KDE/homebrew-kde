@@ -5,7 +5,7 @@ HOMEBREW_NO_AUTO_UPDATE=1
 
 tmp_kde=/tmp/kde
 dep_map="${tmp_kde}/dep_map"
-bundle="${tmp_kde}/bundle"
+bundle="${tmp_kde}/Brewfile"
 install_order="${tmp_kde}/install_order"
 
 rm -f "${dep_map}" "${install_order}" "${bundle}"
