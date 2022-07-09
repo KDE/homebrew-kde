@@ -23,8 +23,8 @@ class Kf5Kdelibs4support < Formula
   uses_from_macos "perl"
 
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.10.tar.gz"
-    sha256 "16325d5e308c7b7ab623d1bf944e1354c5f2245afcfadb8eed1e2cae9a0bd0b5"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.11.tar.gz"
+    sha256 "d3b62a69a6ab288021167d428ac4673c399d42e4de69eb49c7953a30821843c9"
   end
 
   patch :DATA
