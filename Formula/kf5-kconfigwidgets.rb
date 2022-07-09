@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kconfigwidgets < Formula
   desc "Widgets for configuration dialogs"
   homepage "https://api.kde.org/frameworks/kconfigwidgets/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.95/kconfigwidgets-5.95.0.tar.xz"
-  sha256 "2bb7f31f14f6eed019f8f0d5f24b6552af39d7e3dd376ca4e0a489221e399d52"
+  url "https://download.kde.org/stable/frameworks/5.96/kconfigwidgets-5.96.0.tar.xz"
+  sha256 "1482f42562be8db93c9161acf2b24fa839f05bc893f22f02a3c1e972e733b210"
   head "https://invent.kde.org/frameworks/kconfigwidgets.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

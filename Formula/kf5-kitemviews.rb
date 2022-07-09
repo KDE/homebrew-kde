@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kitemviews < Formula
   desc "Widget addons for Qt Model/View"
   homepage "https://api.kde.org/frameworks/kitemviews/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.95/kitemviews-5.95.0.tar.xz"
-  sha256 "72db4070df861b03eb64ff10c48c244e9b60caa30510f0fad5c9cb6e21db22fe"
+  url "https://download.kde.org/stable/frameworks/5.96/kitemviews-5.96.0.tar.xz"
+  sha256 "8b9a6404b5a84c9142008c3fe840c7ba4a3fbf8f77253a5105e4512ecd1726f3"
   head "https://invent.kde.org/frameworks/kitemviews.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

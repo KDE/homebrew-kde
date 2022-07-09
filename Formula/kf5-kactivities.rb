@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kactivities < Formula
   desc "Core components for the KDE Activity concept"
   homepage "https://api.kde.org/frameworks/kactivities/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.95/kactivities-5.95.0.tar.xz"
-  sha256 "e3c12269b60a815dab2cba3a3e035f479a9dc0a8f9c04a2a9dafa91c3cafb4d7"
+  url "https://download.kde.org/stable/frameworks/5.96/kactivities-5.96.0.tar.xz"
+  sha256 "53cf05c948acb4203042b24fa09719e279d30098976809a061198868f698263c"
   head "https://invent.kde.org/frameworks/kactivities.git", branch: "master"
 
   depends_on "boost" => :build

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcodecs < Formula
   desc "String encoding library"
   homepage "https://api.kde.org/frameworks/kcodecs/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.95/kcodecs-5.95.0.tar.xz"
-  sha256 "e27bb0626176aa580d2cfbdc07a7eb33dd7fefd0113a366c480df7f8b1b39534"
+  url "https://download.kde.org/stable/frameworks/5.96/kcodecs-5.96.0.tar.xz"
+  sha256 "7147e4ae29082f5403e21cb7940b3546c094192095f22ed6c5c3fdda25374614"
   head "https://invent.kde.org/frameworks/kcodecs.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
