@@ -34,25 +34,25 @@ class Kf5Kjsembed < Formula
 end
 
 # Mark executable as nongui type
-
+# https://invent.kde.org/frameworks/kjsembed/-/merge_requests/4
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8939ba5..1ab9bdc 100644
+index 85973b9..a45ad84 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -21,6 +21,7 @@ include(GenerateExportHeader)
+@@ -20,6 +20,7 @@ include(ECMGenerateHeaders)
+ include(ECMDeprecationSettings)
+ include(GenerateExportHeader)
  include(CMakePackageConfigHelpers)
- include(ECMSetupVersion)
- include(ECMGenerateHeaders)
 +include(ECMMarkNonGuiExecutable)
  
- ecm_setup_version(PROJECT VARIABLE_PREFIX KJSEMBED
-    #VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kjsembed_version.h"
+ set(REQUIRED_QT_VERSION 5.15.2)
+ find_package(Qt5 "${REQUIRED_QT_VERSION}" CONFIG REQUIRED UiTools Widgets Xml Svg)
 diff --git a/src/kjscmd/CMakeLists.txt b/src/kjscmd/CMakeLists.txt
-index 95f7c31..16b102f 100644
+index 3272269..4d599e8 100644
 --- a/src/kjscmd/CMakeLists.txt
 +++ b/src/kjscmd/CMakeLists.txt
-@@ -10,4 +10,5 @@ target_link_libraries(kjscmd5
+@@ -13,4 +13,5 @@ target_link_libraries(kjscmd5
      KF5::JsEmbed
  )
  
