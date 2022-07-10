@@ -34,7 +34,7 @@ class Kdevelop < Formula
   depends_on "threadweaver"
 
   # isn't packaged on ARM64 macOS
-  depends_on "gdb" => :recommended if OS.mac? && Hardware::CPU.intel?
+  depends_on "gdb" => :recommended if OS.linux? || (OS.mac? && Hardware::CPU.intel?)
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
 
