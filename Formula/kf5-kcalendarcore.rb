@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcalendarcore < Formula
   desc "The KDE calendar access library"
   homepage "https://api.kde.org/frameworks/kcalendarcore/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.94/kcalendarcore-5.94.0.tar.xz"
-  sha256 "3bab1ae2e8214fb889b742d4a4f2c6acfd0bf40a4c4933cc91c66d21d77c042b"
+  url "https://download.kde.org/stable/frameworks/5.96/kcalendarcore-5.96.0.tar.xz"
+  sha256 "b3e84dc29df6bc6e87ef5d44de4dad19a5eadebe25e8c4ed798f6c30908b3ea0"
   head "https://invent.kde.org/frameworks/kcalendarcore.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

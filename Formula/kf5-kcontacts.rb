@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcontacts < Formula
   desc "Address book API for KDE"
   homepage "https://api.kde.org/frameworks/kcontacts/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.94/kcontacts-5.94.0.tar.xz"
-  sha256 "f7f317dfd9b270249cf168a699b39236490b5b21ec2ef1d186b59e29566252f8"
+  url "https://download.kde.org/stable/frameworks/5.96/kcontacts-5.96.0.tar.xz"
+  sha256 "4154c406fec42171a91a5d30fcd8456f6809eac04178fa2cf3f8384cd9e1b51c"
   head "https://invent.kde.org/frameworks/kcontacts.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

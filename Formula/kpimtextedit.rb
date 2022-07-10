@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kpimtextedit < Formula
   desc "A textedit with PIM-specific features"
   homepage "https://api.kde.org/kdepim/kpimtextedit/html/index.html"
-  url "https://download.kde.org/stable/release-service/22.04.1/src/kpimtextedit-22.04.1.tar.xz"
-  sha256 "f6cedefcc351069e01d0f3f15d4eaefe0ecb2865aaab3e17811af54a39f9bfc7"
+  url "https://download.kde.org/stable/release-service/22.04.3/src/kpimtextedit-22.04.3.tar.xz"
+  sha256 "2dbc53584524477e8bbf8f8a919438e47c2ae1345ace5787f2e3989e2db260bd"
   head "https://invent.kde.org/pim/kpimtextedit.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

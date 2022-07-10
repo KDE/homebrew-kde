@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Ksmtp < Formula
   desc "Job-based library to send email through an SMTP server"
   homepage "https://api.kde.org/kdepim/ksmtp/html/index.html"
-  url "https://download.kde.org/stable/release-service/22.04.1/src/ksmtp-22.04.1.tar.xz"
-  sha256 "f445692c54310c737d6afffeb8a2ce9d6c17164ca6145fc7f983f8adfe79f458"
+  url "https://download.kde.org/stable/release-service/22.04.3/src/ksmtp-22.04.3.tar.xz"
+  sha256 "9f50f4a0caace0511f6e13ea98bb07f32826d638ce27b2171772ee5abb3f1cd0"
   head "https://invent.kde.org/pim/ksmtp.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

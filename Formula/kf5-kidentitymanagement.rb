@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kidentitymanagement < Formula
   desc "Library to assist in handling user identities"
   homepage "https://api.kde.org/kdepim/kidentitymanagement/html/index.html"
-  url "https://download.kde.org/stable/release-service/22.04.1/src/kidentitymanagement-22.04.1.tar.xz"
-  sha256 "746a01e43dae1841ec412257f64cc25dd19139403e9119ff746882883ac80738"
+  url "https://download.kde.org/stable/release-service/22.04.3/src/kidentitymanagement-22.04.3.tar.xz"
+  sha256 "1cb598d9feafbc742235840d1240ce573ea02a170edeafbbfbedd49629ef317c"
   head "https://invent.kde.org/pim/kidentitymanagement.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

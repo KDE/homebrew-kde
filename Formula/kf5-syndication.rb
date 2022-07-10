@@ -1,8 +1,8 @@
 class Kf5Syndication < Formula
   desc "An RSS/Atom parser library"
   homepage "https://api.kde.org/frameworks/syndication/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.94/syndication-5.94.0.tar.xz"
-  sha256 "458e12e4d4898d5e660ea6a3fe0d6158c208f5d4176451e1132423df2044685b"
+  url "https://download.kde.org/stable/frameworks/5.96/syndication-5.96.0.tar.xz"
+  sha256 "a4b1dbf8c0eed15eab9f520512fee6271b07fac0745c2b1fc6ccae49ed6fc0e0"
   head "https://invent.kde.org/frameworks/syndication.git", branch: "master"
 
   depends_on "cmake" => [:build,:test]

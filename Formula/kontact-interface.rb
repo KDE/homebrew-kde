@@ -1,21 +1,21 @@
 class KontactInterface < Formula
     desc "Support libraries to assist integration with Kontact"
     homepage "https://api.kde.org/kdepim/kontactinterface/html/index.html"
-    url "https://download.kde.org/stable/release-service/22.04.1/src/kontactinterface-22.04.1.tar.xz"
-    sha256 "a30ab91e4b38c691ef5e7f4b81dddb318ec6006faf5cb4a44823bd0ed618ca6b"
+    url "https://download.kde.org/stable/release-service/22.04.3/src/kontactinterface-22.04.3.tar.xz"
+    sha256 "35b1ff8dcddcd8c81533989819508beb5effc41c4063d538bae2ddb733edea5a"
     head "https://invent.kde.org/pim/kontactinterface.git", branch: "master"
-  
+
     depends_on "cmake" => [:build,:test]
     depends_on "doxygen" => :build
     depends_on "extra-cmake-modules" => [:build, :test]
     depends_on "ninja" => :build
-  
+
     depends_on "qt@5"
     depends_on "kde-mac/kde/kf5-kparts"
     depends_on "kde-mac/kde/kf5-kwindowsystem"
     depends_on "kde-mac/kde/kf5-kxmlgui"
     depends_on "kde-mac/kde/kf5-kcoreaddons"
-  
+
     def install
       args = kde_cmake_args
 
@@ -30,4 +30,3 @@ class KontactInterface < Formula
         system "cmake", ".", "-Wno-dev"
     end
 end
-  
