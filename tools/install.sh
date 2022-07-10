@@ -18,6 +18,7 @@ for formula in "${formuladir}"/*.rb; do
   for dep in `grep "depends_on \"kde-mac/kde" "${formula}" | awk -F "\"" '{print $2}'`; do
     echo "${dep/kde-mac\/kde\//} ${formulaname//\.rb/}" >> "${dep_map}"
   done
+  echo "${formulaname//\.rb/}" >> "${dep_map}"
 done
 
 tsort "${dep_map}" > "${install_order}" 2> /dev/null
