@@ -13,8 +13,14 @@ class Drkonqi < Formula
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
+  depends_on "kde-mac/kde/kf5-kdeclarative"
   depends_on "kde-mac/kde/kf5-kidletime"
   depends_on "kde-mac/kde/kf5-kxmlrpcclient"
+  depends_on "kde-mac/kde/kf5-syntax-highlighting"
+
+  # isn't packaged on ARM64 macOS
+  depends_on "gdb" => :recommended if OS.linux? || (OS.mac? && Hardware::CPU.intel?)
+  depends_on "kde-mac/kde/kf5-kirigami2" => :recommended
 
   def install
     args = kde_cmake_args
