@@ -5,6 +5,7 @@ class Kf5Krunner < Formula
   homepage "https://api.kde.org/frameworks/krunner/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.96/krunner-5.96.0.tar.xz"
   sha256 "935efb9ec69d9c99208e6a4b3ff3dcb6f5c773acd332846a4d60d5c461b5a271"
+  revision 1
   head "https://invent.kde.org/frameworks/krunner.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -15,7 +16,6 @@ class Kf5Krunner < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-plasma-framework"
   depends_on "threadweaver"
 
   def install

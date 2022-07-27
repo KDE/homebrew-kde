@@ -7,6 +7,7 @@ class Kf5Tier3Frameworks < Formula
   url "file:///tmp/empty"
   version "5.96.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  revision 1
 
   livecheck do
     skip "Meta package"
@@ -31,7 +32,6 @@ class Kf5Tier3Frameworks < Formula
   depends_on "kde-mac/kde/kf5-ktextwidgets"
   depends_on "kde-mac/kde/kf5-kwallet"
   depends_on "kde-mac/kde/kf5-kxmlgui"
-  depends_on "kde-mac/kde/kf5-plasma-framework"
   depends_on "kde-mac/kde/kf5-tier2-frameworks"
 
   def install

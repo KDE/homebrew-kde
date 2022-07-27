@@ -69,7 +69,6 @@ my %frameworks = (
     'ktextwidgets'     => '',
     'kwallet'          => '',
     'kxmlgui'          => '',
-    'plasma-framework' => '',
 
 ### Tier 4
     'frameworkintegration' => '',

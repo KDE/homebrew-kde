@@ -5,12 +5,11 @@ class Krusader < Formula
   homepage "https://krusader.org/"
   url "https://download.kde.org/stable/krusader/2.7.2/krusader-2.7.2.tar.xz"
   sha256 "41a39a43b3c42dd1d1ecaea86df30caff6a061fecc1d66f60859b2a3ca976109"
-  revision 3
+  revision 4
   head "https://invent.kde.org/utilities/krusader.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-plasma-framework" => :build
   depends_on "ninja" => :build
 
   depends_on "gettext"

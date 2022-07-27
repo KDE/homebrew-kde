@@ -60,8 +60,6 @@ ln -sf "$(brew --prefix)/share/emoticons" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/kdevappwizard" "${APPLICATION_SUPPORT}"
 # kf5-kdelibs4support
 ln -sf "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "${HOME_APPS_KDE}"
-# kf5-plasma-frameworks
-ln -sf "$(brew --prefix)/share/plasma" "${APPLICATION_SUPPORT}"
 # dolphin
 ln -sf "$(brew --prefix)/share/dolphin" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/opt/dolphin/bin/dolphin.app" "${HOME_APPS_KDE}"

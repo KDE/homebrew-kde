@@ -5,11 +5,11 @@ class Kate < Formula
   homepage "https://kate-editor.org"
   url "https://download.kde.org/stable/release-service/22.04.3/src/kate-22.04.3.tar.xz"
   sha256 "6e3e4f78c8c2b6a68ce8122dbcd1f1222ec18dd17aa1b4b155989a4659c8d436"
+  revision 1
   head "https://invent.kde.org/utilities/kate.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-plasma-framework" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
