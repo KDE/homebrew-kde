@@ -19,11 +19,6 @@ class Kf5PlasmaFramework < Formula
   depends_on "kde-mac/kde/kf5-kdeclarative"
   depends_on "kde-mac/kde/kf5-kirigami2"
 
-  patch do
-    url "https://invent.kde.org/frameworks/plasma-framework/-/commit/dff1b034c1162062aa2292099d3d01fc53dafdf6.diff"
-    sha256 "f2e7b421073544c7e9fcc530f21701bae33279bad840573e0351e00ba806901e"
-  end
-
   def install
     args = kde_cmake_args
 
