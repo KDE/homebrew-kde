@@ -63,7 +63,6 @@ my %frameworks = (
     'knewstuff'        => '',
     'knotifyconfig'    => '',
     'kparts'           => '',
-    'krunner'          => '',
     'kservice'         => '',
     'ktexteditor'      => '',
     'ktextwidgets'     => '',

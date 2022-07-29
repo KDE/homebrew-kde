@@ -26,7 +26,6 @@ class Kf5Tier3Frameworks < Formula
   depends_on "kde-mac/kde/kf5-knewstuff"
   depends_on "kde-mac/kde/kf5-knotifyconfig"
   depends_on "kde-mac/kde/kf5-kparts"
-  depends_on "kde-mac/kde/kf5-krunner"
   depends_on "kde-mac/kde/kf5-kservice"
   depends_on "kde-mac/kde/kf5-ktexteditor"
   depends_on "kde-mac/kde/kf5-ktextwidgets"
