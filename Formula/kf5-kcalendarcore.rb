@@ -8,16 +8,15 @@ class Kf5Kcalendarcore < Formula
   head "https://invent.kde.org/frameworks/kcalendarcore.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+
+  depends_on "doxygen" => :build
 
   depends_on "qt@5"
   depends_on "libical"
 
   def install
-    args = kde_cmake_args
-
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
