@@ -15,9 +15,7 @@ class Kf5Qqc2DesktopStyle < Formula
   depends_on "kde-mac/kde/kf5-kirigami2"
 
   def install
-    args = kde_cmake_args
-
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

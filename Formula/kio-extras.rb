@@ -32,9 +32,7 @@ class KioExtras < Formula
   end
 
   def install
-    args = kde_cmake_args
-
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
