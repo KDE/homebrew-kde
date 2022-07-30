@@ -9,6 +9,7 @@ class Kf5Libkleo < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
+
   depends_on "ninja" => :build
   depends_on "boost" => :build
   depends_on "doxygen" => :build
