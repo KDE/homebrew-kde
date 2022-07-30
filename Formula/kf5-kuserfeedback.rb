@@ -7,12 +7,11 @@ class Kf5Kuserfeedback < Formula
   sha256 "76aac922b153249b274680a6f4c72c238ef14e3df04bad00cb64158b1063f264"
   head "https://invent.kde.org/libraries/kuserfeedback.git", branch: "master"
 
-  depends_on "cmake" => [:build, :test]
-  depends_on "extra-cmake-modules" => [:build, :test]
-
-  depends_on "ninja" => :build
   depends_on "bison" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "ninja" => :build
 
   depends_on "qt@5"
 

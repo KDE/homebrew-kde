@@ -1,19 +1,18 @@
 require_relative "../lib/cmake"
 
 class Kf5Kcalendarcore < Formula
-  desc "The KDE calendar access library"
+  desc "KDE calendar access library"
   homepage "https://api.kde.org/frameworks/kcalendarcore/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.96/kcalendarcore-5.96.0.tar.xz"
   sha256 "b3e84dc29df6bc6e87ef5d44de4dad19a5eadebe25e8c4ed798f6c30908b3ea0"
   head "https://invent.kde.org/frameworks/kcalendarcore.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
+  depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
 
-  depends_on "doxygen" => :build
-
-  depends_on "qt@5"
   depends_on "libical"
+  depends_on "qt@5"
 
   def install
     system "cmake", *kde_cmake_args

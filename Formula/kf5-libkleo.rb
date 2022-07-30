@@ -7,18 +7,16 @@ class Kf5Libkleo < Formula
   sha256 "d76e6fd8740d17eea371c4052b17e98a7fdf77651d801a31701968f2455c665a"
   head "https://invent.kde.org/pim/libkleo.git", branch: "master"
 
-  depends_on "cmake" => [:build, :test]
-  depends_on "extra-cmake-modules" => [:build, :test]
-
-  depends_on "ninja" => :build
   depends_on "boost" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "ninja" => :build
 
-  depends_on "qt@5"
-
+  depends_on "gpgme"
   depends_on "kde-mac/kde/kf5-kitemmodels"
   depends_on "kde-mac/kde/kpimtextedit"
-  depends_on "gpgme"
+  depends_on "qt@5"
 
   def install
     system "cmake", *kde_cmake_args
