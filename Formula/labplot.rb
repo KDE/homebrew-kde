@@ -5,6 +5,7 @@ class Labplot < Formula
   homepage "https://labplot.kde.org/"
   url "https://download.kde.org/stable/labplot/2.9.0/labplot-2.9.0.tar.xz"
   sha256 "e5a31489f0b72a70cc632e1078506d7e7bc1ec7dbc89c5428d197a14e44b21f2"
+  revision 1
   head "https://invent.kde.org/education/labplot.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -22,8 +23,6 @@ class Labplot < Formula
   depends_on "libcerf"
   depends_on "netcdf"
   depends_on "qt@5"
-
-  patch :DATA
 
   def install
     args = kde_cmake_args
@@ -53,31 +52,3 @@ class Labplot < Formula
     assert_match "help", shell_output("#{bin}/labplot.app/Contents/MacOS/labplot --help")
   end
 end
-
-# Fix shared-mime-info for use with ECM instead of set as hard requeriment.
-
-__END__
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 563ebbd77..b816d1794 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -1,5 +1,8 @@
- 
--find_package(SharedMimeInfo REQUIRED)
-+find_package(SharedMimeInfo)
-+set_package_properties(SharedMimeInfo PROPERTIES
-+       TYPE OPTIONAL
-+       PURPOSE "Allows KDE applications to determine file types")
- set(KDE_FRONTEND true)
- set(KDEFRONTEND_DIR kdefrontend)
- set(BACKEND_DIR backend)
-@@ -604,4 +607,8 @@ install( FILES labplot2.xml DESTINATION ${XDG_MIME_INSTALL_DIR} )
- #      install( FILES labplot2_themes.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
- #      install( FILES labplot2_datasets.knsrc DESTINATION ${CONFIG_INSTALL_DIR} )
- # endif ()
--update_xdg_mimetypes( ${XDG_MIME_INSTALL_DIR} )
-+
-+# update XDG mime-types if shared mime info is around
-+if(SharedMimeInfo_FOUND)
-+       update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-+endif()
