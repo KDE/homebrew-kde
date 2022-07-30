@@ -46,7 +46,7 @@ class Kf5PortingaidsFrameworks < Formula
       find_package(KF5JsEmbed REQUIRED)
       find_package(KF5MediaPlayer REQUIRED)
       find_package(KF5Kross REQUIRED)
-      find_package(KF5XmlRpcClient REQUIRED)      
+      find_package(KF5XmlRpcClient REQUIRED)
     EOS
     system "cmake", ".", "-Wno-dev"
   end

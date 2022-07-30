@@ -16,11 +16,7 @@ class Kf5Kguiaddons < Formula
   depends_on "qt@5"
 
   def install
-    args = kde_cmake_args
-
-    args << "-DWITH_WAYLAND=OFF"
-
-    system "cmake", *args
+    system "cmake", "-DWITH_WAYLAND=OFF", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

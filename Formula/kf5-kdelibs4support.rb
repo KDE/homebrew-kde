@@ -30,8 +30,6 @@ class Kf5Kdelibs4support < Formula
   patch :DATA
 
   def install
-    args = kde_cmake_args
-
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"
 
@@ -40,7 +38,7 @@ class Kf5Kdelibs4support < Formula
       system "make", "install"
     end
 
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

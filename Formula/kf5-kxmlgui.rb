@@ -8,8 +8,6 @@ class Kf5Kxmlgui < Formula
   head "https://invent.kde.org/frameworks/kxmlgui.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  # https://bugs.kde.org/show_bug.cgi?id=446492
-  # depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
@@ -20,18 +18,15 @@ class Kf5Kxmlgui < Formula
   depends_on "qt@5"
 
   def install
-    args = kde_cmake_args
-    args << "-D BUILD_QCH=OFF" # https://bugs.kde.org/show_bug.cgi?id=446492
-
-    system "cmake", *args
+    # https://bugs.kde.org/show_bug.cgi?id=446492
+    system "cmake", "-D BUILD_QCH=OFF", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
   end
 
   test do
-    args = std_cmake_args
-    args << "-Wno-dev"
+    args = ["-Wno-dev"]
 
     qt_modules = %w[
       DBus
@@ -47,6 +42,6 @@ class Kf5Kxmlgui < Formula
     end
 
     (testpath/"CMakeLists.txt").write("find_package(KF5XmlGui REQUIRED)")
-    system "cmake", ".", *args
+    system "cmake", ".", *args, *kde_cmake_args
   end
 end

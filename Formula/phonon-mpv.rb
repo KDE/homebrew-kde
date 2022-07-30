@@ -15,10 +15,7 @@ class PhononMpv < Formula
   depends_on "mpv"
 
   def install
-    args = kde_cmake_args
-    args << "-DCMAKE_CXX_STANDARD=17"
-
-    system "cmake", *args
+    system "cmake", "-DCMAKE_CXX_STANDARD=17", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

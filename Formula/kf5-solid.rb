@@ -18,12 +18,12 @@ class Kf5Solid < Formula
   depends_on "qt@5"
 
   def install
-    args = kde_cmake_args
+    # args = kde_cmake_args
     # setTime_t function is deprecated since 5.8.
     # args << "-DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050700"
     # args << "-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050700"
 
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
