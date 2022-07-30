@@ -3,13 +3,9 @@ require_relative "../lib/cmake"
 class Kmymoney < Formula
   desc "Personal finance manager similar to MS-Money or Quicken"
   homepage "https://kmymoney.org"
+  url "https://download.kde.org/stable/kmymoney/5.1.3/src/kmymoney-5.1.3.tar.xz"
+  sha256 "3938b8078b7391ba32e12bb4239762fae134683a0c2ec1a75105c302ca3e5e3f"
   head "https://invent.kde.org/office/kmymoney.git", branch: "master"
-
-  stable do
-    url "https://download.kde.org/stable/kmymoney/5.1.2/src/kmymoney-5.1.2.tar.xz"
-    sha256 "37bdc4e763a2849b9f739f73e38b389c02bde1c1b1844edcfa7e3ab1d5bf7b3b"
-    depends_on "kde-mac/kde/kf5-kiconthemes"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -22,7 +18,6 @@ class Kmymoney < Formula
   depends_on "kde-mac/kde/kdiagram"
   depends_on "kde-mac/kde/kf5-kactivities"
   depends_on "kde-mac/kde/kf5-kcmutils"
-  depends_on "kde-mac/kde/kf5-kdewebkit"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kitemmodels"
   depends_on "kde-mac/kde/kf5-kross"
@@ -32,7 +27,7 @@ class Kmymoney < Formula
   depends_on "sqlcipher"
 
   def install
-    system "cmake", *kde_cmake_args
+    system "cmake", "-DENABLE_WEBENGINE=ON", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
