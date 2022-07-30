@@ -8,7 +8,7 @@ class Kf5Libkleo < Formula
   head "https://invent.kde.org/pim/libkleo.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "extra-cmake-modules" => :build
+  depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "boost" => :build
   depends_on "doxygen" => :build
@@ -20,9 +20,7 @@ class Kf5Libkleo < Formula
   depends_on "gpgme"
 
   def install
-    args = kde_cmake_args
-
-    system "cmake", *args
+    system "cmake", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
