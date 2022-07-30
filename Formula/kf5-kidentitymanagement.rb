@@ -8,8 +8,9 @@ class Kf5Kidentitymanagement < Formula
   head "https://invent.kde.org/pim/kidentitymanagement.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+
+  depends_on "doxygen" => :build
 
   depends_on "qt@5"
   depends_on "kde-mac/kde/Kpimtextedit"
