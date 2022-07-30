@@ -18,7 +18,10 @@ class Libalkimia < Formula
   depends_on "kde-mac/kde/kf5-knewstuff"
 
   def install
-    system "cmake", *kde_cmake_args
+    args = kde_cmake_args
+    args << "-DBUILD_APPLETS=OFF"
+
+    system "cmake", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
