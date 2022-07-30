@@ -21,13 +21,15 @@ class Kf5Knotifications < Formula
   depends_on "libcanberra"
 
   def install
-    args = kde_cmake_args
-
     # setBadgeLabelText method is deprecated since 5.12
-    args << "-DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00"
-    args << "-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00"
+    args = %w[
+      -DCMAKE_C_FLAGS_RELEASE=-DNDEBUG
+      -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00
+      -DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG
+      -DQT_DISABLE_DEPRECATED_BEFORE=0x050b00
+    ]
 
-    system "cmake", *args
+    system "cmake", *args, *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

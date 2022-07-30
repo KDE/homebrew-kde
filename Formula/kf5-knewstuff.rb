@@ -39,12 +39,12 @@ class Kf5Knewstuff < Formula
       find_package(KF5NewStuffQuick REQUIRED)
     EOS
 
-    args = kde_cmake_args
+    args = %W[
+      -DQt5Widgets_DIR=#{Formula["qt@5"].opt_prefix}/lib/cmake/Qt5Widgets
+      -DQt5Xml_DIR=#{Formula["qt@5"].opt_prefix}/lib/cmake/Qt5Xml
+      -DQt5Network_DIR=#{Formula["qt@5"].opt_prefix}/lib/cmake/Qt5Network
+    ]
 
-    args << "-DQt5Widgets_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Widgets"}"
-    args << "-DQt5Xml_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Xml"}"
-    args << "-DQt5Network_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5Network"}"
-
-    system "cmake", ".", *args
+    system "cmake", ".", *args, *kde_cmake_args
   end
 end

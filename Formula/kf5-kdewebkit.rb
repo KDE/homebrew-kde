@@ -15,10 +15,9 @@ class Kf5Kdewebkit < Formula
   depends_on "kde-mac/kde/qt-webkit"
 
   def install
-    args = kde_cmake_args
-    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
-
-    system "cmake", *args
+    system "cmake",
+           "-DQt5WebKitWidgets_DIR=#{Formula["qt-webkit"].opt_prefix}/lib/cmake/Qt5WebKitWidgets",
+           *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

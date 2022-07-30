@@ -14,11 +14,12 @@ class Kf5BreezeIcons < Formula
   depends_on "qt@5"
 
   def install
-    args = kde_cmake_args
-    args << "-DBINARY_ICONS_RESOURCE=TRUE"
-    args << "-DSKIP_INSTALL_ICONS=TRUE"
+    args = %w[
+      -DBINARY_ICONS_RESOURCE=TRUE
+      -DSKIP_INSTALL_ICONS=TRUE
+    ]
 
-    system "cmake", *args
+    system "cmake", *args, *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

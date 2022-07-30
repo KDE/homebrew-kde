@@ -28,10 +28,7 @@ class Kdenlive < Formula
   patch :DATA
 
   def install
-    args = kde_cmake_args
-    args << "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF"
-
-    system "cmake", *args
+    system "cmake", "-DUPDATE_MIME_DATABASE_EXECUTABLE=OFF", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"

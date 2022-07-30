@@ -25,19 +25,20 @@ class Umbrello < Formula
   depends_on "kdev-php" => :recommended
 
   def install
-    args = kde_cmake_args
-    args << "-DBUILD_KF5=ON"
-    args << ("-DQt5WebKitWidgets_DIR=" + Formula["qt-webkit"].opt_prefix + "/lib/cmake/Qt5WebKitWidgets")
+    args = %W[
+      -DBUILD_KF5=ON
+      -DQt5WebKitWidgets_DIR=#{Formula["qt-webkit"].opt_prefix}/lib/cmake/Qt5WebKitWidgets
+    ]
 
-    system "cmake", *args
+    system "cmake", *args, *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "#{bin}/umbrello5.app/Contents/Info.plist"
+           "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+           "#{bin}/umbrello5.app/Contents/Info.plist"
   end
 
   def post_install

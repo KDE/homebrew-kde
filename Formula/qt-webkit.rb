@@ -29,7 +29,12 @@ class QtWebkit < Formula
   end
 
   def install
-    args = kde_cmake_args + %w[
+    # Fuck off rpath
+    inreplace "Source/cmake/OptionsQt.cmake",
+              "set(CMAKE_MACOSX_RPATH\ ON)",
+              ""
+
+    args = %w[
       -DPORT=Qt
       -DENABLE_TOOLS=OFF
       -DCMAKE_MACOSX_RPATH=OFF
@@ -38,12 +43,7 @@ class QtWebkit < Formula
       -DCMAKE_SKIP_INSTALL_RPATH=ON
     ]
 
-    # Fuck off rpath
-    inreplace "Source/cmake/OptionsQt.cmake",
-              "set(CMAKE_MACOSX_RPATH\ ON)",
-              ""
-
-    system "cmake", *args
+    system "cmake", *args, *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
