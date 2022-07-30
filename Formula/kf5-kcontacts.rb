@@ -8,14 +8,16 @@ class Kf5Kcontacts < Formula
   head "https://invent.kde.org/frameworks/kcontacts.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+
+  depends_on "doxygen" => :build
   depends_on "ninja" => :build
 
   depends_on "qt@5"
   depends_on "kde-mac/kde/kf5-kcodecs"
   depends_on "kde-mac/kde/kf5-kconfig"
   depends_on "kde-mac/kde/kf5-kcoreaddons"
+  depends_on "ki18n"
 
   def install
     args = kde_cmake_args
