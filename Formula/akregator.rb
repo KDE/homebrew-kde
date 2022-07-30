@@ -13,8 +13,7 @@ class Akregator < Formula
 
   depends_on "kdoctools"
   depends_on "kde-mac/kde/kf5-kuserfeedback"
-  depends_on "kde-mac/kde/kontact-interface"
-  depends_on "kde-mac/kde/kf5-kcmutils"
+  depends_on "kde-mac/kde/kontactinterface"
   depends_on "kde-mac/kde/kf5-knotifyconfig"
   depends_on "kde-mac/kde/grantlee"
   depends_on "kde-mac/kde/kf5-libkleo"
