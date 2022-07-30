@@ -8,8 +8,9 @@ class Kf5Kparts < Formula
   head "https://invent.kde.org/frameworks/kparts.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
+
+  depends_on "doxygen" => :build
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
