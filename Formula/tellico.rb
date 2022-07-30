@@ -5,6 +5,7 @@ class Tellico < Formula
   homepage "https://tellico-project.org"
   url "https://tellico-project.org/files/tellico-3.4.4.tar.xz"
   sha256 "8054292a76e553aaa9ed3f73da8fc35fef0841e3fe139e99c372925f9715d7c1"
+  revision 1
   head "https://invent.kde.org/office/tellico.git", branch: "master"
 
   depends_on "cmake" => [:build]
@@ -15,8 +16,7 @@ class Tellico < Formula
   depends_on "exempi"
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kf5-kfilemetadata"
-  # qt@5 is built without WebEngine on arm64 macOS
-  depends_on "kde-mac/kde/kf5-khtml" if OS.mac? && Hardware::CPU.arm?
+  depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kio"
   depends_on "kde-mac/kde/kf5-kitemmodels"
   depends_on "kde-mac/kde/kf5-knewstuff"
