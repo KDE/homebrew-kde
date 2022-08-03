@@ -3,7 +3,7 @@ require_relative "../lib/cmake"
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
   homepage "https://github.com/qtwebkit/qtwebkit"
-  revision 6
+  revision 7
   head "https://github.com/qtwebkit/qtwebkit.git", branch: "qtwebkit-dev-wip"
 
   depends_on "cmake" => [:build, :test]
@@ -22,10 +22,10 @@ class QtWebkit < Formula
   depends_on "zlib"
   depends_on "gst-plugins-good" => :recommended
 
-  patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
-    url "https://github.com/qtwebkit/qtwebkit/commit/219aaeee642bce47773df3e797fe8083207b29e2.patch?full_index=1"
-    sha256 "42278c3360d12531487b831e55cfe70b5120c5713f655f3cc6d1c027ca63ec79"
-  end
+  # patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
+  #   url "https://github.com/yurikoles/qtwebkit/commit/1a31aaf3566235b32c26c38ef08d217a5d11ef1e.patch?full_index=1"
+  #   sha256 "6b59ec83f756967cacc6199447550a8bde37f7b4f6f25599250d36a5dfe3cb9c"
+  # end
 
   def install
     # Fuck off rpath
