@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Sonnet < Formula
   desc "Spelling framework for Qt5"
   homepage "https://api.kde.org/frameworks/sonnet/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.96/sonnet-5.96.0.tar.xz"
-  sha256 "046a20e5070b108cc515645bf9121cd5ed6515a6f3e5879783887a379b9e0f44"
+  url "https://download.kde.org/stable/frameworks/5.97/sonnet-5.97.0.tar.xz"
+  sha256 "a392739767e7f56cc3d951f0e55f1fa1d36a9f48e1b601b825212b50a1941193"
   head "https://invent.kde.org/frameworks/sonnet.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

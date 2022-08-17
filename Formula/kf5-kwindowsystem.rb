@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kwindowsystem < Formula
   desc "Access to the windowing system"
   homepage "https://api.kde.org/frameworks/kwindowsystem/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.96/kwindowsystem-5.96.0.tar.xz"
-  sha256 "fd773e38bb971e30e9f09583560c2d44638c4d47223ef37176cdd23ae81f8bc6"
+  url "https://download.kde.org/stable/frameworks/5.97/kwindowsystem-5.97.0.tar.xz"
+  sha256 "b822a796379a1ce03a4a9fad64aa6289ba7abd84e3b137af31d8043b9c5efef1"
   head "https://invent.kde.org/frameworks/kwindowsystem.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

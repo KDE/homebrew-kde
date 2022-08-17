@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdesignerplugin < Formula
   desc "Integration of Frameworks widgets in Qt Designer/Creator"
   homepage "https://api.kde.org/frameworks/kdesignerplugin/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.96/portingAids/kdesignerplugin-5.96.0.tar.xz"
-  sha256 "09e6017565a747c039bc1b1079f65ef4367474733ff21891a006c4964353ad31"
+  url "https://download.kde.org/stable/frameworks/5.97/portingAids/kdesignerplugin-5.97.0.tar.xz"
+  sha256 "28077f1a1b416c2e19f7b8fae1a96d1bde6e4dd8c90905adbe87bb1f2df3fd20"
   head "https://invent.kde.org/frameworks/kdesignerplugin.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

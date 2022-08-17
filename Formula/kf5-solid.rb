@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Solid < Formula
   desc "Hardware integration and detection"
   homepage "https://api.kde.org/frameworks/solid/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.96/solid-5.96.0.tar.xz"
-  sha256 "9104542fec59bbfbd2b493d990a04849347d5ce10948a5bdf0bc9e17187dc448"
+  url "https://download.kde.org/stable/frameworks/5.97/solid-5.97.0.tar.xz"
+  sha256 "84c0ad4678c2ef6563db8a1dd907a8b9c4a2e8db7afc691a24b27189d6a24c9d"
   head "https://invent.kde.org/frameworks/solid.git", branch: "master"
 
   depends_on "bison" => :build
