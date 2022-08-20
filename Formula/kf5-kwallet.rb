@@ -5,6 +5,7 @@ class Kf5Kwallet < Formula
   homepage "https://api.kde.org/frameworks/kwallet/html/index.html"
   url "https://download.kde.org/stable/frameworks/5.97/kwallet-5.97.0.tar.xz"
   sha256 "ab9b78b0c6aba461de6247974b7e60239cd2a52a1c2c6d67b92e466c7597d821"
+  revision 1
   head "https://invent.kde.org/frameworks/kwallet.git", branch: "master"
 
   depends_on "boost" => :build
@@ -21,6 +22,7 @@ class Kf5Kwallet < Formula
   depends_on "kde-mac/kde/kf5-knotifications"
   depends_on "kde-mac/kde/kf5-kservice"
   depends_on "libgcrypt"
+  depends_on "qca"
 
   patch :DATA
 
