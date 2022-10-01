@@ -4,39 +4,29 @@ brew update
 HOMEBREW_NO_AUTO_UPDATE=1
 
 tmp_kde=/tmp/kde
-dep_map="${tmp_kde}/dep_map"
+formulas="${tmp_kde}/formulas"
 bundle="${tmp_kde}/Brewfile"
-install_order="${tmp_kde}/install_order"
+kde_tap_dir="$(brew --repo kde-mac/kde)"
 
-rm -f "${dep_map}" "${install_order}" "${bundle}"
+rm -f "${formulas}" "${bundle}"
 mkdir -p "${tmp_kde}"
 
-formuladir="$(brew --repo kde-mac/kde)/Formula"
-
-for formula in "${formuladir}"/*.rb; do
-  formulaname=`basename "${formula}"`
-  for dep in `grep "depends_on \"kde-mac/kde" "${formula}" | awk -F "\"" '{print $2}'`; do
-    echo "${dep/kde-mac\/kde\//} ${formulaname//\.rb/}" >> "${dep_map}"
-  done
-  echo "${formulaname//\.rb/}" >> "${dep_map}"
-done
-
-tsort "${dep_map}" > "${install_order}" 2> /dev/null
-
-for candidate_formula in `cat "${install_order}"`; do
-    formula_path="${formuladir}/${candidate_formula}.rb"
-    if grep -q -E -l 'url "http|url "file' "${formula_path}"; then
-      echo "brew \"kde-mac/kde/${candidate_formula}\"" >> "${bundle}"
+formula_dir="${kde_tap_dir}/Formula"
+for formula in "${formula_dir}"/*.rb; do
+  formula_file=`basename "${formula}"`
+  formula_name=${formula_file//\.rb/}
+    if grep -q -E -l 'url "http|url "file' "${formula}"; then
+      echo "brew \"kde-mac/kde/${formula_name}\"" >> "${bundle}"
     else
-      echo "brew \"kde-mac/kde/${candidate_formula}\", args: [\"HEAD\"]" >> "${bundle}"
+      echo "brew \"kde-mac/kde/${formula_name}\", args: [\"HEAD\"]" >> "${bundle}"
     fi
 done
 
-casksadir="$(brew --repo kde-mac/kde)/Casks"
-
-for cask in "${casksadir}"/*.rb; do
-  caskname=`basename "${cask}"`
-  echo "cask \"kde-mac/kde/${caskname//\.rb/}\"" >> "${bundle}"
+casks_dir="${kde_tap_dir}/Casks"
+for cask in "${casks_dir}"/*.rb; do
+  cask_file=`basename "${cask}"`
+  cask_name="${cask_file//\.rb/}"
+  echo "cask \"kde-mac/kde/${cask_name}\"" >> "${bundle}"
 done
 
 brew bundle --verbose --file "${bundle}"
