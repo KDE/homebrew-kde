@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Krename < Formula
   desc "Very powerful batch file renamer"
   homepage "https://userbase.kde.org/KRename"
-  url "https://download.kde.org/stable/krename/5.0.1/src/krename-5.0.1.tar.xz"
-  sha256 "caac78afd3ba06613df47bbd1570bb900acf4185547354d6eb588e70656f6a7d"
-  revision 2
+  url "https://download.kde.org/stable/krename/5.0.2/src/krename-5.0.2.tar.xz"
+  sha256 "b23c60a7ddd9f6db4dd7f55ac55fcca8a558fa68aaf8fa5cb89e1eaf692f23ed"
   head "https://invent.kde.org/utilities/krename.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
