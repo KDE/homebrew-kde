@@ -16,9 +16,9 @@ Now, the fun begins. You can either install individual frameworks via
 ```sh
 brew install kde-mac/kde/kf5-attica
 ```
-or you can install them all with the `install.sh` shell script provided in the `tools` directory:
+or you can install them all with a provided Brewfile provided in the repo's root directory:
 ```sh
-"$(brew --repo kde-mac/kde)/tools/install.sh"
+brew bundle --verbose --file "$(brew --repo kde-mac/kde)/Brewfile"
 ```
 
 ## Casks 

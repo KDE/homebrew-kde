@@ -29,4 +29,4 @@ for cask in "${casks_dir}"/*.rb; do
   echo "cask \"kde-mac/kde/${cask_name}\"" >> "${bundle}"
 done
 
-brew bundle --verbose --file "${bundle}"
+cp "${bundle}" "${kde_tap_dir}"
