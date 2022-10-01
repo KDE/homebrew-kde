@@ -13,8 +13,8 @@ class Dolphin < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/kf5-kactivities"
   depends_on "kde-mac/kde/kf5-kcmutils"
-  depends_on "kde-mac/kde/kf5-kdelibs4support"
   depends_on "kde-mac/kde/kf5-kfilemetadata"
   depends_on "kde-mac/kde/kf5-kinit"
   depends_on "kde-mac/kde/kf5-knewstuff"
