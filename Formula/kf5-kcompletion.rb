@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kcompletion < Formula
   desc "Completion framework"
   homepage "https://api.kde.org/frameworks/kcompletion/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.97/kcompletion-5.97.0.tar.xz"
-  sha256 "6ab1e04ed3cc83f28a88224a661e5cd6a097e1a7d305987320dd8bd0c37b9ea6"
+  url "https://download.kde.org/stable/frameworks/5.98/kcompletion-5.98.0.tar.xz"
+  sha256 "4e33958a642764f91e32f8155ac6abacf1ed63fadec8d70c857bea0f408b3ba4"
   head "https://invent.kde.org/frameworks/kcompletion.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

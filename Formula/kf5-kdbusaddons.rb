@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdbusaddons < Formula
   desc "Addons to QtDBus"
   homepage "https://api.kde.org/frameworks/kdbusaddons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.97/kdbusaddons-5.97.0.tar.xz"
-  sha256 "13c7e82914bf1e594fcaafe8a1cfdb4607bc75a58a10b5a04fead84fe412122d"
+  url "https://download.kde.org/stable/frameworks/5.98/kdbusaddons-5.98.0.tar.xz"
+  sha256 "0a24e2c3fc8c1e8af70bfd76439f81fa0f35fb50f1711fe22db68bc82cad8d3b"
   head "https://invent.kde.org/frameworks/kdbusaddons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

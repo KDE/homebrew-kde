@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kjs < Formula
   desc "Support for JS scripting in applications"
   homepage "https://api.kde.org/frameworks/kjs/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.97/portingAids/kjs-5.97.0.tar.xz"
-  sha256 "0e59e1d757819943d76e1df8af3f2cbf586b0104aafa8ee7b8b4ea82987bdcf8"
+  url "https://download.kde.org/stable/frameworks/5.98/portingAids/kjs-5.98.0.tar.xz"
+  sha256 "339ec922b07a837f7c7a341ad0d5e63edb94e3838c86009a0dd0e9b08a0a3a0e"
   head "https://invent.kde.org/frameworks/kjs.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
