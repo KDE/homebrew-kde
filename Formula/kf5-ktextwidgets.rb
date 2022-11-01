@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Ktextwidgets < Formula
   desc "Advanced text editing widgets"
   homepage "https://api.kde.org/frameworks/ktextwidgets/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.98/ktextwidgets-5.98.0.tar.xz"
-  sha256 "93521275dc96294e488d41d5dc987c1dffa5a441cd4fd3c7d439f5f3ecad3b92"
+  url "https://download.kde.org/stable/frameworks/5.99/ktextwidgets-5.99.0.tar.xz"
+  sha256 "31e8dff053f866f0972febd7f78b680e8a015d0e17cef4e2dfdc446892b469a8"
   head "https://invent.kde.org/frameworks/ktextwidgets.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
