@@ -26,7 +26,9 @@ class Kf5Kwallet < Formula
   patch :DATA
 
   def install
-    system "cmake", *kde_cmake_args
+    args = "-DCMAKE_CXX_FLAGS=-I#{Formula["libgpg-error"].include}"
+
+    system "cmake", *kde_cmake_args, args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
