@@ -1,7 +1,6 @@
 brew "kde-mac/kde/analitza"
 brew "kde-mac/kde/atcore"
 brew "kde-mac/kde/dolphin"
-brew "kde-mac/kde/drkonqi"
 brew "kde-mac/kde/elisa"
 brew "kde-mac/kde/grantlee", args: ["HEAD"]
 brew "kde-mac/kde/kate"

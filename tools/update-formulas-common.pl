@@ -124,7 +124,6 @@ my %gear = (
 );
 
 my %plasma = (
-    'drkonqi'      => '',
     'libksysguard' => '',
 );
 
