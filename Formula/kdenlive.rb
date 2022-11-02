@@ -71,21 +71,22 @@ end
 
 __END__
 diff --git a/data/CMakeLists.txt b/data/CMakeLists.txt
-index a69ba42..8bf8b1c 100644
+index ea4b70b7f..d1239dd82 100644
 --- a/data/CMakeLists.txt
 +++ b/data/CMakeLists.txt
-@@ -33,7 +33,13 @@ install(FILES profiles.xml DESTINATION ${DATA_INSTALL_DIR}/kdenlive/export)
+@@ -46,7 +46,12 @@ install(FILES profiles.xml DESTINATION ${KDE_INSTALL_DATADIR}${DATA_INSTALL_PREF
  install(FILES org.kde.kdenlive.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
- install(FILES org.kde.kdenlive.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-
+ install(FILES org.kde.kdenlive.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+ 
 -find_package(SharedMimeInfo REQUIRED)
-+find_package(SharedMimeInfo 0.70)
++find_package(SharedMimeInfo)
 +set_package_properties(SharedMimeInfo PROPERTIES
 +                       TYPE OPTIONAL
 +                       PURPOSE "Allows KDE applications to determine file types"
 +                       )
- install(FILES org.kde.kdenlive.xml westley.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
--update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
+ install(FILES org.kde.kdenlive.xml westley.xml DESTINATION ${KDE_INSTALL_MIMEDIR})
+-update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
+-
 +if(SharedMimeInfo_FOUND)
 +    update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 +endif()
