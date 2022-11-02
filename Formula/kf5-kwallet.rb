@@ -45,15 +45,14 @@ class Kf5Kwallet < Formula
   end
 end
 
-# Mark executables as nongui type
-
+# Mark executables as nongui type, merged
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 6f1d918..0dbc257 100644
+index 73e71c7..0e301da 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -22,6 +22,7 @@ include(KDECMakeSettings)
- include(ECMAddQch)
+@@ -26,6 +26,7 @@ include(ECMAddQch)
+ include(ECMGenerateExportHeader)
  include(ECMSetupVersion)
  include(ECMQtDeclareLoggingCategory)
 +include(ECMMarkNonGuiExecutable)
@@ -61,24 +60,24 @@ index 6f1d918..0dbc257 100644
  option(BUILD_KWALLETD "Build the kwallet daemon" ON)
  option(BUILD_KWALLET_QUERY "Build kwallet-query tool" ON)
 diff --git a/src/runtime/kwallet-query/src/CMakeLists.txt b/src/runtime/kwallet-query/src/CMakeLists.txt
-index 9aa167b..9a98eb4 100644
+index 4705e68..f010ec1 100644
 --- a/src/runtime/kwallet-query/src/CMakeLists.txt
 +++ b/src/runtime/kwallet-query/src/CMakeLists.txt
-@@ -12,4 +12,5 @@ TARGET_LINK_LIBRARIES(kwallet-query
-     Qt5::Widgets
+@@ -15,4 +15,5 @@ TARGET_LINK_LIBRARIES(kwallet-query
+     Qt${QT_MAJOR_VERSION}::Widgets
  )
  
 +ecm_mark_nongui_executable(kwallet-query)
  install( TARGETS kwallet-query DESTINATION ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 diff --git a/src/runtime/kwalletd/CMakeLists.txt b/src/runtime/kwalletd/CMakeLists.txt
-index 918ba5d..7ee4462 100644
+index 65c9fa7..2ba7e67 100644
 --- a/src/runtime/kwalletd/CMakeLists.txt
 +++ b/src/runtime/kwalletd/CMakeLists.txt
-@@ -119,6 +119,7 @@ if (Gpgmepp_FOUND)
+@@ -150,6 +150,7 @@ if (Gpgmepp_FOUND)
      kde_target_enable_exceptions(kwalletd5 PRIVATE)
  endif(Gpgmepp_FOUND)
  
 +ecm_mark_nongui_executable(kwalletd5)
- install(TARGETS kwalletd5  ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+ install(TARGETS kwalletd5  ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
  
  ########### install files ###############
