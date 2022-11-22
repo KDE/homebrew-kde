@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Konversation < Formula
   desc "User-friendly IRC client built on the KDE Platform"
   homepage "https://konversation.kde.org/"
-  url "https://download.kde.org/stable/release-service/22.08.2/src/konversation-22.08.2.tar.xz"
-  sha256 "045be3e8961a9677d868958e9607815c3873cdefbf72f244954b4e3f6ad30a2c"
+  url "https://download.kde.org/stable/release-service/22.08.3/src/konversation-22.08.3.tar.xz"
+  sha256 "b1d71924c32c0c78d6d60f1a99ab0a5a436b7a0007160f967876fb5bea6b46f1"
   head "https://invent.kde.org/network/konversation.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

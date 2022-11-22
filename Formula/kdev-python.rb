@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class KdevPython < Formula
   desc "KDevelop Python language support"
   homepage "https://kde.org/applications/development/org.kde.kdev-python"
-  url "https://download.kde.org/stable/release-service/22.08.2/src/kdev-python-22.08.2.tar.xz"
-  sha256 "b775f42b657d01af97be71dbb73ab887cfcbada906eac0129e8199cfa5fcdb0a"
+  url "https://download.kde.org/stable/release-service/22.08.3/src/kdev-python-22.08.3.tar.xz"
+  sha256 "26952f6a73756dbe0acfe80aaea8e92c22afcd4174a23b29934019c94a608070"
   head "https://invent.kde.org/kdevelop/kdev-python.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

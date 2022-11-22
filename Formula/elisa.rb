@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Elisa < Formula
   desc "KDE Music Player"
   homepage "https://community.kde.org/Elisa"
-  url "https://download.kde.org/stable/release-service/22.08.2/src/elisa-22.08.2.tar.xz"
-  sha256 "94463943c157367e45bebfd5a59f5f4e10a3ffd76b6af126c08672d70fa28cff"
+  url "https://download.kde.org/stable/release-service/22.08.3/src/elisa-22.08.3.tar.xz"
+  sha256 "82ceddc3d4afd076271abe356f51291301069f420e9a28b34200f388674eab1d"
   head "https://invent.kde.org/multimedia/elisa.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
