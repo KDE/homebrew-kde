@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Tellico < Formula
   desc "KDE collections manager"
   homepage "https://tellico-project.org"
-  url "https://tellico-project.org/files/tellico-3.4.4.tar.xz"
-  sha256 "8054292a76e553aaa9ed3f73da8fc35fef0841e3fe139e99c372925f9715d7c1"
-  revision 1
+  url "https://tellico-project.org/files/tellico-3.4.5.tar.xz"
+  sha256 "39a8bd38d2d3f77a37deae27d9587263c0c2b2935c82108bfd143a0fc7cbebcd"
   head "https://invent.kde.org/office/tellico.git", branch: "master"
 
   depends_on "cmake" => [:build]
@@ -23,12 +22,12 @@ class Tellico < Formula
   depends_on "kde-mac/kde/kf5-kxmlgui"
   depends_on "kde-mac/kde/kf5-solid"
   depends_on "libcdio"
-  depends_on "perl"
   depends_on "poppler-qt5"
-  depends_on "python@3.9"
   depends_on "qt@5"
   depends_on "taglib"
   depends_on "yaz"
+
+  uses_from_macos "perl"
 
   def install
     system "cmake", *kde_cmake_args
