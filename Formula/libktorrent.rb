@@ -5,6 +5,7 @@ class Libktorrent < Formula
   homepage "https://www.kde.org/applications/internet/ktorrent/"
   url "https://download.kde.org/stable/ktorrent/5.2.0/libktorrent-2.2.0.tar.xz"
   sha256 "77c1ddfb0a56c40227e0624c078836a8c22bf5a2fb4a3c0cbd53ee6b174c126e"
+  revision 1
   head "https://invent.kde.org/network/libktorrent.git", branch: "master"
 
   livecheck do
@@ -18,6 +19,7 @@ class Libktorrent < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kf5-kio"
+  depends_on "libgcrypt"
   depends_on "qca"
   depends_on "qt@5"
 
