@@ -3,7 +3,8 @@ require_relative "../lib/cmake"
 class Grantlee < Formula
   desc "String template engine based on the Django template system"
   homepage "https://github.com/steveire/grantlee"
-  revision 1
+  url "https://github.com/steveire/grantlee/releases/download/v5.3.1/grantlee-5.3.1.tar.gz"
+  sha256 "ba288ae9ed37ec0c3622ceb40ae1f7e1e6b2ea89216ad8587f0863d64be24f06"
   head "https://github.com/steveire/grantlee.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
