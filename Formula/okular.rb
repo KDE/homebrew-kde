@@ -36,7 +36,12 @@ class Okular < Formula
   patch :DATA
 
   def install
-    system "cmake", *kde_cmake_args
+    args = %w[
+      -DCMAKE_DISABLE_FIND_PACKAGE_KF5Purpose=YES
+      -DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=YES
+    ]
+
+    system "cmake", *kde_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
