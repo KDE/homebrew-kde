@@ -24,8 +24,8 @@ class Kf5Kdelibs4support < Formula
 
   # https://metacpan.org/pod/URI::Escape
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.16.tar.gz"
-    sha256 "4cd2752adfaddd58f54e559155578696354834ee77a7760a04089de1f338fb11"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.17.tar.gz"
+    sha256 "5f7e42b769cb27499113cfae4b786c37d49e7c7d32dbb469602cd808308568f8"
   end
 
   patch :DATA
