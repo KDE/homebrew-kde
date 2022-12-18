@@ -21,7 +21,8 @@ class KioExtras < Formula
   depends_on "kde-mac/kde/kf5-syntax-highlighting"
   depends_on "libmtp"
   depends_on "openexr"
-  # isn't packaged on ARM64 macOS
+
+  # Requires x86_64 macOS
   depends_on "openslp" if OS.mac? && Hardware::CPU.intel?
   depends_on "taglib"
 

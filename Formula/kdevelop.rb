@@ -32,7 +32,7 @@ class Kdevelop < Formula
   depends_on "subversion"
   depends_on "threadweaver"
 
-  # isn't packaged on ARM64 macOS
+  # Requires x86_64 macOS
   depends_on "gdb" => :recommended if OS.linux? || (OS.mac? && Hardware::CPU.intel?)
 
   conflicts_with "kde-mac/kde/kdevplatform", because: "now included in Kdevelop"
