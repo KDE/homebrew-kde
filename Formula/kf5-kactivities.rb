@@ -21,7 +21,12 @@ class Kf5Kactivities < Formula
   patch :DATA
 
   def install
-    system "cmake", *kde_cmake_args
+    args = %w[
+      -D BUILD_TESTING=OFF
+      -D BUILD_TESTS=OFF
+      -D BUILD_UNITTESTS=OFF
+    ]
+    system "cmake", *kde_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
