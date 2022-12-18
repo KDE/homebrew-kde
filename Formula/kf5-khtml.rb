@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Khtml < Formula
   desc "KHTML APIs"
   homepage "https://api.kde.org/frameworks/khtml/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.100/portingAids/khtml-5.100.0.tar.xz"
-  sha256 "40a5cd6e3a5db5310bca59ccb7a6cbf70f3f45b1a3db9b933882390f6c581c41"
+  url "https://download.kde.org/stable/frameworks/5.101/portingAids/khtml-5.101.0.tar.xz"
+  sha256 "8826da7bcff3d28ee711e3941d1f0fd0bbdb53a6e325f7727837a1432b7afcf5"
   head "https://invent.kde.org/frameworks/khtml.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

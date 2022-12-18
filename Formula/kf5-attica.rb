@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Attica < Formula
   desc "Open Collaboration Service client library"
   homepage "https://api.kde.org/frameworks/attica/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.100/attica-5.100.0.tar.xz"
-  sha256 "ae77669637f2c1c09666a5885d99ec7feaeeb51811dc61864556be6cf43d35c8"
+  url "https://download.kde.org/stable/frameworks/5.101/attica-5.101.0.tar.xz"
+  sha256 "7fcbe3686081bc587cbc6b9cc1fbf8f7cb071d06441edc1bea44c958d119da1c"
   head "https://invent.kde.org/frameworks/attica.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

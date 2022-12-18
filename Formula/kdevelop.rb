@@ -17,7 +17,7 @@ class Kdevelop < Formula
 
   depends_on "cmake"
   depends_on "cppcheck"
-  depends_on "kde-mac/kde/grantlee"
+  depends_on "kde-mac/kde/grantlee-qt5"
   depends_on "kde-mac/kde/kf5-breeze-icons"
   depends_on "kde-mac/kde/kf5-kcmutils"
   depends_on "kde-mac/kde/kf5-kitemmodels"
