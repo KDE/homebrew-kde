@@ -8,10 +8,10 @@ cask "kdeconnect" do
     version = URI(base_url.to_s)
               .open
               .read
-              .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-64-clang\.dmg/i)
+              .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-x86_64\.dmg/i)
               .flatten
               .first # should only be one mach
-    file = "kdeconnect-kde-#{version}-macos-64-clang.dmg"
+    file = "kdeconnect-kde-#{version}-macos-clang-x86_64.dmg"
     "#{base_url}/artifact/#{file}"
   end
   name "KDE Connect"
