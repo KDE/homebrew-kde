@@ -7,8 +7,7 @@ class Okular < Formula
   sha256 "2ca1a9415d711fc8c9aad75e5c270c06e848891ca7e141872a762541eb316117"
   head "https://invent.kde.org/graphics/okular.git", branch: "master"
 
-  # isn't packaged on ARM64 macOS
-  depends_on "chmlib" => :build if OS.mac? && Hardware::CPU.intel?
+  depends_on "chmlib" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "ebook-tools" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
