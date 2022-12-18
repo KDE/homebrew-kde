@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class KdevPhp < Formula
   desc "PHP Language Plugin for KDevelop"
   homepage "https://kde.org/applications/development/org.kde.kdev-php"
-  url "https://download.kde.org/stable/release-service/22.08.3/src/kdev-php-22.08.3.tar.xz"
-  sha256 "b727e89b7d9c421d100017190c8172d360667a2dfaa9de32699ca5667f8839c1"
+  url "https://download.kde.org/stable/release-service/22.12.0/src/kdev-php-22.12.0.tar.xz"
+  sha256 "e87a03fc34836e23f1c47ccdf7e3704fda27c0ddeaf288738268c39af76c3053"
   head "https://invent.kde.org/kdevelop/kdev-php.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

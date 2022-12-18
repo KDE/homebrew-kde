@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdenlive < Formula
   desc "Video editor"
   homepage "https://www.kdenlive.org/"
-  url "https://download.kde.org/stable/release-service/22.08.3/src/kdenlive-22.08.3.tar.xz"
-  sha256 "9c5cc37d24d99d1da4e708ef960fd4df828d3c0abdd4b02adbf7c37aa40d0e29"
+  url "https://download.kde.org/stable/release-service/22.12.0/src/kdenlive-22.12.0.tar.xz"
+  sha256 "456ca61627eb6a0d6d6ea775dd6a7b1c5a5fbbacb79421c8f4e307d8a2136317"
   head "https://invent.kde.org/multimedia/kdenlive.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
