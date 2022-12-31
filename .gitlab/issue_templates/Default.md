@@ -7,7 +7,7 @@ Please note we will close your issue without comment if you do not fill out the 
 - [ ] I added output from `brew gist-logs <formula>` link AND `brew config` AND `brew doctor` output below.
 
 <details>
-<summary>`brew gist-logs <formula>` link AND `brew config` AND `brew doctor` output</summary>
+<summary>`brew gist-logs _formula_` link AND `brew config` AND `brew doctor` output</summary>
 
 Replace this text with output
 
