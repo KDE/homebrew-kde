@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Okteta < Formula
   desc "KDE hex editor for viewing and editing the raw data of files"
   homepage "https://apps.kde.org/okteta"
-  url "https://download.kde.org/stable/okteta/0.26.9/src/okteta-0.26.9.tar.xz"
-  sha256 "16854c4d4e94838219ae3115a42ba385fda5c87dc6c9865ac90d3774f8d05ffb"
+  url "https://download.kde.org/stable/okteta/0.26.10/src/okteta-0.26.10.tar.xz"
+  sha256 "28a614f7e0c32b4917a5eaca7e0c6ecaca87b13191ab534ab404f5569b3c33fa"
   head "https://invent.kde.org/utilities/okteta.git", branch: "master"
 
   livecheck do
