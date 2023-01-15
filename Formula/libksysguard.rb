@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Libksysguard < Formula
   desc "Libraries for ksysguard"
   homepage "https://apps.kde.org/ksysguard"
-  url "https://download.kde.org/stable/plasma/5.26.4/libksysguard-5.26.4.tar.xz"
-  sha256 "eb954bab3eb26e4b891e0838097529fe73499b2f843bc1ed17ccc64db085b5e8"
+  url "https://download.kde.org/stable/plasma/5.26.5/libksysguard-5.26.5.tar.xz"
+  sha256 "17e5372eca2ad162e82a892b1cb2c9a3d1d124489ac7d2b0fc34a4f04de54105"
   head "https://invent.kde.org/plasma/libksysguard.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
