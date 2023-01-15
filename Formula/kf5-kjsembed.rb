@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kjsembed < Formula
   desc "Embedded JS"
   homepage "https://api.kde.org/frameworks/kjsembed/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.101/portingAids/kjsembed-5.101.0.tar.xz"
-  sha256 "0520a3f31b1a8c946d8cf51725745be44fad92e0f909b335d75d330875308c01"
+  url "https://download.kde.org/stable/frameworks/5.102/portingAids/kjsembed-5.102.0.tar.xz"
+  sha256 "ba28f907eb3b69e98caf5877883f81051420e664819714fba2696c6093c92f9d"
   head "https://invent.kde.org/frameworks/kjsembed.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

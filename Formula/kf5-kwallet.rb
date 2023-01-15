@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kwallet < Formula
   desc "Secure and unified container for user passwords"
   homepage "https://api.kde.org/frameworks/kwallet/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.101/kwallet-5.101.0.tar.xz"
-  sha256 "ca0197fa350b8336ab8c7f0b142cbaf58f9ed8e8410b22f9bc7ae2e3bd7a5457"
+  url "https://download.kde.org/stable/frameworks/5.102/kwallet-5.102.0.tar.xz"
+  sha256 "a311f080a5e9a3d0c13ae115935a57c2fcaca0fa0ef8773c09b3f5e5f1640983"
   head "https://invent.kde.org/frameworks/kwallet.git", branch: "master"
 
   depends_on "boost" => :build

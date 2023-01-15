@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Frameworkintegration < Formula
   desc "Integration of Qt application with KDE workspaces"
   homepage "https://api.kde.org/frameworks/frameworkintegration/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.101/frameworkintegration-5.101.0.tar.xz"
-  sha256 "6c52b56140ab79ad38e4a3a32a7765a3c955476d46208a821cb1ed3b3f6fb47c"
+  url "https://download.kde.org/stable/frameworks/5.102/frameworkintegration-5.102.0.tar.xz"
+  sha256 "2d80cac9a154a679b7a4186504e9b3ca792ecc29925e62fc1ef5390489351903"
   head "https://invent.kde.org/frameworks/frameworkintegration.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
