@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kimap < Formula
   desc "Job-based API for interacting with IMAP servers"
   homepage "https://community.kde.org/KDE_PIM"
-  url "https://download.kde.org/stable/release-service/22.12.0/src/kimap-22.12.0.tar.xz"
-  sha256 "c4c7485bc847e689f01bacabb580d5d4c3eacde7fe43a1cd7c0558dff91e78c5"
+  url "https://download.kde.org/stable/release-service/22.12.1/src/kimap-22.12.1.tar.xz"
+  sha256 "bdd908dd96638f244b2c27afc461df51b04faba790eda946c8017f44058acf0d"
   head "https://invent.kde.org/pim/kimap.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
