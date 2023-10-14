@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5BreezeIcons < Formula
   desc "Breeze icon themes"
   homepage "https://api.kde.org/frameworks/breeze-icons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.102/breeze-icons-5.102.0.tar.xz"
-  sha256 "2db3d90a8b9f7cce7314a8f0d6c3c95c6b7976d172ce4ccc4168142ca074e398"
+  url "https://download.kde.org/stable/frameworks/5.111/breeze-icons-5.111.0.tar.xz"
+  sha256 "4c570e4c5f75a30f911db6fe5d907dfb58a02d2afbd160d81b51bfc8dc5b3aef"
   head "https://invent.kde.org/frameworks/breeze-icons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
