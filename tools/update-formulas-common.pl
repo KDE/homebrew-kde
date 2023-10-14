@@ -7,10 +7,6 @@ use Getopt::Long;
 use strict;
 use warnings;
 
-my $frameworks_version = "5.102";
-my $gear_version       = "22.12.1";
-my $plasma_version     = "5.26.5";
-
 my %frameworks = (
 
 ### Updated list in https://api.kde.org/frameworks/
@@ -132,6 +128,9 @@ mkdir "${tmp_dir}";
 chomp($tmp_dir);
 
 sub update_frameworks {
+    die "Function takes excatly one argument, frameworks version " unless @_ != 1;
+    my $frameworks_version = $_[1];
+
     for my $package ( keys %frameworks ) {
         my $upstream_suffix = "-${frameworks_version}.0.tar.xz";
 
@@ -156,10 +155,12 @@ sub update_frameworks {
         download_and_update( $formula, $package_upstream_url, $cached_file );
     }
 
-    update_meta_frameworks();
+    update_meta_frameworks( $frameworks_version );
 }
 
 sub update_meta_frameworks {
+    my $frameworks_version = $_[0];
+
     for my $package ( keys %meta_frameworks ) {
         my $formula = "Formula/kf5-$package.rb";
 
@@ -187,6 +188,9 @@ sub update_meta_frameworks {
 }
 
 sub update_gear {
+    die "Function takes excatly one argument, gear version " unless @_ != 1;
+    my $gear_version = $_[1];
+
     for my $package ( keys %gear ) {
         my $upstream_url
             = "https://download.kde.org/stable/release-service/${gear_version}/src/";
@@ -206,6 +210,9 @@ sub update_gear {
 }
 
 sub update_plasma {
+    die "Function takes excatly one argument, plasma version " unless @_ != 1;
+    my $plasma_version = $_[1];
+
     for my $package ( keys %plasma ) {
         my $upstream_url
             = "https://download.kde.org/stable/plasma/${plasma_version}/";
@@ -293,7 +300,7 @@ sub download_and_update {
 }
 
 GetOptions(
-    'gear'       => \&update_gear,
-    'frameworks' => \&update_frameworks,
-    'plasma'     => \&update_plasma
+    'gear=s'       => \&update_gear,
+    'frameworks=s' => \&update_frameworks,
+    'plasma=s'     => \&update_plasma
 );

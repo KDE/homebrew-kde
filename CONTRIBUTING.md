@@ -1,12 +1,10 @@
 # Simple mass-bamp with helper script
-For new releases of frameworks, gear of plasam there is a helper scripts under `tools` subdirectory.
-The main script is `tools/update-formulas-common.pl`, there is also three scripts for different kinds of packages:
-- `tools/update-formulas-frameworks.sh`
-- `tools/update-formulas-gear.sh`
-- `tools/update-formulas-plasma.sh`
+For new releases of frameworks, gear or plasma there is a helper scripts `tools/update-formulas-common.pl`, e.g.
+- `$(brew --repo kde-mac/kde)/tools/update-formulas-common.pl --frameworks 5.110`
+- `$(brew --repo kde-mac/kde)/tools/update-formulas-common.pl --gear 23.08.2`
+- `$(brew --repo kde-mac/kde)/tools/update-formulas-common.pl --plasma 5.27.8`
 
-They just call main script passing argument of packages kind for bump.
-E.g. for bumping frameworks update `frameworks_version` in `tools/update-formulas-common.pl` and invoke `$(brew --repo kde-mac/kde)/tools/update-formulas-frameworks.sh`. Same logic is for gear and plasma, just update corresponding variable with version and run corresponding script. We use gpg keys for verifying downloaded tarballs, so you may need to import corresponding gpg key of releaser if you see missing key error. For other formulas, i.e. those with own release cycle you may use brew's livecheck, e.g. `brew livecheck --newer-only --tap kde-mac/kde`. Then commit your changes on a new branch. We strongy recommend verifyig your changes locally by installing / upgrading all our packages from our shipped `Brewfile`, i.e. `brew bundle --verbose --file "$(brew --repo kde-mac/kde)/Brewfile"`.
+We use gpg keys for verifying downloaded tarballs, so you may need to import corresponding gpg key of releaser if you see missing key error. For other formulas, i.e. those with own release cycle you may use brew's livecheck, e.g. `brew livecheck --newer-only --tap kde-mac/kde`. Then commit your changes on a new branch. We strongy recommend verifyig your changes locally by installing / upgrading all our packages from our shipped `Brewfile`, i.e. `brew bundle --verbose --file "$(brew --repo kde-mac/kde)/Brewfile"`.
 
 # Creating new formula
 Please check official Homebrew [documentation](https://docs.brew.sh/Adding-Software-to-Homebrew). Mostly all rules apply to our tap. You may want to start from `brew create --cmake --tap kde-mac/kde --set-name <formula-name> <url-to-tarball>`. Where `<formula-name>` is some custom formula name, e.g. we are prefixing framework names with `kf5-`. Just to make sure that formula doens't pick some non-mentioned dependency automaticall, we recommend uninstalling all existing kde formulas by uninstall script, i.e. `"$(brew --repo kde-mac/kde)/tools/uninstall.sh"`. The most essential dependecies for all formulas in our tap is the following:
