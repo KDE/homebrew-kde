@@ -2,9 +2,9 @@ require_relative "../lib/cmake"
 
 class QtWebkit < Formula
   desc "Port of WebKit on top of Qt"
-  homepage "https://github.com/qtwebkit/qtwebkit"
-  revision 7
-  head "https://github.com/qtwebkit/qtwebkit.git", branch: "qtwebkit-dev-wip"
+  homepage "https://github.com/movableink/webkit"
+  revision 8
+  head "https://github.com/movableink/webkit.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
   depends_on "fontconfig" => :build
