@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdevelop < Formula
   desc "Cross-platform IDE for C, C++, Python, QML/JavaScript and PHP"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/release-service/22.12.1/src/kdevelop-22.12.1.tar.xz"
-  sha256 "f330bbd2209e88b4340af0ef84d5f9c6e37b91ccdc06ad83ab58eaa854939062"
+  url "https://download.kde.org/stable/release-service/23.08.2/src/kdevelop-23.08.2.tar.xz"
+  sha256 "577715eeb0d6bce068987a7e66988616e9b483e8ad384901e90254fd209cc513"
   head "https://invent.kde.org/kdevelop/kdevelop.git", branch: "master"
 
   depends_on "boost" => :build
