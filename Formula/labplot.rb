@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Labplot < Formula
   desc "Application for interactive graphing and analysis of scientific data"
   homepage "https://labplot.kde.org/"
-  url "https://download.kde.org/stable/labplot/2.9.0/labplot-2.9.0.tar.xz"
-  sha256 "e5a31489f0b72a70cc632e1078506d7e7bc1ec7dbc89c5428d197a14e44b21f2"
-  revision 1
+  url "https://download.kde.org/stable/labplot/labplot-2.10.1.tar.xz"
+  sha256 "2b6e181517cfb6e0dfff7b895f3eb20c7ce359e6732d38545e0757c9aea2daef"
   head "https://invent.kde.org/education/labplot.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
