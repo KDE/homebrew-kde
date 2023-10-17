@@ -5,8 +5,10 @@ class Ksysguard < Formula
   homepage "https://apps.kde.org/ksysguard"
   url "https://download.kde.org/stable/ksysguard/5.22.0/ksysguard-5.22.0.tar.xz"
   sha256 "0f9c624e5fbb2aee906d8d9563c5a7eb09eaf38bc8e4382c072f9e6d8854622d"
-  revision 1
+  revision 2
   head "https://invent.kde.org/plasma/ksysguard.git", branch: "master"
+
+  disable! date: "2023-10-25", because: "libksysguard depends on X11"
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
@@ -28,7 +30,7 @@ class Ksysguard < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/ksysguard.app/Contents/Info.plist"
   end
 
