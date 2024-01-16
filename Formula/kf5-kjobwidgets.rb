@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kjobwidgets < Formula
   desc "Widgets for tracking KJob instances"
   homepage "https://api.kde.org/frameworks/kjobwidgets/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.111/kjobwidgets-5.111.0.tar.xz"
-  sha256 "6a8ff4e3506bd06d85a890debe1d6e8e5072c406051d8405690aae4017f9bb21"
+  url "https://download.kde.org/stable/frameworks/5.115/kjobwidgets-5.115.0.tar.xz"
+  sha256 "cee37be8d309cc572ecf572214d9138183fd07e6aee2af77fb60f37ebe4e3061"
   head "https://invent.kde.org/frameworks/kjobwidgets.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
