@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kate < Formula
   desc "Advanced KDE Text Editor"
   homepage "https://kate-editor.org"
-  url "https://download.kde.org/stable/release-service/23.08.2/src/kate-23.08.2.tar.xz"
-  sha256 "974716631e6e94e8dfe5a4d58c5080524ce9291ab50d4ade231ebb5d5b341259"
+  url "https://download.kde.org/stable/release-service/23.08.5/src/kate-23.08.5.tar.xz"
+  sha256 "683c49d9c4b2abd4b4660b607b65249a2adfdc48418b0d18ab90810d1a8f4e37"
   head "https://invent.kde.org/utilities/kate.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
