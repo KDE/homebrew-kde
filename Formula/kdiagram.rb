@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kdiagram < Formula
   desc "Powerful libraries for creating business diagrams"
   homepage "https://api.kde.org/kdiagram/index.html"
-  url "https://download.kde.org/stable/kdiagram/2.8.0/kdiagram-2.8.0.tar.xz"
-  sha256 "579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f"
+  url "https://download.kde.org/stable/kdiagram/3.0.1/kdiagram-3.0.1.tar.xz"
+  sha256 "4659b0c2cd9db18143f5abd9c806091c3aab6abc1a956bbf82815ab3d3189c6d"
   head "https://invent.kde.org/graphics/kdiagram.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
