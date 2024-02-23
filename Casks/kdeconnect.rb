@@ -18,6 +18,8 @@ cask "kdeconnect" do
   desc "Enabling communication between all your devices"
   homepage "https://kdeconnect.kde.org/"
 
+  disable! date: "2024-02-03", because: "Binary Factory Jenkins CI shut down"
+
   app "kdeconnect-indicator.app", target: "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli",
          target: "kdeconnect"
