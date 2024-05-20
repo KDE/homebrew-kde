@@ -1,17 +1,19 @@
 cask "kdeconnect" do
+  arch arm: "arm64", intel: "x86_64"
+
   version :latest
   sha256 :no_check
 
   url do
     require "open-uri"
-    base_url = "https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Release_macos/lastStableBuild"
+    base_url = "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}/"
     version = URI(base_url.to_s)
               .open
               .read
-              .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-x86_64\.dmg/i)
+              .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-.*?\.dmg/i)
               .flatten
               .first # should only be one mach
-    file = "kdeconnect-kde-#{version}-macos-clang-x86_64.dmg"
+    file = "kdeconnect-kde-#{version}-macos-clang-#{arch}.dmg"
     "#{base_url}/artifact/#{file}"
   end
   name "KDE Connect"
