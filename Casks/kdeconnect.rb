@@ -6,15 +6,14 @@ cask "kdeconnect" do
 
   url do
     require "open-uri"
-    base_url = "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}/"
+    base_url = "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}"
     version = URI(base_url.to_s)
               .open
               .read
-              .scan(/href=.*?kdeconnect-kde[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-#{arch}\.dmg/i)
+              .scan(/href=.*?kdeconnect-kde-master-(\d+(?:)+)-macos-clang-#{arch}\.dmg/i)
               .flatten
               .first # should only be one mach
-    file = "kdeconnect-kde-#{version}-macos-clang-#{arch}.dmg"
-    "#{base_url}/artifact/#{file}"
+    "#{base_url}/kdeconnect-kde-master-#{version}-macos-clang-#{arch}.dmg"
   end
   name "KDE Connect"
   desc "Enabling communication between all your devices"
