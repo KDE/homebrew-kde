@@ -67,17 +67,6 @@ my %frameworks = (
 
 ### Tier 4
     'frameworkintegration' => '',
-
-### Porting Aids
-    'kdelibs4support' => 'portingAids/kdelibs4support',
-    'kdesignerplugin' => 'portingAids/kdesignerplugin',
-    'kdewebkit'       => 'portingAids/kdewebkit',
-    'khtml'           => 'portingAids/khtml',
-    'kjs'             => 'portingAids/kjs',
-    'kjsembed'        => 'portingAids/kjsembed',
-    'kmediaplayer'    => 'portingAids/kmediaplayer',
-    'kross'           => 'portingAids/kross',
-    'kxmlrpcclient'   => 'portingAids/kxmlrpcclient'
 );
 
 my %meta_frameworks = (
