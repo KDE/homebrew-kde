@@ -20,7 +20,7 @@ my %frameworks = (
     'kdnssd'              => '',
     'kguiaddons'          => '',
     'kidletime'           => '',
-    'kirigami2'           => '',
+    'kirigami'            => '',
     'kitemmodels'         => '',
     'kitemviews'          => '',
     'kplotting'           => '',
@@ -32,8 +32,9 @@ my %frameworks = (
     'syntax-highlighting' => '',
 
 ### Tier 2
-    'kactivities'     => '',
+#    'kactivities'     => '',
     'kauth'           => '',
+    'kcontacts'       => '',
     'kcompletion'     => '',
     'kcrash'          => '',
     'kfilemetadata'   => '',
@@ -51,10 +52,10 @@ my %frameworks = (
     'kconfigwidgets'   => '',
     'kdeclarative'     => '',
     'kded'             => '',
-    'kemoticons'       => '',
+#    'kemoticons'       => '',
     'kglobalaccel'     => '',
     'kiconthemes'      => '',
-    'kinit'            => '',
+#    'kinit'            => '',
     'kio'              => '',
     'knewstuff'        => '',
     'knotifyconfig'    => '',
@@ -142,7 +143,7 @@ sub update_frameworks {
             $upstream = $package;
         }
 
-        my $formula              = "Formula/kf5-$package.rb";
+        my $formula              = "Formula/kf6-$package.rb";
         my $package_upstream_url = "$upstream_url$upstream$upstream_suffix";
 
         if ( !-e $formula ) {
@@ -150,7 +151,7 @@ sub update_frameworks {
             return;
         }
 
-        my $cached_file = "$tmp_dir/kf5-$package$upstream_suffix";
+        my $cached_file = "$tmp_dir/kf6-$package$upstream_suffix";
 
         download_and_update( $formula, $package_upstream_url, $cached_file );
     }
@@ -162,7 +163,7 @@ sub update_meta_frameworks {
     my $frameworks_version = $_[0];
 
     for my $package ( keys %meta_frameworks ) {
-        my $formula = "Formula/kf5-$package.rb";
+        my $formula = "Formula/kf6-$package.rb";
 
         open my $FORMULA,     '<', $formula       or die $!;
         open my $NEW_FORMULA, '>', "$formula.new" or die $!;
