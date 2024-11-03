@@ -65,28 +65,12 @@ my %frameworks = (
     'ktextwidgets'     => '',
     'kwallet'          => '',
     'kxmlgui'          => '',
-
-### Tier 4
-    'frameworkintegration' => '',
-
-### Porting Aids
-    'kdelibs4support' => 'portingAids/kdelibs4support',
-    'kdesignerplugin' => 'portingAids/kdesignerplugin',
-    'kdewebkit'       => 'portingAids/kdewebkit',
-    'khtml'           => 'portingAids/khtml',
-    'kjs'             => 'portingAids/kjs',
-    'kjsembed'        => 'portingAids/kjsembed',
-    'kmediaplayer'    => 'portingAids/kmediaplayer',
-    'kross'           => 'portingAids/kross',
-    'kxmlrpcclient'   => 'portingAids/kxmlrpcclient'
 );
 
 my %meta_frameworks = (
     'tier1-frameworks'       => '',
     'tier2-frameworks'       => '',
     'tier3-frameworks'       => '',
-    'tier4-frameworks'       => '',
-    'portingaids-frameworks' => '',
 );
 
 my %gear = (
@@ -243,7 +227,7 @@ sub download_and_update {
     }
 
     print("$package_upstream_url\n");
-    `aria2c --allow-overwrite=true --continue=true --file-allocation=none --max-tries=2 --max-connection-per-server=16 --max-file-not-found=5 --min-split-size=1M --no-conf --remote-time=true --timeout=5 --split=16 --dir=/ --out "$cached_file" "$package_upstream_url"`;
+    `aria2c --no-conf --allow-overwrite=true --continue=true --file-allocation=none --max-tries=2 --max-connection-per-server=16 --max-file-not-found=5 --min-split-size=1M --remote-time=true --timeout=5 --split=16 --dir=/ --out "$cached_file" "$package_upstream_url"`;
     if ( $? != 0 ) {
         die "Unable to download $package_upstream_url: $!";
     }
