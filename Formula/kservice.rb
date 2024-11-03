@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kservice < Formula
   desc "Advanced plugin and service introspection"
   homepage "https://api.kde.org/frameworks/kservice/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kservice-6.5.0.tar.xz"
-  sha256 "48cdd204bc9fb9282c37b6bcc2364f7dbc124057547ddb6b1471988b464cf8bd"
+  url "https://download.kde.org/stable/frameworks/6.7/kservice-6.7.0.tar.xz"
+  sha256 "39d2542e38fb3434c5405c92d5b45e0d5ba650d265309adf93c787a741d57fa1"
   head "https://invent.kde.org/frameworks/kservice.git", branch: "master"
 
   depends_on "bison" => :build

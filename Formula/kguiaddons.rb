@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kguiaddons < Formula
   desc "Addons to QtGui"
   homepage "https://api.kde.org/frameworks/kguiaddons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kguiaddons-6.5.0.tar.xz"
-  sha256 "7193fa930b85fa6e7fda3a85f1e52f362ecd3e110e80055d9084eeafaeac4807"
+  url "https://download.kde.org/stable/frameworks/6.7/kguiaddons-6.7.0.tar.xz"
+  sha256 "ac437ca6baf50b0178bc8bf0b4dd1e6e70e0e4ef1ac770259738a1c42d035bcc"
   head "https://invent.kde.org/frameworks/kguiaddons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

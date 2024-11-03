@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kimageformats < Formula
   desc "Image format plugins for Qt6"
   homepage "https://api.kde.org/frameworks/kimageformats/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kimageformats-6.5.0.tar.xz"
-  sha256 "c64ab736477264f8a0ce4418f0be629ad0f17a078161b2773700d3b96ca75022"
+  url "https://download.kde.org/stable/frameworks/6.7/kimageformats-6.7.0.tar.xz"
+  sha256 "722850648ac167e4c0ee631571fde49e9fd15d004a127dd804a14f9f579b731f"
   head "https://invent.kde.org/frameworks/kimageformats.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

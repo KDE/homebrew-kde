@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kcoreaddons < Formula
   desc "Qt addon library with a collection of non-GUI utilities"
   homepage "https://api.kde.org/frameworks/kcoreaddons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kcoreaddons-6.5.0.tar.xz"
-  sha256 "5e0e1d29dcd4e04e74584df1577d3ae9ffbd47ccdb84ee5622d1ed2373e5ef98"
+  url "https://download.kde.org/stable/frameworks/6.7/kcoreaddons-6.7.0.tar.xz"
+  sha256 "48511e9dab1f2e80b3c4822bb87c2e981186de3b8977d92082d34d003b1283c5"
   head "https://invent.kde.org/frameworks/kcoreaddons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kcontacts < Formula
   desc "Support for vCard contacts"
   homepage "https://api.kde.org/frameworks/kcontacts/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kcontacts-6.5.0.tar.xz"
-  sha256 "b711e098469a5821044bf99bd74d0a16b804731a347cf53609a4bd1b5fa5fdc4"
+  url "https://download.kde.org/stable/frameworks/6.7/kcontacts-6.7.0.tar.xz"
+  sha256 "292f8104f9f31d62c59289a3a821766d1ec540f4fc513ffc3b6f7197602d42c5"
   head "https://invent.kde.org/frameworks/kcontacts.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

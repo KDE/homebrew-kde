@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kded < Formula
   desc "Extensible deamon for providing system level services"
   homepage "https://api.kde.org/frameworks/kded/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kded-6.5.0.tar.xz"
-  sha256 "292ca941acc69c443f47895ea784493b08fd573afe0f4e99f5f42b8a029954b0"
+  url "https://download.kde.org/stable/frameworks/6.7/kded-6.7.0.tar.xz"
+  sha256 "22aa1b6543b40e094346138516131c0f7eb78a70e87296938457fd1386680a2f"
   head "https://invent.kde.org/frameworks/kded.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
