@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class KdevelopPgQt < Formula
   desc "LL(1) parser generator based on Qt"
   homepage "https://kdevelop.org"
-  url "https://download.kde.org/stable/kdevelop-pg-qt/2.2.2/src/kdevelop-pg-qt-2.2.2.tar.xz"
-  sha256 "3d56604c479f8f04ae32a523ee91f3078c717117d0deb39e973e22494cbb65f1"
+  url "https://download.kde.org/stable/kdevelop-pg-qt/2.3.0/src/kdevelop-pg-qt-2.3.0.tar.xz"
+  sha256 "3d3ef3cb395e9670e60c399ea6d865cc796e00e52c355eed943fbeca7da7120d"
   head "https://invent.kde.org/kdevelop/kdevelop-pg-qt.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
