@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Krusader < Formula
   desc "Advanced twin panel (commander style) file manager"
   homepage "https://krusader.org/"
-  url "https://download.kde.org/stable/krusader/2.8.0/krusader-2.8.0.tar.xz"
-  sha256 "8e4cf05a9318b0bc1b0941811b988b2f2bb0c04a0d1e37998212a9190cf2c29a"
+  url "https://download.kde.org/stable/krusader/2.8.1/krusader-2.8.1.tar.xz"
+  sha256 "37bf204519d0ab1ba40964af02741bc228f11e97f28c4c518ca05d358df18283"
   head "https://invent.kde.org/utilities/krusader.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
