@@ -10,7 +10,9 @@ class KdeconnectKde < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kf5-kdeclarative" => :build
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
+
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kf5-kcmutils"
@@ -22,7 +24,6 @@ class KdeconnectKde < Formula
   depends_on "kde-mac/kde/kf5-knotifications"
   depends_on "kde-mac/kde/kf5-kpeople"
   depends_on "kde-mac/kde/kf5-kservice"
-  depends_on "kdoctools"
   depends_on "ki18n"
   depends_on "qca"
   depends_on "qt@5"

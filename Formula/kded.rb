@@ -18,7 +18,6 @@ class Kded < Formula
   depends_on "kde-mac/kde/kcoreaddons"
   depends_on "kde-mac/kde/kcrash"
   depends_on "kde-mac/kde/kdbusaddons"
-  depends_on "kde-mac/kde/kdoctools"
   depends_on "kde-mac/kde/kservice"
 
   def install

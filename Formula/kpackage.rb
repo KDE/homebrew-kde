@@ -17,7 +17,6 @@ class Kpackage < Formula
 
   depends_on "karchive"
   depends_on "kde-mac/kde/kcoreaddons"
-  depends_on "kde-mac/kde/kdoctools"
   depends_on "ki18n"
 
   def install

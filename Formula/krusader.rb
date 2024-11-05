@@ -9,6 +9,7 @@ class Krusader < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "extra-cmake-modules" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "gettext"
@@ -19,7 +20,6 @@ class Krusader < Formula
   depends_on "kde-mac/kde/kf5-kwallet"
   depends_on "kde-mac/kde/kf5-kxmlgui"
   depends_on "kde-mac/kde/kio-extras"
-  depends_on "kdoctools"
 
   def install
     system "cmake", *kde_cmake_args
@@ -29,7 +29,7 @@ class Krusader < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/krusader.app/Contents/Info.plist"
   end
 

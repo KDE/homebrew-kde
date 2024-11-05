@@ -8,10 +8,10 @@ class Poxml < Formula
   head "https://invent.kde.org/sdk/poxml.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
+  depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "gettext"
-  depends_on "kdoctools"
   depends_on "qt@5"
 
   patch :DATA
