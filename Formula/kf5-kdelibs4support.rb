@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdelibs4support < Formula
   desc "Porting aid from KDELibs4"
   homepage "https://api.kde.org/frameworks/kdelibs4support/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.115/portingAids/kdelibs4support-5.115.0.tar.xz"
-  sha256 "72a2fa16c9044fffa7548f349e5e19f16996787673e6bd978fdca260e5512f14"
+  url "https://download.kde.org/stable/frameworks/5.116/portingAids/kdelibs4support-5.116.0.tar.xz"
+  sha256 "ed915dd146eb10262816da62904d04f78dacf9595d44d400dd1644d21c10c1e4"
   head "https://invent.kde.org/frameworks/kdelibs4support.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -24,8 +24,8 @@ class Kf5Kdelibs4support < Formula
 
   # https://metacpan.org/pod/URI::Escape
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.21.tar.gz"
-    sha256 "96265860cd61bde16e8415dcfbf108056de162caa0ac37f81eb695c9d2e0ab77"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.29.tar.gz"
+    sha256 "a34b9f626c3ff1e20c0d4a23ec5c8b7ae1de1fb674ecefed7e46791388137372"
   end
 
   patch :DATA
