@@ -1,3 +1,4 @@
 {
-  "clazy": "homebrew/core"
+  "clazy": "homebrew/core",
+  "kdiff3": "homebrew/cask"
 }
