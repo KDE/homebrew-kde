@@ -14,7 +14,6 @@ class Kf5PortingaidsFrameworks < Formula
 
   depends_on "kde-mac/kde/kf5-kdelibs4support"
   depends_on "kde-mac/kde/kf5-kdesignerplugin"
-  depends_on "kde-mac/kde/kf5-kdewebkit"
   depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kjs"
   depends_on "kde-mac/kde/kf5-kjsembed"

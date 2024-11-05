@@ -20,17 +20,11 @@ class Umbrello < Formula
   depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kdevelop"
   depends_on "kde-mac/kde/kf5-kdelibs4support"
-  depends_on "kde-mac/kde/qt-webkit"
 
   depends_on "kdev-php" => :recommended
 
   def install
-    args = %W[
-      -DBUILD_KF5=ON
-      -DQt5WebKitWidgets_DIR=#{Formula["qt-webkit"].opt_prefix}/lib/cmake/Qt5WebKitWidgets
-    ]
-
-    system "cmake", *args, *kde_cmake_args
+    system "cmake", "-DBUILD_KF5=ON", *kde_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
