@@ -53,7 +53,6 @@ my %frameworks = (
     'kconfigwidgets'   => '',
     'kdeclarative'     => '',
     'kded'             => '',
-#    'kemoticons'       => '',
     'kglobalaccel'     => '',
     'kiconthemes'      => '',
 #    'kinit'            => '',

@@ -17,7 +17,6 @@ class Tier3Frameworks < Formula
   depends_on "kde-mac/kde/kconfigwidgets"
   depends_on "kde-mac/kde/kdeclarative"
   depends_on "kde-mac/kde/kded"
-  #  depends_on "kde-mac/kde/kemoticons"
   depends_on "kde-mac/kde/kglobalaccel"
   depends_on "kde-mac/kde/kiconthemes"
   #  depends_on "kde-mac/kde/kinit"

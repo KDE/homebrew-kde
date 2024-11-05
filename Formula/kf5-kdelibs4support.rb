@@ -14,7 +14,6 @@ class Kf5Kdelibs4support < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kded"
-  depends_on "kde-mac/kde/kf5-kemoticons"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/kunitconversion"

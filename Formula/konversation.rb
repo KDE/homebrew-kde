@@ -14,7 +14,6 @@ class Konversation < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/breeze-icons"
-  depends_on "kde-mac/kde/kf5-kemoticons"
   depends_on "kde-mac/kde/kidletime"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/knotifyconfig"

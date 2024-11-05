@@ -54,8 +54,6 @@ ln -sf "$(brew --prefix)/share/kxmlgui5" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/kpackage" "${APPLICATION_SUPPORT}"
 # breeze-icons
 ln -sf "$(brew --prefix)/share/icons" "${APPLICATION_SUPPORT}"
-# kf5-kemoticons
-ln -sf "$(brew --prefix)/share/emoticons" "${APPLICATION_SUPPORT}"
 # kparts
 ln -sf "$(brew --prefix)/share/kdevappwizard" "${APPLICATION_SUPPORT}"
 # kf5-kdelibs4support
