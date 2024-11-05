@@ -2,9 +2,9 @@ require_relative "../lib/cmake"
 
 class Kcolorscheme < Formula
   desc "Support for color themes"
-  homepage "https://api.kde.org/frameworks/kcolorthemes/html/index.html"
-  url "https://download.kde.org/stable/frameworks/6.5/kcolorscheme-6.5.0.tar.xz"
-  sha256 "323b55dd37dc408ccc158df2ce5c8a46b628f9355d2a77916e4565afce90b42b"
+  homepage "https://api.kde.org/frameworks/kcolorscheme/html/index.html"
+  url "https://download.kde.org/stable/frameworks/6.7/kcolorscheme-6.7.0.tar.xz"
+  sha256 "1b4c6e84f1dd96b2ee62be755f60da60d61ba80d6709eeb3186d8882e72e2130"
   head "https://invent.kde.org/frameworks/kcolorscheme.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

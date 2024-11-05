@@ -34,6 +34,7 @@ my %frameworks = (
 ### Tier 2
 #    'kactivities'     => '',
     'kauth'           => '',
+    'kcolorscheme'    => '',
     'kcontacts'       => '',
     'kcompletion'     => '',
     'kcrash'          => '',
