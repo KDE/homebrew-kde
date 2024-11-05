@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class Kile < Formula
   desc "Integrated LaTeX Editing Environment"
   homepage "https://kile.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/kile/unstable/kile-3.0b3/kile-2.9.93.tar.bz2"
-  sha256 "04499212ffcb24fb3a6829149a7cae4c6ad5d795985f080800d6df72f88c5df0"
-  revision 3
+  url "https://downloads.sourceforge.net/project/kile/unstable/kile-3.0b4/kile-2.9.94-1.tar.bz2"
+  sha256 "64fa2e45c97dbb6f613d10f7f9bb005bf86fbbaaff238185538ac5b896be632f"
   head "https://invent.kde.org/office/kile.git", branch: "master"
 
   depends_on "cmake" => :build
