@@ -13,7 +13,7 @@ class Elisa < Formula
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-kcmutils"
+  depends_on "kde-mac/kde/kcmutils"
 
   def install
     system "cmake", *kde_cmake_args

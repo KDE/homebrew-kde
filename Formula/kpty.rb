@@ -25,7 +25,7 @@ class Kpty < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5Pty REQUIRED)")
+    (testpath/"CMakeLists.txt").write("find_package(KF6Pty REQUIRED)")
     system "cmake", ".", "-Wno-dev"
   end
 end

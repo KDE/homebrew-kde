@@ -13,11 +13,11 @@ class Kate < Formula
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kf5-kitemmodels"
-  depends_on "kde-mac/kde/kf5-knewstuff"
-  depends_on "kde-mac/kde/kf5-ktexteditor"
+  depends_on "kde-mac/kde/kitemmodels"
+  depends_on "kde-mac/kde/knewstuff"
+  depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/konsole"
   depends_on "threadweaver"
 

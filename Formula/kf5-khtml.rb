@@ -15,7 +15,7 @@ class Kf5Khtml < Formula
   depends_on "giflib"
   depends_on "jpeg"
   depends_on "kde-mac/kde/kf5-kjs"
-  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/phonon"
   depends_on "libpng"
   depends_on "openssl"

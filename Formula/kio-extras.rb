@@ -14,11 +14,11 @@ class KioExtras < Formula
   depends_on "ninja" => :build
 
   depends_on "exiv2"
-  depends_on "kde-mac/kde/kf5-kdnssd"
-  depends_on "kde-mac/kde/kf5-kimageformats"
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-kpty"
-  depends_on "kde-mac/kde/kf5-syntax-highlighting"
+  depends_on "kde-mac/kde/kdnssd"
+  depends_on "kde-mac/kde/kimageformats"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/kpty"
+  depends_on "kde-mac/kde/syntax-highlighting"
   depends_on "libmtp"
   depends_on "openexr"
 
@@ -47,7 +47,7 @@ class KioExtras < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5KioArchive REQUIRED)")
+    (testpath/"CMakeLists.txt").write("find_package(KF6KioArchive REQUIRED)")
     system "cmake", ".", "-Wno-dev"
   end
 end

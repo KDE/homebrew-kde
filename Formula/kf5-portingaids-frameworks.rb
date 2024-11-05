@@ -21,7 +21,7 @@ class Kf5PortingaidsFrameworks < Formula
   depends_on "kde-mac/kde/kf5-kmediaplayer"
   depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/kf5-kxmlrpcclient"
-  depends_on "kde-mac/kde/kf5-tier4-frameworks"
+  depends_on "kde-mac/kde/tier4-frameworks"
 
   def install
     touch "empty"

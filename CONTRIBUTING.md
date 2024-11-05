@@ -24,7 +24,7 @@ def install
  	prefix.install "build/install_manifest.txt"
  end
 ```
-To speedup process of getting required and optional dependecies list you may want to consult some Linux distribution package specs, e.g. I consult with ArchLinux, so I search for corresponding package on [this page](https://archlinux.org/packages/) and examine package's source code. Just make sure to adapt dependencies names to our convention, e.g. add `kf5-` prefix for frameworks. Then starts the hard process: making sure that cmake is happy, e.g. found all required and maybe also optional depencies.
+To speedup process of getting required and optional dependecies list you may want to consult some Linux distribution package specs, e.g. I consult with ArchLinux, so I search for corresponding package on [this page](https://archlinux.org/packages/) and examine package's source code. Just make sure to adapt dependencies names to our convention, e.g. doesn't have any prefix, e.g. `kf5-`. Then starts the hard process: making sure that cmake is happy, e.g. found all required and maybe also optional depencies.
 
 I recommend running install process by adding `-vd` options for brew, e.g. `brew install -vd <new_formula_name>`. Where `-v` stand for `--verbose` and `-d` stands for `--debug`. So if you encounter some error it will be printed to you. You may also want to use brew's debug menu in case of error, e.g. to launch a shell to examine build directory state.
 

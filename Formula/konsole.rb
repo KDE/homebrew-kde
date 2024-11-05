@@ -12,12 +12,12 @@ class Konsole < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kinit"
-  depends_on "kde-mac/kde/kf5-knewstuff"
-  depends_on "kde-mac/kde/kf5-knotifyconfig"
-  depends_on "kde-mac/kde/kf5-kparts"
-  depends_on "kde-mac/kde/kf5-kpty"
+  depends_on "kde-mac/kde/knewstuff"
+  depends_on "kde-mac/kde/knotifyconfig"
+  depends_on "kde-mac/kde/kparts"
+  depends_on "kde-mac/kde/kpty"
 
   def install
     system "cmake", *kde_cmake_args

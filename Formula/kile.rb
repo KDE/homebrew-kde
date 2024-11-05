@@ -15,7 +15,7 @@ class Kile < Formula
 
   depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kf5-kinit"
-  depends_on "kde-mac/kde/kf5-ktexteditor"
+  depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/okular"
 
   depends_on "kde-mac/kde/konsole" => :recommended

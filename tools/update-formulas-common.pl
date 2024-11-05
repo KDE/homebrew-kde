@@ -66,12 +66,16 @@ my %frameworks = (
     'ktextwidgets'     => '',
     'kwallet'          => '',
     'kxmlgui'          => '',
+
+### Tier 4
+    'frameworkintegration' => ''
 );
 
 my %meta_frameworks = (
     'tier1-frameworks'       => '',
     'tier2-frameworks'       => '',
     'tier3-frameworks'       => '',
+    'tier4-frameworks'       => '',
 );
 
 my %gear = (

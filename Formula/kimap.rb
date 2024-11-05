@@ -12,7 +12,7 @@ class Kimap < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kmime"
 
   def install
@@ -23,7 +23,7 @@ class Kimap < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5IMAP REQUIRED)")
+    (testpath/"CMakeLists.txt").write("find_package(KF6IMAP REQUIRED)")
     system "cmake", ".", "-Wno-dev"
   end
 end

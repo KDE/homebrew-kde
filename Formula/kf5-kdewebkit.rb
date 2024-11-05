@@ -11,7 +11,7 @@ class Kf5Kdewebkit < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/qt-webkit"
 
   def install

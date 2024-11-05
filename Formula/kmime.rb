@@ -12,7 +12,7 @@ class Kmime < Formula
   depends_on "gettext" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kcodecs"
+  depends_on "kde-mac/kde/kcodecs"
   depends_on "ki18n"
 
   def install
@@ -23,7 +23,7 @@ class Kmime < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5Mime REQUIRED)")
+    (testpath/"CMakeLists.txt").write("find_package(KF6Mime REQUIRED)")
     system "cmake", ".", "-Wno-dev"
   end
 end

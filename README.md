@@ -14,7 +14,7 @@ Currently this tap is in process of migration most of frameworks to `homebrew/co
 ## Installation 
 Now, the fun begins. You can either install individual frameworks via
 ```sh
-brew install kde-mac/kde/kf5-attica
+brew install kde-mac/kde/attica
 ```
 or you can install them all with a provided Brewfile provided in the repo's root directory:
 ```sh

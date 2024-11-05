@@ -13,8 +13,8 @@ class Libalkimia < Formula
 
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "kde-mac/kde/kf5-kcoreaddons"
-  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/kcoreaddons"
+  depends_on "kde-mac/kde/knewstuff"
 
   def install
     system "cmake", "-DBUILD_APPLETS=OFF", *kde_cmake_args

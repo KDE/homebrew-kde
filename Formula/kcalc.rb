@@ -12,7 +12,7 @@ class Kcalc < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kinit"
   depends_on "mpfr"
 

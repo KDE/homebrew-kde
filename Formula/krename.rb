@@ -14,8 +14,8 @@ class Krename < Formula
 
   depends_on "exiv2"
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-breeze-icons"
-  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/breeze-icons"
+  depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kf5-kjs"
   depends_on "podofo"
   depends_on "taglib"

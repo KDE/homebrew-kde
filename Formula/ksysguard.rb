@@ -17,7 +17,7 @@ class Ksysguard < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kf5-kinit"
-  depends_on "kde-mac/kde/kf5-knewstuff"
+  depends_on "kde-mac/kde/knewstuff"
   depends_on "kde-mac/kde/libksysguard"
 
   patch :DATA

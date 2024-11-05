@@ -15,10 +15,10 @@ class Krusader < Formula
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
   depends_on "karchive"
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-kparts"
-  depends_on "kde-mac/kde/kf5-kwallet"
-  depends_on "kde-mac/kde/kf5-kxmlgui"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/kparts"
+  depends_on "kde-mac/kde/kwallet"
+  depends_on "kde-mac/kde/kxmlgui"
   depends_on "kde-mac/kde/kio-extras"
 
   def install

@@ -13,8 +13,8 @@ class Kf5Kdesignerplugin < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-kplotting"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/kplotting"
 
   def install
     system "cmake", *kde_cmake_args

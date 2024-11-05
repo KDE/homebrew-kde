@@ -11,7 +11,7 @@ class Libkomparediff2 < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kio"
 
   def install
     system "cmake", *kde_cmake_args

@@ -17,10 +17,10 @@ class Ktorrent < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-breeze-icons"
-  depends_on "kde-mac/kde/kf5-kcmutils"
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-knotifyconfig"
+  depends_on "kde-mac/kde/breeze-icons"
+  depends_on "kde-mac/kde/kcmutils"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/knotifyconfig"
   depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/libktorrent"
 

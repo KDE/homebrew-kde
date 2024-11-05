@@ -18,7 +18,7 @@ class Umbrello < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kdevelop"
-  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kdelibs4support"
   depends_on "kde-mac/kde/qt-webkit"
 

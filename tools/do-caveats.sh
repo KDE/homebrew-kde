@@ -52,11 +52,11 @@ ln -sf "$(brew --prefix)/share/knotifycations5" "${APPLICATION_SUPPORT}"
 mkdir -p "$(brew --prefix)/share/kxmlgui5"
 ln -sf "$(brew --prefix)/share/kxmlgui5" "${APPLICATION_SUPPORT}"
 ln -sf "$(brew --prefix)/share/kpackage" "${APPLICATION_SUPPORT}"
-# kf5-breeze-icons
+# breeze-icons
 ln -sf "$(brew --prefix)/share/icons" "${APPLICATION_SUPPORT}"
 # kf5-kemoticons
 ln -sf "$(brew --prefix)/share/emoticons" "${APPLICATION_SUPPORT}"
-# kf5-kparts
+# kparts
 ln -sf "$(brew --prefix)/share/kdevappwizard" "${APPLICATION_SUPPORT}"
 # kf5-kdelibs4support
 ln -sf "$(brew --prefix)/opt/kf5-kdelibs4support/bin/kdebugdialog5.app" "${HOME_APPS_KDE}"

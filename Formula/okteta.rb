@@ -19,10 +19,10 @@ class Okteta < Formula
   depends_on "shared-mime-info" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-breeze-icons"
-  depends_on "kde-mac/kde/kf5-kcmutils"
-  depends_on "kde-mac/kde/kf5-knewstuff"
-  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/breeze-icons"
+  depends_on "kde-mac/kde/kcmutils"
+  depends_on "kde-mac/kde/knewstuff"
+  depends_on "kde-mac/kde/kparts"
   depends_on "qca"
 
   def install

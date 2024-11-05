@@ -14,9 +14,9 @@ class Kf5Kactivities < Formula
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kconfig"
-  depends_on "kde-mac/kde/kf5-kcoreaddons"
-  depends_on "kde-mac/kde/kf5-kwindowsystem"
+  depends_on "kde-mac/kde/kconfig"
+  depends_on "kde-mac/kde/kcoreaddons"
+  depends_on "kde-mac/kde/kwindowsystem"
 
   patch :DATA
 

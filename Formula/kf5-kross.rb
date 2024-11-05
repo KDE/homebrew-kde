@@ -13,7 +13,7 @@ class Kf5Kross < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kparts"
 
   patch :DATA
 

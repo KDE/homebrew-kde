@@ -12,7 +12,7 @@ class Kf5Kinit < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kio"
+  depends_on "kde-mac/kde/kio"
 
   def install
     system "cmake", *kde_cmake_args

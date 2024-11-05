@@ -11,14 +11,14 @@ class Kdialog < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-kcoreaddons"
-  depends_on "kde-mac/kde/kf5-kdbusaddons"
-  depends_on "kde-mac/kde/kf5-kguiaddons"
-  depends_on "kde-mac/kde/kf5-kiconthemes"
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-knotifications"
-  depends_on "kde-mac/kde/kf5-ktextwidgets"
-  depends_on "kde-mac/kde/kf5-kwindowsystem"
+  depends_on "kde-mac/kde/kcoreaddons"
+  depends_on "kde-mac/kde/kdbusaddons"
+  depends_on "kde-mac/kde/kguiaddons"
+  depends_on "kde-mac/kde/kiconthemes"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/knotifications"
+  depends_on "kde-mac/kde/ktextwidgets"
+  depends_on "kde-mac/kde/kwindowsystem"
 
   def install
     system "cmake", *kde_cmake_args

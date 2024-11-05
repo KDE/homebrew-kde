@@ -13,12 +13,12 @@ class Konversation < Formula
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-breeze-icons"
+  depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kemoticons"
-  depends_on "kde-mac/kde/kf5-kidletime"
-  depends_on "kde-mac/kde/kf5-kio"
-  depends_on "kde-mac/kde/kf5-knotifyconfig"
-  depends_on "kde-mac/kde/kf5-kparts"
+  depends_on "kde-mac/kde/kidletime"
+  depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/knotifyconfig"
+  depends_on "kde-mac/kde/kparts"
   depends_on "qca"
 
   def install

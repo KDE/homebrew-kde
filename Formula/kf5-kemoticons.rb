@@ -14,7 +14,7 @@ class Kf5Kemoticons < Formula
   depends_on "ninja" => :build
 
   depends_on "karchive"
-  depends_on "kde-mac/kde/kf5-kservice"
+  depends_on "kde-mac/kde/kservice"
 
   def install
     system "cmake", *kde_cmake_args
