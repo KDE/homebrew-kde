@@ -14,8 +14,8 @@ class Tellico < Formula
 
   depends_on "exempi"
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kfilemetadata"
   depends_on "kde-mac/kde/kf5-khtml"
+  depends_on "kde-mac/kde/kfilemetadata"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/knewstuff"
@@ -37,7 +37,7 @@ class Tellico < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/tellico.app/Contents/Info.plist"
   end
 

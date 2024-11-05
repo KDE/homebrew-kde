@@ -26,7 +26,7 @@ class KdeconnectKde < Formula
   depends_on "kde-mac/kde/kservice"
   depends_on "ki18n"
   depends_on "qca"
-  depends_on "qt@5"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

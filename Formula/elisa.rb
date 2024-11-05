@@ -40,14 +40,14 @@ class Elisa < Formula
         SOURCES += main.cpp
       EOS
 
-      system "#{Formula["qt@5"].bin}/qmake"
+      system "#{Formula["qt@6"].bin}/qmake"
       system "make"
     end
     qtpp = Utils.safe_popen_read("#{Formula["qt@5"].bin}/qtpaths", "--plugin-dir").chomp
     qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "-c", "Add :LSEnvironment:QML2_IMPORT_PATH string \"#{qml2pp}\:#{HOMEBREW_PREFIX}/lib/qt5/qml\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
+      "-c", "Add :LSEnvironment:QML2_IMPORT_PATH string \"#{qml2pp}\"",
       "#{bin}/elisa.app/Contents/Info.plist"
   end
 

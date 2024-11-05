@@ -11,7 +11,7 @@ class KdevelopPgQt < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "qt@5"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

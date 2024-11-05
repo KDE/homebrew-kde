@@ -12,7 +12,7 @@ class Tier2Frameworks < Formula
     skip "Meta package"
   end
 
-#  depends_on "kde-mac/kde/kactivities"
+  #  depends_on "kde-mac/kde/kactivities"
   depends_on "kde-mac/kde/kauth"
   depends_on "kde-mac/kde/kcompletion"
   depends_on "kde-mac/kde/kcrash"

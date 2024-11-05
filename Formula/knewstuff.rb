@@ -12,10 +12,10 @@ class Knewstuff < Formula
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "ninja" => :build
 
-  depends_on "qt@6"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kirigami"
   depends_on "kde-mac/kde/kpackage"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

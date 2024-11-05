@@ -14,11 +14,11 @@ class Kpeople < Formula
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
+  depends_on "kde-mac/kde/kcontacts"
   depends_on "kde-mac/kde/kcoreaddons"
   depends_on "kde-mac/kde/kitemviews"
-  depends_on "ki18n"
-  depends_on "kde-mac/kde/kcontacts"
   depends_on "kde-mac/kde/kwidgetsaddons"
+  depends_on "ki18n"
 
   def install
     system "cmake", *kde_cmake_args

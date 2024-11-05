@@ -17,8 +17,8 @@ class Kate < Formula
   depends_on "kde-mac/kde/kf5-kactivities"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/knewstuff"
-  depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/konsole"
+  depends_on "kde-mac/kde/ktexteditor"
   depends_on "threadweaver"
 
   def install
@@ -27,12 +27,12 @@ class Kate < Formula
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@6"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/kwrite.app/Contents/Info.plist"
   end
 

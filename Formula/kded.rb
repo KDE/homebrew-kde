@@ -13,12 +13,12 @@ class Kded < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "qt@6"
   depends_on "kde-mac/kde/kconfig"
   depends_on "kde-mac/kde/kcoreaddons"
   depends_on "kde-mac/kde/kcrash"
   depends_on "kde-mac/kde/kdbusaddons"
   depends_on "kde-mac/kde/kservice"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

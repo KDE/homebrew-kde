@@ -17,15 +17,15 @@ class Kfilemetadata < Formula
   depends_on "exiv2"
   depends_on "ffmpeg"
   depends_on "karchive"
+  depends_on "kde-mac/kde/kcodecs"
   depends_on "kde-mac/kde/kconfig"
   depends_on "kde-mac/kde/kcoreaddons"
-  depends_on "kde-mac/kde/kcodecs"
   depends_on "ki18n"
   depends_on "poppler"
   depends_on "taglib"
-#  depends_on "catdoc"
-#  depends_on "kdegraphics-mobipocket"
-#  depends_on "libappimage"
+  #  depends_on "catdoc"
+  #  depends_on "kdegraphics-mobipocket"
+  #  depends_on "libappimage"
 
   def install
     system "cmake", *kde_cmake_args

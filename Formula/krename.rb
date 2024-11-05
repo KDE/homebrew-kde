@@ -15,8 +15,8 @@ class Krename < Formula
   depends_on "exiv2"
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/breeze-icons"
-  depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kio"
   depends_on "podofo"
   depends_on "taglib"
 
@@ -26,9 +26,9 @@ class Krename < Formula
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@6"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/krename.app/Contents/Info.plist"
   end
 

@@ -13,10 +13,10 @@ class Kcompletion < Formula
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
-  depends_on "qt@6"
   depends_on "kde-mac/kde/kcodecs"
   depends_on "kde-mac/kde/kconfig"
   depends_on "kde-mac/kde/kwidgetsaddons"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

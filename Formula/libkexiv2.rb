@@ -12,7 +12,7 @@ class Libkexiv2 < Formula
   depends_on "ninja" => :build
 
   depends_on "exiv2"
-  depends_on "qt@5"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args
@@ -22,7 +22,7 @@ class Libkexiv2 < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(KF5KExiv2 REQUIRED)")
+    (testpath/"CMakeLists.txt").write("find_package(KF6KExiv2 REQUIRED)")
     system "cmake", ".", "-Wno-dev"
   end
 end

@@ -12,7 +12,7 @@ class Poxml < Formula
   depends_on "ninja" => :build
 
   depends_on "gettext"
-  depends_on "qt@5"
+  depends_on "qt@6"
 
   patch :DATA
 

@@ -13,8 +13,8 @@ class Kcrash < Formula
   depends_on "graphviz" => :build
   depends_on "ninja" => :build
 
-  depends_on "qt@6"
   depends_on "kde-mac/kde/kcoreaddons"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args

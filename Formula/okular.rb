@@ -20,14 +20,14 @@ class Okular < Formula
   depends_on "freetype"
   depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kirigami"
   depends_on "kde-mac/kde/kf5-kjs"
+  depends_on "kde-mac/kde/kirigami"
   depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/kpty"
   depends_on "kde-mac/kde/libkexiv2"
   depends_on "kde-mac/kde/phonon"
   depends_on "libspectre"
-  depends_on "poppler-qt5"
+  depends_on "poppler"
   depends_on "qca"
   depends_on "threadweaver"
   depends_on "zlib"
@@ -64,17 +64,17 @@ class Okular < Formula
         SOURCES += main.cpp
       EOS
 
-      system "#{Formula["qt@5"].bin}/qmake"
+      system "#{Formula["qt@6"].bin}/qmake"
       system "make"
     end
-    qtpp = Utils.safe_popen_read("#{Formula["qt@5"].bin}/qtpaths", "--plugin-dir").chomp
+    qtpp = Utils.safe_popen_read("#{Formula["qt@6"].bin}/qtpaths", "--plugin-dir").chomp
     qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/okular.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
-      "-c", "Add :LSEnvironment:QML2_IMPORT_PATH string \"#{qml2pp}\:#{HOMEBREW_PREFIX}/lib/qt5/qml\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
+      "-c", "Add :LSEnvironment:QML2_IMPORT_PATH string \"#{qml2pp}\"",
       "#{bin}/okularkirigami.app/Contents/Info.plist"
   end
 

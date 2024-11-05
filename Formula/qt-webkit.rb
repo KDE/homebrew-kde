@@ -30,7 +30,7 @@ class QtWebkit < Formula
   def install
     # Fuck off rpath
     inreplace "Source/cmake/OptionsQt.cmake",
-              "set(CMAKE_MACOSX_RPATH\ ON)",
+              "set(CMAKE_MACOSX_RPATH ON)",
               ""
 
     args = %w[

@@ -17,15 +17,15 @@ class Kdevelop < Formula
 
   depends_on "cmake"
   depends_on "cppcheck"
-  depends_on "kde-mac/kde/grantlee-qt5"
   depends_on "kde-mac/kde/breeze-icons"
+  depends_on "kde-mac/kde/grantlee-qt5"
   depends_on "kde-mac/kde/kcmutils"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/knewstuff"
   depends_on "kde-mac/kde/knotifyconfig"
-  depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/konsole"
   depends_on "kde-mac/kde/ksysguard"
+  depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/libkomparediff2"
   depends_on "kde-mac/kde/qt-webkit"
   depends_on "llvm"
@@ -47,7 +47,7 @@ class Kdevelop < Formula
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     chmod "+w", "#{bin}/kdevelop.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+    "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
     "#{bin}/kdevelop.app/Contents/Info.plist"
     chmod "-w", "#{bin}/kdevelop.app/Contents/Info.plist"
   end

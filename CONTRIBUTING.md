@@ -13,7 +13,7 @@ Please check official Homebrew [documentation](https://docs.brew.sh/Adding-Softw
   depends_on "extra-cmake-modules" => :build
   depends_on "ninja" => :build
 
-  depends_on "qt@5"
+  depends_on "qt@6"
 ```
 Replace the generated install method with the following snippet:
 ```ruby

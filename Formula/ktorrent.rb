@@ -19,9 +19,9 @@ class Ktorrent < Formula
 
   depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kcmutils"
+  depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/knotifyconfig"
-  depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/libktorrent"
 
   def install
@@ -32,10 +32,10 @@ class Ktorrent < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/ktorrent.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/ktupnptest.app/Contents/Info.plist"
   end
 

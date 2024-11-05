@@ -15,9 +15,9 @@ class Kf5Kdelibs4support < Formula
 
   depends_on "kde-mac/kde/kded"
   depends_on "kde-mac/kde/kf5-kemoticons"
+  depends_on "kde-mac/kde/kf5-kunitconversion"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/kparts"
-  depends_on "kde-mac/kde/kf5-kunitconversion"
   depends_on "openssl"
 
   uses_from_macos "perl"
@@ -46,7 +46,7 @@ class Kf5Kdelibs4support < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kdebugdialog5.app/Contents/Info.plist"
   end
 

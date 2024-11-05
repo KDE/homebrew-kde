@@ -15,12 +15,12 @@ class Kmymoney < Formula
   depends_on "aqbanking"
   depends_on "boost"
   depends_on "gpgme"
+  depends_on "kde-mac/kde/kcmutils"
   depends_on "kde-mac/kde/kdiagram"
   depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kcmutils"
+  depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kitemmodels"
-  depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/libalkimia"
   depends_on "libical"
   depends_on "libofx"
@@ -34,7 +34,7 @@ class Kmymoney < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kmymoney.app/Contents/Info.plist"
   end
 

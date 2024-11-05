@@ -14,8 +14,8 @@ class Kjobwidgets < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/kcoreaddons"
-  depends_on "kde-mac/kde/kwidgetsaddons"
   depends_on "kde-mac/kde/knotifications"
+  depends_on "kde-mac/kde/kwidgetsaddons"
   depends_on "qt@6"
 
   def install

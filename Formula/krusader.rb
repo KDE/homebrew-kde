@@ -16,10 +16,10 @@ class Krusader < Formula
   depends_on "hicolor-icon-theme"
   depends_on "karchive"
   depends_on "kde-mac/kde/kio"
+  depends_on "kde-mac/kde/kio-extras"
   depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/kwallet"
   depends_on "kde-mac/kde/kxmlgui"
-  depends_on "kde-mac/kde/kio-extras"
 
   def install
     system "cmake", *kde_cmake_args
@@ -27,9 +27,9 @@ class Krusader < Formula
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@6"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/krusader.app/Contents/Info.plist"
   end
 
