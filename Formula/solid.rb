@@ -17,6 +17,11 @@ class Solid < Formula
 
   depends_on "qt@6"
 
+  patch do
+    url "https://invent.kde.org/frameworks/solid/-/commit/8cbd8ec73facb20f6692c24c79adb8cf6d01b4fa.patch"
+    sha256 "c931184f60cfa3d55d103c3e7353e6804164ebc19d8d43f6a0360d9de8284397"
+  end
+
   def install
     # args = kde_cmake_args
     # setTime_t function is deprecated since 5.8.
