@@ -13,9 +13,8 @@ class Lokalize < Formula
   depends_on "gettext"
   depends_on "hicolor-icon-theme"
   depends_on "hunspell"
-  depends_on "kde-mac/kde/kf5-kross"
   depends_on "poxml"
-  depends_on "qt@5"
+  depends_on "qt@6"
   depends_on "subversion"
   depends_on "translate-toolkit"
 

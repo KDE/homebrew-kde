@@ -14,8 +14,6 @@ class Dolphin < Formula
 
   depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kcmutils"
-  depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kf5-kinit"
   depends_on "kde-mac/kde/kfilemetadata"
   depends_on "kde-mac/kde/kio-extras"
   depends_on "kde-mac/kde/knewstuff"

@@ -14,7 +14,6 @@ class Tellico < Formula
 
   depends_on "exempi"
   depends_on "hicolor-icon-theme"
-  depends_on "kde-mac/kde/kf5-khtml"
   depends_on "kde-mac/kde/kfilemetadata"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kitemmodels"
@@ -22,8 +21,8 @@ class Tellico < Formula
   depends_on "kde-mac/kde/kxmlgui"
   depends_on "kde-mac/kde/solid"
   depends_on "libcdio"
-  depends_on "poppler-qt5"
-  depends_on "qt@5"
+  depends_on "poppler"
+  depends_on "qt@6"
   depends_on "taglib"
   depends_on "yaz"
 
@@ -35,7 +34,7 @@ class Tellico < Formula
     system "cmake", "--install", "build"
     prefix.install "build/install_manifest.txt"
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@6"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",
       "#{bin}/tellico.app/Contents/Info.plist"

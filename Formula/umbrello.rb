@@ -11,15 +11,12 @@ class Umbrello < Formula
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "kde-mac/kde/kdevelop-pg-qt" => :build
-  depends_on "kde-mac/kde/kf5-kdesignerplugin" => :build
-  depends_on "kde-mac/kde/kf5-kinit" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/breeze-icons"
   depends_on "kde-mac/kde/kdevelop"
-  depends_on "kde-mac/kde/kf5-kdelibs4support"
 
   depends_on "kdev-php" => :recommended
 

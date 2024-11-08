@@ -14,7 +14,6 @@ class Kate < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/breeze-icons"
-  depends_on "kde-mac/kde/kf5-kactivities"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/knewstuff"
   depends_on "kde-mac/kde/konsole"

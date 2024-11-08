@@ -12,13 +12,11 @@ class Kile < Formula
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
-  depends_on "kde-mac/kde/kf5-khtml"
-  depends_on "kde-mac/kde/kf5-kinit"
   depends_on "kde-mac/kde/ktexteditor"
   depends_on "kde-mac/kde/okular"
 
   depends_on "kde-mac/kde/konsole" => :recommended
-  depends_on "poppler-qt5" => :recommended
+  depends_on "poppler" => :recommended
 
   def install
     system "cmake", *kde_cmake_args
@@ -27,7 +25,7 @@ class Kile < Formula
     prefix.install "build/install_manifest.txt"
 
     # Extract Qt plugin path
-    qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
+    qtpp = `#{Formula["qt@6"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kile.app/Contents/Info.plist"

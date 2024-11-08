@@ -13,7 +13,6 @@ class Konsole < Formula
   depends_on "ninja" => :build
 
   depends_on "kde-mac/kde/breeze-icons"
-  depends_on "kde-mac/kde/kf5-kinit"
   depends_on "kde-mac/kde/knewstuff"
   depends_on "kde-mac/kde/knotifyconfig"
   depends_on "kde-mac/kde/kparts"

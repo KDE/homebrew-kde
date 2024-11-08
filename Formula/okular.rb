@@ -11,7 +11,6 @@ class Okular < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "ebook-tools" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
-  depends_on "kde-mac/kde/kf5-khtml" => :build
   depends_on "kdoctools" => :build
   depends_on "ninja" => :build
 
@@ -19,8 +18,6 @@ class Okular < Formula
   depends_on "djvulibre"
   depends_on "freetype"
   depends_on "kde-mac/kde/breeze-icons"
-  depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kf5-kjs"
   depends_on "kde-mac/kde/kirigami"
   depends_on "kde-mac/kde/kparts"
   depends_on "kde-mac/kde/kpty"

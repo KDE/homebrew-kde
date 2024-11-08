@@ -14,6 +14,7 @@ class Elisa < Formula
 
   depends_on "hicolor-icon-theme"
   depends_on "kde-mac/kde/kcmutils"
+  depends_on "qt@6"
 
   def install
     system "cmake", *kde_cmake_args
@@ -43,7 +44,7 @@ class Elisa < Formula
       system "#{Formula["qt@6"].bin}/qmake"
       system "make"
     end
-    qtpp = Utils.safe_popen_read("#{Formula["qt@5"].bin}/qtpaths", "--plugin-dir").chomp
+    qtpp = Utils.safe_popen_read("#{Formula["qt@6"].bin}/qtpaths", "--plugin-dir").chomp
     qml2pp = Utils.safe_popen_read("./getqmlpath/qmlpath").chomp
     system "/usr/libexec/PlistBuddy",
       "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\"",

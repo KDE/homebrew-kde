@@ -17,8 +17,6 @@ class Kmymoney < Formula
   depends_on "gpgme"
   depends_on "kde-mac/kde/kcmutils"
   depends_on "kde-mac/kde/kdiagram"
-  depends_on "kde-mac/kde/kf5-kactivities"
-  depends_on "kde-mac/kde/kf5-kross"
   depends_on "kde-mac/kde/kio"
   depends_on "kde-mac/kde/kitemmodels"
   depends_on "kde-mac/kde/libalkimia"
