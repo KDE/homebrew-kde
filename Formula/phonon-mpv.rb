@@ -3,9 +3,8 @@ require_relative "../lib/cmake"
 class PhononMpv < Formula
   desc "Phonon Backend using MPV Player"
   homepage "https://github.com/OpenProgger/phonon-mpv/"
-  url "https://github.com/OpenProgger/phonon-mpv/archive/v0.0.7.tar.gz"
-  sha256 "c674e982d81dcdb2cfca3244e55a4c1e5b35cfc4bed3c7bd65921358d8a0ebc6"
-  revision 1
+  url "https://github.com/OpenProgger/phonon-mpv/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "8cba7d803c23267bf7431bf79c4a65a03c767c01026a0cced18985bfa418a076"
   head "https://github.com/OpenProgger/phonon-mpv.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -22,6 +21,6 @@ class PhononMpv < Formula
   end
 
   test do
-    assert_predicate lib/"plugins/phonon4qt5_backend/phonon_mpv.so", :exist?
+    assert_path_exists lib/"plugins/phonon4qt5_backend/phonon_mpv.so"
   end
 end

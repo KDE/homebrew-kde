@@ -27,13 +27,14 @@ class Lokalize < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/lokalize.app/Contents/Info.plist"
   end
 
-  def post_install
-    mkdir_p HOMEBREW_PREFIX/"share/lokalize"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/lokalize/icontheme.rcc"
+  post_install_steps do
+    mkdir_p "share/lokalize", base: :homebrew_prefix
+    ln_sf "share/icons/breeze/breeze-icons.rcc", "share/lokalize/icontheme.rcc", source_base: :homebrew_prefix,
+                                                                                 target_base: :homebrew_prefix
   end
 
   def caveats

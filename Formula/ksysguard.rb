@@ -34,9 +34,10 @@ class Ksysguard < Formula
       "#{bin}/ksysguard.app/Contents/Info.plist"
   end
 
-  def post_install
-    mkdir_p HOMEBREW_PREFIX/"share/ksysguard"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/ksysguard/icontheme.rcc"
+  post_install_steps do
+    mkdir_p "share/ksysguard", base: :homebrew_prefix
+    ln_sf "share/icons/breeze/breeze-icons.rcc", "share/ksysguard/icontheme.rcc", source_base: :homebrew_prefix,
+                                                                                  target_base: :homebrew_prefix
   end
 
   def caveats

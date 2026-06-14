@@ -32,16 +32,17 @@ class Ktorrent < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/ktorrent.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/ktupnptest.app/Contents/Info.plist"
   end
 
-  def post_install
-    mkdir_p HOMEBREW_PREFIX/"share/ktorrent"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/ktorrent/icontheme.rcc"
+  post_install_steps do
+    mkdir_p "share/ktorrent", base: :homebrew_prefix
+    ln_sf "share/icons/breeze/breeze-icons.rcc", "share/ktorrent/icontheme.rcc", source_base: :homebrew_prefix,
+                                                                                 target_base: :homebrew_prefix
   end
 
   def caveats

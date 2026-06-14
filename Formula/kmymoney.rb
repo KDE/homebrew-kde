@@ -34,7 +34,7 @@ class Kmymoney < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kmymoney.app/Contents/Info.plist"
   end
 

@@ -14,13 +14,12 @@ class QtWebkit < Formula
   depends_on "python@3.10" => :build
   depends_on "sqlite" => :build
 
-  depends_on "gst-plugins-base"
+  depends_on "gstreamer"
   depends_on "libxslt"
   depends_on "qt@5"
   depends_on "webp"
   depends_on "woff2"
   depends_on "zlib"
-  depends_on "gst-plugins-good" => :recommended
 
   # patch do # Apple Silicon fixes, https://github.com/qtwebkit/qtwebkit/pull/1047
   #   url "https://github.com/yurikoles/qtwebkit/commit/1a31aaf3566235b32c26c38ef08d217a5d11ef1e.patch?full_index=1"
@@ -30,7 +29,7 @@ class QtWebkit < Formula
   def install
     # Fuck off rpath
     inreplace "Source/cmake/OptionsQt.cmake",
-              "set(CMAKE_MACOSX_RPATH\ ON)",
+              "set(CMAKE_MACOSX_RPATH ON)",
               ""
 
     args = %w[

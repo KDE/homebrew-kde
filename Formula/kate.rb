@@ -29,18 +29,20 @@ class Kate < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kate.app/Contents/Info.plist"
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kwrite.app/Contents/Info.plist"
   end
 
-  def post_install
-    mkdir_p HOMEBREW_PREFIX/"share/kate"
-    mkdir_p HOMEBREW_PREFIX/"share/kwrite"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kate/icontheme.rcc"
-    ln_sf HOMEBREW_PREFIX/"share/icons/breeze/breeze-icons.rcc", HOMEBREW_PREFIX/"share/kwrite/icontheme.rcc"
+  post_install_steps do
+    mkdir_p "share/kate", base: :homebrew_prefix
+    mkdir_p "share/kwrite", base: :homebrew_prefix
+    ln_sf "share/icons/breeze/breeze-icons.rcc", "share/kate/icontheme.rcc", source_base: :homebrew_prefix,
+                                                                             target_base: :homebrew_prefix
+    ln_sf "share/icons/breeze/breeze-icons.rcc", "share/kwrite/icontheme.rcc", source_base: :homebrew_prefix,
+                                                                               target_base: :homebrew_prefix
   end
 
   def caveats
