@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kimageformats < Formula
   desc "Image format plugins for Qt5"
   homepage "https://api.kde.org/frameworks/kimageformats/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.111/kimageformats-5.111.0.tar.xz"
-  sha256 "a27a96588f8841b424e71528b6ba35e261b19f85868ef524361313cc5e4ba69d"
+  url "https://download.kde.org/stable/frameworks/5.116/kimageformats-5.116.0.tar.xz"
+  sha256 "7c119bcd5ef7963aac00b7d2736bfe87393f6e5d67d201c5fe399e3ab4188f9c"
   head "https://invent.kde.org/frameworks/kimageformats.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -31,7 +31,7 @@ class Kf5Kimageformats < Formula
   end
 
   test do
-    assert_predicate lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
-    assert_predicate share/"kservices5/qimageioplugins/eps.desktop", :exist?
+    assert_path_exists lib/"qt5/plugins/imageformats/kimg_eps.so"
+    assert_path_exists share/"kservices5/qimageioplugins/eps.desktop"
   end
 end

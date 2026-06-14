@@ -9,7 +9,7 @@ brew ls --formula --full-name > "${INSTALLED_FORMULAS_LIST}"
 
 if grep -q '^kde-mac/kde' "${INSTALLED_FORMULAS_LIST}"; then
 	echo "Uninstalling formulas from kde-mac/kde tap"
-	brew uninstall -f `grep '^kde-mac/kde' "${INSTALLED_FORMULAS_LIST}"`
+	brew uninstall -f $(grep '^kde-mac/kde' "${INSTALLED_FORMULAS_LIST}")
 else
 	echo "No formulas from kde-mac/kde tap is installed"
 fi

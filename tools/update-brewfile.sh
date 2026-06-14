@@ -12,21 +12,24 @@ rm -f "${formulas}" "${bundle}"
 mkdir -p "${tmp_kde}"
 
 formula_dir="${kde_tap_dir}/Formula"
-for formula in "${formula_dir}"/*.rb; do
-  formula_file=`basename "${formula}"`
+for formula in "${formula_dir}"/*.rb
+do
+  formula_file=$(basename "${formula}")
   formula_name=${formula_file//\.rb/}
-    if grep -q -E -l 'url "http|url "file' "${formula}"; then
-      echo "brew \"kde-mac/kde/${formula_name}\"" >> "${bundle}"
-    else
-      echo "brew \"kde-mac/kde/${formula_name}\", args: [\"HEAD\"]" >> "${bundle}"
-    fi
+  if grep -q -E -l 'url "http|url "file' "${formula}"
+  then
+    echo "brew \"kde-mac/kde/${formula_name}\"" >>"${bundle}"
+  else
+    echo "brew \"kde-mac/kde/${formula_name}\", args: [\"HEAD\"]" >>"${bundle}"
+  fi
 done
 
 casks_dir="${kde_tap_dir}/Casks"
-for cask in "${casks_dir}"/*.rb; do
-  cask_file=`basename "${cask}"`
+for cask in "${casks_dir}"/*.rb
+do
+  cask_file=$(basename "${cask}")
   cask_name="${cask_file//\.rb/}"
-  echo "cask \"kde-mac/kde/${cask_name}\"" >> "${bundle}"
+  echo "cask \"kde-mac/kde/${cask_name}\"" >>"${bundle}"
 done
 
 cp "${bundle}" "${kde_tap_dir}"

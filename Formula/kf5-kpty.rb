@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kpty < Formula
   desc "Pty abstraction"
   homepage "https://api.kde.org/frameworks/kpty/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.111/kpty-5.111.0.tar.xz"
-  sha256 "78682fca44e01b30ab9c2b31ac61c602b83ae818544e97923a0a1cca58bf1c13"
+  url "https://download.kde.org/stable/frameworks/5.116/kpty-5.116.0.tar.xz"
+  sha256 "ad4f6322544f65c7c900003d86ffeaac350fd2e2739b4777997ece49d8f04630"
   head "https://invent.kde.org/frameworks/kpty.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]

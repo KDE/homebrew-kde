@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5BreezeIcons < Formula
   desc "Breeze icon themes"
   homepage "https://api.kde.org/frameworks/breeze-icons/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.111/breeze-icons-5.111.0.tar.xz"
-  sha256 "4c570e4c5f75a30f911db6fe5d907dfb58a02d2afbd160d81b51bfc8dc5b3aef"
+  url "https://download.kde.org/stable/frameworks/5.116/breeze-icons-5.116.0.tar.xz"
+  sha256 "bd41fad0135606ce0a00a395aaf88cb0a7989f998cfb44cd6e0b777fb75bf3d2"
   head "https://invent.kde.org/frameworks/breeze-icons.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -33,7 +33,7 @@ class Kf5BreezeIcons < Formula
   end
 
   test do
-    assert_predicate share/"icons/breeze/index.theme", :exist?
-    assert_predicate share/"icons/breeze-dark/index.theme", :exist?
+    assert_path_exists share/"icons/breeze/index.theme"
+    assert_path_exists share/"icons/breeze-dark/index.theme"
   end
 end

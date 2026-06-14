@@ -3,9 +3,9 @@ require_relative "../lib/cmake"
 class Kf5Tier2Frameworks < Formula
   desc "Metapackage for Tier 2 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
-  system "touch", "/tmp/empty"
+  system "touch", "/tmp/empty" # rubocop:todo FormulaAudit/Miscellaneous
   url "file:///tmp/empty"
-  version "5.111.0"
+  version "5.116.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   livecheck do
@@ -58,7 +58,7 @@ class Kf5Tier2Frameworks < Formula
     # kf5-kimageformats
     imageformats_lib = Formula["kf5-kimageformats"].opt_lib
     imageformats_share = Formula["kf5-kimageformats"].opt_share
-    assert_predicate imageformats_lib/"qt5/plugins/imageformats/kimg_eps.so", :exist?
-    assert_predicate imageformats_share/"kservices5/qimageioplugins/eps.desktop", :exist?
+    assert_path_exists imageformats_lib/"qt5/plugins/imageformats/kimg_eps.so"
+    assert_path_exists imageformats_share/"kservices5/qimageioplugins/eps.desktop"
   end
 end

@@ -11,7 +11,7 @@ brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git --force-a
 ## Migration
 Currently this tap is in process of migration most of frameworks to `homebrew/core`, so it's best practice to run `"$(brew --repo kde-mac/kde)/tools/do-caveats.sh"` in case you are seeing any issue with linking. Sorry for inconvenience.
 
-## Installation 
+## Installation
 Now, the fun begins. You can either install individual frameworks via
 ```sh
 brew install kde-mac/kde/kf5-attica
@@ -21,7 +21,7 @@ or you can install them all with a provided Brewfile provided in the repo's root
 brew bundle --verbose --file "$(brew --repo kde-mac/kde)/Brewfile"
 ```
 
-## Casks 
+## Casks
 Some apps are offered in binary form via casks, so if you want to install binary package instead of formula please add `--cask` flag, e.g:
 ```sh
 brew install --cask kde-mac/kde/kdeconnect

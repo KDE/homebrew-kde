@@ -3,9 +3,9 @@ require_relative "../lib/cmake"
 class Kf5Tier1Frameworks < Formula
   desc "Metapackage for Tier 1 KF5 frameworks"
   homepage "https://api.kde.org/frameworks"
-  system "touch", "/tmp/empty"
+  system "touch", "/tmp/empty" # rubocop:todo FormulaAudit/Miscellaneous
   url "file:///tmp/empty"
-  version "5.111.0"
+  version "5.116.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   livecheck do
@@ -76,7 +76,7 @@ class Kf5Tier1Frameworks < Formula
     system "cmake", ".", "-Wno-dev"
     # kf5-breeze-icons
     breeze = Formula["kf5-breeze-icons"].opt_share
-    assert_predicate breeze/"icons/breeze/index.theme", :exist?
-    assert_predicate breeze/"icons/breeze-dark/index.theme", :exist?
+    assert_path_exists breeze/"icons/breeze/index.theme"
+    assert_path_exists breeze/"icons/breeze-dark/index.theme"
   end
 end

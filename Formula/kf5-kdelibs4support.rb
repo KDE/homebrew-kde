@@ -3,8 +3,8 @@ require_relative "../lib/cmake"
 class Kf5Kdelibs4support < Formula
   desc "Porting aid from KDELibs4"
   homepage "https://api.kde.org/frameworks/kdelibs4support/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.111/portingAids/kdelibs4support-5.111.0.tar.xz"
-  sha256 "2ebab32f04ec69fd1e6098a32a2342ed15e7b64cbcb70114cca479d69f91d4f8"
+  url "https://download.kde.org/stable/frameworks/5.116/portingAids/kdelibs4support-5.116.0.tar.xz"
+  sha256 "ed915dd146eb10262816da62904d04f78dacf9595d44d400dd1644d21c10c1e4"
   head "https://invent.kde.org/frameworks/kdelibs4support.git", branch: "master"
 
   depends_on "cmake" => [:build, :test]
@@ -46,7 +46,7 @@ class Kf5Kdelibs4support < Formula
     # Extract Qt plugin path
     qtpp = `#{Formula["qt@5"].bin}/qtpaths --plugin-dir`.chomp
     system "/usr/libexec/PlistBuddy",
-      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}\:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
+      "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{qtpp}:#{HOMEBREW_PREFIX}/lib/qt5/plugins\"",
       "#{bin}/kdebugdialog5.app/Contents/Info.plist"
   end
 
