@@ -4,9 +4,9 @@ cask "kdeconnect" do
   # TODO: eventually also handle release versions (e.g. release-24.08 etc.)?
   base_url = "https://cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-#{arch}"
 
-  version "5475"
-  sha256 arm:   "08bac7d5e9feff41b7714ddbabce88294ee86bed22097cbf5bb783b9e47d1c9d",
-         intel: "99f2e4d268ad58da2136e725b73d5c0dfb826eb3dee214e5dc466f09d471938d"
+  version "6265"
+  sha256 arm:   "92f9dba399c8edabda74e0ec987b12f851bbca2cde3647d876255d6fb7d15b4d",
+         intel: "66b08ab269cda6928d9fb7305d3b61dd669bceeffffa22656ad1f438f40ede58"
 
   url "#{base_url}/kdeconnect-kde-master-#{version}-macos-clang-#{arch}.dmg"
   name "KDE Connect"
@@ -18,7 +18,7 @@ cask "kdeconnect" do
     regex(/href=.*?kdeconnect-kde-master-(\d+(?:)+)-macos-clang-#{arch}\.dmg/i)
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :ventura
 
   app "KDE Connect.app"
   binary "#{appdir}/KDE Connect.app/Contents/MacOS/kdeconnect-cli",
